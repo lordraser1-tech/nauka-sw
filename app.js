@@ -4,8 +4,11 @@ const STORE_KEY = 'nauka-sw-v1';
 const BOX_DAYS = [0, 0, 1, 3, 7, 14]; // po ilu dniach karta wraca; indeks = pudełko 1–5
 const MASTERED_BOX = 4;               // „opanowana” = pudełko 4 lub 5
 const FLASH_SESSION = 20;
-const EXAM_SIZE = 30;
-const EXAM_MINUTES = 30;
+const SIZES = [30, 40, 50];          // do wyboru w Teście i Egzaminie próbnym
+const MINUTES_PER_QUESTION = 1;       // limit czasu egzaminu: 1 minuta na pytanie
+const examSize = () => (SIZES.includes(state.settings.examSize) ? state.settings.examSize : 30);
+const examMinutes = () => examSize() * MINUTES_PER_QUESTION;
+const testSize = () => (SIZES.includes(state.settings.testSize) || state.settings.testSize === 0 ? state.settings.testSize : 30);
 const DOCS = [
   { file: 'skrypt_unitarna.md', name: 'Część unitarna' },
   { file: 'skrypt_psycholog.md', name: 'Psycholog' },
@@ -230,7 +233,7 @@ function renderHome(keepScroll) {
     mode('Fiszki', `${due} do powtórki · ${flash.length} w wybranych taliach`, '#/fiszki', flash.length, true),
     mode('Test', `${mcq} ${plural(mcq, 'pytanie', 'pytania', 'pytań')} z natychmiastową odpowiedzią`, '#/test', mcq),
     mode('Na pamięć', `${mem} ${plural(mem, 'ćwiczenie', 'ćwiczenia', 'ćwiczeń')}: luki i kolejność`, '#/pamiec', mem),
-    mode('Egzamin próbny', examRunning ? `Trwa – zostało ${mmss(exam.end - Date.now())}` : `${EXAM_SIZE} pytań · ${EXAM_MINUTES} minut`, '#/egzamin', 1),
+    mode('Egzamin próbny', examRunning ? `Trwa – zostało ${mmss(exam.end - Date.now())}` : `${examSize()} pytań · ${examMinutes()} minut`, '#/egzamin', 1),
     mode('Trudne', hard ? `${hard} do poprawy (wszystkie talie)` : 'Brak błędnych odpowiedzi', '#/trudne', hard)));
 
   // Filtry
@@ -520,11 +523,11 @@ function emptyScreen(title, icon, message, ...buttons) {
 }
 
 // Wspólny przebieg dla testu, trybu „na pamięć” i „trudnych”.
-function runSequence(title, items, restart) {
+function runSequence(title, items, restart, opts = {}) {
   if (!items.length) return emptyScreen(title, '📭', 'Brak pozycji dla wybranych talii i filtrów.');
   const s = { i: 0, ok: 0, wrong: [] };
   const step = () => {
-    if (s.i >= items.length) return sequenceSummary(title, items, s, restart);
+    if (s.i >= items.length) return sequenceSummary(title, items, s, restart, opts);
     const item = items[s.i];
     screen(title, true);
     $app.append(h('div', { class: 'progress-line' },
@@ -538,11 +541,12 @@ function runSequence(title, items, restart) {
   step();
 }
 
-function sequenceSummary(title, items, s, restart) {
+function sequenceSummary(title, items, s, restart, opts = {}) {
   screen(title, true);
   const n = items.length;
-  $app.append(h('div', { class: 'card' },
-    h('div', { class: 'score' }, pct(s.ok, n) + '%'),
+  const p = pct(s.ok, n);
+  $app.append(opts.celebrate ? verdictCard(p, `${s.ok} z ${n} poprawnie`, worstDeck(s.wrong)) : h('div', { class: 'card' },
+    h('div', { class: 'score' }, p + '%'),
     h('div', { class: 'score-sub' }, `${s.ok} z ${n} poprawnie`)));
   const buttons = h('div', { class: 'stack' });
   if (s.wrong.length) buttons.append(btn(`Powtórz błędne (${s.wrong.length})`, 'primary', () => runSequence(title, shuffle(s.wrong), restart)));
@@ -617,9 +621,11 @@ function startTest() {
     return h('button', { type: 'button', class: 'btn mode' + (primary ? ' primary' : ''), disabled: !n, style: n ? null : 'opacity:.45',
       onclick: () => runTest(name, decks) },
       h('span', { class: 'mode-name' }, name),
-      h('span', { class: 'mode-sub' }, `${n} ${plural(n, 'pytanie', 'pytania', 'pytań')} · ${sub}`));
+      h('span', { class: 'mode-sub' }, `${n} ${plural(n, 'pytanie', 'pytania', 'pytań')} w puli · ${sub}`));
   };
-  $app.append(h('p', { class: 'small muted', style: 'margin-top:0' }, 'Wybierz część egzaminu:'),
+  $app.append(h('p', { class: 'small muted', style: 'margin-top:0' }, 'Ile pytań?'),
+    sizePicker([...SIZES, 0], testSize(), v => { state.settings.testSize = v; save(); startTest(); }),
+    h('p', { class: 'small muted' }, 'Wybierz część egzaminu:'),
     h('div', { class: 'modes' },
       option('Unitarny', 'wiedza ogólna: KKW, ochrona, ŚPB, broń, pragmatyka, pierwsza pomoc', partDecks('unitarna'), true),
       option('Specjalistyczny', 'tylko psychologia', partDecks('specjalistyczna'), true),
@@ -631,7 +637,16 @@ function testItems(decks) {
 }
 
 function runTest(name, decks) {
-  runSequence(`Test – ${name.toLowerCase()}`, shuffle(testItems(decks)), () => runTest(name, decks));
+  const all = shuffle(testItems(decks));
+  const items = testSize() ? all.slice(0, testSize()) : all;
+  runSequence(`Test – ${name.toLowerCase()}`, items, () => runTest(name, decks), { celebrate: true });
+}
+
+// Przełącznik liczby pytań (0 = wszystkie).
+function sizePicker(values, current, onPick) {
+  return h('div', { class: 'seg', role: 'radiogroup' }, values.map(v =>
+    h('button', { type: 'button', role: 'radio', class: v === current ? 'on' : '', 'aria-checked': String(v === current),
+      onclick: () => onPick(v) }, v ? String(v) : 'Wszystkie')));
 }
 
 function startMemory() {
@@ -642,6 +657,81 @@ function startHard() {
   const items = hardItems();
   if (!items.length) return emptyScreen('Trudne', '🎉', 'Nie masz pozycji z błędną ostatnią odpowiedzią.');
   runSequence('Trudne', shuffle(items), startHard);
+}
+
+/* ---------- Ocena wyniku (Test i Egzamin) ---------- */
+
+const VERDICTS = [
+  { min: 91, cls: 'v-gold', icon: '🎖️', rank: 'Chorąży', head: 'Wzorowo!', confetti: true, texts: [
+    'Za wzorową wiedzę i postawę – nagroda z art. 138! Dyrektor osobiście ściska dłoń.',
+    'Panie Chorąży, melduję: egzamin zdany wzorowo. Gwiazdka na pagonie już się błyszczy.',
+    'Wiedza na poziomie Dyrektora Generalnego. Od dziś to Ty uczysz innych.',
+    'To nie wynik, to standard służby. Komisja egzaminacyjna może iść do domu.',
+    'Wyróżnienie przed frontem zmiany. Kodeks karny wykonawczy prosi o autograf.'] },
+  { min: 76, cls: 'v-green', icon: '🔓', rank: 'Sierżant', head: 'Dobra robota!', texts: [
+    'Awans do zakładu otwartego! Cele otwarte całą dobę, widzenia bez ograniczeń.',
+    'Instrukcja ochronna przyswojona. Wartownia może spać spokojnie… prawie.',
+    'Muszka pośrodku przeziernika, górna krawędź równo. Jeszcze kilka przestrzelin do dziesiątki.',
+    'Kierownik działu wpisuje do opinii służbowej: „rokuje bardzo dobrze”.',
+    'Psycholog stwierdza: wysoka podatność na oddziaływania edukacyjne. Prognoza pozytywna.'] },
+  { min: 51, cls: 'v-orange', icon: '🔐', rank: 'Kapral', head: 'Zaliczone na styk', texts: [
+    'Zdane! Przenosimy Cię z zamkniętego do półotwartego. Cela w nocy jeszcze zamknięta.',
+    'Przepustka przyznana: raz na dwa miesiące, łącznie 14 dni w roku. Na więcej trzeba zapracować.',
+    'Dowódca zmiany kiwa głową. Nie uśmiecha się, ale kiwa.',
+    'Procedura zachowana, ale palec jeszcze czasem wędruje na spust. Trening bezstrzałowy wskazany.',
+    'Wynik w normie. Jak 3 m² w celi – zgodnie z przepisami, ale mogłoby być przestronniej.'] },
+  { min: 0, cls: 'v-red', icon: '🚨', rank: 'Szeregowy', head: 'Nie zdane', alarm: true, texts: [
+    'Ogłaszam alarm! Wiedza zbiegła z celi. Rozpocząć pościg – zbieg jest w polu widzenia (zakładka Fiszki).',
+    'Komisja penitencjarna kwalifikuje Cię do systemu terapeutycznego. Terapia: 30 fiszek dziennie.',
+    'Kara dyscyplinarna: pozbawienie paczek żywnościowych do czasu powtórki.',
+    'Spokojnie, art. 6 ustawy o ŚPB: wybieramy środek najmniej dolegliwy. Dziś była to tylko nagana.',
+    'Status „N” – Nieprzygotowany. Weryfikacja co najmniej raz na 3… godziny.'] },
+];
+
+function verdictCard(p, sub, weak, extra, quiet) {
+  const v = VERDICTS.find(x => p >= x.min);
+  const card = h('div', { class: 'card verdict ' + v.cls },
+    h('div', { class: 'verdict-icon', 'aria-hidden': 'true' }, v.icon),
+    h('div', { class: 'score' }, p + '%'),
+    h('div', { class: 'score-sub' }, sub),
+    h('div', { class: 'rank' }, `Stopień: ${v.rank}`),
+    h('div', { class: 'verdict-head' }, v.head),
+    h('p', { class: 'verdict-text' }, v.texts[Math.floor(Math.random() * v.texts.length)]),
+    extra && h('p', { class: 'verdict-extra' }, extra),
+    weak && p < 76 && h('p', { class: 'small', style: 'text-align:center;margin:6px 0 0' }, `Najwięcej błędów: ${weak}.`));
+  if (!quiet) {
+    try { if (navigator.vibrate) navigator.vibrate(p > 50 ? [60, 80, 60] : [400]); } catch (e) {}
+    if (v.confetti) confetti();
+  }
+  return card;
+}
+
+// Talia z największą liczbą błędów – podpowiedź, co powtórzyć.
+function worstDeck(wrongItems) {
+  if (!wrongItems.length) return null;
+  const c = {};
+  wrongItems.forEach(it => { c[it.deck] = (c[it.deck] || 0) + 1; });
+  const [id, n] = Object.entries(c).sort((a, b) => b[1] - a[1])[0];
+  return `${deckById[id] ? deckById[id].name : id} (${n})`;
+}
+
+// Seria egzaminów z wynikiem ≥ 91% (state.exams: najnowszy pierwszy).
+function streakNote() {
+  let k = 0;
+  for (const e of state.exams) { if (e.pct >= 91) k++; else break; }
+  return k >= 2 ? `${k}. egzamin z rzędu powyżej 90% – proszę zgłosić się po medal! 🏅` : null;
+}
+
+function confetti() {
+  if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const box = h('div', { class: 'confetti', 'aria-hidden': 'true' });
+  const pieces = ['⭐', '🎖️', '✨', '🎉', '🏅'];
+  for (let i = 0; i < 40; i++) {
+    box.append(h('span', { style: `left:${Math.random() * 100}%;animation-delay:${(Math.random() * 0.8).toFixed(2)}s;animation-duration:${(2 + Math.random() * 1.5).toFixed(2)}s` },
+      pieces[i % pieces.length]));
+  }
+  document.body.append(box);
+  setTimeout(() => box.remove(), 4000);
 }
 
 /* ---------- Egzamin próbny ---------- */
@@ -655,14 +745,16 @@ function renderExam() {
   const start = btn('Rozpocznij egzamin', 'primary', () => startExam([...sel]));
   const update = () => {
     const n = pool(['mcq'], { decks: [...sel], ignoreMem: true }).length;
-    const size = Math.min(EXAM_SIZE, n);
-    info.textContent = n >= EXAM_SIZE
-      ? `Dostępnych pytań: ${n}. Wylosuję ${EXAM_SIZE}.`
+    const size = Math.min(examSize(), n);
+    info.textContent = n >= examSize()
+      ? `Dostępnych pytań: ${n}. Wylosuję ${examSize()}.`
       : `W wybranych taliach jest ${n} ${plural(n, 'pytanie', 'pytania', 'pytań')} – egzamin będzie miał ${size}.`;
     start.disabled = !n;
   };
   const card = h('section', { class: 'card' },
-    h('p', { style: 'margin-top:0' }, `${EXAM_SIZE} losowych pytań jednokrotnego wyboru, limit ${EXAM_MINUTES} minut. Odpowiedzi poznasz dopiero na końcu – razem z listą błędów do powtórki.`),
+    h('p', { style: 'margin-top:0' }, `${examSize()} losowych pytań jednokrotnego wyboru, limit ${examMinutes()} minut. Odpowiedzi poznasz dopiero na końcu – razem z listą błędów do powtórki.`),
+    h('h3', {}, 'Liczba pytań'),
+    sizePicker(SIZES, examSize(), v => { state.settings.examSize = v; save(); renderExam(); }),
     h('h3', {}, 'Talie'));
   for (const d of DATA.decks) {
     const n = DATA.items.filter(i => i.deck === d.id && i.type === 'mcq').length;
@@ -682,7 +774,7 @@ function renderExam() {
 }
 
 function startExam(decks) {
-  const items = shuffle(pool(['mcq'], { decks, ignoreMem: true })).slice(0, EXAM_SIZE);
+  const items = shuffle(pool(['mcq'], { decks, ignoreMem: true })).slice(0, examSize());
   if (!items.length) return;
   exam = {
     items,
@@ -690,7 +782,7 @@ function startExam(decks) {
     answers: items.map(() => null),
     i: 0,
     start: Date.now(),
-    end: Date.now() + EXAM_MINUTES * 60000,
+    end: Date.now() + items.length * MINUTES_PER_QUESTION * 60000,
     finished: false,
   };
   clearInterval(timerId);
@@ -770,10 +862,11 @@ function examResult() {
   screen('Wynik egzaminu', true);
   const n = exam.items.length;
   const wrong = exam.items.map((it, k) => ({ it, a: exam.answers[k] })).filter(x => x.a !== x.it.answer);
-  $app.append(h('div', { class: 'card' },
-    exam.timeUp && h('p', { style: 'text-align:center;margin:0;color:var(--bad);font-weight:700' }, 'Koniec czasu!'),
-    h('div', { class: 'score' }, pct(exam.ok, n) + '%'),
-    h('div', { class: 'score-sub' }, `${exam.ok} z ${n} poprawnie · czas ${mmss(exam.took)}`)));
+  const card = verdictCard(pct(exam.ok, n), `${exam.ok} z ${n} poprawnie · czas ${mmss(exam.took)}`,
+    worstDeck(wrong.map(x => x.it)), streakNote(), exam.celebrated);
+  exam.celebrated = true;
+  if (exam.timeUp) card.prepend(h('p', { style: 'text-align:center;margin:0;color:var(--bad);font-weight:700' }, 'Koniec czasu!'));
+  $app.append(card);
   $app.append(h('div', { class: 'stack' },
     wrong.length > 0 && btn(`Powtórz błędne (${wrong.length})`, 'primary', () =>
       runSequence('Powtórka błędów', shuffle(wrong.map(x => x.it)), () => { location.hash = '#/test'; })),
@@ -1138,8 +1231,29 @@ async function init() {
   route();
 
   if ('serviceWorker' in navigator && location.protocol !== 'file:') {
-    navigator.serviceWorker.register('service-worker.js').catch(() => {});
+    // Nowy service worker przejmuje stronę (controllerchange) → pokaż prośbę o odświeżenie.
+    let hadController = !!navigator.serviceWorker.controller;
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+      if (hadController) showUpdateBanner();
+      hadController = true;
+    });
+    navigator.serviceWorker.register('service-worker.js').then(reg => {
+      const check = () => reg.update().catch(() => {});
+      document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') check(); });
+      setInterval(check, 30 * 60000);
+    }).catch(() => {});
   }
+}
+
+function showUpdateBanner() {
+  if (document.getElementById('update-banner')) return;
+  const bar = h('div', { id: 'update-banner', class: 'update-banner', role: 'status' },
+    h('span', {}, '🔄 Jest nowa wersja aplikacji (nowe pytania lub poprawki).'),
+    h('button', { type: 'button', class: 'btn primary', onclick: () => {
+      if (exam && !exam.finished && !confirm('Trwa egzamin – odświeżenie go przerwie. Odświeżyć teraz?')) return;
+      location.reload();
+    } }, 'Odśwież'));
+  document.body.append(bar);
 }
 
 init();

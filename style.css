@@ -294,3 +294,29 @@ mark.hit.current { background: var(--mark-current); color: #fff; box-shadow: 0 0
   background: var(--primary); color: var(--primary-text); font-size: 24px; cursor: pointer;
   box-shadow: 0 3px 10px rgba(0,0,0,.25);
 }
+
+/* Ocena wyniku */
+.verdict { text-align: center; border-top: 6px solid var(--line); }
+.verdict-icon { font-size: 44px; line-height: 1; margin-top: 4px; }
+.verdict .rank { display: inline-block; margin: 2px auto 8px; padding: 3px 12px; border-radius: 999px; font-size: 14px; font-weight: 700; background: var(--surface-2); }
+.verdict-head { font-size: 20px; font-weight: 800; margin-bottom: 4px; }
+.verdict-text { margin: 4px 0 0; font-size: 16px; }
+.verdict-extra { margin: 10px 0 0; font-weight: 700; }
+.v-red { border-top-color: #d9534f; }
+.v-red .verdict-icon { animation: alarm .6s ease-in-out 4; }
+.v-orange { border-top-color: #f0883e; }
+.v-green { border-top-color: #2e8b57; }
+.v-gold { border-top-color: #d4a017; background: linear-gradient(180deg, rgba(212,160,23,.14), transparent 60%), var(--surface); }
+.v-gold .rank { background: #d4a017; color: #1a1a1a; }
+@keyframes alarm { 50% { opacity: .25; transform: scale(1.15); } }
+.confetti { position: fixed; inset: 0; pointer-events: none; overflow: hidden; z-index: 50; }
+.confetti span { position: absolute; top: -40px; font-size: 24px; animation-name: fall; animation-timing-function: linear; animation-fill-mode: forwards; }
+@keyframes fall { to { transform: translateY(110vh) rotate(540deg); opacity: .9; } }
+@media (prefers-reduced-motion: reduce) { .v-red .verdict-icon { animation: none; } }
+
+/* Powiadomienie o nowej wersji */
+.update-banner { position: fixed; left: 12px; right: 12px; bottom: calc(76px + env(safe-area-inset-bottom, 0px)); z-index: 60;
+  display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 14px;
+  background: var(--surface); border: 2px solid var(--primary); box-shadow: 0 6px 20px rgba(0,0,0,.25); font-size: 15px; }
+.update-banner span { flex: 1; }
+.update-banner .btn { width: auto; min-height: 42px; padding: 0 16px; margin: 0; }
