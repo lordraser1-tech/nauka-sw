@@ -1,0 +1,18 @@
+{
+  "name": "Nauka SW – szkolenie chorążych",
+  "short_name": "Nauka SW",
+  "description": "Fiszki, testy i egzamin próbny do szkolenia chorążych Służby Więziennej.",
+  "lang": "pl",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#1f3a5f",
+  "theme_color": "#1f3a5f",
+  "icons": [
+    { "src": "ikony/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "ikony/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "ikony/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "ikony/icon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
