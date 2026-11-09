@@ -293,6 +293,84 @@ Ustawa z 24 maja 2013 r. (tekst jednolity Dz.U. 2026 poz. 244). Funkcjonariusze 
 
 **Dwa pojęcia z art. 4:** *użycie* ŚPB to zastosowanie go wobec osoby. *Wykorzystanie* to zastosowanie środka w inny sposób niż wobec osoby, np. wobec zwierzęcia, pojazdu lub przeszkody (zob. art. 12 ust. 2 i art. 47).
 
+### ★ CYTAT: art. 11 ustawy o ŚPB – przypadki użycia ŚPB
+
+> **Art. 11.** Środków przymusu bezpośredniego można użyć lub wykorzystać je w przypadku konieczności podjęcia co najmniej jednego z następujących działań:
+> 1. wyegzekwowania wymaganego prawem zachowania zgodnie z wydanym przez uprawnionego poleceniem;
+> 2. odparcia bezpośredniego, bezprawnego zamachu na życie, zdrowie lub wolność uprawnionego lub innej osoby;
+> 3. przeciwdziałania czynnościom zmierzającym bezpośrednio do zamachu na życie, zdrowie lub wolność uprawnionego lub innej osoby;
+> 4. przeciwdziałania naruszeniu porządku lub bezpieczeństwa publicznego;
+> 5. przeciwdziałania bezpośredniemu zamachowi na ochraniane przez uprawnionego obszary, obiekty lub urządzenia;
+> 6. ochrony porządku lub bezpieczeństwa na obszarach lub w obiektach chronionych przez uprawnionego;
+> 7. przeciwdziałania zamachowi na nienaruszalność granicy państwowej w rozumieniu art. 1 ustawy z dnia 12 października 1990 r. o ochronie granicy państwowej;
+> 8. przeciwdziałania niszczeniu mienia;
+> 9. zapewnienia bezpieczeństwa konwoju lub doprowadzenia;
+> 10. ujęcia osoby, udaremnienia jej ucieczki lub pościgu za tą osobą;
+> 11. zatrzymania osoby, udaremnienia jej ucieczki lub pościgu za tą osobą;
+> 12. pokonania biernego oporu;
+> 13. pokonania czynnego oporu;
+> 14. przeciwdziałania czynnościom zmierzającym do autoagresji;
+> 15. zniszczenia albo unieruchomienia bezzałogowego statku powietrznego albo przejęcia kontroli nad jego lotem, w przypadkach, o których mowa w art. 156ze ust. 1 ustawy z dnia 3 lipca 2002 r. – Prawo lotnicze.
+
+**SW (art. 19 ust. 1 ustawy o SW):** pkt 1–6, 8, 9, 11–15. **Nie dla SW:** pkt 7 (granica) i pkt 10 (ujęcie osoby). Skojarzenie: „Policjant Zenek Zjadł Pączka…” (sekcja C).
+
+### ★ CYTAT: art. 12 ustawy o ŚPB – katalog ŚPB
+
+> **Art. 12.** 1. Środkami przymusu bezpośredniego są:
+> 1. siła fizyczna w postaci technik: a) transportowych, b) obrony, c) ataku, d) obezwładnienia;
+> 2. kajdanki: a) zakładane na ręce, b) zakładane na nogi, c) zespolone;
+> 3. kaftan bezpieczeństwa;
+> 4. pas obezwładniający;
+> 5. siatka obezwładniająca i inne podobne środki służące do obezwładniania;
+> 6. kask zabezpieczający;
+> 7. pałka służbowa;
+> 8. wodne środki obezwładniające;
+> 9. pies służbowy;
+> 10. koń służbowy;
+> 11. pociski niepenetracyjne;
+> 12. chemiczne środki obezwładniające w postaci: a) ręcznych miotaczy substancji obezwładniających, b) plecakowych miotaczy substancji obezwładniających, c) granatów łzawiących, d) innych urządzeń przeznaczonych do miotania środków obezwładniających;
+> 13. przedmioty przeznaczone do obezwładniania osób za pomocą energii elektrycznej;
+> 14. cela zabezpieczająca;
+> 15. izba izolacyjna;
+> 16. pokój izolacyjny;
+> 17. kolczatka drogowa i inne środki służące do zatrzymywania oraz unieruchamiania pojazdów mechanicznych;
+> 18. pojazdy służbowe;
+> 19. środki przeznaczone do pokonywania zamknięć budowlanych i innych przeszkód, w tym materiały wybuchowe;
+> 20. środki pirotechniczne o właściwościach ogłuszających lub olśniewających;
+> 21. środki i urządzenia przeznaczone do zniszczenia albo unieruchomienia bezzałogowego statku powietrznego albo przejęcia kontroli nad jego lotem.
+>
+> 2. Środki przymusu bezpośredniego, o których mowa w ust. 1 pkt 1 lit. b–d, pkt 5, 7, 8 i 11–13, można wykorzystać także wobec zwierzęcia, którego zachowanie zagraża bezpośrednio życiu lub zdrowiu uprawnionego lub innej osoby.
+
+**SW (art. 19 ust. 1 ustawy o SW) może użyć:** pkt 1, 2, 4, 6, 7, 8, 9, 11, 12 lit. a, c i d, 13, 14 i 21. **SW nie ma:** kaftana (3), siatki (5), konia (10), plecakowych miotaczy (12 b), izby i pokoju izolacyjnego (15–16), kolczatki (17), pojazdów (18), środków do pokonywania zamknięć (19), pirotechniki (20).
+
+### ★ CYTAT: art. 35 ust. 2 pkt 10 ustawy o ŚPB – kiedy funkcjonariusz SW decyduje sam
+
+> **Art. 35.** 2. Decyzję o użyciu lub wykorzystaniu środków przymusu bezpośredniego przez uprawnionego będącego funkcjonariuszem Służby Więziennej podejmuje: (…)
+>
+> **10) funkcjonariusz Służby Więziennej – w przypadku usiłowania bezpośredniego, bezprawnego zamachu na życie lub zdrowie uprawnionego lub innej osoby, usiłowania ucieczki przez osobę pozbawioną wolności, a także w pościgu za nią lub osobą, która dokonała bezpośredniego, bezprawnego zamachu na obiekty zakładu karnego, aresztu śledczego lub innej jednostki organizacyjnej, w której Służba Więzienna zapewnia porządek i bezpieczeństwo, oraz w przypadkach, o których mowa w art. 13 ust. 1.**
+
+Skrót „**ZUPP**”: **Z**amach na życie/zdrowie (usiłowanie) – **U**cieczka (usiłowanie) – **P**ościg (za uciekającym lub sprawcą zamachu na obiekty) – **P**rewencja (art. 13 ust. 1). W pozostałych sytuacjach decyduje przełożony z pkt 1–9 (DG SW, Rektor-Komendant, dyrektor okręgowy, dyrektor ZK/AŚ, kierownik oddziału zewnętrznego, komendant ośrodka, zastępca, dowodzący poza jednostką).
+
+### ★ CYTAT: art. 45 ustawy o ŚPB – przypadki użycia broni palnej
+
+> **Art. 45.** Broni palnej można użyć, gdy zaistnieje co najmniej jeden z następujących przypadków:
+> 1. konieczność odparcia bezpośredniego, bezprawnego zamachu na:
+>    - **a) życie, zdrowie lub wolność uprawnionego lub innej osoby albo konieczność przeciwdziałania czynnościom zmierzającym bezpośrednio do takiego zamachu,**
+>    - **b) ważne obiekty, urządzenia lub obszary albo konieczność przeciwdziałania czynnościom zmierzającym bezpośrednio do takiego zamachu,**
+>    - c) mienie, który stwarza jednocześnie bezpośrednie zagrożenie życia, zdrowia lub wolności uprawnionego lub innej osoby, albo konieczność przeciwdziałania czynnościom zmierzającym bezpośrednio do takiego zamachu,
+>    - d) nienaruszalność granicy państwowej przez osobę, która wymusza przekroczenie granicy państwowej przy użyciu pojazdu, broni palnej lub innego niebezpiecznego przedmiotu albo działa w inny sposób bezpośrednio zagrażający życiu, zdrowiu lub wolności uprawnionego lub innej osoby lub wspólnie z inną osobą, która posługuje się taką bronią, przedmiotem lub sposobem,
+>    - **e) bezpieczeństwo konwoju lub doprowadzenia;**
+> 2. **konieczność przeciwstawienia się osobie:**
+>    - **a) niepodporządkowującej się wezwaniu do natychmiastowego porzucenia broni, materiału wybuchowego lub innego niebezpiecznego przedmiotu, którego użycie może zagrozić życiu, zdrowiu lub wolności uprawnionego lub innej osoby,**
+>    - **b) która usiłuje bezprawnie odebrać broń palną uprawnionemu lub innej osobie uprawnionej do jej posiadania;**
+> 3. bezpośredni pościg za osobą, wobec której:
+>    - **a) użycie broni palnej było dopuszczalne w przypadkach określonych w pkt 1 lit. a–d i pkt 2,**
+>    - b) istnieje uzasadnione podejrzenie, że popełniła przestępstwo, o którym mowa w art. 115 § 20, art. 148, art. 156 § 1, art. 163–165, art. 197, art. 252 i art. 280–282 ustawy z dnia 6 czerwca 1997 r. – Kodeks karny;
+> 4. konieczność ujęcia osoby lub udaremnienia ucieczki osoby zatrzymanej, tymczasowo aresztowanej lub odbywającej karę – w przypadkach wymienionych w lit. a–c (pełne brzmienie w sekcji B3; **pkt 4 SW nie przysługuje**);
+> 5. **konieczność udaremnienia ucieczki osoby pozbawionej wolności z aresztu śledczego lub zakładu karnego oraz osoby konwojowanej lub doprowadzanej, a także pościg za tą osobą.**
+
+**Pogrubione = przypadki dla SW** (art. 19 ust. 2 ustawy o SW): pkt 1 lit. a, b, e; pkt 2; pkt 3 lit. a; pkt 5. Szkielet „**Z-P-P-U-U**” – sekcja C.
+
 ### Zasady ogólne (art. 6–8) – NA PAMIĘĆ
 
 > **Art. 6.** 1. Środków przymusu bezpośredniego używa się lub wykorzystuje się je w sposób niezbędny do osiągnięcia celów tego użycia lub wykorzystania, proporcjonalnie do stopnia zagrożenia, wybierając środek o możliwie jak najmniejszej dolegliwości. 2. Broni palnej używa się lub wykorzystuje się ją wyłącznie, jeżeli użycie lub wykorzystanie środków przymusu bezpośredniego:
