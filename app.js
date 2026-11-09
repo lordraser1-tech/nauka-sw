@@ -607,8 +607,31 @@ function flashSummary(s, cram) {
     btn('Wróć do startu', '', () => { location.hash = '#/'; })));
 }
 
+// Test: najpierw wybór części egzaminu – unitarna (wiedza ogólna) albo specjalistyczna (psycholog).
+// Część bierze wszystkie talie o danym polu „czesc” w pytania_sw.json, niezależnie od zaznaczeń na ekranie startowym.
 function startTest() {
-  runSequence('Test', shuffle(pool(['mcq'])), startTest);
+  screen('Test', true);
+  const partDecks = c => DATA.decks.filter(d => d.czesc === c).map(d => d.id);
+  const option = (name, sub, decks, primary) => {
+    const n = testItems(decks).length;
+    return h('button', { type: 'button', class: 'btn mode' + (primary ? ' primary' : ''), disabled: !n, style: n ? null : 'opacity:.45',
+      onclick: () => runTest(name, decks) },
+      h('span', { class: 'mode-name' }, name),
+      h('span', { class: 'mode-sub' }, `${n} ${plural(n, 'pytanie', 'pytania', 'pytań')} · ${sub}`));
+  };
+  $app.append(h('p', { class: 'small muted', style: 'margin-top:0' }, 'Wybierz część egzaminu:'),
+    h('div', { class: 'modes' },
+      option('Unitarny', 'wiedza ogólna: KKW, ochrona, ŚPB, broń, pragmatyka, pierwsza pomoc', partDecks('unitarna'), true),
+      option('Specjalistyczny', 'tylko psychologia', partDecks('specjalistyczna'), true),
+      option('Wybrane talie', 'talie zaznaczone na ekranie startowym', null)));
+}
+
+function testItems(decks) {
+  return decks ? pool(['mcq'], { decks, ignoreMem: true }) : pool(['mcq']);
+}
+
+function runTest(name, decks) {
+  runSequence(`Test – ${name.toLowerCase()}`, shuffle(testItems(decks)), () => runTest(name, decks));
 }
 
 function startMemory() {
