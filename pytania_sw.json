@@ -1,184 +1,3025 @@
 {
-  "meta": {
-    "tytul": "Szkolenie chorążych SW – baza do nauki",
-    "wersja": 1,
-    "data": "2026-11-09",
-    "zrodla": "Ustawa o ŚPB (Dz.U. 2026 poz. 244), ustawa o SW (Dz.U. 2025 poz. 1750), kkw (Dz.U. 2025 poz. 911), rozporządzenie o oddziaływaniach penitencjarnych (Dz.U. 2024 poz. 1344), rozporządzenie o ośrodkach diagnostycznych (Dz.U. 2023 poz. 1677), rozporządzenie o ochronie jednostek SW (Dz.U. 2016 poz. 1804)",
-    "typy": {
-      "flashcard": "przód (front) i tył (back)",
-      "mcq": "pytanie, opcje, indeks poprawnej odpowiedzi (answer, liczony od 0), wyjaśnienie",
-      "cloze": "tekst z lukami oznaczonymi [[odpowiedź]]",
-      "order": "kroki podane w POPRAWNEJ kolejności – aplikacja ma je tasować"
-    }
+ "meta": {
+  "tytul": "Szkolenie chorążych SW – baza do nauki",
+  "wersja": 2,
+  "data": "2026-11-09",
+  "zrodla": "Ustawa o ŚPB (Dz.U. 2026 poz. 244), ustawa o SW (Dz.U. 2025 poz. 1750), kkw (Dz.U. 2025 poz. 911), rozporządzenie o oddziaływaniach penitencjarnych (Dz.U. 2024 poz. 1344), rozporządzenie o ośrodkach diagnostycznych (Dz.U. 2023 poz. 1677), rozporządzenie o ochronie jednostek SW (Dz.U. 2016 poz. 1804); materiały kursu: pytania kontrolne (psycholodzy 1–29, penitencjarne 28–53), lista 124 pytań, SPECJALIZACJA_2 (77 zagadnień), Skrypt SW V15",
+  "typy": {
+   "flashcard": "przód (front) i tył (back)",
+   "mcq": "pytanie, opcje, indeks poprawnej odpowiedzi (answer, liczony od 0), wyjaśnienie",
+   "cloze": "tekst z lukami oznaczonymi [[odpowiedź]]",
+   "order": "kroki podane w POPRAWNEJ kolejności – aplikacja ma je tasować"
   },
-  "decks": [
-    { "id": "spb", "name": "Środki przymusu i broń palna", "czesc": "unitarna" },
-    { "id": "sw", "name": "Ustawa o Służbie Więziennej", "czesc": "unitarna" },
-    { "id": "kkw", "name": "Kodeks karny wykonawczy", "czesc": "unitarna" },
-    { "id": "ochrona", "name": "Ochrona jednostek i konwojowanie", "czesc": "unitarna" },
-    { "id": "psycholog", "name": "Psycholog w SW", "czesc": "specjalistyczna" }
-  ],
-  "items": [
-    { "id": "spb-f01", "deck": "spb", "type": "flashcard", "naPamiec": true, "front": "Art. 6 ust. 1 ustawy o ŚPB – jak używa się ŚPB?", "back": "W sposób niezbędny do osiągnięcia celów tego użycia lub wykorzystania, proporcjonalnie do stopnia zagrożenia, wybierając środek o możliwie jak najmniejszej dolegliwości.", "source": "art. 6 ust. 1 ustawy o ŚPB" },
-    { "id": "spb-f02", "deck": "spb", "type": "flashcard", "naPamiec": true, "front": "Art. 6 ust. 2 – kiedy wolno użyć broni palnej?", "back": "Wyłącznie, jeżeli użycie lub wykorzystanie ŚPB: 1) okazało się niewystarczające do osiągnięcia celów albo 2) nie jest możliwe ze względu na okoliczności zdarzenia.", "source": "art. 6 ust. 2 ustawy o ŚPB" },
-    { "id": "spb-f03", "deck": "spb", "type": "flashcard", "naPamiec": true, "front": "Art. 7 – cztery zasady (ust. 1–4)", "back": "1) najmniejsza szkoda; 2) odstąpienie, gdy cel został osiągnięty; 3) szczególna ostrożność przy ŚPB; 4) broń palna – szczególna rozwaga, środek ostateczny.", "source": "art. 7 ustawy o ŚPB" },
-    { "id": "spb-f04", "deck": "spb", "type": "flashcard", "front": "Art. 8 – czy można użyć kilku ŚPB naraz?", "back": "Tak, jeżeli uzasadniają to okoliczności zdarzenia, na zasadach określonych w ustawie.", "source": "art. 8 ustawy o ŚPB" },
-    { "id": "spb-f05", "deck": "spb", "type": "flashcard", "front": "Definicja „użycia” ŚPB (art. 4 pkt 6)", "back": "Zastosowanie środka przymusu bezpośredniego wobec osoby.", "source": "art. 4 pkt 6 ustawy o ŚPB" },
-
-    { "id": "spb-a11-01", "deck": "spb", "type": "flashcard", "naPamiec": true, "front": "Art. 11 pkt 1", "back": "wyegzekwowania wymaganego prawem zachowania zgodnie z wydanym przez uprawnionego poleceniem", "source": "art. 11 ustawy o ŚPB" },
-    { "id": "spb-a11-02", "deck": "spb", "type": "flashcard", "naPamiec": true, "front": "Art. 11 pkt 2", "back": "odparcia bezpośredniego, bezprawnego zamachu na życie, zdrowie lub wolność uprawnionego lub innej osoby", "source": "art. 11 ustawy o ŚPB" },
-    { "id": "spb-a11-03", "deck": "spb", "type": "flashcard", "naPamiec": true, "front": "Art. 11 pkt 3", "back": "przeciwdziałania czynnościom zmierzającym bezpośrednio do zamachu na życie, zdrowie lub wolność uprawnionego lub innej osoby", "source": "art. 11 ustawy o ŚPB" },
-    { "id": "spb-a11-04", "deck": "spb", "type": "flashcard", "naPamiec": true, "front": "Art. 11 pkt 4", "back": "przeciwdziałania naruszeniu porządku lub bezpieczeństwa publicznego", "source": "art. 11 ustawy o ŚPB" },
-    { "id": "spb-a11-05", "deck": "spb", "type": "flashcard", "naPamiec": true, "front": "Art. 11 pkt 5", "back": "przeciwdziałania bezpośredniemu zamachowi na ochraniane przez uprawnionego obszary, obiekty lub urządzenia", "source": "art. 11 ustawy o ŚPB" },
-    { "id": "spb-a11-06", "deck": "spb", "type": "flashcard", "naPamiec": true, "front": "Art. 11 pkt 6", "back": "ochrony porządku lub bezpieczeństwa na obszarach lub w obiektach chronionych przez uprawnionego", "source": "art. 11 ustawy o ŚPB" },
-    { "id": "spb-a11-07", "deck": "spb", "type": "flashcard", "naPamiec": true, "front": "Art. 11 pkt 7", "back": "przeciwdziałania zamachowi na nienaruszalność granicy państwowej (SW tego przypadku NIE ma)", "source": "art. 11 ustawy o ŚPB; art. 19 ust. 1 ustawy o SW" },
-    { "id": "spb-a11-08", "deck": "spb", "type": "flashcard", "naPamiec": true, "front": "Art. 11 pkt 8", "back": "przeciwdziałania niszczeniu mienia", "source": "art. 11 ustawy o ŚPB" },
-    { "id": "spb-a11-09", "deck": "spb", "type": "flashcard", "naPamiec": true, "front": "Art. 11 pkt 9", "back": "zapewnienia bezpieczeństwa konwoju lub doprowadzenia", "source": "art. 11 ustawy o ŚPB" },
-    { "id": "spb-a11-10", "deck": "spb", "type": "flashcard", "naPamiec": true, "front": "Art. 11 pkt 10", "back": "ujęcia osoby, udaremnienia jej ucieczki lub pościgu za tą osobą (SW tego przypadku NIE ma)", "source": "art. 11 ustawy o ŚPB; art. 19 ust. 1 ustawy o SW" },
-    { "id": "spb-a11-11", "deck": "spb", "type": "flashcard", "naPamiec": true, "front": "Art. 11 pkt 11", "back": "zatrzymania osoby, udaremnienia jej ucieczki lub pościgu za tą osobą", "source": "art. 11 ustawy o ŚPB" },
-    { "id": "spb-a11-12", "deck": "spb", "type": "flashcard", "naPamiec": true, "front": "Art. 11 pkt 12", "back": "pokonania biernego oporu", "source": "art. 11 ustawy o ŚPB" },
-    { "id": "spb-a11-13", "deck": "spb", "type": "flashcard", "naPamiec": true, "front": "Art. 11 pkt 13", "back": "pokonania czynnego oporu", "source": "art. 11 ustawy o ŚPB" },
-    { "id": "spb-a11-14", "deck": "spb", "type": "flashcard", "naPamiec": true, "front": "Art. 11 pkt 14", "back": "przeciwdziałania czynnościom zmierzającym do autoagresji", "source": "art. 11 ustawy o ŚPB" },
-    { "id": "spb-a11-15", "deck": "spb", "type": "flashcard", "naPamiec": true, "front": "Art. 11 pkt 15", "back": "zniszczenia albo unieruchomienia bezzałogowego statku powietrznego albo przejęcia kontroli nad jego lotem (Prawo lotnicze)", "source": "art. 11 ustawy o ŚPB" },
-    { "id": "spb-a11-mn", "deck": "spb", "type": "flashcard", "front": "Mnemotechnika do art. 11 (15 punktów)", "back": "P Z Z P O O G M K U Z B C A D – „Policjant Zenek Zjadł Pączka, Ola Oddała Gościom Mleko, Kasia Upiekła Zapiekankę, Bartek Czyta Andrzejowi Dowcipy”. Polecenie, Zamach, Zmierzające, Porządek publiczny, Obiekty, Ochrona porządku, Granica, Mienie, Konwój, Ujęcie, Zatrzymanie, Bierny, Czynny, Autoagresja, Drony.", "source": "skrypt, część C" },
-
-    { "id": "spb-a12-01", "deck": "spb", "type": "flashcard", "naPamiec": true, "front": "Art. 12 ust. 1 pkt 1–4", "back": "1) siła fizyczna (techniki: transportowe, obrony, ataku, obezwładnienia); 2) kajdanki (na ręce, na nogi, zespolone); 3) kaftan bezpieczeństwa; 4) pas obezwładniający", "source": "art. 12 ustawy o ŚPB" },
-    { "id": "spb-a12-02", "deck": "spb", "type": "flashcard", "naPamiec": true, "front": "Art. 12 ust. 1 pkt 5–11", "back": "5) siatka obezwładniająca i podobne; 6) kask zabezpieczający; 7) pałka służbowa; 8) wodne środki obezwładniające; 9) pies służbowy; 10) koń służbowy; 11) pociski niepenetracyjne", "source": "art. 12 ustawy o ŚPB" },
-    { "id": "spb-a12-03", "deck": "spb", "type": "flashcard", "naPamiec": true, "front": "Art. 12 ust. 1 pkt 12–16", "back": "12) chemiczne środki obezwładniające (a: ręczne miotacze, b: plecakowe miotacze, c: granaty łzawiące, d: inne urządzenia do miotania); 13) przedmioty do obezwładniania energią elektryczną; 14) cela zabezpieczająca; 15) izba izolacyjna; 16) pokój izolacyjny", "source": "art. 12 ustawy o ŚPB" },
-    { "id": "spb-a12-04", "deck": "spb", "type": "flashcard", "naPamiec": true, "front": "Art. 12 ust. 1 pkt 17–21", "back": "17) kolczatka drogowa i inne środki do zatrzymywania pojazdów; 18) pojazdy służbowe; 19) środki do pokonywania zamknięć budowlanych i przeszkód, w tym materiały wybuchowe; 20) środki pirotechniczne ogłuszające lub olśniewające; 21) środki i urządzenia do zniszczenia, unieruchomienia lub przejęcia kontroli nad dronem", "source": "art. 12 ustawy o ŚPB" },
-    { "id": "spb-f06", "deck": "spb", "type": "flashcard", "naPamiec": true, "front": "Art. 13 ust. 1 – użycie prewencyjne", "back": "Techniki transportowe, kajdanki, kaftan, pas obezwładniający, kask (art. 12 ust. 1 pkt 1 lit. a, pkt 2–4 i 6) – także prewencyjnie, aby zapobiec ucieczce osoby ujętej, doprowadzanej, zatrzymanej, konwojowanej lub pozbawionej wolności oraz objawom agresji lub autoagresji tych osób.", "source": "art. 13 ust. 1 ustawy o ŚPB" },
-    { "id": "spb-f07", "deck": "spb", "type": "flashcard", "front": "Art. 14 ust. 2 – czy wolno zadawać uderzenia przy sile fizycznej?", "back": "Nie, chyba że uprawniony odpiera zamach na życie lub zdrowie własne lub innych osób albo na mienie lub przeciwdziała ucieczce.", "source": "art. 14 ust. 2 ustawy o ŚPB" },
-    { "id": "spb-f08", "deck": "spb", "type": "flashcard", "naPamiec": true, "front": "Art. 15 – kajdanki: w jakich przypadkach i jak?", "back": "W przypadkach z art. 11 pkt 1–11, 13 i 14 (bez 12 i 15) oraz na polecenie sądu lub prokuratora. Na ręce trzymane z tyłu; z przodu przy użyciu prewencyjnym albo gdy ryzyko jest nieznaczne. Na nogi tylko razem z kajdankami na ręce.", "source": "art. 15 ustawy o ŚPB" },
-    { "id": "spb-f09", "deck": "spb", "type": "flashcard", "front": "Art. 15 ust. 5 – kiedy kajdanki zespolone lub na nogi?", "back": "Wyłącznie wobec osób: 1) agresywnych; 2) zatrzymanych w związku z podejrzeniem przestępstwa z użyciem broni palnej, materiałów wybuchowych lub niebezpiecznego narzędzia albo przestępstwa z art. 115 § 20, 148 lub 258 kk; 3) pozbawionych wolności.", "source": "art. 15 ust. 5 ustawy o ŚPB" },
-    { "id": "spb-f10", "deck": "spb", "type": "flashcard", "naPamiec": true, "front": "Art. 26 – cela zabezpieczająca", "back": "Dla osoby pozbawionej wolności, w przypadkach z art. 11 pkt 1–3, 5, 6, 8, 9 i 12–14. Maksymalnie 48 godzin. Więcej niż jedna osoba tylko gdy bezpieczne odosobnienie w innych pomieszczeniach jest niemożliwe.", "source": "art. 26 ustawy o ŚPB" },
-    { "id": "spb-f11", "deck": "spb", "type": "flashcard", "front": "Art. 17 – kask zabezpieczający", "back": "Tylko w przypadku z art. 11 pkt 14 (autoagresja).", "source": "art. 17 ustawy o ŚPB" },
-    { "id": "spb-f12", "deck": "spb", "type": "flashcard", "front": "Art. 19 ust. 1 ustawy o ŚPB – pałka: przypadki i zakaz", "back": "Przypadki z art. 11 pkt 1–11 i 13. Nie używa się wobec osób skutych kajdankami, w kaftanie, pasie lub siatce (pkt 2–5) ani obezwładnionych paralizatorem – z wyjątkiem dźwigni transportowych pałką.", "source": "art. 19 ustawy o ŚPB" },
-    { "id": "spb-f13", "deck": "spb", "type": "flashcard", "front": "Art. 21 – pies służbowy: przypadki", "back": "Art. 11 pkt 2, 5–7, 9–11 i 13.", "source": "art. 21 ustawy o ŚPB" },
-    { "id": "spb-f14", "deck": "spb", "type": "flashcard", "naPamiec": true, "front": "Art. 34 – postępowanie przed użyciem ŚPB", "back": "Po uprzednim bezskutecznym wezwaniu do zachowania zgodnego z prawem i po uprzedzeniu o zamiarze użycia. Nie stosuje się, gdy: 1) występuje bezpośrednie zagrożenie życia, zdrowia lub wolności albo 2) zwłoka groziłaby niebezpieczeństwem dla dobra chronionego prawem, a ŚPB używa się prewencyjnie.", "source": "art. 34 ustawy o ŚPB" },
-    { "id": "spb-f15", "deck": "spb", "type": "flashcard", "naPamiec": true, "front": "Art. 35 ust. 1 vs ust. 2 – kto decyduje o ŚPB?", "back": "Ust. 1: co do zasady uprawniony samodzielnie. Ust. 2: w SW decyduje przełożony: DG SW, Rektor-Komendant, dyrektor okręgowy, dyrektor ZK, dyrektor AŚ, kierownik oddziału, komendant ośrodka szkolenia, komendant ośrodka doskonalenia kadr, osoba zastępująca, dowodzący poza jednostką (pkt 9), a funkcjonariusz sam – w przypadkach z pkt 10.", "source": "art. 35 ustawy o ŚPB" },
-    { "id": "spb-f16", "deck": "spb", "type": "flashcard", "naPamiec": true, "front": "Art. 35 ust. 2 pkt 10 – wyrecytuj", "back": "funkcjonariusz Służby Więziennej – w przypadku usiłowania bezpośredniego, bezprawnego zamachu na życie lub zdrowie uprawnionego lub innej osoby, usiłowania ucieczki przez osobę pozbawioną wolności, a także w pościgu za nią lub osobą, która dokonała bezpośredniego, bezprawnego zamachu na obiekty zakładu karnego, aresztu śledczego lub innej jednostki organizacyjnej, w której Służba Więzienna zapewnia porządek i bezpieczeństwo, oraz w przypadkach, o których mowa w art. 13 ust. 1.", "source": "art. 35 ust. 2 pkt 10 ustawy o ŚPB" },
-    { "id": "spb-f17", "deck": "spb", "type": "flashcard", "front": "Skrót ZUPP (art. 35 ust. 2 pkt 10)", "back": "Zamach (usiłowanie, na życie lub zdrowie) – Ucieczka (usiłowanie) – Pościg (za uciekającym lub za sprawcą zamachu na obiekty) – Prewencja (art. 13 ust. 1).", "source": "skrypt, część C" },
-    { "id": "spb-f18", "deck": "spb", "type": "flashcard", "front": "Art. 35 ust. 7", "back": "O kajdankach i pasie (art. 12 ust. 1 pkt 2 i 4) w przypadkach z art. 19 ust. 6–10 ustawy o SW decydują podmioty wskazane w tych przepisach.", "source": "art. 35 ust. 7 ustawy o ŚPB" },
-    { "id": "spb-f19", "deck": "spb", "type": "flashcard", "naPamiec": true, "front": "Art. 36 ust. 1–4 – pierwsza pomoc po ŚPB", "back": "Przy zranieniu lub widocznych objawach zagrożenia życia lub zdrowia – niezwłocznie pierwsza pomoc, w razie potrzeby wezwanie pomocy kwalifikowanej lub ratownictwa medycznego. Można odstąpić, gdy: 1) zagrażałoby to życiu, zdrowiu lub bezpieczeństwu; 2) wymagałoby zaniechania czynności ochronnych lub konwoju; 3) pomoc zapewniły inne podmioty. Wtedy (lub przy sprzeciwie) trzeba wezwać pomoc. Kobieta ciężarna – nie można odstąpić od zapewnienia medycznych czynności ratunkowych.", "source": "art. 36 ustawy o ŚPB" },
-    { "id": "spb-f20", "deck": "spb", "type": "flashcard", "naPamiec": true, "front": "Art. 37 ust. 1 – obowiązki po zranieniu, śmierci lub zniszczeniu mienia", "back": "1) zabezpiecza miejsce zdarzenia, także przed osobami postronnymi; 2) ustala świadków; 3) powiadamia przełożonego lub dyżurnego. Pkt 1 i 2 nie stosuje się przy zniszczeniu mienia na terenie jednostki SW.", "source": "art. 37 ustawy o ŚPB" },
-
-    { "id": "spb-a45-00", "deck": "spb", "type": "flashcard", "naPamiec": true, "front": "Art. 45 – szkielet pięciu punktów", "back": "1) Zamach (a osoby, b ważne obiekty, c mienie groźne dla życia, d granica, e konwój); 2) Przeciwstawienie się (a nie porzuca broni, b odbiera broń); 3) Pościg (a za osobą z pkt 1 a–d i 2, b za podejrzanym o ciężkie przestępstwo); 4) Ujęcie; 5) Ucieczka z AŚ/ZK, z konwoju, pościg. Skrót: Z-P-P-U-U.", "source": "art. 45 ustawy o ŚPB" },
-    { "id": "spb-a45-01", "deck": "spb", "type": "flashcard", "naPamiec": true, "front": "Art. 45 pkt 1 lit. a", "back": "konieczność odparcia bezpośredniego, bezprawnego zamachu na życie, zdrowie lub wolność uprawnionego lub innej osoby albo konieczność przeciwdziałania czynnościom zmierzającym bezpośrednio do takiego zamachu", "source": "art. 45 ustawy o ŚPB" },
-    { "id": "spb-a45-02", "deck": "spb", "type": "flashcard", "naPamiec": true, "front": "Art. 45 pkt 1 lit. b", "back": "konieczność odparcia bezpośredniego, bezprawnego zamachu na ważne obiekty, urządzenia lub obszary albo konieczność przeciwdziałania czynnościom zmierzającym bezpośrednio do takiego zamachu", "source": "art. 45 ustawy o ŚPB" },
-    { "id": "spb-a45-03", "deck": "spb", "type": "flashcard", "naPamiec": true, "front": "Art. 45 pkt 1 lit. e", "back": "konieczność odparcia bezpośredniego, bezprawnego zamachu na bezpieczeństwo konwoju lub doprowadzenia", "source": "art. 45 ustawy o ŚPB" },
-    { "id": "spb-a45-04", "deck": "spb", "type": "flashcard", "naPamiec": true, "front": "Art. 45 pkt 2", "back": "konieczność przeciwstawienia się osobie: a) niepodporządkowującej się wezwaniu do natychmiastowego porzucenia broni, materiału wybuchowego lub innego niebezpiecznego przedmiotu, którego użycie może zagrozić życiu, zdrowiu lub wolności uprawnionego lub innej osoby, b) która usiłuje bezprawnie odebrać broń palną uprawnionemu lub innej osobie uprawnionej do jej posiadania", "source": "art. 45 ustawy o ŚPB" },
-    { "id": "spb-a45-05", "deck": "spb", "type": "flashcard", "naPamiec": true, "front": "Art. 45 pkt 3 lit. a", "back": "bezpośredni pościg za osobą, wobec której użycie broni palnej było dopuszczalne w przypadkach określonych w pkt 1 lit. a–d i pkt 2", "source": "art. 45 ustawy o ŚPB" },
-    { "id": "spb-a45-06", "deck": "spb", "type": "flashcard", "naPamiec": true, "front": "Art. 45 pkt 5", "back": "konieczność udaremnienia ucieczki osoby pozbawionej wolności z aresztu śledczego lub zakładu karnego oraz osoby konwojowanej lub doprowadzanej, a także pościg za tą osobą", "source": "art. 45 ustawy o ŚPB" },
-    { "id": "spb-a45-07", "deck": "spb", "type": "flashcard", "naPamiec": true, "front": "Które przypadki z art. 45 i 47 przysługują SW? (art. 19 ust. 2 ustawy o SW)", "back": "Użycie: art. 45 pkt 1 lit. a, b, e; pkt 2; pkt 3 lit. a; pkt 5. Wykorzystanie: art. 47 pkt 3 (zaalarmowanie lub wezwanie pomocy), 6 (strzał ostrzegawczy), 7 (drony).", "source": "art. 19 ust. 2 ustawy o SW" },
-    { "id": "spb-f21", "deck": "spb", "type": "flashcard", "naPamiec": true, "front": "Art. 48 ust. 1–2 – procedura przed użyciem broni", "back": "1) identyfikacja formacji okrzykiem (pełna nazwa lub skrót); 2) wezwanie do zachowania zgodnego z prawem, w szczególności: porzucenia broni lub niebezpiecznego przedmiotu, zaniechania ucieczki, odstąpienia od przemocy; przy niepodporządkowaniu – okrzyk „Stój, bo strzelam!”, a gdy nieskuteczny – strzał ostrzegawczy w bezpiecznym kierunku.", "source": "art. 48 ustawy o ŚPB" },
-    { "id": "spb-f22", "deck": "spb", "type": "flashcard", "front": "Art. 48 ust. 3 – kiedy można odstąpić od procedury?", "back": "Gdy jej realizacja groziłaby bezpośrednim niebezpieczeństwem dla życia lub zdrowia uprawnionego lub innej osoby albo gdy jest to niezbędne dla zapobieżenia zdarzeniu terrorystycznemu, a inne środki mogłyby okazać się niewystarczające.", "source": "art. 48 ust. 3 ustawy o ŚPB" },
-    { "id": "spb-f23", "deck": "spb", "type": "flashcard", "front": "Art. 48 ust. 4 – obowiązek przed konwojem", "back": "Uprzedzić osobę pozbawioną wolności, wobec której możliwe jest użycie broni (art. 45 pkt 4 lit. b i c), że w razie próby ucieczki może zostać użyta broń palna.", "source": "art. 48 ust. 4 ustawy o ŚPB" },
-    { "id": "spb-f24", "deck": "spb", "type": "flashcard", "front": "Art. 49–50 – po użyciu broni", "back": "Stosuje się art. 36 ust. 1–4, art. 37 ust. 1 i 2 pkt 2, art. 38 i 39 (czyli bez wyjątku z art. 37 ust. 2 pkt 1). O każdym użyciu lub wykorzystaniu broni niezwłocznie powiadamia się przełożonego lub dyżurnego.", "source": "art. 49–50 ustawy o ŚPB" },
-    { "id": "spb-f25", "deck": "spb", "type": "flashcard", "front": "Art. 51–52 i 55 – dokumentowanie", "back": "Notatka; trafia do przełożonego przy zranieniu, śmierci, zniszczeniu mienia, zwierzęciu i zawsze przy broni; bez skutków – notatnik służbowy. SW nie dokumentuje użycia prewencyjnego bez skutków. Przy broni dodatkowo: nazwa, rodzaj, numer broni, rodzaj i liczba amunicji.", "source": "art. 51, 52, 55 ustawy o ŚPB" },
-
-    { "id": "spb-c01", "deck": "spb", "type": "cloze", "naPamiec": true, "text": "funkcjonariusz Służby Więziennej – w przypadku [[usiłowania]] bezpośredniego, bezprawnego zamachu na [[życie lub zdrowie]] uprawnionego lub innej osoby, usiłowania [[ucieczki]] przez osobę pozbawioną wolności, a także w [[pościgu]] za nią lub osobą, która dokonała bezpośredniego, bezprawnego zamachu na [[obiekty]] zakładu karnego, aresztu śledczego lub innej jednostki organizacyjnej, w której Służba Więzienna zapewnia porządek i bezpieczeństwo, oraz w przypadkach, o których mowa w art. [[13 ust. 1]].", "source": "art. 35 ust. 2 pkt 10 ustawy o ŚPB" },
-    { "id": "spb-c02", "deck": "spb", "type": "cloze", "naPamiec": true, "text": "Środków przymusu bezpośredniego używa się lub wykorzystuje się je w sposób [[niezbędny]] do osiągnięcia celów tego użycia lub wykorzystania, [[proporcjonalnie]] do stopnia zagrożenia, wybierając środek o możliwie jak [[najmniejszej dolegliwości]].", "source": "art. 6 ust. 1 ustawy o ŚPB" },
-    { "id": "spb-c03", "deck": "spb", "type": "cloze", "naPamiec": true, "text": "W przypadku niepodporządkowania się wezwaniom uprawniony uprzedza o użyciu broni palnej okrzykiem: „[[Stój, bo strzelam!]]”, a jeżeli wezwanie to okaże się nieskuteczne, oddaje [[strzał ostrzegawczy]] w [[bezpiecznym]] kierunku.", "source": "art. 48 ust. 2 ustawy o ŚPB" },
-    { "id": "spb-c04", "deck": "spb", "type": "cloze", "naPamiec": true, "text": "Konieczność udaremnienia [[ucieczki]] osoby pozbawionej wolności z [[aresztu śledczego]] lub [[zakładu karnego]] oraz osoby [[konwojowanej]] lub doprowadzanej, a także [[pościg]] za tą osobą.", "source": "art. 45 pkt 5 ustawy o ŚPB" },
-    { "id": "spb-c05", "deck": "spb", "type": "cloze", "text": "Podejmując decyzję o użyciu lub wykorzystaniu broni palnej, należy postępować ze szczególną [[rozwagą]] i traktować jej użycie jako środek [[ostateczny]].", "source": "art. 7 ust. 4 ustawy o ŚPB" },
-
-    { "id": "spb-o01", "deck": "spb", "type": "order", "naPamiec": true, "prompt": "Ułóż kroki przed użyciem broni palnej (art. 48)", "steps": ["Okrzyk identyfikujący formację: „Służba Więzienna!”", "Wezwanie do zachowania zgodnego z prawem (porzuć broń / zaniechaj ucieczki / odstąp od przemocy)", "Okrzyk „Stój, bo strzelam!”", "Strzał ostrzegawczy w bezpiecznym kierunku", "Użycie broni palnej"], "source": "art. 48 ustawy o ŚPB" },
-    { "id": "spb-o02", "deck": "spb", "type": "order", "prompt": "Ułóż kroki przed użyciem ŚPB (art. 34)", "steps": ["Wezwanie osoby do zachowania zgodnego z prawem", "Brak reakcji (wezwanie bezskuteczne)", "Uprzedzenie o zamiarze użycia ŚPB", "Użycie ŚPB"], "source": "art. 34 ustawy o ŚPB" },
-    { "id": "spb-o03", "deck": "spb", "type": "order", "prompt": "Ułóż obowiązki po użyciu ŚPB, gdy doszło do zranienia osoby", "steps": ["Niezwłoczna pierwsza pomoc lub wezwanie pomocy medycznej", "Zabezpieczenie miejsca zdarzenia", "Ustalenie świadków", "Powiadomienie przełożonego lub dyżurnego", "Sporządzenie notatki"], "source": "art. 36, 37, 51 ustawy o ŚPB" },
-    { "id": "spb-o04", "deck": "spb", "type": "order", "prompt": "Ułóż punkty art. 45 w kolejności", "steps": ["Zamach (osoby, obiekty, mienie, granica, konwój)", "Przeciwstawienie się osobie (nie porzuca broni / odbiera broń)", "Bezpośredni pościg", "Ujęcie osoby", "Udaremnienie ucieczki z ZK, AŚ, konwoju i pościg"], "source": "art. 45 ustawy o ŚPB" },
-
-    { "id": "spb-m01", "deck": "spb", "type": "mcq", "question": "Kiedy funkcjonariusz SW może SAM podjąć decyzję o użyciu ŚPB?", "options": ["Zawsze", "Przy usiłowaniu zamachu na życie lub zdrowie, usiłowaniu ucieczki, w pościgu i przy prewencji z art. 13 ust. 1", "Tylko za zgodą dowódcy zmiany", "Wyłącznie poza jednostką"], "answer": 1, "explanation": "Art. 35 ust. 2 pkt 10 – skrót ZUPP.", "source": "art. 35 ust. 2 pkt 10 ustawy o ŚPB" },
-    { "id": "spb-m02", "deck": "spb", "type": "mcq", "question": "Maksymalny pobyt w celi zabezpieczającej to:", "options": ["24 h", "48 h", "72 h", "14 dni"], "answer": 1, "explanation": "Art. 26 ust. 2.", "source": "art. 26 ustawy o ŚPB" },
-    { "id": "spb-m03", "deck": "spb", "type": "mcq", "question": "Którego ŚPB funkcjonariusz SW NIE może użyć?", "options": ["Pasa obezwładniającego", "Kasku zabezpieczającego", "Kaftana bezpieczeństwa", "Paralizatora"], "answer": 2, "explanation": "Art. 19 ust. 1 ustawy o SW nie obejmuje art. 12 ust. 1 pkt 3 (kaftan).", "source": "art. 19 ust. 1 ustawy o SW" },
-    { "id": "spb-m04", "deck": "spb", "type": "mcq", "question": "Którego środka NIE używa się przy biernym oporze (art. 11 pkt 12)?", "options": ["Siły fizycznej", "Kajdanek", "Celi zabezpieczającej", "Chemicznych środków obezwładniających"], "answer": 1, "explanation": "Kajdanki: art. 11 pkt 1–11, 13, 14 – bez pkt 12.", "source": "art. 15 ust. 1 ustawy o ŚPB" },
-    { "id": "spb-m05", "deck": "spb", "type": "mcq", "question": "Ucieczka z zakładu karnego lub z konwoju to przypadek z:", "options": ["art. 45 pkt 1 lit. e", "art. 45 pkt 3 lit. a", "art. 45 pkt 4 lit. b", "art. 45 pkt 5"], "answer": 3, "explanation": "Art. 45 pkt 5. Pkt 4 (ujęcie) nie przysługuje SW.", "source": "art. 45 ustawy o ŚPB" },
-    { "id": "spb-m06", "deck": "spb", "type": "mcq", "question": "Którego ŚPB nie można użyć prewencyjnie?", "options": ["Kajdanek", "Pasa obezwładniającego", "Pałki służbowej", "Technik transportowych"], "answer": 2, "explanation": "Art. 13 ust. 1: techniki transportowe, kajdanki, kaftan, pas, kask.", "source": "art. 13 ust. 1 ustawy o ŚPB" },
-    { "id": "spb-m07", "deck": "spb", "type": "mcq", "question": "Zniszczenie mienia na terenie ZK po użyciu ŚPB – czy trzeba zabezpieczyć miejsce i ustalić świadków?", "options": ["Tak, zawsze", "Nie – wyjątek z art. 37 ust. 2 pkt 1", "Tylko przy szkodzie powyżej 1000 zł", "Tylko na polecenie prokuratora"], "answer": 1, "explanation": "Wyjątek dla SW. Powiadomienie przełożonego obowiązuje. Po użyciu broni wyjątek nie działa.", "source": "art. 37 ust. 2 pkt 1 ustawy o ŚPB" },
-    { "id": "spb-m08", "deck": "spb", "type": "mcq", "question": "Od czego nie można odstąpić po użyciu ŚPB wobec kobiety ciężarnej?", "options": ["Od protokołu", "Od zapewnienia medycznych czynności ratunkowych", "Od powiadomienia prokuratora", "Od ustalenia świadków"], "answer": 1, "explanation": "Art. 36 ust. 4.", "source": "art. 36 ust. 4 ustawy o ŚPB" },
-    { "id": "spb-m09", "deck": "spb", "type": "mcq", "question": "Kask zabezpieczający można zastosować:", "options": ["tylko przy autoagresji", "przy czynnym oporze", "przy konwoju", "zawsze"], "answer": 0, "explanation": "Art. 17 – art. 11 pkt 14.", "source": "art. 17 ustawy o ŚPB" },
-    { "id": "spb-m10", "deck": "spb", "type": "mcq", "question": "Którego przypadku z art. 11 NIE ma w art. 19 ust. 1 ustawy o SW?", "options": ["pkt 9 – konwój", "pkt 10 – ujęcie osoby", "pkt 13 – czynny opór", "pkt 14 – autoagresja"], "answer": 1, "explanation": "SW: pkt 1–6, 8, 9, 11–15. Odpadają pkt 7 (granica) i 10 (ujęcie).", "source": "art. 19 ust. 1 ustawy o SW" },
-
-    { "id": "sw-f01", "deck": "sw", "type": "flashcard", "naPamiec": true, "front": "Art. 1 ustawy o SW – czym jest SW?", "back": "Umundurowaną i uzbrojoną formacją apolityczną podległą Ministrowi Sprawiedliwości, posiadającą własną strukturę organizacyjną.", "source": "art. 1 ustawy o SW" },
-    { "id": "sw-f02", "deck": "sw", "type": "flashcard", "naPamiec": true, "front": "Art. 2 ust. 1 ustawy o SW", "back": "SW realizuje na zasadach określonych w Kodeksie karnym wykonawczym zadania w zakresie wykonywania tymczasowego aresztowania oraz kar pozbawienia wolności i środków przymusu skutkujących pozbawieniem wolności.", "source": "art. 2 ust. 1 ustawy o SW" },
-    { "id": "sw-f03", "deck": "sw", "type": "flashcard", "naPamiec": true, "front": "Art. 2 ust. 2 pkt 1–4 – zadania SW", "back": "1) oddziaływania penitencjarne i resocjalizacyjne (praca, nauczanie, zajęcia kulturalno-oświatowe, sport, terapia); 2) wykonywanie tymczasowego aresztowania zabezpieczające tok postępowania karnego; 3) zapewnienie przestrzegania praw osadzonych (humanitarne warunki, godność, opieka zdrowotna i religijna); 4) humanitarne traktowanie osób pozbawionych wolności.", "source": "art. 2 ust. 2 ustawy o SW" },
-    { "id": "sw-f04", "deck": "sw", "type": "flashcard", "naPamiec": true, "front": "Art. 2 ust. 2 pkt 5–10 – zadania SW", "back": "5) ochrona społeczeństwa przed sprawcami przestępstw osadzonymi w ZK i AŚ; 6) porządek i bezpieczeństwo w ZK i AŚ; 7) wykonywanie na terytorium RP tymczasowego aresztowania i kar w ZK i AŚ na podstawie orzeczeń; 7a) Centralna Baza Danych Osób Pozbawionych Wolności; 8) współdziałanie z formacjami innych państw i organizacjami międzynarodowymi; 9) czynności z art. 43g § 1 kkw powierzone przez MS; 10) edukacja prawna młodzieży związana z prewencją przestępstw.", "source": "art. 2 ust. 2 ustawy o SW" },
-    { "id": "sw-f05", "deck": "sw", "type": "flashcard", "naPamiec": true, "front": "Art. 7 – organy SW", "back": "Dyrektor Generalny SW; dyrektorzy okręgowi; dyrektorzy zakładów karnych i aresztów śledczych; Rektor-Komendant Uczelni oraz komendanci ośrodków szkolenia i ośrodków doskonalenia kadr.", "source": "art. 7 ustawy o SW" },
-    { "id": "sw-f06", "deck": "sw", "type": "flashcard", "front": "Art. 8 ust. 1 – jednostki organizacyjne SW", "back": "Centralny Zarząd SW; okręgowe inspektoraty SW; zakłady karne i areszty śledcze; Uczelnia; Centralny Ośrodek Szkolenia SW, ośrodki szkolenia i ośrodki doskonalenia kadr.", "source": "art. 8 ustawy o SW" },
-    { "id": "sw-f07", "deck": "sw", "type": "flashcard", "naPamiec": true, "front": "Art. 18 ust. 1 – uprawnienia funkcjonariusza (lista)", "back": "Legitymowanie i deponowanie dokumentów; żądanie oddania przedmiotów niedozwolonych do depozytu, kontrola pobieżna i osobista, kontrola pojazdów i ładunków; wzywanie do zaniechania zakłócania porządku; zatrzymywanie podejrzanych o przestępstwo w celu przekazania Policji; usuwanie z terenu jednostki; zatrzymywanie zbiegów i pościg; zwracanie się o pomoc do organów i każdej osoby.", "source": "art. 18 ustawy o SW" },
-    { "id": "sw-f08", "deck": "sw", "type": "flashcard", "naPamiec": true, "front": "Kontrola osobista – kto i jak? (art. 18)", "back": "Co najmniej dwaj funkcjonariusze tej samej płci, w pomieszczeniu bez osób postronnych i bez monitoringu; możliwy udział osoby wykonującej zawód medyczny; uprzedzenie o rozpoczęciu i rodzaju kontroli; w sposób możliwie najmniej naruszający dobra osobiste; zażalenie do sądu rejonowego w ciągu 7 dni.", "source": "art. 18 ustawy o SW" },
-    { "id": "sw-f09", "deck": "sw", "type": "flashcard", "naPamiec": true, "front": "Art. 19 ust. 1 ustawy o SW – jakie ŚPB i w jakich przypadkach?", "back": "Przypadki z art. 11 pkt 1–6, 8, 9 i 11–15 ustawy o ŚPB. Środki z art. 12 ust. 1 pkt 1, 2, 4, 6–9, 11, pkt 12 lit. a, c, d, pkt 13, 14 i 21 (siła, kajdanki, pas, kask, pałka, wodne, pies, pociski niepenetracyjne, ręczne miotacze, granaty łzawiące, inne urządzenia do miotania, paralizator, cela zabezpieczająca, środki antydronowe).", "source": "art. 19 ust. 1 ustawy o SW" },
-    { "id": "sw-f10", "deck": "sw", "type": "flashcard", "naPamiec": true, "front": "Art. 19 ust. 6 ustawy o SW", "back": "W ZK typu zamkniętego i AŚ wobec osób pozbawionych wolności, które: 1) przebywają poza celą – prewencyjnie kajdanki na ręce; 2) przejawiają zachowania zagrażające życiu, zdrowiu lub bezpieczeństwu – mogą prewencyjnie kajdanki i pas obezwładniający.", "source": "art. 19 ust. 6 ustawy o SW" },
-    { "id": "sw-f11", "deck": "sw", "type": "flashcard", "front": "Art. 19 ust. 7–10 ustawy o SW", "back": "7) dyrektor może zwolnić osadzonego z prewencyjnych kajdanek – odnotowuje się w Centralnej Bazie; 8) funkcjonariusz może zrezygnować z kajdanek lub pasa po ocenie bezpieczeństwa; 9) w zakładach półotwartych i otwartych prewencyjnie na wniosek osoby w kontakcie z osadzonym lub gdy funkcjonariusz uzna to za celowe; 10) każde takie użycie odnotowuje się w Centralnej Bazie.", "source": "art. 19 ust. 7–10 ustawy o SW" },
-    { "id": "sw-f12", "deck": "sw", "type": "flashcard", "front": "Art. 23 – kiedy SW współdziała z Policją?", "back": "Gdy bezpieczeństwa jednostki lub konwoju nie można zapewnić siłami własnymi, np. przy zamachu terrorystycznym, buncie, zbiorowej ucieczce, pożarze lub klęsce żywiołowej.", "source": "art. 23 ustawy o SW" },
-    { "id": "sw-m01", "deck": "sw", "type": "mcq", "question": "Kto przeprowadza kontrolę osobistą?", "options": ["Jeden funkcjonariusz dowolnej płci", "Co najmniej dwaj funkcjonariusze tej samej płci", "Funkcjonariusz w obecności współosadzonego", "Wyłącznie lekarz"], "answer": 1, "explanation": "Art. 18 ustawy o SW.", "source": "art. 18 ustawy o SW" },
-    { "id": "sw-m02", "deck": "sw", "type": "mcq", "question": "W jakim terminie przysługuje zażalenie na sposób przeprowadzenia kontroli?", "options": ["3 dni", "7 dni", "14 dni", "30 dni"], "answer": 1, "explanation": "Do sądu rejonowego w terminie 7 dni.", "source": "art. 18 ust. 5–6 ustawy o SW" },
-    { "id": "sw-m03", "deck": "sw", "type": "mcq", "question": "Osadzony w ZK typu zamkniętego wychodzi z celi. Co przewiduje art. 19 ust. 6 pkt 1?", "options": ["Prewencyjne kajdanki na ręce", "Obowiązkowy pas", "Konwój z bronią", "Nic"], "answer": 0, "explanation": "Dyrektor może zwolnić (ust. 7), funkcjonariusz może zrezygnować (ust. 8).", "source": "art. 19 ust. 6 ustawy o SW" },
-
-    { "id": "kkw-f01", "deck": "kkw", "type": "flashcard", "naPamiec": true, "front": "Art. 67 § 1 kkw – cel wykonywania kary", "back": "Wzbudzanie w skazanym woli współdziałania w kształtowaniu jego społecznie pożądanych postaw, w szczególności poczucia odpowiedzialności oraz potrzeby przestrzegania porządku prawnego i tym samym powstrzymania się od powrotu do przestępstwa.", "source": "art. 67 § 1 kkw" },
-    { "id": "kkw-f02", "deck": "kkw", "type": "flashcard", "naPamiec": true, "front": "Art. 67 § 3 kkw – środki oddziaływania", "back": "Praca (zwłaszcza dająca kwalifikacje), nauczanie, zajęcia kulturalno-oświatowe i sportowe, podtrzymywanie kontaktów z rodziną i światem zewnętrznym, środki terapeutyczne.", "source": "art. 67 § 3 kkw" },
-    { "id": "kkw-f03", "deck": "kkw", "type": "flashcard", "naPamiec": true, "front": "Rodzaje (art. 69), typy (art. 70) i systemy (art. 81)", "back": "Rodzaje: dla młodocianych (M), po raz pierwszy (P), recydywistów penitencjarnych (R), aresztu wojskowego (W). Typy: zamknięty (1), półotwarty (2), otwarty (3). Systemy: programowanego oddziaływania (/p), terapeutyczny (/t), zwykły (/z).", "source": "art. 69, 70, 81 kkw" },
-    { "id": "kkw-f04", "deck": "kkw", "type": "flashcard", "front": "Co oznacza symbol P-1/t?", "back": "Odbywający karę po raz pierwszy, zakład typu zamkniętego, system terapeutyczny.", "source": "art. 69, 70, 81 kkw" },
-    { "id": "kkw-f05", "deck": "kkw", "type": "flashcard", "front": "Kto jest młodocianym w kkw?", "back": "Skazany, który nie ukończył 24 lat (art. 84). W ZK dla młodocianych typu zamkniętego i półotwartego – dodatkowe widzenie w miesiącu (art. 91a).", "source": "art. 84, 91a kkw" },
-    { "id": "kkw-f06", "deck": "kkw", "type": "flashcard", "naPamiec": true, "front": "Art. 88 § 3 – kogo osadza się w zakładzie zamkniętym?", "back": "1) skazanego za przestępstwo w zorganizowanej grupie (chyba że szczególne okoliczności – nie dotyczy „N”); 2) skazanego na dożywocie albo 25 lat lub więcej; 3) skazanego z niepsychotycznymi zaburzeniami psychicznymi (w tym sprawców z art. 197–203 kk z zaburzeniami preferencji) lub upośledzonego umysłowo; 4) „N”; 5) objętego ochroną z art. 88d lub ustawy o świadku koronnym.", "source": "art. 88 § 3 kkw" },
-    { "id": "kkw-f07", "deck": "kkw", "type": "flashcard", "naPamiec": true, "front": "Art. 88a § 1 – kogo można uznać za „N”?", "back": "1) sprawcę przestępstwa o bardzo wysokim stopniu społecznej szkodliwości (zamach na niepodległość, ustrój, życie Prezydenta, jednostkę Sił Zbrojnych; ze szczególnym okrucieństwem; zakładnik; uprowadzenie statku; z użyciem broni palnej, materiałów wybuchowych lub łatwopalnych); 2) przestępstwo w zorganizowanej grupie, zwłaszcza w roli kierowniczej; 3) zagrażał bezpieczeństwu ZK/AŚ: zbiorowe wystąpienie, czynna napaść na funkcjonariusza lub pracownika, zgwałcenie, ciężki uszczerbek, znęcanie się nad osadzonym, ucieczka lub próba ucieczki (także z konwoju).", "source": "art. 88a § 1 kkw" },
-    { "id": "kkw-f08", "deck": "kkw", "type": "flashcard", "front": "„N” – kto decyduje, gdzie przebywa, kogo się zawiadamia?", "back": "Komisja penitencjarna, weryfikacja co najmniej raz na 3 miesiące (art. 76 § 1 pkt 7). Wyznaczony oddział lub cela ZK typu zamkniętego w warunkach wzmożonej ochrony (art. 88a § 3). Zawiadamia się sędziego penitencjarnego (art. 88a § 4). Stały monitoring (art. 88c).", "source": "art. 76, 88a, 88c kkw" },
-    { "id": "kkw-f09", "deck": "kkw", "type": "flashcard", "naPamiec": true, "front": "Widzenia i przepustki wg typu zakładu (art. 90–92)", "back": "Zamknięty: 2 widzenia w miesiącu. Półotwarty: 3 widzenia, przepustki nie częściej niż raz na 2 miesiące, łącznie do 14 dni w roku, własna odzież. Otwarty: widzenia bez ograniczeń, przepustki nie częściej niż raz w miesiącu, łącznie do 28 dni w roku, cele otwarte całą dobę.", "source": "art. 90–92 kkw" },
-    { "id": "kkw-f10", "deck": "kkw", "type": "flashcard", "naPamiec": true, "front": "Art. 102 kkw – prawa skazanego (11 punktów w skrócie)", "back": "1) wyżywienie, odzież, warunki bytowe, świadczenia zdrowotne, higiena; 2) więź z rodziną; 3) wolność religijna; 4) wynagrodzenie i ubezpieczenie; 5) kształcenie, samokształcenie, twórczość; 6) zajęcia kulturalne i sportowe, radio, TV, książki, prasa; 7) kontakt z obrońcą, pełnomocnikiem, kuratorem, przedstawicielem; 8) kontakt z podmiotami z art. 38 § 1; 9) wgląd w opinie będące podstawą decyzji; 10) wnioski, skargi i prośby (także bez obecności innych osób); 11) korespondencja z organami państwa, RPO, RPD, organami międzynarodowymi.", "source": "art. 102 kkw" },
-    { "id": "kkw-f11", "deck": "kkw", "type": "flashcard", "front": "Art. 116 § 1 kkw – obowiązki skazanego", "back": "Poprawne zachowanie; higiena i czystość; zawiadamianie o chorobie; poddawanie się badaniom, leczeniu i badaniom na substancje psychoaktywne; poddawanie się kontrolom; praca (o ile nie zwolniony) i prace porządkowe; dbałość o mienie; czynności identyfikacyjne; informowanie o zmianie danych.", "source": "art. 116 § 1 kkw" },
-    { "id": "kkw-f12", "deck": "kkw", "type": "flashcard", "naPamiec": true, "front": "Art. 143 § 1 kkw – kary dyscyplinarne", "back": "1) nagana; 2) pozbawienie lub zawieszenie nagród i ulg do 3 mies.; 3) pozbawienie niektórych zajęć kulturalnych lub sportowych (poza książkami i prasą) do 3 mies.; 4) pozbawienie paczek do 3 mies.; 5) pozbawienie lub ograniczenie zakupów do 3 mies.; 6) widzenia bez bezpośredniego kontaktu do 3 mies.; 7) obniżenie wynagrodzenia do 25% do 3 mies.; 7a) pozbawienie widzeń i telefonu do 28 dni; 8) cela izolacyjna do 28 dni.", "source": "art. 143 § 1 kkw" },
-    { "id": "kkw-f13", "deck": "kkw", "type": "flashcard", "front": "Wobec kogo nie stosuje się kar z art. 143 § 1 pkt 4, 5, 8?", "back": "Wobec kobiet ciężarnych, karmiących lub sprawujących opiekę nad własnymi dziećmi w domach matki i dziecka (art. 143 § 2).", "source": "art. 143 § 2 kkw" },
-    { "id": "kkw-f14", "deck": "kkw", "type": "flashcard", "naPamiec": true, "front": "Procedura kar dyscyplinarnych (art. 144–148)", "back": "Kary z pkt 4, 5, 7–8 wymierza dyrektor, pozostałe także osoba upoważniona; wysłuchanie obwinionego i opinia wychowawcy; przed celą izolacyjną opinia lekarza albo psychologa; ponad 14 dni – zgoda sędziego penitencjarnego; przedawnienie: 14 dni od dowiedzenia się / 30 dni od przekroczenia; wykonanie bezzwłocznie.", "source": "art. 144–148 kkw" },
-    { "id": "kkw-f15", "deck": "kkw", "type": "flashcard", "front": "Nagrody z art. 138 § 1 pkt 7 i 8", "back": "Pkt 7: widzenie bez dozoru poza zakładem z osobą najbliższą lub godną zaufania – jednorazowo do 30 godzin. Pkt 8: opuszczenie zakładu bez dozoru – jednorazowo do 14 dni. Przyznaje dyrektor; dożywotnik – po 15 latach.", "source": "art. 138, 139 kkw" },
-    { "id": "kkw-f16", "deck": "kkw", "type": "flashcard", "front": "Tymczasowe aresztowanie – cel i najważniejsze zasady", "back": "Służy realizacji celów, dla których je zastosowano, zwłaszcza zabezpieczeniu toku postępowania karnego (art. 207). Prawa co najmniej jak skazanego w ZK zamkniętym (art. 214). O użyciu ŚPB, broni lub psa zawiadamia się niezwłocznie organ dysponujący (art. 214). Widzenia za zgodą organu dysponującego (art. 217). Cela izolacyjna do 14 dni (art. 222).", "source": "art. 207–222 kkw" },
-    { "id": "kkw-f17", "deck": "kkw", "type": "flashcard", "front": "Art. 4 kkw – zasada humanitaryzmu", "back": "Kary i środki wykonuje się w sposób humanitarny, z poszanowaniem godności ludzkiej skazanego; zakaz tortur oraz nieludzkiego lub poniżającego traktowania.", "source": "art. 4 kkw" },
-    { "id": "kkw-f18", "deck": "kkw", "type": "flashcard", "front": "Skargi i zaskarżanie decyzji (art. 6–7 kkw)", "back": "Skarga – w terminie 7 dni od dowiedzenia się o zdarzeniu. Decyzję organu (np. dyrektora) można zaskarżyć do sądu penitencjarnego z powodu niezgodności z prawem w terminie 7 dni.", "source": "art. 6–7 kkw" },
-    { "id": "kkw-c01", "deck": "kkw", "type": "cloze", "naPamiec": true, "text": "Wykonywanie kary pozbawienia wolności ma na celu wzbudzanie w skazanym [[woli współdziałania]] w kształtowaniu jego społecznie pożądanych postaw, w szczególności poczucia [[odpowiedzialności]] oraz potrzeby przestrzegania [[porządku prawnego]] i tym samym powstrzymania się od [[powrotu do przestępstwa]].", "source": "art. 67 § 1 kkw" },
-    { "id": "kkw-m01", "deck": "kkw", "type": "mcq", "question": "Cela izolacyjna dla tymczasowo aresztowanego – maksymalnie:", "options": ["7 dni", "14 dni", "28 dni", "3 miesiące"], "answer": 1, "explanation": "Art. 222 § 2 kkw. Skazanemu – do 28 dni.", "source": "art. 222 kkw" },
-    { "id": "kkw-m02", "deck": "kkw", "type": "mcq", "question": "Ile widzeń w miesiącu w zakładzie półotwartym?", "options": ["2", "3", "4", "bez ograniczeń"], "answer": 1, "explanation": "Art. 91 kkw.", "source": "art. 91 kkw" },
-    { "id": "kkw-m03", "deck": "kkw", "type": "mcq", "question": "Kto decyduje o uznaniu za „N”?", "options": ["Dyrektor zakładu", "Sędzia penitencjarny", "Komisja penitencjarna", "Kierownik działu ochrony"], "answer": 2, "explanation": "Art. 76 § 1 pkt 7 kkw, weryfikacja co najmniej raz na 3 miesiące.", "source": "art. 76 kkw" },
-    { "id": "kkw-m04", "deck": "kkw", "type": "mcq", "question": "Co NIE jest środkiem oddziaływania z art. 67 § 3 kkw?", "options": ["Praca", "Nauczanie", "Kary dyscyplinarne", "Środki terapeutyczne"], "answer": 2, "explanation": "Art. 67 § 3.", "source": "art. 67 § 3 kkw" },
-    { "id": "kkw-m05", "deck": "kkw", "type": "mcq", "question": "Cela izolacyjna skazanemu powyżej 14 dni wymaga:", "options": ["niczego więcej", "zgody sędziego penitencjarnego i opinii lekarza albo psychologa", "zgody prokuratora", "jest niedopuszczalna"], "answer": 1, "explanation": "Art. 145 kkw.", "source": "art. 145 kkw" },
-
-    { "id": "och-f01", "deck": "ochrona", "type": "flashcard", "front": "Minimalny skład zmiany (§ 16 rozporządzenia o ochronie)", "back": "Zakład zamknięty – co najmniej 3 funkcjonariuszy; półotwarty i otwarty – co najmniej 2.", "source": "§ 16 rozporządzenia MS z 17.10.2016" },
-    { "id": "och-f02", "deck": "ochrona", "type": "flashcard", "front": "Zmiana miejsca służby (§ 18)", "back": "Po 4 godzinach na stanowisku uzbrojonym lub patrolowym; po 2 godzinach na stanowisku monitorowym.", "source": "§ 18 rozporządzenia MS z 17.10.2016" },
-    { "id": "och-f03", "deck": "ochrona", "type": "flashcard", "front": "Oddziałowy w nocy (§ 49)", "back": "Sprawdza zamknięcie cel po apelu wieczornym i kontroluje osadzonych co najmniej co 2 godziny.", "source": "§ 49 rozporządzenia MS z 17.10.2016" },
-    { "id": "och-f04", "deck": "ochrona", "type": "flashcard", "front": "Konwojowanie – skład (§ 83–85)", "back": "Skład i uzbrojenie wyznacza dyrektor. Jednego osadzonego lub grupę do 10 – co najmniej 2 konwojentów (wyjątki m.in. karetka przy zagrożeniu życia, zakłady półotwarte i otwarte).", "source": "§ 83–85 rozporządzenia MS z 17.10.2016" },
-    { "id": "och-f05", "deck": "ochrona", "type": "flashcard", "front": "Osadzony niebezpieczny – otwieranie celi (§ 95)", "back": "W dzień co najmniej 2 funkcjonariuszy; w nocy i podczas apelu co najmniej 3. Cela kontrolowana codziennie. W celi najwyżej 3 „N”.", "source": "§ 95, 98 rozporządzenia MS z 17.10.2016" },
-    { "id": "och-f06", "deck": "ochrona", "type": "flashcard", "front": "Ucieczka – postępowanie (§ 65)", "back": "Funkcjonariusz podejmuje pościg, jeżeli zbieg jest w polu widzenia lub znany jest kierunek ucieczki; kierownik jednostki zawiadamia Policję.", "source": "§ 65 rozporządzenia MS z 17.10.2016" },
-    { "id": "och-f07", "deck": "ochrona", "type": "flashcard", "front": "Apel – definicja praktyczna", "back": "Sprawdzenie zgodności stanu faktycznego ze stanem ewidencyjnym; w czasie apelu wstrzymuje się ruch i otwiera drzwi tylko jednej celi naraz.", "source": "rozporządzenie MS z 17.10.2016" },
-    { "id": "och-f08", "deck": "ochrona", "type": "flashcard", "front": "Kto pod nieobecność dyrektora przejmuje jego uprawnienia w zakresie ochrony? (§ 21)", "back": "Dowódca zmiany.", "source": "§ 21 rozporządzenia MS z 17.10.2016" },
-
-    { "id": "psy-f01", "deck": "psycholog", "type": "flashcard", "naPamiec": true, "front": "§ 3 ust. 7 rozporządzenia o oddziaływaniach – zadania psychologa", "back": "Psycholog prowadzi badania psychologiczne, udziela pomocy psychologicznej oraz obejmuje skazanych odpowiednimi oddziaływaniami psychokorekcyjnymi lub terapeutycznymi.", "source": "§ 3 ust. 7 rozporządzenia (Dz.U. 2024 poz. 1344)" },
-    { "id": "psy-f02", "deck": "psycholog", "type": "flashcard", "naPamiec": true, "front": "Definicja oddziaływań penitencjarnych (§ 1 ust. 2)", "back": "Zespół stosowanych w zakładzie środków i metod zmierzających do wzbudzenia w skazanym woli współdziałania w kształtowaniu jego społecznie pożądanych postaw.", "source": "§ 1 ust. 2 rozporządzenia" },
-    { "id": "psy-f03", "deck": "psycholog", "type": "flashcard", "front": "Definicja podkultury przestępczej (§ 1 ust. 2)", "back": "Występujące w środowisku przestępczym negatywne wzorce, normy i sposoby postępowania.", "source": "§ 1 ust. 2 rozporządzenia" },
-    { "id": "psy-f04", "deck": "psycholog", "type": "flashcard", "naPamiec": true, "front": "Art. 82 § 2 kkw – 9 kryteriów klasyfikacji", "back": "Płeć, wiek, uprzednie odbywanie kary, umyślność lub nieumyślność, czas pozostały do odbycia, stan zdrowia fizycznego i psychicznego (w tym uzależnienie), stopień demoralizacji i zagrożenia, rodzaj przestępstwa, stosunek do przestępstwa. Mnemotechnika: „Pani Wanda Ukryła Umowę, Czekając Za Dyrektorem, Robiąc Stopkę”.", "source": "art. 82 § 2 kkw" },
-    { "id": "psy-f05", "deck": "psycholog", "type": "flashcard", "naPamiec": true, "front": "Art. 82 § 1 kkw – cele klasyfikacji", "back": "Warunki indywidualnego postępowania ze skazanymi, zapobieganie szkodliwym wpływom zdemoralizowanych, bezpieczeństwo osobiste skazanych, wybór systemu, rodzaju i typu zakładu oraz rozmieszczenie wewnątrz zakładu. Podstawa: badania osobopoznawcze (§ 3).", "source": "art. 82 kkw" },
-    { "id": "psy-f06", "deck": "psycholog", "type": "flashcard", "naPamiec": true, "front": "Art. 83 kkw – badania psychologiczne", "back": "W miarę potrzeby, za zgodą skazanego, badania psychologiczne i psychiatryczne (§ 1) oraz seksuologiczne (§ 1a). Bez zgody – na zarządzenie sędziego penitencjarnego. Przede wszystkim w ośrodkach diagnostycznych (§ 2).", "source": "art. 83 kkw" },
-    { "id": "psy-f07", "deck": "psycholog", "type": "flashcard", "front": "Ośrodek diagnostyczny (rozporządzenie z 2.08.2023)", "back": "Skierowanie: dyrektor na wniosek psychologa, wychowawcy lub psychiatry i za zgodą skazanego (bez zgody – sędzia penitencjarny). Badania nie dłużej niż 2 tygodnie (możliwe przedłużenie). Psycholog – orzeczenie psychologiczno-penitencjarne, psychiatra – opinia psychiatryczna. Orzeczenie służy weryfikacji decyzji klasyfikacyjnej.", "source": "rozporządzenie MS z 2.08.2023 (Dz.U. 2023 poz. 1677)" },
-    { "id": "psy-f08", "deck": "psycholog", "type": "flashcard", "front": "§ 10 rozporządzenia – badanie psychologiczne", "back": "Poznanie osobowości i mechanizmów zachowania oraz zalecenia; metody i zakres ustala psycholog; kończy się orzeczeniem psychologiczno-penitencjarnym lub opinią psychologiczną.", "source": "§ 10 rozporządzenia" },
-    { "id": "psy-f09", "deck": "psycholog", "type": "flashcard", "naPamiec": true, "front": "§ 11 – kiedy ORZECZENIE psychologiczno-penitencjarne?", "back": "Młodociany z co najmniej 6 miesiącami do warunkowego zwolnienia; skazany sprawiający trudności wychowawcze; podejrzenie potrzeby terapii (zaburzenia niepsychotyczne, upośledzenie); dożywocie lub 25 lat po uprawomocnieniu; sprawca przestępstwa seksualnego z zaburzeniami preferencji; skazany za zabójstwo (art. 148 kk) przed pierwszą przepustką.", "source": "§ 11 rozporządzenia" },
-    { "id": "psy-f10", "deck": "psycholog", "type": "flashcard", "naPamiec": true, "front": "§ 12 – kiedy OPINIA psychologiczna?", "back": "Przed wnioskiem o system terapeutyczny dla uzależnionych; przed decyzją o zakładzie półotwartym dla dożywocia lub 25 lat; sprawy dzieci przy matce; cela izolacyjna; podejrzenie skłonności samobójczych; inne uzasadnione przypadki.", "source": "§ 12 rozporządzenia" },
-    { "id": "psy-f11", "deck": "psycholog", "type": "flashcard", "naPamiec": true, "front": "Art. 96 § 1 kkw – kto w systemie terapeutycznym?", "back": "Skazani z niepsychotycznymi zaburzeniami psychicznymi (w tym sprawcy przestępstw z art. 197–203 kk w związku z zaburzeniami preferencji seksualnych), upośledzeni umysłowo, uzależnieni od substancji psychoaktywnej, niepełnosprawni fizycznie – wymagający oddziaływania specjalistycznego, zwłaszcza opieki psychologicznej, lekarskiej lub rehabilitacyjnej.", "source": "art. 96 § 1 kkw" },
-    { "id": "psy-f12", "deck": "psycholog", "type": "flashcard", "naPamiec": true, "front": "Art. 97 § 1 kkw – cele systemu terapeutycznego", "back": "Zapobieganie pogłębianiu się patologicznych cech osobowości, przywracanie równowagi psychicznej, kształtowanie zdolności współżycia społecznego i przygotowanie do samodzielnego życia.", "source": "art. 97 § 1 kkw" },
-    { "id": "psy-f13", "deck": "psycholog", "type": "flashcard", "front": "§ 16 – kto sporządza wniosek o skierowanie do oddziału terapeutycznego?", "back": "Psycholog (orzeczenie lub opinia) przy zaburzeniach i uzależnieniach; lekarz przy niepełnosprawności fizycznej.", "source": "§ 16 rozporządzenia" },
-    { "id": "psy-f14", "deck": "psycholog", "type": "flashcard", "front": "§ 17–19 – oddział terapeutyczny", "back": "Oddziaływania realizuje zespół terapeutyczny; metody indywidualne i grupowe, pierwszeństwo oddziaływań terapeutycznych; programy oddziałów (założenia, metody, harmonogram, kryteria efektów) zatwierdza Dyrektor Generalny SW.", "source": "§ 17–19 rozporządzenia" },
-    { "id": "psy-f15", "deck": "psycholog", "type": "flashcard", "front": "§ 21 – krótka interwencja", "back": "Poza oddziałem: co najmniej 3 sesje – ocena nasilenia problemów, informacja zwrotna, rozmowa motywująca.", "source": "§ 21 rozporządzenia" },
-    { "id": "psy-f16", "deck": "psycholog", "type": "flashcard", "front": "§ 23–24 – samoagresja i „N”", "back": "Po przyjęciu ustala się, czy skazany podejmował akty samoagresji; takie osoby obejmuje się oddziaływaniem profilaktycznym. Wobec „N” dodatkowo oddziaływania ograniczające napięcia emocjonalne oraz tendencje agresywne i samoagresywne.", "source": "§ 23–24 rozporządzenia" },
-    { "id": "psy-f17", "deck": "psycholog", "type": "flashcard", "front": "Zapobieganie samobójstwom – akt i poziomy", "back": "Instrukcja nr 4/24 DG SW z 17.10.2024. Poziom I – wszyscy osadzeni (ocena przy przyjęciu, obserwacja). Poziom II – szczególnie zagrożeni (zwiększony nadzór, dokumentacja, dodatkowe wsparcie). Podstawa ustawowa: art. 108 kkw (bezpieczeństwo osobiste).", "source": "instrukcja DG SW nr 4/24; art. 108 kkw" },
-    { "id": "psy-f18", "deck": "psycholog", "type": "flashcard", "front": "Prognoza kryminologiczno-społeczna (§ 25–26)", "back": "Pisemne uzasadnienie, że skazany poza zakładem będzie przestrzegał porządku prawnego; przed pierwszym zaopiniowaniem przepustki lub nagrody wyjściowej i przy prawie do warunkowego zwolnienia; aktualizacja przy nadużyciu zaufania lub istotnych zmianach.", "source": "§ 25–26 rozporządzenia" },
-    { "id": "psy-f19", "deck": "psycholog", "type": "flashcard", "front": "Indywidualny program oddziaływania (§ 14)", "back": "Opracowuje wychowawca z udziałem skazanego, przedkłada komisji penitencjarnej; w ciągu 30 dni (przedłużenie o 14 dni); obowiązkowo zadania eliminujące przyczyny przestępstwa i naprawiające szkody.", "source": "§ 14 rozporządzenia" },
-    { "id": "psy-f20", "deck": "psycholog", "type": "flashcard", "front": "Standard obciążenia psychologa", "back": "Nie więcej niż 200 osadzonych na psychologa (§ 93 zarządzenia DG SW nr 19/16 z 14.04.2016).", "source": "zarządzenie DG SW nr 19/16" },
-    { "id": "psy-f21", "deck": "psycholog", "type": "flashcard", "front": "Nowa ustawa o zawodzie psychologa", "back": "Ustawa z 23 stycznia 2026 r. (Dz.U. 2026 poz. 187); co do zasady wchodzi w życie 19 maja 2028 r., pierwsze przepisy od 5 marca 2026 r.; rejestr psychologów, samorząd, odpowiedzialność dyscyplinarna, tajemnica zawodowa.", "source": "Dz.U. 2026 poz. 187" },
-    { "id": "psy-c01", "deck": "psycholog", "type": "cloze", "naPamiec": true, "text": "Psycholog prowadzi [[badania psychologiczne]], udziela [[pomocy psychologicznej]] oraz obejmuje skazanych odpowiednimi oddziaływaniami [[psychokorekcyjnymi]] lub [[terapeutycznymi]].", "source": "§ 3 ust. 7 rozporządzenia" },
-    { "id": "psy-c02", "deck": "psycholog", "type": "cloze", "naPamiec": true, "text": "Wykonując karę w systemie terapeutycznym, uwzględnia się w postępowaniu ze skazanymi w szczególności potrzebę zapobiegania pogłębianiu się [[patologicznych cech osobowości]], przywracania [[równowagi psychicznej]] oraz kształtowania zdolności [[współżycia społecznego]] i przygotowania do [[samodzielnego życia]].", "source": "art. 97 § 1 kkw" },
-    { "id": "psy-m01", "deck": "psycholog", "type": "mcq", "question": "Kto może zarządzić badanie psychologiczne bez zgody skazanego?", "options": ["Dyrektor zakładu", "Psycholog", "Sędzia penitencjarny", "Komisja penitencjarna"], "answer": 2, "explanation": "Art. 83 § 1 kkw.", "source": "art. 83 kkw" },
-    { "id": "psy-m02", "deck": "psycholog", "type": "mcq", "question": "Badania w ośrodku diagnostycznym trwają co do zasady:", "options": ["do 7 dni", "nie dłużej niż 2 tygodnie", "do 30 dni", "do 3 miesięcy"], "answer": 1, "explanation": "Rozporządzenie MS z 2.08.2023.", "source": "Dz.U. 2023 poz. 1677" },
-    { "id": "psy-m03", "deck": "psycholog", "type": "mcq", "question": "Kogo NIE obejmuje art. 96 § 1 kkw?", "options": ["Zaburzenia niepsychotyczne", "Uzależnionych", "Osób z zaburzeniami psychotycznymi", "Niepełnosprawnych fizycznie"], "answer": 2, "explanation": "Katalog obejmuje zaburzenia NIEpsychotyczne.", "source": "art. 96 kkw" },
-    { "id": "psy-m04", "deck": "psycholog", "type": "mcq", "question": "Wniosek o oddział terapeutyczny dla niepełnosprawnego fizycznie sporządza:", "options": ["psycholog", "lekarz", "wychowawca", "kierownik działu ochrony"], "answer": 1, "explanation": "§ 16 rozporządzenia.", "source": "§ 16 rozporządzenia" },
-    { "id": "psy-m05", "deck": "psycholog", "type": "mcq", "question": "Krótka interwencja to co najmniej:", "options": ["1 sesja", "3 sesje", "5 sesji", "10 sesji"], "answer": 1, "explanation": "§ 21 rozporządzenia.", "source": "§ 21 rozporządzenia" },
-    { "id": "psy-m06", "deck": "psycholog", "type": "mcq", "question": "ORZECZENIE (nie opinię) sporządza się wobec:", "options": ["skazanego przed celą izolacyjną", "skazanego na dożywocie po uprawomocnieniu wyroku", "osoby z podejrzeniem skłonności samobójczych", "matki z dzieckiem w zakładzie"], "answer": 1, "explanation": "§ 11; pozostałe to opinie z § 12.", "source": "§ 11–12 rozporządzenia" },
-    { "id": "psy-m07", "deck": "psycholog", "type": "mcq", "question": "Kto zatwierdza programy oddziałów terapeutycznych?", "options": ["Dyrektor zakładu", "Kierownik działu terapeutycznego", "Dyrektor Generalny SW", "Sędzia penitencjarny"], "answer": 2, "explanation": "§ 19 rozporządzenia.", "source": "§ 19 rozporządzenia" },
-    { "id": "psy-m08", "deck": "psycholog", "type": "mcq", "question": "Które kryterium klasyfikacji dodano do art. 82 § 2 kkw w 2022 r.?", "options": ["Płeć", "Stosunek skazanego do popełnionego przestępstwa", "Wiek", "Rodzaj przestępstwa"], "answer": 1, "explanation": "Pkt 9.", "source": "art. 82 § 2 pkt 9 kkw" },
-    { "id": "psy-o01", "deck": "psycholog", "type": "order", "prompt": "Ułóż ścieżkę skazanego do oddziału terapeutycznego", "steps": ["Badanie psychologiczne (orzeczenie lub opinia)", "Wniosek psychologa o skierowanie", "Decyzja komisji penitencjarnej", "Diagnoza w oddziale i indywidualny program terapeutyczny", "Terapia prowadzona przez zespół terapeutyczny", "Przeniesienie do innego systemu, gdy oddziaływanie specjalistyczne nie jest już potrzebne"], "source": "§ 16, 21 rozporządzenia; art. 76, 97 § 3 kkw" }
-  ]
+  "tagi": {
+   "kontrolne-penit": "pytania kontrolne – penitencjarne (28–53)",
+   "lista-124": "lista 124 pytań z kursu",
+   "spec-77": "SPECJALIZACJA_2 – 77 zagadnień dla psychologów",
+   "skrypt-v15": "Skrypt SW (V15)"
+  },
+  "uwaga": "Pozycje z „⚠️” zawierają poprawkę lub wątpliwość względem materiałów kursu."
+ },
+ "decks": [
+  {
+   "id": "spb",
+   "name": "Środki przymusu i broń palna",
+   "czesc": "unitarna"
+  },
+  {
+   "id": "sw",
+   "name": "Ustawa o Służbie Więziennej",
+   "czesc": "unitarna"
+  },
+  {
+   "id": "kkw",
+   "name": "Kodeks karny wykonawczy",
+   "czesc": "unitarna"
+  },
+  {
+   "id": "ochrona",
+   "name": "Ochrona jednostek i konwojowanie",
+   "czesc": "unitarna"
+  },
+  {
+   "id": "psycholog",
+   "name": "Psycholog w SW",
+   "czesc": "specjalistyczna"
+  },
+  {
+   "id": "metodyka",
+   "name": "Metodyka i pedagogika penitencjarna",
+   "czesc": "unitarna"
+  },
+  {
+   "id": "bron",
+   "name": "Broń i szkolenie strzeleckie",
+   "czesc": "unitarna"
+  },
+  {
+   "id": "pp",
+   "name": "Pierwsza pomoc",
+   "czesc": "unitarna"
+  },
+  {
+   "id": "pragmatyka",
+   "name": "Pragmatyka służbowa i prawa człowieka",
+   "czesc": "unitarna"
+  },
+  {
+   "id": "psych-klin",
+   "name": "Psycholog – zaburzenia i uzależnienia",
+   "czesc": "specjalistyczna"
+  },
+  {
+   "id": "psych-proc",
+   "name": "Psycholog – procedury, dokumenty, metody",
+   "czesc": "specjalistyczna"
+  }
+ ],
+ "items": [
+  {
+   "id": "spb-f01",
+   "deck": "spb",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Art. 6 ust. 1 ustawy o ŚPB – jak używa się ŚPB?",
+   "back": "W sposób niezbędny do osiągnięcia celów tego użycia lub wykorzystania, proporcjonalnie do stopnia zagrożenia, wybierając środek o możliwie jak najmniejszej dolegliwości.",
+   "source": "art. 6 ust. 1 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-f02",
+   "deck": "spb",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Art. 6 ust. 2 – kiedy wolno użyć broni palnej?",
+   "back": "Wyłącznie, jeżeli użycie lub wykorzystanie ŚPB: 1) okazało się niewystarczające do osiągnięcia celów albo 2) nie jest możliwe ze względu na okoliczności zdarzenia.",
+   "source": "art. 6 ust. 2 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-f03",
+   "deck": "spb",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Art. 7 – cztery zasady (ust. 1–4)",
+   "back": "1) najmniejsza szkoda; 2) odstąpienie, gdy cel został osiągnięty; 3) szczególna ostrożność przy ŚPB; 4) broń palna – szczególna rozwaga, środek ostateczny.",
+   "source": "art. 7 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-f04",
+   "deck": "spb",
+   "type": "flashcard",
+   "front": "Art. 8 – czy można użyć kilku ŚPB naraz?",
+   "back": "Tak, jeżeli uzasadniają to okoliczności zdarzenia, na zasadach określonych w ustawie.",
+   "source": "art. 8 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-f05",
+   "deck": "spb",
+   "type": "flashcard",
+   "front": "Definicja „użycia” ŚPB (art. 4 pkt 6)",
+   "back": "Zastosowanie środka przymusu bezpośredniego wobec osoby.",
+   "source": "art. 4 pkt 6 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-a11-01",
+   "deck": "spb",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Art. 11 pkt 1",
+   "back": "wyegzekwowania wymaganego prawem zachowania zgodnie z wydanym przez uprawnionego poleceniem",
+   "source": "art. 11 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-a11-02",
+   "deck": "spb",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Art. 11 pkt 2",
+   "back": "odparcia bezpośredniego, bezprawnego zamachu na życie, zdrowie lub wolność uprawnionego lub innej osoby",
+   "source": "art. 11 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-a11-03",
+   "deck": "spb",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Art. 11 pkt 3",
+   "back": "przeciwdziałania czynnościom zmierzającym bezpośrednio do zamachu na życie, zdrowie lub wolność uprawnionego lub innej osoby",
+   "source": "art. 11 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-a11-04",
+   "deck": "spb",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Art. 11 pkt 4",
+   "back": "przeciwdziałania naruszeniu porządku lub bezpieczeństwa publicznego",
+   "source": "art. 11 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-a11-05",
+   "deck": "spb",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Art. 11 pkt 5",
+   "back": "przeciwdziałania bezpośredniemu zamachowi na ochraniane przez uprawnionego obszary, obiekty lub urządzenia",
+   "source": "art. 11 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-a11-06",
+   "deck": "spb",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Art. 11 pkt 6",
+   "back": "ochrony porządku lub bezpieczeństwa na obszarach lub w obiektach chronionych przez uprawnionego",
+   "source": "art. 11 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-a11-07",
+   "deck": "spb",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Art. 11 pkt 7",
+   "back": "przeciwdziałania zamachowi na nienaruszalność granicy państwowej (SW tego przypadku NIE ma)",
+   "source": "art. 11 ustawy o ŚPB; art. 19 ust. 1 ustawy o SW"
+  },
+  {
+   "id": "spb-a11-08",
+   "deck": "spb",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Art. 11 pkt 8",
+   "back": "przeciwdziałania niszczeniu mienia",
+   "source": "art. 11 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-a11-09",
+   "deck": "spb",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Art. 11 pkt 9",
+   "back": "zapewnienia bezpieczeństwa konwoju lub doprowadzenia",
+   "source": "art. 11 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-a11-10",
+   "deck": "spb",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Art. 11 pkt 10",
+   "back": "ujęcia osoby, udaremnienia jej ucieczki lub pościgu za tą osobą (SW tego przypadku NIE ma)",
+   "source": "art. 11 ustawy o ŚPB; art. 19 ust. 1 ustawy o SW"
+  },
+  {
+   "id": "spb-a11-11",
+   "deck": "spb",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Art. 11 pkt 11",
+   "back": "zatrzymania osoby, udaremnienia jej ucieczki lub pościgu za tą osobą",
+   "source": "art. 11 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-a11-12",
+   "deck": "spb",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Art. 11 pkt 12",
+   "back": "pokonania biernego oporu",
+   "source": "art. 11 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-a11-13",
+   "deck": "spb",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Art. 11 pkt 13",
+   "back": "pokonania czynnego oporu",
+   "source": "art. 11 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-a11-14",
+   "deck": "spb",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Art. 11 pkt 14",
+   "back": "przeciwdziałania czynnościom zmierzającym do autoagresji",
+   "source": "art. 11 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-a11-15",
+   "deck": "spb",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Art. 11 pkt 15",
+   "back": "zniszczenia albo unieruchomienia bezzałogowego statku powietrznego albo przejęcia kontroli nad jego lotem (Prawo lotnicze)",
+   "source": "art. 11 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-a11-mn",
+   "deck": "spb",
+   "type": "flashcard",
+   "front": "Mnemotechnika do art. 11 (15 punktów)",
+   "back": "P Z Z P O O G M K U Z B C A D – „Policjant Zenek Zjadł Pączka, Ola Oddała Gościom Mleko, Kasia Upiekła Zapiekankę, Bartek Czyta Andrzejowi Dowcipy”. Polecenie, Zamach, Zmierzające, Porządek publiczny, Obiekty, Ochrona porządku, Granica, Mienie, Konwój, Ujęcie, Zatrzymanie, Bierny, Czynny, Autoagresja, Drony.",
+   "source": "skrypt, część C"
+  },
+  {
+   "id": "spb-a12-01",
+   "deck": "spb",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Art. 12 ust. 1 pkt 1–4",
+   "back": "1) siła fizyczna (techniki: transportowe, obrony, ataku, obezwładnienia); 2) kajdanki (na ręce, na nogi, zespolone); 3) kaftan bezpieczeństwa; 4) pas obezwładniający",
+   "source": "art. 12 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-a12-02",
+   "deck": "spb",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Art. 12 ust. 1 pkt 5–11",
+   "back": "5) siatka obezwładniająca i podobne; 6) kask zabezpieczający; 7) pałka służbowa; 8) wodne środki obezwładniające; 9) pies służbowy; 10) koń służbowy; 11) pociski niepenetracyjne",
+   "source": "art. 12 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-a12-03",
+   "deck": "spb",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Art. 12 ust. 1 pkt 12–16",
+   "back": "12) chemiczne środki obezwładniające (a: ręczne miotacze, b: plecakowe miotacze, c: granaty łzawiące, d: inne urządzenia do miotania); 13) przedmioty do obezwładniania energią elektryczną; 14) cela zabezpieczająca; 15) izba izolacyjna; 16) pokój izolacyjny",
+   "source": "art. 12 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-a12-04",
+   "deck": "spb",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Art. 12 ust. 1 pkt 17–21",
+   "back": "17) kolczatka drogowa i inne środki do zatrzymywania pojazdów; 18) pojazdy służbowe; 19) środki do pokonywania zamknięć budowlanych i przeszkód, w tym materiały wybuchowe; 20) środki pirotechniczne ogłuszające lub olśniewające; 21) środki i urządzenia do zniszczenia, unieruchomienia lub przejęcia kontroli nad dronem",
+   "source": "art. 12 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-f06",
+   "deck": "spb",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Art. 13 ust. 1 – użycie prewencyjne",
+   "back": "Techniki transportowe, kajdanki, kaftan, pas obezwładniający, kask (art. 12 ust. 1 pkt 1 lit. a, pkt 2–4 i 6) – także prewencyjnie, aby zapobiec ucieczce osoby ujętej, doprowadzanej, zatrzymanej, konwojowanej lub pozbawionej wolności oraz objawom agresji lub autoagresji tych osób.",
+   "source": "art. 13 ust. 1 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-f07",
+   "deck": "spb",
+   "type": "flashcard",
+   "front": "Art. 14 ust. 2 – czy wolno zadawać uderzenia przy sile fizycznej?",
+   "back": "Nie, chyba że uprawniony odpiera zamach na życie lub zdrowie własne lub innych osób albo na mienie lub przeciwdziała ucieczce.",
+   "source": "art. 14 ust. 2 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-f08",
+   "deck": "spb",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Art. 15 – kajdanki: w jakich przypadkach i jak?",
+   "back": "W przypadkach z art. 11 pkt 1–11, 13 i 14 (bez 12 i 15) oraz na polecenie sądu lub prokuratora. Na ręce trzymane z tyłu; z przodu przy użyciu prewencyjnym albo gdy ryzyko jest nieznaczne. Na nogi tylko razem z kajdankami na ręce.",
+   "source": "art. 15 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-f09",
+   "deck": "spb",
+   "type": "flashcard",
+   "front": "Art. 15 ust. 5 – kiedy kajdanki zespolone lub na nogi?",
+   "back": "Wyłącznie wobec osób: 1) agresywnych; 2) zatrzymanych w związku z podejrzeniem przestępstwa z użyciem broni palnej, materiałów wybuchowych lub niebezpiecznego narzędzia albo przestępstwa z art. 115 § 20, 148 lub 258 kk; 3) pozbawionych wolności.",
+   "source": "art. 15 ust. 5 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-f10",
+   "deck": "spb",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Art. 26 – cela zabezpieczająca",
+   "back": "Dla osoby pozbawionej wolności, w przypadkach z art. 11 pkt 1–3, 5, 6, 8, 9 i 12–14. Maksymalnie 48 godzin. Więcej niż jedna osoba tylko gdy bezpieczne odosobnienie w innych pomieszczeniach jest niemożliwe.",
+   "source": "art. 26 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-f11",
+   "deck": "spb",
+   "type": "flashcard",
+   "front": "Art. 17 – kask zabezpieczający",
+   "back": "Tylko w przypadku z art. 11 pkt 14 (autoagresja).",
+   "source": "art. 17 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-f12",
+   "deck": "spb",
+   "type": "flashcard",
+   "front": "Art. 19 ust. 1 ustawy o ŚPB – pałka: przypadki i zakaz",
+   "back": "Przypadki z art. 11 pkt 1–11 i 13. Nie używa się wobec osób skutych kajdankami, w kaftanie, pasie lub siatce (pkt 2–5) ani obezwładnionych paralizatorem – z wyjątkiem dźwigni transportowych pałką.",
+   "source": "art. 19 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-f13",
+   "deck": "spb",
+   "type": "flashcard",
+   "front": "Art. 21 – pies służbowy: przypadki",
+   "back": "Art. 11 pkt 2, 5–7, 9–11 i 13.",
+   "source": "art. 21 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-f14",
+   "deck": "spb",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Art. 34 – postępowanie przed użyciem ŚPB",
+   "back": "Po uprzednim bezskutecznym wezwaniu do zachowania zgodnego z prawem i po uprzedzeniu o zamiarze użycia. Nie stosuje się, gdy: 1) występuje bezpośrednie zagrożenie życia, zdrowia lub wolności albo 2) zwłoka groziłaby niebezpieczeństwem dla dobra chronionego prawem, a ŚPB używa się prewencyjnie.",
+   "source": "art. 34 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-f15",
+   "deck": "spb",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Art. 35 ust. 1 vs ust. 2 – kto decyduje o ŚPB?",
+   "back": "Ust. 1: co do zasady uprawniony samodzielnie. Ust. 2: w SW decyduje przełożony: DG SW, Rektor-Komendant, dyrektor okręgowy, dyrektor ZK, dyrektor AŚ, kierownik oddziału, komendant ośrodka szkolenia, komendant ośrodka doskonalenia kadr, osoba zastępująca, dowodzący poza jednostką (pkt 9), a funkcjonariusz sam – w przypadkach z pkt 10.",
+   "source": "art. 35 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-f16",
+   "deck": "spb",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Art. 35 ust. 2 pkt 10 – wyrecytuj",
+   "back": "funkcjonariusz Służby Więziennej – w przypadku usiłowania bezpośredniego, bezprawnego zamachu na życie lub zdrowie uprawnionego lub innej osoby, usiłowania ucieczki przez osobę pozbawioną wolności, a także w pościgu za nią lub osobą, która dokonała bezpośredniego, bezprawnego zamachu na obiekty zakładu karnego, aresztu śledczego lub innej jednostki organizacyjnej, w której Służba Więzienna zapewnia porządek i bezpieczeństwo, oraz w przypadkach, o których mowa w art. 13 ust. 1.",
+   "source": "art. 35 ust. 2 pkt 10 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-f17",
+   "deck": "spb",
+   "type": "flashcard",
+   "front": "Skrót ZUPP (art. 35 ust. 2 pkt 10)",
+   "back": "Zamach (usiłowanie, na życie lub zdrowie) – Ucieczka (usiłowanie) – Pościg (za uciekającym lub za sprawcą zamachu na obiekty) – Prewencja (art. 13 ust. 1).",
+   "source": "skrypt, część C"
+  },
+  {
+   "id": "spb-f18",
+   "deck": "spb",
+   "type": "flashcard",
+   "front": "Art. 35 ust. 7",
+   "back": "O kajdankach i pasie (art. 12 ust. 1 pkt 2 i 4) w przypadkach z art. 19 ust. 6–10 ustawy o SW decydują podmioty wskazane w tych przepisach.",
+   "source": "art. 35 ust. 7 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-f19",
+   "deck": "spb",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Art. 36 ust. 1–4 – pierwsza pomoc po ŚPB",
+   "back": "Przy zranieniu lub widocznych objawach zagrożenia życia lub zdrowia – niezwłocznie pierwsza pomoc, w razie potrzeby wezwanie pomocy kwalifikowanej lub ratownictwa medycznego. Można odstąpić, gdy: 1) zagrażałoby to życiu, zdrowiu lub bezpieczeństwu; 2) wymagałoby zaniechania czynności ochronnych lub konwoju; 3) pomoc zapewniły inne podmioty. Wtedy (lub przy sprzeciwie) trzeba wezwać pomoc. Kobieta ciężarna – nie można odstąpić od zapewnienia medycznych czynności ratunkowych.",
+   "source": "art. 36 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-f20",
+   "deck": "spb",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Art. 37 ust. 1 – obowiązki po zranieniu, śmierci lub zniszczeniu mienia",
+   "back": "1) zabezpiecza miejsce zdarzenia, także przed osobami postronnymi; 2) ustala świadków; 3) powiadamia przełożonego lub dyżurnego. Pkt 1 i 2 nie stosuje się przy zniszczeniu mienia na terenie jednostki SW.",
+   "source": "art. 37 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-a45-00",
+   "deck": "spb",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Art. 45 – szkielet pięciu punktów",
+   "back": "1) Zamach (a osoby, b ważne obiekty, c mienie groźne dla życia, d granica, e konwój); 2) Przeciwstawienie się (a nie porzuca broni, b odbiera broń); 3) Pościg (a za osobą z pkt 1 a–d i 2, b za podejrzanym o ciężkie przestępstwo); 4) Ujęcie; 5) Ucieczka z AŚ/ZK, z konwoju, pościg. Skrót: Z-P-P-U-U.",
+   "source": "art. 45 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-a45-01",
+   "deck": "spb",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Art. 45 pkt 1 lit. a",
+   "back": "konieczność odparcia bezpośredniego, bezprawnego zamachu na życie, zdrowie lub wolność uprawnionego lub innej osoby albo konieczność przeciwdziałania czynnościom zmierzającym bezpośrednio do takiego zamachu",
+   "source": "art. 45 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-a45-02",
+   "deck": "spb",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Art. 45 pkt 1 lit. b",
+   "back": "konieczność odparcia bezpośredniego, bezprawnego zamachu na ważne obiekty, urządzenia lub obszary albo konieczność przeciwdziałania czynnościom zmierzającym bezpośrednio do takiego zamachu",
+   "source": "art. 45 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-a45-03",
+   "deck": "spb",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Art. 45 pkt 1 lit. e",
+   "back": "konieczność odparcia bezpośredniego, bezprawnego zamachu na bezpieczeństwo konwoju lub doprowadzenia",
+   "source": "art. 45 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-a45-04",
+   "deck": "spb",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Art. 45 pkt 2",
+   "back": "konieczność przeciwstawienia się osobie: a) niepodporządkowującej się wezwaniu do natychmiastowego porzucenia broni, materiału wybuchowego lub innego niebezpiecznego przedmiotu, którego użycie może zagrozić życiu, zdrowiu lub wolności uprawnionego lub innej osoby, b) która usiłuje bezprawnie odebrać broń palną uprawnionemu lub innej osobie uprawnionej do jej posiadania",
+   "source": "art. 45 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-a45-05",
+   "deck": "spb",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Art. 45 pkt 3 lit. a",
+   "back": "bezpośredni pościg za osobą, wobec której użycie broni palnej było dopuszczalne w przypadkach określonych w pkt 1 lit. a–d i pkt 2",
+   "source": "art. 45 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-a45-06",
+   "deck": "spb",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Art. 45 pkt 5",
+   "back": "konieczność udaremnienia ucieczki osoby pozbawionej wolności z aresztu śledczego lub zakładu karnego oraz osoby konwojowanej lub doprowadzanej, a także pościg za tą osobą",
+   "source": "art. 45 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-a45-07",
+   "deck": "spb",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Które przypadki z art. 45 i 47 przysługują SW? (art. 19 ust. 2 ustawy o SW)",
+   "back": "Użycie: art. 45 pkt 1 lit. a, b, e; pkt 2; pkt 3 lit. a; pkt 5. Wykorzystanie: art. 47 pkt 3 (zaalarmowanie lub wezwanie pomocy), 6 (strzał ostrzegawczy), 7 (drony).",
+   "source": "art. 19 ust. 2 ustawy o SW"
+  },
+  {
+   "id": "spb-f21",
+   "deck": "spb",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Art. 48 ust. 1–2 – procedura przed użyciem broni",
+   "back": "1) identyfikacja formacji okrzykiem (pełna nazwa lub skrót); 2) wezwanie do zachowania zgodnego z prawem, w szczególności: porzucenia broni lub niebezpiecznego przedmiotu, zaniechania ucieczki, odstąpienia od przemocy; przy niepodporządkowaniu – okrzyk „Stój, bo strzelam!”, a gdy nieskuteczny – strzał ostrzegawczy w bezpiecznym kierunku.",
+   "source": "art. 48 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-f22",
+   "deck": "spb",
+   "type": "flashcard",
+   "front": "Art. 48 ust. 3 – kiedy można odstąpić od procedury?",
+   "back": "Gdy jej realizacja groziłaby bezpośrednim niebezpieczeństwem dla życia lub zdrowia uprawnionego lub innej osoby albo gdy jest to niezbędne dla zapobieżenia zdarzeniu terrorystycznemu, a inne środki mogłyby okazać się niewystarczające.",
+   "source": "art. 48 ust. 3 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-f23",
+   "deck": "spb",
+   "type": "flashcard",
+   "front": "Art. 48 ust. 4 – obowiązek przed konwojem",
+   "back": "Uprzedzić osobę pozbawioną wolności, wobec której możliwe jest użycie broni (art. 45 pkt 4 lit. b i c), że w razie próby ucieczki może zostać użyta broń palna.",
+   "source": "art. 48 ust. 4 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-f24",
+   "deck": "spb",
+   "type": "flashcard",
+   "front": "Art. 49–50 – po użyciu broni",
+   "back": "Stosuje się art. 36 ust. 1–4, art. 37 ust. 1 i 2 pkt 2, art. 38 i 39 (czyli bez wyjątku z art. 37 ust. 2 pkt 1). O każdym użyciu lub wykorzystaniu broni niezwłocznie powiadamia się przełożonego lub dyżurnego.",
+   "source": "art. 49–50 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-f25",
+   "deck": "spb",
+   "type": "flashcard",
+   "front": "Art. 51–52 i 55 – dokumentowanie",
+   "back": "Notatka; trafia do przełożonego przy zranieniu, śmierci, zniszczeniu mienia, zwierzęciu i zawsze przy broni; bez skutków – notatnik służbowy. SW nie dokumentuje użycia prewencyjnego bez skutków. Przy broni dodatkowo: nazwa, rodzaj, numer broni, rodzaj i liczba amunicji.",
+   "source": "art. 51, 52, 55 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-c01",
+   "deck": "spb",
+   "type": "cloze",
+   "naPamiec": true,
+   "text": "funkcjonariusz Służby Więziennej – w przypadku [[usiłowania]] bezpośredniego, bezprawnego zamachu na [[życie lub zdrowie]] uprawnionego lub innej osoby, usiłowania [[ucieczki]] przez osobę pozbawioną wolności, a także w [[pościgu]] za nią lub osobą, która dokonała bezpośredniego, bezprawnego zamachu na [[obiekty]] zakładu karnego, aresztu śledczego lub innej jednostki organizacyjnej, w której Służba Więzienna zapewnia porządek i bezpieczeństwo, oraz w przypadkach, o których mowa w art. [[13 ust. 1]].",
+   "source": "art. 35 ust. 2 pkt 10 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-c02",
+   "deck": "spb",
+   "type": "cloze",
+   "naPamiec": true,
+   "text": "Środków przymusu bezpośredniego używa się lub wykorzystuje się je w sposób [[niezbędny]] do osiągnięcia celów tego użycia lub wykorzystania, [[proporcjonalnie]] do stopnia zagrożenia, wybierając środek o możliwie jak [[najmniejszej dolegliwości]].",
+   "source": "art. 6 ust. 1 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-c03",
+   "deck": "spb",
+   "type": "cloze",
+   "naPamiec": true,
+   "text": "W przypadku niepodporządkowania się wezwaniom uprawniony uprzedza o użyciu broni palnej okrzykiem: „[[Stój, bo strzelam!]]”, a jeżeli wezwanie to okaże się nieskuteczne, oddaje [[strzał ostrzegawczy]] w [[bezpiecznym]] kierunku.",
+   "source": "art. 48 ust. 2 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-c04",
+   "deck": "spb",
+   "type": "cloze",
+   "naPamiec": true,
+   "text": "Konieczność udaremnienia [[ucieczki]] osoby pozbawionej wolności z [[aresztu śledczego]] lub [[zakładu karnego]] oraz osoby [[konwojowanej]] lub doprowadzanej, a także [[pościg]] za tą osobą.",
+   "source": "art. 45 pkt 5 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-c05",
+   "deck": "spb",
+   "type": "cloze",
+   "text": "Podejmując decyzję o użyciu lub wykorzystaniu broni palnej, należy postępować ze szczególną [[rozwagą]] i traktować jej użycie jako środek [[ostateczny]].",
+   "source": "art. 7 ust. 4 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-o01",
+   "deck": "spb",
+   "type": "order",
+   "naPamiec": true,
+   "prompt": "Ułóż kroki przed użyciem broni palnej (art. 48)",
+   "steps": [
+    "Okrzyk identyfikujący formację: „Służba Więzienna!”",
+    "Wezwanie do zachowania zgodnego z prawem (porzuć broń / zaniechaj ucieczki / odstąp od przemocy)",
+    "Okrzyk „Stój, bo strzelam!”",
+    "Strzał ostrzegawczy w bezpiecznym kierunku",
+    "Użycie broni palnej"
+   ],
+   "source": "art. 48 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-o02",
+   "deck": "spb",
+   "type": "order",
+   "prompt": "Ułóż kroki przed użyciem ŚPB (art. 34)",
+   "steps": [
+    "Wezwanie osoby do zachowania zgodnego z prawem",
+    "Brak reakcji (wezwanie bezskuteczne)",
+    "Uprzedzenie o zamiarze użycia ŚPB",
+    "Użycie ŚPB"
+   ],
+   "source": "art. 34 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-o03",
+   "deck": "spb",
+   "type": "order",
+   "prompt": "Ułóż obowiązki po użyciu ŚPB, gdy doszło do zranienia osoby",
+   "steps": [
+    "Niezwłoczna pierwsza pomoc lub wezwanie pomocy medycznej",
+    "Zabezpieczenie miejsca zdarzenia",
+    "Ustalenie świadków",
+    "Powiadomienie przełożonego lub dyżurnego",
+    "Sporządzenie notatki"
+   ],
+   "source": "art. 36, 37, 51 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-o04",
+   "deck": "spb",
+   "type": "order",
+   "prompt": "Ułóż punkty art. 45 w kolejności",
+   "steps": [
+    "Zamach (osoby, obiekty, mienie, granica, konwój)",
+    "Przeciwstawienie się osobie (nie porzuca broni / odbiera broń)",
+    "Bezpośredni pościg",
+    "Ujęcie osoby",
+    "Udaremnienie ucieczki z ZK, AŚ, konwoju i pościg"
+   ],
+   "source": "art. 45 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-m01",
+   "deck": "spb",
+   "type": "mcq",
+   "question": "Kiedy funkcjonariusz SW może SAM podjąć decyzję o użyciu ŚPB?",
+   "options": [
+    "Zawsze",
+    "Przy usiłowaniu zamachu na życie lub zdrowie, usiłowaniu ucieczki, w pościgu i przy prewencji z art. 13 ust. 1",
+    "Tylko za zgodą dowódcy zmiany",
+    "Wyłącznie poza jednostką"
+   ],
+   "answer": 1,
+   "explanation": "Art. 35 ust. 2 pkt 10 – skrót ZUPP.",
+   "source": "art. 35 ust. 2 pkt 10 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-m02",
+   "deck": "spb",
+   "type": "mcq",
+   "question": "Maksymalny pobyt w celi zabezpieczającej to:",
+   "options": [
+    "24 h",
+    "48 h",
+    "72 h",
+    "14 dni"
+   ],
+   "answer": 1,
+   "explanation": "Art. 26 ust. 2.",
+   "source": "art. 26 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-m03",
+   "deck": "spb",
+   "type": "mcq",
+   "question": "Którego ŚPB funkcjonariusz SW NIE może użyć?",
+   "options": [
+    "Pasa obezwładniającego",
+    "Kasku zabezpieczającego",
+    "Kaftana bezpieczeństwa",
+    "Paralizatora"
+   ],
+   "answer": 2,
+   "explanation": "Art. 19 ust. 1 ustawy o SW nie obejmuje art. 12 ust. 1 pkt 3 (kaftan).",
+   "source": "art. 19 ust. 1 ustawy o SW"
+  },
+  {
+   "id": "spb-m04",
+   "deck": "spb",
+   "type": "mcq",
+   "question": "Którego środka NIE używa się przy biernym oporze (art. 11 pkt 12)?",
+   "options": [
+    "Siły fizycznej",
+    "Kajdanek",
+    "Celi zabezpieczającej",
+    "Chemicznych środków obezwładniających"
+   ],
+   "answer": 1,
+   "explanation": "Kajdanki: art. 11 pkt 1–11, 13, 14 – bez pkt 12.",
+   "source": "art. 15 ust. 1 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-m05",
+   "deck": "spb",
+   "type": "mcq",
+   "question": "Ucieczka z zakładu karnego lub z konwoju to przypadek z:",
+   "options": [
+    "art. 45 pkt 1 lit. e",
+    "art. 45 pkt 3 lit. a",
+    "art. 45 pkt 4 lit. b",
+    "art. 45 pkt 5"
+   ],
+   "answer": 3,
+   "explanation": "Art. 45 pkt 5. Pkt 4 (ujęcie) nie przysługuje SW.",
+   "source": "art. 45 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-m06",
+   "deck": "spb",
+   "type": "mcq",
+   "question": "Którego ŚPB nie można użyć prewencyjnie?",
+   "options": [
+    "Kajdanek",
+    "Pasa obezwładniającego",
+    "Pałki służbowej",
+    "Technik transportowych"
+   ],
+   "answer": 2,
+   "explanation": "Art. 13 ust. 1: techniki transportowe, kajdanki, kaftan, pas, kask.",
+   "source": "art. 13 ust. 1 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-m07",
+   "deck": "spb",
+   "type": "mcq",
+   "question": "Zniszczenie mienia na terenie ZK po użyciu ŚPB – czy trzeba zabezpieczyć miejsce i ustalić świadków?",
+   "options": [
+    "Tak, zawsze",
+    "Nie – wyjątek z art. 37 ust. 2 pkt 1",
+    "Tylko przy szkodzie powyżej 1000 zł",
+    "Tylko na polecenie prokuratora"
+   ],
+   "answer": 1,
+   "explanation": "Wyjątek dla SW. Powiadomienie przełożonego obowiązuje. Po użyciu broni wyjątek nie działa.",
+   "source": "art. 37 ust. 2 pkt 1 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-m08",
+   "deck": "spb",
+   "type": "mcq",
+   "question": "Od czego nie można odstąpić po użyciu ŚPB wobec kobiety ciężarnej?",
+   "options": [
+    "Od protokołu",
+    "Od zapewnienia medycznych czynności ratunkowych",
+    "Od powiadomienia prokuratora",
+    "Od ustalenia świadków"
+   ],
+   "answer": 1,
+   "explanation": "Art. 36 ust. 4.",
+   "source": "art. 36 ust. 4 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-m09",
+   "deck": "spb",
+   "type": "mcq",
+   "question": "Kask zabezpieczający można zastosować:",
+   "options": [
+    "tylko przy autoagresji",
+    "przy czynnym oporze",
+    "przy konwoju",
+    "zawsze"
+   ],
+   "answer": 0,
+   "explanation": "Art. 17 – art. 11 pkt 14.",
+   "source": "art. 17 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-m10",
+   "deck": "spb",
+   "type": "mcq",
+   "question": "Którego przypadku z art. 11 NIE ma w art. 19 ust. 1 ustawy o SW?",
+   "options": [
+    "pkt 9 – konwój",
+    "pkt 10 – ujęcie osoby",
+    "pkt 13 – czynny opór",
+    "pkt 14 – autoagresja"
+   ],
+   "answer": 1,
+   "explanation": "SW: pkt 1–6, 8, 9, 11–15. Odpadają pkt 7 (granica) i 10 (ujęcie).",
+   "source": "art. 19 ust. 1 ustawy o SW"
+  },
+  {
+   "id": "sw-f01",
+   "deck": "sw",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Art. 1 ustawy o SW – czym jest SW?",
+   "back": "Umundurowaną i uzbrojoną formacją apolityczną podległą Ministrowi Sprawiedliwości, posiadającą własną strukturę organizacyjną.",
+   "source": "art. 1 ustawy o SW"
+  },
+  {
+   "id": "sw-f02",
+   "deck": "sw",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Art. 2 ust. 1 ustawy o SW",
+   "back": "SW realizuje na zasadach określonych w Kodeksie karnym wykonawczym zadania w zakresie wykonywania tymczasowego aresztowania oraz kar pozbawienia wolności i środków przymusu skutkujących pozbawieniem wolności.",
+   "source": "art. 2 ust. 1 ustawy o SW"
+  },
+  {
+   "id": "sw-f03",
+   "deck": "sw",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Art. 2 ust. 2 pkt 1–4 – zadania SW",
+   "back": "1) oddziaływania penitencjarne i resocjalizacyjne (praca, nauczanie, zajęcia kulturalno-oświatowe, sport, terapia); 2) wykonywanie tymczasowego aresztowania zabezpieczające tok postępowania karnego; 3) zapewnienie przestrzegania praw osadzonych (humanitarne warunki, godność, opieka zdrowotna i religijna); 4) humanitarne traktowanie osób pozbawionych wolności.",
+   "source": "art. 2 ust. 2 ustawy o SW"
+  },
+  {
+   "id": "sw-f04",
+   "deck": "sw",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Art. 2 ust. 2 pkt 5–10 – zadania SW",
+   "back": "5) ochrona społeczeństwa przed sprawcami przestępstw osadzonymi w ZK i AŚ; 6) porządek i bezpieczeństwo w ZK i AŚ; 7) wykonywanie na terytorium RP tymczasowego aresztowania i kar w ZK i AŚ na podstawie orzeczeń; 7a) Centralna Baza Danych Osób Pozbawionych Wolności; 8) współdziałanie z formacjami innych państw i organizacjami międzynarodowymi; 9) czynności z art. 43g § 1 kkw powierzone przez MS; 10) edukacja prawna młodzieży związana z prewencją przestępstw.",
+   "source": "art. 2 ust. 2 ustawy o SW"
+  },
+  {
+   "id": "sw-f05",
+   "deck": "sw",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Art. 7 – organy SW",
+   "back": "Dyrektor Generalny SW; dyrektorzy okręgowi; dyrektorzy zakładów karnych i aresztów śledczych; Rektor-Komendant Uczelni oraz komendanci ośrodków szkolenia i ośrodków doskonalenia kadr.",
+   "source": "art. 7 ustawy o SW"
+  },
+  {
+   "id": "sw-f06",
+   "deck": "sw",
+   "type": "flashcard",
+   "front": "Art. 8 ust. 1 – jednostki organizacyjne SW",
+   "back": "Centralny Zarząd SW; okręgowe inspektoraty SW; zakłady karne i areszty śledcze; Uczelnia; Centralny Ośrodek Szkolenia SW, ośrodki szkolenia i ośrodki doskonalenia kadr.",
+   "source": "art. 8 ustawy o SW"
+  },
+  {
+   "id": "sw-f07",
+   "deck": "sw",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Art. 18 ust. 1 – uprawnienia funkcjonariusza (lista)",
+   "back": "Legitymowanie i deponowanie dokumentów; żądanie oddania przedmiotów niedozwolonych do depozytu, kontrola pobieżna i osobista, kontrola pojazdów i ładunków; wzywanie do zaniechania zakłócania porządku; zatrzymywanie podejrzanych o przestępstwo w celu przekazania Policji; usuwanie z terenu jednostki; zatrzymywanie zbiegów i pościg; zwracanie się o pomoc do organów i każdej osoby.",
+   "source": "art. 18 ustawy o SW"
+  },
+  {
+   "id": "sw-f08",
+   "deck": "sw",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Kontrola osobista – kto i jak? (art. 18)",
+   "back": "Co najmniej dwaj funkcjonariusze tej samej płci, w pomieszczeniu bez osób postronnych i bez monitoringu; możliwy udział osoby wykonującej zawód medyczny; uprzedzenie o rozpoczęciu i rodzaju kontroli; w sposób możliwie najmniej naruszający dobra osobiste; zażalenie do sądu rejonowego w ciągu 7 dni.",
+   "source": "art. 18 ustawy o SW"
+  },
+  {
+   "id": "sw-f09",
+   "deck": "sw",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Art. 19 ust. 1 ustawy o SW – jakie ŚPB i w jakich przypadkach?",
+   "back": "Przypadki z art. 11 pkt 1–6, 8, 9 i 11–15 ustawy o ŚPB. Środki z art. 12 ust. 1 pkt 1, 2, 4, 6–9, 11, pkt 12 lit. a, c, d, pkt 13, 14 i 21 (siła, kajdanki, pas, kask, pałka, wodne, pies, pociski niepenetracyjne, ręczne miotacze, granaty łzawiące, inne urządzenia do miotania, paralizator, cela zabezpieczająca, środki antydronowe).",
+   "source": "art. 19 ust. 1 ustawy o SW"
+  },
+  {
+   "id": "sw-f10",
+   "deck": "sw",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Art. 19 ust. 6 ustawy o SW",
+   "back": "W ZK typu zamkniętego i AŚ wobec osób pozbawionych wolności, które: 1) przebywają poza celą – prewencyjnie kajdanki na ręce; 2) przejawiają zachowania zagrażające życiu, zdrowiu lub bezpieczeństwu – mogą prewencyjnie kajdanki i pas obezwładniający.",
+   "source": "art. 19 ust. 6 ustawy o SW"
+  },
+  {
+   "id": "sw-f11",
+   "deck": "sw",
+   "type": "flashcard",
+   "front": "Art. 19 ust. 7–10 ustawy o SW",
+   "back": "7) dyrektor może zwolnić osadzonego z prewencyjnych kajdanek – odnotowuje się w Centralnej Bazie; 8) funkcjonariusz może zrezygnować z kajdanek lub pasa po ocenie bezpieczeństwa; 9) w zakładach półotwartych i otwartych prewencyjnie na wniosek osoby w kontakcie z osadzonym lub gdy funkcjonariusz uzna to za celowe; 10) każde takie użycie odnotowuje się w Centralnej Bazie.",
+   "source": "art. 19 ust. 7–10 ustawy o SW"
+  },
+  {
+   "id": "sw-f12",
+   "deck": "sw",
+   "type": "flashcard",
+   "front": "Art. 23 – kiedy SW współdziała z Policją?",
+   "back": "Gdy bezpieczeństwa jednostki lub konwoju nie można zapewnić siłami własnymi, np. przy zamachu terrorystycznym, buncie, zbiorowej ucieczce, pożarze lub klęsce żywiołowej.",
+   "source": "art. 23 ustawy o SW"
+  },
+  {
+   "id": "sw-m01",
+   "deck": "sw",
+   "type": "mcq",
+   "question": "Kto przeprowadza kontrolę osobistą?",
+   "options": [
+    "Jeden funkcjonariusz dowolnej płci",
+    "Co najmniej dwaj funkcjonariusze tej samej płci",
+    "Funkcjonariusz w obecności współosadzonego",
+    "Wyłącznie lekarz"
+   ],
+   "answer": 1,
+   "explanation": "Art. 18 ustawy o SW.",
+   "source": "art. 18 ustawy o SW"
+  },
+  {
+   "id": "sw-m02",
+   "deck": "sw",
+   "type": "mcq",
+   "question": "W jakim terminie przysługuje zażalenie na sposób przeprowadzenia kontroli?",
+   "options": [
+    "3 dni",
+    "7 dni",
+    "14 dni",
+    "30 dni"
+   ],
+   "answer": 1,
+   "explanation": "Do sądu rejonowego w terminie 7 dni.",
+   "source": "art. 18 ust. 5–6 ustawy o SW"
+  },
+  {
+   "id": "sw-m03",
+   "deck": "sw",
+   "type": "mcq",
+   "question": "Osadzony w ZK typu zamkniętego wychodzi z celi. Co przewiduje art. 19 ust. 6 pkt 1?",
+   "options": [
+    "Prewencyjne kajdanki na ręce",
+    "Obowiązkowy pas",
+    "Konwój z bronią",
+    "Nic"
+   ],
+   "answer": 0,
+   "explanation": "Dyrektor może zwolnić (ust. 7), funkcjonariusz może zrezygnować (ust. 8).",
+   "source": "art. 19 ust. 6 ustawy o SW"
+  },
+  {
+   "id": "kkw-f01",
+   "deck": "kkw",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Art. 67 § 1 kkw – cel wykonywania kary",
+   "back": "Wzbudzanie w skazanym woli współdziałania w kształtowaniu jego społecznie pożądanych postaw, w szczególności poczucia odpowiedzialności oraz potrzeby przestrzegania porządku prawnego i tym samym powstrzymania się od powrotu do przestępstwa.",
+   "source": "art. 67 § 1 kkw"
+  },
+  {
+   "id": "kkw-f02",
+   "deck": "kkw",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Art. 67 § 3 kkw – środki oddziaływania",
+   "back": "Praca (zwłaszcza dająca kwalifikacje), nauczanie, zajęcia kulturalno-oświatowe i sportowe, podtrzymywanie kontaktów z rodziną i światem zewnętrznym, środki terapeutyczne.",
+   "source": "art. 67 § 3 kkw"
+  },
+  {
+   "id": "kkw-f03",
+   "deck": "kkw",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Rodzaje (art. 69), typy (art. 70) i systemy (art. 81)",
+   "back": "Rodzaje: dla młodocianych (M), po raz pierwszy (P), recydywistów penitencjarnych (R), aresztu wojskowego (W). Typy: zamknięty (1), półotwarty (2), otwarty (3). Systemy: programowanego oddziaływania (/p), terapeutyczny (/t), zwykły (/z).",
+   "source": "art. 69, 70, 81 kkw"
+  },
+  {
+   "id": "kkw-f04",
+   "deck": "kkw",
+   "type": "flashcard",
+   "front": "Co oznacza symbol P-1/t?",
+   "back": "Odbywający karę po raz pierwszy, zakład typu zamkniętego, system terapeutyczny.",
+   "source": "art. 69, 70, 81 kkw"
+  },
+  {
+   "id": "kkw-f05",
+   "deck": "kkw",
+   "type": "flashcard",
+   "front": "Kto jest młodocianym w kkw?",
+   "back": "Skazany, który nie ukończył 24 lat (art. 84). W ZK dla młodocianych typu zamkniętego i półotwartego – dodatkowe widzenie w miesiącu (art. 91a).",
+   "source": "art. 84, 91a kkw"
+  },
+  {
+   "id": "kkw-f06",
+   "deck": "kkw",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Art. 88 § 3 – kogo osadza się w zakładzie zamkniętym?",
+   "back": "1) skazanego za przestępstwo w zorganizowanej grupie (chyba że szczególne okoliczności – nie dotyczy „N”); 2) skazanego na dożywocie albo 25 lat lub więcej; 3) skazanego z niepsychotycznymi zaburzeniami psychicznymi (w tym sprawców z art. 197–203 kk z zaburzeniami preferencji) lub upośledzonego umysłowo; 4) „N”; 5) objętego ochroną z art. 88d lub ustawy o świadku koronnym.",
+   "source": "art. 88 § 3 kkw"
+  },
+  {
+   "id": "kkw-f07",
+   "deck": "kkw",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Art. 88a § 1 – kogo można uznać za „N”?",
+   "back": "1) sprawcę przestępstwa o bardzo wysokim stopniu społecznej szkodliwości (zamach na niepodległość, ustrój, życie Prezydenta, jednostkę Sił Zbrojnych; ze szczególnym okrucieństwem; zakładnik; uprowadzenie statku; z użyciem broni palnej, materiałów wybuchowych lub łatwopalnych); 2) przestępstwo w zorganizowanej grupie, zwłaszcza w roli kierowniczej; 3) zagrażał bezpieczeństwu ZK/AŚ: zbiorowe wystąpienie, czynna napaść na funkcjonariusza lub pracownika, zgwałcenie, ciężki uszczerbek, znęcanie się nad osadzonym, ucieczka lub próba ucieczki (także z konwoju).",
+   "source": "art. 88a § 1 kkw"
+  },
+  {
+   "id": "kkw-f08",
+   "deck": "kkw",
+   "type": "flashcard",
+   "front": "„N” – kto decyduje, gdzie przebywa, kogo się zawiadamia?",
+   "back": "Komisja penitencjarna, weryfikacja co najmniej raz na 3 miesiące (art. 76 § 1 pkt 7). Wyznaczony oddział lub cela ZK typu zamkniętego w warunkach wzmożonej ochrony (art. 88a § 3). Zawiadamia się sędziego penitencjarnego (art. 88a § 4). Stały monitoring (art. 88c).",
+   "source": "art. 76, 88a, 88c kkw"
+  },
+  {
+   "id": "kkw-f09",
+   "deck": "kkw",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Widzenia i przepustki wg typu zakładu (art. 90–92)",
+   "back": "Zamknięty: 2 widzenia w miesiącu. Półotwarty: 3 widzenia, przepustki nie częściej niż raz na 2 miesiące, łącznie do 14 dni w roku, własna odzież. Otwarty: widzenia bez ograniczeń, przepustki nie częściej niż raz w miesiącu, łącznie do 28 dni w roku, cele otwarte całą dobę.",
+   "source": "art. 90–92 kkw"
+  },
+  {
+   "id": "kkw-f10",
+   "deck": "kkw",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Art. 102 kkw – prawa skazanego (11 punktów w skrócie)",
+   "back": "1) wyżywienie, odzież, warunki bytowe, świadczenia zdrowotne, higiena; 2) więź z rodziną; 3) wolność religijna; 4) wynagrodzenie i ubezpieczenie; 5) kształcenie, samokształcenie, twórczość; 6) zajęcia kulturalne i sportowe, radio, TV, książki, prasa; 7) kontakt z obrońcą, pełnomocnikiem, kuratorem, przedstawicielem; 8) kontakt z podmiotami z art. 38 § 1; 9) wgląd w opinie będące podstawą decyzji; 10) wnioski, skargi i prośby (także bez obecności innych osób); 11) korespondencja z organami państwa, RPO, RPD, organami międzynarodowymi.",
+   "source": "art. 102 kkw"
+  },
+  {
+   "id": "kkw-f11",
+   "deck": "kkw",
+   "type": "flashcard",
+   "front": "Art. 116 § 1 kkw – obowiązki skazanego",
+   "back": "Poprawne zachowanie; higiena i czystość; zawiadamianie o chorobie; poddawanie się badaniom, leczeniu i badaniom na substancje psychoaktywne; poddawanie się kontrolom; praca (o ile nie zwolniony) i prace porządkowe; dbałość o mienie; czynności identyfikacyjne; informowanie o zmianie danych.",
+   "source": "art. 116 § 1 kkw"
+  },
+  {
+   "id": "kkw-f12",
+   "deck": "kkw",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Art. 143 § 1 kkw – kary dyscyplinarne",
+   "back": "1) nagana; 2) pozbawienie lub zawieszenie nagród i ulg do 3 mies.; 3) pozbawienie niektórych zajęć kulturalnych lub sportowych (poza książkami i prasą) do 3 mies.; 4) pozbawienie paczek do 3 mies.; 5) pozbawienie lub ograniczenie zakupów do 3 mies.; 6) widzenia bez bezpośredniego kontaktu do 3 mies.; 7) obniżenie wynagrodzenia do 25% do 3 mies.; 7a) pozbawienie widzeń i telefonu do 28 dni; 8) cela izolacyjna do 28 dni.",
+   "source": "art. 143 § 1 kkw"
+  },
+  {
+   "id": "kkw-f13",
+   "deck": "kkw",
+   "type": "flashcard",
+   "front": "Wobec kogo nie stosuje się kar z art. 143 § 1 pkt 4, 5, 8?",
+   "back": "Wobec kobiet ciężarnych, karmiących lub sprawujących opiekę nad własnymi dziećmi w domach matki i dziecka (art. 143 § 2).",
+   "source": "art. 143 § 2 kkw"
+  },
+  {
+   "id": "kkw-f14",
+   "deck": "kkw",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Procedura kar dyscyplinarnych (art. 144–148)",
+   "back": "Kary z pkt 4, 5, 7–8 wymierza dyrektor, pozostałe także osoba upoważniona; wysłuchanie obwinionego i opinia wychowawcy; przed celą izolacyjną opinia lekarza albo psychologa; ponad 14 dni – zgoda sędziego penitencjarnego; przedawnienie: 14 dni od dowiedzenia się / 30 dni od przekroczenia; wykonanie bezzwłocznie.",
+   "source": "art. 144–148 kkw"
+  },
+  {
+   "id": "kkw-f15",
+   "deck": "kkw",
+   "type": "flashcard",
+   "front": "Nagrody z art. 138 § 1 pkt 7 i 8",
+   "back": "Pkt 7: widzenie bez dozoru poza zakładem z osobą najbliższą lub godną zaufania – jednorazowo do 30 godzin. Pkt 8: opuszczenie zakładu bez dozoru – jednorazowo do 14 dni. Przyznaje dyrektor; dożywotnik – po 15 latach.",
+   "source": "art. 138, 139 kkw"
+  },
+  {
+   "id": "kkw-f16",
+   "deck": "kkw",
+   "type": "flashcard",
+   "front": "Tymczasowe aresztowanie – cel i najważniejsze zasady",
+   "back": "Służy realizacji celów, dla których je zastosowano, zwłaszcza zabezpieczeniu toku postępowania karnego (art. 207). Prawa co najmniej jak skazanego w ZK zamkniętym (art. 214). O użyciu ŚPB, broni lub psa zawiadamia się niezwłocznie organ dysponujący (art. 214). Widzenia za zgodą organu dysponującego (art. 217). Cela izolacyjna do 14 dni (art. 222).",
+   "source": "art. 207–222 kkw"
+  },
+  {
+   "id": "kkw-f17",
+   "deck": "kkw",
+   "type": "flashcard",
+   "front": "Art. 4 kkw – zasada humanitaryzmu",
+   "back": "Kary i środki wykonuje się w sposób humanitarny, z poszanowaniem godności ludzkiej skazanego; zakaz tortur oraz nieludzkiego lub poniżającego traktowania.",
+   "source": "art. 4 kkw"
+  },
+  {
+   "id": "kkw-f18",
+   "deck": "kkw",
+   "type": "flashcard",
+   "front": "Skargi i zaskarżanie decyzji (art. 6–7 kkw)",
+   "back": "Skarga – w terminie 7 dni od dowiedzenia się o zdarzeniu. Decyzję organu (np. dyrektora) można zaskarżyć do sądu penitencjarnego z powodu niezgodności z prawem w terminie 7 dni.",
+   "source": "art. 6–7 kkw"
+  },
+  {
+   "id": "kkw-c01",
+   "deck": "kkw",
+   "type": "cloze",
+   "naPamiec": true,
+   "text": "Wykonywanie kary pozbawienia wolności ma na celu wzbudzanie w skazanym [[woli współdziałania]] w kształtowaniu jego społecznie pożądanych postaw, w szczególności poczucia [[odpowiedzialności]] oraz potrzeby przestrzegania [[porządku prawnego]] i tym samym powstrzymania się od [[powrotu do przestępstwa]].",
+   "source": "art. 67 § 1 kkw"
+  },
+  {
+   "id": "kkw-m01",
+   "deck": "kkw",
+   "type": "mcq",
+   "question": "Cela izolacyjna dla tymczasowo aresztowanego – maksymalnie:",
+   "options": [
+    "7 dni",
+    "14 dni",
+    "28 dni",
+    "3 miesiące"
+   ],
+   "answer": 1,
+   "explanation": "Art. 222 § 2 kkw. Skazanemu – do 28 dni.",
+   "source": "art. 222 kkw"
+  },
+  {
+   "id": "kkw-m02",
+   "deck": "kkw",
+   "type": "mcq",
+   "question": "Ile widzeń w miesiącu w zakładzie półotwartym?",
+   "options": [
+    "2",
+    "3",
+    "4",
+    "bez ograniczeń"
+   ],
+   "answer": 1,
+   "explanation": "Art. 91 kkw.",
+   "source": "art. 91 kkw"
+  },
+  {
+   "id": "kkw-m03",
+   "deck": "kkw",
+   "type": "mcq",
+   "question": "Kto decyduje o uznaniu za „N”?",
+   "options": [
+    "Dyrektor zakładu",
+    "Sędzia penitencjarny",
+    "Komisja penitencjarna",
+    "Kierownik działu ochrony"
+   ],
+   "answer": 2,
+   "explanation": "Art. 76 § 1 pkt 7 kkw, weryfikacja co najmniej raz na 3 miesiące.",
+   "source": "art. 76 kkw"
+  },
+  {
+   "id": "kkw-m04",
+   "deck": "kkw",
+   "type": "mcq",
+   "question": "Co NIE jest środkiem oddziaływania z art. 67 § 3 kkw?",
+   "options": [
+    "Praca",
+    "Nauczanie",
+    "Kary dyscyplinarne",
+    "Środki terapeutyczne"
+   ],
+   "answer": 2,
+   "explanation": "Art. 67 § 3.",
+   "source": "art. 67 § 3 kkw"
+  },
+  {
+   "id": "kkw-m05",
+   "deck": "kkw",
+   "type": "mcq",
+   "question": "Cela izolacyjna skazanemu powyżej 14 dni wymaga:",
+   "options": [
+    "niczego więcej",
+    "zgody sędziego penitencjarnego i opinii lekarza albo psychologa",
+    "zgody prokuratora",
+    "jest niedopuszczalna"
+   ],
+   "answer": 1,
+   "explanation": "Art. 145 kkw.",
+   "source": "art. 145 kkw"
+  },
+  {
+   "id": "och-f01",
+   "deck": "ochrona",
+   "type": "flashcard",
+   "front": "Minimalny skład zmiany (§ 16 rozporządzenia o ochronie)",
+   "back": "Zakład zamknięty – co najmniej 3 funkcjonariuszy; półotwarty i otwarty – co najmniej 2.",
+   "source": "§ 16 rozporządzenia MS z 17.10.2016"
+  },
+  {
+   "id": "och-f02",
+   "deck": "ochrona",
+   "type": "flashcard",
+   "front": "Zmiana miejsca służby (§ 18)",
+   "back": "Po 4 godzinach na stanowisku uzbrojonym lub patrolowym; po 2 godzinach na stanowisku monitorowym.",
+   "source": "§ 18 rozporządzenia MS z 17.10.2016"
+  },
+  {
+   "id": "och-f03",
+   "deck": "ochrona",
+   "type": "flashcard",
+   "front": "Oddziałowy w nocy (§ 49)",
+   "back": "Sprawdza zamknięcie cel po apelu wieczornym i kontroluje osadzonych co najmniej co 2 godziny.",
+   "source": "§ 49 rozporządzenia MS z 17.10.2016"
+  },
+  {
+   "id": "och-f04",
+   "deck": "ochrona",
+   "type": "flashcard",
+   "front": "Konwojowanie – skład (§ 83–85)",
+   "back": "Skład i uzbrojenie wyznacza dyrektor. Jednego osadzonego lub grupę do 10 – co najmniej 2 konwojentów (wyjątki m.in. karetka przy zagrożeniu życia, zakłady półotwarte i otwarte).",
+   "source": "§ 83–85 rozporządzenia MS z 17.10.2016"
+  },
+  {
+   "id": "och-f05",
+   "deck": "ochrona",
+   "type": "flashcard",
+   "front": "Osadzony niebezpieczny – otwieranie celi (§ 95)",
+   "back": "W dzień co najmniej 2 funkcjonariuszy; w nocy i podczas apelu co najmniej 3. Cela kontrolowana codziennie. W celi najwyżej 3 „N”.",
+   "source": "§ 95, 98 rozporządzenia MS z 17.10.2016"
+  },
+  {
+   "id": "och-f06",
+   "deck": "ochrona",
+   "type": "flashcard",
+   "front": "Ucieczka – postępowanie (§ 65)",
+   "back": "Funkcjonariusz podejmuje pościg, jeżeli zbieg jest w polu widzenia lub znany jest kierunek ucieczki; kierownik jednostki zawiadamia Policję.",
+   "source": "§ 65 rozporządzenia MS z 17.10.2016"
+  },
+  {
+   "id": "och-f07",
+   "deck": "ochrona",
+   "type": "flashcard",
+   "front": "Apel – definicja praktyczna",
+   "back": "Sprawdzenie zgodności stanu faktycznego ze stanem ewidencyjnym; w czasie apelu wstrzymuje się ruch i otwiera drzwi tylko jednej celi naraz.",
+   "source": "rozporządzenie MS z 17.10.2016"
+  },
+  {
+   "id": "och-f08",
+   "deck": "ochrona",
+   "type": "flashcard",
+   "front": "Kto pod nieobecność dyrektora przejmuje jego uprawnienia w zakresie ochrony? (§ 21)",
+   "back": "Dowódca zmiany.",
+   "source": "§ 21 rozporządzenia MS z 17.10.2016"
+  },
+  {
+   "id": "psy-f01",
+   "deck": "psycholog",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "§ 3 ust. 7 rozporządzenia o oddziaływaniach – zadania psychologa",
+   "back": "Psycholog prowadzi badania psychologiczne, udziela pomocy psychologicznej oraz obejmuje skazanych odpowiednimi oddziaływaniami psychokorekcyjnymi lub terapeutycznymi.",
+   "source": "§ 3 ust. 7 rozporządzenia (Dz.U. 2024 poz. 1344)"
+  },
+  {
+   "id": "psy-f02",
+   "deck": "psycholog",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Definicja oddziaływań penitencjarnych (§ 1 ust. 2)",
+   "back": "Zespół stosowanych w zakładzie środków i metod zmierzających do wzbudzenia w skazanym woli współdziałania w kształtowaniu jego społecznie pożądanych postaw.",
+   "source": "§ 1 ust. 2 rozporządzenia"
+  },
+  {
+   "id": "psy-f03",
+   "deck": "psycholog",
+   "type": "flashcard",
+   "front": "Definicja podkultury przestępczej (§ 1 ust. 2)",
+   "back": "Występujące w środowisku przestępczym negatywne wzorce, normy i sposoby postępowania.",
+   "source": "§ 1 ust. 2 rozporządzenia"
+  },
+  {
+   "id": "psy-f04",
+   "deck": "psycholog",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Art. 82 § 2 kkw – 9 kryteriów klasyfikacji",
+   "back": "Płeć, wiek, uprzednie odbywanie kary, umyślność lub nieumyślność, czas pozostały do odbycia, stan zdrowia fizycznego i psychicznego (w tym uzależnienie), stopień demoralizacji i zagrożenia, rodzaj przestępstwa, stosunek do przestępstwa. Mnemotechnika: „Pani Wanda Ukryła Umowę, Czekając Za Dyrektorem, Robiąc Stopkę”.",
+   "source": "art. 82 § 2 kkw"
+  },
+  {
+   "id": "psy-f05",
+   "deck": "psycholog",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Art. 82 § 1 kkw – cele klasyfikacji",
+   "back": "Warunki indywidualnego postępowania ze skazanymi, zapobieganie szkodliwym wpływom zdemoralizowanych, bezpieczeństwo osobiste skazanych, wybór systemu, rodzaju i typu zakładu oraz rozmieszczenie wewnątrz zakładu. Podstawa: badania osobopoznawcze (§ 3).",
+   "source": "art. 82 kkw"
+  },
+  {
+   "id": "psy-f06",
+   "deck": "psycholog",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Art. 83 kkw – badania psychologiczne",
+   "back": "W miarę potrzeby, za zgodą skazanego, badania psychologiczne i psychiatryczne (§ 1) oraz seksuologiczne (§ 1a). Bez zgody – na zarządzenie sędziego penitencjarnego. Przede wszystkim w ośrodkach diagnostycznych (§ 2).",
+   "source": "art. 83 kkw"
+  },
+  {
+   "id": "psy-f07",
+   "deck": "psycholog",
+   "type": "flashcard",
+   "front": "Ośrodek diagnostyczny (rozporządzenie z 2.08.2023)",
+   "back": "Skierowanie: dyrektor na wniosek psychologa, wychowawcy lub psychiatry i za zgodą skazanego (bez zgody – sędzia penitencjarny). Badania nie dłużej niż 2 tygodnie (możliwe przedłużenie). Psycholog – orzeczenie psychologiczno-penitencjarne, psychiatra – opinia psychiatryczna. Orzeczenie służy weryfikacji decyzji klasyfikacyjnej.",
+   "source": "rozporządzenie MS z 2.08.2023 (Dz.U. 2023 poz. 1677)"
+  },
+  {
+   "id": "psy-f08",
+   "deck": "psycholog",
+   "type": "flashcard",
+   "front": "§ 10 rozporządzenia – badanie psychologiczne",
+   "back": "Poznanie osobowości i mechanizmów zachowania oraz zalecenia; metody i zakres ustala psycholog; kończy się orzeczeniem psychologiczno-penitencjarnym lub opinią psychologiczną.",
+   "source": "§ 10 rozporządzenia"
+  },
+  {
+   "id": "psy-f09",
+   "deck": "psycholog",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "§ 11 – kiedy ORZECZENIE psychologiczno-penitencjarne?",
+   "back": "Młodociany z co najmniej 6 miesiącami do warunkowego zwolnienia; skazany sprawiający trudności wychowawcze; podejrzenie potrzeby terapii (zaburzenia niepsychotyczne, upośledzenie); dożywocie lub 25 lat po uprawomocnieniu; sprawca przestępstwa seksualnego z zaburzeniami preferencji; skazany za zabójstwo (art. 148 kk) przed pierwszą przepustką.",
+   "source": "§ 11 rozporządzenia"
+  },
+  {
+   "id": "psy-f10",
+   "deck": "psycholog",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "§ 12 – kiedy OPINIA psychologiczna?",
+   "back": "Przed wnioskiem o system terapeutyczny dla uzależnionych; przed decyzją o zakładzie półotwartym dla dożywocia lub 25 lat; sprawy dzieci przy matce; cela izolacyjna; podejrzenie skłonności samobójczych; inne uzasadnione przypadki.",
+   "source": "§ 12 rozporządzenia"
+  },
+  {
+   "id": "psy-f11",
+   "deck": "psycholog",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Art. 96 § 1 kkw – kto w systemie terapeutycznym?",
+   "back": "Skazani z niepsychotycznymi zaburzeniami psychicznymi (w tym sprawcy przestępstw z art. 197–203 kk w związku z zaburzeniami preferencji seksualnych), upośledzeni umysłowo, uzależnieni od substancji psychoaktywnej, niepełnosprawni fizycznie – wymagający oddziaływania specjalistycznego, zwłaszcza opieki psychologicznej, lekarskiej lub rehabilitacyjnej.",
+   "source": "art. 96 § 1 kkw"
+  },
+  {
+   "id": "psy-f12",
+   "deck": "psycholog",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Art. 97 § 1 kkw – cele systemu terapeutycznego",
+   "back": "Zapobieganie pogłębianiu się patologicznych cech osobowości, przywracanie równowagi psychicznej, kształtowanie zdolności współżycia społecznego i przygotowanie do samodzielnego życia.",
+   "source": "art. 97 § 1 kkw"
+  },
+  {
+   "id": "psy-f13",
+   "deck": "psycholog",
+   "type": "flashcard",
+   "front": "§ 16 – kto sporządza wniosek o skierowanie do oddziału terapeutycznego?",
+   "back": "Psycholog (orzeczenie lub opinia) przy zaburzeniach i uzależnieniach; lekarz przy niepełnosprawności fizycznej.",
+   "source": "§ 16 rozporządzenia"
+  },
+  {
+   "id": "psy-f14",
+   "deck": "psycholog",
+   "type": "flashcard",
+   "front": "§ 17–19 – oddział terapeutyczny",
+   "back": "Oddziaływania realizuje zespół terapeutyczny; metody indywidualne i grupowe, pierwszeństwo oddziaływań terapeutycznych; programy oddziałów (założenia, metody, harmonogram, kryteria efektów) zatwierdza Dyrektor Generalny SW.",
+   "source": "§ 17–19 rozporządzenia"
+  },
+  {
+   "id": "psy-f15",
+   "deck": "psycholog",
+   "type": "flashcard",
+   "front": "§ 21 – krótka interwencja",
+   "back": "Poza oddziałem: co najmniej 3 sesje – ocena nasilenia problemów, informacja zwrotna, rozmowa motywująca.",
+   "source": "§ 21 rozporządzenia"
+  },
+  {
+   "id": "psy-f16",
+   "deck": "psycholog",
+   "type": "flashcard",
+   "front": "§ 23–24 – samoagresja i „N”",
+   "back": "Po przyjęciu ustala się, czy skazany podejmował akty samoagresji; takie osoby obejmuje się oddziaływaniem profilaktycznym. Wobec „N” dodatkowo oddziaływania ograniczające napięcia emocjonalne oraz tendencje agresywne i samoagresywne.",
+   "source": "§ 23–24 rozporządzenia"
+  },
+  {
+   "id": "psy-f17",
+   "deck": "psycholog",
+   "type": "flashcard",
+   "front": "Zapobieganie samobójstwom – akt i poziomy",
+   "back": "Instrukcja nr 4/24 DG SW z 17.10.2024. Poziom I – wszyscy osadzeni (ocena przy przyjęciu, obserwacja). Poziom II – szczególnie zagrożeni (zwiększony nadzór, dokumentacja, dodatkowe wsparcie). Podstawa ustawowa: art. 108 kkw (bezpieczeństwo osobiste).",
+   "source": "instrukcja DG SW nr 4/24; art. 108 kkw"
+  },
+  {
+   "id": "psy-f18",
+   "deck": "psycholog",
+   "type": "flashcard",
+   "front": "Prognoza kryminologiczno-społeczna (§ 25–26)",
+   "back": "Pisemne uzasadnienie, że skazany poza zakładem będzie przestrzegał porządku prawnego; przed pierwszym zaopiniowaniem przepustki lub nagrody wyjściowej i przy prawie do warunkowego zwolnienia; aktualizacja przy nadużyciu zaufania lub istotnych zmianach.",
+   "source": "§ 25–26 rozporządzenia"
+  },
+  {
+   "id": "psy-f19",
+   "deck": "psycholog",
+   "type": "flashcard",
+   "front": "Indywidualny program oddziaływania (§ 14)",
+   "back": "Opracowuje wychowawca z udziałem skazanego, przedkłada komisji penitencjarnej; w ciągu 30 dni (przedłużenie o 14 dni); obowiązkowo zadania eliminujące przyczyny przestępstwa i naprawiające szkody.",
+   "source": "§ 14 rozporządzenia"
+  },
+  {
+   "id": "psy-f20",
+   "deck": "psycholog",
+   "type": "flashcard",
+   "front": "Standard obciążenia psychologa",
+   "back": "Nie więcej niż 200 osadzonych na psychologa (§ 93 zarządzenia DG SW nr 19/16 z 14.04.2016).",
+   "source": "zarządzenie DG SW nr 19/16"
+  },
+  {
+   "id": "psy-f21",
+   "deck": "psycholog",
+   "type": "flashcard",
+   "front": "Nowa ustawa o zawodzie psychologa",
+   "back": "Ustawa z 23 stycznia 2026 r. (Dz.U. 2026 poz. 187); co do zasady wchodzi w życie 19 maja 2028 r., pierwsze przepisy od 5 marca 2026 r.; rejestr psychologów, samorząd, odpowiedzialność dyscyplinarna, tajemnica zawodowa.",
+   "source": "Dz.U. 2026 poz. 187"
+  },
+  {
+   "id": "psy-c01",
+   "deck": "psycholog",
+   "type": "cloze",
+   "naPamiec": true,
+   "text": "Psycholog prowadzi [[badania psychologiczne]], udziela [[pomocy psychologicznej]] oraz obejmuje skazanych odpowiednimi oddziaływaniami [[psychokorekcyjnymi]] lub [[terapeutycznymi]].",
+   "source": "§ 3 ust. 7 rozporządzenia"
+  },
+  {
+   "id": "psy-c02",
+   "deck": "psycholog",
+   "type": "cloze",
+   "naPamiec": true,
+   "text": "Wykonując karę w systemie terapeutycznym, uwzględnia się w postępowaniu ze skazanymi w szczególności potrzebę zapobiegania pogłębianiu się [[patologicznych cech osobowości]], przywracania [[równowagi psychicznej]] oraz kształtowania zdolności [[współżycia społecznego]] i przygotowania do [[samodzielnego życia]].",
+   "source": "art. 97 § 1 kkw"
+  },
+  {
+   "id": "psy-m01",
+   "deck": "psycholog",
+   "type": "mcq",
+   "question": "Kto może zarządzić badanie psychologiczne bez zgody skazanego?",
+   "options": [
+    "Dyrektor zakładu",
+    "Psycholog",
+    "Sędzia penitencjarny",
+    "Komisja penitencjarna"
+   ],
+   "answer": 2,
+   "explanation": "Art. 83 § 1 kkw.",
+   "source": "art. 83 kkw"
+  },
+  {
+   "id": "psy-m02",
+   "deck": "psycholog",
+   "type": "mcq",
+   "question": "Badania w ośrodku diagnostycznym trwają co do zasady:",
+   "options": [
+    "do 7 dni",
+    "nie dłużej niż 2 tygodnie",
+    "do 30 dni",
+    "do 3 miesięcy"
+   ],
+   "answer": 1,
+   "explanation": "Rozporządzenie MS z 2.08.2023.",
+   "source": "Dz.U. 2023 poz. 1677"
+  },
+  {
+   "id": "psy-m03",
+   "deck": "psycholog",
+   "type": "mcq",
+   "question": "Kogo NIE obejmuje art. 96 § 1 kkw?",
+   "options": [
+    "Zaburzenia niepsychotyczne",
+    "Uzależnionych",
+    "Osób z zaburzeniami psychotycznymi",
+    "Niepełnosprawnych fizycznie"
+   ],
+   "answer": 2,
+   "explanation": "Katalog obejmuje zaburzenia NIEpsychotyczne.",
+   "source": "art. 96 kkw"
+  },
+  {
+   "id": "psy-m04",
+   "deck": "psycholog",
+   "type": "mcq",
+   "question": "Wniosek o oddział terapeutyczny dla niepełnosprawnego fizycznie sporządza:",
+   "options": [
+    "psycholog",
+    "lekarz",
+    "wychowawca",
+    "kierownik działu ochrony"
+   ],
+   "answer": 1,
+   "explanation": "§ 16 rozporządzenia.",
+   "source": "§ 16 rozporządzenia"
+  },
+  {
+   "id": "psy-m05",
+   "deck": "psycholog",
+   "type": "mcq",
+   "question": "Krótka interwencja to co najmniej:",
+   "options": [
+    "1 sesja",
+    "3 sesje",
+    "5 sesji",
+    "10 sesji"
+   ],
+   "answer": 1,
+   "explanation": "§ 21 rozporządzenia.",
+   "source": "§ 21 rozporządzenia"
+  },
+  {
+   "id": "psy-m06",
+   "deck": "psycholog",
+   "type": "mcq",
+   "question": "ORZECZENIE (nie opinię) sporządza się wobec:",
+   "options": [
+    "skazanego przed celą izolacyjną",
+    "skazanego na dożywocie po uprawomocnieniu wyroku",
+    "osoby z podejrzeniem skłonności samobójczych",
+    "matki z dzieckiem w zakładzie"
+   ],
+   "answer": 1,
+   "explanation": "§ 11; pozostałe to opinie z § 12.",
+   "source": "§ 11–12 rozporządzenia"
+  },
+  {
+   "id": "psy-m07",
+   "deck": "psycholog",
+   "type": "mcq",
+   "question": "Kto zatwierdza programy oddziałów terapeutycznych?",
+   "options": [
+    "Dyrektor zakładu",
+    "Kierownik działu terapeutycznego",
+    "Dyrektor Generalny SW",
+    "Sędzia penitencjarny"
+   ],
+   "answer": 2,
+   "explanation": "§ 19 rozporządzenia.",
+   "source": "§ 19 rozporządzenia"
+  },
+  {
+   "id": "psy-m08",
+   "deck": "psycholog",
+   "type": "mcq",
+   "question": "Które kryterium klasyfikacji dodano do art. 82 § 2 kkw w 2022 r.?",
+   "options": [
+    "Płeć",
+    "Stosunek skazanego do popełnionego przestępstwa",
+    "Wiek",
+    "Rodzaj przestępstwa"
+   ],
+   "answer": 1,
+   "explanation": "Pkt 9.",
+   "source": "art. 82 § 2 pkt 9 kkw"
+  },
+  {
+   "id": "psy-o01",
+   "deck": "psycholog",
+   "type": "order",
+   "prompt": "Ułóż ścieżkę skazanego do oddziału terapeutycznego",
+   "steps": [
+    "Badanie psychologiczne (orzeczenie lub opinia)",
+    "Wniosek psychologa o skierowanie",
+    "Decyzja komisji penitencjarnej",
+    "Diagnoza w oddziale i indywidualny program terapeutyczny",
+    "Terapia prowadzona przez zespół terapeutyczny",
+    "Przeniesienie do innego systemu, gdy oddziaływanie specjalistyczne nie jest już potrzebne"
+   ],
+   "source": "§ 16, 21 rozporządzenia; art. 76, 97 § 3 kkw"
+  },
+  {
+   "id": "kkw-f19",
+   "deck": "kkw",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Co oznacza symbol R-1/p?",
+   "back": "R = zakład karny dla recydywistów penitencjarnych, 1 = typ zamknięty, p = system programowanego oddziaływania.",
+   "source": "art. 69, 70, 81 KKW",
+   "tag": "lista-124"
+  },
+  {
+   "id": "kkw-f20",
+   "deck": "kkw",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Symbole rodzajów, typów i systemów (klasyfikacja)",
+   "back": "Rodzaje: M – młodociani, P – odbywający karę po raz pierwszy, R – recydywiści penitencjarni, W – areszt wojskowy.\nTypy: 1 – zamknięty, 2 – półotwarty, 3 – otwarty.\nSystemy: p – programowanego oddziaływania, t – terapeutyczny, z – zwykły.",
+   "source": "art. 69, 70, 81 KKW",
+   "tag": "kontrolne-penit"
+  },
+  {
+   "id": "kkw-m06",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Kar dyscyplinarnych z art. 143 § 1 pkt 4, 5 i 8 KKW nie stosuje się wobec kobiet ciężarnych, karmiących lub opiekujących się dziećmi w domu matki i dziecka. Które to kary?",
+   "options": [
+    "Nagana, pozbawienie nagród, obniżenie wynagrodzenia",
+    "Pozbawienie paczek żywnościowych, pozbawienie/ograniczenie zakupów, cela izolacyjna",
+    "Pozbawienie widzeń i telefonu, cela izolacyjna, nagana",
+    "Pozbawienie zajęć KO, pozbawienie paczek, nagana"
+   ],
+   "answer": 1,
+   "explanation": "Art. 143 § 2 KKW: pkt 4 (paczki do 3 mies.), pkt 5 (zakupy do 3 mies.), pkt 8 (cela izolacyjna do 28 dni).",
+   "source": "art. 143 § 2 KKW",
+   "tag": "kontrolne-penit"
+  },
+  {
+   "id": "kkw-f21",
+   "deck": "kkw",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Kara umieszczenia w celi izolacyjnej – wymiar, opinia, zgoda sędziego",
+   "back": "Skazany: do 28 dni (art. 143 § 1 pkt 8 KKW); tymczasowo aresztowany: do 14 dni (wg materiałów kursu).\nPrzed wymierzeniem lekarz albo psycholog wydaje PISEMNĄ opinię o zdolności do odbycia kary.\nWymierzenie powyżej 14 dni wymaga zgody sędziego penitencjarnego.\nW czasie wykonywania lekarz lub psycholog kontroluje zdolność skazanego do jej odbywania (art. 148 § 3).",
+   "source": "art. 143–148 KKW",
+   "tag": "kontrolne-penit"
+  },
+  {
+   "id": "kkw-f22",
+   "deck": "kkw",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Czego pozbawia się skazanego w celi izolacyjnej?",
+   "back": "Widzeń i telefonów; sprzętu RTV i komputerowego; bezpośredniego udziału w nabożeństwach, spotkaniach i nauce religii wspólnie z innymi; zajęć KO, sportowych i WF (z wyjątkiem książek i prasy); zakupów żywności; paczek żywnościowych; nauczania i zatrudnienia poza celą; własnej odzieży i obuwia.",
+   "source": "art. 143 KKW; pytania kontrolne",
+   "tag": "kontrolne-penit"
+  },
+  {
+   "id": "kkw-c02",
+   "deck": "kkw",
+   "type": "cloze",
+   "naPamiec": true,
+   "text": "Nie można wymierzyć kary dyscyplinarnej, jeżeli od dnia powzięcia przez przełożonego wiadomości o przekroczeniu upłynęło [[14 dni]] lub od dnia popełnienia przekroczenia – [[30 dni]]. Nie można rozpocząć wykonywania kary dyscyplinarnej po upływie [[14 dni]] od jej wymierzenia.",
+   "source": "art. 147 KKW",
+   "tag": "lista-124"
+  },
+  {
+   "id": "kkw-c03",
+   "deck": "kkw",
+   "type": "cloze",
+   "naPamiec": true,
+   "text": "ZK półotwarty: przepustki nie częściej niż raz na [[dwa miesiące]], łącznie do [[14]] dni w roku; [[trzy]] widzenia w miesiącu (za zgodą dyrektora mogą być połączone). ZK otwarty: przepustki nie częściej niż raz w [[miesiącu]], łącznie do [[28]] dni w roku; widzenia – [[bez ograniczeń]].",
+   "source": "art. 91–92 KKW",
+   "tag": "kontrolne-penit"
+  },
+  {
+   "id": "kkw-f23",
+   "deck": "kkw",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Widzenia w poszczególnych typach ZK",
+   "back": "Zamknięty: 2 widzenia w miesiącu (za zgodą dyrektora jednorazowo). Półotwarty: 3 w miesiącu (mogą być połączone). Otwarty: nieograniczona liczba. Młodociani w ZK zamkniętym i półotwartym: 1 dodatkowe widzenie w miesiącu.",
+   "source": "art. 90–92 KKW",
+   "tag": "kontrolne-penit"
+  },
+  {
+   "id": "kkw-f24",
+   "deck": "kkw",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Cele mieszkalne i ruch skazanych – 3 typy ZK",
+   "back": "Zamknięty: cele mogą być otwarte w porze dziennej przez określony czas, jeżeli pozwalają na to względy bezpieczeństwa; ruch zorganizowany i pod dozorem.\nPółotwarty: cele otwarte w dzień, w nocy mogą być zamknięte; poruszanie się w czasie i miejscach ustalonych w porządku wewnętrznym.\nOtwarty: cele otwarte całą dobę.",
+   "source": "art. 90–92 KKW",
+   "tag": "kontrolne-penit"
+  },
+  {
+   "id": "kkw-f25",
+   "deck": "kkw",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Zatrudnienie poza terenem ZK – 3 typy",
+   "back": "Zamknięty: w pełnym systemie konwojowania.\nPółotwarty: w systemie zmniejszonego konwojowania lub bez konwojenta, także na pojedynczych stanowiskach.\nOtwarty: przede wszystkim poza terenem ZK, bez konwojenta, na pojedynczych stanowiskach.",
+   "source": "art. 90–92 KKW",
+   "tag": "kontrolne-penit"
+  },
+  {
+   "id": "kkw-f26",
+   "deck": "kkw",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Własna odzież w poszczególnych typach ZK",
+   "back": "Zamknięty: własna bielizna i obuwie, odzież – za zezwoleniem dyrektora. Półotwarty i otwarty: własna odzież, bielizna i obuwie. (Skazany „N” w wyznaczonym oddziale nie korzysta z własnej odzieży i obuwia.)",
+   "source": "art. 88b, 90–92 KKW",
+   "tag": "kontrolne-penit"
+  },
+  {
+   "id": "kkw-f27",
+   "deck": "kkw",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Korespondencja i telefon w poszczególnych typach ZK (wg pytań kontrolnych)",
+   "back": "Zamknięty: korespondencja podlega cenzurze/nadzorowi, chyba że ustawa stanowi inaczej; rozmowy w trakcie widzeń i telefony podlegają kontroli.\nPółotwarty: korespondencja MOŻE podlegać cenzurze, rozmowy i telefony MOGĄ podlegać kontroli.\nOtwarty: korespondencja NIE podlega cenzurze, telefony NIE podlegają kontroli; rozmowy podczas widzeń nie podlegają kontroli.",
+   "source": "art. 90–92 KKW",
+   "tag": "kontrolne-penit"
+  },
+  {
+   "id": "kkw-f28",
+   "deck": "kkw",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Zasady korespondencji skazanych (administracja)",
+   "back": "Korespondencja bez ograniczeń. Przyjmowanie: urzędowa – codziennie, prywatna – w dni robocze. Wysyłka nie później niż drugiego dnia roboczego od przekazania. Skazany bez środków dostaje materiały na 2 listy ekonomiczne miesięcznie (do 20 g); na korespondencję urzędową – bez ograniczeń. Cenzura/zatrzymanie ze względów bezpieczeństwa – z powiadomieniem skazanego i sędziego penitencjarnego.",
+   "source": "KKW, regulamin wykonywania kary",
+   "tag": "kontrolne-penit"
+  },
+  {
+   "id": "kkw-f29",
+   "deck": "kkw",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Dozór elektroniczny – przesłanki (art. 43la § 1 KKW)",
+   "back": "Łącznie: 1) kara do 1 roku i 6 miesięcy (albo kara poniżej 3 lat, gdy do odbycia zostało ≤ 6 mies.) i brak przesłanek z art. 64 § 2, 64a, 65 § 1 i 2 KK; 2) wystarczające do osiągnięcia celów kary; 3) określone miejsce stałego pobytu; 4) zgoda pełnoletnich osób wspólnie zamieszkujących; 5) brak przeszkód technicznych. Orzeka sąd penitencjarny.",
+   "source": "art. 43la KKW",
+   "tag": "kontrolne-penit"
+  },
+  {
+   "id": "kkw-f30",
+   "deck": "kkw",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Rodzaje dozoru elektronicznego",
+   "back": "Stacjonarny – pozostawanie w miejscu wskazanym przez sąd w określonych dniach i godzinach (tak wykonuje się karę pozbawienia wolności).\nZbliżeniowy – zachowanie minimalnej odległości od osoby wskazanej przez sąd.\nMobilny – bieżąca kontrola miejsca pobytu.\nŚrodki karne i zabezpieczające wykonuje się jako dozór zbliżeniowy lub mobilny.",
+   "source": "art. 43b i n. KKW",
+   "tag": "lista-124"
+  },
+  {
+   "id": "kkw-f31",
+   "deck": "kkw",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "System terapeutyczny – kto i po co (art. 96 KKW)",
+   "back": "Skazani z niepsychotycznymi zaburzeniami psychicznymi (w tym za art. 197–203 KK w związku z zaburzeniami preferencji seksualnych), upośledzeni umysłowo, uzależnieni od alkoholu albo innych środków odurzających lub psychotropowych, niepełnosprawni fizycznie – wymagający oddziaływania specjalistycznego (opieka psychologiczna, lekarska, rehabilitacyjna).\nCel: zapobieganie pogłębianiu się patologicznych cech osobowości, przywracanie równowagi psychicznej, kształtowanie zdolności współżycia społecznego i przygotowanie do samodzielnego życia.",
+   "source": "art. 96 KKW",
+   "tag": "kontrolne-penit"
+  },
+  {
+   "id": "kkw-f32",
+   "deck": "kkw",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "System programowanego oddziaływania – kto?",
+   "back": "Obowiązkowo młodociani; dorośli – jeżeli po przedstawieniu projektu programu wyrażą zgodę na współudział w jego opracowaniu i wykonaniu. Powstaje indywidualny program oddziaływania (IPO) – oparty na diagnozie, podlega okresowym ocenom i może być zmieniany.",
+   "source": "art. 95 KKW",
+   "tag": "kontrolne-penit"
+  },
+  {
+   "id": "kkw-f33",
+   "deck": "kkw",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "ZK dla młodocianych – zasady",
+   "back": "Odbywają karę skazani przed ukończeniem 21 lat; w uzasadnionych wypadkach także po 21. roku życia, ale nie dłużej niż do 24 lat. Można osadzić dorosłego odbywającego karę po raz pierwszy, wyróżniającego się dobrą postawą (za jego zgodą – korzysta z uprawnień młodocianego). Młodociani – system programowanego oddziaływania, chyba że względy zdrowotne wymagają systemu terapeutycznego.",
+   "source": "art. 84 KKW",
+   "tag": "kontrolne-penit"
+  },
+  {
+   "id": "kkw-f34",
+   "deck": "kkw",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Kogo osadza się w ZK typu zamkniętego (art. 88 § 3 KKW)?",
+   "back": "1) skazanego za przestępstwo w zorganizowanej grupie albo związku (chyba że szczególne okoliczności przemawiają przeciw), 2) skazanego na dożywocie albo 25 lat, 3) skazanego z niepsychotycznymi zaburzeniami psychicznymi (w tym za art. 197–203 KK w zw. z zaburzeniami preferencji seksualnych) lub upośledzonego umysłowo, 4) skazanego stwarzającego poważne zagrożenie społeczne albo dla bezpieczeństwa zakładu, 5) skazanego objętego ochroną na mocy art. 88d albo ustawy o świadku koronnym.",
+   "source": "art. 88 § 3 KKW",
+   "tag": "kontrolne-penit"
+  },
+  {
+   "id": "kkw-f35",
+   "deck": "kkw",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Skazany na dożywocie – przeniesienie do łagodniejszego typu",
+   "back": "Do ZK półotwartego – po odbyciu co najmniej 20 lat kary; do otwartego – co najmniej 25 lat. Samo upływ czasu nie oznacza automatycznego przeniesienia.",
+   "source": "KKW (wg Skryptu SW V15: art. 89 § 3)",
+   "tag": "lista-124"
+  },
+  {
+   "id": "kkw-f36",
+   "deck": "kkw",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Odrębności wykonywania kary wobec kobiet",
+   "back": "Odbywają karę odrębnie od mężczyzn; co do zasady w ZK półotwartym (chyba że demoralizacja/bezpieczeństwo przemawiają za innym typem); ciepła woda co najmniej raz dziennie, ciepła kąpiel 2× w tygodniu; ciężarne – specjalistyczna opieka lekarska, przeniesienie najpóźniej w 28. tygodniu ciąży do jednostki z całodobową opieką położnej; dom matki i dziecka – do 3. roku życia dziecka; ciężarne i karmiące – dodatkowe zakupy i dłuższy spacer; nie stosuje się kar z art. 143 § 1 pkt 4, 5, 8. Postępowanie z kobietami: instrukcja DGSW nr 3/2025.",
+   "source": "art. 87, 143 § 2 KKW; instrukcja 3/2025",
+   "tag": "kontrolne-penit"
+  },
+  {
+   "id": "kkw-f37",
+   "deck": "kkw",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Kryteria klasyfikacji – formalne i materialne",
+   "back": "Formalne (art. 82 § 1 KKW): płeć, wiek, uprzednie odbywanie kary, umyślność/nieumyślność czynu, czas pozostały do odbycia kary, stan zdrowia fizycznego i psychicznego (w tym stopień uzależnienia), stopień demoralizacji i zagrożenia społecznego, rodzaj popełnionego przestępstwa.\nMaterialne: stopień demoralizacji i zagrożenia społecznego, podatność na resocjalizację.\nPodstawą są przede wszystkim badania osobopoznawcze.",
+   "source": "art. 82 KKW",
+   "tag": "kontrolne-penit"
+  },
+  {
+   "id": "kkw-m07",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Czy domniemanie niewinności lub orientacja seksualna należą do kryteriów klasyfikacji skazanych?",
+   "options": [
+    "Tak, oba",
+    "Tylko domniemanie niewinności",
+    "Tylko orientacja seksualna",
+    "Nie, żadne z nich"
+   ],
+   "answer": 3,
+   "explanation": "Kryteria wylicza art. 82 § 1 KKW – nie ma wśród nich ani domniemania niewinności, ani orientacji seksualnej.",
+   "source": "art. 82 § 1 KKW",
+   "tag": "lista-124"
+  },
+  {
+   "id": "kkw-f38",
+   "deck": "kkw",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Organy uprawnione do klasyfikacji i ich kompetencje",
+   "back": "Sąd orzekający – może określić rodzaj i typ ZK oraz orzec system terapeutyczny.\nSąd penitencjarny – może zmienić decyzję sądu orzekającego, uchylić niezgodną z prawem decyzję komisji, skierować do systemu terapeutycznego.\nKomisja penitencjarna – ustala rodzaj i typ ZK, system, kwalifikuje do systemu terapeutycznego, nadaje status „N” i weryfikuje go co najmniej raz na 3 miesiące, dokonuje dalszych zmian klasyfikacji.\nDecyzję komisji może uchylić także dyrektor okręgowy lub DG SW. Sędzia penitencjarny sam nie klasyfikuje.",
+   "source": "art. 76, 62 KK, 82–89 KKW",
+   "tag": "kontrolne-penit"
+  },
+  {
+   "id": "kkw-f39",
+   "deck": "kkw",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Środki oddziaływania penitencjarnego (art. 67 § 3 KKW)",
+   "back": "Praca (zwłaszcza sprzyjająca zdobywaniu kwalifikacji), nauczanie, zajęcia kulturalno-oświatowe i sportowe, podtrzymywanie kontaktów z rodziną i światem zewnętrznym, środki terapeutyczne. W materiałach kursu dodatkowo: nagradzanie i karanie.",
+   "source": "art. 67 § 3 KKW",
+   "tag": "kontrolne-penit"
+  },
+  {
+   "id": "kkw-f40",
+   "deck": "kkw",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Nadrzędny i pośredni cel wykonywania kary (art. 67 § 1 KKW)",
+   "back": "Wzbudzanie w skazanym woli współdziałania w kształtowaniu społecznie pożądanych postaw, w szczególności poczucia odpowiedzialności oraz potrzeby przestrzegania porządku prawnego (cele pośrednie) – i tym samym powstrzymania się od powrotu do przestępstwa (cel nadrzędny).",
+   "source": "art. 67 § 1 KKW",
+   "tag": "lista-124"
+  },
+  {
+   "id": "kkw-f41",
+   "deck": "kkw",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Nauczanie skazanych – zasady i pierwszeństwo",
+   "back": "Obowiązkowo – szkoła podstawowa; umożliwia się szkołę ponadpodstawową i kursy zawodowe (kurs może być w całości lub części odpłatny). Pierwszeństwo: skazani bez zawodu albo niemogący wykonywać wyuczonego zawodu oraz młodociani (do 21 lat).\nUwaga: notatki z kursu wspominają gimnazjum – gimnazja zlikwidowano w 2019 r.",
+   "source": "art. 131 KKW",
+   "tag": "kontrolne-penit"
+  },
+  {
+   "id": "kkw-f42",
+   "deck": "kkw",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Kontakty z rodziną – formy i cele",
+   "back": "Formy: widzenia, korespondencja, rozmowy telefoniczne, paczki, przekazy pieniężne, w uzasadnionych przypadkach za zgodą dyrektora inne środki łączności.\nCele: podtrzymanie kontaktów, rekonstrukcja środowiska rodzinnego, ułatwienie powrotu na wolność, rozładowanie napięcia emocjonalnego.",
+   "source": "pytania kontrolne 49",
+   "tag": "kontrolne-penit"
+  },
+  {
+   "id": "kkw-f43",
+   "deck": "kkw",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Praca skazanych – zalety",
+   "back": "Podtrzymanie/rozwój zdolności do zarabiania na życie po zwolnieniu, poprawa sytuacji materialnej skazanego i rodziny, higiena psychiczna (poczucie bycia potrzebnym), nauka pracy i współdziałania.",
+   "source": "pytania kontrolne 50",
+   "tag": "kontrolne-penit"
+  },
+  {
+   "id": "kkw-f44",
+   "deck": "kkw",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Urlop zatrudnionego skazanego i potrącenie na fundusz",
+   "back": "Po roku pracy – 14 dni roboczych płatnego urlopu. Z wynagrodzenia potrąca się 7% na Fundusz Pomocy Pokrzywdzonym oraz Pomocy Postpenitencjarnej (Fundusz Sprawiedliwości).",
+   "source": "KKW; lista pytań",
+   "tag": "lista-124"
+  },
+  {
+   "id": "kkw-f45",
+   "deck": "kkw",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Tymczasowo aresztowany – widzenia (art. 217 KKW)",
+   "back": "Po zarządzeniu o zgodzie organu dysponującego (przy kilku organach – zgoda każdego, chyba że zarządzą inaczej). Co najmniej 1 widzenie w miesiącu z osobą najbliższą. Odmowa tylko przy uzasadnionej obawie bezprawnego utrudniania postępowania lub popełnienia przestępstwa (w tym podżegania). Pod nadzorem funkcjonariusza, w sposób uniemożliwiający bezpośredni kontakt – chyba że organ zezwoli na kontakt bezpośredni (wtedy TA może spożywać artykuły kupione przez odwiedzających na terenie AŚ).",
+   "source": "art. 217 KKW",
+   "tag": "kontrolne-penit"
+  },
+  {
+   "id": "kkw-f46",
+   "deck": "kkw",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Tymczasowo aresztowany – korespondencja i telefon",
+   "back": "Brak ograniczeń co do adresatów. Korespondencja przechodzi przez organ dysponujący i podlega jego cenzurze/nadzorowi/zatrzymaniu (chyba że zarządzi inaczej; może zlecić nadzór administracji). Jest ewidencjonowana; urzędową doręcza się niezwłocznie za podpisem, przy odmowie przyjęcia – odsyła do nadawcy. Telefon – na podstawie zarządzenia (zgody) organu dysponującego.",
+   "source": "art. 217a–217c KKW",
+   "tag": "kontrolne-penit"
+  },
+  {
+   "id": "kkw-f47",
+   "deck": "kkw",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Rozmieszczenie tymczasowo aresztowanych w celach – co się uwzględnia?",
+   "back": "Płeć, wiek, charakter czynu, uprzednią karalność, palenie tytoniu, przynależność do podkultury, zawód (np. mundurowi – osobno), wskazania organu dysponującego (izolowanie współpodejrzanych).",
+   "source": "art. 212 KKW; pytania kontrolne 38",
+   "tag": "kontrolne-penit"
+  },
+  {
+   "id": "kkw-f48",
+   "deck": "kkw",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "O czym administracja AŚ musi bezzwłocznie zawiadomić organ dysponujący?",
+   "back": "O przyjęciu tymczasowo aresztowanego, użyciu wobec niego ŚPB, użyciu broni palnej. (Nie musi zawiadamiać o przeniesieniu do innej celi/oddziału mieszkalnego.) Organ dysponujący decyduje m.in. o widzeniach, telefonach, cenzurze korespondencji, zatrudnieniu poza AŚ.",
+   "source": "KKW; pytania kontrolne 27",
+   "tag": "kontrolne-penit"
+  },
+  {
+   "id": "kkw-f49",
+   "deck": "kkw",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Tymczasowo aresztowany w ZK typu zamkniętego",
+   "back": "Korzysta co najmniej z uprawnień skazanych w systemie zwykłym w ZK zamkniętym; nie stosuje się wobec niego ograniczeń poza koniecznymi dla postępowania oraz porządku i bezpieczeństwa. Przymus ograniczony do minimum – w świetle prawa to osoby niewinne. TA jest środkiem zapobiegawczym.",
+   "source": "art. 209 KKW; pytania kontrolne 42",
+   "tag": "kontrolne-penit"
+  },
+  {
+   "id": "kkw-f50",
+   "deck": "kkw",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Przedmioty w celi skazanego – limity",
+   "back": "Napoje do 9 l, żywność do 6 kg, prasa do 0,5 kg, do 5 własnych książek (poza wypożyczonymi), do 10 przedmiotów kultu religijnego ≤ 250 × 150 mm. Zakupy żywnościowe – 3 razy w miesiącu.",
+   "source": "regulamin wykonywania kary (Dz.U. 2026 poz. 1202) – wg Skryptu SW",
+   "tag": "lista-124"
+  },
+  {
+   "id": "kkw-c04",
+   "deck": "kkw",
+   "type": "cloze",
+   "naPamiec": true,
+   "text": "Powierzchnia w celi mieszkalnej przypadająca na skazanego wynosi nie mniej niż [[3 m²]].",
+   "source": "art. 110 § 2 KKW",
+   "tag": "lista-124"
+  },
+  {
+   "id": "kkw-f51",
+   "deck": "kkw",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Przyjmowanie do jednostki – kiedy i na jakiej podstawie?",
+   "back": "Pon–pt w godzinach urzędowania administracji, w soboty 8:00–12:00; po niepowrocie/przerwie w karze – całodobowo; dłużnik – w terminie ustalonym z komornikiem. Tożsamość obywatela RP: dowód osobisty, paszport lub książeczka żeglarska.",
+   "source": "regulamin; lista pytań",
+   "tag": "lista-124"
+  },
+  {
+   "id": "kkw-f52",
+   "deck": "kkw",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Oddział penitencjarny – wielkość i co do niego nie należy",
+   "back": "200–350 miejsc zakwaterowania (dyrektor okręgowy może zwiększyć). W strukturę oddziału penitencjarnego nie wchodzą: oddział terapeutyczny, ośrodek diagnostyczny, dom matki i dziecka.",
+   "source": "zarządzenie DGSW o oddziałach penitencjarnych; lista pytań",
+   "tag": "lista-124"
+  },
+  {
+   "id": "kkw-f53",
+   "deck": "kkw",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Skazany, który nadużył zaufania (wg listy pytań)",
+   "back": "Nie udziela się mu nagród (przepustek/zezwoleń) przez co najmniej 6 miesięcy. ⚠️ Sprawdź z wykładowcą dokładny zakres (art. 138–139 KKW).",
+   "source": "lista pytań",
+   "tag": "lista-124"
+  },
+  {
+   "id": "kkw-f54",
+   "deck": "kkw",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Skazany na dożywocie a praca poza ZK w systemie konwojowania",
+   "back": "Wg listy pytań z kursu: NIE. ⚠️ Odpowiedź z listy – nie znalazłem jej potwierdzenia w ogólnodostępnych źródłach, zapytaj prowadzącego.",
+   "source": "lista pytań",
+   "tag": "lista-124"
+  },
+  {
+   "id": "kkw-m08",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Kto NIE jest organem uprawnionym do klasyfikacji skazanych?",
+   "options": [
+    "Sąd orzekający",
+    "Sąd penitencjarny",
+    "Sędzia penitencjarny",
+    "Komisja penitencjarna"
+   ],
+   "answer": 2,
+   "explanation": "Klasyfikują: sąd orzekający, sąd penitencjarny, komisja penitencjarna. Sędzia penitencjarny jako organ jednoosobowy – nie.",
+   "source": "lista pytań 26",
+   "tag": "lista-124"
+  },
+  {
+   "id": "metodyka-f01",
+   "deck": "metodyka",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Funkcje wykonywania kary pozbawienia wolności (5)",
+   "back": "1) represyjna – dolegliwość, w razie konieczności przymus fizyczny; 2) izolacyjna – odosobnienie, ochrona społeczeństwa; 3) prewencyjna – zapobieganie przestępstwom; 4) poprawcza – człowiek wychodzi „lepszy”; 5) wychowawczo-resocjalizacyjna – priorytetowa, zmiany osobowości prowadzące do powstrzymania się od przestępstw.",
+   "source": "pytania kontrolne 51–52",
+   "tag": "kontrolne-penit"
+  },
+  {
+   "id": "metodyka-f02",
+   "deck": "metodyka",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Prizonizacja",
+   "back": "Proces przyswajania przez skazanego norm i wartości nieformalnego kodeksu więźniów (D. Clemmer): postaw, rytuałów, zwyczajów (jedzenie, ubiór, praca, odpoczynek), języka więziennego i organizacji ZK. Narasta z czasem izolacji. Zjawisko negatywne.",
+   "source": "pytania kontrolne 53; lista pytań 13",
+   "tag": "kontrolne-penit"
+  },
+  {
+   "id": "metodyka-f03",
+   "deck": "metodyka",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Autorytet w pracy z osadzonymi",
+   "back": "Wpływ osoby cieszącej się uznaniem. Autorytet wychowawczy opiera się na profesjonalizmie i zaufaniu; wychowawca staje się osobą odniesienia, więc skazany uwzględnia jego sugestie. Buduje się go powoli – warunek skutecznej resocjalizacji.",
+   "source": "pytania kontrolne 40",
+   "tag": "kontrolne-penit"
+  },
+  {
+   "id": "metodyka-f04",
+   "deck": "metodyka",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Udział społeczeństwa w resocjalizacji",
+   "back": "Resocjalizacja jako oferta więzi ze społeczeństwem (rodzina, wykształcenie, praca). Współpraca z ośrodkami pomocy społecznej, fundacjami, kościołami, organizacjami – np. Patronat, Monar, Caritas, PKPS. Prowadzi ją głównie dział penitencjarny; pozwala kontynuować oddziaływania po zwolnieniu (art. 38 KKW).",
+   "source": "pytania kontrolne 41",
+   "tag": "kontrolne-penit"
+  },
+  {
+   "id": "metodyka-f05",
+   "deck": "metodyka",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Zasada praworządności",
+   "back": "Proces wykonawczy organizuje się i prowadzi na podstawie przepisów prawa, ściśle ich przestrzegając, z instytucjami gwarantującymi tę zasadę (prawo do wniosków, skarg i próśb; nadzór nad wykonywaniem kary). TA – do prawomocnego wyroku traktowany jak osoba niewinna.",
+   "source": "pytania kontrolne 42",
+   "tag": "kontrolne-penit"
+  },
+  {
+   "id": "metodyka-f06",
+   "deck": "metodyka",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Zasady nagradzania i karania wychowawczego",
+   "back": "Indywidualnie; kara adekwatna do przewinienia, nagroda do zasług; karaniu powinno towarzyszyć nagradzanie; bezpośrednio po zdarzeniu; zróżnicowane kary i nagrody; częściej nagradzać niż karać; znać potrzeby skazanego. Kara rodzi gniew i chęć zemsty – nagroda działa skuteczniej.",
+   "source": "pytania kontrolne 28",
+   "tag": "kontrolne-penit"
+  },
+  {
+   "id": "metodyka-f07",
+   "deck": "metodyka",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Środki metody wpływu osobistego",
+   "back": "Przykład własny, doradzanie wychowawcze, wyrażanie aprobaty i dezaprobaty, przekonywanie, wysuwanie sugestii.",
+   "source": "lista pytań 10; SPECJALIZACJA_2 pkt 36",
+   "tag": "lista-124"
+  },
+  {
+   "id": "metodyka-f08",
+   "deck": "metodyka",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Środki metody wpływu sytuacyjnego",
+   "back": "Nagradzanie i karanie wychowawcze, instruowanie, organizowanie doświadczeń, trening, przydzielanie funkcji społecznych, uświadamianie skutków zachowań.",
+   "source": "lista pytań 11; SPECJALIZACJA_2 pkt 37",
+   "tag": "lista-124"
+  },
+  {
+   "id": "metodyka-m01",
+   "deck": "metodyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Który środek należy do metody wpływu SYTUACYJNEGO?",
+   "options": [
+    "Przykład własny",
+    "Przekonywanie",
+    "Organizowanie doświadczeń",
+    "Wysuwanie sugestii"
+   ],
+   "answer": 2,
+   "explanation": "Przykład własny, przekonywanie i sugestie to wpływ osobisty. Organizowanie doświadczeń – wpływ sytuacyjny.",
+   "source": "lista pytań 10–11",
+   "tag": "lista-124"
+  },
+  {
+   "id": "metodyka-f09",
+   "deck": "metodyka",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Wpływ grupowy a sytuacyjny",
+   "back": "Grupowy: zmiana zachowania przez interakcje, normy i relacje w grupie (np. informacja zwrotna od grupy o agresywnej komunikacji). Sytuacyjny: zmiana przez odpowiednio zorganizowaną sytuację (np. zadanie wymagające radzenia sobie z frustracją).",
+   "source": "SPECJALIZACJA_2 pkt 38",
+   "tag": "spec-77"
+  },
+  {
+   "id": "metodyka-f10",
+   "deck": "metodyka",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Zasady resocjalizacji (8)",
+   "back": "1) poszanowania godności, 2) instancji obiektywnych, 3) profesjonalizmu, 4) tworzenia środowiska wychowawczego, 5) indywidualizacji, 6) wolnej progresji (awans/degradacja), 7) odpowiedzialności, 8) normalności/otwartości.",
+   "source": "SPECJALIZACJA_2 pkt 77",
+   "tag": "spec-77"
+  },
+  {
+   "id": "ochrona-f01",
+   "deck": "ochrona",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Aktualne akty wewnętrzne DGSW wskazywane w materiałach kursu",
+   "back": "Zarządzenie 30/2025 – sposoby ochrony (zastąpiło 69/23); zarządzenie 69/2024 (16.10.2024) – gospodarowanie uzbrojeniem i środkami ochrony; zarządzenie 72/2024 (21.10.2024) – szkolenie strzeleckie; instrukcja 4/24 (17.10.2024) – zapobieganie samobójstwom; instrukcja 3/2025 – postępowanie z kobietami; regulamin 1/2024 (30.10.2024) – sposób pełnienia służby; zarządzenie 103/24 – praca penitencjarna.",
+   "source": "Skrypt SW V15; SPECJALIZACJA_2",
+   "tag": "skrypt-v15"
+  },
+  {
+   "id": "ochrona-f02",
+   "deck": "ochrona",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Przedsięwzięcia ochronne – definicja",
+   "back": "Czynności zapewniające porządek i bezpieczeństwo jednostki, osadzonych i konwojowania: rozpoznanie jednostki, liczba i rodzaj stanowisk, organizacja ruchu, wzajemne ubezpieczanie się, gospodarka kluczami, postępowanie z przedmiotami niedozwolonymi, apele, kontrole i inspekcje, profilaktyka przenikania substancji, zabezpieczenia techniczno-ochronne i ich przeglądy, psy służbowe, uzbrojenie i środki ochrony.",
+   "source": "§ 2 pkt 32 zarządzenia 30/2025",
+   "tag": "lista-124"
+  },
+  {
+   "id": "ochrona-f03",
+   "deck": "ochrona",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Działania ochronne – definicja",
+   "back": "Czynności przeciwdziałające zagrożeniom bezpieczeństwa jednostki, osadzonych lub konwoju albo likwidujące ich skutki – przede wszystkim użycie/wykorzystanie broni palnej i ŚPB, ogłoszenie alarmu, pościg, użycie grup: uderzeniowej, odwodowej, transportowej, przeciwpożarowej i medycznej.",
+   "source": "zarządzenie 30/2025; lista pytań 78",
+   "tag": "lista-124"
+  },
+  {
+   "id": "ochrona-f04",
+   "deck": "ochrona",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Czynności profilaktyczne (art. 19a ustawy o SW)",
+   "back": "Stosują funkcjonariusze i pracownicy, by rozpoznać środowisko osadzonych: obserwowanie zachowań i relacji, rozpoznawanie struktur podkultury przestępczej, rozpoznawanie atmosfery i nastrojów. Każda czynność – udokumentowana i zarejestrowana; dokumentacji nie udostępnia się osadzonemu; obowiązek ochrony źródeł informacji. Informację przekazuje się niezwłocznie dyrektorowi lub osobie wyznaczonej.",
+   "source": "art. 19a–19b ustawy o SW",
+   "tag": "lista-124"
+  },
+  {
+   "id": "ochrona-f05",
+   "deck": "ochrona",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Jak osoba wyznaczona klasyfikuje informację z czynności profilaktycznych?",
+   "back": "Istotna → niezwłocznie do dyrektora celem podjęcia działań; mogąca być istotna → dalsza analiza, wyniki do dyrektora; nieistotna → informuje dyrektora, podając przyczyny takiej klasyfikacji.",
+   "source": "art. 19b ustawy o SW",
+   "tag": "lista-124"
+  },
+  {
+   "id": "ochrona-f06",
+   "deck": "ochrona",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Kontrola pobieżna",
+   "back": "Obowiązkowo: przy każdym wyjściu i powrocie do celi oraz przed opuszczeniem miejsca zatrudnienia i po powrocie do niego. Wzrokowo i manualnie lub środkami technicznymi. W nagłej sytuacji zagrożenia życia/zdrowia – może ją przeprowadzić osoba innej płci. Ujawnienie przedmiotu niedozwolonego lub substancji → kontrola osobista. Przeprowadza funkcjonariusz.",
+   "source": "zarządzenie 30/2025; lista pytań 52–53, 83",
+   "tag": "lista-124"
+  },
+  {
+   "id": "ochrona-f07",
+   "deck": "ochrona",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Kontrola osobista",
+   "back": "Przeprowadzają funkcjonariusze tej samej płci co kontrolowany, pod nieobecność osób postronnych i osób odmiennej płci, w miejscu niedostępnym dla postronnych. Obowiązkowo przed umieszczeniem w celi zabezpieczającej (odebranie przedmiotów niebezpiecznych). Zachować ostrożność – możliwa agresja.",
+   "source": "lista pytań 86",
+   "tag": "lista-124"
+  },
+  {
+   "id": "ochrona-f08",
+   "deck": "ochrona",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Instrukcja ochronna",
+   "back": "Ustala/zatwierdza kierownik jednostki (dyrektor). Przechowywana w jednym egzemplarzu na wartowni, zabezpieczona przed nieuprawnionymi. Kopię zestawienia stanowisk i planu sytuacyjnego otrzymują dyrektor okręgowy i dyrektor Biura Ochrony CZSW.",
+   "source": "zarządzenie 30/2025 § 9–10",
+   "tag": "lista-124"
+  },
+  {
+   "id": "ochrona-f09",
+   "deck": "ochrona",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Wykaz przedmiotów niedozwolonych i klucze specjalne",
+   "back": "Wykaz przedmiotów niedozwolonych sporządza kierownik działu (ochrony), zatwierdza dyrektor jednostki.",
+   "source": "lista pytań 69",
+   "tag": "lista-124"
+  },
+  {
+   "id": "ochrona-f10",
+   "deck": "ochrona",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Pora dzienna",
+   "back": "Od rozpoczęcia apelu porannego do zakończenia apelu wieczornego.",
+   "source": "lista pytań 71",
+   "tag": "lista-124"
+  },
+  {
+   "id": "ochrona-f11",
+   "deck": "ochrona",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Obowiązki przy przejęciu służby na stanowisku",
+   "back": "Zapoznać się z instrukcją stanowiskową, sprawdzić wyposażenie i środki łączności, przy dozorowaniu – liczbę osadzonych; używać urządzeń technicznych; sprawdzać zabezpieczenia t-o; niezwłocznie meldować dowódcy zmiany o przeszkodach. Bez zezwolenia przełożonego nie opuszczać stanowiska ani nie przerywać zadań.",
+   "source": "lista pytań 93",
+   "tag": "lista-124"
+  },
+  {
+   "id": "ochrona-f12",
+   "deck": "ochrona",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Klauzule tajności",
+   "back": "„00” ściśle tajne – wyjątkowo poważna szkoda dla RP; „0” tajne – poważna szkoda; „Pf” poufne – szkoda; „Z” zastrzeżone – szkodliwy wpływ na wykonywanie zadań przez organy władzy lub inne jednostki.",
+   "source": "art. 5 ustawy o ochronie informacji niejawnych",
+   "tag": "lista-124"
+  },
+  {
+   "id": "spb-f26",
+   "deck": "spb",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "ŚPB wobec kobiety o widocznej ciąży, osoby wyglądającej na ≤ 13 lat, osoby o widocznej niepełnosprawności",
+   "back": "Wyłącznie siła fizyczna w postaci technik obezwładnienia. Inne ŚPB lub broń – tylko gdy trzeba odeprzeć bezpośredni, bezprawny zamach na życie/zdrowie, a siła fizyczna jest niewystarczająca lub niemożliwa.",
+   "source": "art. 9 ustawy o ŚPB",
+   "tag": "lista-124"
+  },
+  {
+   "id": "spb-f27",
+   "deck": "spb",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Pas obezwładniający (lub kaftan) wobec nieletniego albo kobiety w widocznej ciąży",
+   "back": "Niezwłocznie zapewnić pomoc medyczną; dalsze użycie zależy od opinii osoby udzielającej pomocy.",
+   "source": "art. 16 ust. 2 ustawy o ŚPB",
+   "tag": "lista-124"
+  },
+  {
+   "id": "spb-m11",
+   "deck": "spb",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Rodzaje siły fizycznej wg art. 12 ust. 1 pkt 1 ustawy o ŚPB to techniki:",
+   "options": [
+    "transportowe, obrony, ataku, obezwładnienia",
+    "chwytu, rzutu, dźwigni, transportu",
+    "obrony, ataku, unieruchomienia, eskorty",
+    "obezwładnienia, kontroli, transportu, rzutu"
+   ],
+   "answer": 0,
+   "explanation": "Siła fizyczna w postaci technik: a) transportowych, b) obrony, c) ataku, d) obezwładnienia.",
+   "source": "art. 12 ust. 1 pkt 1 ustawy o ŚPB",
+   "tag": "lista-124"
+  },
+  {
+   "id": "spb-f28",
+   "deck": "spb",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "ŚPB prewencyjnie wobec osoby pozbawionej wolności (SW)",
+   "back": "W celu zapobieżenia ucieczce, agresji lub autoagresji: siła fizyczna (techniki transportowe), kajdanki na ręce, kask zabezpieczający, pas obezwładniający. Także na wniosek osoby pozostającej w bezpośrednim kontakcie z osadzonym lub gdy funkcjonariusz uzna to za celowe.",
+   "source": "art. 19 ustawy o SW",
+   "tag": "lista-124"
+  },
+  {
+   "id": "spb-f29",
+   "deck": "spb",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Zarządzenie 69/2024 – czego dotyczy?",
+   "back": "Gospodarowania uzbrojeniem i środkami ochrony w SW (obowiązki użytkownika broni). ⚠️ To NIE jest podstawa prawna UŻYCIA broni – tą są ustawa o ŚPB i broni palnej oraz art. 19 ustawy o SW (w liście pytań nr 48 jest to pomylone).",
+   "source": "Skrypt SW V15",
+   "tag": "lista-124"
+  },
+  {
+   "id": "bron-f01",
+   "deck": "bron",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Pistolet GLOCK – dane (model z materiałów COSSW)",
+   "back": "Broń automatyczna samopowtarzalna; automatyka – krótki odrzut lufy, odryglowanie przez przekoszenie lufy w płaszczyźnie pionowej; kaliber 9 mm (9×19 Parabellum); magazynek 17 nabojów; przyrządy celownicze na 25 m; skuteczny do 50 m; system „Safe Action” – 3 niezależne zabezpieczenia (spustowe, iglicy, przed wystrzałem przy upadku).",
+   "source": "Skrypt SW V15 (COSSW Kulach)",
+   "tag": "lista-124"
+  },
+  {
+   "id": "bron-f02",
+   "deck": "bron",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Pistolet Walther P99",
+   "back": "Samopowtarzalny, 9×19 mm, magazynek 15 nabojów, przyrządy na 25 m; wewnętrzna blokada iglicy, bezpiecznik spustowy, zabezpieczenie przed upadkiem, przycisk zwalniania iglicy. W magazynie – iglica w położeniu zwolnionym.",
+   "source": "Skrypt SW V15",
+   "tag": "skrypt-v15"
+  },
+  {
+   "id": "bron-f03",
+   "deck": "bron",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Poziomy szkolenia strzeleckiego (zarządzenie 72/2024)",
+   "back": "Podstawowy – wszyscy, ≥ 2 szkolenia/rok, ≥ 50 szt. amunicji na szkolenie. Rozszerzony – dział ochrony i ochrony obiektów, ≥ 2/rok, ≥ 100 szt. Zaawansowany – grupy interwencyjne, ≥ 12/rok, ≥ 100 szt. Specjalistyczne (strzelcy wyborowi) – ≥ 4/rok, ≥ 50 szt.",
+   "source": "§ 4 zarządzenia 72/2024",
+   "tag": "skrypt-v15"
+  },
+  {
+   "id": "bron-f04",
+   "deck": "bron",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Odstąpienie od procedury ostrzegania przed użyciem broni",
+   "back": "Można odstąpić (w tym od strzału ostrzegawczego), jeżeli jej realizacja groziłaby bezpośrednim niebezpieczeństwem dla życia lub zdrowia funkcjonariusza lub innej osoby. Strzał ostrzegawczy to ostatnia forma ostrzeżenia.",
+   "source": "art. 48 ustawy o ŚPB",
+   "tag": "skrypt-v15"
+  },
+  {
+   "id": "pp-f01",
+   "deck": "pp",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Podstawa prawna pierwszej pomocy i AED",
+   "back": "Ustawa z 8 września 2006 r. o Państwowym Ratownictwie Medycznym; obowiązek udzielenia pomocy – każdy (art. 162 KK: nieudzielenie pomocy – do 3 lat). AED = Automatyczny Zewnętrzny Defibrylator.",
+   "source": "ustawa o PRM; art. 162 KK",
+   "tag": "lista-124"
+  },
+  {
+   "id": "pp-f02",
+   "deck": "pp",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Ocena oddechu i RKO dorosłego",
+   "back": "Oddech: „widzę, słyszę, czuję” – maks. 10 sekund. Nie oddycha prawidłowo → wezwij pomoc, RKO 30:2, jak najszybciej AED i wykonuj jego polecenia głosowe. Nieprzytomny, ale oddycha → pozycja bezpieczna.",
+   "source": "Wytyczne ERC 2025",
+   "tag": "lista-124"
+  },
+  {
+   "id": "pp-f03",
+   "deck": "pp",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Zadławienie – postępowanie",
+   "back": "Skuteczny kaszel → zachęcaj do kaszlu. Ciężkie zadławienie u przytomnego → naprzemiennie 5 uderzeń w plecy i 5 uciśnięć nadbrzusza. Utrata przytomności → RKO.\n⚠️ W liście pytań jest „RKO – najpierw 5 wdechów” – to zasada dla dzieci i tonących, nie dla dorosłego po zadławieniu.",
+   "source": "Wytyczne ERC 2025",
+   "tag": "lista-124"
+  },
+  {
+   "id": "pp-f04",
+   "deck": "pp",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Krwotok, amputacja, ciało obce",
+   "back": "Masywny krwotok / amputacja – opaska uciskowa (staza) kilka cm powyżej rany, nie na stawie; opatrunek uciskowy, ewentualnie tamponada rany. Wbity przedmiot (nóż, pręt) – nie wyciągać, ustabilizować.",
+   "source": "Wytyczne ERC 2025; Skrypt SW",
+   "tag": "lista-124"
+  },
+  {
+   "id": "pp-f05",
+   "deck": "pp",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Złamanie vs skręcenie – co unieruchamiamy?",
+   "back": "Złamanie kości – dwa sąsiednie stawy. Uraz stawu (skręcenie, zwichnięcie) – dwie sąsiednie kości.\n(Uwaga: w Skrypcie SW przy skręceniu podano „sąsiednie stawy” – trzymaj się reguły powyżej, chyba że prowadzący wymaga inaczej.)",
+   "source": "lista pytań 109–110",
+   "tag": "lista-124"
+  },
+  {
+   "id": "pp-f06",
+   "deck": "pp",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Oparzenie i padaczka",
+   "back": "Oparzenie: chłodzić letnią/chłodną wodą (ok. 10–20 min), opatrunek hydrożelowy; nie smarować (⚠️ Pantenol z listy pytań nie jest zalecany w pierwszej pomocy). Padaczka: zabezpieczyć przed urazem (głowę), nie wkładać nic do ust, wezwać pomoc; po napadzie – pozycja bezpieczna.",
+   "source": "Wytyczne ERC 2025",
+   "tag": "lista-124"
+  },
+  {
+   "id": "pp-f07",
+   "deck": "pp",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "SAMPLE i AVPU",
+   "back": "SAMPLE: Symptoms (objawy), Allergies, Medications, Past medical history (przebyte choroby), Last meal (ostatni posiłek – w liście pytań błędnie „luche”), Events (zdarzenia poprzedzające).\nAVPU: Alert (przytomny), Voice (reaguje na głos), Pain (reaguje na ból), Unresponsive (brak reakcji).",
+   "source": "Wytyczne ERC",
+   "tag": "lista-124"
+  },
+  {
+   "id": "pragmatyka-f01",
+   "deck": "pragmatyka",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Komu podlega SW i skąd jednostki mają środki?",
+   "back": "SW to umundurowana i uzbrojona formacja apolityczna podległa Ministrowi Sprawiedliwości (art. 1 ustawy o SW). Koszty funkcjonowania pokrywa budżet państwa (art. 6).",
+   "source": "art. 1, 6 ustawy o SW",
+   "tag": "lista-124"
+  },
+  {
+   "id": "pragmatyka-f02",
+   "deck": "pragmatyka",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Świadczenia funkcjonariusza – wg listy pytań",
+   "back": "Dieta – 45 zł; świadczenie mieszkaniowe – w służbie przygotowawczej i stałej, na wniosek funkcjonariusza; prawo do umundurowania – z dniem przyjęcia do służby; umundurowanie: służbowe i wyjściowe, zimowe i letnie; na szkoleniu – norma żywieniowa FS; norma powierzchni mieszkalnej – 7–10 m².",
+   "source": "lista pytań 95–103",
+   "tag": "lista-124"
+  },
+  {
+   "id": "pragmatyka-f03",
+   "deck": "pragmatyka",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Służba przygotowawcza",
+   "back": "Trwa 2 lata; przedłuża się o urlop bezpłatny i wychowawczy; przy przerwie > 3 mies. kierownik jednostki może ją przedłużyć (max o 18 mies.). Przy mianowaniu na wyższe stanowisko bez kwalifikacji – uzupełnienie w ciągu 3 lat.",
+   "source": "ustawa o SW; Skrypt SW",
+   "tag": "skrypt-v15"
+  },
+  {
+   "id": "pragmatyka-f04",
+   "deck": "pragmatyka",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Kontrola zewnętrzna jednostek – kto wizytuje?",
+   "back": "Wizytują m.in. RPO/KMP, sędziowie penitencjarni, CPT (Europejski Komitet ds. Zapobiegania Torturom – monitoruje). ETPCz nie wizytuje – rozpatruje skargi (w ciągu 4 miesięcy od ostatecznej decyzji krajowej). ⚠️ Lista pytań: „skargę można złożyć tylko przez adwokata” – nieprawda; skarżący może wnieść skargę sam, pełnomocnik jest wymagany dopiero na dalszym etapie.",
+   "source": "art. 35 EKPC; lista pytań 117–122",
+   "tag": "lista-124"
+  },
+  {
+   "id": "pragmatyka-f05",
+   "deck": "pragmatyka",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Konstytucja i EKPC – podstawowa gwarancja wobec osadzonych",
+   "back": "Konstytucja (art. 40): nikt nie może być poddany torturom ani okrutnemu, nieludzkiemu lub poniżającemu traktowaniu i karaniu. EKPC (art. 3) – zakaz tortur; gwarantuje ochronę praw osadzonych.",
+   "source": "art. 40 Konstytucji; art. 3 EKPC",
+   "tag": "lista-124"
+  },
+  {
+   "id": "psych-klin-f01",
+   "deck": "psych-klin",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Ostra reakcja na stres (ASR/ASD) – postępowanie",
+   "back": "Krótkotrwała reakcja na traumę: w trakcie lub tuż po zdarzeniu, ustępuje w godziny–dni (do miesiąca). Objawy somatyczne (nudności, tachykardia, duszność) i psychiczne (lęk, dezorientacja, odrealnienie, zahamowanie lub pobudzenie, niepamięć). Postępowanie: spokój, bezpieczeństwo, wsparcie, być przy osobie, słuchać, NIE zmuszać do opowiadania; przy silnych objawach – pomoc medyczna. Objawy > 1 miesiąc → podejrzenie PTSD.",
+   "source": "SPECJALIZACJA_2 pkt 1",
+   "tag": "spec-77"
+  },
+  {
+   "id": "psych-klin-f02",
+   "deck": "psych-klin",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "ChAD (zaburzenia dwubiegunowe) – postępowanie",
+   "back": "Naprzemienne epizody depresji i manii/hipomanii; podwyższone ryzyko samobójcze. Mania: podwyższony/drażliwy nastrój, energia, gadatliwość, mniejsza potrzeba snu, zawyżona samoocena, ryzykowne zachowania. Postępowanie: konsultacja psychiatryczna, obserwacja, ocena ryzyka samobójczego, regularne przyjmowanie leków pod kontrolą, spokojny i jasny kontakt, unikanie konfrontacji w manii.",
+   "source": "SPECJALIZACJA_2 pkt 2",
+   "tag": "spec-77"
+  },
+  {
+   "id": "psych-klin-f03",
+   "deck": "psych-klin",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Epizod depresyjny – kryterium i postępowanie",
+   "back": "Co najmniej 2 tygodnie, co najmniej 5 objawów, w tym obniżony nastrój albo anhedonia. Postępowanie: konsultacja psychiatryczna (gdy niedostępna – lekarska), obserwacja, ocena ryzyka samobójczego (rozważ kartę OZS), wsparcie, kontrola leków. Depresja jednobiegunowa może przejść w ChAD.",
+   "source": "SPECJALIZACJA_2 pkt 3",
+   "tag": "spec-77"
+  },
+  {
+   "id": "psych-klin-f04",
+   "deck": "psych-klin",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "SAD – depresja sezonowa",
+   "back": "Późna jesień i zima, ustępuje wiosną; związek z mniejszą ilością światła (melatonina, serotonina). Objawy depresyjne + senność, zmiany apetytu. Rozpoznaje psychiatra; leczenie: fototerapia, psychoterapia, farmakoterapia; w ZK – aktywność, spacery, kontakt, monitorowanie ryzyka.",
+   "source": "SPECJALIZACJA_2 pkt 4",
+   "tag": "spec-77"
+  },
+  {
+   "id": "psych-proc-o01",
+   "deck": "psych-proc",
+   "type": "order",
+   "naPamiec": true,
+   "prompt": "Odmowa przyjmowania posiłków (art. 116a pkt 5 KKW) – kolejność działań",
+   "steps": [
+    "Oddziałowy powiadamia pracownika służby zdrowia i wychowawcę",
+    "Wychowawca niezwłocznie rozmawia z osadzonym (przyczyny, motywowanie) i kieruje do psychologa",
+    "Psycholog obejmuje osadzonego oddziaływaniami psychokorekcyjnymi",
+    "Wzmożona obserwacja: służba zdrowia, oddziałowy, wychowawca – wg wskazań kierownika działu"
+   ],
+   "source": "§ 64 zarządzenia DGSW 103/24",
+   "tag": "spec-77"
+  },
+  {
+   "id": "psych-klin-f05",
+   "deck": "psych-klin",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Sygnały zamiarów samobójczych",
+   "back": "Listy pożegnalne, rozdawanie rzeczy, niecodzienne zachowania, wycofanie lub nagła wzmożona aktywność, żegnanie się w rozmowach (np. telefonicznych), mówienie wprost o myślach samobójczych. → wzmożona opieka wychowawcza i psychologiczna, rozważenie karty OZS.",
+   "source": "SPECJALIZACJA_2 pkt 6",
+   "tag": "spec-77"
+  },
+  {
+   "id": "psych-klin-f06",
+   "deck": "psych-klin",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Kogo nie umieszcza się w celi jednoosobowej (poza monitorowaną) – instrukcja 4/24",
+   "back": "Osadzonych, którzy: 1) przebywają w celi przejściowej, 2) dokonali wcześniej próby samobójczej, 3) mają utrwaloną tendencję do samoagresji, 4) mają objawy zespołu odstawiennego lub są pod wpływem substancji przy doprowadzeniu, 5) mają szczególne trudności w adaptacji, 6) są pozbawieni wsparcia i izolowani w grupie, 7) są objęci nasilonymi oddziaływaniami ze względu na wzmożone ryzyko samobójcze.",
+   "source": "instrukcja 4/24",
+   "tag": "spec-77"
+  },
+  {
+   "id": "psych-klin-f07",
+   "deck": "psych-klin",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Poziomy profilaktyki samobójstw (instrukcja 4/24)",
+   "back": "Poziom I – ogół osadzonych; poziom II – osadzeni wymagający nasilonych oddziaływań ze względu na wzmożone ryzyko samobójcze (karta OZS); poziom III – osadzeni po próbie samobójczej. (Dawniej: profilaktyka I, II, III rzędu – instrukcja 10/20.)",
+   "source": "instrukcja 4/24 § 3",
+   "tag": "spec-77"
+  },
+  {
+   "id": "psych-klin-f08",
+   "deck": "psych-klin",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Poziom III – działania po próbie samobójczej",
+   "back": "Bezzwłoczna pierwsza pomoc przedmedyczna i medyczna; ustalenie okoliczności próby; badanie psychologiczne: motywy, potrzeba i zakres dalszej pomocy psychologicznej, zalecenia wychowawcze.",
+   "source": "instrukcja 4/24",
+   "tag": "spec-77"
+  },
+  {
+   "id": "psych-klin-f09",
+   "deck": "psych-klin",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Poziom II – na czym polegają oddziaływania?",
+   "back": "Ocena czynników ryzyka i chroniących oraz stopnia ryzyka; wzmożona opieka wychowawcza; psycholog określa indywidualne mechanizmy autoagresji i zalecenia; pomoc psychologiczna; konsultacja psychiatryczna; uwaga na sygnały bezpośredniego zagrożenia; cela wieloosobowa lub monitorowana; nie zostawiać samego (poza monitorowanymi); bariery techniczne i organizacyjne; zwiększony nadzór ochronny.",
+   "source": "instrukcja 4/24",
+   "tag": "spec-77"
+  },
+  {
+   "id": "psych-klin-f10",
+   "deck": "psych-klin",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Wzmożona pomoc psychologiczna (instrukcja 4/24)",
+   "back": "Regularne monitorowanie stanu emocjonalnego; budowanie sieci wsparcia; redukowanie napięcia; alternatywne, bezpieczne sposoby radzenia sobie; techniki radzenia sobie z trudnymi emocjami i sygnałami ostrzegawczymi; wsparcie w bieżących problemach; budowanie poczucia własnej wartości; na poziomie III – przepracowanie aktu samobójczego i jego znaczenia dla przyszłości.",
+   "source": "instrukcja 4/24",
+   "tag": "spec-77"
+  },
+  {
+   "id": "psych-klin-f11",
+   "deck": "psych-klin",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Krytyczne momenty izolacji",
+   "back": "Pierwsze 14 dni izolacji; przełomowe momenty (orzeczenia sądów, prokuratury, decyzje administracji); poważne problemy rodzinne lub z bliskimi; poważne problemy w relacjach ze współosadzonymi; poważne problemy zdrowotne fizyczne lub psychiczne.",
+   "source": "instrukcja 4/24 § 11",
+   "tag": "lista-124"
+  },
+  {
+   "id": "psych-klin-f12",
+   "deck": "psych-klin",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Role w zapobieganiu samobójstwom",
+   "back": "Prowadzi – KAŻDY funkcjonariusz i pracownik; przepływ informacji między pionami – DYREKTOR jednostki; kartę OZS przy podejrzeniu – WYCHOWAWCA NIEZWŁOCZNIE; koordynacja na 3 poziomach i monitorowanie liczby/rozmieszczenia osadzonych z wzmożonym ryzykiem – KIEROWNIK DZIAŁU PENITENCJARNEGO. Szkolenie kadry – nie rzadziej niż raz w roku.",
+   "source": "instrukcja 4/24; lista pytań 60–67",
+   "tag": "lista-124"
+  },
+  {
+   "id": "psych-klin-f13",
+   "deck": "psych-klin",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Cela przejściowa – wyposażenie dodatkowe",
+   "back": "Prasa, papier i przybory do pisania; w miarę możliwości odbiornik telewizyjny i czajnik; sytuuje się ją w pobliżu dyżurki oddziałowego lub pokoju wychowawcy.",
+   "source": "instrukcja 4/24; lista pytań 65",
+   "tag": "lista-124"
+  },
+  {
+   "id": "psych-proc-o02",
+   "deck": "psych-proc",
+   "type": "order",
+   "naPamiec": true,
+   "prompt": "Karta OZS – procedura przy podejrzeniu skłonności samobójczych",
+   "steps": [
+    "Wychowawca niezwłocznie zakłada kartę OZS w CBDOPW i drukuje ją na żółtym papierze",
+    "Wydruk trafia do oddziałowego, który dołącza go do karty identyfikacyjnej osadzonego",
+    "Wychowawca sporządza notatkę osobopoznawczą i zgłasza osadzonego do psychologa",
+    "Psycholog przyjmuje osadzonego w pierwszej kolejności i wydaje opinię o potrzebie nasilonych oddziaływań",
+    "Gdy potrzeba potwierdzona – psycholog zakłada/weryfikuje kartę OZS z zaleceniami"
+   ],
+   "source": "instrukcja 4/24 § 8",
+   "tag": "spec-77"
+  },
+  {
+   "id": "psych-klin-f14",
+   "deck": "psych-klin",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Zalecenia wobec osadzonego zagrożonego samobójstwem (OZS)",
+   "back": "Częstsza kontrola w dzień i w nocy wg karty; uwaga na leki, substancje i przedmioty w celi; obserwacja nastroju i przekazywanie spostrzeżeń wychowawcy; leki pod ścisłą kontrolą; nie zostawiać samego w niemonitorowanych pomieszczeniach; zdeponować niebezpieczne przedmioty; niepokojące zachowania – bezzwłocznie do wychowawcy lub psychologa.",
+   "source": "SPECJALIZACJA_2 pkt 13",
+   "tag": "spec-77"
+  },
+  {
+   "id": "psych-klin-f15",
+   "deck": "psych-klin",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Osobowość dyssocjalna – postępowanie",
+   "back": "Lekceważenie norm i uczuć innych, impulsywność, niska tolerancja frustracji, agresja, brak poczucia winy, nieuczenie się na doświadczeniu, kłamstwa i manipulacja. Postępowanie: profesjonalny dystans, jasne granice i konsekwencja, nie przenosić relacji na grunt prywatny, nie dać się manipulować, jasne zasady i konsekwencje, praca nad kontrolą impulsów i agresji (np. TZA).",
+   "source": "SPECJALIZACJA_2 pkt 14",
+   "tag": "spec-77"
+  },
+  {
+   "id": "psych-klin-f16",
+   "deck": "psych-klin",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Kategorie dewiacji seksualnych (parafilie)",
+   "back": "Fetyszyzm, transwestytyzm fetyszystyczny, ekshibicjonizm, oglądactwo (voyeuryzm), pedofilia, sadomasochizm, inne (np. frotteryzm, zoofilia, nekrofilia). Zaburzenie – gdy preferencja powoduje cierpienie, utrudnia funkcjonowanie, staje się jedyną drogą satysfakcji albo wiąże się z brakiem zgody i krzywdą innych.",
+   "source": "SPECJALIZACJA_2 pkt 15",
+   "tag": "spec-77"
+  },
+  {
+   "id": "psych-klin-f17",
+   "deck": "psych-klin",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Pedofilia – kryteria i typy",
+   "back": "Utrwalona/dominująca preferencja wobec dzieci niedojrzałych płciowo; sprawca ma co najmniej 16 lat i jest co najmniej 5 lat starszy od dziecka. Fiksacyjna (właściwa) – dziecko od początku najatrakcyjniejszym obiektem; regresyjna (zastępcza) – sytuacyjna, gdy brak możliwości zaspokojenia z dorosłym. W ZK: silne napiętnowanie, ryzyko przemocy i samobójstwa – ochrona, dyskrecja, terapia w OT.",
+   "source": "SPECJALIZACJA_2 pkt 16",
+   "tag": "spec-77"
+  },
+  {
+   "id": "psych-proc-o03",
+   "deck": "psych-proc",
+   "type": "order",
+   "naPamiec": true,
+   "prompt": "Skazany za przestępstwo seksualne – ścieżka diagnozy i terapii",
+   "steps": [
+    "Zapotrzebowanie z sądu opinii sądowo-seksuologicznej (jeśli była sporządzona)",
+    "Gdy brak opinii – badanie seksuologiczne za zgodą skazanego, na koszt jednostki",
+    "Skierowanie do ośrodka diagnostycznego – orzeczenie psychologiczno-penitencjarne",
+    "Skierowanie do oddziału terapeutycznego (art. 197–203 KK w związku z zaburzeniami preferencji)"
+   ],
+   "source": "SPECJALIZACJA_2 pkt 17",
+   "tag": "spec-77"
+  },
+  {
+   "id": "psych-klin-f18",
+   "deck": "psych-klin",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Przemoc seksualna w izolacji – mechanizmy",
+   "back": "Cel: dominacja, hierarchia, upokorzenie, odwet, podporządkowanie (nie zaspokojenie popędu). Mechanizmy: pranie mózgu (izolowanie, lęk, wina, „nikt ci nie uwierzy”), wyuczona bezradność, syndrom sztokholmski (przywiązanie do sprawcy).",
+   "source": "SPECJALIZACJA_2 pkt 18",
+   "tag": "spec-77"
+  },
+  {
+   "id": "psych-klin-f19",
+   "deck": "psych-klin",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Trzy mechanizmy uzależnienia (Mellibruda)",
+   "back": "1) Nałogowe regulowanie uczuć – substancja jako sposób na przyjemność i ulgę od napięcia (błędne koło głodu).\n2) Iluzja i zaprzeczanie – poznawcze: niedostrzeganie szkód i ich związku z piciem.\n3) Rozdwojone i rozproszone „ja” – poczucie wartości: siła pod wpływem, wstyd i bezwartościowość po nim.",
+   "source": "SPECJALIZACJA_2 pkt 19–20",
+   "tag": "spec-77"
+  },
+  {
+   "id": "psych-klin-f20",
+   "deck": "psych-klin",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Mechanizm iluzji i zaprzeczania – formy",
+   "back": "Zaprzeczanie, minimalizowanie, obwinianie, racjonalizowanie, intelektualizowanie, odwracanie uwagi, zniekształcanie i idealizowanie przeszłości, myślenie życzeniowe, izolowanie się od teraźniejszości, ucieczka w przyszłość („od jutra”), zabiegi magiczne.",
+   "source": "SPECJALIZACJA_2 pkt 20",
+   "tag": "spec-77"
+  },
+  {
+   "id": "psych-klin-c01",
+   "deck": "psych-klin",
+   "type": "cloze",
+   "naPamiec": true,
+   "text": "Wg ICD-10 zespół uzależnienia rozpoznaje się, gdy w ciągu ostatniego roku wystąpiły co najmniej [[3]] z [[6]] objawów: silne pragnienie (przymus), utrata kontroli, objawy [[abstynencyjne]], wzrost [[tolerancji]], zaniedbywanie innych zainteresowań, kontynuowanie mimo szkód.",
+   "source": "ICD-10; SPECJALIZACJA_2 pkt 21",
+   "tag": "spec-77"
+  },
+  {
+   "id": "psych-klin-f21",
+   "deck": "psych-klin",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Uzależnienie od alkoholu – metody w ZK",
+   "back": "Rozmowa wstępna przy przyjęciu (objawy uzależnienia, zespół abstynencyjny), diagnoza → terapia lub Krótka Interwencja; przy braku zgody – art. 117 KKW; po terapii – postępowanie postterapeutyczne, zapobieganie nawrotom, rozmowy wentylujące; AA.",
+   "source": "SPECJALIZACJA_2 pkt 21",
+   "tag": "spec-77"
+  },
+  {
+   "id": "psych-klin-f22",
+   "deck": "psych-klin",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Narkotyki naturalne vs syntetyczne – podział i metody",
+   "back": "Naturalne: z maku (opium, morfina, heroina, kodeina), z konopi (marihuana, haszysz), z liści koki (kokaina). Syntetyczne (uważane za bardziej szkodliwe): metamfetamina, LSD, MDMA, fentanyl, dopalacze/syntetyczne kannabinoidy, GHB. Metody: lekarz (terapia substytucyjna – metadon), psychoedukacja, profilaktyka, AN/NA, skierowanie do OT dla uzależnionych od innych substancji; uczulenie personelu na objawy odstawienne (agresja, autoagresja).",
+   "source": "SPECJALIZACJA_2 pkt 23–24",
+   "tag": "spec-77"
+  },
+  {
+   "id": "psych-klin-f23",
+   "deck": "psych-klin",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Uzależnienie od leków i anaboliki",
+   "back": "Leki: tolerancja, objawy odstawienne, ryzyko przedawkowania; uzależnienie psychiczne i fizyczne → konsultacja psychiatryczna, kontrola leków, edukacja, AN, ewentualnie OT.\nAnaboliki: zmiany hormonalne i neuroprzekaźnikowe, depresja, wzrost agresji, choroby → edukacja, motywacja do zdrowej aktywności, opieka medyczna.",
+   "source": "SPECJALIZACJA_2 pkt 22, 25",
+   "tag": "spec-77"
+  },
+  {
+   "id": "psych-klin-f24",
+   "deck": "psych-klin",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Alkoholowy zespół abstynencyjny (AZA)",
+   "back": "Po nagłym przerwaniu/ograniczeniu picia u uzależnionego. Łagodny: drżenie, ból głowy, rozdrażnienie, bezsenność, potliwość, tachykardia. Ciężki – majaczenie drżenne (delirium tremens), 7–10 dni: zaburzenia świadomości, halucynacje, drgawki – zagrożenie życia. Postępowanie: wywiad, natychmiast lekarz, obserwacja, nie zostawiać samego (ryzyko agresji i autoagresji).",
+   "source": "SPECJALIZACJA_2 pkt 26",
+   "tag": "spec-77"
+  },
+  {
+   "id": "psych-klin-f25",
+   "deck": "psych-klin",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Uzależnienia behawioralne",
+   "back": "Przymus wykonywania czynności, utrata kontroli, tolerancja, objawy odstawienne, kontynuowanie mimo szkód. Np. hazard, seks/pornografia, gry, internet/telefon, pracoholizm, zakupy, jedzenie, sport. Cel terapii: radzenie sobie z emocjami bez czynności, zapobieganie nawrotom.",
+   "source": "SPECJALIZACJA_2 pkt 27",
+   "tag": "spec-77"
+  },
+  {
+   "id": "psych-klin-f26",
+   "deck": "psych-klin",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Otępienie i organiczne zaburzenia osobowości w ZK",
+   "back": "Otępienie: postępujące zaburzenia pamięci, orientacji, myślenia; zaburzenia emocji, lęk psychoorganiczny → psychiatra, proste komunikaty, stała struktura dnia, pomoc w czynnościach, ochrona przed wykorzystaniem.\nOrganiczne zab. osobowości: chwiejność emocjonalna, drażliwość, impulsywność, mniejsza wytrwałość, nieadekwatne zachowania → psychiatra, jasne zasady, krótkie zadania, trening kontroli emocji.",
+   "source": "SPECJALIZACJA_2 pkt 28–29",
+   "tag": "spec-77"
+  },
+  {
+   "id": "psych-klin-f27",
+   "deck": "psych-klin",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Niepełnosprawność intelektualna lekka vs umiarkowana – w ZK",
+   "back": "Lekka: wolniejsze myślenie, ubogie słownictwo abstrakcyjne, podatność na sugestie, impulsywność; samodzielny w prostych czynnościach → prosty język, czas, wsparcie, ochrona przed wykorzystaniem.\nUmiarkowana: duże opóźnienie, proste komunikaty, wymaga stałej opieki i nadzoru; ryzyko odrzucenia, stygmatyzacji, agresji i samouszkodzeń.",
+   "source": "SPECJALIZACJA_2 pkt 30–31",
+   "tag": "spec-77"
+  },
+  {
+   "id": "psych-klin-f28",
+   "deck": "psych-klin",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Samouszkodzenia – tło i art. 119 KKW",
+   "back": "Tło emocjonalne (napięcie, frustracja, brak umiejętności regulacji) lub instrumentalne (wymuszenie decyzji, korzyści). Zawsze: bezpieczeństwo i pomoc medyczna, ocena ryzyka ponowienia i samobójstwa, dokumentacja. Art. 119 KKW: skazany, który w celu wymuszenia decyzji organu lub uchylenia się od obowiązku powoduje u siebie uszkodzenie ciała lub rozstrój zdrowia, może być obciążony kosztami leczenia – orzeka sąd penitencjarny (przed wnioskiem – opinia psychologa).",
+   "source": "art. 119 KKW; SPECJALIZACJA_2 pkt 59",
+   "tag": "spec-77"
+  },
+  {
+   "id": "psych-proc-f01",
+   "deck": "psych-proc",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Przepisy regulujące pracę psychologa penitencjarnego (wg materiałów)",
+   "back": "Rozporządzenie MZ z 1.03.2013 o leczeniu substytucyjnym; instrukcja DGSW 4/24 (17.10.2024) – zapobieganie samobójstwom; zarządzenie DGSW 103/24 – praca penitencjarna i zakresy czynności (zastąpiło 19/16); ustawa z 13.05.2016 o przeciwdziałaniu zagrożeniom przestępczością na tle seksualnym; ustawa z 19.08.1994 o ochronie zdrowia psychicznego; plus KKW i rozporządzenie o oddziaływaniach penitencjarnych.",
+   "source": "SPECJALIZACJA_2 pkt 32",
+   "tag": "spec-77"
+  },
+  {
+   "id": "psych-proc-f02",
+   "deck": "psych-proc",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Zadania psychologa – dział penitencjarny vs OT vs ośrodek diagnostyczny",
+   "back": "Dział penitencjarny: badania, pomoc psychologiczna, interwencje kryzysowe, oddziaływania psychokorekcyjne, opinie, kierowanie do systemu terapeutycznego/OD, profilaktyka samobójstw, dokumentacja (CBDOPW), programy.\nOT: diagnoza do systemu terapeutycznego, ocena motywacji, IPT, terapia indywidualna i grupowa, ocena ryzyka, weryfikacja systemu.\nOD: pogłębiona diagnoza, analiza przyczyn przestępczości, podatność na oddziaływania, orzeczenie psychologiczno-penitencjarne, wskazanie miejsca w OT.",
+   "source": "SPECJALIZACJA_2 pkt 33–35",
+   "tag": "spec-77"
+  },
+  {
+   "id": "psych-proc-o04",
+   "deck": "psych-proc",
+   "type": "order",
+   "naPamiec": true,
+   "prompt": "Etapy procesu resocjalizacji",
+   "steps": [
+    "Diagnoza",
+    "Prognoza",
+    "Planowanie (projektowanie)",
+    "Realizacja",
+    "Ocena"
+   ],
+   "source": "SPECJALIZACJA_2 pkt 39–43",
+   "tag": "spec-77"
+  },
+  {
+   "id": "psych-proc-f03",
+   "deck": "psych-proc",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Psychologiczna analiza środków oddziaływania – zalety i niebezpieczeństwa (skrót)",
+   "back": "Praca: nawyk pracy, kwalifikacje, dochód, samoocena / przeciążenie, zły wpływ współpracowników, kanał kontaktów niedozwolonych.\nNauka: kwalifikacje, samodyscyplina / frustracja przy złym doborze.\nKontakty: więzi, wsparcie / konflikty, przemyt.\nKO i sport: rozładowanie napięcia, współpraca / konflikty, podkultura.\nNagrody i kary: motywacja, jasne granice / instrumentalizm, opór, poczucie niesprawiedliwości.",
+   "source": "SPECJALIZACJA_2 pkt 45–49",
+   "tag": "spec-77"
+  },
+  {
+   "id": "psych-proc-f04",
+   "deck": "psych-proc",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Personel oddziału terapeutycznego",
+   "back": "OT dla zaburzeń niepsychotycznych/upośledzonych: kierownik działu (nadzór organizacyjny i merytoryczny), psychologowie, wychowawcy, stanowisko ds. terapii zajęciowej; można utworzyć: lekarz, pielęgniarka, terapeuta uzależnień.\nOT dla uzależnionych: kierownik działu, psychologowie, terapeuci uzależnień, ewentualnie wychowawca.",
+   "source": "SPECJALIZACJA_2 pkt 55",
+   "tag": "spec-77"
+  },
+  {
+   "id": "psych-proc-f05",
+   "deck": "psych-proc",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Indywidualny program terapeutyczny (IPT) – elementy",
+   "back": "1) zakres oddziaływań, 2) cele możliwe do realizacji w OT lub poza nim, uwzględniające właściwości skazanego, 3) metody oddziaływań specjalistycznych, 4) kryteria realizacji. IPT opracowuje zespół terapeutyczny (IPO – wychowawca z udziałem skazanego).",
+   "source": "rozporządzenie o oddziaływaniach; SPECJALIZACJA_2 pkt 56, 61",
+   "tag": "spec-77"
+  },
+  {
+   "id": "psych-proc-f06",
+   "deck": "psych-proc",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Prognoza kryminologiczno-społeczna – narzędzie",
+   "back": "Psycholog ocenia czynniki statyczne, dynamiczne i tendencje agresywne; wnosi uwagi do arkusza PSORR-PL (Pogłębiony System Oceny Ryzyka Recydywy). Prognoza: pozytywna, negatywna lub nieokreślona.",
+   "source": "SPECJALIZACJA_2 pkt 57",
+   "tag": "spec-77"
+  },
+  {
+   "id": "psych-proc-f07",
+   "deck": "psych-proc",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Środki zabezpieczające (art. 93a KK) a rola dyrektora",
+   "back": "Elektroniczna kontrola miejsca pobytu, terapia, terapia uzależnień, pobyt w zakładzie psychiatrycznym. Orzeka, zmienia i uchyla sąd. Dyrektor ZK nie orzeka – może złożyć wniosek do sądu; do OT kwalifikuje komisja penitencjarna.",
+   "source": "art. 93a KK; SPECJALIZACJA_2 pkt 60",
+   "tag": "spec-77"
+  },
+  {
+   "id": "psych-proc-f08",
+   "deck": "psych-proc",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Przygotowanie do zwolnienia (art. 164 KKW)",
+   "back": "Rozpoczyna się do 6 miesięcy przed przewidywanym zwolnieniem (kontakt z kuratorem, podmiotami zewnętrznymi). Problemy zwalnianych: praca, mieszkanie, finanse, rodzina, uzależnienia, dokumenty. Psycholog: rozpoznaje potrzeby, przygotowuje psychicznie, wzmacnia motywację, współpracuje z wychowawcą ds. pomocy postpenitencjarnej.",
+   "source": "art. 164 KKW; SPECJALIZACJA_2 pkt 64",
+   "tag": "spec-77"
+  },
+  {
+   "id": "psych-proc-f09",
+   "deck": "psych-proc",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Badania osobopoznawcze – cele i metody",
+   "back": "Cele: stosunek do przestępstwa, przyczyny wykolejenia, podatność na oddziaływania, prognoza penitencjarna i kryminologiczno-społeczna. Metody: wywiad i rozmowa, obserwacja, analiza dokumentów, badania psychologiczne/psychiatryczne/seksuologiczne, kontakt z rodziną.",
+   "source": "SPECJALIZACJA_2 pkt 65",
+   "tag": "spec-77"
+  },
+  {
+   "id": "psych-proc-f10",
+   "deck": "psych-proc",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Kiedy sporządza się orzeczenie psychologiczno-penitencjarne? (6)",
+   "back": "1) młodociany, któremu zostało ≥ 6 mies. do możliwości warunkowego zwolnienia; 2) sprawiający trudności wychowawcze (poważna demoralizacja, zaburzenia, brak przystosowania); 3) podejrzenie potrzeby OT dla zaburzeń niepsychotycznych/upośledzonych; 4) dożywocie lub 25 lat – po uprawomocnieniu wyroku; 5) art. 197–203 KK w związku z zaburzeniami preferencji; 6) art. 148 KK – przed pierwszą przepustką lub zezwoleniem na wyjście bez dozoru.",
+   "source": "rozporządzenie o oddziaływaniach; SPECJALIZACJA_2 pkt 66",
+   "tag": "spec-77"
+  },
+  {
+   "id": "psych-proc-f11",
+   "deck": "psych-proc",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Elementy orzeczenia psychologiczno-penitencjarnego (7)",
+   "back": "1) dane osobowe, 2) proces wykolejenia, stopień demoralizacji, podatność na oddziaływania, 3) aktualny stan psychiczny i stosunek do przestępstwa oraz do obowiązków, 4) potrzeba oddziaływań specjalistycznych / systemu terapeutycznego, 5) wskazania co do klasyfikacji, nauczania, zatrudnienia i oddziaływań, 6) okres badania i metody, 7) imię, nazwisko, tytuł i stanowisko psychologa.",
+   "source": "rozporządzenie o oddziaływaniach; SPECJALIZACJA_2 pkt 67",
+   "tag": "spec-77"
+  },
+  {
+   "id": "psych-proc-f12",
+   "deck": "psych-proc",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Kiedy sporządza się opinię psychologiczną? (7)",
+   "back": "1) przed wnioskiem o system terapeutyczny dla uzależnionego; 2) dożywocie/25 lat – przed decyzją komisji o ZK półotwartym; 3) przed wnioskiem do sądu opiekuńczego o oddzielenie dziecka od matki w domu MiD lub zmianę okresu pobytu; 4) przed wnioskiem o obciążenie kosztami leczenia samouszkodzenia (art. 119); 5) przed celą izolacyjną i po kontroli z art. 148 § 3 KKW, gdy dalsze odbywanie niemożliwe; 6) podejrzenie skłonności samobójczych; 7) inny szczególnie uzasadniony przypadek.",
+   "source": "rozporządzenie o oddziaływaniach; SPECJALIZACJA_2 pkt 68",
+   "tag": "spec-77"
+  },
+  {
+   "id": "psych-proc-f13",
+   "deck": "psych-proc",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Elementy opinii psychologicznej (4)",
+   "back": "1) przedmiot opinii, 2) zastosowane metody, 3) ustalenia i oceny dotyczące cech i mechanizmów zachowania istotnych dla przedmiotu, 4) wnioski lub zalecenia.",
+   "source": "rozporządzenie o oddziaływaniach; SPECJALIZACJA_2 pkt 69",
+   "tag": "spec-77"
+  },
+  {
+   "id": "psych-proc-f14",
+   "deck": "psych-proc",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Krótka Interwencja (alkohol)",
+   "back": "Dla picia ryzykownego/szkodliwego lub jako wstęp do terapii; prowadzi głównie psycholog indywidualnie; co najmniej 3 sesje: ocena nasilenia problemów → informacja zwrotna → rozmowa motywująca + konkretne wskazówki ograniczania szkód.",
+   "source": "SPECJALIZACJA_2 pkt 70",
+   "tag": "spec-77"
+  },
+  {
+   "id": "psych-proc-f15",
+   "deck": "psych-proc",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "System terapeutyczny – zgoda skazanego",
+   "back": "Zaburzenia niepsychotyczne / upośledzenie: zgoda NIE jest warunkiem – psycholog składa wniosek w orzeczeniu, kwalifikuje komisja penitencjarna.\nUzależnieni: kwalifikuje komisja na wniosek psychologa (opinia/orzeczenie); przy braku zgody na leczenie o obowiązku leczenia lub rehabilitacji orzeka sąd penitencjarny (art. 117 § 2 KKW; wniosek może złożyć dyrektor), każdorazowo na czas nie dłuższy niż 2 lata.",
+   "source": "art. 96, 117 KKW; SPECJALIZACJA_2 pkt 71–74",
+   "tag": "spec-77"
+  },
+  {
+   "id": "psych-proc-o05",
+   "deck": "psych-proc",
+   "type": "order",
+   "naPamiec": true,
+   "prompt": "Młodociany nie zgadza się na badanie – skierowanie do ośrodka diagnostycznego",
+   "steps": [
+    "Dyrektor ZK występuje do sędziego penitencjarnego o zarządzenie badań bez zgody",
+    "Sędzia penitencjarny zarządza przeprowadzenie badań",
+    "Dyrektor kieruje skazanego do ośrodka diagnostycznego",
+    "Psycholog bada i sporządza orzeczenie psychologiczno-penitencjarne"
+   ],
+   "source": "art. 83, 84 KKW; SPECJALIZACJA_2 pkt 75",
+   "tag": "spec-77"
+  },
+  {
+   "id": "psych-proc-m01",
+   "deck": "psych-proc",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Ile co najmniej sesji obejmuje Krótka Interwencja?",
+   "options": [
+    "1",
+    "3",
+    "5",
+    "10"
+   ],
+   "answer": 1,
+   "explanation": "Co najmniej 3 sesje: ocena, informacja zwrotna, rozmowa motywująca.",
+   "source": "SPECJALIZACJA_2 pkt 54, 70",
+   "tag": "spec-77"
+  },
+  {
+   "id": "psych-klin-m01",
+   "deck": "psych-klin",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Która kolejność opisuje poziomy profilaktyki samobójstw wg instrukcji 4/24?",
+   "options": [
+    "I – po próbie, II – ogół, III – wzmożone ryzyko",
+    "I – ogół, II – wzmożone ryzyko, III – po próbie",
+    "I – wzmożone ryzyko, II – po próbie, III – ogół",
+    "I – ogół, II – po próbie, III – wzmożone ryzyko"
+   ],
+   "answer": 1,
+   "explanation": "Poziom I – ogół osadzonych, II – wzmożone ryzyko (OZS), III – po próbie samobójczej.",
+   "source": "instrukcja 4/24 § 3",
+   "tag": "spec-77"
+  },
+  {
+   "id": "psych-klin-m02",
+   "deck": "psych-klin",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Kto NIEZWŁOCZNIE zakłada kartę OZS przy podejrzeniu skłonności samobójczych?",
+   "options": [
+    "Psycholog",
+    "Lekarz",
+    "Wychowawca",
+    "Oddziałowy"
+   ],
+   "answer": 2,
+   "explanation": "Wychowawca zakłada kartę w CBDOPW (§ 8 ust. 1 instrukcji 4/24); psycholog ją weryfikuje.",
+   "source": "instrukcja 4/24 § 8",
+   "tag": "spec-77"
+  }
+ ]
 }
