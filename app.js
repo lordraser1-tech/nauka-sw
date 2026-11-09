@@ -886,6 +886,198 @@ window.addEventListener('scroll', () => {
   }, 400);
 }, { passive: true });
 
+/* Wyszukiwanie w skryptach – bez rozróżniania wielkości liter i polskich znaków. */
+
+const SEARCH_BLOCKS = 'p, li, h1, h2, h3, h4, h5, h6, td, th';
+const SEARCH_MAX_RESULTS = 100;
+const docDom = [];     // skrypty wyrenderowane poza stroną – do szukania w drugim skrypcie
+let pendingHit = null; // trafienie do pokazania po przełączeniu skryptu
+
+// Każdy znak zamienia się na dokładnie jeden znak, więc pozycje w tekście się zgadzają.
+function fold(s) {
+  let out = '';
+  for (let i = 0; i < s.length; i++) {
+    const c = s[i];
+    if (/\s/.test(c)) { out += ' '; continue; }
+    const lower = c.toLowerCase();
+    const f = lower.normalize('NFD').replace(/[̀-ͯ]/g, '');
+    out += f === 'ł' ? 'l' : f.length === 1 ? f : lower.length === 1 ? lower : c;
+  }
+  return out;
+}
+
+function renderedDoc(j) {
+  if (!docDom[j]) docDom[j] = h('div', { html: mdToHtml(docs[j].text) });
+  return docDom[j];
+}
+
+function clearMarks(root) {
+  root.querySelectorAll('mark.hit').forEach(m => {
+    const parent = m.parentNode;
+    m.replaceWith(m.textContent);
+    parent.normalize();
+  });
+}
+
+// Zwraca trafienia { heading, snippet: [przed, słowo, po], marks }; przy apply opakowuje je w <mark>.
+function searchDoc(root, qf, apply) {
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+  const parts = [];
+  let orig = '', folded = '', heading = '', lastBlock = null;
+  for (let n = walker.nextNode(); n; n = walker.nextNode()) {
+    const block = n.parentElement.closest(SEARCH_BLOCKS) || n.parentElement;
+    if (block !== lastBlock) {
+      // Separator między blokami, żeby fraza nie łączyła końca akapitu z początkiem następnego.
+      if (lastBlock) { orig += '\u0000'; folded += '\u0000'; }
+      lastBlock = block;
+      if (/^H[1-6]$/.test(block.tagName)) heading = block.textContent.trim();
+    }
+    parts.push({ node: n, start: orig.length, heading });
+    orig += n.data;
+    folded += fold(n.data);
+  }
+
+  const hits = [];
+  for (let i = folded.indexOf(qf); i !== -1; i = folded.indexOf(qf, i + qf.length)) {
+    hits.push({ start: i, end: i + qf.length, marks: [] });
+  }
+
+  let p = 0;
+  for (const hit of hits) {
+    while (p + 1 < parts.length && parts[p + 1].start <= hit.start) p++;
+    hit.heading = parts[p].heading;
+    const a = Math.max(0, hit.start - 45), b = Math.min(orig.length, hit.end + 70);
+    let before = orig.slice(a, hit.start), after = orig.slice(hit.end, b);
+    const cutBefore = before.lastIndexOf('\u0000'), cutAfter = after.indexOf('\u0000');
+    if (cutBefore !== -1) before = before.slice(cutBefore + 1);
+    else if (a > 0) before = '…' + before.replace(/^\S*\s/, '');
+    if (cutAfter !== -1) after = after.slice(0, cutAfter);
+    else if (b < orig.length) after = after.replace(/\s\S*$/, '') + '…';
+    hit.snippet = [before.replace(/\s+/g, ' '), orig.slice(hit.start, hit.end), after.replace(/\s+/g, ' ')];
+  }
+
+  if (apply) {
+    const segs = new Map();
+    p = 0;
+    hits.forEach((hit, hi) => {
+      while (parts[p].start + parts[p].node.data.length <= hit.start) p++;
+      for (let q = p; q < parts.length && parts[q].start < hit.end; q++) {
+        const { node, start } = parts[q];
+        const s = Math.max(hit.start, start) - start;
+        const e = Math.min(hit.end, start + node.data.length) - start;
+        if (e <= s) continue;
+        if (!segs.has(node)) segs.set(node, []);
+        segs.get(node).push([s, e, hi]);
+      }
+    });
+    for (const [node, list] of segs) {
+      const frag = document.createDocumentFragment();
+      let pos = 0;
+      for (const [s, e, hi] of list) {
+        if (s > pos) frag.append(node.data.slice(pos, s));
+        const m = h('mark', { class: 'hit' }, node.data.slice(s, e));
+        hits[hi].marks.push(m);
+        frag.append(m);
+        pos = e;
+      }
+      if (pos < node.data.length) frag.append(node.data.slice(pos));
+      node.replaceWith(frag);
+    }
+  }
+  return hits;
+}
+
+function searchPanel(k, doc) {
+  const s = state.settings;
+  let hits = [], cur = -1, timer = null;
+
+  const input = h('input', {
+    type: 'search', class: 'search-input', placeholder: 'Szukaj w skrypcie…', 'aria-label': 'Szukaj w skrypcie',
+    enterkeyhint: 'search', autocomplete: 'off', autocapitalize: 'off', spellcheck: 'false',
+  });
+  input.value = s.searchQ || '';
+  const both = h('input', { type: 'checkbox', checked: !!s.searchBoth, onchange: () => run() });
+  const results = h('div', { class: 'search-results' });
+  const counter = h('span', { class: 'search-count', 'aria-live': 'polite' });
+  const prevB = h('button', { type: 'button', class: 'mv', 'aria-label': 'Poprzednie trafienie', onclick: () => go(cur - 1) }, '↑');
+  const nextB = h('button', { type: 'button', class: 'mv', 'aria-label': 'Następne trafienie', onclick: () => go(cur + 1) }, '↓');
+  const bar = h('div', { class: 'search-bar', hidden: true }, counter, prevB, nextB);
+  const box = h('div', { class: 'card search' }, input,
+    docs.length > 1 && h('label', { class: 'check' }, both, h('span', {}, 'Szukaj w obu skryptach')),
+    results);
+
+  input.addEventListener('input', () => {
+    clearTimeout(timer);
+    if (!input.value.trim()) run();
+    else timer = setTimeout(run, 250);
+  });
+  input.addEventListener('keydown', e => {
+    if (e.key !== 'Enter') return;
+    e.preventDefault();
+    if (timer) run();
+    input.blur();
+    go(cur + 1);
+  });
+
+  function go(i) {
+    if (!hits.length) return;
+    cur = (i + hits.length) % hits.length;
+    doc.querySelectorAll('mark.current').forEach(m => m.classList.remove('current'));
+    hits[cur].marks.forEach(m => m.classList.add('current'));
+    hits[cur].marks[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    counter.textContent = `${cur + 1} / ${hits.length}`;
+  }
+
+  function openOther(j, n) {
+    pendingHit = n;
+    s.doc = j;
+    save();
+    renderRead();
+  }
+
+  function run() {
+    clearTimeout(timer);
+    timer = null;
+    s.searchQ = input.value;
+    s.searchBoth = both.checked;
+    save();
+    clearMarks(doc);
+    hits = [];
+    cur = -1;
+    results.replaceChildren();
+    const q = input.value.trim().replace(/\s+/g, ' ');
+    if (q.length < 2) { bar.hidden = true; return; }
+    const qf = fold(q);
+    hits = searchDoc(doc, qf, true);
+    bar.hidden = false;
+    counter.textContent = hits.length ? `– / ${hits.length}` : 'Brak trafień';
+    prevB.disabled = nextB.disabled = !hits.length;
+
+    const multi = both.checked && docs.length > 1;
+    const groups = [{ j: k, hits }];
+    if (multi) docs.forEach((d, j) => { if (j !== k) groups.push({ j, hits: searchDoc(renderedDoc(j), qf, false) }); });
+    const total = groups.reduce((n, g) => n + g.hits.length, 0);
+    results.append(h('p', { class: 'small muted search-summary' }, !total ? 'Brak trafień.'
+      : multi ? groups.map(g => `${docs[g.j].name}: ${g.hits.length}`).join(' · ')
+      : `Trafień: ${total}`));
+
+    const list = h('ol', { class: 'search-list' });
+    let shown = 0;
+    for (const g of groups) {
+      for (let n = 0; n < g.hits.length && shown < SEARCH_MAX_RESULTS; n++, shown++) {
+        const hit = g.hits[n];
+        list.append(h('li', {}, h('button', { type: 'button', onclick: () => (g.j === k ? go(n) : openOther(g.j, n)) },
+          h('span', { class: 'search-where' }, multi && h('span', { class: 'tag' }, docs[g.j].name), hit.heading || docs[g.j].name),
+          h('span', { class: 'search-snippet' }, hit.snippet[0], h('mark', {}, hit.snippet[1]), hit.snippet[2]))));
+      }
+    }
+    if (shown) results.append(list);
+    if (total > shown) results.append(h('p', { class: 'small muted' }, `Pokazano ${shown} z ${total} – doprecyzuj frazę.`));
+  }
+
+  return { box, bar, run, go };
+}
+
 function renderRead() {
   screen('Czytaj', false);
   let k = state.settings.doc;
@@ -906,8 +1098,16 @@ function renderRead() {
       h('button', { type: 'button', onclick: () => { details.open = false; hd.scrollIntoView({ behavior: 'smooth' }); } }, hd.textContent)));
   });
   const details = h('details', { class: 'card toc' }, h('summary', {}, 'Spis treści'), toc);
-  $app.append(details, doc,
+  const search = searchPanel(k, doc);
+  $app.append(search.box, details, search.bar, doc,
     h('button', { type: 'button', class: 'to-top', 'aria-label': 'Do góry', onclick: () => window.scrollTo({ top: 0, behavior: 'smooth' }) }, '↑'));
+  if (state.settings.searchQ) search.run();
+  if (pendingHit !== null) {
+    const n = pendingHit;
+    pendingHit = null;
+    requestAnimationFrame(() => search.go(n));
+    return;
+  }
   const pos = state.settings.readPos[k];
   if (pos) requestAnimationFrame(() => window.scrollTo(0, pos));
 }

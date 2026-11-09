@@ -14,6 +14,8 @@
   --warn: #8a5a00;
   --warn-bg: #fdf1d8;
   --quote: #eef2f8;
+  --mark: #ffe58a;
+  --mark-current: #ff9f43;
   --topbar: #1f3a5f;
   --topbar-text: #ffffff;
   --radius: 14px;
@@ -38,6 +40,8 @@
     --warn: #f3c262;
     --warn-bg: #352812;
     --quote: #1d2a3a;
+    --mark: #6b5600;
+    --mark-current: #c2560c;
     --topbar: #131d2a;
     --topbar-text: #e8edf3;
     color-scheme: dark;
@@ -254,6 +258,36 @@ h3 { font-size: 18px; margin: 16px 0 8px; }
 .doc th, .doc td { padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; text-align: left; min-width: 9em; }
 .doc th { background: var(--surface-2); }
 .doc tr:last-child td { border-bottom: 0; }
+/* Wyszukiwanie w skrypcie */
+.search { padding: 12px; }
+.search-input {
+  width: 100%; min-height: 50px; padding: 10px 14px;
+  border: 1px solid var(--line); border-radius: 12px;
+  background: var(--surface-2); font-size: 17px;
+}
+.search-input:focus { outline: 2px solid var(--primary); outline-offset: 1px; }
+.search .check { margin-top: 4px; }
+.search-summary { margin: 8px 0 4px; }
+.search-results:empty { display: none; }
+.search-list { list-style: none; margin: 0; padding: 0; max-height: 45vh; overflow-y: auto; -webkit-overflow-scrolling: touch; border-top: 1px solid var(--line); }
+.search-list li button {
+  display: block; width: 100%; text-align: left; border: 0; background: none; cursor: pointer;
+  padding: 10px 4px; border-bottom: 1px solid var(--line);
+}
+.search-where { display: block; font-weight: 600; font-size: 15px; color: var(--primary); }
+.search-where .tag { margin: 0 6px 2px 0; vertical-align: middle; }
+.search-snippet { display: block; font-size: 15px; color: var(--muted); margin-top: 2px; }
+.search-snippet mark { background: var(--mark); color: var(--text); border-radius: 3px; padding: 0 1px; }
+.search-bar {
+  position: sticky; top: calc(56px + env(safe-area-inset-top)); z-index: 5;
+  display: flex; align-items: center; gap: 8px;
+  margin: 0 0 12px; padding: 8px 10px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.12);
+}
+.search-count { flex: 1; font-weight: 700; font-variant-numeric: tabular-nums; }
+mark.hit { background: var(--mark); color: inherit; border-radius: 3px; padding: 0 1px; }
+mark.hit.current { background: var(--mark-current); color: #fff; box-shadow: 0 0 0 2px var(--mark-current); }
 .to-top {
   position: fixed; right: 16px; bottom: calc(var(--tabbar-h) + env(safe-area-inset-bottom) + 16px);
   width: 52px; height: 52px; border-radius: 50%; border: 0; z-index: 5;
