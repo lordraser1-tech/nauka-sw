@@ -1,5 +1,5 @@
 // Po każdej zmianie plików zwiększ numer wersji, żeby telefony pobrały nowe pliki.
-const CACHE = 'nauka-sw-v2';
+const CACHE = 'nauka-sw-v3';
 const FILES = [
   './',
   'index.html',
@@ -19,7 +19,8 @@ self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE).then(cache =>
       // Pojedynczy brakujący plik (np. skrypt .md) nie blokuje instalacji.
-      Promise.all(FILES.map(f => cache.add(f).catch(() => {})))
+      // cache: 'reload' – pobierz z serwera, z pominięciem pamięci HTTP przeglądarki (GitHub Pages trzyma pliki do 10 min).
+      Promise.all(FILES.map(f => cache.add(new Request(f, { cache: 'reload' })).catch(() => {})))
     ).then(() => self.skipWaiting())
   );
 });
@@ -39,7 +40,8 @@ self.addEventListener('fetch', event => {
   event.respondWith(
     caches.open(CACHE).then(async cache => {
       const cached = await cache.match(req, { ignoreSearch: true });
-      const network = fetch(req)
+      // no-cache: zawsze sprawdź u serwera, czy plik się zmienił (żądanie typu navigate trzeba podać jako URL).
+      const network = fetch(req.mode === 'navigate' ? req.url : req, { cache: 'no-cache' })
         .then(res => {
           if (res.ok) cache.put(req, res.clone());
           return res;
