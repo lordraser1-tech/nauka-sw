@@ -1,7 +1,7 @@
 {
  "meta": {
   "tytul": "Szkolenie chorążych SW – baza do nauki",
-  "wersja": 2,
+  "wersja": 3,
   "data": "2026-11-09",
   "zrodla": "Ustawa o ŚPB (Dz.U. 2026 poz. 244), ustawa o SW (Dz.U. 2025 poz. 1750), kkw (Dz.U. 2025 poz. 911), rozporządzenie o oddziaływaniach penitencjarnych (Dz.U. 2024 poz. 1344), rozporządzenie o ośrodkach diagnostycznych (Dz.U. 2023 poz. 1677), rozporządzenie o ochronie jednostek SW (Dz.U. 2016 poz. 1804); materiały kursu: pytania kontrolne (psycholodzy 1–29, penitencjarne 28–53), lista 124 pytań, SPECJALIZACJA_2 (77 zagadnień), Skrypt SW V15",
   "typy": {
@@ -3020,6 +3020,3942 @@
    "explanation": "Wychowawca zakłada kartę w CBDOPW (§ 8 ust. 1 instrukcji 4/24); psycholog ją weryfikuje.",
    "source": "instrukcja 4/24 § 8",
    "tag": "spec-77"
+  },
+  {
+   "id": "kkw-m09",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Ile widzeń w miesiącu przysługuje skazanemu w ZK typu zamkniętego?",
+   "options": [
+    "3",
+    "Bez ograniczeń",
+    "2",
+    "1"
+   ],
+   "answer": 2,
+   "explanation": "ZK zamknięty: 2 widzenia w miesiącu, za zgodą dyrektora mogą być wykorzystane jednorazowo.",
+   "source": "art. 90 KKW"
+  },
+  {
+   "id": "kkw-m10",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Ile widzeń w miesiącu przysługuje skazanemu w ZK typu półotwartego?",
+   "options": [
+    "2",
+    "3",
+    "Bez ograniczeń",
+    "4"
+   ],
+   "answer": 1,
+   "explanation": "ZK półotwarty: 3 widzenia w miesiącu, mogą być połączone za zgodą dyrektora.",
+   "source": "art. 91 KKW"
+  },
+  {
+   "id": "kkw-m11",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Liczba widzeń skazanego w ZK typu otwartego:",
+   "options": [
+    "3 w miesiącu",
+    "Nieograniczona",
+    "4 w miesiącu",
+    "2 w miesiącu"
+   ],
+   "answer": 1,
+   "explanation": "W ZK otwartym skazany może korzystać z nieograniczonej liczby widzeń.",
+   "source": "art. 92 KKW"
+  },
+  {
+   "id": "kkw-m12",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Młodociani w ZK typu zamkniętego i półotwartego mają prawo do:",
+   "options": [
+    "nieograniczonej liczby widzeń",
+    "dodatkowej przepustki w kwartale",
+    "dwóch dodatkowych widzeń w miesiącu",
+    "jednego dodatkowego widzenia w miesiącu"
+   ],
+   "answer": 3,
+   "explanation": "Młodociani – jedno dodatkowe widzenie w miesiącu.",
+   "source": "KKW; lista pytań 24"
+  },
+  {
+   "id": "kkw-m13",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Przepustki w ZK typu półotwartego można udzielać:",
+   "options": [
+    "raz na kwartał, łącznie do 7 dni w roku",
+    "nie częściej niż raz na 2 miesiące, łącznie do 14 dni w roku",
+    "nie częściej niż raz na 2 miesiące, łącznie do 28 dni w roku",
+    "nie częściej niż raz w miesiącu, łącznie do 28 dni w roku"
+   ],
+   "answer": 1,
+   "explanation": "Półotwarty: raz na 2 miesiące, max 14 dni w roku.",
+   "source": "art. 91 KKW"
+  },
+  {
+   "id": "kkw-m14",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Przepustki w ZK typu otwartego można udzielać:",
+   "options": [
+    "raz w tygodniu, łącznie do 56 dni w roku",
+    "nie częściej niż raz na 2 miesiące, łącznie do 14 dni w roku",
+    "nie częściej niż raz w miesiącu, łącznie do 28 dni w roku",
+    "bez ograniczeń"
+   ],
+   "answer": 2,
+   "explanation": "Otwarty: raz w miesiącu, max 28 dni w roku.",
+   "source": "art. 92 KKW"
+  },
+  {
+   "id": "kkw-m15",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "W ZK typu otwartego cele mieszkalne:",
+   "options": [
+    "są stale zamknięte",
+    "są otwarte tylko w porze dziennej",
+    "pozostają otwarte przez całą dobę",
+    "mogą być otwarte w porze dziennej przez określony czas"
+   ],
+   "answer": 2,
+   "explanation": "Otwarty – cele otwarte całą dobę.",
+   "source": "art. 92 KKW"
+  },
+  {
+   "id": "kkw-m16",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "W ZK typu półotwartego cele mieszkalne:",
+   "options": [
+    "są stale zamknięte",
+    "są otwarte w porze dziennej, w nocy mogą być zamknięte",
+    "są otwarte przez całą dobę",
+    "mogą być otwarte tylko za zgodą sędziego penitencjarnego"
+   ],
+   "answer": 1,
+   "explanation": "Półotwarty: dzień – otwarte, noc – mogą być zamknięte.",
+   "source": "art. 91 KKW"
+  },
+  {
+   "id": "kkw-m17",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "W ZK typu zamkniętego skazani mogą być zatrudnieni poza terenem zakładu:",
+   "options": [
+    "bez konwojenta na pojedynczych stanowiskach",
+    "w pełnym systemie konwojowania",
+    "w systemie zmniejszonego konwojowania",
+    "nie mogą być zatrudniani poza zakładem"
+   ],
+   "answer": 1,
+   "explanation": "Zamknięty – tylko pełny system konwojowania.",
+   "source": "art. 90 KKW"
+  },
+  {
+   "id": "kkw-m18",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "W ZK typu zamkniętego skazany może korzystać:",
+   "options": [
+    "wyłącznie z odzieży skarbowej",
+    "z własnej odzieży tylko podczas widzeń",
+    "z własnej bielizny i obuwia, a z odzieży – za zezwoleniem dyrektora",
+    "z własnej odzieży, bielizny i obuwia bez ograniczeń"
+   ],
+   "answer": 2,
+   "explanation": "Zamknięty: własna bielizna i obuwie; odzież – za zezwoleniem dyrektora.",
+   "source": "art. 90 KKW"
+  },
+  {
+   "id": "kkw-m19",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Zajęcia kulturalno-oświatowe, sportowe i nauczanie w ZK typu zamkniętego organizuje się:",
+   "options": [
+    "w obrębie zakładu karnego",
+    "tylko w ośrodkach zewnętrznych",
+    "w dowolnym miejscu wskazanym przez wychowawcę",
+    "poza zakładem bez dozoru"
+   ],
+   "answer": 0,
+   "explanation": "Zamknięty – w obrębie ZK.",
+   "source": "art. 90 KKW"
+  },
+  {
+   "id": "kkw-m20",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Rodzaje zakładów karnych to zakłady dla:",
+   "options": [
+    "młodocianych, odbywających karę po raz pierwszy, recydywistów penitencjarnych, odbywających karę aresztu wojskowego",
+    "zamkniętych, półotwartych, otwartych",
+    "programowanych, terapeutycznych, zwykłych",
+    "młodocianych, kobiet, mężczyzn, recydywistów"
+   ],
+   "answer": 0,
+   "explanation": "Art. 69 KKW – 4 rodzaje. Typy (zamknięty, półotwarty, otwarty) to art. 70.",
+   "source": "art. 69 KKW"
+  },
+  {
+   "id": "kkw-m21",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Systemy wykonywania kary pozbawienia wolności to:",
+   "options": [
+    "programowanego oddziaływania, terapeutyczny, zwykły",
+    "zamknięty, półotwarty, otwarty",
+    "indywidualny, grupowy, terapeutyczny",
+    "progresywny, regresywny, zwykły"
+   ],
+   "answer": 0,
+   "explanation": "Art. 81 KKW.",
+   "source": "art. 81 KKW"
+  },
+  {
+   "id": "kkw-m22",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Symbol „P-2/t” oznacza:",
+   "options": [
+    "ZK dla młodocianych, typ otwarty, system programowany",
+    "ZK dla odbywających karę po raz pierwszy, typ półotwarty, system terapeutyczny",
+    "ZK dla odbywających karę po raz pierwszy, typ zamknięty, system zwykły",
+    "ZK dla recydywistów, typ zamknięty, system terapeutyczny"
+   ],
+   "answer": 1,
+   "explanation": "P – po raz pierwszy, 2 – półotwarty, t – terapeutyczny.",
+   "source": "art. 69, 70, 81 KKW"
+  },
+  {
+   "id": "kkw-m23",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "W systemie programowanego oddziaływania obowiązkowo odbywają karę:",
+   "options": [
+    "skazani za przestępstwa nieumyślne",
+    "skazani młodociani",
+    "skazani na dożywocie",
+    "recydywiści penitencjarni"
+   ],
+   "answer": 1,
+   "explanation": "Młodociani – obowiązkowo; dorośli – za zgodą.",
+   "source": "art. 95 KKW"
+  },
+  {
+   "id": "kkw-m24",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Dorosły skazany odbywa karę w systemie programowanego oddziaływania, jeżeli:",
+   "options": [
+    "zdecyduje o tym sąd penitencjarny bez jego zgody",
+    "odbywa karę po raz pierwszy",
+    "ma mniej niż 25 lat",
+    "wyrazi zgodę na współudział w opracowaniu i wykonaniu programu"
+   ],
+   "answer": 3,
+   "explanation": "Dorośli – po przedstawieniu projektu programu i wyrażeniu zgody.",
+   "source": "art. 95 KKW"
+  },
+  {
+   "id": "kkw-m25",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "W ZK dla młodocianych skazany może przebywać po ukończeniu 21 lat w uzasadnionych wypadkach, ale najdłużej do ukończenia:",
+   "options": [
+    "26 lat",
+    "25 lat",
+    "23 lat",
+    "24 lat"
+   ],
+   "answer": 3,
+   "explanation": "Art. 84 § 2 KKW – nie dłużej niż do 24 lat.",
+   "source": "art. 84 KKW"
+  },
+  {
+   "id": "kkw-m26",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "W którym typie ZK osadza się obligatoryjnie skazanego na karę dożywotniego pozbawienia wolności?",
+   "options": [
+    "Otwartym",
+    "Zamkniętym",
+    "O typie decyduje dyrektor jednostki",
+    "Półotwartym"
+   ],
+   "answer": 1,
+   "explanation": "Art. 88 § 3 pkt 2 KKW.",
+   "source": "art. 88 § 3 KKW"
+  },
+  {
+   "id": "kkw-m27",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Skazanego za przestępstwo nieumyślne co do zasady osadza się w ZK typu:",
+   "options": [
+    "półotwartego",
+    "zamkniętego",
+    "otwartego",
+    "dowolnego – decyduje komisja penitencjarna bez wskazań ustawy"
+   ],
+   "answer": 0,
+   "explanation": "Art. 88 § 2 KKW – półotwarty, chyba że szczególne okoliczności przemawiają za innym typem.",
+   "source": "art. 88 § 2 KKW"
+  },
+  {
+   "id": "kkw-m28",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Skazanego odbywającego karę aresztu lub zastępczą karę pozbawienia wolności co do zasady osadza się w ZK typu:",
+   "options": [
+    "otwartego",
+    "zamkniętego",
+    "półotwartego",
+    "w areszcie śledczym"
+   ],
+   "answer": 2,
+   "explanation": "Art. 88 § 2 KKW.",
+   "source": "art. 88 § 2 KKW"
+  },
+  {
+   "id": "kkw-m29",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Jak często komisja penitencjarna weryfikuje decyzję o uznaniu skazanego za stwarzającego poważne zagrożenie („N”)?",
+   "options": [
+    "Tylko na wniosek skazanego",
+    "Raz w roku",
+    "Co najmniej raz na 3 miesiące",
+    "Co najmniej raz na 6 miesięcy"
+   ],
+   "answer": 2,
+   "explanation": "Art. 76 § 1 pkt 7 KKW.",
+   "source": "art. 76 KKW"
+  },
+  {
+   "id": "kkw-m30",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Skazany na dożywocie może zostać przeniesiony do ZK typu półotwartego po odbyciu co najmniej:",
+   "options": [
+    "15 lat",
+    "25 lat",
+    "10 lat",
+    "20 lat"
+   ],
+   "answer": 3,
+   "explanation": "20 lat – półotwarty; 25 lat – otwarty (wg materiałów kursu).",
+   "source": "KKW; Skrypt SW"
+  },
+  {
+   "id": "kkw-m31",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Kara dyscyplinarna umieszczenia w celi izolacyjnej wobec skazanego wynosi:",
+   "options": [
+    "do 14 dni",
+    "do 30 dni",
+    "do 3 miesięcy",
+    "do 28 dni"
+   ],
+   "answer": 3,
+   "explanation": "Art. 143 § 1 pkt 8 KKW.",
+   "source": "art. 143 KKW"
+  },
+  {
+   "id": "kkw-m32",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Wymierzenie kary celi izolacyjnej na okres powyżej 14 dni wymaga:",
+   "options": [
+    "zgody dyrektora okręgowego",
+    "opinii komisji penitencjarnej",
+    "zgody sędziego penitencjarnego",
+    "zgody skazanego"
+   ],
+   "answer": 2,
+   "explanation": "Wymaga zgody sędziego penitencjarnego.",
+   "source": "art. 144 KKW"
+  },
+  {
+   "id": "kkw-m33",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Przed wymierzeniem kary umieszczenia w celi izolacyjnej:",
+   "options": [
+    "wychowawca przeprowadza rozmowę ostrzegawczą",
+    "sędzia penitencjarny przesłuchuje skazanego",
+    "lekarz albo psycholog wydaje pisemną opinię o zdolności skazanego do jej odbycia",
+    "komisja penitencjarna wydaje uchwałę"
+   ],
+   "answer": 2,
+   "explanation": "Pisemna opinia lekarza albo psychologa.",
+   "source": "art. 144 KKW"
+  },
+  {
+   "id": "kkw-m34",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "W czasie wykonywania kary w celi izolacyjnej zdolność skazanego do jej odbywania kontroluje:",
+   "options": [
+    "sędzia penitencjarny",
+    "dowódca zmiany",
+    "wychowawca",
+    "lekarz lub psycholog"
+   ],
+   "answer": 3,
+   "explanation": "Art. 148 § 3 KKW.",
+   "source": "art. 148 § 3 KKW"
+  },
+  {
+   "id": "kkw-m35",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Nie można wymierzyć kary dyscyplinarnej, jeżeli od powzięcia przez przełożonego wiadomości o przekroczeniu upłynęło:",
+   "options": [
+    "14 dni",
+    "30 dni",
+    "7 dni",
+    "3 miesiące"
+   ],
+   "answer": 0,
+   "explanation": "14 dni od powzięcia wiadomości lub 30 dni od popełnienia.",
+   "source": "art. 147 KKW"
+  },
+  {
+   "id": "kkw-m36",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Nie można wymierzyć kary dyscyplinarnej, jeżeli od dnia popełnienia przekroczenia upłynęło:",
+   "options": [
+    "30 dni",
+    "6 miesięcy",
+    "60 dni",
+    "14 dni"
+   ],
+   "answer": 0,
+   "explanation": "30 dni od popełnienia.",
+   "source": "art. 147 KKW"
+  },
+  {
+   "id": "kkw-m37",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Wobec kobiety ciężarnej NIE można zastosować kary dyscyplinarnej:",
+   "options": [
+    "nagany",
+    "umieszczenia w celi izolacyjnej",
+    "obniżenia części wynagrodzenia",
+    "pozbawienia nagród"
+   ],
+   "answer": 1,
+   "explanation": "Art. 143 § 2 – nie stosuje się pkt 4, 5 i 8 (paczki, zakupy, cela izolacyjna).",
+   "source": "art. 143 § 2 KKW"
+  },
+  {
+   "id": "kkw-m38",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Pozbawienie możliwości otrzymywania paczek żywnościowych jako kara dyscyplinarna może trwać:",
+   "options": [
+    "do 14 dni",
+    "do 3 miesięcy",
+    "do 28 dni",
+    "do 6 miesięcy"
+   ],
+   "answer": 1,
+   "explanation": "Art. 143 § 1 KKW – do 3 miesięcy.",
+   "source": "art. 143 KKW"
+  },
+  {
+   "id": "kkw-m39",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Kary dyscyplinarne wymierza się:",
+   "options": [
+    "wyłącznie na wniosek pokrzywdzonego",
+    "wyłącznie z urzędu przez komisję penitencjarną",
+    "z urzędu lub na pisemny wniosek przełożonego skazanego",
+    "tylko na wniosek sędziego penitencjarnego"
+   ],
+   "answer": 2,
+   "explanation": "Art. 144 KKW.",
+   "source": "art. 144 KKW"
+  },
+  {
+   "id": "kkw-m40",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Kryteria klasyfikacji skazanych określa:",
+   "options": [
+    "art. 82 § 1 KKW",
+    "art. 217 KKW",
+    "art. 67 § 3 KKW",
+    "art. 119 KKW"
+   ],
+   "answer": 0,
+   "explanation": "Art. 82 § 1 – płeć, wiek, uprzednie odbywanie kary itd.",
+   "source": "art. 82 KKW"
+  },
+  {
+   "id": "kkw-m41",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Do kryteriów klasyfikacji z art. 82 § 1 KKW NIE należy:",
+   "options": [
+    "rodzaj popełnionego przestępstwa",
+    "wiek",
+    "wykształcenie skazanego",
+    "stan zdrowia fizycznego i psychicznego"
+   ],
+   "answer": 2,
+   "explanation": "Wykształcenia nie ma w katalogu art. 82 § 1.",
+   "source": "art. 82 KKW"
+  },
+  {
+   "id": "kkw-m42",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Kryteria MATERIALNE (podmiotowe) klasyfikacji to:",
+   "options": [
+    "stopień demoralizacji i zagrożenia społecznego oraz podatność na resocjalizację",
+    "płeć i wiek",
+    "uprzednie odbywanie kary i czas pozostały do odbycia",
+    "umyślność czynu i rodzaj przestępstwa"
+   ],
+   "answer": 0,
+   "explanation": "Kryteria materialne odnoszą się do osobowości skazanego.",
+   "source": "pytania kontrolne 46"
+  },
+  {
+   "id": "kkw-m43",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Podstawą klasyfikacji skazanych są przede wszystkim:",
+   "options": [
+    "opinia kuratora",
+    "zeznania współosadzonych",
+    "wyniki egzaminów szkolnych",
+    "badania osobopoznawcze"
+   ],
+   "answer": 3,
+   "explanation": "Badania osobopoznawcze.",
+   "source": "pytania kontrolne 46"
+  },
+  {
+   "id": "kkw-m44",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Środkiem oddziaływania penitencjarnego wymienionym w art. 67 § 3 KKW NIE jest:",
+   "options": [
+    "nauczanie",
+    "izolacja w celi jednoosobowej",
+    "praca",
+    "środki terapeutyczne"
+   ],
+   "answer": 1,
+   "explanation": "Art. 67 § 3: praca, nauczanie, zajęcia KO i sportowe, kontakty z rodziną i światem zewnętrznym, środki terapeutyczne.",
+   "source": "art. 67 § 3 KKW"
+  },
+  {
+   "id": "kkw-m45",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Nadrzędnym celem wykonywania kary pozbawienia wolności jest:",
+   "options": [
+    "odpłata za popełniony czyn",
+    "izolacja skazanego od społeczeństwa",
+    "powstrzymanie się od powrotu do przestępstwa",
+    "zapewnienie pracy skazanemu"
+   ],
+   "answer": 2,
+   "explanation": "Art. 67 § 1 KKW.",
+   "source": "art. 67 § 1 KKW; lista pytań 1"
+  },
+  {
+   "id": "kkw-m46",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "W zakładach karnych obowiązkowo prowadzi się nauczanie w zakresie:",
+   "options": [
+    "studiów wyższych",
+    "szkoły podstawowej",
+    "szkoły ponadpodstawowej",
+    "kursów zawodowych"
+   ],
+   "answer": 1,
+   "explanation": "Szkoła podstawowa – obowiązkowo; ponadpodstawowa i kursy – umożliwia się.",
+   "source": "art. 131 KKW"
+  },
+  {
+   "id": "kkw-m47",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Pierwszeństwo w nauczaniu w szkole ponadpodstawowej i na kursach zawodowych mają skazani, którzy:",
+   "options": [
+    "odbywają karę po raz pierwszy powyżej 30 lat",
+    "zostali nagrodzeni przez dyrektora",
+    "mają najwyższe wyniki w nauce",
+    "nie mają zawodu lub nie mogą wykonywać wyuczonego zawodu oraz młodociani"
+   ],
+   "answer": 3,
+   "explanation": "Pierwszeństwo – brak zawodu / niemożność wykonywania oraz do 21 lat.",
+   "source": "art. 131 KKW"
+  },
+  {
+   "id": "kkw-m48",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Skazanemu zatrudnionemu po roku pracy przysługuje płatny urlop w wymiarze:",
+   "options": [
+    "26 dni roboczych",
+    "20 dni roboczych",
+    "7 dni roboczych",
+    "14 dni roboczych"
+   ],
+   "answer": 3,
+   "explanation": "14 dni roboczych.",
+   "source": "KKW; lista pytań 33"
+  },
+  {
+   "id": "kkw-m49",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Minimalna powierzchnia w celi mieszkalnej przypadająca na skazanego wynosi:",
+   "options": [
+    "2 m²",
+    "3 m²",
+    "4 m²",
+    "5 m²"
+   ],
+   "answer": 1,
+   "explanation": "Art. 110 § 2 KKW.",
+   "source": "art. 110 § 2 KKW"
+  },
+  {
+   "id": "kkw-m50",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Ile napojów może posiadać skazany w celi mieszkalnej?",
+   "options": [
+    "do 9 l",
+    "do 12 l",
+    "do 5 l",
+    "bez ograniczeń"
+   ],
+   "answer": 0,
+   "explanation": "Regulamin – do 9 l napojów.",
+   "source": "regulamin wykonywania kary"
+  },
+  {
+   "id": "kkw-m51",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Artykuły żywnościowe w celi skazanego – limit:",
+   "options": [
+    "do 6 kg",
+    "do 1 kg",
+    "do 3 kg",
+    "do 10 kg"
+   ],
+   "answer": 0,
+   "explanation": "Regulamin – do 6 kg.",
+   "source": "regulamin wykonywania kary"
+  },
+  {
+   "id": "kkw-m52",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Ile własnych książek (oprócz wypożyczonych z biblioteki) może mieć skazany w celi?",
+   "options": [
+    "Bez ograniczeń",
+    "5",
+    "10",
+    "3"
+   ],
+   "answer": 1,
+   "explanation": "Do 5 sztuk.",
+   "source": "regulamin wykonywania kary"
+  },
+  {
+   "id": "kkw-m53",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Ile przedmiotów kultu religijnego może mieć skazany w celi?",
+   "options": [
+    "do 3 sztuk, max 100 × 100 mm",
+    "do 10 sztuk, o wymiarach nie większych niż 250 × 150 mm",
+    "1 sztukę",
+    "do 5 sztuk dowolnej wielkości"
+   ],
+   "answer": 1,
+   "explanation": "Do 10 sztuk, max 250 × 150 mm.",
+   "source": "regulamin wykonywania kary"
+  },
+  {
+   "id": "kkw-m54",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Prasa w celi skazanego – limit:",
+   "options": [
+    "do 0,5 kg",
+    "do 2 kg",
+    "5 egzemplarzy",
+    "do 1 kg"
+   ],
+   "answer": 0,
+   "explanation": "Łączna waga do 0,5 kg.",
+   "source": "regulamin wykonywania kary"
+  },
+  {
+   "id": "kkw-m55",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Korespondencję prywatną skazanych administracja ZK przyjmuje:",
+   "options": [
+    "raz w tygodniu",
+    "codziennie",
+    "w każdym dniu roboczym",
+    "dwa razy w tygodniu"
+   ],
+   "answer": 2,
+   "explanation": "Urzędowa – codziennie, prywatna – w dni robocze.",
+   "source": "regulamin; pytania kontrolne 36"
+  },
+  {
+   "id": "kkw-m56",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Korespondencję skazanego administracja wysyła nie później niż:",
+   "options": [
+    "drugiego dnia roboczego od przekazania",
+    "w dniu przekazania",
+    "po 7 dniach",
+    "po zatwierdzeniu przez sędziego penitencjarnego"
+   ],
+   "answer": 0,
+   "explanation": "Nie później niż 2. dnia roboczego.",
+   "source": "regulamin; pytania kontrolne 36"
+  },
+  {
+   "id": "kkw-m57",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Skazany bez środków pieniężnych otrzymuje od administracji materiały na korespondencję prywatną w ilości:",
+   "options": [
+    "1 przesyłki miesięcznie",
+    "2 przesyłek listowych ekonomicznych miesięcznie (do 20 g)",
+    "4 przesyłek miesięcznie",
+    "bez ograniczeń"
+   ],
+   "answer": 1,
+   "explanation": "2 listy ekonomiczne do 20 g miesięcznie; na urzędową – bez ograniczeń.",
+   "source": "regulamin; pytania kontrolne 36"
+  },
+  {
+   "id": "kkw-m58",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Dozór elektroniczny – maksymalna orzeczona kara (podstawowa przesłanka):",
+   "options": [
+    "1 rok i 6 miesięcy",
+    "1 rok",
+    "2 lata",
+    "6 miesięcy"
+   ],
+   "answer": 0,
+   "explanation": "Art. 43la § 1 pkt 1 KKW (od 2020 r.).",
+   "source": "art. 43la KKW"
+  },
+  {
+   "id": "kkw-m59",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "O udzieleniu zezwolenia na odbycie kary w systemie dozoru elektronicznego orzeka:",
+   "options": [
+    "kurator sądowy",
+    "komisja penitencjarna",
+    "sąd penitencjarny",
+    "dyrektor zakładu karnego"
+   ],
+   "answer": 2,
+   "explanation": "Sąd penitencjarny.",
+   "source": "art. 43la KKW"
+  },
+  {
+   "id": "kkw-m60",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Do przesłanek SDE NIE należy:",
+   "options": [
+    "zatrudnienie skazanego na umowę o pracę",
+    "brak przeszkód technicznych",
+    "określone miejsce stałego pobytu",
+    "zgoda pełnoletnich osób wspólnie zamieszkujących"
+   ],
+   "answer": 0,
+   "explanation": "Zatrudnienie nie jest przesłanką SDE.",
+   "source": "art. 43la KKW"
+  },
+  {
+   "id": "kkw-m61",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Karę pozbawienia wolności w systemie dozoru elektronicznego wykonuje się jako dozór:",
+   "options": [
+    "zbliżeniowy",
+    "mobilny",
+    "stacjonarny",
+    "dowolny – wybiera skazany"
+   ],
+   "answer": 2,
+   "explanation": "Kara PW – stacjonarny; środki karne i zabezpieczające – zbliżeniowy lub mobilny.",
+   "source": "KKW; lista pytań 28"
+  },
+  {
+   "id": "kkw-m62",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Dozór zbliżeniowy polega na:",
+   "options": [
+    "bieżącym ustalaniu miejsca pobytu skazanego",
+    "zachowaniu przez skazanego minimalnej odległości od osoby wskazanej przez sąd",
+    "zgłaszaniu się do kuratora raz w tygodniu",
+    "pozostawaniu w miejscu stałego pobytu w określonych godzinach"
+   ],
+   "answer": 1,
+   "explanation": "Zbliżeniowy – minimalna odległość od wskazanej osoby.",
+   "source": "KKW; lista pytań 6"
+  },
+  {
+   "id": "kkw-m63",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Skazana kobieta może sprawować opiekę nad dzieckiem w domu matki i dziecka do ukończenia przez nie:",
+   "options": [
+    "6 lat",
+    "1 roku",
+    "3 lat",
+    "2 lat"
+   ],
+   "answer": 2,
+   "explanation": "Do 3. roku życia.",
+   "source": "art. 87 KKW"
+  },
+  {
+   "id": "kkw-m64",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Kobiety ciężarne i karmiące mają prawo m.in. do:",
+   "options": [
+    "zwolnienia z obowiązku przestrzegania porządku",
+    "dodatkowych zakupów żywności i dłuższego spaceru",
+    "nieograniczonej liczby widzeń",
+    "przepustek co tydzień"
+   ],
+   "answer": 1,
+   "explanation": "Dodatkowe zakupy i dłuższy spacer.",
+   "source": "pytania kontrolne 33"
+  },
+  {
+   "id": "kkw-m65",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Skazane kobiety co do zasady rozpoczynają odbywanie kary w ZK typu:",
+   "options": [
+    "półotwartego",
+    "w areszcie śledczym",
+    "zamkniętego",
+    "otwartego"
+   ],
+   "answer": 0,
+   "explanation": "Półotwarty – chyba że demoralizacja lub bezpieczeństwo przemawiają za innym.",
+   "source": "pytania kontrolne 33; lista 39"
+  },
+  {
+   "id": "kkw-m66",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Ciężarną skazaną przenosi się do jednostki z całodobową opieką położnej nie później niż w:",
+   "options": [
+    "12. tygodniu ciąży",
+    "36. tygodniu ciąży",
+    "28. tygodniu ciąży",
+    "20. tygodniu ciąży"
+   ],
+   "answer": 2,
+   "explanation": "Najpóźniej w 28. tygodniu.",
+   "source": "KKW; Skrypt SW"
+  },
+  {
+   "id": "kkw-m67",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Z wynagrodzenia skazanego potrąca się na Fundusz Pomocy Pokrzywdzonym oraz Pomocy Postpenitencjarnej:",
+   "options": [
+    "7%",
+    "10%",
+    "45%",
+    "25%"
+   ],
+   "answer": 0,
+   "explanation": "7% (wg listy pytań).",
+   "source": "KKW; lista pytań 23"
+  },
+  {
+   "id": "kkw-m68",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Kary dyscyplinarnej celi izolacyjnej wobec tymczasowo aresztowanego wymierza się na okres:",
+   "options": [
+    "do 28 dni",
+    "do 30 dni",
+    "do 7 dni",
+    "do 14 dni"
+   ],
+   "answer": 3,
+   "explanation": "TA – do 14 dni.",
+   "source": "KKW; pytania kontrolne 29"
+  },
+  {
+   "id": "kkw-m69",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Tymczasowo aresztowany ma prawo do co najmniej:",
+   "options": [
+    "jednego widzenia w miesiącu z osobą najbliższą",
+    "trzech widzeń w miesiącu",
+    "dwóch widzeń w miesiącu z dowolną osobą",
+    "jednego widzenia w tygodniu"
+   ],
+   "answer": 0,
+   "explanation": "Co najmniej 1 widzenie w miesiącu z osobą najbliższą.",
+   "source": "art. 217 KKW"
+  },
+  {
+   "id": "kkw-m70",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Zgodę na widzenie tymczasowo aresztowanego wydaje:",
+   "options": [
+    "sędzia penitencjarny zawsze",
+    "dyrektor aresztu śledczego",
+    "wychowawca",
+    "organ, do którego dyspozycji pozostaje"
+   ],
+   "answer": 3,
+   "explanation": "Organ dysponujący (sąd lub prokurator).",
+   "source": "art. 217 KKW"
+  },
+  {
+   "id": "kkw-m71",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Odmowa zgody na widzenie TA z osobą najbliższą może nastąpić wyłącznie, gdy:",
+   "options": [
+    "TA przebywa w areszcie krócej niż miesiąc",
+    "osoba odwiedzająca nie ma meldunku",
+    "zachodzi uzasadniona obawa, że widzenie posłuży bezprawnemu utrudnianiu postępowania lub popełnieniu przestępstwa",
+    "TA został ukarany dyscyplinarnie"
+   ],
+   "answer": 2,
+   "explanation": "Art. 217 § 1a KKW.",
+   "source": "art. 217 KKW"
+  },
+  {
+   "id": "kkw-m72",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Widzenie TA odbywa się co do zasady:",
+   "options": [
+    "wyłącznie przez telefon",
+    "w obecności prokuratora",
+    "pod nadzorem funkcjonariusza, w sposób uniemożliwiający bezpośredni kontakt",
+    "bez nadzoru, w sali widzeń"
+   ],
+   "answer": 2,
+   "explanation": "Kontakt bezpośredni – tylko za zgodą organu dysponującego.",
+   "source": "art. 217 KKW"
+  },
+  {
+   "id": "kkw-m73",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Na jakiej podstawie tymczasowo aresztowany może korzystać z telefonu?",
+   "options": [
+    "zgody dyrektora aresztu",
+    "zgody wychowawcy",
+    "zarządzenia (zgody) organu dysponującego",
+    "nie może korzystać z telefonu"
+   ],
+   "answer": 2,
+   "explanation": "Zgoda organu dysponującego.",
+   "source": "KKW; lista pytań 22"
+  },
+  {
+   "id": "kkw-m74",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Korespondencja tymczasowo aresztowanego:",
+   "options": [
+    "jest cenzurowana wyłącznie przez wychowawcę",
+    "jest zakazana do czasu wyroku",
+    "nie podlega żadnej kontroli",
+    "przechodzi przez organ dysponujący i podlega jego cenzurze, chyba że zarządzi inaczej"
+   ],
+   "answer": 3,
+   "explanation": "Art. 217a KKW.",
+   "source": "art. 217a KKW"
+  },
+  {
+   "id": "kkw-m75",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "O czym administracja AŚ NIE musi zawiadamiać organu dysponującego?",
+   "options": [
+    "o użyciu wobec TA środka przymusu bezpośredniego",
+    "o użyciu broni palnej wobec TA",
+    "o przeniesieniu TA do innej celi w tym samym areszcie",
+    "o przyjęciu TA"
+   ],
+   "answer": 2,
+   "explanation": "Zawiadamia o przyjęciu, ŚPB i broni.",
+   "source": "pytania kontrolne 27; lista 17"
+  },
+  {
+   "id": "kkw-m76",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Tymczasowe aresztowanie jest:",
+   "options": [
+    "karą",
+    "środkiem zabezpieczającym",
+    "środkiem karnym",
+    "środkiem zapobiegawczym"
+   ],
+   "answer": 3,
+   "explanation": "Środek zapobiegawczy (KPK).",
+   "source": "lista pytań 75"
+  },
+  {
+   "id": "kkw-m77",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Przy rozmieszczaniu TA w celach NIE bierze się pod uwagę:",
+   "options": [
+    "wykształcenia",
+    "płci i wieku",
+    "uprzedniej karalności",
+    "wskazań organu dysponującego"
+   ],
+   "answer": 0,
+   "explanation": "Uwzględnia się m.in. płeć, wiek, charakter czynu, karalność, palenie, podkulturę, zawód, wskazania organu.",
+   "source": "pytania kontrolne 38"
+  },
+  {
+   "id": "kkw-m78",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Przyjmowanie osadzonych do jednostki w soboty odbywa się w godzinach:",
+   "options": [
+    "8:00–12:00",
+    "całodobowo",
+    "7:00–15:00",
+    "nie przyjmuje się w soboty"
+   ],
+   "answer": 0,
+   "explanation": "Pon–pt w godzinach urzędowania, sobota 8–12; niepowrót/przerwa – całodobowo.",
+   "source": "lista pytań 44, 72"
+  },
+  {
+   "id": "kkw-m79",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Dokumentem, na podstawie którego NIE przyjmie się obywatela RP do odbycia kary, jest:",
+   "options": [
+    "paszport",
+    "książeczka żeglarska",
+    "legitymacja studencka",
+    "dowód osobisty"
+   ],
+   "answer": 2,
+   "explanation": "Dowód osobisty, paszport lub książeczka żeglarska.",
+   "source": "lista pytań 45, 73"
+  },
+  {
+   "id": "kkw-m80",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Kogo NIE ma wśród organów uprawnionych do klasyfikacji skazanych?",
+   "options": [
+    "Sądu orzekającego",
+    "Komisji penitencjarnej",
+    "Sądu penitencjarnego",
+    "Wychowawcy oddziału"
+   ],
+   "answer": 3,
+   "explanation": "Klasyfikują: sąd orzekający, sąd penitencjarny, komisja penitencjarna.",
+   "source": "pytania kontrolne 47"
+  },
+  {
+   "id": "kkw-m81",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Decyzję komisji penitencjarnej niezgodną z prawem może uchylić:",
+   "options": [
+    "dyrektor okręgowy albo Dyrektor Generalny SW (także sąd penitencjarny na skargę)",
+    "wychowawca",
+    "skazany",
+    "kierownik działu ochrony"
+   ],
+   "answer": 0,
+   "explanation": "Pytania kontrolne 47.",
+   "source": "pytania kontrolne 47"
+  },
+  {
+   "id": "kkw-m82",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Skazanego z niepsychotycznymi zaburzeniami psychicznymi kieruje się do systemu:",
+   "options": [
+    "dozoru elektronicznego",
+    "terapeutycznego",
+    "zwykłego",
+    "programowanego oddziaływania"
+   ],
+   "answer": 1,
+   "explanation": "Art. 96 KKW.",
+   "source": "art. 96 KKW"
+  },
+  {
+   "id": "kkw-m83",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Wykonując karę w systemie terapeutycznym uwzględnia się w szczególności potrzebę:",
+   "options": [
+    "zwiększenia dolegliwości kary",
+    "zapobiegania pogłębianiu się patologicznych cech osobowości i przywracania równowagi psychicznej",
+    "zatrudnienia poza zakładem",
+    "izolowania skazanego od rodziny"
+   ],
+   "answer": 1,
+   "explanation": "Art. 96 § 2 KKW.",
+   "source": "art. 96 KKW"
+  },
+  {
+   "id": "kkw-m84",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Skazany ma prawo do korespondencji:",
+   "options": [
+    "bez ograniczeń",
+    "tylko z rodziną",
+    "do 4 listów miesięcznie",
+    "tylko urzędowej"
+   ],
+   "answer": 0,
+   "explanation": "Skazany ma prawo do korespondencji bez ograniczeń.",
+   "source": "pytania kontrolne 36"
+  },
+  {
+   "id": "kkw-m85",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "W ZK typu otwartego korespondencja skazanych:",
+   "options": [
+    "podlega cenzurze sędziego",
+    "jest zakazana",
+    "nie podlega cenzurze",
+    "zawsze podlega cenzurze"
+   ],
+   "answer": 2,
+   "explanation": "Otwarty – brak cenzury, telefony bez kontroli.",
+   "source": "pytania kontrolne 32"
+  },
+  {
+   "id": "kkw-m86",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Skazany za art. 148 KK – przed pierwszą przepustką lub zezwoleniem na wyjście bez dozoru – musi mieć:",
+   "options": [
+    "zgodę rodziny ofiary",
+    "orzeczenie psychologiczno-penitencjarne",
+    "opinię kuratora",
+    "pozytywną opinię proboszcza"
+   ],
+   "answer": 1,
+   "explanation": "Rozporządzenie o oddziaływaniach.",
+   "source": "SPECJALIZACJA_2 pkt 66"
+  },
+  {
+   "id": "metodyka-m02",
+   "deck": "metodyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Funkcja wykonywania kary polegająca na odosobnieniu skazanego od społeczeństwa to funkcja:",
+   "options": [
+    "izolacyjna",
+    "represyjna",
+    "prewencyjna",
+    "poprawcza"
+   ],
+   "answer": 0,
+   "explanation": "Izolacyjna – ochrona społeczeństwa przez odosobnienie.",
+   "source": "pytania kontrolne 51"
+  },
+  {
+   "id": "metodyka-m03",
+   "deck": "metodyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Funkcja, która „obecnie winna być priorytetowa”, to funkcja:",
+   "options": [
+    "represyjna",
+    "izolacyjna",
+    "wychowawczo-resocjalizacyjna",
+    "prewencyjna"
+   ],
+   "answer": 2,
+   "explanation": "Wychowawczo-resocjalizacyjna.",
+   "source": "pytania kontrolne 51–52"
+  },
+  {
+   "id": "metodyka-m04",
+   "deck": "metodyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Funkcja represyjna kary polega na:",
+   "options": [
+    "odosobnieniu od rodziny",
+    "wymierzeniu kary i jej egzekucji, w razie konieczności z użyciem przymusu fizycznego",
+    "zmianach osobowości skazanego",
+    "zapobieganiu przestępstwom"
+   ],
+   "answer": 1,
+   "explanation": "Lista pytań 25.",
+   "source": "lista pytań 25"
+  },
+  {
+   "id": "metodyka-m05",
+   "deck": "metodyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Prizonizacja to:",
+   "options": [
+    "rodzaj kary dyscyplinarnej",
+    "proces asymilacji przez skazanego norm nieformalnego kodeksu więźniów",
+    "proces klasyfikacji skazanych",
+    "program readaptacji społecznej"
+   ],
+   "answer": 1,
+   "explanation": "Clemmer – przyswajanie norm podkultury/społeczności więźniów; zjawisko negatywne.",
+   "source": "lista pytań 13"
+  },
+  {
+   "id": "metodyka-m06",
+   "deck": "metodyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Prizonizacja jest zjawiskiem:",
+   "options": [
+    "negatywnym, nasilającym się wraz z czasem izolacji",
+    "obojętnym",
+    "występującym tylko u młodocianych",
+    "pozytywnym, ułatwiającym resocjalizację"
+   ],
+   "answer": 0,
+   "explanation": "Negatywne.",
+   "source": "pytania kontrolne 53"
+  },
+  {
+   "id": "metodyka-m07",
+   "deck": "metodyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Środkiem metody wpływu osobistego NIE jest:",
+   "options": [
+    "wysuwanie sugestii",
+    "przykład własny",
+    "trening",
+    "doradzanie wychowawcze"
+   ],
+   "answer": 2,
+   "explanation": "Trening należy do wpływu sytuacyjnego.",
+   "source": "lista pytań 10–11"
+  },
+  {
+   "id": "metodyka-m08",
+   "deck": "metodyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Przydzielanie funkcji społecznych to środek metody wpływu:",
+   "options": [
+    "osobistego",
+    "sytuacyjnego",
+    "grupowego",
+    "terapeutycznego"
+   ],
+   "answer": 1,
+   "explanation": "Wpływ sytuacyjny.",
+   "source": "lista pytań 11"
+  },
+  {
+   "id": "metodyka-m09",
+   "deck": "metodyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Wyrażanie aprobaty i dezaprobaty to środek metody wpływu:",
+   "options": [
+    "administracyjnego",
+    "osobistego",
+    "grupowego",
+    "sytuacyjnego"
+   ],
+   "answer": 1,
+   "explanation": "Wpływ osobisty.",
+   "source": "lista pytań 10"
+  },
+  {
+   "id": "metodyka-m10",
+   "deck": "metodyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Zasada nagradzania i karania wychowawczego mówi, że należy:",
+   "options": [
+    "stosować jednakowe kary dla wszystkich",
+    "częściej nagradzać niż karać",
+    "odkładać nagrody i kary w czasie",
+    "częściej karać niż nagradzać"
+   ],
+   "answer": 1,
+   "explanation": "Nagradzanie skuteczniejsze; reakcja bezpośrednio po zdarzeniu.",
+   "source": "pytania kontrolne 28"
+  },
+  {
+   "id": "metodyka-m11",
+   "deck": "metodyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Zasada wolnej progresji oznacza:",
+   "options": [
+    "automatyczne łagodzenie warunków co rok",
+    "uzależnienie warunków odbywania kary od postawy skazanego – możliwy awans i degradacja",
+    "swobodny wybór zakładu przez skazanego",
+    "brak możliwości zmiany typu zakładu"
+   ],
+   "answer": 1,
+   "explanation": "Awans i degradacja zależnie od postawy.",
+   "source": "SPECJALIZACJA_2 pkt 77"
+  },
+  {
+   "id": "metodyka-m12",
+   "deck": "metodyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Zasada indywidualizacji oznacza, że środki oddziaływania:",
+   "options": [
+    "zależą wyłącznie od długości kary",
+    "dostosowuje się do stopnia demoralizacji, podatności na resocjalizację i charakteru przestępstwa",
+    "wybiera samodzielnie skazany",
+    "są jednakowe dla wszystkich skazanych"
+   ],
+   "answer": 1,
+   "explanation": "Indywidualizacja.",
+   "source": "SPECJALIZACJA_2 pkt 77"
+  },
+  {
+   "id": "metodyka-m13",
+   "deck": "metodyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Organizacją społeczną pomagającą w resocjalizacji, wymienianą w materiałach kursu, NIE jest:",
+   "options": [
+    "Patronat",
+    "Caritas",
+    "Monar",
+    "Krajowa Administracja Skarbowa"
+   ],
+   "answer": 3,
+   "explanation": "Wymieniane: Patronat, Monar, Caritas, PKPS.",
+   "source": "pytania kontrolne 41"
+  },
+  {
+   "id": "metodyka-m14",
+   "deck": "metodyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Autorytet wychowawczy opiera się przede wszystkim na:",
+   "options": [
+    "profesjonalizmie i zaufaniu",
+    "surowości kar",
+    "stopniu służbowym",
+    "sile fizycznej"
+   ],
+   "answer": 0,
+   "explanation": "Profesjonalizm i zaufanie; buduje się go powoli.",
+   "source": "pytania kontrolne 40"
+  },
+  {
+   "id": "ochrona-m01",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Kontrolę pobieżną osadzonego przeprowadza się obowiązkowo:",
+   "options": [
+    "tylko raz dziennie podczas apelu",
+    "tylko na polecenie dyrektora",
+    "wyłącznie po widzeniu",
+    "po wyjściu i przy powrocie do celi oraz przed opuszczeniem miejsca zatrudnienia i po powrocie"
+   ],
+   "answer": 3,
+   "explanation": "Zarządzenie 30/2025; lista pytań 83.",
+   "source": "lista pytań 83"
+  },
+  {
+   "id": "ochrona-m02",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Kontrolę pobieżną przeprowadza się:",
+   "options": [
+    "wyłącznie z odsłonięciem ciała",
+    "wyłącznie przy użyciu bramki",
+    "wzrokowo i manualnie lub za pomocą środków technicznych",
+    "tylko z użyciem psa służbowego"
+   ],
+   "answer": 2,
+   "explanation": "Wzrokowo i manualnie albo technicznie (też pies, metody biochemiczne).",
+   "source": "Skrypt SW"
+  },
+  {
+   "id": "ochrona-m03",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Kontrolę pobieżną może przeprowadzić osoba innej płci, gdy:",
+   "options": [
+    "musi być przeprowadzona bezzwłocznie z powodu zagrożenia życia lub zdrowia",
+    "osadzony się na to zgodzi",
+    "brakuje funkcjonariuszy tej samej płci na zmianie",
+    "zdecyduje o tym wychowawca"
+   ],
+   "answer": 0,
+   "explanation": "Wyjątek – sytuacja nagła.",
+   "source": "Skrypt SW"
+  },
+  {
+   "id": "ochrona-m04",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Jeżeli podczas kontroli pobieżnej ujawniono przedmiot niedozwolony, należy:",
+   "options": [
+    "wezwać policję",
+    "umieścić osadzonego w celi izolacyjnej",
+    "zakończyć czynności i sporządzić notatkę",
+    "przeprowadzić kontrolę osobistą"
+   ],
+   "answer": 3,
+   "explanation": "Następuje kontrola osobista.",
+   "source": "lista pytań 83"
+  },
+  {
+   "id": "ochrona-m05",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Kontrolę osobistą przeprowadzają funkcjonariusze:",
+   "options": [
+    "tej samej płci co kontrolowany, pod nieobecność osób postronnych i osób odmiennej płci",
+    "wyłącznie personel medyczny",
+    "dowolnej płci w obecności świadka",
+    "tylko dowódca zmiany"
+   ],
+   "answer": 0,
+   "explanation": "Tej samej płci, bez osób postronnych.",
+   "source": "lista pytań 86"
+  },
+  {
+   "id": "ochrona-m06",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Na kontrolę osobistą osadzonemu przysługuje skarga do sądu penitencjarnego w terminie:",
+   "options": [
+    "14 dni",
+    "30 dni",
+    "7 dni",
+    "3 dni"
+   ],
+   "answer": 2,
+   "explanation": "7 dni, za pośrednictwem dyrektora.",
+   "source": "Skrypt SW; KKW"
+  },
+  {
+   "id": "ochrona-m07",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Osobę niepozbawioną wolności kontroluje (kontrola osobista) co najmniej:",
+   "options": [
+    "jeden funkcjonariusz dowolnej płci",
+    "trzech funkcjonariuszy",
+    "dowódca zmiany osobiście",
+    "dwóch funkcjonariuszy tej samej płci"
+   ],
+   "answer": 3,
+   "explanation": "Co najmniej dwóch tej samej płci.",
+   "source": "Skrypt SW"
+  },
+  {
+   "id": "ochrona-m08",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Przed umieszczeniem osadzonego w celi zabezpieczającej lub izolacyjnej:",
+   "options": [
+    "przeprowadza się wyłącznie kontrolę pobieżną",
+    "pyta się osadzonego o zgodę",
+    "przeprowadza się kontrolę osobistą",
+    "nie przeprowadza się kontroli"
+   ],
+   "answer": 2,
+   "explanation": "Kontrola osobista – odebranie przedmiotów niebezpiecznych.",
+   "source": "Skrypt SW; lista 86"
+  },
+  {
+   "id": "ochrona-m09",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Kontrolę celi mieszkalnej przeprowadza się:",
+   "options": [
+    "zawsze w obecności osadzonego",
+    "pod nieobecność osoby kontrolowanej",
+    "wyłącznie z psem",
+    "tylko w nocy"
+   ],
+   "answer": 1,
+   "explanation": "Cele – pod nieobecność; paczka – manualnie z udziałem osoby.",
+   "source": "Skrypt SW"
+  },
+  {
+   "id": "ochrona-m10",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Protokół kontroli jest obowiązkowy m.in. przy:",
+   "options": [
+    "kontroli paczki bez ujawnień",
+    "kontroli celi bez ujawnień",
+    "każdej kontroli pobieżnej",
+    "kontroli generalnej i kontroli miejsca pracy osadzonych poza jednostką"
+   ],
+   "answer": 3,
+   "explanation": "Oraz przy ujawnieniu przedmiotu niedozwolonego.",
+   "source": "Skrypt SW"
+  },
+  {
+   "id": "ochrona-m11",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Pora dzienna w jednostce trwa:",
+   "options": [
+    "od rozpoczęcia apelu porannego do zakończenia apelu wieczornego",
+    "od 6:00 do 22:00",
+    "od wschodu do zachodu słońca",
+    "od pobudki do ciszy nocnej"
+   ],
+   "answer": 0,
+   "explanation": "Lista pytań 71.",
+   "source": "lista pytań 71"
+  },
+  {
+   "id": "ochrona-m12",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Celę osadzonego niebezpiecznego („N”) w porze dziennej otwiera się w obecności co najmniej:",
+   "options": [
+    "jednego funkcjonariusza",
+    "trzech funkcjonariuszy",
+    "dowódcy zmiany",
+    "dwóch funkcjonariuszy"
+   ],
+   "answer": 3,
+   "explanation": "Dzień – 2, noc i apel – 3.",
+   "source": "zarządzenie 30/2025"
+  },
+  {
+   "id": "ochrona-m13",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Celę osadzonego niebezpiecznego w porze nocnej i podczas apelu otwiera się w obecności co najmniej:",
+   "options": [
+    "jednego funkcjonariusza i wychowawcy",
+    "czterech funkcjonariuszy",
+    "dwóch funkcjonariuszy",
+    "trzech funkcjonariuszy"
+   ],
+   "answer": 3,
+   "explanation": "Noc i apel – 3.",
+   "source": "zarządzenie 30/2025"
+  },
+  {
+   "id": "ochrona-m14",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "W jednej celi mieszkalnej można umieścić najwyżej:",
+   "options": [
+    "dwóch osadzonych niebezpiecznych",
+    "jednego osadzonego niebezpiecznego",
+    "trzech osadzonych niebezpiecznych",
+    "czterech osadzonych niebezpiecznych"
+   ],
+   "answer": 2,
+   "explanation": "Maks. 3 i nie razem z osadzonymi bez statusu N.",
+   "source": "zarządzenie 30/2025"
+  },
+  {
+   "id": "ochrona-m15",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Osadzonych niebezpiecznych można doprowadzać w grupie nie większej niż:",
+   "options": [
+    "3 osoby",
+    "5 osób",
+    "10 osób",
+    "2 osoby"
+   ],
+   "answer": 0,
+   "explanation": "Do 3 osób; na trasie wstrzymuje się ruch innych osadzonych.",
+   "source": "zarządzenie 30/2025"
+  },
+  {
+   "id": "ochrona-m16",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Kartę osadzonego niebezpiecznego sporządza:",
+   "options": [
+    "kierownik działu ochrony",
+    "dyrektor okręgowy",
+    "wychowawca",
+    "psycholog"
+   ],
+   "answer": 0,
+   "explanation": "Kierownik DO, w 2 egzemplarzach.",
+   "source": "zarządzenie 30/2025 § 118"
+  },
+  {
+   "id": "ochrona-m17",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Decyzję o rozmieszczeniu osadzonego niebezpiecznego podejmuje:",
+   "options": [
+    "kierownik działu ochrony w uzgodnieniu z kierownikiem działu penitencjarnego lub ewidencji",
+    "sędzia penitencjarny",
+    "oddziałowy",
+    "dowódca zmiany"
+   ],
+   "answer": 0,
+   "explanation": "§ 120 zarządzenia 30/2025.",
+   "source": "zarządzenie 30/2025"
+  },
+  {
+   "id": "ochrona-m18",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Osadzonego niebezpiecznego konwojuje się:",
+   "options": [
+    "dowolnym pojazdem służbowym w grupie do 10",
+    "transportem publicznym w asyście",
+    "wyłącznie pojazdem konwojowym, co do zasady pojedynczo",
+    "zawsze z udziałem policji"
+   ],
+   "answer": 2,
+   "explanation": "Wyłącznie pojazdem konwojowym, wyjątkowo do 3, z udziałem GISW.",
+   "source": "zarządzenie 30/2025 § 85"
+  },
+  {
+   "id": "ochrona-m19",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Do konwojowania jednego lub grupy do 10 osadzonych wyznacza się (poza kierującym pojazdem) co najmniej:",
+   "options": [
+    "jednego funkcjonariusza",
+    "dwóch funkcjonariuszy",
+    "trzech funkcjonariuszy",
+    "pięciu funkcjonariuszy"
+   ],
+   "answer": 1,
+   "explanation": "§ 82 ust. 1 zarządzenia 30/2025.",
+   "source": "zarządzenie 30/2025"
+  },
+  {
+   "id": "ochrona-m20",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Do konwojowania między jednostkami do trzech skazanych z ZK półotwartego lub otwartego można wyznaczyć:",
+   "options": [
+    "jednego funkcjonariusza poza kierowcą",
+    "grupę interwencyjną",
+    "czterech funkcjonariuszy",
+    "tylko kierowcę"
+   ],
+   "answer": 0,
+   "explanation": "Wyjątek z § 82 ust. 2.",
+   "source": "zarządzenie 30/2025"
+  },
+  {
+   "id": "ochrona-m21",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Dowódcę konwoju i konwojentów wyznacza:",
+   "options": [
+    "kierownik jednostki lub pisemnie upoważniony funkcjonariusz",
+    "kierowca pojazdu",
+    "dowódca zmiany ustnie",
+    "sąd zlecający konwój"
+   ],
+   "answer": 0,
+   "explanation": "§ 77 zarządzenia 30/2025.",
+   "source": "zarządzenie 30/2025"
+  },
+  {
+   "id": "ochrona-m22",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "W jednym przedziale pojazdu konwojowego NIE konwojuje się:",
+   "options": [
+    "tymczasowo aresztowanych",
+    "więcej niż dwóch osób",
+    "osób w kajdankach",
+    "osób odmiennej płci ani osób wymagających wzajemnej izolacji"
+   ],
+   "answer": 3,
+   "explanation": "§ 86 zarządzenia 30/2025.",
+   "source": "zarządzenie 30/2025"
+  },
+  {
+   "id": "ochrona-m23",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Podczas konwojowania zabrania się m.in.:",
+   "options": [
+    "posiadania środków łączności",
+    "pozostawiania konwojowanego bez ochrony i obserwacji",
+    "sprawdzania pojazdu przed wyjazdem",
+    "używania kajdanek"
+   ],
+   "answer": 1,
+   "explanation": "§ 81 zarządzenia 30/2025.",
+   "source": "zarządzenie 30/2025"
+  },
+  {
+   "id": "ochrona-m24",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Pościg za zbiegiem funkcjonariusz podejmuje, gdy:",
+   "options": [
+    "minie 30 minut od ucieczki",
+    "zbieg jest w polu widzenia albo znany jest kierunek ucieczki (i nie koliduje to z innymi obowiązkami)",
+    "otrzyma pisemny rozkaz dyrektora",
+    "zgodzi się policja"
+   ],
+   "answer": 1,
+   "explanation": "Skrypt SW (zarządzenie 30/2025).",
+   "source": "zarządzenie 30/2025"
+  },
+  {
+   "id": "ochrona-m25",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Siłami wsparcia w SW są siły:",
+   "options": [
+    "gminne, powiatowe i wojewódzkie",
+    "okręgowe, międzyokręgowe oraz odwód Dyrektora Generalnego",
+    "wojskowe",
+    "wyłącznie policji"
+   ],
+   "answer": 1,
+   "explanation": "Skrypt SW.",
+   "source": "zarządzenie 30/2025"
+  },
+  {
+   "id": "ochrona-m26",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Ogłoszenie alarmu i zorganizowanie pościgu to:",
+   "options": [
+    "przedsięwzięcia ochronne",
+    "czynności profilaktyczne",
+    "działania ochronne",
+    "czynności wyjaśniające"
+   ],
+   "answer": 2,
+   "explanation": "Działania ochronne – przeciwdziałanie zagrożeniom i likwidacja skutków.",
+   "source": "lista pytań 78"
+  },
+  {
+   "id": "ochrona-m27",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Gospodarowanie kluczami i organizacja ruchu w jednostce to:",
+   "options": [
+    "przedsięwzięcia ochronne",
+    "czynności operacyjne",
+    "działania ochronne",
+    "czynności profilaktyczne"
+   ],
+   "answer": 0,
+   "explanation": "Przedsięwzięcia ochronne (§ 2 pkt 32 zarządzenia 30/2025).",
+   "source": "lista pytań 77"
+  },
+  {
+   "id": "ochrona-m28",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Czynności profilaktyczne w ZK i AŚ stosują:",
+   "options": [
+    "wyłącznie wychowawcy",
+    "wyłącznie funkcjonariusze działu ochrony",
+    "tylko dyrektor jednostki",
+    "funkcjonariusze i pracownicy"
+   ],
+   "answer": 3,
+   "explanation": "Art. 19a ust. 1 ustawy o SW.",
+   "source": "art. 19a ustawy o SW"
+  },
+  {
+   "id": "ochrona-m29",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Dokumentację zgromadzoną w toku czynności profilaktycznych:",
+   "options": [
+    "udostępnia się skazanemu na wniosek",
+    "publikuje się w BIP",
+    "nie udostępnia się skazanemu ani tymczasowo aresztowanemu",
+    "przekazuje się rodzinie skazanego"
+   ],
+   "answer": 2,
+   "explanation": "Art. 19a ustawy o SW.",
+   "source": "art. 19a ustawy o SW"
+  },
+  {
+   "id": "ochrona-m30",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Funkcjonariuszy uprawnionych do przetwarzania informacji z czynności profilaktycznych wskazuje:",
+   "options": [
+    "sędzia penitencjarny",
+    "dyrektor jednostki",
+    "Dyrektor Generalny",
+    "kierownik działu penitencjarnego"
+   ],
+   "answer": 1,
+   "explanation": "Art. 19b ust. 1 ustawy o SW.",
+   "source": "art. 19b ustawy o SW"
+  },
+  {
+   "id": "ochrona-m31",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Informację „nieistotną” z czynności profilaktycznych osoba wyznaczona:",
+   "options": [
+    "przekazuje osadzonemu",
+    "niszczy bez informowania",
+    "zgłasza dyrektorowi, podając przyczyny takiej klasyfikacji",
+    "przekazuje policji"
+   ],
+   "answer": 2,
+   "explanation": "Art. 19b ustawy o SW.",
+   "source": "art. 19b ustawy o SW"
+  },
+  {
+   "id": "ochrona-m32",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Instrukcję ochronną przechowuje się:",
+   "options": [
+    "w każdej celi",
+    "u każdego funkcjonariusza",
+    "w jednym egzemplarzu na wartowni, zabezpieczoną przed nieuprawnionymi",
+    "w kancelarii jawnej"
+   ],
+   "answer": 2,
+   "explanation": "Kopię zestawienia stanowisk i planu sytuacyjnego dostają dyrektor okręgowy i Biuro Ochrony CZSW.",
+   "source": "lista pytań 92"
+  },
+  {
+   "id": "ochrona-m33",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Instrukcję ochronną ustala (zatwierdza):",
+   "options": [
+    "kierownik działu penitencjarnego",
+    "kierownik jednostki organizacyjnej (dyrektor)",
+    "dowódca zmiany",
+    "sędzia penitencjarny"
+   ],
+   "answer": 1,
+   "explanation": "Zarządzenie 30/2025 § 9.",
+   "source": "zarządzenie 30/2025"
+  },
+  {
+   "id": "ochrona-m34",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Wykaz przedmiotów niedozwolonych sporządza ___, a zatwierdza ___:",
+   "options": [
+    "wychowawca; kierownik działu penitencjarnego",
+    "oddziałowy; dowódca zmiany",
+    "kierownik działu (ochrony); dyrektor jednostki",
+    "dyrektor; dyrektor okręgowy"
+   ],
+   "answer": 2,
+   "explanation": "Lista pytań 69.",
+   "source": "lista pytań 69"
+  },
+  {
+   "id": "ochrona-m35",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Sposób ochrony Centralnego Zarządu Służby Więziennej określa:",
+   "options": [
+    "Dyrektor Generalny",
+    "dyrektor okręgowy",
+    "komendant COSSW",
+    "Minister Sprawiedliwości"
+   ],
+   "answer": 0,
+   "explanation": "Skrypt SW.",
+   "source": "zarządzenie 30/2025"
+  },
+  {
+   "id": "ochrona-m36",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Oddziałowy do swoich PODSTAWOWYCH obowiązków NIE zalicza:",
+   "options": [
+    "kontrolowania osadzonych i cel",
+    "bezzwłocznego informowania dowódcy zmiany o zagrożeniach",
+    "nadzorowania wydawania posiłków",
+    "sprawdzania paczek"
+   ],
+   "answer": 3,
+   "explanation": "Sprawdzanie paczek nie należy do podstawowych obowiązków oddziałowego.",
+   "source": "Skrypt SW"
+  },
+  {
+   "id": "ochrona-m37",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Widzeniowy przed rozpoczęciem i po zakończeniu widzeń:",
+   "options": [
+    "sprawdza zabezpieczenia t-o i obecność przedmiotów niedozwolonych w pomieszczeniach widzeń",
+    "wydaje paczki",
+    "prowadzi rozmowę wychowawczą",
+    "kontroluje korespondencję"
+   ],
+   "answer": 0,
+   "explanation": "Skrypt SW.",
+   "source": "zarządzenie 30/2025"
+  },
+  {
+   "id": "ochrona-m38",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Spacerowy przed rozpoczęciem i po zakończeniu spaceru:",
+   "options": [
+    "przeprowadza apel w oddziale",
+    "sprawdza korespondencję osadzonych",
+    "wydaje posiłki",
+    "sprawdza podłoże placu, zabezpieczenia t-o i obecność przedmiotów niedozwolonych"
+   ],
+   "answer": 3,
+   "explanation": "Zarządzenie 30/2025 § 69.",
+   "source": "zarządzenie 30/2025"
+  },
+  {
+   "id": "ochrona-m39",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Podczas apelu w oddziale:",
+   "options": [
+    "nie sprawdza się stanu liczbowego",
+    "otwiera się kolejno drzwi tylko jednej celi i sprawdza stan liczbowy",
+    "otwiera się wszystkie cele jednocześnie",
+    "osadzeni wychodzą na korytarz"
+   ],
+   "answer": 1,
+   "explanation": "Skrypt SW.",
+   "source": "zarządzenie 30/2025"
+  },
+  {
+   "id": "ochrona-m40",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Klauzula „Pf” oznacza:",
+   "options": [
+    "zastrzeżone",
+    "tajne",
+    "poufne",
+    "ściśle tajne"
+   ],
+   "answer": 2,
+   "explanation": "00 – ściśle tajne, 0 – tajne, Pf – poufne, Z – zastrzeżone.",
+   "source": "ustawa o ochronie informacji niejawnych"
+  },
+  {
+   "id": "ochrona-m41",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Klauzula „00” oznacza informacje:",
+   "options": [
+    "poufne – szkoda",
+    "tajne – poważna szkoda",
+    "ściśle tajne – wyjątkowo poważna szkoda dla RP",
+    "zastrzeżone"
+   ],
+   "answer": 2,
+   "explanation": "Art. 5 ustawy o ochronie informacji niejawnych.",
+   "source": "ustawa o ochronie informacji niejawnych"
+  },
+  {
+   "id": "ochrona-m42",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Aktem wewnętrznym DGSW o sposobach ochrony wskazywanym w materiałach kursu jest:",
+   "options": [
+    "zarządzenie nr 69/23",
+    "zarządzenie nr 30/2025",
+    "instrukcja nr 4/24",
+    "regulamin nr 1/2010"
+   ],
+   "answer": 1,
+   "explanation": "Zarządzenie 30/2025 zastąpiło 69/23.",
+   "source": "Skrypt SW"
+  },
+  {
+   "id": "ochrona-m43",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Funkcjonariusz w bezpośrednim kontakcie z osadzonym „N” jest wyposażony m.in. w:",
+   "options": [
+    "paralizator i psa",
+    "osobisty sygnalizator alarmowy, ŚPB i środki ochrony",
+    "broń palną długą",
+    "klucze do wszystkich cel"
+   ],
+   "answer": 1,
+   "explanation": "Skrypt SW.",
+   "source": "zarządzenie 30/2025"
+  },
+  {
+   "id": "spb-m12",
+   "deck": "spb",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Ustawa o środkach przymusu bezpośredniego i broni palnej pochodzi z:",
+   "options": [
+    "9 kwietnia 2010 r.",
+    "24 maja 2013 r.",
+    "6 czerwca 1997 r.",
+    "17 października 2016 r."
+   ],
+   "answer": 1,
+   "explanation": "Ustawa z 24 maja 2013 r. (t.j. Dz.U. 2026 poz. 244).",
+   "source": "ustawa o ŚPB"
+  },
+  {
+   "id": "spb-m13",
+   "deck": "spb",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Wobec kobiety o widocznej ciąży funkcjonariusz może co do zasady użyć wyłącznie:",
+   "options": [
+    "siły fizycznej w postaci technik obezwładnienia",
+    "ręcznego miotacza substancji obezwładniających",
+    "pałki służbowej",
+    "kajdanek zakładanych na ręce"
+   ],
+   "answer": 0,
+   "explanation": "Art. 9 ustawy o ŚPB.",
+   "source": "art. 9 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-m14",
+   "deck": "spb",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Ograniczenie do technik obezwładnienia dotyczy osób, których wygląd wskazuje na wiek do:",
+   "options": [
+    "16 lat",
+    "18 lat",
+    "15 lat",
+    "13 lat"
+   ],
+   "answer": 3,
+   "explanation": "Art. 9 – do 13 lat.",
+   "source": "art. 9 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-m15",
+   "deck": "spb",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Wobec kobiety w widocznej ciąży można użyć innych ŚPB niż siła fizyczna, gdy:",
+   "options": [
+    "nigdy",
+    "trzeba odeprzeć bezpośredni, bezprawny zamach na życie lub zdrowie, a siła fizyczna jest niewystarczająca lub niemożliwa",
+    "zgodzi się lekarz",
+    "osoba odmawia wykonania polecenia"
+   ],
+   "answer": 1,
+   "explanation": "Art. 9 ust. 2 ustawy o ŚPB.",
+   "source": "art. 9 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-m16",
+   "deck": "spb",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Po użyciu pasa obezwładniającego wobec nieletniego należy:",
+   "options": [
+    "zdjąć pas po 24 godzinach",
+    "niezwłocznie zapewnić pomoc medyczną; dalsze użycie zależy od opinii udzielającego pomocy",
+    "powiadomić rodziców w ciągu 7 dni",
+    "umieścić nieletniego w celi izolacyjnej"
+   ],
+   "answer": 1,
+   "explanation": "Art. 16 ust. 2 ustawy o ŚPB.",
+   "source": "art. 16 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-m17",
+   "deck": "spb",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Którego środka przymusu bezpośredniego NIE może używać Służba Więzienna?",
+   "options": [
+    "pasa obezwładniającego",
+    "psa służbowego",
+    "kaftana bezpieczeństwa",
+    "kajdanek"
+   ],
+   "answer": 2,
+   "explanation": "Art. 19 ustawy o SW nie przewiduje kaftana.",
+   "source": "art. 19 ustawy o SW"
+  },
+  {
+   "id": "spb-m18",
+   "deck": "spb",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Którego środka NIE ma w katalogu ŚPB dla Służby Więziennej?",
+   "options": [
+    "wodnych środków obezwładniających",
+    "konia służbowego",
+    "kasku zabezpieczającego",
+    "pałki służbowej"
+   ],
+   "answer": 1,
+   "explanation": "Koń służbowy – nie dla SW.",
+   "source": "art. 19 ustawy o SW"
+  },
+  {
+   "id": "spb-m19",
+   "deck": "spb",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Rodzaje kajdanek wg ustawy o ŚPB:",
+   "options": [
+    "zwykłe, zespolone, elektryczne",
+    "zakładane na ręce, zakładane na nogi, zespolone",
+    "ręczne, nożne, prowadnice",
+    "metalowe, plastikowe, jednorazowe"
+   ],
+   "answer": 1,
+   "explanation": "Art. 12 ust. 1 pkt 2.",
+   "source": "art. 12 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-m20",
+   "deck": "spb",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Prewencyjnie wobec osoby pozbawionej wolności (zapobieganie ucieczce, agresji, autoagresji) funkcjonariusz SW może użyć m.in.:",
+   "options": [
+    "kajdanek zakładanych na ręce, kasku zabezpieczającego, pasa obezwładniającego",
+    "pałki służbowej i psa",
+    "granatów łzawiących",
+    "pocisków niepenetracyjnych"
+   ],
+   "answer": 0,
+   "explanation": "Oraz siły fizycznej (techniki transportowe).",
+   "source": "art. 19 ustawy o SW; lista 87"
+  },
+  {
+   "id": "spb-m21",
+   "deck": "spb",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Środki przymusu bezpośredniego prewencyjnie można zastosować także:",
+   "options": [
+    "tylko po zgodzie sądu",
+    "na wniosek osoby pozostającej w bezpośrednim kontakcie z osadzonym",
+    "na wniosek innego osadzonego",
+    "na wniosek rodziny osadzonego"
+   ],
+   "answer": 1,
+   "explanation": "Lub gdy funkcjonariusz uzna to za celowe.",
+   "source": "lista pytań 88"
+  },
+  {
+   "id": "spb-m22",
+   "deck": "spb",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "ŚPB używa się w sposób:",
+   "options": [
+    "niezbędny, proporcjonalny do zagrożenia, wybierając środek możliwie najmniej dolegliwy",
+    "zawsze najskuteczniejszy",
+    "zawsze stopniowany od najsilniejszego",
+    "zgodny z życzeniem przełożonego"
+   ],
+   "answer": 0,
+   "explanation": "Art. 6 ustawy o ŚPB.",
+   "source": "art. 6 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-m23",
+   "deck": "spb",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Ostatnią formą ostrzeżenia przed użyciem broni palnej jest:",
+   "options": [
+    "okrzyk „Stój, bo strzelam!”",
+    "strzał ostrzegawczy w bezpiecznym kierunku",
+    "okrzyk „Służba Więzienna!”",
+    "wezwanie do porzucenia broni"
+   ],
+   "answer": 1,
+   "explanation": "Strzał ostrzegawczy.",
+   "source": "art. 48 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-m24",
+   "deck": "spb",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Od procedury ostrzegania przed użyciem broni palnej można odstąpić, gdy:",
+   "options": [
+    "jej realizacja groziłaby bezpośrednim niebezpieczeństwem dla życia lub zdrowia funkcjonariusza lub innej osoby",
+    "jest noc",
+    "tak zdecyduje dowódca zmiany",
+    "osoba nie zna języka polskiego"
+   ],
+   "answer": 0,
+   "explanation": "Skrypt SW; ustawa o ŚPB.",
+   "source": "ustawa o ŚPB"
+  },
+  {
+   "id": "spb-m25",
+   "deck": "spb",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Podstawą prawną UŻYCIA broni palnej przez funkcjonariusza SW jest:",
+   "options": [
+    "zarządzenie DGSW nr 69/2024",
+    "ustawa o ŚPB i broni palnej oraz art. 19 ustawy o SW",
+    "regulamin nr 1/2024",
+    "instrukcja ochronna jednostki"
+   ],
+   "answer": 1,
+   "explanation": "69/2024 dotyczy gospodarowania uzbrojeniem, nie podstawy użycia.",
+   "source": "ustawa o ŚPB; ustawa o SW"
+  },
+  {
+   "id": "spb-m26",
+   "deck": "spb",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Decyzję o użyciu ŚPB co do zasady podejmuje m.in.:",
+   "options": [
+    "lekarz",
+    "oddziałowy",
+    "wychowawca",
+    "dyrektor jednostki (a także DG SW, dyrektor okręgowy, kierownik OZ, komendant ośrodka, ich zastępcy)"
+   ],
+   "answer": 3,
+   "explanation": "Lista pytań 87.",
+   "source": "art. 19 ustawy o SW"
+  },
+  {
+   "id": "spb-m27",
+   "deck": "spb",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Funkcjonariusz SW może samodzielnie podjąć decyzję o użyciu ŚPB m.in. w razie:",
+   "options": [
+    "odmowy przyjęcia posiłku",
+    "głośnego zachowania w celi",
+    "usiłowania ucieczki osoby pozbawionej wolności",
+    "złożenia skargi przez osadzonego"
+   ],
+   "answer": 2,
+   "explanation": "Także zamach na życie/zdrowie, pościg, zamach na obiekty.",
+   "source": "art. 19 ustawy o SW; lista 87"
+  },
+  {
+   "id": "bron-m01",
+   "deck": "bron",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Pistolet GLOCK w materiałach COSSW to broń:",
+   "options": [
+    "automatyczna samoczynna (seria)",
+    "automatyczna samopowtarzalna",
+    "powtarzalna",
+    "jednostrzałowa"
+   ],
+   "answer": 1,
+   "explanation": "W polskiej nomenklaturze: broń automatyczna samopowtarzalna.",
+   "source": "Skrypt SW"
+  },
+  {
+   "id": "bron-m02",
+   "deck": "bron",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Pojemność magazynka pistoletu GLOCK (model opisany w materiałach):",
+   "options": [
+    "17 nabojów",
+    "15 nabojów",
+    "8 nabojów",
+    "13 nabojów"
+   ],
+   "answer": 0,
+   "explanation": "17.",
+   "source": "Skrypt SW"
+  },
+  {
+   "id": "bron-m03",
+   "deck": "bron",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Kaliber i amunicja pistoletu GLOCK w SW:",
+   "options": [
+    "9 mm, 9×19 Parabellum",
+    "7,62 mm",
+    "5,56 mm",
+    "9 mm Makarowa"
+   ],
+   "answer": 0,
+   "explanation": "9×19 Parabellum.",
+   "source": "Skrypt SW"
+  },
+  {
+   "id": "bron-m04",
+   "deck": "bron",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Automatyka pistoletu GLOCK działa na zasadzie:",
+   "options": [
+    "odprowadzenia gazów prochowych",
+    "krótkiego odrzutu lufy",
+    "długiego odrzutu lufy",
+    "odrzutu zamka swobodnego"
+   ],
+   "answer": 1,
+   "explanation": "Krótki odrzut lufy; odryglowanie przez przekoszenie lufy.",
+   "source": "Skrypt SW"
+  },
+  {
+   "id": "bron-m05",
+   "deck": "bron",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "System bezpieczeństwa GLOCK „Safe Action” obejmuje:",
+   "options": [
+    "3 niezależne zabezpieczenia",
+    "1 bezpiecznik nastawny",
+    "brak zabezpieczeń",
+    "2 bezpieczniki skrzydełkowe"
+   ],
+   "answer": 0,
+   "explanation": "Spustowe, iglicy, przed wystrzałem przy upadku.",
+   "source": "lista pytań 50"
+  },
+  {
+   "id": "bron-m06",
+   "deck": "bron",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Pojemność magazynka pistoletu Walther P99 (wg materiałów COSSW):",
+   "options": [
+    "20 nabojów",
+    "8 nabojów",
+    "17 nabojów",
+    "15 nabojów"
+   ],
+   "answer": 3,
+   "explanation": "P99 – 15 nabojów, 9×19.",
+   "source": "Skrypt SW"
+  },
+  {
+   "id": "bron-m07",
+   "deck": "bron",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Na poziomie podstawowym szkolenia strzeleckiego funkcjonariusz ma co najmniej:",
+   "options": [
+    "4 szkolenia w roku, 100 szt. amunicji",
+    "12 szkoleń w roku",
+    "1 szkolenie w roku, 20 szt. amunicji",
+    "2 szkolenia w roku, min. 50 szt. amunicji na szkolenie"
+   ],
+   "answer": 3,
+   "explanation": "Zarządzenie 72/2024 § 4.",
+   "source": "zarządzenie 72/2024"
+  },
+  {
+   "id": "bron-m08",
+   "deck": "bron",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Poziom zaawansowany szkolenia strzeleckiego dotyczy:",
+   "options": [
+    "wszystkich funkcjonariuszy",
+    "kadry kierowniczej",
+    "działu penitencjarnego",
+    "grup interwencyjnych SW (min. 12 szkoleń rocznie)"
+   ],
+   "answer": 3,
+   "explanation": "Zarządzenie 72/2024.",
+   "source": "zarządzenie 72/2024"
+  },
+  {
+   "id": "bron-m09",
+   "deck": "bron",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Użytkownikowi uzbrojenia zabrania się m.in.:",
+   "options": [
+    "czyszczenia broni po służbie",
+    "noszenia broni z nabojem w komorze nabojowej",
+    "rozliczania się z broni po służbie",
+    "zgłaszania usterek przełożonemu"
+   ],
+   "answer": 1,
+   "explanation": "§ 12 ust. 2 instrukcji do zarządzenia 69/2024.",
+   "source": "zarządzenie 69/2024"
+  },
+  {
+   "id": "bron-m10",
+   "deck": "bron",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Funkcjonariusz może być użytkownikiem uzbrojenia, jeżeli:",
+   "options": [
+    "ma co najmniej 5 lat służby",
+    "złożył oświadczenie o znajomości broni",
+    "posiada pozwolenie na broń do celów sportowych",
+    "odbył przeszkolenie z danego rodzaju broni zakończone egzaminem"
+   ],
+   "answer": 3,
+   "explanation": "§ 11 instrukcji do zarządzenia 69/2024.",
+   "source": "zarządzenie 69/2024"
+  },
+  {
+   "id": "bron-m11",
+   "deck": "bron",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Na strzelnicy lufę broni należy kierować:",
+   "options": [
+    "w górę",
+    "tylko w stronę tarcz lub kulochwytu głównego",
+    "w dowolnym bezpiecznym kierunku",
+    "w ziemię przed stanowiskiem"
+   ],
+   "answer": 1,
+   "explanation": "Skrypt SW.",
+   "source": "zarządzenie 72/2024"
+  },
+  {
+   "id": "bron-m12",
+   "deck": "bron",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Jeżeli funkcjonariusz nie podjął decyzji o strzale, palec obsługujący język spustowy trzyma:",
+   "options": [
+    "na bezpieczniku",
+    "na języku spustowym bez nacisku",
+    "poza spustem, najlepiej wzdłuż szkieletu broni",
+    "w kabłąku spustowym"
+   ],
+   "answer": 2,
+   "explanation": "Skrypt SW.",
+   "source": "Skrypt SW"
+  },
+  {
+   "id": "pp-m01",
+   "deck": "pp",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Stosunek uciśnięć do oddechów ratowniczych w RKO osoby dorosłej:",
+   "options": [
+    "30:1",
+    "15:2",
+    "30:2",
+    "5:1"
+   ],
+   "answer": 2,
+   "explanation": "Wytyczne ERC.",
+   "source": "Wytyczne ERC 2025"
+  },
+  {
+   "id": "pp-m02",
+   "deck": "pp",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Oddech poszkodowanego sprawdzamy metodą „widzę, słyszę, czuję” przez:",
+   "options": [
+    "3 sekundy",
+    "1 minutę",
+    "maksymalnie 10 sekund",
+    "30 sekund"
+   ],
+   "answer": 2,
+   "explanation": "Do 10 s.",
+   "source": "Wytyczne ERC 2025"
+  },
+  {
+   "id": "pp-m03",
+   "deck": "pp",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Po uruchomieniu AED należy przede wszystkim:",
+   "options": [
+    "podać płyny",
+    "przerwać RKO na 2 minuty",
+    "zdjąć elektrody",
+    "wykonywać polecenia głosowe urządzenia"
+   ],
+   "answer": 3,
+   "explanation": "AED prowadzi ratownika.",
+   "source": "Wytyczne ERC 2025"
+  },
+  {
+   "id": "pp-m04",
+   "deck": "pp",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Nieprzytomnego, który prawidłowo oddycha, układamy:",
+   "options": [
+    "w pozycji bezpiecznej (bocznej ustalonej)",
+    "na plecach z uniesionymi nogami",
+    "na brzuchu",
+    "w pozycji siedzącej"
+   ],
+   "answer": 0,
+   "explanation": "Pozycja bezpieczna.",
+   "source": "Wytyczne ERC 2025"
+  },
+  {
+   "id": "pp-m05",
+   "deck": "pp",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Przy ciężkim zadławieniu PRZYTOMNEJ osoby dorosłej:",
+   "options": [
+    "od razu rozpoczynamy RKO 30:2",
+    "podajemy wodę do picia",
+    "5 oddechów ratowniczych",
+    "naprzemiennie 5 uderzeń w plecy i 5 uciśnięć nadbrzusza"
+   ],
+   "answer": 3,
+   "explanation": "Przy skutecznym kaszlu – zachęcać do kaszlu.",
+   "source": "Wytyczne ERC 2025"
+  },
+  {
+   "id": "pp-m06",
+   "deck": "pp",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Przy amputacji kończyny stosujemy:",
+   "options": [
+    "opaskę uciskową (stazę)",
+    "pozycję przeciwwstrząsową bez opatrunku",
+    "zimny okład",
+    "unieruchomienie dwóch stawów"
+   ],
+   "answer": 0,
+   "explanation": "Opaska uciskowa.",
+   "source": "Wytyczne ERC 2025"
+  },
+  {
+   "id": "pp-m07",
+   "deck": "pp",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Przy złamaniu kości kończyny unieruchamiamy:",
+   "options": [
+    "dwie sąsiednie kości",
+    "dwa sąsiednie stawy",
+    "tylko miejsce złamania",
+    "całe ciało"
+   ],
+   "answer": 1,
+   "explanation": "Złamanie – stawy; uraz stawu – kości.",
+   "source": "lista pytań 109"
+  },
+  {
+   "id": "pp-m08",
+   "deck": "pp",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Wbity w tułów nóż:",
+   "options": [
+    "wyciągamy i uciskamy ranę",
+    "natychmiast wyciągamy",
+    "zostawiamy i stabilizujemy, nie wyciągając",
+    "obracamy, by zmniejszyć krwawienie"
+   ],
+   "answer": 2,
+   "explanation": "Nie usuwać ciała obcego.",
+   "source": "Skrypt SW"
+  },
+  {
+   "id": "pp-m09",
+   "deck": "pp",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Przy oparzeniu w pierwszej kolejności należy:",
+   "options": [
+    "posmarować tłuszczem",
+    "zasypać mąką",
+    "przebić pęcherze",
+    "chłodzić oparzone miejsce"
+   ],
+   "answer": 3,
+   "explanation": "Chłodzenie wodą.",
+   "source": "Wytyczne ERC 2025"
+  },
+  {
+   "id": "pp-m10",
+   "deck": "pp",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "W skali AVPU litera „P” oznacza:",
+   "options": [
+    "brak reakcji",
+    "przytomność",
+    "reakcję na ból",
+    "reakcję na głos"
+   ],
+   "answer": 2,
+   "explanation": "Alert, Voice, Pain, Unresponsive.",
+   "source": "Wytyczne ERC"
+  },
+  {
+   "id": "pp-m11",
+   "deck": "pp",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Podstawą prawną systemu ratownictwa i używania AED jest ustawa z 8 września 2006 r. o:",
+   "options": [
+    "ochronie zdrowia psychicznego",
+    "działalności leczniczej",
+    "Państwowym Ratownictwie Medycznym",
+    "Służbie Więziennej"
+   ],
+   "answer": 2,
+   "explanation": "Ustawa o PRM.",
+   "source": "lista pytań 46"
+  },
+  {
+   "id": "pp-m12",
+   "deck": "pp",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Podczas napadu padaczki należy:",
+   "options": [
+    "polewać zimną wodą",
+    "włożyć coś między zęby",
+    "przytrzymywać kończyny na siłę",
+    "zabezpieczyć osobę przed urazem i wezwać pomoc"
+   ],
+   "answer": 3,
+   "explanation": "Chronić głowę, nie krępować ruchów.",
+   "source": "Wytyczne ERC 2025"
+  },
+  {
+   "id": "pragmatyka-m01",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Służba Więzienna podlega:",
+   "options": [
+    "Ministrowi Sprawiedliwości",
+    "Prezesowi Rady Ministrów",
+    "Prokuratorowi Generalnemu",
+    "Ministrowi Spraw Wewnętrznych i Administracji"
+   ],
+   "answer": 0,
+   "explanation": "Art. 1 ustawy o SW.",
+   "source": "art. 1 ustawy o SW"
+  },
+  {
+   "id": "pragmatyka-m02",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Koszty funkcjonowania Służby Więziennej pokrywa:",
+   "options": [
+    "budżet państwa",
+    "Fundusz Sprawiedliwości",
+    "samorząd województwa",
+    "dochody z pracy osadzonych"
+   ],
+   "answer": 0,
+   "explanation": "Art. 6 ustawy o SW.",
+   "source": "art. 6 ustawy o SW"
+  },
+  {
+   "id": "pragmatyka-m03",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Służba przygotowawcza funkcjonariusza SW trwa co do zasady:",
+   "options": [
+    "3 lata",
+    "2 lata",
+    "1 rok",
+    "6 miesięcy"
+   ],
+   "answer": 1,
+   "explanation": "Może być przedłużona.",
+   "source": "ustawa o SW"
+  },
+  {
+   "id": "pragmatyka-m04",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Okres zatarcia kary nagany wymierzonej funkcjonariuszowi wynosi:",
+   "options": [
+    "12 miesięcy",
+    "18 miesięcy",
+    "6 miesięcy",
+    "24 miesiące"
+   ],
+   "answer": 0,
+   "explanation": "Nagana 12, ostrzeżenie 18, niższe stanowisko/stopień 24 miesiące.",
+   "source": "ustawa o SW; Skrypt SW"
+  },
+  {
+   "id": "pragmatyka-m05",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Za wykazanie męstwa lub odwagi przełożony dyscyplinarny może zatrzeć karę:",
+   "options": [
+    "nie może",
+    "po roku",
+    "w każdym czasie",
+    "po 6 miesiącach"
+   ],
+   "answer": 2,
+   "explanation": "Skrypt SW.",
+   "source": "ustawa o SW"
+  },
+  {
+   "id": "pragmatyka-m06",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Od orzeczenia o ukaraniu dyscyplinarnym funkcjonariusza przysługuje:",
+   "options": [
+    "zażalenie do RPO",
+    "odwołanie do wyższego przełożonego dyscyplinarnego",
+    "skarga do ETPCz",
+    "skarga do sędziego penitencjarnego"
+   ],
+   "answer": 1,
+   "explanation": "Skrypt SW.",
+   "source": "ustawa o SW"
+  },
+  {
+   "id": "pragmatyka-m07",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Za jedno przewinienie dyscyplinarne funkcjonariuszowi można wymierzyć:",
+   "options": [
+    "tylko jedną karę",
+    "trzy kary",
+    "dwie kary",
+    "dowolną liczbę kar"
+   ],
+   "answer": 0,
+   "explanation": "Skrypt SW.",
+   "source": "ustawa o SW"
+  },
+  {
+   "id": "pragmatyka-m08",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Funkcjonariusz w służbie stałej może być zwolniony za niewywiązywanie się z obowiązków stwierdzone w dwóch kolejnych opiniach, między którymi upłynęło co najmniej:",
+   "options": [
+    "6 miesięcy",
+    "1 miesiąc",
+    "3 miesiące",
+    "12 miesięcy"
+   ],
+   "answer": 0,
+   "explanation": "Skrypt SW.",
+   "source": "ustawa o SW"
+  },
+  {
+   "id": "pragmatyka-m09",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Negatywna opinia służbowa skutkuje m.in.:",
+   "options": [
+    "brakiem nagrody rocznej",
+    "obniżeniem stopnia",
+    "utratą prawa do umundurowania",
+    "wydaleniem ze służby"
+   ],
+   "answer": 0,
+   "explanation": "Skrypt SW.",
+   "source": "ustawa o SW"
+  },
+  {
+   "id": "pragmatyka-m10",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Prawo do umundurowania funkcjonariusz nabywa:",
+   "options": [
+    "po złożeniu ślubowania i egzaminu",
+    "z dniem przyjęcia do służby",
+    "po 6 miesiącach",
+    "po zakończeniu służby przygotowawczej"
+   ],
+   "answer": 1,
+   "explanation": "Lista pytań 99.",
+   "source": "lista pytań 99"
+  },
+  {
+   "id": "pragmatyka-m11",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Funkcjonariuszowi na szkoleniu przysługuje norma żywieniowa:",
+   "options": [
+    "A",
+    "B",
+    "K",
+    "FS"
+   ],
+   "answer": 3,
+   "explanation": "Lista pytań 102.",
+   "source": "lista pytań 102"
+  },
+  {
+   "id": "pragmatyka-m12",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Wysokość diety w krajowej podróży służbowej (wg listy pytań):",
+   "options": [
+    "60 zł",
+    "25 zł",
+    "30 zł",
+    "45 zł"
+   ],
+   "answer": 3,
+   "explanation": "45 zł.",
+   "source": "lista pytań 95"
+  },
+  {
+   "id": "pragmatyka-m13",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Zasady etyki zawodowej określa regulamin DGSW nr 1/2010; dotyczą one zachowania:",
+   "options": [
+    "tylko wobec przełożonych",
+    "zarówno w służbie, jak i poza służbą",
+    "tylko wobec osadzonych",
+    "tylko w czasie służby"
+   ],
+   "answer": 1,
+   "explanation": "Skrypt SW.",
+   "source": "regulamin 1/2010"
+  },
+  {
+   "id": "pragmatyka-m14",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Skargę do Europejskiego Trybunału Praw Człowieka można wnieść w terminie:",
+   "options": [
+    "6 miesięcy od wyroku I instancji",
+    "4 miesięcy od ostatecznej decyzji krajowej",
+    "30 dni",
+    "1 roku"
+   ],
+   "answer": 1,
+   "explanation": "Art. 35 EKPC (obecnie 4 miesiące).",
+   "source": "art. 35 EKPC"
+  },
+  {
+   "id": "pragmatyka-m15",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Która instytucja NIE wizytuje zakładów karnych i aresztów?",
+   "options": [
+    "Rzecznik Praw Obywatelskich (KMP)",
+    "CPT (Europejski Komitet ds. Zapobiegania Torturom)",
+    "sędzia penitencjarny",
+    "Europejski Trybunał Praw Człowieka"
+   ],
+   "answer": 3,
+   "explanation": "ETPCz rozpatruje skargi, nie wizytuje.",
+   "source": "lista pytań 117"
+  },
+  {
+   "id": "pragmatyka-m16",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Konstytucja RP (art. 40) stanowi, że:",
+   "options": [
+    "nikt nie może być poddany torturom ani okrutnemu, nieludzkiemu lub poniżającemu traktowaniu i karaniu",
+    "więźniowie nie mają praw obywatelskich",
+    "każdy skazany ma prawo do przepustki",
+    "kara śmierci jest dopuszczalna w czasie wojny"
+   ],
+   "answer": 0,
+   "explanation": "Art. 40 Konstytucji.",
+   "source": "art. 40 Konstytucji"
+  },
+  {
+   "id": "psych-klin-m03",
+   "deck": "psych-klin",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Objawy ostrej reakcji na stres zwykle ustępują w ciągu:",
+   "options": [
+    "nie ustępują bez leczenia",
+    "kilku godzin lub dni (najdłużej ok. miesiąca)",
+    "roku",
+    "6 miesięcy"
+   ],
+   "answer": 1,
+   "explanation": "Utrzymywanie > 1 miesiąca → podejrzenie PTSD.",
+   "source": "SPECJALIZACJA_2 pkt 1"
+  },
+  {
+   "id": "psych-klin-m04",
+   "deck": "psych-klin",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "W kontakcie z osobą w ostrej reakcji na stres NIE należy:",
+   "options": [
+    "zapewnić pomocy medycznej przy silnych objawach",
+    "być przy niej i słuchać",
+    "zmuszać jej do opowiadania o traumie",
+    "zapewniać jej bezpieczeństwa"
+   ],
+   "answer": 2,
+   "explanation": "SPECJALIZACJA_2 pkt 1.",
+   "source": "SPECJALIZACJA_2 pkt 1"
+  },
+  {
+   "id": "psych-klin-m05",
+   "deck": "psych-klin",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Objawy PTSD, by je rozpoznać, muszą trwać co najmniej:",
+   "options": [
+    "6 miesięcy",
+    "1 tydzień",
+    "2 dni",
+    "1 miesiąc"
+   ],
+   "answer": 3,
+   "explanation": "Powyżej miesiąca – PTSD.",
+   "source": "ICD; pytania kontrolne"
+  },
+  {
+   "id": "psych-klin-m06",
+   "deck": "psych-klin",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Epizod depresyjny rozpoznaje się, gdy objawy trwają co najmniej:",
+   "options": [
+    "1 tydzień",
+    "1 miesiąc",
+    "2 tygodnie",
+    "3 dni"
+   ],
+   "answer": 2,
+   "explanation": "≥ 2 tygodnie, ≥ 5 objawów, w tym obniżony nastrój lub anhedonia.",
+   "source": "SPECJALIZACJA_2 pkt 3"
+  },
+  {
+   "id": "psych-klin-m07",
+   "deck": "psych-klin",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Epizod maniakalny rozpoznaje się, gdy objawy trwają co najmniej:",
+   "options": [
+    "2 tygodnie",
+    "kilka godzin",
+    "1 miesiąc",
+    "1 tydzień"
+   ],
+   "answer": 3,
+   "explanation": "Mania ≥ 1 tydzień; hipomania – kilka dni.",
+   "source": "pytania kontrolne"
+  },
+  {
+   "id": "psych-klin-m08",
+   "deck": "psych-klin",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Naprzemienne epizody depresji i manii lub hipomanii są typowe dla:",
+   "options": [
+    "depresji jednobiegunowej",
+    "SAD",
+    "choroby afektywnej dwubiegunowej",
+    "osobowości dyssocjalnej"
+   ],
+   "answer": 2,
+   "explanation": "ChAD.",
+   "source": "SPECJALIZACJA_2 pkt 2"
+  },
+  {
+   "id": "psych-klin-m09",
+   "deck": "psych-klin",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Choroba afektywna sezonowa (SAD) nasila się najczęściej:",
+   "options": [
+    "wiosną",
+    "późną jesienią i zimą",
+    "bez związku z porą roku",
+    "latem"
+   ],
+   "answer": 1,
+   "explanation": "Leczenie m.in. fototerapią.",
+   "source": "SPECJALIZACJA_2 pkt 4"
+  },
+  {
+   "id": "psych-klin-m10",
+   "deck": "psych-klin",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Podstawową metodą leczenia SAD jest:",
+   "options": [
+    "terapia awersyjna",
+    "fototerapia",
+    "elektrowstrząsy jako pierwszy wybór",
+    "dieta eliminacyjna"
+   ],
+   "answer": 1,
+   "explanation": "Fototerapia, psychoterapia, farmakoterapia.",
+   "source": "SPECJALIZACJA_2 pkt 4"
+  },
+  {
+   "id": "psych-klin-m11",
+   "deck": "psych-klin",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Osadzony przy doprowadzeniu do jednostki jest pod wpływem substancji psychoaktywnych. Wg instrukcji 4/24:",
+   "options": [
+    "umieszcza się go w celi izolacyjnej",
+    "umieszcza się go w celi jednoosobowej dla jego bezpieczeństwa",
+    "nie umieszcza się go w celi jednoosobowej, chyba że monitorowanej",
+    "zwalnia się go do szpitala bez decyzji lekarza"
+   ],
+   "answer": 2,
+   "explanation": "Instrukcja 4/24.",
+   "source": "instrukcja 4/24"
+  },
+  {
+   "id": "psych-klin-m12",
+   "deck": "psych-klin",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Poziom I profilaktyki samobójstw obejmuje:",
+   "options": [
+    "osadzonych po próbie samobójczej",
+    "osadzonych z kartą OZS",
+    "ogół osadzonych",
+    "tylko tymczasowo aresztowanych"
+   ],
+   "answer": 2,
+   "explanation": "I – ogół; II – wzmożone ryzyko; III – po próbie.",
+   "source": "instrukcja 4/24"
+  },
+  {
+   "id": "psych-klin-m13",
+   "deck": "psych-klin",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Poziom III profilaktyki samobójstw obejmuje osadzonych:",
+   "options": [
+    "wszystkich nowo przyjętych",
+    "po próbie samobójczej",
+    "uzależnionych",
+    "z grupy wzmożonego ryzyka"
+   ],
+   "answer": 1,
+   "explanation": "Instrukcja 4/24.",
+   "source": "instrukcja 4/24"
+  },
+  {
+   "id": "psych-klin-m14",
+   "deck": "psych-klin",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Kartę OZS drukuje się na papierze w kolorze:",
+   "options": [
+    "białym",
+    "czerwonym",
+    "zielonym",
+    "żółtym"
+   ],
+   "answer": 3,
+   "explanation": "Żółtym; wydruk dołącza oddziałowy do karty identyfikacyjnej.",
+   "source": "instrukcja 4/24 § 8"
+  },
+  {
+   "id": "psych-klin-m15",
+   "deck": "psych-klin",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Kartę OZS zakłada się w systemie:",
+   "options": [
+    "CBDOPW",
+    "SIS",
+    "NOE-SW",
+    "PESEL"
+   ],
+   "answer": 0,
+   "explanation": "Centralna Baza Danych Osób Pozbawionych Wolności.",
+   "source": "instrukcja 4/24 § 8"
+  },
+  {
+   "id": "psych-klin-m16",
+   "deck": "psych-klin",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Osadzonego podejrzanego o skłonności samobójcze psycholog:",
+   "options": [
+    "przekazuje sprawę sędziemu penitencjarnemu",
+    "przyjmuje w ciągu 14 dni",
+    "przyjmuje w pierwszej kolejności i wydaje opinię o potrzebie nasilonych oddziaływań",
+    "kieruje od razu do celi izolacyjnej"
+   ],
+   "answer": 2,
+   "explanation": "Instrukcja 4/24.",
+   "source": "instrukcja 4/24"
+  },
+  {
+   "id": "psych-klin-m17",
+   "deck": "psych-klin",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Przepływ informacji między pionami służby w sprawie zapobiegania samobójstwom zapewnia:",
+   "options": [
+    "oddziałowy",
+    "psycholog",
+    "dyrektor jednostki",
+    "lekarz"
+   ],
+   "answer": 2,
+   "explanation": "Lista pytań 61.",
+   "source": "lista pytań 61"
+  },
+  {
+   "id": "psych-klin-m18",
+   "deck": "psych-klin",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Koordynowanie oddziaływań na wszystkich trzech poziomach profilaktyki należy do:",
+   "options": [
+    "kierownika działu penitencjarnego",
+    "kierownika działu ochrony",
+    "lekarza",
+    "dyrektora okręgowego"
+   ],
+   "answer": 0,
+   "explanation": "Lista pytań 63.",
+   "source": "lista pytań 63"
+  },
+  {
+   "id": "psych-klin-m19",
+   "deck": "psych-klin",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Kadrę szkoli się w rozpoznawaniu zachowań autoagresywnych i udzielaniu pierwszej pomocy nie rzadziej niż:",
+   "options": [
+    "raz na 5 lat",
+    "raz w roku",
+    "raz na 2 lata",
+    "raz na kwartał"
+   ],
+   "answer": 1,
+   "explanation": "Instrukcja 4/24.",
+   "source": "lista pytań 67"
+  },
+  {
+   "id": "psych-klin-m20",
+   "deck": "psych-klin",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Krytycznym momentem izolacji wg instrukcji 4/24 jest m.in.:",
+   "options": [
+    "każdy weekend",
+    "dzień urodzin osadzonego",
+    "okres świąt państwowych",
+    "pierwsze 14 dni pobytu w izolacji"
+   ],
+   "answer": 3,
+   "explanation": "Także terminy orzeczeń, problemy rodzinne, zdrowotne, z współosadzonymi.",
+   "source": "instrukcja 4/24 § 11"
+  },
+  {
+   "id": "psych-klin-m21",
+   "deck": "psych-klin",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Wg ICD-10 zespół uzależnienia rozpoznaje się przy co najmniej:",
+   "options": [
+    "3 z 6 objawów w ciągu ostatniego roku",
+    "4 z 6 objawów w ciągu 5 lat",
+    "2 z 6 objawów w ciągu miesiąca",
+    "1 objawie przez 2 tygodnie"
+   ],
+   "answer": 0,
+   "explanation": "3 z 6 w ciągu roku.",
+   "source": "ICD-10"
+  },
+  {
+   "id": "psych-klin-m22",
+   "deck": "psych-klin",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Mechanizm uzależnienia odpowiedzialny za niedostrzeganie szkód i ich związku z piciem to mechanizm:",
+   "options": [
+    "nałogowej regulacji uczuć",
+    "rozdwojonego i rozproszonego „ja”",
+    "iluzji i zaprzeczania",
+    "wyuczonej bezradności"
+   ],
+   "answer": 2,
+   "explanation": "Mellibruda – mechanizm poznawczy.",
+   "source": "SPECJALIZACJA_2 pkt 19–20"
+  },
+  {
+   "id": "psych-klin-m23",
+   "deck": "psych-klin",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Mechanizm uzależnienia związany z poczuciem własnej wartości (siła pod wpływem, wstyd po) to:",
+   "options": [
+    "iluzja i zaprzeczanie",
+    "racjonalizacja",
+    "rozdwojone i rozproszone „ja”",
+    "nałogowa regulacja uczuć"
+   ],
+   "answer": 2,
+   "explanation": "SPECJALIZACJA_2 pkt 19.",
+   "source": "SPECJALIZACJA_2 pkt 19"
+  },
+  {
+   "id": "psych-klin-m24",
+   "deck": "psych-klin",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Usprawiedliwianie picia „sensownymi” powodami to mechanizm obronny:",
+   "options": [
+    "racjonalizacji",
+    "minimalizowania",
+    "projekcji",
+    "sublimacji"
+   ],
+   "answer": 0,
+   "explanation": "Racjonalizowanie.",
+   "source": "SPECJALIZACJA_2 pkt 20"
+  },
+  {
+   "id": "psych-klin-m25",
+   "deck": "psych-klin",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Majaczenie drżenne (delirium tremens) może trwać:",
+   "options": [
+    "zawsze ponad miesiąc",
+    "nawet 7–10 dni i zagrażać życiu",
+    "kilka minut",
+    "do 2 godzin"
+   ],
+   "answer": 1,
+   "explanation": "Ciężki AZA.",
+   "source": "SPECJALIZACJA_2 pkt 26"
+  },
+  {
+   "id": "psych-klin-m26",
+   "deck": "psych-klin",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Narkotykiem pochodzenia naturalnego (z liści koki) jest:",
+   "options": [
+    "LSD",
+    "amfetamina",
+    "fentanyl",
+    "kokaina"
+   ],
+   "answer": 3,
+   "explanation": "Koka – kokaina; mak – opiaty; konopie – marihuana, haszysz.",
+   "source": "SPECJALIZACJA_2 pkt 23"
+  },
+  {
+   "id": "psych-klin-m27",
+   "deck": "psych-klin",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Substancją syntetyczną NIE jest:",
+   "options": [
+    "fentanyl",
+    "haszysz",
+    "metamfetamina",
+    "MDMA"
+   ],
+   "answer": 1,
+   "explanation": "Haszysz – z konopi (naturalny).",
+   "source": "SPECJALIZACJA_2 pkt 23–24"
+  },
+  {
+   "id": "psych-klin-m28",
+   "deck": "psych-klin",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Wg materiału kursu pedofil musi mieć co najmniej ___ lat i być co najmniej ___ lat starszy od dziecka:",
+   "options": [
+    "18; 3",
+    "16; 5",
+    "16; 10",
+    "14; 5"
+   ],
+   "answer": 1,
+   "explanation": "ICD-10.",
+   "source": "SPECJALIZACJA_2 pkt 16"
+  },
+  {
+   "id": "psych-klin-m29",
+   "deck": "psych-klin",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Pedofilia, w której dziecko od początku jest najatrakcyjniejszym obiektem seksualnym, to pedofilia:",
+   "options": [
+    "regresyjna (zastępcza)",
+    "sytuacyjna",
+    "incestowa",
+    "fiksacyjna (właściwa)"
+   ],
+   "answer": 3,
+   "explanation": "Regresyjna – zastępcza, sytuacyjna.",
+   "source": "SPECJALIZACJA_2 pkt 16"
+  },
+  {
+   "id": "psych-klin-m30",
+   "deck": "psych-klin",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Emocjonalne przywiązanie ofiary przemocy do sprawcy to:",
+   "options": [
+    "racjonalizacja",
+    "wyuczona bezradność",
+    "prizonizacja",
+    "syndrom sztokholmski"
+   ],
+   "answer": 3,
+   "explanation": "SPECJALIZACJA_2 pkt 18.",
+   "source": "SPECJALIZACJA_2 pkt 18"
+  },
+  {
+   "id": "psych-klin-m31",
+   "deck": "psych-klin",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Przemoc seksualna w warunkach więziennych służy najczęściej:",
+   "options": [
+    "zdobyciu pieniędzy",
+    "pokazaniu dominacji, ustaleniu hierarchii i upokorzeniu ofiary",
+    "wyłącznie zaspokojeniu popędu",
+    "zabawie"
+   ],
+   "answer": 1,
+   "explanation": "SPECJALIZACJA_2 pkt 18.",
+   "source": "SPECJALIZACJA_2 pkt 18"
+  },
+  {
+   "id": "psych-klin-m32",
+   "deck": "psych-klin",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Dla zaburzenia osobowości dyssocjalnej typowy jest:",
+   "options": [
+    "brak poczucia winy i nieuczenie się na doświadczeniu",
+    "perfekcjonizm",
+    "nadmierna ufność",
+    "lęk przed odrzuceniem i unikanie kontaktów"
+   ],
+   "answer": 0,
+   "explanation": "Lekceważenie norm, impulsywność, manipulacja.",
+   "source": "SPECJALIZACJA_2 pkt 14"
+  },
+  {
+   "id": "psych-klin-m33",
+   "deck": "psych-klin",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "W pracy z osadzonym z osobowością dyssocjalną najważniejsze jest:",
+   "options": [
+    "zaprzyjaźnienie się z osadzonym",
+    "spełnianie jego próśb dla spokoju",
+    "unikanie wszelkich konsekwencji",
+    "zachowanie profesjonalnego dystansu i jasnych granic"
+   ],
+   "answer": 3,
+   "explanation": "SPECJALIZACJA_2 pkt 14.",
+   "source": "SPECJALIZACJA_2 pkt 14"
+  },
+  {
+   "id": "psych-klin-m34",
+   "deck": "psych-klin",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Lęk psychoorganiczny jest charakterystyczny dla:",
+   "options": [
+    "SAD",
+    "osobowości dyssocjalnej",
+    "fobii społecznej",
+    "otępienia (zaburzeń organicznych)"
+   ],
+   "answer": 3,
+   "explanation": "SPECJALIZACJA_2 pkt 28.",
+   "source": "SPECJALIZACJA_2 pkt 28"
+  },
+  {
+   "id": "psych-klin-m35",
+   "deck": "psych-klin",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Chwiejność emocjonalna od euforii do wybuchów złości, mniejsza wytrwałość, impulsywność – to obraz:",
+   "options": [
+    "niepełnosprawności intelektualnej lekkiej",
+    "depresji",
+    "organicznego zaburzenia osobowości",
+    "zespołu abstynencyjnego"
+   ],
+   "answer": 2,
+   "explanation": "SPECJALIZACJA_2 pkt 29.",
+   "source": "SPECJALIZACJA_2 pkt 29"
+  },
+  {
+   "id": "psych-klin-m36",
+   "deck": "psych-klin",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Samouszkodzenie mające wymusić decyzję organu (np. przeniesienie) ma tło:",
+   "options": [
+    "instrumentalne",
+    "organiczne",
+    "emocjonalne",
+    "psychotyczne"
+   ],
+   "answer": 0,
+   "explanation": "Instrumentalne vs emocjonalne.",
+   "source": "SPECJALIZACJA_2 pkt 59"
+  },
+  {
+   "id": "psych-klin-m37",
+   "deck": "psych-klin",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "O obciążeniu skazanego kosztami leczenia samouszkodzenia (art. 119 KKW) orzeka:",
+   "options": [
+    "dyrektor zakładu karnego",
+    "lekarz",
+    "sąd penitencjarny",
+    "komisja penitencjarna"
+   ],
+   "answer": 2,
+   "explanation": "Na postanowienie przysługuje zażalenie.",
+   "source": "art. 119 KKW"
+  },
+  {
+   "id": "psych-klin-m38",
+   "deck": "psych-klin",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Uzależnienia behawioralnego NIE stanowi:",
+   "options": [
+    "kompulsywne zakupy",
+    "uzależnienie od gier",
+    "zespół abstynencyjny po alkoholu",
+    "patologiczny hazard"
+   ],
+   "answer": 2,
+   "explanation": "AZA dotyczy substancji.",
+   "source": "SPECJALIZACJA_2 pkt 27"
+  },
+  {
+   "id": "psych-proc-m02",
+   "deck": "psych-proc",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Procedurę przy odmowie przyjmowania posiłków określa § 64 zarządzenia DGSW nr:",
+   "options": [
+    "30/2025",
+    "4/24",
+    "103/24",
+    "19/16"
+   ],
+   "answer": 2,
+   "explanation": "Zarządzenie 103/24 (praca penitencjarna).",
+   "source": "SPECJALIZACJA_2 pkt 5"
+  },
+  {
+   "id": "psych-proc-m03",
+   "deck": "psych-proc",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Pierwszą czynnością przy odmowie przyjmowania posiłków jest:",
+   "options": [
+    "powiadomienie przez oddziałowego pracownika służby zdrowia i wychowawcy",
+    "umieszczenie osadzonego w celi izolacyjnej",
+    "skierowanie wniosku do sądu",
+    "karmienie przymusowe"
+   ],
+   "answer": 0,
+   "explanation": "Potem rozmowa wychowawcy, psycholog, wzmożona obserwacja.",
+   "source": "zarządzenie 103/24 § 64"
+  },
+  {
+   "id": "psych-proc-m04",
+   "deck": "psych-proc",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Kolejność etapów procesu resocjalizacji:",
+   "options": [
+    "planowanie → diagnoza → realizacja → ocena → prognoza",
+    "realizacja → diagnoza → ocena → planowanie → prognoza",
+    "ocena → diagnoza → prognoza → realizacja → planowanie",
+    "diagnoza → prognoza → planowanie → realizacja → ocena"
+   ],
+   "answer": 3,
+   "explanation": "SPECJALIZACJA_2 pkt 39–43.",
+   "source": "SPECJALIZACJA_2"
+  },
+  {
+   "id": "psych-proc-m05",
+   "deck": "psych-proc",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Indywidualny program oddziaływania (IPO) opracowuje:",
+   "options": [
+    "wychowawca z udziałem skazanego",
+    "sędzia penitencjarny",
+    "komisja penitencjarna bez udziału skazanego",
+    "psycholog samodzielnie"
+   ],
+   "answer": 0,
+   "explanation": "IPT – zespół terapeutyczny.",
+   "source": "SPECJALIZACJA_2 pkt 61"
+  },
+  {
+   "id": "psych-proc-m06",
+   "deck": "psych-proc",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Elementem indywidualnego programu terapeutycznego NIE jest:",
+   "options": [
+    "kryteria realizacji",
+    "wysokość wynagrodzenia skazanego",
+    "zakres prowadzonych oddziaływań",
+    "metody oddziaływań specjalistycznych"
+   ],
+   "answer": 1,
+   "explanation": "IPT: zakres, cele, metody, kryteria realizacji.",
+   "source": "SPECJALIZACJA_2 pkt 56"
+  },
+  {
+   "id": "psych-proc-m07",
+   "deck": "psych-proc",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Narzędziem oceny ryzyka recydywy, do którego psycholog wnosi uwagi, jest:",
+   "options": [
+    "MMPI-2",
+    "CBDOPW",
+    "ICD-10",
+    "PSORR-PL"
+   ],
+   "answer": 3,
+   "explanation": "Pogłębiony System Oceny Ryzyka Recydywy.",
+   "source": "SPECJALIZACJA_2 pkt 57"
+  },
+  {
+   "id": "psych-proc-m08",
+   "deck": "psych-proc",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Orzeczenie psychologiczno-penitencjarne sporządza się obowiązkowo wobec młodocianego, któremu do możliwości ubiegania się o warunkowe zwolnienie zostało co najmniej:",
+   "options": [
+    "12 miesięcy",
+    "1 miesiąc",
+    "6 miesięcy",
+    "3 miesiące"
+   ],
+   "answer": 2,
+   "explanation": "Rozporządzenie o oddziaływaniach.",
+   "source": "SPECJALIZACJA_2 pkt 66"
+  },
+  {
+   "id": "psych-proc-m09",
+   "deck": "psych-proc",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Opinię psychologiczną sporządza się m.in.:",
+   "options": [
+    "przed każdym widzeniem",
+    "przed wymierzeniem kary celi izolacyjnej",
+    "przed każdą rozmową telefoniczną",
+    "przed wydaniem paczki"
+   ],
+   "answer": 1,
+   "explanation": "Także przy podejrzeniu skłonności samobójczych.",
+   "source": "SPECJALIZACJA_2 pkt 68"
+  },
+  {
+   "id": "psych-proc-m10",
+   "deck": "psych-proc",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Ostatnim elementem opinii psychologicznej są:",
+   "options": [
+    "podpis sędziego",
+    "opis przestępstwa przez pokrzywdzonego",
+    "wnioski lub zalecenia dotyczące postępowania ze skazanym",
+    "dane rodziny"
+   ],
+   "answer": 2,
+   "explanation": "Przedmiot → metody → ustalenia → wnioski/zalecenia.",
+   "source": "SPECJALIZACJA_2 pkt 69"
+  },
+  {
+   "id": "psych-proc-m11",
+   "deck": "psych-proc",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Krótką Interwencję wobec osadzonego pijącego ryzykownie prowadzi przede wszystkim:",
+   "options": [
+    "kapelan",
+    "psycholog, w co najmniej 3 sesjach",
+    "wychowawca, jednorazowo",
+    "lekarz, w 10 sesjach"
+   ],
+   "answer": 1,
+   "explanation": "Ocena – informacja zwrotna – rozmowa motywująca.",
+   "source": "SPECJALIZACJA_2 pkt 70"
+  },
+  {
+   "id": "psych-proc-m12",
+   "deck": "psych-proc",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "O obowiązku leczenia lub rehabilitacji skazanego uzależnionego, który nie wyraża zgody, orzeka:",
+   "options": [
+    "sąd penitencjarny (art. 117 § 2 KKW)",
+    "psycholog",
+    "komisja penitencjarna",
+    "dyrektor zakładu karnego"
+   ],
+   "answer": 0,
+   "explanation": "Na czas nie dłuższy niż 2 lata każdorazowo.",
+   "source": "art. 117 KKW"
+  },
+  {
+   "id": "psych-proc-m13",
+   "deck": "psych-proc",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Do systemu terapeutycznego skazanego z zaburzeniami niepsychotycznymi kwalifikuje:",
+   "options": [
+    "sędzia penitencjarny",
+    "lekarz psychiatra",
+    "psycholog samodzielnie",
+    "komisja penitencjarna"
+   ],
+   "answer": 3,
+   "explanation": "Psycholog składa wniosek w orzeczeniu, kwalifikuje komisja.",
+   "source": "SPECJALIZACJA_2 pkt 71–72"
+  },
+  {
+   "id": "psych-proc-m14",
+   "deck": "psych-proc",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Gdy młodociany nie zgadza się na badanie psychologiczne, dyrektor ZK:",
+   "options": [
+    "przeprowadza je przymusowo bez zarządzenia",
+    "rezygnuje z badania",
+    "kieruje sprawę do prokuratora",
+    "występuje do sędziego penitencjarnego o zarządzenie badań bez zgody"
+   ],
+   "answer": 3,
+   "explanation": "Potem kieruje do ośrodka diagnostycznego.",
+   "source": "SPECJALIZACJA_2 pkt 75"
+  },
+  {
+   "id": "psych-proc-m15",
+   "deck": "psych-proc",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Przygotowanie skazanego do zwolnienia może się rozpocząć do:",
+   "options": [
+    "1 tygodnia przed zwolnieniem",
+    "w dniu zwolnienia",
+    "2 lat przed zwolnieniem",
+    "6 miesięcy przed przewidywanym zwolnieniem"
+   ],
+   "answer": 3,
+   "explanation": "Art. 164 KKW.",
+   "source": "art. 164 KKW"
+  },
+  {
+   "id": "psych-proc-m16",
+   "deck": "psych-proc",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Do środków zabezpieczających z art. 93a KK NIE należy:",
+   "options": [
+    "terapia uzależnień",
+    "elektroniczna kontrola miejsca pobytu",
+    "przepustka losowa",
+    "pobyt w zakładzie psychiatrycznym"
+   ],
+   "answer": 2,
+   "explanation": "Art. 93a KK.",
+   "source": "art. 93a KK"
+  },
+  {
+   "id": "psych-proc-m17",
+   "deck": "psych-proc",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Teczkę terapeutyczną prowadzi się m.in. dla skazanych:",
+   "options": [
+    "tylko tymczasowo aresztowanych",
+    "w oddziałach terapeutycznych dla uzależnionych i za art. 197–203 KK w związku z zaburzeniami preferencji",
+    "wszystkich nowo przyjętych",
+    "odbywających karę aresztu wojskowego"
+   ],
+   "answer": 1,
+   "explanation": "SPECJALIZACJA_2 pkt 56.",
+   "source": "SPECJALIZACJA_2 pkt 56"
+  },
+  {
+   "id": "psych-proc-m18",
+   "deck": "psych-proc",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Podstawową i najważniejszą formą pracy w OT dla sprawców z zaburzeniami preferencji seksualnych są oddziaływania:",
+   "options": [
+    "indywidualne",
+    "korespondencyjne",
+    "farmakologiczne",
+    "grupowe"
+   ],
+   "answer": 3,
+   "explanation": "Grupa: kompetencje społeczne, informacje zwrotne, mniej manipulacji.",
+   "source": "SPECJALIZACJA_2 pkt 51"
+  },
+  {
+   "id": "psych-proc-m19",
+   "deck": "psych-proc",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Ustalenie miejsca w oddziale terapeutycznym dla skazanego kierowanego do systemu terapeutycznego to zadanie psychologa w:",
+   "options": [
+    "dziale ewidencji",
+    "dziale ochrony",
+    "dziale kwatermistrzowskim",
+    "ośrodku diagnostycznym"
+   ],
+   "answer": 3,
+   "explanation": "SPECJALIZACJA_2 pkt 35.",
+   "source": "SPECJALIZACJA_2 pkt 35"
+  },
+  {
+   "id": "psych-proc-m20",
+   "deck": "psych-proc",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Badania osobopoznawcze NIE służą:",
+   "options": [
+    "sporządzeniu prognozy penitencjarnej",
+    "ocenie podatności na oddziaływania",
+    "ustaleniu wysokości grzywny",
+    "ustaleniu stosunku do przestępstwa"
+   ],
+   "answer": 2,
+   "explanation": "SPECJALIZACJA_2 pkt 65.",
+   "source": "SPECJALIZACJA_2 pkt 65"
+  },
+  {
+   "id": "psych-proc-m21",
+   "deck": "psych-proc",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Ustawa o ochronie zdrowia psychicznego pochodzi z:",
+   "options": [
+    "19 sierpnia 1994 r.",
+    "23 stycznia 2026 r.",
+    "6 czerwca 1997 r.",
+    "13 maja 2016 r."
+   ],
+   "answer": 0,
+   "explanation": "13.05.2016 – ustawa o przeciwdziałaniu zagrożeniom przestępczością na tle seksualnym.",
+   "source": "SPECJALIZACJA_2 pkt 32"
   }
  ]
 }
