@@ -111,6 +111,7 @@ function dueAfter(days) {
 }
 
 function screen(title, back) {
+  if (typeof closeGapMenu === 'function') closeGapMenu();
   $title.textContent = title;
   $back.hidden = !back;
   $app.replaceChildren();
@@ -421,6 +422,27 @@ function clozeDistractors(answer, item) {
   return out;
 }
 
+// Rozwijana lista słów pod luką (tryb „Wybierz”).
+let gapMenu = null;
+function closeGapMenu() {
+  if (gapMenu) { gapMenu.remove(); gapMenu = null; }
+}
+function openGapMenu(inp, options, onPick) {
+  const same = gapMenu && gapMenu.owner === inp;
+  closeGapMenu();
+  if (same) return; // drugie kliknięcie zamyka listę
+  const r = inp.getBoundingClientRect();
+  const menu = h('div', { class: 'gap-menu', role: 'listbox' }, options.map(o =>
+    h('button', { type: 'button', role: 'option', class: inp.value === o ? 'on' : '', onclick: e => { e.stopPropagation(); onPick(o); closeGapMenu(); } }, o)));
+  menu.owner = inp;
+  document.body.append(menu);
+  const left = Math.max(8, Math.min(r.left, window.innerWidth - menu.offsetWidth - 8));
+  menu.style.left = left + window.scrollX + 'px';
+  menu.style.top = r.bottom + window.scrollY + 4 + 'px';
+  gapMenu = menu;
+}
+document.addEventListener('click', e => { if (gapMenu && !gapMenu.contains(e.target)) closeGapMenu(); });
+
 function clozeBody(item, onResult, onNext, nextLabel, rebuild) {
   let done = false;
   const pick = state.settings.memMode === 'pick';
@@ -440,13 +462,16 @@ function clozeBody(item, onResult, onNext, nextLabel, rebuild) {
       inp.readOnly = true;
       inp.placeholder = String(inputs.length + 1);
       const chips = shuffle([p, ...clozeDistractors(p, item)]);
+      const setGap = c => {
+        if (done) return;
+        inp.value = c;
+        row.querySelectorAll('.chip').forEach(b => b.classList.toggle('on', b.textContent === c));
+      };
       const row = h('div', { class: 'pick-row' }, h('span', { class: 'pick-n' }, `${inputs.length + 1}.`),
-        chips.map(c => h('button', { type: 'button', class: 'chip', onclick: e => {
-          if (done) return;
-          inp.value = c;
-          row.querySelectorAll('.chip').forEach(b => b.classList.toggle('on', b === e.currentTarget));
-        } }, c)));
+        chips.map(c => h('button', { type: 'button', class: 'chip', onclick: () => setGap(c) }, c)));
       picker.append(row);
+      inp.classList.add('gap-pick');
+      inp.addEventListener('click', e => { e.stopPropagation(); if (!done) openGapMenu(inp, chips, setGap); });
     }
     inp.addEventListener('keydown', e => {
       if (e.key !== 'Enter') return;
@@ -1306,6 +1331,8 @@ async function init() {
 
   game();
   route();
+  document.getElementById('info').addEventListener('click', showWelcome);
+  if ((state.settings.welcomeSeen || 0) < WELCOME_VERSION) showWelcome();
 
   if ('serviceWorker' in navigator && location.protocol !== 'file:') {
     // Nowy service worker przejmuje stronę (controllerchange) → pokaż prośbę o odświeżenie.
@@ -1334,8 +1361,11 @@ const DAILY_GOALS = [20, 50, 100];
 const DEFAULT_EXAM_DATE = '2026-12-15';
 const RANKS = [
   [0, 'Szeregowy'], [500, 'Starszy szeregowy'], [1500, 'Kapral'], [3500, 'Starszy kapral'],
-  [6500, 'Plutonowy'], [11000, 'Sierżant'], [17000, 'Starszy sierżant'], [25000, 'Młodszy chorąży'],
-  [35000, 'Chorąży'], [50000, 'Starszy chorąży'], [70000, 'Starszy chorąży sztabowy'],
+  [6500, 'Plutonowy'], [11000, 'Sierżant'], [17000, 'Starszy sierżant'],
+  // od młodszego chorążego progi ×0,9
+  [22500, 'Młodszy chorąży'], [31500, 'Chorąży'], [45000, 'Starszy chorąży'], [63000, 'Starszy chorąży sztabowy'],
+  [85500, 'Podporucznik'], [112500, 'Porucznik'], [144000, 'Kapitan'], [180000, 'Major'],
+  [225000, 'Podpułkownik'], [270000, 'Pułkownik'],
 ];
 // Wagi działów do wskaźnika gotowości – wg składu „Testu 60”.
 const READY_WEIGHTS = { ochrona: 20, kkw: 15, spb: 5, bron: 3, pragmatyka: 3, sw: 3, metodyka: 3, ewidencja: 2, pp: 2, psych: 4 };
@@ -1843,6 +1873,47 @@ function stat(icon, value, label) {
 function sizeLikePicker(pairs, current, onPick) {
   return h('div', { class: 'seg', role: 'radiogroup' }, pairs.map(([v, label]) =>
     h('button', { type: 'button', role: 'radio', class: v === current ? 'on' : '', 'aria-checked': String(v === current), onclick: () => onPick(v) }, label)));
+}
+
+
+/* ---------- Okno startowe ---------- */
+
+const WELCOME_VERSION = 1; // zwiększ, żeby wszyscy zobaczyli okno ponownie
+
+function showWelcome() {
+  if (document.querySelector('.modal.welcome')) return;
+  const li = (b, t) => h('li', {}, h('strong', {}, b), ' – ' + t);
+  const box = h('div', { class: 'modal welcome', role: 'dialog', 'aria-modal': 'true', 'aria-labelledby': 'welcome-title' },
+    h('div', { class: 'card modal-card welcome-card' },
+      h('div', { class: 'verdict-icon', 'aria-hidden': 'true' }, '🫡'),
+      h('h2', { id: 'welcome-title' }, 'BACZNOŚĆ!'),
+      h('p', { class: 'lead' }, 'Melduję posłusznie: aplikacja gotowa do służby.'),
+      h('p', {}, 'Witaj w ', h('strong', {}, 'Nauce SW'), ' – jedynym zakładzie karnym, z którego nikt nie chce uciekać. Odbywasz tu dobrowolną karę nauki w systemie programowanego oddziaływania. Cel jest jeden: zdać egzamin unitarny i komendancki, zanim egzamin zda Ciebie.'),
+      h('h3', {}, '📋 Instrukcja ochronna (skrócona)'),
+      h('ul', {},
+        li('Fiszki', 'codzienny apel wiedzy. Uczciwie oceniasz, czy wiesz, a karty same wracają, gdy trzeba.'),
+        li('Test', 'unitarny albo specjalistyczny, 30/40/50 pytań, odpowiedź od razu.'),
+        li('Na pamięć', 'luki i kolejność. Wpisujesz albo wybierasz – dla tych z ograniczonym zaufaniem do klawiatury.'),
+        li('Egzamin próbny', 'jak prawdziwy: zegar tyka, wynik dopiero na końcu.'),
+        li('Trudne', 'cela przejściowa dla pytań, na których się wyłożyłeś.'),
+        li('Czytaj', 'skrypty z cytatami do wkucia, z wyszukiwarką.'),
+        li('Teczka', 'stopień, odznaki, seria dni nauki i odliczanie do egzaminu.')),
+      h('p', {}, h('strong', {}, '⭐ Zasada służby: '), 'codziennie trochę. Za systematyczność są punkty, awanse i odznaki. Za przerwy jest tylko wstyd przed samym sobą (ewentualnie przed dowódcą zmiany).'),
+      h('p', {}, h('strong', {}, '⚠️ Pouczenie: '), 'aplikacja nie zastępuje ustawy ani prowadzącego. W razie sporu wygrywa aktualny tekst przepisów. Aplikacja przyjmuje to z godnością.'),
+      h('h3', {}, '🍫 Wsparcie twórcy'),
+      h('p', {}, 'Twórca tej aplikacji nie pobiera dodatku za szkodliwe warunki pracy, choć powinien. Jeśli aplikacja pomogła Ci zdać, przewidziano następujące formy nagrody (art. 138 KKW stosuje się odpowiednio):'),
+      h('ul', {},
+        li('🍫 Czekolada', 'nagroda regulaminowa, przyjmowana bez kontroli pobieżnej.'),
+        li('🥃 Coś mocniejszego', 'wyłącznie po służbie i poza terenem jednostki; na oddziale to przedmiot niedozwolony.'),
+        li('💸 Gotówka', 'najmniej dolegliwy środek wsparcia, stosowany zgodnie z zasadą proporcjonalności.')),
+      h('p', {}, 'Wsparcie przekazuje się ', h('strong', {}, 'osobiście, do rąk własnych twórcy'), ', bez pośredników i bez konwoju.'),
+      h('p', { class: 'small muted' }, 'Brak wsparcia nie skutkuje karą dyscyplinarną. Wpis do teczki osobowej – w kategorii „nieprzydatny do spożycia czekolady” – zostaje.'),
+      btn('Rozkaz!', 'primary', () => {
+        state.settings.welcomeSeen = WELCOME_VERSION;
+        save();
+        box.remove();
+      })));
+  document.body.append(box);
 }
 
 function showUpdateBanner() {
