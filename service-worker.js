@@ -1,5 +1,5 @@
 // Po każdej zmianie plików zwiększ numer wersji, żeby telefony pobrały nowe pliki.
-const CACHE = 'nauka-sw-v12';
+const CACHE = 'nauka-sw-v13';
 const FILES = [
   './',
   'index.html',
@@ -9,6 +9,7 @@ const FILES = [
   'pytania_sw.json',
   'skrypt_unitarna.md',
   'skrypt_psycholog.md',
+  'instrukcje_stanowiskowe.md',
   'ikony/icon.svg',
   'ikony/icon-192.png',
   'ikony/icon-512.png',
