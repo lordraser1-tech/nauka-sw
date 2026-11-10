@@ -1336,6 +1336,7 @@ async function init() {
   document.getElementById('storage-warning').hidden = storageOk;
   try {
     const res = await fetch('pytania_sw.json');
+    if (res.status === 401) { location.reload(); return; } // wersja z kodami: dostęp wygasł → ekran logowania
     if (!res.ok) throw new Error(res.status);
     DATA = await res.json();
   } catch (e) {

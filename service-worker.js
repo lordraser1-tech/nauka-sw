@@ -37,14 +37,18 @@ self.addEventListener('activate', event => {
 // Najpierw pamięć podręczna (szybko i offline), w tle odświeżenie z sieci.
 self.addEventListener('fetch', event => {
   const req = event.request;
-  if (req.method !== 'GET' || new URL(req.url).origin !== self.location.origin) return;
+  const url = new URL(req.url);
+  if (req.method !== 'GET' || url.origin !== self.location.origin) return;
+  if (url.pathname.startsWith('/api/') || /^\/admin(\.html)?$/.test(url.pathname)) return; // panel i logowanie – zawsze z sieci
   event.respondWith(
     caches.open(CACHE).then(async cache => {
       const cached = await cache.match(req, { ignoreSearch: true });
       // no-cache: zawsze sprawdź u serwera, czy plik się zmienił (żądanie typu navigate trzeba podać jako URL).
       const network = fetch(req.mode === 'navigate' ? req.url : req, { cache: 'no-cache' })
-        .then(res => {
+        .then(async res => {
           if (res.ok) cache.put(req, res.clone());
+          // 401 = brak lub cofnięty kod dostępu (wersja z kodami) → kasujemy kopię, żeby przy następnym otwarciu pokazało się logowanie.
+          if (res.status === 401) await caches.delete(CACHE);
           return res;
         })
         .catch(() => null);
