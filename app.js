@@ -12,6 +12,7 @@ const testSize = () => (SIZES.includes(state.settings.testSize) || state.setting
 const DOCS = [
   { file: 'skrypt_unitarna.md', name: 'Część unitarna' },
   { file: 'skrypt_psycholog.md', name: 'Psycholog' },
+  { file: 'instrukcje_stanowiskowe.md', name: 'Stanowiska' },
 ];
 
 const $app = document.getElementById('app');
@@ -1195,7 +1196,7 @@ function searchPanel(k, doc) {
   const nextB = h('button', { type: 'button', class: 'mv', 'aria-label': 'Następne trafienie', onclick: () => go(cur + 1) }, '↓');
   const bar = h('div', { class: 'search-bar', hidden: true }, counter, prevB, nextB);
   const box = h('div', { class: 'card search' }, input,
-    docs.length > 1 && h('label', { class: 'check' }, both, h('span', {}, 'Szukaj w obu skryptach')),
+    docs.length > 1 && h('label', { class: 'check' }, both, h('span', {}, 'Szukaj we wszystkich skryptach')),
     results);
 
   input.addEventListener('input', () => {

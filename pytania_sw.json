@@ -1,7 +1,7 @@
 {
  "meta": {
   "tytul": "Szkolenie chorążych SW – baza do nauki",
-  "wersja": 5,
+  "wersja": 6,
   "data": "2026-11-09",
   "zrodla": "Ustawa o ŚPB (Dz.U. 2026 poz. 244), ustawa o SW (Dz.U. 2025 poz. 1750), kkw (Dz.U. 2025 poz. 911), rozporządzenie o oddziaływaniach penitencjarnych (Dz.U. 2024 poz. 1344), rozporządzenie o ośrodkach diagnostycznych (Dz.U. 2023 poz. 1677), rozporządzenie o ochronie jednostek SW (Dz.U. 2016 poz. 1804); materiały kursu: pytania kontrolne (psycholodzy 1–29, penitencjarne 28–53), lista 124 pytań, SPECJALIZACJA_2 (77 zagadnień), Skrypt SW V15",
   "typy": {
@@ -16,7 +16,8 @@
    "lista-124": "lista 124 pytań z kursu",
    "spec-77": "SPECJALIZACJA_2 – 77 zagadnień dla psychologów",
    "skrypt-v15": "Skrypt SW (V15)",
-   "slajdy-ewidencja": "slajdy z zajęć – przyjmowanie i odmowa przyjęcia"
+   "slajdy-ewidencja": "slajdy z zajęć – przyjmowanie i odmowa przyjęcia",
+   "zarz-30-25": "zarządzenie 30/25 (§ 65–76) i wykład „Bezpieczeństwo”"
   },
   "uwaga": "Pozycje z „⚠️” zawierają poprawkę lub wątpliwość względem materiałów kursu."
  },
@@ -79,6 +80,11 @@
   {
    "id": "ewidencja",
    "name": "Ewidencja i przyjmowanie osadzonych",
+   "czesc": "unitarna"
+  },
+  {
+   "id": "stanowiska",
+   "name": "Stanowiska ochronne (zarządzenie 30/25)",
    "czesc": "unitarna"
   }
  ],
@@ -7872,6 +7878,1378 @@
    "answer": 0,
    "explanation": "Prawda.",
    "source": "Wytyczne ERC 2025"
+  },
+  {
+   "id": "stanowiska-f01",
+   "deck": "stanowiska",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Zarządzenie DGSW nr 30/25 – data, tytuł, podstawa",
+   "back": "Z 17 marca 2025 r. „w sprawie sposobów ochrony, konwojowania oraz zadań ochronnych funkcjonariuszy i pracowników Służby Więziennej”. Wydane na podstawie art. 249a pkt 6–8 KKW. Określa: sposoby ochrony jednostek (art. 8 ust. 1 pkt 1–4 ustawy o SW), sposoby ochrony i konwojowania skazanych i TA, zadania ochronne funkcjonariuszy, pracowników SW i pracowników przywięziennych zakładów pracy.",
+   "source": "zarządzenie DGSW nr 30/25 z 17.03.2025",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "stanowiska-f02",
+   "deck": "stanowiska",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Kto pełni służbę na poszczególnych stanowiskach?",
+   "back": "Tylko FUNKCJONARIUSZ: bramowy (§ 65), doprowadzający (§ 68), spacerowy (§ 69), patrolujący (§ 71), wartownik (§ 72), rezerwa składu zmiany (§ 74), przewodnik psa (§ 75).\nFUNKCJONARIUSZ LUB PRACOWNIK: monitorowy (§ 66), obserwujący teren / elektroniczna kontrola dostępu (§ 67), widzeniowy (§ 70).\nFUNKCJONARIUSZ, PRACOWNIK LUB PRACOWNIK PRZYWIĘZIENNEGO ZAKŁADU PRACY: dozorujący osadzonych zatrudnionych na terenie jednostki (§ 73).\nWyjątki § 68: interesantów może doprowadzać pracownik; doprowadzenie medyczne – decyzją dyrektora pracownik (także na umowie cywilnoprawnej).",
+   "source": "zarządzenie DGSW nr 30/25 z 17.03.2025",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "stanowiska-f03",
+   "deck": "stanowiska",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Jak często trzeba zmieniać funkcjonariusza na stanowisku?",
+   "back": "Monitorowy, obserwujący teren (monitoring/EKD), patrolujący – nie rzadziej niż co 2 godziny. Wartownik – nie rzadziej niż co 4 godziny. Zmiany można dokonać w każdym czasie. Opóźnienie (patrol, wartownik) – tylko ze względów bezpieczeństwa; przyczyny odnotowuje się w książce przebiegu służby dowódcy zmiany.",
+   "source": "zarządzenie DGSW nr 30/25 z 17.03.2025",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "stanowiska-f04",
+   "deck": "stanowiska",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Bramowy – obowiązki (§ 65)",
+   "back": "1) realizacja uprawnień z art. 18–18b ustawy o SW; 2) niedopuszczanie do nieuzasadnionego otwarcia bramy głównej, gospodarczej i wejścia osobowego; 3) kontrolowanie ruchu osób i pojazdów w ich rejonie; 4) ewidencja ruchu pojazdów przejeżdżających przez bramę – w książce ruchu osób i pojazdów.",
+   "source": "zarządzenie DGSW nr 30/25 z 17.03.2025",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "stanowiska-f05",
+   "deck": "stanowiska",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Monitorowy – obowiązki (§ 66 ust. 2)",
+   "back": "1) przed przejęciem: zapoznać się z liczbą osadzonych w monitorowanych celach, ich rozmieszczeniem, przyczynami umieszczenia i dotychczasowymi spostrzeżeniami; 2) zweryfikować rozmieszczenie przez system; 3) stale obserwować zachowanie; 4) obsługiwać system tak, by skutecznie obserwować; 5) przekazywać spostrzeżenia oddziałowemu, wychowawcy i dowódcy zmiany; 6) niezwłocznie alarmować oddziałowego i dowódcę zmiany o zagrożeniu bezpieczeństwa osadzonego; 7) niezwłocznie informować dowódcę zmiany i oddziałowego o niesprawności systemu.",
+   "source": "zarządzenie DGSW nr 30/25 z 17.03.2025",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "stanowiska-f06",
+   "deck": "stanowiska",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Monitorowy – co ustala jego instrukcja stanowiskowa i jakie ma ograniczenie?",
+   "back": "Kolejność użycia środków łączności/alarmowania (gdy jest ich więcej niż jeden – wg ich właściwości) oraz kolejność stanowisk lub osób powiadamianych o zagrożeniu (wg warunków i możliwości reakcji). Monitorowy zna przyczyny umieszczenia osadzonych w monitorowanych celach i obszary zachowań wymagające uwagi. Co najmniej godzinę przed przejęciem stanowiska nie może pełnić służby z ciągłą obserwacją monitorów (np. § 67). Zmiana – co najmniej co 2 godziny.",
+   "source": "zarządzenie DGSW nr 30/25 z 17.03.2025",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "stanowiska-f07",
+   "deck": "stanowiska",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Obserwujący teren za pomocą monitoringu / EKD – zadania (§ 67)",
+   "back": "1) obserwowanie wyznaczonego terenu lub obiektów; 2) obserwowanie ruchu osób i pojazdów; 3) otwieranie przejść z elektroniczną kontrolą dostępu wymagających podwójnej autoryzacji – osobom uprawnionym; 4) niezwłoczne informowanie dowódcy zmiany o niesprawności monitoringu lub EKD. Zmiana – co najmniej co 2 godziny.",
+   "source": "zarządzenie DGSW nr 30/25 z 17.03.2025",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "stanowiska-f08",
+   "deck": "stanowiska",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Doprowadzający – zadania (§ 68)",
+   "back": "1) ubezpieczanie oddziałowego przy wyjściu i powrocie pobieranych osadzonych; 2) wspólne z oddziałowym (lub przekazującym) kontrole pobieranych; 3) sprawdzenie stanu liczbowego i pokwitowanie w oddziałowej książce ruchu osadzonych; 4) pouczenie o zachowaniu i poruszaniu się po jednostce; 5) ochranianie i obserwowanie doprowadzanych; 6) przy przekazaniu dozoru – informacja o liczbie osadzonych i istotnych spostrzeżeniach.",
+   "source": "zarządzenie DGSW nr 30/25 z 17.03.2025",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "stanowiska-f09",
+   "deck": "stanowiska",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Spacerowy – zadania (§ 69)",
+   "back": "1) przed i po spacerze: sprawdzić podłoże placu, zabezpieczenia t-o i czy nie ma przedmiotów niedozwolonych lub substancji; 2) w trakcie: sprawdzać i weryfikować stan liczbowy grupy, nadzorować czas spaceru; 3) stałe i bezpośrednie dozorowanie; 4) powiadomić dowódcę zmiany o zachowaniach, które mogą skutkować wcześniejszym zakończeniem spaceru.",
+   "source": "zarządzenie DGSW nr 30/25 z 17.03.2025",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "stanowiska-f10",
+   "deck": "stanowiska",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Widzeniowy – zadania (§ 70)",
+   "back": "1) przed i po widzeniach: zabezpieczenia t-o i przedmioty niedozwolone/substancje w pomieszczeniach; 2) tożsamość osadzonego na podstawie karty identyfikacyjnej – po doprowadzeniu i przed odprowadzeniem; 3) ewidencja widzeń (Centralna Baza); 4) znajomość stanu liczbowego osadzonych w pomieszczeniach widzeń; 5) informowanie o możliwości przerwania/zakończenia widzenia przy naruszeniu zasad; 6) egzekwowanie porządku i bezpieczeństwa; 7) niedopuszczanie do nieuprawnionego przekazywania przedmiotów; 8) nadzór nad czasem i sposobem widzeń; 9) powiadomienie dowódcy zmiany o zachowaniach mogących skutkować wcześniejszym zakończeniem widzenia.",
+   "source": "zarządzenie DGSW nr 30/25 z 17.03.2025",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "stanowiska-f11",
+   "deck": "stanowiska",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Patrolujący – zadania (§ 71)",
+   "back": "1) patrolowanie wyznaczonego terenu; 2) niedopuszczanie do nieuprawnionego ruchu osób; 3) utrzymywanie łączności z dowódcą zmiany. Przy osobach nieuprawnionych lub ograniczonej widoczności – postępuje jak wartownik (§ 72 ust. 2 i 3). Zmiana – co najmniej co 2 godziny.",
+   "source": "zarządzenie DGSW nr 30/25 z 17.03.2025",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "stanowiska-f12",
+   "deck": "stanowiska",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Wartownik – zadania (§ 72 ust. 1)",
+   "back": "Stanowisko uzbrojone (broń palna i amunicja penetracyjna) na wieżyczce ochronnej. 1) obserwowanie pasa ochronnego i terenu do obserwacji; 2) stała gotowość do przeciwdziałania zagrożeniom; 3) łączność z dowódcą zmiany; 4) broń w stałej gotowości do użycia; 5) wymogi bezpieczeństwa z instrukcji posługiwania się wzorem broni; 6) wpuszczanie na pas ochronny wyłącznie dowódcy zmiany i osób mu towarzyszących (innych – za zgodą dowódcy zmiany). Zmiana – co najmniej co 4 godziny.",
+   "source": "zarządzenie DGSW nr 30/25 z 17.03.2025",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "stanowiska-f13",
+   "deck": "stanowiska",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Komendy wartownika",
+   "back": "Osoba nieuprawniona na pasie / terenie obserwowanym: „Stój! W tył zwrot!” + natychmiast powiadomić dowódcę zmiany.\nOgraniczona widoczność: „Stój! Kto idzie?” → „Zbliżyć się do mnie, pozostałe osoby pozostają na miejscu” → po rozpoznaniu uprawnionych: „Droga wolna”. Nierozpoznani → „Stój! W tył zwrot!”.",
+   "source": "zarządzenie DGSW nr 30/25 z 17.03.2025",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "stanowiska-f14",
+   "deck": "stanowiska",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Dozorujący osadzonych zatrudnionych na terenie jednostki – zadania (§ 73)",
+   "back": "1) zabezpieczenia t-o w miejscu pracy – przed i po pracy; 2) znajomość i regularne weryfikowanie stanu liczbowego, czy wszyscy są w miejscu pracy; 3) niedopuszczanie do samowolnego opuszczania stanowisk; 4) niedopuszczanie do kontaktu z osobami postronnymi; 5) niedopuszczanie do wytwarzania przedmiotów niedozwolonych lub substancji; 6) egzekwowanie zasad zatrudnienia.",
+   "source": "zarządzenie DGSW nr 30/25 z 17.03.2025",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "stanowiska-f15",
+   "deck": "stanowiska",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Rezerwa składu zmiany i przewodnik psa (§ 74–75)",
+   "back": "Rezerwa: funkcjonariusz, wykonuje doraźne polecenia dowódcy zmiany (sposób ochrony, porządek wewnętrzny). Żaden przepis nie określa jej liczebności – dobiera się ją do potrzeb.\nPrzewodnik psa: konwojowanie, pościg, kontrola z psem (osób, paczek, bagaży, cel, pomieszczeń, miejsc pracy, pojazdów i ładunków), ochrona funkcjonariuszy, pracowników, osadzonych i jednostki.",
+   "source": "zarządzenie DGSW nr 30/25 z 17.03.2025; wykład „Bezpieczeństwo” (25–26.08.2025)",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "stanowiska-f16",
+   "deck": "stanowiska",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Instrukcja stanowiskowa – co zawiera?",
+   "back": "Miejsce pełnienia służby, uzbrojenie stanowiska (rodzaj uzbrojenia i wyposażenia), czas pełnienia służby, środki łączności, zakres obowiązków, wyposażenie, wykaz kluczy specjalnych i zwykłych, zadania z ochrony przeciwpożarowej. Zapoznać się trzeba przy pierwszym objęciu stanowiska; dowódca zmiany ma obowiązek ją udostępnić.",
+   "source": "wykład „Bezpieczeństwo” (25–26.08.2025)",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "stanowiska-f17",
+   "deck": "stanowiska",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Co sprawdzić przy przejęciu służby w oddziale?",
+   "back": "Wyposażenie (środki ochrony, ŚPB), klucze, stan osadzonych, dokumentację, środki łączności, gaśnice, instalację przyzywową i alarmową, apteczkę; rozmowa z oddziałowym kończącym służbę nocną; czy cela izolacyjna jest zaludniona i do kiedy; czy jest osadzony zagrożony samobójstwem; wolne miejsca; w oddziale „N” – karty osadzonych niebezpiecznych i zalecenia.",
+   "source": "wykład „Bezpieczeństwo” (25–26.08.2025)",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "stanowiska-o01",
+   "deck": "stanowiska",
+   "type": "order",
+   "naPamiec": true,
+   "prompt": "Apel w oddziale mieszkalnym – zasady w kolejności z wykładu",
+   "steps": [
+    "Wstrzymuje się ruch osadzonych w zakładzie",
+    "Wyznacza się funkcjonariusza z radiotelefonem i kluczem, który stoi na zewnątrz oddziału za kratą koszową",
+    "Informuje się funkcjonariusza na wartowni o rozpoczęciu apelu w oddziale",
+    "Otwiera się kolejno tylko jedne drzwi celi lub pomieszczenia"
+   ],
+   "source": "wykład „Bezpieczeństwo” (25–26.08.2025)",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "stanowiska-o02",
+   "deck": "stanowiska",
+   "type": "order",
+   "naPamiec": true,
+   "prompt": "Wartownik w warunkach ograniczonej widoczności – kolejność komend",
+   "steps": [
+    "„Stój! Kto idzie?”",
+    "„Zbliżyć się do mnie, pozostałe osoby pozostają na miejscu”",
+    "Rozpoznanie osoby",
+    "„Droga wolna” (gdy osoba uprawniona)"
+   ],
+   "source": "zarządzenie DGSW nr 30/25 z 17.03.2025 § 72 ust. 3",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "stanowiska-c01",
+   "deck": "stanowiska",
+   "type": "cloze",
+   "naPamiec": true,
+   "text": "Zmiany monitorowego można dokonać w każdym czasie, jednak nie rzadziej niż co [[2]] godziny. Funkcjonariusz przejmujący to stanowisko nie może, co najmniej [[godzinę]] przed przejęciem, pełnić służby związanej z ciągłą obserwacją [[monitorów ekranowych]].",
+   "source": "zarządzenie DGSW nr 30/25 z 17.03.2025 § 66",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "stanowiska-c02",
+   "deck": "stanowiska",
+   "type": "cloze",
+   "naPamiec": true,
+   "text": "Zmiany wartownika można dokonać w każdym czasie, jednak nie rzadziej niż co [[4]] godziny. Opóźnienie zmiany może wynikać jedynie ze względów [[bezpieczeństwa]], a jego przyczyny odnotowuje się w książce przebiegu służby [[dowódcy zmiany]].",
+   "source": "zarządzenie DGSW nr 30/25 z 17.03.2025 § 72",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "stanowiska-c03",
+   "deck": "stanowiska",
+   "type": "cloze",
+   "naPamiec": true,
+   "text": "Osoby nieuprawnione na pasie ochronnym wartownik wzywa komendą: „[[Stój! W tył zwrot!]]” i natychmiast powiadamia [[dowódcę zmiany]].",
+   "source": "zarządzenie DGSW nr 30/25 z 17.03.2025 § 72",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "ochrona-f13",
+   "deck": "ochrona",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Kto prowadzi rozpoznanie jednostki organizacyjnej?",
+   "back": "Dyrektor Generalny – przy utworzeniu jednostki (ZK, AŚ) lub oddziału dla osadzonych niebezpiecznych.\nDyrektor okręgowy – przy utworzeniu pawilonu mieszkalnego, nowego miejsca pracy, zmianie typu jednostki, utworzeniu celi dla osadzonych niebezpiecznych.\nDyrektor jednostki – tylko przy oddaniu budynku po remoncie.\n(Dyrektor zarządza też rozpoznanie miejsc czasowego przebywania osadzonych poza jednostką, np. szpitali – § 76.)",
+   "source": "wykład „Bezpieczeństwo” (25–26.08.2025)",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "ochrona-f14",
+   "deck": "ochrona",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Co ustala się na podstawie rozpoznania jednostki?",
+   "back": "Potrzeby w zakresie zabezpieczeń t-o; liczbę i rodzaj stanowisk; rozmieszczenie stanowisk i pomieszczeń istotnych dla ochrony (wartownia, magazyn uzbrojenia, śluza bramy głównej); liczbę etatów w dziale ochrony; potrzeby w uzbrojenie, środki ochrony osobistej i ŚPB; stan etatowy psów służbowych.",
+   "source": "wykład „Bezpieczeństwo” (25–26.08.2025)",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "ochrona-f15",
+   "deck": "ochrona",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Przedsięwzięcia ochronne (poza rozpoznaniem) – wykład",
+   "back": "Organizacja ruchu, gospodarka kluczami, postępowanie z przedmiotami niebezpiecznymi, wzajemne ubezpieczanie się funkcjonariuszy, apele, wszelkie kontrole, zabezpieczenia techniczno-ochronne, zasady wstępu na teren jednostki.",
+   "source": "wykład „Bezpieczeństwo” (25–26.08.2025)",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "ochrona-f16",
+   "deck": "ochrona",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Czym różnicuje się sposób ochrony w zależności od typu ZK?",
+   "back": "Ilością i rodzajem przedsięwzięć ochronnych, zabezpieczeniami oraz liczbą i rodzajem stanowisk. Za ustalenie prawidłowego sposobu ochrony i jego realizację odpowiada dyrektor (kierownik jednostki organizacyjnej).",
+   "source": "wykład „Bezpieczeństwo” (25–26.08.2025)",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "ochrona-f17",
+   "deck": "ochrona",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Po co stosuje się sposób ochrony i jakie zdarzenia mu zagrażają?",
+   "back": "Cel: nie dopuścić do ucieczki, nie dopuścić do napaści, zapewnić bezpieczeństwo wszystkim (osadzonym, funkcjonariuszom, pracownikom, interesantom).\nZdarzenia z winy osadzonych: samouszkodzenia, samobójstwa, bunt, napaści, wzajemne znęcanie się.\nZ winy funkcjonariuszy: przekroczenie uprawnień, niedopełnienie obowiązków, korupcja, nieuprawnione ujawnienie danych osobowych, spoufalanie się (skracanie dystansu), rutyna (zalecana rotacja w oddziałach co pół roku).",
+   "source": "wykład „Bezpieczeństwo” (25–26.08.2025)",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "ochrona-f18",
+   "deck": "ochrona",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "ZK typu zamkniętego i AŚ – zabezpieczenia i ruch (wykład)",
+   "back": "Ogrodzenie zewnętrzne z materiału pełnego, ogrodzenie wewnętrzne (może być ażurowe), między nimi pas ochronny; monitoring, bariery, kable sensoryczne, czujki; okna budynków z osadzonymi (cele, łaźnie, magazyny, kuchnie, warsztaty) – kraty lub inne zabezpieczenia; wejścia otwierane na czas niezbędny; osadzeni poruszają się tylko z asystą (wyjątek: funkcyjni „kamizelki”); cele zamknięte. Ruch: organizacja, ewidencja, dozór. Zatrudnienie poza jednostką – pełny system konwojowania. Zmiana liczy co najmniej 3 funkcjonariuszy.",
+   "source": "wykład „Bezpieczeństwo” (25–26.08.2025)",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "ochrona-f19",
+   "deck": "ochrona",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "ZK typu półotwartego – zabezpieczenia (wykład)",
+   "back": "Co najmniej jedna linia ogrodzenia zewnętrznego (bez pasa i ogrodzenia wewnętrznego); wzdłuż ogrodzenia mogą być stanowiska uzbrojone; okna budynków z osadzonymi MUSZĄ mieć zabezpieczenia t-o; wejścia na czas niezbędny; dyrektor może zdecydować, że cele są otwarte w dzień, a w nocy zamknięte (lub otwarte, gdy np. toaleta jest na korytarzu); zatrudnienie poza jednostką także na pojedynczych stanowiskach. Zmiana – co najmniej 2 funkcjonariuszy.",
+   "source": "wykład „Bezpieczeństwo” (25–26.08.2025)",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "ochrona-f20",
+   "deck": "ochrona",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "ZK typu otwartego – zabezpieczenia (wykład)",
+   "back": "Brak stanowisk uzbrojonych; co najmniej jedna linia ogrodzenia ochronnego; okna MOGĄ mieć zabezpieczenia t-o (nie muszą); budynki, wejścia i przejścia mogą być otwarte w porze dziennej, o porze nocnej decyduje dyrektor; zatrudnienie bez konwojenta na pojedynczych stanowiskach; ruch wg porządku wewnętrznego. Zmiana – co najmniej 2 funkcjonariuszy.",
+   "source": "wykład „Bezpieczeństwo” (25–26.08.2025)",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "ochrona-f21",
+   "deck": "ochrona",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Instrukcja ochronna – zawartość (wykład)",
+   "back": "Opis przeznaczenia jednostki; rozpoznanie i opis jednostki; opis zabezpieczeń t-o (elektronika, łączność, instalacje napadowe, kamery); procedury wzajemnego ubezpieczania się i alarmowania w sytuacji zagrożenia; zestawienie stanowisk; instrukcje stanowiskowe; plan sytuacyjny (wartownia, magazyn uzbrojenia, brama, wyjścia ewakuacyjne, ujęcia wody, wyłączniki prądu i gazu – kopię dostaje straż pożarna na bramie); wykaz i opis odstępstw od sposobu ochrony (decyduje o nich dyrektor).",
+   "source": "wykład „Bezpieczeństwo” (25–26.08.2025)",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "ochrona-f22",
+   "deck": "ochrona",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Instrukcja ochronna – kto ustala, gdzie jest, kto dostaje kopię, kto z niej korzysta",
+   "back": "Ustala kierownik jednostki organizacyjnej. Jeden egzemplarz – u dowódcy zmiany na wartowni. Kopię zestawienia stanowisk i planu sytuacyjnego dostają dyrektor Biura Ochrony i Spraw Obronnych CZSW oraz dyrektor okręgowy. Posługują się nią: dowódca zmiany, dyrektor, kierownik działu ochrony, funkcjonariusze i pracownicy (w zakresie swojej instrukcji stanowiskowej), kierownik oddziału zewnętrznego, osoby wizytujące i kontrolujące. Informacje z niej podlegają ochronie.",
+   "source": "wykład „Bezpieczeństwo” (25–26.08.2025)",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "ochrona-f23",
+   "deck": "ochrona",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Przykłady odstępstw od sposobu ochrony (wykład)",
+   "back": "Względy architektoniczne – brak pełnego ogrodzenia zewnętrznego (budynek na linii ogrodzenia); pas ochronny namalowany przy małym terenie; wejścia w porze nocnej; czasowo otwarte kraty przejściowe; klucze; łączenie oddziałów w nocy (np. przy konwoju do szpitala) i otwarte wtedy kraty wejściowe; w oddziałach szpitalnych w nocy oddziały niezamknięte. O odstępstwach decyduje dyrektor.",
+   "source": "wykład „Bezpieczeństwo” (25–26.08.2025)",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "ochrona-f24",
+   "deck": "ochrona",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Kontrole przeprowadzane przez oddziałowego w oddziale mieszkalnym",
+   "back": "Kontrola cel i pomieszczeń, kontrola pobieżna i osobista, kontrola zabezpieczeń techniczno-ochronnych, kontrola zachowań osadzonych, kontrola generalna (jeśli jest w jednostce), kontrola paczek i przedmiotów osadzonych.",
+   "source": "wykład „Bezpieczeństwo” (25–26.08.2025)",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "ochrona-f25",
+   "deck": "ochrona",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Cztery sytuacje obowiązkowej kontroli osobistej (wykład)",
+   "back": "1) ujawnienie podczas kontroli pobieżnej przedmiotu niedozwolonego lub substancji; 2) kontrola generalna – kontrola osobista wszystkich osób w jednym czasie; 3) osadzeni niebezpieczni („N”, art. 88b KKW) – przy każdym wyjściu z celi i powrocie; 4) przed umieszczeniem w celi zabezpieczającej (rozporządzenie MS z 3.06.2013) – odbiera się przedmioty niebezpieczne dla życia lub zdrowia.",
+   "source": "wykład „Bezpieczeństwo” (25–26.08.2025)",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "ochrona-f26",
+   "deck": "ochrona",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Zakres kontroli osobistej",
+   "back": "Sprawdzenie osoby, jej odzieży, obuwia i przedmiotów na ciele: bez odsłaniania i z odsłonięciem przykrytych odzieżą powierzchni ciała; jamy ustnej, uszu, nosa, włosów i miejsc trudno dostępnych; miejsc intymnych. Przeprowadza się ją w miejscu niedostępnym dla postronnych, zawsze we dwie osoby (jedna wydaje polecenia, druga ochrania); w uzasadnionych stanem zdrowia przypadkach może uczestniczyć służba zdrowia.",
+   "source": "wykład „Bezpieczeństwo” (25–26.08.2025)",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "stanowiska-m01",
+   "deck": "stanowiska",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Z jakiego dnia jest zarządzenie DGSW nr 30/25 w sprawie sposobów ochrony, konwojowania oraz zadań ochronnych?",
+   "options": [
+    "1 stycznia 2025 r.",
+    "17 marca 2025 r.",
+    "17 października 2024 r.",
+    "31 października 2023 r."
+   ],
+   "answer": 1,
+   "explanation": "69/23 (2023) zastąpiło zarządzenie 30/25 z 17.03.2025.",
+   "source": "zarządzenie DGSW nr 30/25 z 17.03.2025",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "stanowiska-m02",
+   "deck": "stanowiska",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Na podstawie którego przepisu wydano zarządzenie 30/25?",
+   "options": [
+    "art. 88 § 3 KKW",
+    "art. 19 ustawy o SW",
+    "art. 35 ustawy o ŚPB",
+    "art. 249a pkt 6–8 KKW"
+   ],
+   "answer": 3,
+   "explanation": "Art. 249a pkt 6–8 KKW.",
+   "source": "zarządzenie DGSW nr 30/25 z 17.03.2025",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "stanowiska-m03",
+   "deck": "stanowiska",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Kto realizuje zadania na stanowisku monitorowego?",
+   "options": [
+    "pracownik przywięziennego zakładu pracy",
+    "wyłącznie funkcjonariusz",
+    "wyłącznie dowódca zmiany",
+    "funkcjonariusz lub pracownik"
+   ],
+   "answer": 3,
+   "explanation": "§ 66 ust. 1.",
+   "source": "zarządzenie DGSW nr 30/25 z 17.03.2025",
+   "tag": "zarz-30-25",
+   "grupa": "kto-monitorowy"
+  },
+  {
+   "id": "stanowiska-m04",
+   "deck": "stanowiska",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Prawda czy fałsz: monitorowym może być wyłącznie funkcjonariusz.",
+   "options": [
+    "Prawda",
+    "Fałsz"
+   ],
+   "answer": 1,
+   "explanation": "Fałsz – funkcjonariusz lub pracownik (§ 66).",
+   "source": "zarządzenie DGSW nr 30/25 z 17.03.2025",
+   "tag": "zarz-30-25",
+   "grupa": "kto-monitorowy"
+  },
+  {
+   "id": "stanowiska-m05",
+   "deck": "stanowiska",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Kto realizuje zadania na stanowisku widzeniowego?",
+   "options": [
+    "funkcjonariusz lub pracownik",
+    "wychowawca",
+    "wyłącznie pracownik cywilny",
+    "wyłącznie funkcjonariusz"
+   ],
+   "answer": 0,
+   "explanation": "§ 70.",
+   "source": "zarządzenie DGSW nr 30/25 z 17.03.2025",
+   "tag": "zarz-30-25",
+   "grupa": "kto-widzeniowy"
+  },
+  {
+   "id": "stanowiska-m06",
+   "deck": "stanowiska",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Prawda czy fałsz: widzenia może realizować pracownik SW.",
+   "options": [
+    "Prawda",
+    "Fałsz"
+   ],
+   "answer": 0,
+   "explanation": "Prawda – funkcjonariusz lub pracownik (§ 70).",
+   "source": "zarządzenie DGSW nr 30/25 z 17.03.2025",
+   "tag": "zarz-30-25",
+   "grupa": "kto-widzeniowy"
+  },
+  {
+   "id": "stanowiska-m07",
+   "deck": "stanowiska",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Kto realizuje zadania na stanowisku spacerowego?",
+   "options": [
+    "oddziałowy z wychowawcą",
+    "funkcjonariusz",
+    "funkcjonariusz lub pracownik",
+    "pracownik"
+   ],
+   "answer": 1,
+   "explanation": "§ 69 – funkcjonariusz.",
+   "source": "zarządzenie DGSW nr 30/25 z 17.03.2025",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "stanowiska-m08",
+   "deck": "stanowiska",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Na stanowisku dozorującego osadzonych zatrudnionych na terenie jednostki zadania może realizować:",
+   "options": [
+    "wyłącznie funkcjonariusz",
+    "osadzony funkcyjny",
+    "funkcjonariusz, pracownik lub pracownik przywięziennego zakładu pracy",
+    "wyłącznie pracownik przywięziennego zakładu pracy"
+   ],
+   "answer": 2,
+   "explanation": "§ 73.",
+   "source": "zarządzenie DGSW nr 30/25 z 17.03.2025",
+   "tag": "zarz-30-25",
+   "grupa": "kto-dozorujacy"
+  },
+  {
+   "id": "stanowiska-m09",
+   "deck": "stanowiska",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Prawda czy fałsz: osadzonych zatrudnionych na terenie jednostki może dozorować pracownik przywięziennego zakładu pracy.",
+   "options": [
+    "Prawda",
+    "Fałsz"
+   ],
+   "answer": 0,
+   "explanation": "Prawda – § 73.",
+   "source": "zarządzenie DGSW nr 30/25 z 17.03.2025",
+   "tag": "zarz-30-25",
+   "grupa": "kto-dozorujacy"
+  },
+  {
+   "id": "stanowiska-m10",
+   "deck": "stanowiska",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Na stanowiskach w rejonie bramy głównej i wejścia osobowego zadania realizują:",
+   "options": [
+    "pracownicy ochrony zewnętrznej",
+    "funkcjonariusze lub pracownicy",
+    "funkcjonariusze",
+    "dowódca zmiany osobiście"
+   ],
+   "answer": 2,
+   "explanation": "§ 65.",
+   "source": "zarządzenie DGSW nr 30/25 z 17.03.2025",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "stanowiska-m11",
+   "deck": "stanowiska",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Ewidencję ruchu pojazdów przejeżdżających przez bramę jednostki prowadzi się:",
+   "options": [
+    "w oddziałowej książce ruchu osadzonych",
+    "w Centralnej Bazie",
+    "w książce ruchu osób i pojazdów",
+    "w książce przebiegu służby dowódcy zmiany"
+   ],
+   "answer": 2,
+   "explanation": "§ 65 pkt 4.",
+   "source": "zarządzenie DGSW nr 30/25 z 17.03.2025",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "stanowiska-m12",
+   "deck": "stanowiska",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Doprowadzanie WYŁĄCZNIE interesantów może realizować:",
+   "options": [
+    "tylko dowódca zmiany",
+    "tylko funkcjonariusz",
+    "osadzony funkcyjny",
+    "pracownik"
+   ],
+   "answer": 3,
+   "explanation": "§ 68 ust. 2.",
+   "source": "zarządzenie DGSW nr 30/25 z 17.03.2025",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "stanowiska-m13",
+   "deck": "stanowiska",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Doprowadzenie osadzonego w celu wykonania świadczenia medycznego może – decyzją dyrektora – realizować:",
+   "options": [
+    "pracownik, także świadczący pracę na podstawie umowy cywilnoprawnej",
+    "wyłącznie funkcjonariusz działu ochrony",
+    "wyłącznie lekarz",
+    "tylko grupa interwencyjna"
+   ],
+   "answer": 0,
+   "explanation": "§ 68 ust. 3 – z ustaleniem odstępstwa od sposobu ochrony.",
+   "source": "zarządzenie DGSW nr 30/25 z 17.03.2025",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "stanowiska-m14",
+   "deck": "stanowiska",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Pobranie osadzonych z oddziału doprowadzający kwituje:",
+   "options": [
+    "w książce przebiegu służby dowódcy zmiany",
+    "nie kwituje się pobrania",
+    "w oddziałowej książce ruchu osadzonych",
+    "w książce ruchu osób i pojazdów"
+   ],
+   "answer": 2,
+   "explanation": "§ 68 ust. 1 pkt 3.",
+   "source": "zarządzenie DGSW nr 30/25 z 17.03.2025",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "stanowiska-m15",
+   "deck": "stanowiska",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Zmiany monitorowego dokonuje się nie rzadziej niż co:",
+   "options": [
+    "2 godziny",
+    "6 godzin",
+    "1 godzinę",
+    "4 godziny"
+   ],
+   "answer": 0,
+   "explanation": "§ 66 ust. 6.",
+   "source": "zarządzenie DGSW nr 30/25 z 17.03.2025",
+   "tag": "zarz-30-25",
+   "grupa": "zmiana-monitorowy"
+  },
+  {
+   "id": "stanowiska-m16",
+   "deck": "stanowiska",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Prawda czy fałsz: monitorowego zmienia się nie rzadziej niż co 4 godziny.",
+   "options": [
+    "Prawda",
+    "Fałsz"
+   ],
+   "answer": 1,
+   "explanation": "Fałsz – co 2 godziny; co 4 godziny – wartownik.",
+   "source": "zarządzenie DGSW nr 30/25 z 17.03.2025",
+   "tag": "zarz-30-25",
+   "grupa": "zmiana-monitorowy"
+  },
+  {
+   "id": "stanowiska-m17",
+   "deck": "stanowiska",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Zmiany wartownika dokonuje się nie rzadziej niż co:",
+   "options": [
+    "8 godzin",
+    "2 godziny",
+    "4 godziny",
+    "6 godzin"
+   ],
+   "answer": 2,
+   "explanation": "§ 72 ust. 4.",
+   "source": "zarządzenie DGSW nr 30/25 z 17.03.2025",
+   "tag": "zarz-30-25",
+   "grupa": "zmiana-wartownik"
+  },
+  {
+   "id": "stanowiska-m18",
+   "deck": "stanowiska",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Prawda czy fałsz: wartownika na wieżyczce zmienia się nie rzadziej niż co 4 godziny.",
+   "options": [
+    "Prawda",
+    "Fałsz"
+   ],
+   "answer": 0,
+   "explanation": "Prawda – § 72 ust. 4.",
+   "source": "zarządzenie DGSW nr 30/25 z 17.03.2025",
+   "tag": "zarz-30-25",
+   "grupa": "zmiana-wartownik"
+  },
+  {
+   "id": "stanowiska-m19",
+   "deck": "stanowiska",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Na którym stanowisku zmiana następuje nie rzadziej niż co 4 godziny?",
+   "options": [
+    "monitorowego",
+    "patrolującego teren",
+    "obserwującego teren przez monitoring",
+    "wartownika"
+   ],
+   "answer": 3,
+   "explanation": "Wartownik – 4 h; pozostałe – 2 h.",
+   "source": "zarządzenie DGSW nr 30/25 z 17.03.2025",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "stanowiska-m20",
+   "deck": "stanowiska",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Zmiany na stanowisku patrolującego teren jednostki dokonuje się nie rzadziej niż co:",
+   "options": [
+    "2 godziny",
+    "1 godzinę",
+    "4 godziny",
+    "3 godziny"
+   ],
+   "answer": 0,
+   "explanation": "§ 71 ust. 3.",
+   "source": "zarządzenie DGSW nr 30/25 z 17.03.2025",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "stanowiska-m21",
+   "deck": "stanowiska",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Przyczyny opóźnienia zmiany na stanowisku odnotowuje się:",
+   "options": [
+    "w notatce do dyrektora okręgowego",
+    "w książce przebiegu służby dowódcy zmiany",
+    "w książce ruchu osób i pojazdów",
+    "w instrukcji ochronnej"
+   ],
+   "answer": 1,
+   "explanation": "§ 66 ust. 7, § 67 ust. 3, § 71 ust. 4, § 72 ust. 5.",
+   "source": "zarządzenie DGSW nr 30/25 z 17.03.2025",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "stanowiska-m22",
+   "deck": "stanowiska",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Opóźnienie zmiany wartownika może wynikać:",
+   "options": [
+    "jedynie ze względów bezpieczeństwa",
+    "z braku chętnych do zmiany",
+    "z decyzji wartownika",
+    "z przerwy obiadowej"
+   ],
+   "answer": 0,
+   "explanation": "§ 72 ust. 4.",
+   "source": "zarządzenie DGSW nr 30/25 z 17.03.2025",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "stanowiska-m23",
+   "deck": "stanowiska",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Funkcjonariusz przejmujący stanowisko monitorowego nie może co najmniej ___ przed przejęciem pełnić służby z ciągłą obserwacją monitorów:",
+   "options": [
+    "2 godziny",
+    "30 minut",
+    "4 godziny",
+    "godzinę"
+   ],
+   "answer": 3,
+   "explanation": "§ 66 ust. 8.",
+   "source": "zarządzenie DGSW nr 30/25 z 17.03.2025",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "stanowiska-m24",
+   "deck": "stanowiska",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "O zaobserwowanym zagrożeniu bezpieczeństwa osadzonego monitorowy niezwłocznie informuje:",
+   "options": [
+    "rodzinę osadzonego",
+    "oddziałowego oraz dowódcę zmiany",
+    "wyłącznie wychowawcę",
+    "dyrektora okręgowego"
+   ],
+   "answer": 1,
+   "explanation": "§ 66 ust. 2 pkt 6.",
+   "source": "zarządzenie DGSW nr 30/25 z 17.03.2025",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "stanowiska-m25",
+   "deck": "stanowiska",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Spostrzeżenia z obserwacji zachowania osadzonych monitorowy przekazuje:",
+   "options": [
+    "kierownikowi działu ewidencji",
+    "właściwemu oddziałowemu, wychowawcy oraz dowódcy zmiany",
+    "sędziemu penitencjarnemu",
+    "wyłącznie psychologowi"
+   ],
+   "answer": 1,
+   "explanation": "§ 66 ust. 2 pkt 5.",
+   "source": "zarządzenie DGSW nr 30/25 z 17.03.2025",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "stanowiska-m26",
+   "deck": "stanowiska",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Kolejność użycia środków łączności lub alarmowania przez monitorowego określa:",
+   "options": [
+    "ustawa o ŚPB",
+    "monitorowy według uznania",
+    "instrukcja stanowiskowa na stanowisko monitorowego",
+    "regulamin wykonywania kary"
+   ],
+   "answer": 2,
+   "explanation": "§ 66 ust. 4.",
+   "source": "zarządzenie DGSW nr 30/25 z 17.03.2025",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "stanowiska-m27",
+   "deck": "stanowiska",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Ustalając kolejność osób powiadamianych przez monitorowego, uwzględnia się:",
+   "options": [
+    "stopnie służbowe powiadamianych",
+    "kolejność alfabetyczną",
+    "staż pracy",
+    "warunki i możliwości reakcji na zagrożenie przez powiadomione osoby"
+   ],
+   "answer": 3,
+   "explanation": "§ 66 ust. 5.",
+   "source": "zarządzenie DGSW nr 30/25 z 17.03.2025",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "stanowiska-m28",
+   "deck": "stanowiska",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Otwieranie przejść z elektroniczną kontrolą dostępu wymagających podwójnej autoryzacji należy do:",
+   "options": [
+    "stanowiska obserwowania terenu / sterowania EKD (§ 67)",
+    "widzeniowego",
+    "wartownika",
+    "spacerowego"
+   ],
+   "answer": 0,
+   "explanation": "§ 67 ust. 1 pkt 3.",
+   "source": "zarządzenie DGSW nr 30/25 z 17.03.2025",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "stanowiska-m29",
+   "deck": "stanowiska",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Przed rozpoczęciem i po zakończeniu spaceru spacerowy sprawdza m.in.:",
+   "options": [
+    "korespondencję osadzonych",
+    "paczki żywnościowe",
+    "stan konta depozytowego",
+    "podłoże placu spacerowego i zabezpieczenia t-o"
+   ],
+   "answer": 3,
+   "explanation": "§ 69 pkt 1.",
+   "source": "zarządzenie DGSW nr 30/25 z 17.03.2025",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "stanowiska-m30",
+   "deck": "stanowiska",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Tożsamość osadzonego na widzeniu widzeniowy sprawdza na podstawie:",
+   "options": [
+    "zeznań osoby odwiedzającej",
+    "dowodu osobistego",
+    "karty identyfikacyjnej",
+    "odcisków palców"
+   ],
+   "answer": 2,
+   "explanation": "§ 70 pkt 2 – po doprowadzeniu i przed odprowadzeniem.",
+   "source": "zarządzenie DGSW nr 30/25 z 17.03.2025",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "stanowiska-m31",
+   "deck": "stanowiska",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Ewidencję udzielanych widzeń prowadzi się w szczególności:",
+   "options": [
+    "w Centralnej Bazie",
+    "w książce ruchu osób i pojazdów",
+    "w książce przebiegu służby dowódcy zmiany",
+    "w teczce wychowawcy"
+   ],
+   "answer": 0,
+   "explanation": "§ 70 pkt 3.",
+   "source": "zarządzenie DGSW nr 30/25 z 17.03.2025",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "stanowiska-m32",
+   "deck": "stanowiska",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Komenda wartownika wobec osoby nieuprawnionej na pasie ochronnym to:",
+   "options": [
+    "„Stój, bo strzelam!”",
+    "„Stój! Kto idzie?”",
+    "„Ręce do góry!”",
+    "„Stój! W tył zwrot!”"
+   ],
+   "answer": 3,
+   "explanation": "§ 72 ust. 2 + natychmiast powiadomić dowódcę zmiany.",
+   "source": "zarządzenie DGSW nr 30/25 z 17.03.2025",
+   "tag": "zarz-30-25",
+   "grupa": "komenda-pas"
+  },
+  {
+   "id": "stanowiska-m33",
+   "deck": "stanowiska",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "W warunkach ograniczonej widoczności wartownik zatrzymuje zbliżające się osoby komendą:",
+   "options": [
+    "„Droga wolna”",
+    "„Służba Więzienna!”",
+    "„Stój! W tył zwrot!”",
+    "„Stój! Kto idzie?”"
+   ],
+   "answer": 3,
+   "explanation": "§ 72 ust. 3.",
+   "source": "zarządzenie DGSW nr 30/25 z 17.03.2025",
+   "tag": "zarz-30-25",
+   "grupa": "komenda-noc"
+  },
+  {
+   "id": "stanowiska-m34",
+   "deck": "stanowiska",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Po rozpoznaniu osoby uprawnionej wartownik zezwala na przejście komendą:",
+   "options": [
+    "„Spocznij”",
+    "„Przejść”",
+    "„Wolno”",
+    "„Droga wolna”"
+   ],
+   "answer": 3,
+   "explanation": "§ 72 ust. 3.",
+   "source": "zarządzenie DGSW nr 30/25 z 17.03.2025",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "stanowiska-m35",
+   "deck": "stanowiska",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Na pas ochronny wartownik wpuszcza bez dodatkowej zgody wyłącznie:",
+   "options": [
+    "dowódcę zmiany i osoby mu towarzyszące",
+    "każdego funkcjonariusza w mundurze",
+    "dyrektora jednostki",
+    "pracowników działu technicznego"
+   ],
+   "answer": 0,
+   "explanation": "§ 72 ust. 1 pkt 6 – inne osoby tylko za zgodą dowódcy zmiany.",
+   "source": "zarządzenie DGSW nr 30/25 z 17.03.2025",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "stanowiska-m36",
+   "deck": "stanowiska",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Stanowisko wartownika jest wyposażone w:",
+   "options": [
+    "wyłącznie środki łączności",
+    "paralizator i psa służbowego",
+    "pałkę i kajdanki, przy bramie",
+    "broń palną i amunicję penetracyjną, na wieżyczce ochronnej"
+   ],
+   "answer": 3,
+   "explanation": "§ 72 ust. 1.",
+   "source": "zarządzenie DGSW nr 30/25 z 17.03.2025",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "stanowiska-m37",
+   "deck": "stanowiska",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Ilu funkcjonariuszy liczy rezerwa składu zmiany?",
+   "options": [
+    "Co najmniej 2",
+    "Dokładnie 1",
+    "Co najmniej 3",
+    "Żaden przepis tego nie określa – dobiera się ją do potrzeb"
+   ],
+   "answer": 3,
+   "explanation": "Wykład 25.08.2025.",
+   "source": "wykład „Bezpieczeństwo” (25–26.08.2025)",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "stanowiska-m38",
+   "deck": "stanowiska",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Do zadań przewodnika psa służbowego NIE należy:",
+   "options": [
+    "uczestnictwo w konwojowaniu",
+    "uczestnictwo w pościgu",
+    "prowadzenie ewidencji widzeń",
+    "kontrola pojazdów wjeżdżających z użyciem psa"
+   ],
+   "answer": 2,
+   "explanation": "§ 75.",
+   "source": "zarządzenie DGSW nr 30/25 z 17.03.2025",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "stanowiska-m39",
+   "deck": "stanowiska",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Rozpoznanie miejsc czasowego przebywania osadzonych poza jednostką (np. w szpitalu) zarządza:",
+   "options": [
+    "Dyrektor Generalny",
+    "dowódca konwoju",
+    "dyrektor",
+    "kierownik działu penitencjarnego"
+   ],
+   "answer": 2,
+   "explanation": "§ 76 ust. 1.",
+   "source": "zarządzenie DGSW nr 30/25 z 17.03.2025",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "stanowiska-m40",
+   "deck": "stanowiska",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Z instrukcją stanowiskową funkcjonariusz musi się zapoznać:",
+   "options": [
+    "tylko na polecenie dyrektora okręgowego",
+    "raz w roku",
+    "tylko po zmianie przepisów",
+    "gdy obejmuje dane stanowisko po raz pierwszy"
+   ],
+   "answer": 3,
+   "explanation": "Dowódca zmiany ma obowiązek ją udostępnić.",
+   "source": "wykład „Bezpieczeństwo” (25–26.08.2025)",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "stanowiska-m41",
+   "deck": "stanowiska",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Elementem instrukcji stanowiskowej NIE jest:",
+   "options": [
+    "czas pełnienia służby",
+    "plan urlopów funkcjonariuszy",
+    "zadania z zakresu ochrony przeciwpożarowej",
+    "wykaz kluczy specjalnych i zwykłych"
+   ],
+   "answer": 1,
+   "explanation": "Wykład.",
+   "source": "wykład „Bezpieczeństwo” (25–26.08.2025)",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "stanowiska-m42",
+   "deck": "stanowiska",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Podczas apelu w oddziale mieszkalnym:",
+   "options": [
+    "nie wstrzymuje się ruchu osadzonych",
+    "osadzeni wychodzą na korytarz",
+    "otwiera się kolejno tylko jedne drzwi celi lub pomieszczenia",
+    "otwiera się wszystkie cele jednocześnie"
+   ],
+   "answer": 2,
+   "explanation": "Wykład; zarządzenie 30/25.",
+   "source": "wykład „Bezpieczeństwo” (25–26.08.2025)",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "ochrona-m48",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Rozpoznanie przy utworzeniu nowej jednostki organizacyjnej lub oddziału dla osadzonych niebezpiecznych prowadzi:",
+   "options": [
+    "dyrektor okręgowy",
+    "Dyrektor Generalny",
+    "kierownik działu ochrony",
+    "dyrektor jednostki"
+   ],
+   "answer": 1,
+   "explanation": "Wykład.",
+   "source": "wykład „Bezpieczeństwo” (25–26.08.2025)",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "ochrona-m49",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Rozpoznanie przy zmianie typu jednostki (np. z zamkniętego na półotwarty) prowadzi:",
+   "options": [
+    "Minister Sprawiedliwości",
+    "dyrektor jednostki",
+    "dyrektor okręgowy",
+    "Dyrektor Generalny"
+   ],
+   "answer": 2,
+   "explanation": "Także: nowy pawilon mieszkalny, nowe miejsce pracy, cela dla „N”.",
+   "source": "wykład „Bezpieczeństwo” (25–26.08.2025)",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "ochrona-m50",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Dyrektor jednostki prowadzi rozpoznanie wyłącznie, gdy:",
+   "options": [
+    "tworzy się oddział dla osadzonych niebezpiecznych",
+    "powstaje nowa jednostka",
+    "zmienia się typ jednostki",
+    "oddawany jest budynek po remoncie"
+   ],
+   "answer": 3,
+   "explanation": "Wykład.",
+   "source": "wykład „Bezpieczeństwo” (25–26.08.2025)",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "ochrona-m51",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "W ZK typu zamkniętego zmiana liczy co najmniej:",
+   "options": [
+    "3 funkcjonariuszy",
+    "5 funkcjonariuszy",
+    "1 funkcjonariusza",
+    "2 funkcjonariuszy"
+   ],
+   "answer": 0,
+   "explanation": "Półotwarty i otwarty – co najmniej 2.",
+   "source": "wykład „Bezpieczeństwo” (25–26.08.2025)",
+   "tag": "zarz-30-25",
+   "grupa": "zmiana-liczebnosc"
+  },
+  {
+   "id": "ochrona-m52",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Prawda czy fałsz: w ZK typu półotwartego i otwartego zmiana liczy co najmniej dwóch funkcjonariuszy.",
+   "options": [
+    "Prawda",
+    "Fałsz"
+   ],
+   "answer": 0,
+   "explanation": "Prawda; w zamkniętym – co najmniej 3.",
+   "source": "wykład „Bezpieczeństwo” (25–26.08.2025)",
+   "tag": "zarz-30-25",
+   "grupa": "zmiana-liczebnosc"
+  },
+  {
+   "id": "ochrona-m53",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "W którym typie ZK NIE ma stanowisk uzbrojonych?",
+   "options": [
+    "W areszcie śledczym",
+    "Półotwartym",
+    "Otwartym",
+    "Zamkniętym"
+   ],
+   "answer": 2,
+   "explanation": "Wykład.",
+   "source": "wykład „Bezpieczeństwo” (25–26.08.2025)",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "ochrona-m54",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Pas ochronny między ogrodzeniem zewnętrznym (z materiału pełnego) a wewnętrznym występuje w:",
+   "options": [
+    "żadnym typie",
+    "ZK typu zamkniętego i areszcie śledczym",
+    "ZK typu otwartego",
+    "ZK typu półotwartego"
+   ],
+   "answer": 1,
+   "explanation": "Półotwarty – minimum jedna linia ogrodzenia zewnętrznego, bez pasa.",
+   "source": "wykład „Bezpieczeństwo” (25–26.08.2025)",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "ochrona-m55",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "W ZK typu otwartego okna budynków, w których przebywają osadzeni:",
+   "options": [
+    "mogą, ale nie muszą mieć zabezpieczeń t-o",
+    "muszą mieć szyby antywłamaniowe i kraty",
+    "nie mogą mieć żadnych zabezpieczeń",
+    "muszą mieć kraty"
+   ],
+   "answer": 0,
+   "explanation": "W półotwartym i zamkniętym – muszą być zabezpieczone.",
+   "source": "wykład „Bezpieczeństwo” (25–26.08.2025)",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "ochrona-m56",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Trzy czynniki składające się na ruch osadzonych w ZK typu zamkniętego to:",
+   "options": [
+    "apel, spacer, widzenie",
+    "klucze, kraty, kamery",
+    "kontrola, alarm, pościg",
+    "organizacja, ewidencja, dozór"
+   ],
+   "answer": 3,
+   "explanation": "Wykład.",
+   "source": "wykład „Bezpieczeństwo” (25–26.08.2025)",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "ochrona-m57",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Za ustalenie prawidłowego sposobu ochrony i jego realizację w jednostce odpowiada:",
+   "options": [
+    "dyrektor (kierownik jednostki organizacyjnej)",
+    "kierownik działu penitencjarnego",
+    "dowódca zmiany",
+    "dyrektor okręgowy"
+   ],
+   "answer": 0,
+   "explanation": "Wykład.",
+   "source": "wykład „Bezpieczeństwo” (25–26.08.2025)",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "ochrona-m58",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Instrukcję ochronną sporządza się w:",
+   "options": [
+    "trzech egzemplarzach",
+    "egzemplarzu dla każdego funkcjonariusza",
+    "wersji elektronicznej w BIP",
+    "jednym egzemplarzu, przechowywanym u dowódcy zmiany na wartowni"
+   ],
+   "answer": 3,
+   "explanation": "Kopię zestawienia stanowisk i planu sytuacyjnego dostają Biuro Ochrony i Spraw Obronnych CZSW i dyrektor okręgowy.",
+   "source": "wykład „Bezpieczeństwo” (25–26.08.2025)",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "ochrona-m59",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "O odstępstwach od sposobu ochrony na terenie jednostki decyduje:",
+   "options": [
+    "dowódca zmiany",
+    "oddziałowy",
+    "sędzia penitencjarny",
+    "dyrektor"
+   ],
+   "answer": 3,
+   "explanation": "Wykład.",
+   "source": "wykład „Bezpieczeństwo” (25–26.08.2025)",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "ochrona-m60",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Zdarzeniem z winy funkcjonariusza (wg wykładu) jest m.in.:",
+   "options": [
+    "rutyna i spoufalanie się z osadzonymi",
+    "samouszkodzenie",
+    "wzajemne znęcanie się osadzonych",
+    "bunt"
+   ],
+   "answer": 0,
+   "explanation": "Także przekroczenie uprawnień, niedopełnienie obowiązków, korupcja, ujawnienie danych.",
+   "source": "wykład „Bezpieczeństwo” (25–26.08.2025)",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "ochrona-m61",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Rotację funkcjonariuszy w oddziałach mieszkalnych – jako przeciwdziałanie rutynie – zaleca się co:",
+   "options": [
+    "pół roku",
+    "2 lata",
+    "miesiąc",
+    "5 lat"
+   ],
+   "answer": 0,
+   "explanation": "Wykład.",
+   "source": "wykład „Bezpieczeństwo” (25–26.08.2025)",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "ochrona-m62",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Obowiązkowa kontrola osobista osadzonego „N” (art. 88b KKW) odbywa się:",
+   "options": [
+    "tylko przed widzeniem",
+    "raz dziennie",
+    "przy każdym opuszczeniu celi i powrocie do niej",
+    "raz w tygodniu"
+   ],
+   "answer": 2,
+   "explanation": "Wykład.",
+   "source": "wykład „Bezpieczeństwo” (25–26.08.2025)",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "ochrona-m63",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Kontrola generalna polega na:",
+   "options": [
+    "przeprowadzeniu w jednym czasie kontroli osobistej wszystkich osób kontrolowanych",
+    "kontroli przez Dyrektora Generalnego",
+    "kontroli paczek w magazynie",
+    "kontroli wyłącznie cel"
+   ],
+   "answer": 0,
+   "explanation": "Wykład.",
+   "source": "wykład „Bezpieczeństwo” (25–26.08.2025)",
+   "tag": "zarz-30-25"
+  },
+  {
+   "id": "ochrona-m64",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Kontrolę osobistą przeprowadzają zawsze:",
+   "options": [
+    "dowódca zmiany i wychowawca",
+    "dwie osoby – jedna wydaje polecenia, druga ochrania",
+    "jedna osoba",
+    "trzy osoby, w tym lekarz"
+   ],
+   "answer": 1,
+   "explanation": "W uzasadnionych stanem zdrowia przypadkach może uczestniczyć służba zdrowia.",
+   "source": "wykład „Bezpieczeństwo” (25–26.08.2025)",
+   "tag": "zarz-30-25"
   }
  ]
 }
