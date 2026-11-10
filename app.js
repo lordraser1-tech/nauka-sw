@@ -256,25 +256,49 @@ function renderHome(keepScroll) {
     mode('Egzamin próbny', examRunning ? `Trwa – zostało ${mmss(exam.end - Date.now())}` : `${examSize()} pytań · ${examMinutes()} minut`, '#/egzamin', 1),
     mode('Trudne', hard ? `${hard} do poprawy (wszystkie talie)` : 'Brak błędnych odpowiedzi', '#/trudne', hard)));
 
-  // Filtry
+  // Tematy (rozwijane)
   const sel = new Set(selectedDecks());
-  const filters = h('section', { class: 'card' }, h('h2', { style: 'margin-top:0' }, 'Talie'));
-  for (const d of DATA.decks) {
+  const setDecks = () => {
+    state.settings.decks = DATA.decks.map(x => x.id).filter(id => sel.has(id));
+    state.settings.decksOpen = true;
+    save();
+    renderHome(true);
+  };
+  const deckRow = d => {
     const n = DATA.items.filter(i => i.deck === d.id && (!state.settings.onlyMem || i.naPamiec)).length;
-    filters.append(h('label', { class: 'check' },
+    return h('label', { class: 'check' },
       h('input', { type: 'checkbox', checked: sel.has(d.id), onchange: e => {
         if (e.target.checked) sel.add(d.id); else sel.delete(d.id);
-        state.settings.decks = DATA.decks.map(x => x.id).filter(id => sel.has(id));
-        save();
-        renderHome(true);
+        setDecks();
       } }),
       h('span', {}, d.name),
-      h('span', { class: 'count' }, n)));
+      h('span', { class: 'count' }, n));
+  };
+  const groupBtns = (ids, label) => h('div', { class: 'row deck-all' },
+    btn('☑️ Zaznacz ' + label, 'ghost small-btn', () => { ids.forEach(id => sel.add(id)); setDecks(); }),
+    btn('⬜ Odznacz ' + label, 'ghost small-btn', () => { ids.forEach(id => sel.delete(id)); setDecks(); }));
+  const allIds = DATA.decks.map(d => d.id);
+  const filters = h('details', { class: 'card topics', open: state.settings.decksOpen ? '' : null,
+    ontoggle: e => { state.settings.decksOpen = e.target.open; save(); } },
+    h('summary', {}, h('span', {}, 'Tematy'), h('span', { class: 'count' }, `${sel.size} z ${allIds.length} wybranych`)),
+    groupBtns(allIds, 'wszystkie'));
+  for (const [czesc, label] of [['unitarna', 'Część unitarna'], ['specjalistyczna', 'Część specjalistyczna (psycholog)']]) {
+    const decks = DATA.decks.filter(d => (d.czesc || 'unitarna') === czesc);
+    if (!decks.length) continue;
+    const ids = decks.map(d => d.id);
+    const on = ids.filter(id => sel.has(id)).length;
+    filters.append(h('div', { class: 'topic-group' },
+      h('h3', {}, label, h('button', { type: 'button', class: 'link-btn', onclick: () => {
+        if (on === ids.length) ids.forEach(id => sel.delete(id)); else ids.forEach(id => sel.add(id));
+        setDecks();
+      } }, on === ids.length ? 'odznacz' : 'zaznacz')),
+      decks.map(deckRow)));
   }
   filters.append(h('label', { class: 'switch' },
     h('span', {}, 'Tylko „na pamięć”'),
     h('input', { type: 'checkbox', role: 'switch', checked: state.settings.onlyMem, onchange: e => {
       state.settings.onlyMem = e.target.checked;
+      state.settings.decksOpen = true;
       save();
       renderHome(true);
     } })));
@@ -1323,6 +1347,13 @@ async function init() {
   applyTheme();
   if (window.matchMedia) matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyTheme);
   if (state.settings.decks) state.settings.decks = state.settings.decks.filter(id => deckById[id]);
+  // Nowe talie (dodane w aktualizacji) włączają się automatycznie także tym, którzy mają własny wybór.
+  const KNOWN_BEFORE_V15 = ['spb', 'sw', 'kkw', 'ochrona', 'psycholog', 'metodyka', 'bron', 'pp', 'pragmatyka', 'psych-klin', 'psych-proc', 'ewidencja', 'stanowiska'];
+  const known = new Set(state.settings.knownDecks || KNOWN_BEFORE_V15);
+  const added = DATA.decks.map(d => d.id).filter(id => !known.has(id));
+  if (added.length && state.settings.decks) state.settings.decks.push(...added);
+  if (added.length && state.settings.examDecks) state.settings.examDecks.push(...added);
+  state.settings.knownDecks = DATA.decks.map(d => d.id);
   if (state.settings.examDecks) state.settings.examDecks = state.settings.examDecks.filter(id => deckById[id]);
 
   const loaded = await Promise.all(DOCS.map(d =>
@@ -1333,6 +1364,7 @@ async function init() {
   game();
   route();
   document.getElementById('info').addEventListener('click', showWelcome);
+  document.getElementById('settings').addEventListener('click', showSettings);
   if ((state.settings.welcomeSeen || 0) < WELCOME_VERSION) showWelcome();
   else showChangesIfNew();
 
@@ -1857,16 +1889,7 @@ function renderTeczka() {
     h('h3', {}, 'Stopnie'),
     h('div', { class: 'ranks' }, RANKS.map(([p, n], i) => h('div', { class: i === r ? 'on' : i < r ? 'past' : '' }, h('span', {}, n), h('span', { class: 'muted' }, `${p} pkt`))))));
 
-  // Ustawienia i kopia
-  $app.append(h('section', { class: 'card' },
-    h('h2', { style: 'margin-top:0' }, 'Wygląd'),
-    sizeLikePicker([['auto', 'Auto'], ['light', '☀️ Jasny'], ['dark', '🌙 Ciemny']], state.settings.theme || 'auto', v => {
-      state.settings.theme = v === 'auto' ? null : v; save(); applyTheme(); renderTeczka();
-    }),
-    h('h2', {}, 'Kopia postępu'),
-    h('p', { class: 'small muted', style: 'margin-top:0' }, 'Zapisz postęp do pliku, żeby przenieść go na inny telefon albo nie stracić go po wyczyszczeniu przeglądarki.'),
-    h('div', { class: 'row' }, btn('💾 Eksportuj', '', exportProgress), btn('📂 Importuj', '', importProgress))));
-  $app.append(btn('📰 Historia zmian', 'ghost', showChangelog));
+  $app.append(h('p', { class: 'small muted', style: 'text-align:center' }, 'Wygląd, kopia postępu i historia zmian: ⚙️ w nagłówku.'));
 }
 
 function stat(icon, value, label) {
@@ -1883,6 +1906,12 @@ function sizeLikePicker(pairs, current, onPick) {
 
 // Przy każdej aktualizacji: dopisz wpis NA POCZĄTKU listy, z numerem = numer CACHE w service-worker.js.
 const CHANGELOG = [
+  { v: 15, date: '10.11.2026', items: [
+    '⚙️ Ustawienia – trybik obok INFO: motyw, kopia postępu i historia zmian.',
+    'Tematy na ekranie Nauka są teraz rozwijane, z przyciskami „Zaznacz/Odznacz wszystkie”.',
+    'Nowe talie: „Umundurowanie i należności mundurowe” oraz „Historia więziennictwa i standardy” (ERW).',
+    'Pragmatyka: ceremoniał, czas służby, podróże, urlopy, nagrody, stopnie – 47 nowych fiszek łącznie.',
+    'Ponad 30 pytań z przeczeniem („NIE”, „fałszywe”) i 16 pytań sformułowanych inaczej.'] },
   { v: 14, date: '10.11.2026', items: [
     'Okno „Co nowego” – po każdej aktualizacji zobaczysz krótko, co się zmieniło.',
     'Historia zmian jest też w Teczce, na samym dole.'] },
@@ -1922,6 +1951,28 @@ function showChangesIfNew() {
   if (fresh.length) changelogBox(fresh, 'Co nowego?');
 }
 
+function showSettings() {
+  document.querySelector('.modal.settings')?.remove();
+  const box = h('div', { class: 'modal settings', role: 'dialog', 'aria-modal': 'true', 'aria-labelledby': 'settings-title' });
+  const close = () => box.remove();
+  box.addEventListener('click', e => { if (e.target === box) close(); });
+  box.append(h('div', { class: 'card modal-card settings-card' },
+    h('div', { class: 'settings-head' }, h('h2', { id: 'settings-title' }, '⚙️ Ustawienia'),
+      h('button', { type: 'button', class: 'close-x', 'aria-label': 'Zamknij', onclick: close }, '✕')),
+    h('h3', {}, 'Wygląd'),
+    sizeLikePicker([['auto', 'Auto'], ['light', '☀️ Jasny'], ['dark', '🌙 Ciemny']], state.settings.theme || 'auto', v => {
+      state.settings.theme = v === 'auto' ? null : v; save(); applyTheme(); showSettings();
+    }),
+    h('h3', {}, 'Historia zmian'),
+    h('p', { class: 'small muted', style: 'margin-top:0' }, `Wersja aplikacji: ${APP_VERSION}`),
+    btn('📰 Pokaż historię zmian', '', () => { close(); showChangelog(); }),
+    h('h3', {}, 'Kopia postępu'),
+    h('p', { class: 'small muted', style: 'margin-top:0' }, 'Zapisz postęp do pliku, żeby przenieść go na inny telefon albo nie stracić go po wyczyszczeniu przeglądarki.'),
+    h('div', { class: 'row' }, btn('💾 Eksportuj', '', exportProgress), btn('📂 Importuj', '', () => { close(); importProgress(); })),
+    btn('Zamknij', 'primary', close)));
+  document.body.append(box);
+}
+
 function showChangelog() {
   changelogBox(CHANGELOG, 'Historia zmian');
 }
@@ -1947,7 +1998,8 @@ function showWelcome() {
         li('Egzamin próbny', 'jak prawdziwy: zegar tyka, wynik dopiero na końcu.'),
         li('Trudne', 'cela przejściowa dla pytań, na których się wyłożyłeś.'),
         li('Czytaj', 'skrypty z cytatami do wkucia, z wyszukiwarką.'),
-        li('Teczka', 'stopień, odznaki, seria dni nauki i odliczanie do egzaminu.')),
+        li('Teczka', 'stopień, odznaki, seria dni nauki i odliczanie do egzaminu.'),
+        li('⚙️ Ustawienia', 'trybik w nagłówku: motyw jasny/ciemny, kopia postępu, historia zmian.')),
       h('p', {}, h('strong', {}, '⭐ Zasada służby: '), 'codziennie trochę. Za systematyczność są punkty, awanse i odznaki. Za przerwy jest tylko wstyd przed samym sobą (ewentualnie przed dowódcą zmiany).'),
       h('p', {}, h('strong', {}, '⚠️ Pouczenie: '), 'aplikacja nie zastępuje ustawy ani prowadzącego. W razie sporu wygrywa aktualny tekst przepisów. Aplikacja przyjmuje to z godnością.'),
       h('h3', {}, '🍫 Wsparcie twórcy'),

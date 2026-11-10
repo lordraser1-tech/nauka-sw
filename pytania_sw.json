@@ -1,7 +1,7 @@
 {
  "meta": {
   "tytul": "Szkolenie chorążych SW – baza do nauki",
-  "wersja": 6,
+  "wersja": 7,
   "data": "2026-11-09",
   "zrodla": "Ustawa o ŚPB (Dz.U. 2026 poz. 244), ustawa o SW (Dz.U. 2025 poz. 1750), kkw (Dz.U. 2025 poz. 911), rozporządzenie o oddziaływaniach penitencjarnych (Dz.U. 2024 poz. 1344), rozporządzenie o ośrodkach diagnostycznych (Dz.U. 2023 poz. 1677), rozporządzenie o ochronie jednostek SW (Dz.U. 2016 poz. 1804); materiały kursu: pytania kontrolne (psycholodzy 1–29, penitencjarne 28–53), lista 124 pytań, SPECJALIZACJA_2 (77 zagadnień), Skrypt SW V15",
   "typy": {
@@ -85,6 +85,16 @@
   {
    "id": "stanowiska",
    "name": "Stanowiska ochronne (zarządzenie 30/25)",
+   "czesc": "unitarna"
+  },
+  {
+   "id": "kwatermistrz",
+   "name": "Umundurowanie i należności mundurowe",
+   "czesc": "unitarna"
+  },
+  {
+   "id": "historia",
+   "name": "Historia więziennictwa i standardy międzynarodowe",
    "czesc": "unitarna"
   }
  ],
@@ -675,7 +685,8 @@
    ],
    "answer": 1,
    "explanation": "Art. 26 ust. 2.",
-   "source": "art. 26 ustawy o ŚPB"
+   "source": "art. 26 ustawy o ŚPB",
+   "grupa": "cela-zab-48"
   },
   {
    "id": "spb-m03",
@@ -3243,7 +3254,8 @@
    ],
    "answer": 0,
    "explanation": "Art. 81 KKW.",
-   "source": "art. 81 KKW"
+   "source": "art. 81 KKW",
+   "grupa": "systemy-81"
   },
   {
    "id": "kkw-m22",
@@ -3681,7 +3693,8 @@
    ],
    "answer": 3,
    "explanation": "14 dni roboczych.",
-   "source": "KKW; lista pytań 33"
+   "source": "KKW; lista pytań 33",
+   "grupa": "urlop-skazanego"
   },
   {
    "id": "kkw-m49",
@@ -3923,7 +3936,8 @@
    ],
    "answer": 2,
    "explanation": "Do 3. roku życia.",
-   "source": "art. 87 KKW"
+   "source": "art. 87 KKW",
+   "grupa": "dom-matki-3"
   },
   {
    "id": "kkw-m64",
@@ -3971,7 +3985,8 @@
    ],
    "answer": 2,
    "explanation": "Najpóźniej w 28. tygodniu.",
-   "source": "KKW; Skrypt SW"
+   "source": "KKW; Skrypt SW",
+   "grupa": "ciaza-28"
   },
   {
    "id": "kkw-m67",
@@ -3987,7 +4002,8 @@
    ],
    "answer": 0,
    "explanation": "7% (wg listy pytań).",
-   "source": "KKW; lista pytań 23"
+   "source": "KKW; lista pytań 23",
+   "grupa": "fundusz-7"
   },
   {
    "id": "kkw-m68",
@@ -4679,7 +4695,8 @@
    ],
    "answer": 0,
    "explanation": "Lista pytań 71.",
-   "source": "lista pytań 71"
+   "source": "lista pytań 71",
+   "grupa": "pora-dzienna"
   },
   {
    "id": "ochrona-m12",
@@ -4728,7 +4745,8 @@
    ],
    "answer": 2,
    "explanation": "Maks. 3 i nie razem z osadzonymi bez statusu N.",
-   "source": "zarządzenie 30/2025"
+   "source": "zarządzenie 30/2025",
+   "grupa": "n-w-celi"
   },
   {
    "id": "ochrona-m15",
@@ -4760,7 +4778,8 @@
    ],
    "answer": 0,
    "explanation": "Kierownik DO, w 2 egzemplarzach.",
-   "source": "zarządzenie 30/2025 § 118"
+   "source": "zarządzenie 30/2025 § 118",
+   "grupa": "karta-n"
   },
   {
    "id": "ochrona-m17",
@@ -5210,7 +5229,8 @@
    ],
    "answer": 1,
    "explanation": "Ustawa z 24 maja 2013 r. (t.j. Dz.U. 2026 poz. 244).",
-   "source": "ustawa o ŚPB"
+   "source": "ustawa o ŚPB",
+   "grupa": "ustawa-spb-data"
   },
   {
    "id": "spb-m13",
@@ -5551,7 +5571,8 @@
    ],
    "answer": 3,
    "explanation": "P99 – 15 nabojów, 9×19.",
-   "source": "Skrypt SW"
+   "source": "Skrypt SW",
+   "grupa": "walther-15"
   },
   {
    "id": "bron-m07",
@@ -5663,7 +5684,8 @@
    ],
    "answer": 2,
    "explanation": "Wytyczne ERC.",
-   "source": "Wytyczne ERC 2025"
+   "source": "Wytyczne ERC 2025",
+   "grupa": "rko-30-2"
   },
   {
    "id": "pp-m02",
@@ -5888,7 +5910,8 @@
    ],
    "answer": 1,
    "explanation": "Może być przedłużona.",
-   "source": "ustawa o SW"
+   "source": "ustawa o SW",
+   "grupa": "sluzba-przyg"
   },
   {
    "id": "pragmatyka-m04",
@@ -5904,7 +5927,8 @@
    ],
    "answer": 0,
    "explanation": "Nagana 12, ostrzeżenie 18, niższe stanowisko/stopień 24 miesiące.",
-   "source": "ustawa o SW; Skrypt SW"
+   "source": "ustawa o SW; Skrypt SW",
+   "grupa": "zatarcie-nagany"
   },
   {
    "id": "pragmatyka-m05",
@@ -6032,7 +6056,8 @@
    ],
    "answer": 3,
    "explanation": "45 zł.",
-   "source": "lista pytań 95"
+   "source": "lista pytań 95",
+   "grupa": "dieta-45"
   },
   {
    "id": "pragmatyka-m13",
@@ -6064,7 +6089,8 @@
    ],
    "answer": 1,
    "explanation": "Art. 35 EKPC (obecnie 4 miesiące).",
-   "source": "art. 35 EKPC"
+   "source": "art. 35 EKPC",
+   "grupa": "etpc-4"
   },
   {
    "id": "pragmatyka-m15",
@@ -9250,6 +9276,1975 @@
    "explanation": "W uzasadnionych stanem zdrowia przypadkach może uczestniczyć służba zdrowia.",
    "source": "wykład „Bezpieczeństwo” (25–26.08.2025)",
    "tag": "zarz-30-25"
+  },
+  {
+   "id": "kwatermistrz-f01",
+   "deck": "kwatermistrz",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Rok mundurowy – od kiedy do kiedy?",
+   "back": "Od 1 kwietnia danego roku do 31 marca roku następnego.",
+   "source": "rozporządzenie MS w sprawie umundurowania i wyposażenia polowego funkcjonariuszy SW (t.j. Dz.U. 2026 poz. 381)",
+   "tag": "v15"
+  },
+  {
+   "id": "kwatermistrz-f02",
+   "deck": "kwatermistrz",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Równoważnik za umundurowanie i za czyszczenie chemiczne – kiedy powstaje prawo i kiedy wypłata?",
+   "back": "Prawo do obu równoważników powstaje 1 kwietnia. Wypłata – w terminie do 60 dni od dnia powstania uprawnienia.",
+   "source": "rozporządzenie MS z 9.02.2011 r. w sprawie równoważnika za umundurowanie i czyszczenie chemiczne; art. 156 ustawy o SW",
+   "tag": "v15"
+  },
+  {
+   "id": "kwatermistrz-f03",
+   "deck": "kwatermistrz",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Pierwsza należność mundurowa – kiedy i w jakiej formie?",
+   "back": "Prawo do bezpłatnego umundurowania funkcjonariusz nabywa z chwilą nawiązania stosunku służbowego. Podstawowa forma: wydanie gotowych składników umundurowania.",
+   "source": "rozporządzenie MS w sprawie umundurowania i wyposażenia polowego funkcjonariuszy SW (t.j. Dz.U. 2026 poz. 381); art. 155 ustawy o SW",
+   "tag": "v15"
+  },
+  {
+   "id": "kwatermistrz-f04",
+   "deck": "kwatermistrz",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Formy realizacji prawa do umundurowania (4)",
+   "back": "1) wydanie gotowych składników, 2) wydanie materiału, oznak służby i zwrot kosztów szycia oraz dodatków krawieckich, 3) wypłata równowartości pieniężnej, 4) równoważnik pieniężny w zamian za umundurowanie.",
+   "source": "rozporządzenie MS w sprawie umundurowania i wyposażenia polowego funkcjonariuszy SW (t.j. Dz.U. 2026 poz. 381)",
+   "tag": "v15"
+  },
+  {
+   "id": "kwatermistrz-f05",
+   "deck": "kwatermistrz",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Kiedy umundurowanie staje się własnością funkcjonariusza? Od kiedy liczy się okres użytkowania?",
+   "back": "Własność – z chwilą mianowania do służby stałej. Okres użytkowania liczy się od dnia wydania przedmiotu do użytku.",
+   "source": "rozporządzenie MS w sprawie umundurowania i wyposażenia polowego funkcjonariuszy SW (t.j. Dz.U. 2026 poz. 381)",
+   "tag": "v15"
+  },
+  {
+   "id": "kwatermistrz-f06",
+   "deck": "kwatermistrz",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Apel mundurowy – jak często i czemu podlega?",
+   "back": "Nie rzadziej niż raz na dwa lata. Podlegają mu umundurowanie i wyposażenie polowe.",
+   "source": "rozporządzenie MS w sprawie umundurowania i wyposażenia polowego funkcjonariuszy SW (t.j. Dz.U. 2026 poz. 381)",
+   "tag": "v15"
+  },
+  {
+   "id": "kwatermistrz-f07",
+   "deck": "kwatermistrz",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Podział umundurowania i formy wyposażenia polowego",
+   "back": "Umundurowanie: służbowe i wyjściowe. Wyposażenie polowe wydaje się w formie gotowych składników; mogą być wydane składniki używane – po ocenie ich wartości użytkowej.",
+   "source": "rozporządzenie MS w sprawie umundurowania i wyposażenia polowego funkcjonariuszy SW (t.j. Dz.U. 2026 poz. 381)",
+   "tag": "v15"
+  },
+  {
+   "id": "kwatermistrz-f08",
+   "deck": "kwatermistrz",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Kto ma prawo do wyposażenia polowego specjalnego? (wg pytań źródłowych)",
+   "back": "Każdy funkcjonariusz działu kwatermistrzowskiego oraz uczestnicy kursu przygotowawczego i szkolenia zawodowego – z wyłączeniem specjalizacji ochronnej i kwatermistrzowskiej. Wyposażenie interwencyjne noszą tylko ci, którzy mają do niego prawo (m.in. GISW).",
+   "source": "rozporządzenie MS w sprawie umundurowania i wyposażenia polowego funkcjonariuszy SW (t.j. Dz.U. 2026 poz. 381)",
+   "tag": "v15"
+  },
+  {
+   "id": "kwatermistrz-f09",
+   "deck": "kwatermistrz",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Peleryna specjalna i plecak szkolny specjalny – kto i od kogo?",
+   "back": "Pelerynę specjalną funkcjonariusz otrzymuje od dowódcy zmiany na czas służby w wymagających tego warunkach atmosferycznych. Plecak szkolny specjalny – tylko uczestnicy kursu przygotowawczego i szkolenia zawodowego.",
+   "source": "rozporządzenie MS w sprawie umundurowania i wyposażenia polowego funkcjonariuszy SW (t.j. Dz.U. 2026 poz. 381)",
+   "tag": "v15"
+  },
+  {
+   "id": "kwatermistrz-f10",
+   "deck": "kwatermistrz",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Łączenie munduru z ubiorem cywilnym, biżuteria, torba",
+   "back": "Nie wolno łączyć umundurowania ani wyposażenia polowego z ubiorem cywilnym – poza składnikami wskazanymi w rozporządzeniu. Drobna biżuteria (kolczyki, pierścionki, obrączki) – dozwolona. Na uroczystości w mundurze nie nosi się torby na ramię.",
+   "source": "rozporządzenie MS w sprawie umundurowania i wyposażenia polowego funkcjonariuszy SW (t.j. Dz.U. 2026 poz. 381)",
+   "tag": "v15"
+  },
+  {
+   "id": "kwatermistrz-f11",
+   "deck": "kwatermistrz",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Szczegóły munduru: krawat, oznaka służby, naramienniki, rajstopy",
+   "back": "Krawat – dolna krawędź ścięcia na linii pasa spodni lub spódnicy. Oznaka służby – na prawym rękawie koszuli służbowej i kurtki całorocznej. Naramienniki na białej koszuli wyjściowej letniej – niebieskie. Rajstopy – gładkie, cieliste, 15–20 den.",
+   "source": "rozporządzenie MS w sprawie umundurowania i wyposażenia polowego funkcjonariuszy SW (t.j. Dz.U. 2026 poz. 381)",
+   "tag": "v15"
+  },
+  {
+   "id": "kwatermistrz-f12",
+   "deck": "kwatermistrz",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Wyposażenie polowe specjalne – jak nosi się kurtkę, bluzę i koszulkę?",
+   "back": "Kurtka specjalna – okrycie wierzchnie, zawsze zapięta. Bluza specjalna – zapięta albo rozpięta; może być okryciem wierzchnim, można na nią założyć kurtkę specjalną. Koszulka (T-shirt) specjalna – do spodni specjalnych, pod bluzą/koszulą albo jako okrycie wierzchnie.",
+   "source": "rozporządzenie MS w sprawie umundurowania i wyposażenia polowego funkcjonariuszy SW (t.j. Dz.U. 2026 poz. 381), zał. nr 5",
+   "tag": "v15"
+  },
+  {
+   "id": "kwatermistrz-f13",
+   "deck": "kwatermistrz",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Kto jest zwolniony z noszenia umundurowania przy wykonywaniu obowiązków?",
+   "back": "M.in. funkcjonariusze służby zdrowia oraz funkcjonariusze działu penitencjarnego podczas zajęć terapeutycznych.",
+   "source": "rozporządzenie MS w sprawie umundurowania i wyposażenia polowego funkcjonariuszy SW (t.j. Dz.U. 2026 poz. 381)",
+   "tag": "v15"
+  },
+  {
+   "id": "kwatermistrz-f14",
+   "deck": "kwatermistrz",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Podstawa prawna umundurowania i równoważników",
+   "back": "Ustawa o SW: art. 155 (umundurowanie), art. 156 (równoważnik). Rozporządzenie MS w sprawie umundurowania i wyposażenia polowego (t.j. Dz.U. 2026 poz. 381) – § 11, zał. nr 1 i 5. Rozporządzenie MS z 9.02.2011 r. o równoważnikach.",
+   "source": "rozporządzenie MS w sprawie umundurowania i wyposażenia polowego funkcjonariuszy SW (t.j. Dz.U. 2026 poz. 381)",
+   "tag": "v15"
+  },
+  {
+   "id": "kwatermistrz-m01",
+   "deck": "kwatermistrz",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Rok mundurowy rozpoczyna się:",
+   "options": [
+    "1 października",
+    "1 kwietnia",
+    "1 stycznia",
+    "1 lipca"
+   ],
+   "answer": 1,
+   "explanation": "Trwa od 1 kwietnia do 31 marca następnego roku.",
+   "source": "rozporządzenie MS w sprawie umundurowania i wyposażenia polowego funkcjonariuszy SW (t.j. Dz.U. 2026 poz. 381)",
+   "tag": "v15"
+  },
+  {
+   "id": "kwatermistrz-m02",
+   "deck": "kwatermistrz",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Prawo do równoważnika pieniężnego w zamian za umundurowanie powstaje:",
+   "options": [
+    "w dniu urodzin funkcjonariusza",
+    "z dniem mianowania do służby stałej",
+    "1 kwietnia",
+    "1 stycznia"
+   ],
+   "answer": 2,
+   "explanation": "Prawo do obu równoważników powstaje 1 kwietnia.",
+   "source": "rozporządzenie MS z 9.02.2011 r. w sprawie równoważnika za umundurowanie i czyszczenie chemiczne; art. 156 ustawy o SW",
+   "tag": "v15"
+  },
+  {
+   "id": "kwatermistrz-m03",
+   "deck": "kwatermistrz",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Równoważnik za umundurowanie wypłaca się w terminie do:",
+   "options": [
+    "końca roku kalendarzowego",
+    "14 dni od powstania uprawnienia",
+    "30 dni od powstania uprawnienia",
+    "60 dni od powstania uprawnienia"
+   ],
+   "answer": 3,
+   "explanation": "60 dni.",
+   "source": "rozporządzenie MS z 9.02.2011 r. w sprawie równoważnika za umundurowanie i czyszczenie chemiczne; art. 156 ustawy o SW",
+   "tag": "v15"
+  },
+  {
+   "id": "kwatermistrz-m04",
+   "deck": "kwatermistrz",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Umundurowanie staje się własnością funkcjonariusza:",
+   "options": [
+    "po 2 latach służby przygotowawczej, bez względu na mianowanie",
+    "po upływie okresu użytkowania",
+    "z chwilą mianowania do służby stałej",
+    "z chwilą wydania"
+   ],
+   "answer": 2,
+   "explanation": "Z chwilą mianowania do służby stałej.",
+   "source": "rozporządzenie MS w sprawie umundurowania i wyposażenia polowego funkcjonariuszy SW (t.j. Dz.U. 2026 poz. 381)",
+   "tag": "v15"
+  },
+  {
+   "id": "kwatermistrz-m05",
+   "deck": "kwatermistrz",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Apel mundurowy przeprowadza się:",
+   "options": [
+    "raz na trzy lata",
+    "nie rzadziej niż raz na dwa lata",
+    "co najmniej raz w roku",
+    "co pół roku"
+   ],
+   "answer": 1,
+   "explanation": "Nie rzadziej niż raz na dwa lata.",
+   "source": "rozporządzenie MS w sprawie umundurowania i wyposażenia polowego funkcjonariuszy SW (t.j. Dz.U. 2026 poz. 381)",
+   "tag": "v15"
+  },
+  {
+   "id": "kwatermistrz-m06",
+   "deck": "kwatermistrz",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Okres użytkowania przedmiotów umundurowania liczy się od:",
+   "options": [
+    "dnia zakupu przez magazyn",
+    "dnia mianowania do służby stałej",
+    "dnia wydania przedmiotu do użytku",
+    "początku roku mundurowego"
+   ],
+   "answer": 2,
+   "explanation": "Od dnia wydania do użytku.",
+   "source": "rozporządzenie MS w sprawie umundurowania i wyposażenia polowego funkcjonariuszy SW (t.j. Dz.U. 2026 poz. 381)",
+   "tag": "v15"
+  },
+  {
+   "id": "kwatermistrz-m07",
+   "deck": "kwatermistrz",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Podstawową formą realizacji pierwszej należności mundurowej jest:",
+   "options": [
+    "bon do sklepu mundurowego",
+    "wydanie materiału i zwrot kosztów szycia",
+    "wydanie gotowych składników umundurowania",
+    "wypłata równoważnika pieniężnego"
+   ],
+   "answer": 2,
+   "explanation": "Gotowe składniki.",
+   "source": "rozporządzenie MS w sprawie umundurowania i wyposażenia polowego funkcjonariuszy SW (t.j. Dz.U. 2026 poz. 381)",
+   "tag": "v15"
+  },
+  {
+   "id": "kwatermistrz-m08",
+   "deck": "kwatermistrz",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Która z form NIE jest formą realizacji prawa do umundurowania?",
+   "options": [
+    "wypłata równowartości pieniężnej",
+    "wydanie gotowych składników",
+    "bon towarowy do dowolnego sklepu odzieżowego",
+    "wydanie materiału i zwrot kosztów szycia"
+   ],
+   "answer": 2,
+   "explanation": "Formy: gotowe składniki; materiał + zwrot kosztów szycia; równowartość pieniężna; równoważnik.",
+   "source": "rozporządzenie MS w sprawie umundurowania i wyposażenia polowego funkcjonariuszy SW (t.j. Dz.U. 2026 poz. 381)",
+   "tag": "v15"
+  },
+  {
+   "id": "kwatermistrz-m09",
+   "deck": "kwatermistrz",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Pelerynę specjalną funkcjonariusz otrzymuje:",
+   "options": [
+    "tylko na kursie przygotowawczym",
+    "jako pierwszą należność mundurową",
+    "od dowódcy zmiany na czas służby w złych warunkach atmosferycznych",
+    "od kierownika działu kwatermistrzowskiego na cały rok mundurowy"
+   ],
+   "answer": 2,
+   "explanation": "Od dowódcy zmiany – na czas służby.",
+   "source": "rozporządzenie MS w sprawie umundurowania i wyposażenia polowego funkcjonariuszy SW (t.j. Dz.U. 2026 poz. 381)",
+   "tag": "v15"
+  },
+  {
+   "id": "kwatermistrz-m10",
+   "deck": "kwatermistrz",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Plecak szkolny specjalny otrzymują:",
+   "options": [
+    "wykładowcy ośrodków szkolenia",
+    "tylko uczestnicy kursu przygotowawczego i szkolenia zawodowego",
+    "funkcjonariusze GISW",
+    "wszyscy funkcjonariusze działu ochrony"
+   ],
+   "answer": 1,
+   "explanation": "Tylko uczestnicy kursu przygotowawczego i szkolenia zawodowego.",
+   "source": "rozporządzenie MS w sprawie umundurowania i wyposażenia polowego funkcjonariuszy SW (t.j. Dz.U. 2026 poz. 381)",
+   "tag": "v15"
+  },
+  {
+   "id": "kwatermistrz-m11",
+   "deck": "kwatermistrz",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Czego funkcjonariusz w mundurze NIE może nosić podczas uroczystości?",
+   "options": [
+    "torby na ramię",
+    "obrączki",
+    "pierścionka",
+    "drobnych kolczyków"
+   ],
+   "answer": 0,
+   "explanation": "Drobna biżuteria jest dozwolona; torba na ramię podczas uroczystości – nie.",
+   "source": "rozporządzenie MS w sprawie umundurowania i wyposażenia polowego funkcjonariuszy SW (t.j. Dz.U. 2026 poz. 381)",
+   "tag": "v15"
+  },
+  {
+   "id": "kwatermistrz-m12",
+   "deck": "kwatermistrz",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Dolna krawędź ścięcia krawata powinna sięgać:",
+   "options": [
+    "połowy klamry pasa",
+    "linii pasa spodni lub spódnicy",
+    "dwa palce powyżej pasa",
+    "do dolnego guzika koszuli"
+   ],
+   "answer": 1,
+   "explanation": "Na linii pasa.",
+   "source": "rozporządzenie MS w sprawie umundurowania i wyposażenia polowego funkcjonariuszy SW (t.j. Dz.U. 2026 poz. 381)",
+   "tag": "v15"
+  },
+  {
+   "id": "kwatermistrz-m13",
+   "deck": "kwatermistrz",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Rajstopy kobiety-funkcjonariusza do umundurowania służbowego i wyjściowego to:",
+   "options": [
+    "gładkie, cieliste, 15–20 den",
+    "dowolne w kolorze cielistym",
+    "czarne, 40 den",
+    "cieliste, wzorzyste, 20–30 den"
+   ],
+   "answer": 0,
+   "explanation": "Gładkie cieliste 15–20 den.",
+   "source": "rozporządzenie MS w sprawie umundurowania i wyposażenia polowego funkcjonariuszy SW (t.j. Dz.U. 2026 poz. 381)",
+   "tag": "v15"
+  },
+  {
+   "id": "kwatermistrz-m14",
+   "deck": "kwatermistrz",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Naramienniki na białej koszuli wyjściowej letniej są:",
+   "options": [
+    "białe",
+    "granatowe ze złotym otokiem",
+    "niebieskie",
+    "zielone"
+   ],
+   "answer": 2,
+   "explanation": "Niebieskie.",
+   "source": "rozporządzenie MS w sprawie umundurowania i wyposażenia polowego funkcjonariuszy SW (t.j. Dz.U. 2026 poz. 381)",
+   "tag": "v15"
+  },
+  {
+   "id": "kwatermistrz-m15",
+   "deck": "kwatermistrz",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Prawda czy fałsz: kurtkę specjalną nosi się podczas zadań służbowych w formie rozpiętej.",
+   "options": [
+    "Prawda",
+    "Fałsz"
+   ],
+   "answer": 1,
+   "explanation": "Fałsz – kurtka specjalna zawsze zapięta; rozpięta może być bluza specjalna.",
+   "source": "rozporządzenie MS w sprawie umundurowania i wyposażenia polowego funkcjonariuszy SW (t.j. Dz.U. 2026 poz. 381)",
+   "tag": "v15"
+  },
+  {
+   "id": "kwatermistrz-m16",
+   "deck": "kwatermistrz",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Prawda czy fałsz: elementy umundurowania można łączyć z dowolnym ubiorem cywilnym poza terenem jednostki.",
+   "options": [
+    "Prawda",
+    "Fałsz"
+   ],
+   "answer": 1,
+   "explanation": "Fałsz – tylko ze składnikami cywilnymi wskazanymi w rozporządzeniu.",
+   "source": "rozporządzenie MS w sprawie umundurowania i wyposażenia polowego funkcjonariuszy SW (t.j. Dz.U. 2026 poz. 381)",
+   "tag": "v15"
+  },
+  {
+   "id": "kwatermistrz-m17",
+   "deck": "kwatermistrz",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Prawda czy fałsz: rok mundurowy kończy się 31 marca.",
+   "options": [
+    "Prawda",
+    "Fałsz"
+   ],
+   "answer": 0,
+   "explanation": "Prawda – trwa od 1 kwietnia do 31 marca.",
+   "source": "rozporządzenie MS w sprawie umundurowania i wyposażenia polowego funkcjonariuszy SW (t.j. Dz.U. 2026 poz. 381)",
+   "tag": "v15"
+  },
+  {
+   "id": "historia-f01",
+   "deck": "historia",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Europejskie Reguły Więzienne – czym są?",
+   "back": "Rekomendacja Komitetu Ministrów Rady Europy Rec(2006)2 (zrewidowana w 2020 r.). Każde pozbawienie wolności prowadzi się tak, by ułatwić reintegrację w wolnym społeczeństwie.",
+   "source": "Europejskie Reguły Więzienne – Rec(2006)2-rev Komitetu Ministrów RE (wersja 2020)",
+   "tag": "v15"
+  },
+  {
+   "id": "historia-f02",
+   "deck": "historia",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "ERW – warunki osadzenia (najważniejsze)",
+   "back": "Brak środków nie usprawiedliwia warunków naruszających prawa człowieka (reg. 4). Zabezpieczenia jak najmniej restrykcyjne, odpowiednie do ryzyka. W nocy cele pojedyncze, chyba że wspólne zamieszkanie jest korzystne. Okna pozwalające czytać przy świetle naturalnym i wpuszczające świeże powietrze (reg. 18.2). Tymczasowo aresztowani oddzielnie od skazanych. Trzy posiłki dziennie.",
+   "source": "Europejskie Reguły Więzienne – Rec(2006)2-rev Komitetu Ministrów RE (wersja 2020)",
+   "tag": "v15"
+  },
+  {
+   "id": "historia-f03",
+   "deck": "historia",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "ERW – kary, kontakty, personel",
+   "back": "Nie karze się dwa razy za ten sam czyn. Kara nie może zawierać całkowitego zakazu kontaktów z rodziną. Informację o śmierci lub ciężkiej chorobie bliskiego przekazuje się niezwłocznie. Praca więźniów – pozytywny element; pracujący objęci ubezpieczeniem społecznym, jak tylko to możliwe. Spory – w miarę możliwości mediacją. Personel – na pełnych etatach, szkolony i egzaminowany przed podjęciem obowiązków.",
+   "source": "Europejskie Reguły Więzienne – Rec(2006)2-rev Komitetu Ministrów RE (wersja 2020)",
+   "tag": "v15"
+  },
+  {
+   "id": "historia-f04",
+   "deck": "historia",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Standardy ONZ i Rady Europy",
+   "back": "ONZ: Powszechna Deklaracja Praw Człowieka (10.12.1948), MPPOiP (1966), Konwencja przeciwko torturom (1984), Reguły Mandeli. Rada Europy: EKPC, ERW, Europejska konwencja o zapobieganiu torturom – niesądowy mechanizm wizytacji przez CPT.",
+   "source": "Skrypt SW (opracowanie pytań źródłowych)",
+   "tag": "v15"
+  },
+  {
+   "id": "historia-f05",
+   "deck": "historia",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Straż Więzienna 1918–1939",
+   "back": "Nazwa obowiązywała w latach 1918–1939; podlegała Ministerstwu Sprawiedliwości. Dekret o „Tymczasowych przepisach więziennych” – 7/8 lutego 1919 r. Na czapkach orzeł w koronie; mundury 1932–1939 granatowe. Jedyne więzienie ciężkie – Święty Krzyż. Czasopismo: „Przegląd Więziennictwa Polskiego”.",
+   "source": "materiał historyczny SW (Skrypt SW)",
+   "tag": "v15"
+  },
+  {
+   "id": "historia-f06",
+   "deck": "historia",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Po 1944 r. – najważniejsze daty",
+   "back": "1949 – pierwsza Centralna Szkoła Straży Więziennej (wg materiałów: Bartoszyce). 1954 – zmiana nazwy na Służba Więzienna; najniższy stopień – strażnik. Największa liczba buntów w PRL – 1981 r.; najpoważniejszy bunt – Czarne, grudzień 1989. Po 1989 r. na czele SW – Paweł Moczydłowski.",
+   "source": "materiał historyczny SW (Skrypt SW)",
+   "tag": "v15"
+  },
+  {
+   "id": "historia-f07",
+   "deck": "historia",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Ciekawostki z historii więziennictwa",
+   "back": "„Klawisz” – od łac. clavis (klucz). Najstarsze i najdłużej działające więzienie – Nowy Wiśnicz. Pierwszy całościowy system penitencjarny – system celkowy. Zygmunt Bugajski – penitencjarysta zamordowany w Katyniu. Gen. August Emil Fieldorf „Nil” – zamordowany w więzieniu na Mokotowie. Największy AŚ z PRL – Warszawa-Białołęka.",
+   "source": "materiał historyczny SW (Skrypt SW)",
+   "tag": "v15"
+  },
+  {
+   "id": "historia-m01",
+   "deck": "historia",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Europejskie Reguły Więzienne to rekomendacja:",
+   "options": [
+    "Europejskiego Trybunału Praw Człowieka",
+    "Parlamentu Europejskiego",
+    "Zgromadzenia Ogólnego ONZ",
+    "Komitetu Ministrów Rady Europy"
+   ],
+   "answer": 3,
+   "explanation": "Rec(2006)2, zrewidowana w 2020 r.",
+   "source": "Europejskie Reguły Więzienne – Rec(2006)2-rev Komitetu Ministrów RE (wersja 2020)",
+   "tag": "v15"
+  },
+  {
+   "id": "historia-m02",
+   "deck": "historia",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Według ERW brak środków finansowych:",
+   "options": [
+    "uzasadnia przeludnienie do 3 miesięcy",
+    "uzasadnia czasowe obniżenie standardów",
+    "nie uzasadnia warunków naruszających prawa człowieka więźniów",
+    "zwalnia administrację z obowiązku zapewnienia posiłków"
+   ],
+   "answer": 2,
+   "explanation": "Reguła 4 ERW.",
+   "source": "Europejskie Reguły Więzienne – Rec(2006)2-rev Komitetu Ministrów RE (wersja 2020)",
+   "tag": "v15"
+  },
+  {
+   "id": "historia-m03",
+   "deck": "historia",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Które zalecenie NIE wynika z Europejskich Reguł Więziennych?",
+   "options": [
+    "więźniów nie karze się dwa razy za ten sam czyn",
+    "tymczasowo aresztowanych osadza się oddzielnie od skazanych",
+    "kara dyscyplinarna może polegać na całkowitym zakazie kontaktów z rodziną",
+    "więźniowie otrzymują trzy posiłki dziennie"
+   ],
+   "answer": 2,
+   "explanation": "ERW: kara nie zawiera całkowitego zakazu kontaktów z rodziną.",
+   "source": "Europejskie Reguły Więzienne – Rec(2006)2-rev Komitetu Ministrów RE (wersja 2020)",
+   "tag": "v15"
+  },
+  {
+   "id": "historia-m04",
+   "deck": "historia",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Wskaż zdanie FAŁSZYWE o Europejskich Regułach Więziennych:",
+   "options": [
+    "okna mają pozwalać na czytanie przy świetle naturalnym",
+    "więźniowie w nocy przebywają zawsze w celach wieloosobowych",
+    "informację o śmierci bliskiego krewnego przekazuje się więźniowi niezwłocznie",
+    "więźniów rozmieszcza się w warunkach jak najmniej restrykcyjnych, odpowiednich do ryzyka"
+   ],
+   "answer": 1,
+   "explanation": "W nocy – co do zasady cele pojedyncze, chyba że wspólne zamieszkanie jest korzystne.",
+   "source": "Europejskie Reguły Więzienne – Rec(2006)2-rev Komitetu Ministrów RE (wersja 2020)",
+   "tag": "v15"
+  },
+  {
+   "id": "historia-m05",
+   "deck": "historia",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Nazwa „Straż Więzienna” obowiązywała w latach:",
+   "options": [
+    "1918–1939",
+    "1989–2010",
+    "1954–1989",
+    "1944–1954"
+   ],
+   "answer": 0,
+   "explanation": "Od 1954 r. – Służba Więzienna.",
+   "source": "materiał historyczny SW (Skrypt SW)",
+   "tag": "v15"
+  },
+  {
+   "id": "historia-m06",
+   "deck": "historia",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Nazwę Straż Więzienna zmieniono na Służba Więzienna w roku:",
+   "options": [
+    "1945",
+    "1954",
+    "1949",
+    "1989"
+   ],
+   "answer": 1,
+   "explanation": "1954.",
+   "source": "materiał historyczny SW (Skrypt SW)",
+   "tag": "v15"
+  },
+  {
+   "id": "historia-m07",
+   "deck": "historia",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Słowo „klawisz” wywodzi się od łacińskiego „clavis”, czyli:",
+   "options": [
+    "klucz",
+    "zamek",
+    "strażnik",
+    "krata"
+   ],
+   "answer": 0,
+   "explanation": "Clavis – klucz.",
+   "source": "materiał historyczny SW (Skrypt SW)",
+   "tag": "v15"
+  },
+  {
+   "id": "historia-m08",
+   "deck": "historia",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Najstarszym i najdłużej funkcjonującym więzieniem w Polsce jest zakład w:",
+   "options": [
+    "Nowym Wiśniczu",
+    "Wronkach",
+    "Sztumie",
+    "Rawiczu"
+   ],
+   "answer": 0,
+   "explanation": "Nowy Wiśnicz.",
+   "source": "materiał historyczny SW (Skrypt SW)",
+   "tag": "v15"
+  },
+  {
+   "id": "historia-m09",
+   "deck": "historia",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Do najpoważniejszego buntu w historii polskiego więziennictwa doszło w grudniu 1989 r. w:",
+   "options": [
+    "Czarnem",
+    "Strzelcach Opolskich",
+    "Białołęce",
+    "Barczewie"
+   ],
+   "answer": 0,
+   "explanation": "Czarne, 1989.",
+   "source": "materiał historyczny SW (Skrypt SW)",
+   "tag": "v15"
+  },
+  {
+   "id": "historia-m10",
+   "deck": "historia",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Niesądowy mechanizm prewencyjny Rady Europy oparty na wizytacjach to działalność:",
+   "options": [
+    "Europejskiego Komitetu do Spraw Zapobiegania Torturom (CPT)",
+    "Rzecznika Praw Obywatelskich",
+    "Komitetu Praw Człowieka ONZ",
+    "Europejskiego Trybunału Praw Człowieka"
+   ],
+   "answer": 0,
+   "explanation": "CPT wizytuje; ETPC rozpatruje skargi.",
+   "source": "Skrypt SW (opracowanie pytań źródłowych)",
+   "tag": "v15"
+  },
+  {
+   "id": "historia-m11",
+   "deck": "historia",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Który akt NIE został przyjęty w ramach ONZ?",
+   "options": [
+    "Konwencja przeciwko torturom z 1984 r.",
+    "Międzynarodowy Pakt Praw Obywatelskich i Politycznych",
+    "Europejskie Reguły Więzienne",
+    "Powszechna Deklaracja Praw Człowieka"
+   ],
+   "answer": 2,
+   "explanation": "ERW to rekomendacja Komitetu Ministrów Rady Europy.",
+   "source": "Skrypt SW (opracowanie pytań źródłowych)",
+   "tag": "v15"
+  },
+  {
+   "id": "pragmatyka-f06",
+   "deck": "pragmatyka",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Oddawanie honorów – jak?",
+   "back": "Salutowanie prawą ręką: wyprostowane, złączone palce wskazujący i środkowy przy daszku na wysokości prawego oka. Bez nakrycia głowy (albo z niesprawną prawą ręką / zajętymi rękami) – postawa zasadnicza frontem do osoby i skłon głową. W biurze – powstanie, postawa zasadnicza, skłon głową. Młodsi i podwładni oddają honory pierwsi.",
+   "source": "regulamin nr 1/2013 DGSW z 4.06.2013 r. w sprawie ceremoniału SW",
+   "tag": "v15"
+  },
+  {
+   "id": "pragmatyka-f07",
+   "deck": "pragmatyka",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Kiedy NIE oddaje się honorów?",
+   "back": "Przechodząc przez jezdnię, mijając się w większej odległości oraz w czasie konwojowania osób pozbawionych wolności. Biegnący na czas oddania honoru przechodzi do kroku zwykłego.",
+   "source": "regulamin nr 1/2013 DGSW z 4.06.2013 r. w sprawie ceremoniału SW",
+   "tag": "v15"
+  },
+  {
+   "id": "pragmatyka-f08",
+   "deck": "pragmatyka",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Ceremoniał – hymn, obrządek sakralny, powitanie",
+   "back": "Hymn: postawa zasadnicza, w nakryciu głowy – salutowanie. Obrządek sakralny: zdejmuje się nakrycie głowy (zostaje asysta honorowa, np. poczet sztandarowy); gdy wierni klęczą – postawa zasadnicza. Na powitanie: „Czołem, Panie Dyrektorze”. W sytuacjach nieprzewidzianych – karność, godność, dobre wychowanie.",
+   "source": "regulamin nr 1/2013 DGSW z 4.06.2013 r. w sprawie ceremoniału SW",
+   "tag": "v15"
+  },
+  {
+   "id": "pragmatyka-f09",
+   "deck": "pragmatyka",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Czas służby – liczby",
+   "back": "Przeciętnie 40 h tygodniowo; przedłużenie do 48 h (w okresie rozliczeniowym). Okresy rozliczeniowe: 1.01–30.06 i 1.07–31.12. Odpoczynek dobowy ≥ 11 h, tygodniowy ≥ 35 h. Przerwa: 20 min (8 h), 45 min (12 h). Doba = 24 kolejne godziny od rozpoczęcia służby. Święto w inny dzień niż niedziela obniża wymiar o 8 h.",
+   "source": "ustawa o SW – art. 117b, 125–136",
+   "tag": "v15"
+  },
+  {
+   "id": "pragmatyka-f10",
+   "deck": "pragmatyka",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Dyżur na wezwanie",
+   "back": "Najwyżej 2 razy w miesiącu (w tym najwyżej raz w sobotę, niedzielę lub święto), maks. 12 h na dobę, nie bezpośrednio po służbie w porze nocnej i bez naruszania odpoczynku. Czas dyżuru wlicza się do służby tylko wtedy, gdy wykonywano czynności.",
+   "source": "art. 136 ustawy o SW",
+   "tag": "v15"
+  },
+  {
+   "id": "pragmatyka-f11",
+   "deck": "pragmatyka",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Nadgodziny – czas wolny czy pieniądze?",
+   "back": "Wniosek o czas wolny – w ciągu 10 dni po zakończeniu okresu rozliczeniowego; bez wniosku – rekompensata pieniężna: 1/172 miesięcznego uposażenia (z dodatkami stałymi) za godzinę. O dniu wolnym / sobocie służbowej informuje się z co najmniej 14-dniowym wyprzedzeniem.",
+   "source": "art. 131, 195b ustawy o SW",
+   "tag": "v15"
+  },
+  {
+   "id": "pragmatyka-f12",
+   "deck": "pragmatyka",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Odpowiedzialność dyscyplinarna – terminy i zasady",
+   "back": "Odwołanie od orzeczenia I instancji: 14 dni od doręczenia, na piśmie do wyższego przełożonego dyscyplinarnego, za pośrednictwem tego, kto wydał orzeczenie. Czyn mniejszej wagi – zamiast postępowania udokumentowana rozmowa dyscyplinująca. Dobrowolne poddanie się karze – nagana. Przewinienie będące przestępstwem – odpowiedzialność dyscyplinarna niezależnie od karnej. Porzucenie służby – nieusprawiedliwiona nieobecność ponad 10 dni.",
+   "source": "ustawa o SW – art. 230 i n.",
+   "tag": "v15"
+  },
+  {
+   "id": "pragmatyka-f13",
+   "deck": "pragmatyka",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Opinia służbowa – odwołanie i skutki",
+   "back": "Niezgoda z opinią: wniosek w ciągu 14 dni; przełożony w ciągu 7 dni przesyła go z opinią i swoim stanowiskiem wyższemu przełożonemu, który utrzymuje opinię albo ją uchyla i poleca wydać nową. Negatywna opinia – brak nagrody rocznej. Po 25 latach służby – opiniowanie co 5 lat.",
+   "source": "ustawa o SW – art. 88–90",
+   "tag": "v15"
+  },
+  {
+   "id": "pragmatyka-f14",
+   "deck": "pragmatyka",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Służba przygotowawcza – przedłużenie i skrócenie",
+   "back": "Trwa 2 lata. Przedłuża się o urlop bezpłatny i wychowawczy. Przy przerwie > 3 miesiące kierownik może ją przedłużyć, najwyżej o 18 miesięcy. Skrócenie – za zgodą Dyrektora Generalnego. Jedna opinia o nieprzydatności = obligatoryjne zwolnienie.",
+   "source": "ustawa o SW",
+   "tag": "v15"
+  },
+  {
+   "id": "pragmatyka-f15",
+   "deck": "pragmatyka",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Podróż służbowa – dieta",
+   "back": "Dieta 45 zł. Podróż do doby: < 8 h – nie przysługuje; 8–12 h – połowa; > 12 h – cała. Dłużej niż doba: za każdą pełną dobę – cała dieta; za rozpoczętą dobę do 8 h – połowa, ponad 8 h – cała. Zapewniony posiłek obniża dietę: obiad –50%, śniadanie –25%, kolacja –25%.",
+   "source": "rozporządzenie MS z 9.03.2023 r. (podróże służbowe; Dz.U. 2023 poz. 578)",
+   "tag": "v15"
+  },
+  {
+   "id": "pragmatyka-f16",
+   "deck": "pragmatyka",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Podróż służbowa – nocleg, dojazdy, samochód",
+   "back": "Hotel – do 20-krotności diety (900 zł) za dobę; bez rachunku ryczałt 150% diety (67,50 zł), gdy nocleg trwa ≥ 6 h między 21:00 a 7:00. Komunikacja miejscowa – ryczałt 20% diety za dobę (nie przy pojeździe służbowym ani prywatnym). Samochód prywatny – za zgodą kierownika jednostki, do 1,15 zł/km (> 900 cm³).",
+   "source": "rozporządzenie MS z 9.03.2023 r. (podróże służbowe; Dz.U. 2023 poz. 578)",
+   "tag": "v15"
+  },
+  {
+   "id": "pragmatyka-f17",
+   "deck": "pragmatyka",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Urlop wypoczynkowy",
+   "back": "26 dni (pierwszy – 1/12 za każdy miesiąc). Nie można się go zrzec. Niewykorzystany – do końca września następnego roku. Podział na części – jedna co najmniej 14 kolejnych dni. Wyróżnienie: krótkoterminowy urlop do 5 dni. Dopłata do wypoczynku – 35% najniższego uposażenia zasadniczego.",
+   "source": "ustawa o SW – art. 138–150",
+   "tag": "v15"
+  },
+  {
+   "id": "pragmatyka-f18",
+   "deck": "pragmatyka",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Nagrody jubileuszowe i dodatki stałe",
+   "back": "Nagroda jubileuszowa: 20 lat – 75%, 25 lat – 100%, 30 lat – 150%, 35 lat – 200%, maksymalnie 300%. Dodatki stałe: za wysługę lat (maks. 35%; 15 lat – 20%), za stopień, służbowy (co do zasady do 60%). Uposażenie płatne z góry, w 1. dniu roboczym miesiąca.",
+   "source": "ustawa o SW – art. 58, 206",
+   "tag": "v15"
+  },
+  {
+   "id": "pragmatyka-f19",
+   "deck": "pragmatyka",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Kto nadaje stopnie i powołuje dyrektorów?",
+   "back": "Szeregowy, st. szeregowy – kierownik jednostki; kapral, st. sierżant – dyrektor okręgowy; stopnie chorążych – Dyrektor Generalny; porucznik, kapitan – Minister Sprawiedliwości; generał – Prezydent. DGSW – Prezes RM na wniosek MS; dyrektor okręgowy – MS na wniosek DGSW; dyrektor ZK/AŚ – DGSW na wniosek dyrektora okręgowego. Stopnie nadaje się z okazji Święta SW i 11 Listopada.",
+   "source": "ustawa o SW",
+   "tag": "v15"
+  },
+  {
+   "id": "pragmatyka-f20",
+   "deck": "pragmatyka",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Polecenia służbowe (regulamin 1/2024)",
+   "back": "Ustne, pisemne lub w inny przyjęty sposób; wykonuje się dokładnie i w terminie. Podwładny może żądać formy pisemnej – przełożony musi spełnić prośbę. Kolizja poleceń – informuje się wydającego drugie; po potwierdzeniu wykonuje drugie. Wydający odpowiada za treść i skutki, wykonawca – za sposób wykonania. Odmowa – gdy wykonanie byłoby przestępstwem. Droga służbowa – przez bezpośredniego przełożonego.",
+   "source": "regulamin nr 1/2024 DGSW z 30.10.2024 r. (sposób pełnienia służby)",
+   "tag": "v15"
+  },
+  {
+   "id": "pragmatyka-f21",
+   "deck": "pragmatyka",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Inne liczby pragmatyki",
+   "back": "Zajęcie zarobkowe – za pisemną zgodą przełożonego; odpowiedź w 14 dni, odmowa bez uzasadnienia. Delegowanie z urzędu i powierzenie obowiązków – maks. 12 miesięcy. Zawieszenie obligatoryjne – tymczasowe aresztowanie. Zasiłek pogrzebowy po śmierci członka rodziny – 7000 zł. Związki zawodowe – tak, strajk – nie. Sprawa nierozpatrzona w 30 dni – pisemna informacja o przyczynie i terminie.",
+   "source": "ustawa o SW; regulamin nr 1/2024 DGSW z 30.10.2024 r. (sposób pełnienia służby)",
+   "tag": "v15"
+  },
+  {
+   "id": "pragmatyka-m17",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Funkcjonariusz oddaje honor przez salutowanie:",
+   "options": [
+    "prawą ręką, palcami wskazującym i środkowym przy daszku na wysokości prawego oka",
+    "lewą ręką, całą dłonią przy skroni",
+    "dowolną ręką, gdy ma nakrycie głowy",
+    "prawą ręką, całą dłonią przy daszku"
+   ],
+   "answer": 0,
+   "explanation": "Regulamin ceremoniału SW.",
+   "source": "regulamin nr 1/2013 DGSW z 4.06.2013 r. w sprawie ceremoniału SW",
+   "tag": "v15"
+  },
+  {
+   "id": "pragmatyka-m18",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "W której sytuacji funkcjonariusz NIE oddaje honorów?",
+   "options": [
+    "mijając przełożonego na korytarzu jednostki",
+    "podczas oficjalnego odtwarzania hymnu",
+    "gdy przełożony wchodzi do pomieszczenia biurowego",
+    "podczas konwojowania osób pozbawionych wolności"
+   ],
+   "answer": 3,
+   "explanation": "Nie oddaje się honorów m.in. w czasie konwojowania i przechodząc przez jezdnię.",
+   "source": "regulamin nr 1/2013 DGSW z 4.06.2013 r. w sprawie ceremoniału SW",
+   "tag": "v15"
+  },
+  {
+   "id": "pragmatyka-m19",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Funkcjonariusz bez nakrycia głowy oddaje honor przez:",
+   "options": [
+    "ukłon w pasie",
+    "przyjęcie postawy zasadniczej frontem do osoby i skłon głową",
+    "podniesienie lewej ręki",
+    "salutowanie prawą ręką"
+   ],
+   "answer": 1,
+   "explanation": "Bez nakrycia głowy – postawa zasadnicza i skłon głową.",
+   "source": "regulamin nr 1/2013 DGSW z 4.06.2013 r. w sprawie ceremoniału SW",
+   "tag": "v15"
+  },
+  {
+   "id": "pragmatyka-m20",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Przeciętny tygodniowy czas służby funkcjonariusza SW wynosi:",
+   "options": [
+    "40 godzin",
+    "38 godzin",
+    "42 godziny",
+    "48 godzin"
+   ],
+   "answer": 0,
+   "explanation": "Przedłużony – do 48 h.",
+   "source": "ustawa o SW – art. 117b, 125–136",
+   "tag": "v15"
+  },
+  {
+   "id": "pragmatyka-m21",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Okresy rozliczeniowe czasu służby w SW trwają:",
+   "options": [
+    "6 miesięcy: od 1 stycznia do 30 czerwca i od 1 lipca do 31 grudnia",
+    "1 miesiąc",
+    "12 miesięcy – rok kalendarzowy",
+    "3 miesiące – kwartały kalendarzowe"
+   ],
+   "answer": 0,
+   "explanation": "Dwa półroczne okresy.",
+   "source": "ustawa o SW – art. 117b, 125–136",
+   "tag": "v15"
+  },
+  {
+   "id": "pragmatyka-m22",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Która zasada dyżuru na wezwanie jest NIEPRAWDZIWA?",
+   "options": [
+    "najwyżej raz w miesiącu w sobotę, niedzielę lub święto",
+    "można go wyznaczyć bezpośrednio po służbie w porze nocnej",
+    "najwyżej 2 razy w miesiącu",
+    "najwyżej 12 godzin na dobę"
+   ],
+   "answer": 1,
+   "explanation": "Zakaz wyznaczania dyżuru bezpośrednio po służbie nocnej (art. 136).",
+   "source": "art. 136 ustawy o SW",
+   "tag": "v15"
+  },
+  {
+   "id": "pragmatyka-m23",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Odpoczynek dobowy funkcjonariusza wynosi co do zasady co najmniej:",
+   "options": [
+    "11 godzin",
+    "8 godzin",
+    "12 godzin",
+    "35 godzin"
+   ],
+   "answer": 0,
+   "explanation": "Dobowy 11 h, tygodniowy 35 h.",
+   "source": "ustawa o SW – art. 117b, 125–136",
+   "tag": "v15"
+  },
+  {
+   "id": "pragmatyka-m24",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Odwołanie od orzeczenia dyscyplinarnego I instancji wnosi się w terminie:",
+   "options": [
+    "30 dni od doręczenia",
+    "7 dni od doręczenia",
+    "3 dni od ogłoszenia",
+    "14 dni od doręczenia"
+   ],
+   "answer": 3,
+   "explanation": "Do wyższego przełożonego dyscyplinarnego, za pośrednictwem wydającego orzeczenie.",
+   "source": "ustawa o SW",
+   "tag": "v15"
+  },
+  {
+   "id": "pragmatyka-m25",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Porzucenie służby to nieusprawiedliwiona nieobecność trwająca ponad:",
+   "options": [
+    "30 dni",
+    "10 dni",
+    "3 dni",
+    "7 dni"
+   ],
+   "answer": 1,
+   "explanation": "Ponad 10 dni.",
+   "source": "ustawa o SW",
+   "tag": "v15"
+  },
+  {
+   "id": "pragmatyka-m26",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Dieta w krajowej podróży służbowej trwającej 7 godzin:",
+   "options": [
+    "przysługuje w 25%",
+    "nie przysługuje",
+    "przysługuje w połowie",
+    "przysługuje w całości"
+   ],
+   "answer": 1,
+   "explanation": "Do 8 h – brak; 8–12 h – połowa; ponad 12 h – cała.",
+   "source": "rozporządzenie MS z 9.03.2023 r. (podróże służbowe; Dz.U. 2023 poz. 578)",
+   "tag": "v15"
+  },
+  {
+   "id": "pragmatyka-m27",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Dieta za podróż trwającą 2 doby i 6 godzin (bez zapewnionego wyżywienia) to:",
+   "options": [
+    "2,25 diety",
+    "3 diety",
+    "2,5 diety",
+    "2 diety"
+   ],
+   "answer": 2,
+   "explanation": "Rozpoczęta doba do 8 h – połowa diety.",
+   "source": "rozporządzenie MS z 9.03.2023 r. (podróże służbowe; Dz.U. 2023 poz. 578)",
+   "tag": "v15"
+  },
+  {
+   "id": "pragmatyka-m28",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Zapewniony bezpłatny obiad zmniejsza dietę o:",
+   "options": [
+    "50%",
+    "25%",
+    "100%",
+    "75%"
+   ],
+   "answer": 0,
+   "explanation": "Obiad 50%, śniadanie i kolacja po 25%.",
+   "source": "rozporządzenie MS z 9.03.2023 r. (podróże służbowe; Dz.U. 2023 poz. 578)",
+   "tag": "v15"
+  },
+  {
+   "id": "pragmatyka-m29",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Które zdanie o podróży służbowej jest FAŁSZYWE?",
+   "options": [
+    "dieta krajowa wynosi 45 zł",
+    "podróżując pojazdem służbowym dostaje się ryczałt na komunikację miejscową",
+    "ryczałt za nocleg bez rachunku to 150% diety",
+    "samochodem prywatnym można jechać za zgodą kierownika jednostki"
+   ],
+   "answer": 1,
+   "explanation": "Przy pojeździe służbowym (i prywatnym) ryczałt na komunikację miejscową nie przysługuje.",
+   "source": "rozporządzenie MS z 9.03.2023 r. (podróże służbowe; Dz.U. 2023 poz. 578)",
+   "tag": "v15"
+  },
+  {
+   "id": "pragmatyka-m30",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Niewykorzystanego urlopu wypoczynkowego należy udzielić najpóźniej do:",
+   "options": [
+    "końca września następnego roku",
+    "końca następnego roku",
+    "końca marca następnego roku",
+    "30 czerwca następnego roku"
+   ],
+   "answer": 0,
+   "explanation": "Do końca września.",
+   "source": "ustawa o SW – art. 149",
+   "tag": "v15"
+  },
+  {
+   "id": "pragmatyka-m31",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Dzieląc urlop na części, jedna z nich musi obejmować co najmniej:",
+   "options": [
+    "14 kolejnych dni kalendarzowych",
+    "10 dni roboczych",
+    "7 kolejnych dni",
+    "21 dni kalendarzowych"
+   ],
+   "answer": 0,
+   "explanation": "Art. 148 ust. 2.",
+   "source": "ustawa o SW – art. 148",
+   "tag": "v15"
+  },
+  {
+   "id": "pragmatyka-m32",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Nagroda jubileuszowa po 30 latach służby wynosi:",
+   "options": [
+    "150% uposażenia z dodatkami stałymi",
+    "75%",
+    "100%",
+    "200%"
+   ],
+   "answer": 0,
+   "explanation": "20 – 75%, 25 – 100%, 30 – 150%, 35 – 200%.",
+   "source": "ustawa o SW – art. 206",
+   "tag": "v15"
+  },
+  {
+   "id": "pragmatyka-m33",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Stopnie w korpusie chorążych SW nadaje co do zasady:",
+   "options": [
+    "kierownik jednostki",
+    "Dyrektor Generalny SW",
+    "Minister Sprawiedliwości",
+    "dyrektor okręgowy"
+   ],
+   "answer": 1,
+   "explanation": "Chorążowie – DGSW; kapral, st. sierżant – dyrektor okręgowy.",
+   "source": "ustawa o SW",
+   "tag": "v15"
+  },
+  {
+   "id": "pragmatyka-m34",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Kto NIE nadaje stopni służbowych w SW?",
+   "options": [
+    "dyrektor okręgowy",
+    "sędzia penitencjarny",
+    "kierownik jednostki organizacyjnej",
+    "Minister Sprawiedliwości"
+   ],
+   "answer": 1,
+   "explanation": "Nadają: kierownik jednostki, dyrektor okręgowy, DGSW, MS, Prezydent.",
+   "source": "ustawa o SW",
+   "tag": "v15"
+  },
+  {
+   "id": "pragmatyka-m35",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Dyrektora zakładu karnego powołuje:",
+   "options": [
+    "Prezes Rady Ministrów",
+    "dyrektor okręgowy",
+    "Minister Sprawiedliwości na wniosek DGSW",
+    "Dyrektor Generalny na wniosek dyrektora okręgowego"
+   ],
+   "answer": 3,
+   "explanation": "Dyrektora okręgowego powołuje MS na wniosek DGSW.",
+   "source": "ustawa o SW",
+   "tag": "v15"
+  },
+  {
+   "id": "pragmatyka-m36",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Gdy podwładny prosi o wydanie polecenia na piśmie, przełożony:",
+   "options": [
+    "ma obowiązek spełnić prośbę",
+    "musi najpierw uzyskać zgodę dyrektora",
+    "kieruje sprawę do rzecznika dyscyplinarnego",
+    "może odmówić bez uzasadnienia"
+   ],
+   "answer": 0,
+   "explanation": "Regulamin 1/2024 § 20 pkt 8.",
+   "source": "regulamin nr 1/2024 DGSW z 30.10.2024 r. (sposób pełnienia służby)",
+   "tag": "v15"
+  },
+  {
+   "id": "pragmatyka-m37",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Prawda czy fałsz: funkcjonariusze SW mogą zrzeszać się w związkach zawodowych, ale nie mają prawa do strajku.",
+   "options": [
+    "Prawda",
+    "Fałsz"
+   ],
+   "answer": 0,
+   "explanation": "Prawda.",
+   "source": "ustawa o SW",
+   "tag": "v15"
+  },
+  {
+   "id": "pragmatyka-m38",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Prawda czy fałsz: funkcjonariusz może zrzec się prawa do urlopu wypoczynkowego.",
+   "options": [
+    "Prawda",
+    "Fałsz"
+   ],
+   "answer": 1,
+   "explanation": "Fałsz – nie może się go zrzec.",
+   "source": "ustawa o SW",
+   "tag": "v15"
+  },
+  {
+   "id": "bron-f05",
+   "deck": "bron",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "GLOCK – automatyka i Safe Action",
+   "back": "Automatyka – krótki odrzut lufy (odryglowanie przez przekoszenie lufy). Kaliber 9×19 Parabellum. Safe Action – 3 niezależne zabezpieczenia: spustowe, iglicy, przed wystrzałem przy upadku. Brak bezpiecznika manualnego.",
+   "source": "materiały COSSW",
+   "tag": "v15"
+  },
+  {
+   "id": "bron-f06",
+   "deck": "bron",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Zasady bezpieczeństwa na strzelnicy",
+   "back": "Lufa zawsze w stronę tarcz lub kulochwytu głównego. Dopóki nie podjęto decyzji o strzale – palec poza spustem, wzdłuż szkieletu broni.",
+   "source": "Skrypt SW",
+   "tag": "v15"
+  },
+  {
+   "id": "bron-f07",
+   "deck": "bron",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Użytkownik uzbrojenia (instrukcja do zarządzenia 69/2024)",
+   "back": "Może nim być funkcjonariusz po przeszkoleniu z danego rodzaju broni zakończonym egzaminem (§ 11). Zakazy m.in.: noszenia broni z nabojem w komorze nabojowej (§ 12 ust. 2).",
+   "source": "zarządzenie 69/2024",
+   "tag": "v15"
+  },
+  {
+   "id": "bron-f08",
+   "deck": "bron",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Poziomy szkolenia strzeleckiego – kto i ile?",
+   "back": "Podstawowy – wszyscy, ≥ 2 szkolenia rocznie, ≥ 50 szt. amunicji na szkolenie. Zaawansowany – grupy interwencyjne SW, ≥ 12 szkoleń rocznie.",
+   "source": "zarządzenie 72/2024 § 4",
+   "tag": "v15"
+  },
+  {
+   "id": "bron-f09",
+   "deck": "bron",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "69/2024 czy 72/2024? I co jest podstawą użycia broni?",
+   "back": "69/2024 – gospodarowanie uzbrojeniem (użytkownik, przechowywanie). 72/2024 – szkolenie strzeleckie. Podstawa UŻYCIA broni: ustawa o ŚPB i broni palnej + art. 19 ustawy o SW.",
+   "source": "zarządzenia DGSW",
+   "tag": "v15"
+  },
+  {
+   "id": "bron-m14",
+   "deck": "bron",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Który element NIE należy do systemu Safe Action pistoletu GLOCK?",
+   "options": [
+    "zabezpieczenie iglicy",
+    "zabezpieczenie przed wystrzałem przy upadku",
+    "zabezpieczenie spustowe",
+    "manualny bezpiecznik skrzydełkowy"
+   ],
+   "answer": 3,
+   "explanation": "Safe Action: 3 automatyczne zabezpieczenia, bez bezpiecznika manualnego.",
+   "source": "materiały COSSW",
+   "tag": "v15"
+  },
+  {
+   "id": "bron-m15",
+   "deck": "bron",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Wskaż zasadę BŁĘDNĄ:",
+   "options": [
+    "użytkownik uzbrojenia nie nosi broni z nabojem w komorze",
+    "lufę kieruje się tylko w stronę tarcz lub kulochwytu",
+    "użytkownikiem uzbrojenia zostaje się po szkoleniu zakończonym egzaminem",
+    "palec trzyma się na spuście przez cały czas celowania, nawet przed decyzją o strzale"
+   ],
+   "answer": 3,
+   "explanation": "Do decyzji o strzale palec poza spustem, wzdłuż szkieletu.",
+   "source": "Skrypt SW",
+   "tag": "v15"
+  },
+  {
+   "id": "bron-m16",
+   "deck": "bron",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Który akt NIE jest podstawą prawną użycia broni palnej przez funkcjonariusza SW?",
+   "options": [
+    "żadna z odpowiedzi – wszystkie są podstawą",
+    "art. 19 ustawy o Służbie Więziennej",
+    "zarządzenie DGSW nr 72/2024",
+    "ustawa o środkach przymusu bezpośredniego i broni palnej"
+   ],
+   "answer": 2,
+   "explanation": "72/2024 reguluje szkolenie strzeleckie.",
+   "source": "Skrypt SW",
+   "tag": "v15"
+  },
+  {
+   "id": "pp-f08",
+   "deck": "pp",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Schemat BLS – kolejność",
+   "back": "1) bezpieczeństwo, 2) sprawdź reakcję (AVPU), 3) udrożnij drogi oddechowe, 4) oddech „widzę, słyszę, czuję” ≤ 10 s, 5) 112, 6) brak oddechu → RKO 30:2, 7) AED – wykonuj polecenia głosowe.",
+   "source": "Wytyczne ERC 2025",
+   "tag": "v15"
+  },
+  {
+   "id": "pp-f09",
+   "deck": "pp",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Pozycja bezpieczna – kiedy?",
+   "back": "Gdy poszkodowany jest nieprzytomny, ale prawidłowo oddycha (np. po omdleniu). Nie oddycha – RKO.",
+   "source": "Wytyczne ERC 2025",
+   "tag": "v15"
+  },
+  {
+   "id": "pp-f10",
+   "deck": "pp",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "AVPU – rozwinięcie",
+   "back": "A – Alert (przytomny, reaguje spontanicznie), V – Voice (reaguje na głos), P – Pain (reaguje na ból), U – Unresponsive (brak reakcji). Służy do szybkiej oceny świadomości.",
+   "source": "Wytyczne ERC 2025",
+   "tag": "v15"
+  },
+  {
+   "id": "pp-m14",
+   "deck": "pp",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Wskaż postępowanie BŁĘDNE:",
+   "options": [
+    "wyjąć wbity w tułów nóż, by szybciej zatamować krwawienie",
+    "przy amputacji kończyny założyć opaskę uciskową",
+    "nieprzytomnego, oddychającego ułożyć w pozycji bezpiecznej",
+    "oparzone miejsce chłodzić"
+   ],
+   "answer": 0,
+   "explanation": "Ciała obcego nie usuwa się – stabilizuje się je.",
+   "source": "Wytyczne ERC 2025",
+   "tag": "v15"
+  },
+  {
+   "id": "pp-m15",
+   "deck": "pp",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Której litery NIE ma w skali AVPU?",
+   "options": [
+    "A – Alert",
+    "P – Pain",
+    "B – Breathing",
+    "V – Voice"
+   ],
+   "answer": 2,
+   "explanation": "AVPU: Alert, Voice, Pain, Unresponsive.",
+   "source": "Wytyczne ERC 2025",
+   "tag": "v15"
+  },
+  {
+   "id": "pp-m16",
+   "deck": "pp",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Czego NIE należy robić podczas napadu padaczki?",
+   "options": [
+    "chronić głowę przed urazem",
+    "wezwać pomoc",
+    "usunąć niebezpieczne przedmioty z otoczenia",
+    "wkładać choremu przedmiotów między zęby i krępować ruchów"
+   ],
+   "answer": 3,
+   "explanation": "Zabezpieczyć przed urazem, nie krępować, nic nie wkładać do ust.",
+   "source": "Wytyczne ERC 2025",
+   "tag": "v15"
+  },
+  {
+   "id": "sw-f13",
+   "deck": "sw",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Art. 6 i 7 ustawy o SW – finansowanie i organy",
+   "back": "Koszty funkcjonowania SW pokrywa budżet państwa. Organy SW: Dyrektor Generalny, dyrektorzy okręgowi, dyrektorzy zakładów karnych i aresztów śledczych (a nie Minister Sprawiedliwości – SW mu podlega).",
+   "source": "ustawa o SW",
+   "tag": "v15"
+  },
+  {
+   "id": "sw-m04",
+   "deck": "sw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Kto NIE jest organem Służby Więziennej (art. 7)?",
+   "options": [
+    "Dyrektor Generalny SW",
+    "Minister Sprawiedliwości",
+    "dyrektor okręgowy SW",
+    "dyrektor aresztu śledczego"
+   ],
+   "answer": 1,
+   "explanation": "SW podlega MS, ale MS nie jest jej organem.",
+   "source": "art. 7 ustawy o SW",
+   "tag": "v15"
+  },
+  {
+   "id": "sw-m05",
+   "deck": "sw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Które zdanie o kontroli osobistej (art. 18) jest FAŁSZYWE?",
+   "options": [
+    "może ją przeprowadzić jeden funkcjonariusz w obecności osób postronnych",
+    "przeprowadzają ją co najmniej dwaj funkcjonariusze tej samej płci",
+    "odbywa się w pomieszczeniu niedostępnym dla osób postronnych",
+    "na sposób przeprowadzenia przysługuje zażalenie w terminie 7 dni"
+   ],
+   "answer": 0,
+   "explanation": "Co najmniej dwóch, tej samej płci, bez osób postronnych.",
+   "source": "art. 18 ustawy o SW",
+   "tag": "v15"
+  },
+  {
+   "id": "ewidencja-f05",
+   "deck": "ewidencja",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Dokument tożsamości przy przyjęciu obywatela RP",
+   "back": "Dowód osobisty, paszport albo książeczka żeglarska. Nie: legitymacja studencka, prawo jazdy.",
+   "source": "lista pytań",
+   "tag": "v15"
+  },
+  {
+   "id": "kkw-m103",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Który z wymienionych NIE jest typem zakładu karnego (art. 70 KKW)?",
+   "options": [
+    "zakład typu półotwartego",
+    "zakład typu otwartego",
+    "zakład dla recydywistów penitencjarnych",
+    "zakład typu zamkniętego"
+   ],
+   "answer": 2,
+   "explanation": "Recydywiści to RODZAJ (art. 69), a nie typ.",
+   "source": "art. 69–70 KKW",
+   "tag": "v15"
+  },
+  {
+   "id": "kkw-m104",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Który z wymienionych NIE jest rodzajem zakładu karnego (art. 69 KKW)?",
+   "options": [
+    "zakład dla odbywających karę aresztu wojskowego",
+    "zakład typu otwartego",
+    "zakład dla odbywających karę po raz pierwszy",
+    "zakład dla młodocianych"
+   ],
+   "answer": 1,
+   "explanation": "Typ otwarty to art. 70.",
+   "source": "art. 69 KKW",
+   "tag": "v15"
+  },
+  {
+   "id": "kkw-m105",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Który system NIE jest systemem wykonywania kary pozbawienia wolności?",
+   "options": [
+    "terapeutyczny",
+    "zwykły",
+    "programowanego oddziaływania",
+    "progresywny"
+   ],
+   "answer": 3,
+   "explanation": "Art. 81 KKW – trzy systemy.",
+   "source": "art. 81 KKW",
+   "tag": "v15"
+  },
+  {
+   "id": "kkw-m106",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Które zdanie o ZK typu zamkniętego jest FAŁSZYWE?",
+   "options": [
+    "cele mieszkalne są otwarte przez całą dobę",
+    "skazanemu przysługują 2 widzenia w miesiącu",
+    "zajęcia kulturalno-oświatowe organizuje się w obrębie zakładu",
+    "zatrudnienie poza terenem – w pełnym systemie konwojowania"
+   ],
+   "answer": 0,
+   "explanation": "Cele otwarte całą dobę – ZK typu otwartego.",
+   "source": "KKW",
+   "tag": "v15"
+  },
+  {
+   "id": "kkw-m107",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Który limit rzeczy w celi skazanego jest NIEPRAWDZIWY?",
+   "options": [
+    "do 0,5 kg prasy",
+    "do 9 l napojów",
+    "do 6 kg artykułów żywnościowych",
+    "do 10 własnych książek"
+   ],
+   "answer": 3,
+   "explanation": "Własnych książek – do 5.",
+   "source": "regulamin wykonywania kary PW",
+   "tag": "v15"
+  },
+  {
+   "id": "kkw-m108",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Wskaż zdanie FAŁSZYWE o tymczasowo aresztowanym:",
+   "options": [
+    "może korzystać z telefonu bez niczyjej zgody",
+    "na widzenie potrzebuje zgody organu dysponującego",
+    "jego korespondencja przechodzi przez organ dysponujący",
+    "karę celi izolacyjnej wymierza mu się do 14 dni"
+   ],
+   "answer": 0,
+   "explanation": "Telefon – tylko za zgodą (zarządzeniem) organu dysponującego.",
+   "source": "KKW",
+   "tag": "v15"
+  },
+  {
+   "id": "kkw-m109",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Z dzieckiem w jakim wieku matka NIE może już przebywać w domu matki i dziecka?",
+   "options": [
+    "1 roku",
+    "2 lat",
+    "4 lat",
+    "6 miesięcy"
+   ],
+   "answer": 2,
+   "explanation": "Opieka w domu matki i dziecka – do ukończenia przez dziecko 3 lat.",
+   "source": "KKW",
+   "tag": "v15"
+  },
+  {
+   "id": "spb-m34",
+   "deck": "spb",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Które zdanie o środkach przymusu jest FAŁSZYWE?",
+   "options": [
+    "w celi zabezpieczającej można przebywać do 72 godzin",
+    "po użyciu ŚPB wobec ciężarnej zawsze zapewnia się medyczne czynności ratunkowe",
+    "ŚPB używa się proporcjonalnie, wybierając środek najmniej dolegliwy",
+    "kask zabezpieczający stosuje się przy autoagresji"
+   ],
+   "answer": 0,
+   "explanation": "Cela zabezpieczająca – maks. 48 h (art. 26 ust. 2).",
+   "source": "ustawa o ŚPB",
+   "tag": "v15"
+  },
+  {
+   "id": "spb-m35",
+   "deck": "spb",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Jakiej techniki NIE wymienia art. 12 ust. 1 pkt 1 ustawy o ŚPB (siła fizyczna)?",
+   "options": [
+    "technik obrony",
+    "technik transportowych",
+    "technik obezwładnienia",
+    "technik unieruchamiania"
+   ],
+   "answer": 3,
+   "explanation": "Techniki: transportowe, obrony, ataku, obezwładnienia.",
+   "source": "art. 12 ustawy o ŚPB",
+   "tag": "v15"
+  },
+  {
+   "id": "spb-m36",
+   "deck": "spb",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Jakiego rodzaju kajdanek NIE przewiduje ustawa o ŚPB?",
+   "options": [
+    "zespolonych",
+    "zakładanych na kciuki",
+    "zakładanych na nogi",
+    "zakładanych na ręce"
+   ],
+   "answer": 1,
+   "explanation": "Art. 12 ust. 1 pkt 2: na ręce, na nogi, zespolone.",
+   "source": "art. 12 ustawy o ŚPB",
+   "tag": "v15"
+  },
+  {
+   "id": "ochrona-m65",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Które zdanie o osadzonych niebezpiecznych jest FAŁSZYWE?",
+   "options": [
+    "konwojuje się ich wyłącznie pojazdem konwojowym",
+    "doprowadza się ich w grupie nie większej niż 3 osoby",
+    "w jednej celi można umieścić do 5 osadzonych „N”",
+    "w nocy celę otwiera się przy co najmniej 3 funkcjonariuszach"
+   ],
+   "answer": 2,
+   "explanation": "W celi najwyżej 3 osadzonych „N”.",
+   "source": "zarządzenie 30/2025",
+   "tag": "v15"
+  },
+  {
+   "id": "ochrona-m66",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Której klauzuli tajności NIE ma w ustawie o ochronie informacji niejawnych?",
+   "options": [
+    "„ściśle poufne”",
+    "„tajne”",
+    "„zastrzeżone”",
+    "„ściśle tajne”"
+   ],
+   "answer": 0,
+   "explanation": "Klauzule: ściśle tajne (00), tajne (0), poufne (Pf), zastrzeżone (Z).",
+   "source": "art. 5 ustawy o ochronie informacji niejawnych",
+   "tag": "v15"
+  },
+  {
+   "id": "ochrona-m67",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Wskaż zdanie FAŁSZYWE o kontrolach:",
+   "options": [
+    "kontrolę celi mieszkalnej przeprowadza się zawsze w obecności osadzonego",
+    "kontrolę osobistą przeprowadzają osoby tej samej płci",
+    "protokół jest obowiązkowy przy kontroli generalnej",
+    "kontrola pobieżna – wzrokowo i manualnie lub technicznie"
+   ],
+   "answer": 0,
+   "explanation": "Celę kontroluje się pod nieobecność osadzonego.",
+   "source": "zarządzenie 30/2025",
+   "tag": "v15"
+  },
+  {
+   "id": "pragmatyka-m39",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Wskaż BŁĘDNIE podany okres zatarcia kary dyscyplinarnej:",
+   "options": [
+    "nagana – 24 miesiące",
+    "ostrzeżenie o niepełnej przydatności – 18 miesięcy",
+    "wyznaczenie na niższe stanowisko – 24 miesiące",
+    "nagana – 12 miesięcy"
+   ],
+   "answer": 0,
+   "explanation": "Nagana 12, ostrzeżenie 18, niższe stanowisko / obniżenie stopnia 24 miesiące.",
+   "source": "ustawa o SW – art. 260",
+   "tag": "v15"
+  },
+  {
+   "id": "metodyka-m16",
+   "deck": "metodyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Która zasada NIE należy do zasad resocjalizacji z materiałów kursu?",
+   "options": [
+    "zasada odpowiedzialności zbiorowej",
+    "zasada poszanowania godności",
+    "zasada indywidualizacji",
+    "zasada wolnej progresji"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedzialność zbiorowa jest sprzeczna z indywidualizacją.",
+   "source": "Skrypt SW",
+   "tag": "v15"
+  },
+  {
+   "id": "kkw-m110",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Ile systemów wykonywania kary pozbawienia wolności przewiduje art. 81 KKW?",
+   "options": [
+    "2",
+    "4",
+    "3",
+    "5"
+   ],
+   "answer": 2,
+   "explanation": "Programowanego oddziaływania, terapeutyczny, zwykły.",
+   "source": "art. 81 KKW",
+   "tag": "v15",
+   "grupa": "systemy-81"
+  },
+  {
+   "id": "kkw-m111",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Prawda czy fałsz: skazanemu zatrudnionemu po roku pracy przysługuje 26 dni roboczych płatnego urlopu.",
+   "options": [
+    "Prawda",
+    "Fałsz"
+   ],
+   "answer": 1,
+   "explanation": "Fałsz – 14 dni roboczych.",
+   "source": "KKW; lista pytań 33",
+   "tag": "v15",
+   "grupa": "urlop-skazanego"
+  },
+  {
+   "id": "kkw-m112",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Prawda czy fałsz: skazana matka może przebywać z dzieckiem w domu matki i dziecka do ukończenia przez nie 3 lat.",
+   "options": [
+    "Prawda",
+    "Fałsz"
+   ],
+   "answer": 0,
+   "explanation": "Prawda.",
+   "source": "art. 87 KKW",
+   "tag": "v15",
+   "grupa": "dom-matki-3"
+  },
+  {
+   "id": "kkw-m113",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Prawda czy fałsz: ciężarną skazaną przenosi się do jednostki z całodobową opieką położnej najpóźniej w 32. tygodniu ciąży.",
+   "options": [
+    "Prawda",
+    "Fałsz"
+   ],
+   "answer": 1,
+   "explanation": "Fałsz – najpóźniej w 28. tygodniu.",
+   "source": "KKW; Skrypt SW",
+   "tag": "v15",
+   "grupa": "ciaza-28"
+  },
+  {
+   "id": "kkw-m114",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Jaka część wynagrodzenia skazanego trafia na Fundusz Pomocy Pokrzywdzonym oraz Pomocy Postpenitencjarnej?",
+   "options": [
+    "10%",
+    "5%",
+    "7%",
+    "25%"
+   ],
+   "answer": 2,
+   "explanation": "7%.",
+   "source": "KKW; lista pytań 23",
+   "tag": "v15",
+   "grupa": "fundusz-7"
+  },
+  {
+   "id": "spb-m37",
+   "deck": "spb",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Prawda czy fałsz: osobę można umieścić w celi zabezpieczającej najwyżej na 72 godziny.",
+   "options": [
+    "Prawda",
+    "Fałsz"
+   ],
+   "answer": 1,
+   "explanation": "Fałsz – do 48 godzin.",
+   "source": "art. 26 ustawy o ŚPB",
+   "tag": "v15",
+   "grupa": "cela-zab-48"
+  },
+  {
+   "id": "spb-m38",
+   "deck": "spb",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Prawda czy fałsz: ustawa o środkach przymusu bezpośredniego i broni palnej pochodzi z 24 maja 2013 r.",
+   "options": [
+    "Prawda",
+    "Fałsz"
+   ],
+   "answer": 0,
+   "explanation": "Prawda.",
+   "source": "ustawa o ŚPB",
+   "tag": "v15",
+   "grupa": "ustawa-spb-data"
+  },
+  {
+   "id": "ochrona-m68",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Ilu osadzonych niebezpiecznych można najwyżej umieścić w jednej celi?",
+   "options": [
+    "3",
+    "4",
+    "1",
+    "2"
+   ],
+   "answer": 0,
+   "explanation": "Najwyżej 3, i nie razem z osadzonymi bez statusu „N”.",
+   "source": "zarządzenie 30/2025",
+   "tag": "v15",
+   "grupa": "n-w-celi"
+  },
+  {
+   "id": "ochrona-m69",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Prawda czy fałsz: kartę osadzonego niebezpiecznego sporządza wychowawca oddziału.",
+   "options": [
+    "Prawda",
+    "Fałsz"
+   ],
+   "answer": 1,
+   "explanation": "Fałsz – kierownik działu ochrony, w 2 egzemplarzach.",
+   "source": "zarządzenie 30/2025 § 118",
+   "tag": "v15",
+   "grupa": "karta-n"
+  },
+  {
+   "id": "ochrona-m70",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Pora nocna w jednostce trwa:",
+   "options": [
+    "od capstrzyku do pobudki, ale nie dłużej niż 8 godzin",
+    "od zakończenia apelu wieczornego do rozpoczęcia apelu porannego",
+    "od 21:00 do 7:00",
+    "od 22:00 do 6:00"
+   ],
+   "answer": 1,
+   "explanation": "Odwrotność pory dziennej (od apelu porannego do wieczornego).",
+   "source": "lista pytań 71",
+   "tag": "v15",
+   "grupa": "pora-dzienna"
+  },
+  {
+   "id": "pp-m17",
+   "deck": "pp",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Ile uciśnięć klatki piersiowej przypada na 2 oddechy ratownicze u dorosłego?",
+   "options": [
+    "30",
+    "15",
+    "5",
+    "10"
+   ],
+   "answer": 0,
+   "explanation": "30:2.",
+   "source": "Wytyczne ERC 2025",
+   "tag": "v15",
+   "grupa": "rko-30-2"
+  },
+  {
+   "id": "pragmatyka-m40",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Prawda czy fałsz: służba przygotowawcza trwa 3 lata.",
+   "options": [
+    "Prawda",
+    "Fałsz"
+   ],
+   "answer": 1,
+   "explanation": "Fałsz – 2 lata (może być przedłużona).",
+   "source": "ustawa o SW",
+   "tag": "v15",
+   "grupa": "sluzba-przyg"
+  },
+  {
+   "id": "pragmatyka-m41",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Prawda czy fałsz: skargę do ETPC wnosi się w terminie 6 miesięcy od ostatecznej decyzji krajowej.",
+   "options": [
+    "Prawda",
+    "Fałsz"
+   ],
+   "answer": 1,
+   "explanation": "Fałsz – obecnie 4 miesiące (dawniej 6).",
+   "source": "art. 35 EKPC",
+   "tag": "v15",
+   "grupa": "etpc-4"
+  },
+  {
+   "id": "bron-m17",
+   "deck": "bron",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Prawda czy fałsz: magazynek pistoletu Walther P99 mieści 15 nabojów.",
+   "options": [
+    "Prawda",
+    "Fałsz"
+   ],
+   "answer": 0,
+   "explanation": "Prawda – 15 nabojów 9×19.",
+   "source": "Skrypt SW",
+   "tag": "v15",
+   "grupa": "walther-15"
+  },
+  {
+   "id": "pragmatyka-m42",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Po jakim czasie ulega zatarciu kara ostrzeżenia o niepełnej przydatności?",
+   "options": [
+    "6 miesięcy",
+    "12 miesięcy",
+    "18 miesięcy",
+    "24 miesiące"
+   ],
+   "answer": 2,
+   "explanation": "Nagana 12, ostrzeżenie 18, niższe stanowisko/stopień 24.",
+   "source": "ustawa o SW; Skrypt SW",
+   "tag": "v15",
+   "grupa": "zatarcie-nagany"
+  },
+  {
+   "id": "pragmatyka-m43",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Prawda czy fałsz: dieta w krajowej podróży służbowej wynosi 45 zł.",
+   "options": [
+    "Prawda",
+    "Fałsz"
+   ],
+   "answer": 0,
+   "explanation": "Prawda.",
+   "source": "lista pytań 95",
+   "tag": "v15",
+   "grupa": "dieta-45"
   }
  ]
 }
