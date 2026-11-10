@@ -704,10 +704,20 @@
    "source": "art. 19 ust. 1 ustawy o SW"
   },
   {
+   "id": "spb-f-bierny",
+   "deck": "spb",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Bierny opór (art. 11 pkt 12) – jakich ŚPB NIE wolno użyć?",
+   "back": "Nie wolno m.in.: kajdanek (art. 15 – pkt 1–11, 13, 14), pałki, psa służbowego, paralizatora, kaftana i pasa obezwładniającego. Wolno m.in.: siły fizycznej, chemicznych środków obezwładniających, celi zabezpieczającej. Gdy osoba nie wykonuje polecenia (pkt 1) albo jest ujmowana lub zatrzymywana (pkt 10–11) – kajdanki już tak.",
+   "source": "art. 11, 14–26 ustawy o ŚPB",
+   "tag": "v16"
+  },
+  {
    "id": "spb-m04",
    "deck": "spb",
    "type": "mcq",
-   "question": "Którego środka NIE używa się przy biernym oporze (art. 11 pkt 12)?",
+   "question": "Którego środka NIE wolno użyć, gdy jedyną podstawą jest pokonanie biernego oporu (art. 11 pkt 12)?",
    "options": [
     "Siły fizycznej",
     "Kajdanek",
@@ -715,7 +725,7 @@
     "Chemicznych środków obezwładniających"
    ],
    "answer": 1,
-   "explanation": "Kajdanki: art. 11 pkt 1–11, 13, 14 – bez pkt 12.",
+   "explanation": "Kajdanki – art. 15 ust. 1: tylko w przypadkach z art. 11 pkt 1–11, 13 i 14, czyli BEZ pkt 12. Siła fizyczna, chemiczne środki obezwładniające i cela zabezpieczająca są przy biernym oporze dozwolone. W praktyce kajdanki zakłada się osobie biernej na innej podstawie: niewykonanie polecenia (pkt 1), ujęcie/zatrzymanie (pkt 10–11), opór czynny (pkt 13) albo prewencyjnie wobec osadzonego (art. 19 ustawy o SW).",
    "source": "art. 15 ust. 1 ustawy o ŚPB"
   },
   {

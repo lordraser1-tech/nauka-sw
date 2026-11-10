@@ -1906,6 +1906,9 @@ function sizeLikePicker(pairs, current, onPick) {
 
 // Przy każdej aktualizacji: dopisz wpis NA POCZĄTKU listy, z numerem = numer CACHE w service-worker.js.
 const CHANGELOG = [
+  { v: 16, date: '10.11.2026', items: [
+    'Poprawione pytanie o bierny opór i kajdanki: jaśniejsza treść i wyjaśnienie, dlaczego w praktyce kajdanki i tak się zakłada (na innej podstawie).',
+    'Nowa fiszka: jakich ŚPB nie wolno użyć przy biernym oporze.'] },
   { v: 15, date: '10.11.2026', items: [
     '⚙️ Ustawienia – trybik obok INFO: motyw, kopia postępu i historia zmian.',
     'Tematy na ekranie Nauka są teraz rozwijane, z przyciskami „Zaznacz/Odznacz wszystkie”.',
