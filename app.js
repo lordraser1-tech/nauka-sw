@@ -1334,6 +1334,7 @@ async function init() {
   route();
   document.getElementById('info').addEventListener('click', showWelcome);
   if ((state.settings.welcomeSeen || 0) < WELCOME_VERSION) showWelcome();
+  else showChangesIfNew();
 
   if ('serviceWorker' in navigator && location.protocol !== 'file:') {
     // Nowy service worker przejmuje stronę (controllerchange) → pokaż prośbę o odświeżenie.
@@ -1865,6 +1866,7 @@ function renderTeczka() {
     h('h2', {}, 'Kopia postępu'),
     h('p', { class: 'small muted', style: 'margin-top:0' }, 'Zapisz postęp do pliku, żeby przenieść go na inny telefon albo nie stracić go po wyczyszczeniu przeglądarki.'),
     h('div', { class: 'row' }, btn('💾 Eksportuj', '', exportProgress), btn('📂 Importuj', '', importProgress))));
+  $app.append(btn('📰 Historia zmian', 'ghost', showChangelog));
 }
 
 function stat(icon, value, label) {
@@ -1876,6 +1878,53 @@ function sizeLikePicker(pairs, current, onPick) {
     h('button', { type: 'button', role: 'radio', class: v === current ? 'on' : '', 'aria-checked': String(v === current), onclick: () => onPick(v) }, label)));
 }
 
+
+/* ---------- Co nowego (po aktualizacji) ---------- */
+
+// Przy każdej aktualizacji: dopisz wpis NA POCZĄTKU listy, z numerem = numer CACHE w service-worker.js.
+const CHANGELOG = [
+  { v: 14, date: '10.11.2026', items: [
+    'Okno „Co nowego” – po każdej aktualizacji zobaczysz krótko, co się zmieniło.',
+    'Historia zmian jest też w Teczce, na samym dole.'] },
+  { v: 13, date: '10.11.2026', items: [
+    'Czytaj → nowy skrypt „Stanowiska”: zadania bramowego, monitorowego, wartownika, spacerowego, widzeniowego, dozorującego zatrudnienie i innych (zarządzenie 30/25).',
+    'Ściągawka: kto pełni służbę, co ile zmiana (2 h / 4 h), komendy wartownika, apel.',
+    'Nowa talia „Stanowiska ochronne” i uzupełniona Ochrona – 95 pytań i fiszek.'] },
+  { v: 12, date: '10.11.2026', items: [
+    'Okno startowe i żółty przycisk INFO w nagłówku.',
+    'Stopnie aż do pułkownika.',
+    'Na pamięć → Wybierz: kliknięcie w lukę rozwija listę słów.'] },
+  { v: 11, date: '10.11.2026', items: [
+    'Punkty, stopnie, odznaki, kamienie milowe i wyzwanie dnia.',
+    'Nowa zakładka Teczka, motyw jasny/ciemny, kopia postępu.',
+    'Pytania w różnych formach i tryb „Wybierz” w Na pamięć.'] },
+];
+const APP_VERSION = CHANGELOG[0].v;
+const FIRST_TRACKED_VERSION = 12; // kto już widział okno startowe, a nie ma zapisanej wersji – zobaczy zmiany od v13
+
+function changelogBox(entries, title) {
+  const box = h('div', { class: 'modal', role: 'dialog', 'aria-modal': 'true', 'aria-labelledby': 'changes-title' },
+    h('div', { class: 'card modal-card changes-card' },
+      h('div', { class: 'verdict-icon', 'aria-hidden': 'true' }, '📰'),
+      h('h2', { id: 'changes-title' }, title),
+      entries.map(e => h('section', { class: 'changes-entry' },
+        h('div', { class: 'small muted' }, `Wersja ${e.v} · ${e.date}`),
+        h('ul', {}, e.items.map(t => h('li', {}, t))))),
+      btn('Przyjąłem', 'primary', () => box.remove())));
+  document.body.append(box);
+}
+
+function showChangesIfNew() {
+  const seen = state.settings.lastSeenVersion || FIRST_TRACKED_VERSION;
+  state.settings.lastSeenVersion = APP_VERSION;
+  save();
+  const fresh = CHANGELOG.filter(e => e.v > seen).slice(0, 3);
+  if (fresh.length) changelogBox(fresh, 'Co nowego?');
+}
+
+function showChangelog() {
+  changelogBox(CHANGELOG, 'Historia zmian');
+}
 
 /* ---------- Okno startowe ---------- */
 
@@ -1911,6 +1960,7 @@ function showWelcome() {
       h('p', { class: 'small muted' }, 'Brak wsparcia nie skutkuje karą dyscyplinarną. Wpis do teczki osobowej – w kategorii „nieprzydatny do spożycia czekolady” – zostaje.'),
       btn('Rozkaz!', 'primary', () => {
         state.settings.welcomeSeen = WELCOME_VERSION;
+        state.settings.lastSeenVersion = APP_VERSION;
         save();
         box.remove();
       })));

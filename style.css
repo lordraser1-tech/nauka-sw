@@ -434,3 +434,12 @@ input.gap-pick { cursor: pointer; caret-color: transparent; }
   display: grid; gap: 4px; }
 .gap-menu button { text-align: left; border: 0; border-radius: 8px; padding: 10px 12px; background: var(--surface-2); color: var(--text); font-size: 16px; cursor: pointer; }
 .gap-menu button.on { background: var(--primary); color: var(--primary-text); }
+
+/* Co nowego */
+.changes-card { text-align: left; max-height: calc(100vh - 32px); overflow-y: auto; }
+.changes-card .verdict-icon, .changes-card h2 { text-align: center; }
+.changes-card h2 { margin: 4px 0 8px; }
+.changes-entry { border-top: 1px solid var(--line); padding-top: 8px; margin-top: 8px; }
+.changes-entry ul { margin: 4px 0 0; padding-left: 20px; }
+.changes-entry li { margin: 3px 0; }
+.changes-card .btn { margin-top: 14px; }
