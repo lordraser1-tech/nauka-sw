@@ -1,7 +1,7 @@
 {
  "meta": {
   "tytul": "Szkolenie chorążych SW – baza do nauki",
-  "wersja": 3,
+  "wersja": 4,
   "data": "2026-11-09",
   "zrodla": "Ustawa o ŚPB (Dz.U. 2026 poz. 244), ustawa o SW (Dz.U. 2025 poz. 1750), kkw (Dz.U. 2025 poz. 911), rozporządzenie o oddziaływaniach penitencjarnych (Dz.U. 2024 poz. 1344), rozporządzenie o ośrodkach diagnostycznych (Dz.U. 2023 poz. 1677), rozporządzenie o ochronie jednostek SW (Dz.U. 2016 poz. 1804); materiały kursu: pytania kontrolne (psycholodzy 1–29, penitencjarne 28–53), lista 124 pytań, SPECJALIZACJA_2 (77 zagadnień), Skrypt SW V15",
   "typy": {
@@ -14,7 +14,8 @@
    "kontrolne-penit": "pytania kontrolne – penitencjarne (28–53)",
    "lista-124": "lista 124 pytań z kursu",
    "spec-77": "SPECJALIZACJA_2 – 77 zagadnień dla psychologów",
-   "skrypt-v15": "Skrypt SW (V15)"
+   "skrypt-v15": "Skrypt SW (V15)",
+   "slajdy-ewidencja": "slajdy z zajęć – przyjmowanie i odmowa przyjęcia"
   },
   "uwaga": "Pozycje z „⚠️” zawierają poprawkę lub wątpliwość względem materiałów kursu."
  },
@@ -73,6 +74,11 @@
    "id": "psych-proc",
    "name": "Psycholog – procedury, dokumenty, metody",
    "czesc": "specjalistyczna"
+  },
+  {
+   "id": "ewidencja",
+   "name": "Ewidencja i przyjmowanie osadzonych",
+   "czesc": "unitarna"
   }
  ],
  "items": [
@@ -6956,6 +6962,294 @@
    "answer": 0,
    "explanation": "13.05.2016 – ustawa o przeciwdziałaniu zagrożeniom przestępczością na tle seksualnym.",
    "source": "SPECJALIZACJA_2 pkt 32"
+  },
+  {
+   "id": "ewidencja-f01",
+   "deck": "ewidencja",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Kogo NIE przyjmuje się do aresztu śledczego? (3 przypadki)",
+   "back": "1) osobę doprowadzoną do odbycia zastępczej kary pozbawienia wolności lub zastępczej kary aresztu za nieuiszczoną grzywnę, która wpłaci w tym areszcie kwotę odpowiadającą wysokości grzywny;\n2) osobę, co do której ustalono, że podlega zwolnieniu w dniu kalendarzowym, w którym została doprowadzona;\n3) osobę wraz z dzieckiem, będącą jego rodzicem lub opiekunem (przyjmowanie kobiet z dzieckiem do jednostki z domem matki i dziecka regulują odrębne przepisy).\nO nieprzyjęciu decyduje dyrektor, a w czasie jego nieobecności – dowódca zmiany.",
+   "source": "rozporządzenie MS w sprawie czynności administracyjnych związanych z wykonywaniem TA oraz kar i środków przymusu skutkujących pozbawieniem wolności; slajdy z zajęć",
+   "tag": "slajdy-ewidencja"
+  },
+  {
+   "id": "ewidencja-f02",
+   "deck": "ewidencja",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Notatka urzędowa przy odmowie przyjęcia – kto, co zawiera, gdzie trafia",
+   "back": "Sporządza się ją natychmiast; podpisuje dyrektor, a w czasie jego nieobecności – dowódca zmiany.\nZawiera w szczególności: dane osobowe osoby doprowadzonej, informacje o doręczonych dokumentach, organie doprowadzającym i przyczynie odmowy.\nDołącza się ją do orzeczenia oczekującego na wykonanie lub do akt ewidencyjnych zwolnionego na przerwę; w innych przypadkach – do dokumentacji działu ewidencji.\nKopię za pokwitowaniem dostaje organ doprowadzający albo osoba zgłaszająca się; ponadto natychmiast przesyła się ją: a) organowi dysponującemu, b) właściwemu sądowi lub sądowi penitencjarnemu (przerwa), c) dyrektorowi okręgowemu.",
+   "source": "rozporządzenie MS w sprawie czynności administracyjnych związanych z wykonywaniem TA oraz kar i środków przymusu skutkujących pozbawieniem wolności; slajdy z zajęć",
+   "tag": "slajdy-ewidencja"
+  },
+  {
+   "id": "ewidencja-f03",
+   "deck": "ewidencja",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Dokumentacja niezbędna przy przyjęciu skazanych i ukaranych (5)",
+   "back": "1) odpis wyroku (kara PW, areszt wojskowy, areszt) + nakaz przyjęcia;\n2) odpis wyroku (PW, areszt wojskowy, areszt, ograniczenie wolności lub grzywna) + odpis orzeczenia, z którego wynika, że kara ma być wykonana – w szczególności o: a) wykonaniu kary warunkowo zawieszonej, b) odwołaniu warunkowego zwolnienia albo amnestii, c) wykonaniu zastępczej kary PW albo zastępczej kary aresztu, d) uchyleniu zezwolenia na SDE i wykonaniu kary w ZK – + nakaz przyjęcia;\n3) odpis orzeczenia sądu okręgowego określającego karę PW wobec osoby skazanej za granicą + nakaz przyjęcia;\n4) odpis orzeczenia sądu rejonowego o wykonaniu orzeczenia o karach pieniężnych wobec osoby skazanej za granicą + odpis orzeczenia o wykonaniu zastępczej kary PW + nakaz przyjęcia;\n5) odpis orzeczenia o wymierzeniu kary porządkowej + nakaz przyjęcia.",
+   "source": "rozporządzenie MS w sprawie czynności administracyjnych związanych z wykonywaniem TA oraz kar i środków przymusu skutkujących pozbawieniem wolności; slajdy z zajęć",
+   "tag": "slajdy-ewidencja"
+  },
+  {
+   "id": "ewidencja-f04",
+   "deck": "ewidencja",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Dni i godziny przyjmowania osób pozbawionych wolności",
+   "back": "TA, skazanych i ukaranych przyjmuje się w dni robocze w godzinach urzędowania administracji oraz w soboty 8:00–12:00. W uzasadnionych przypadkach – także w innym czasie i w dni wolne, po ustaleniu warunków z dyrektorem (w jego nieobecności – z dowódcą zmiany).\nOsadzonych zgłaszających się po przerwie w karze, ucieczce lub niepowrocie z przepustki – każdego dnia przez całą dobę.\nDłużnika, wobec którego zastosowano środek przymusu – w terminie uzgodnionym z komornikiem.",
+   "source": "rozporządzenie MS w sprawie czynności administracyjnych związanych z wykonywaniem TA oraz kar i środków przymusu skutkujących pozbawieniem wolności; slajdy z zajęć",
+   "tag": "slajdy-ewidencja"
+  },
+  {
+   "id": "ewidencja-c01",
+   "deck": "ewidencja",
+   "type": "cloze",
+   "naPamiec": true,
+   "text": "Do aresztu śledczego nie przyjmuje się osoby doprowadzonej do odbycia zastępczej kary za nieuiszczoną [[grzywnę]], która [[wpłaci]] w tym areszcie kwotę odpowiadającą wysokości grzywny, ani osoby, która podlega [[zwolnieniu]] w dniu kalendarzowym, w którym została doprowadzona.",
+   "source": "rozporządzenie MS w sprawie czynności administracyjnych związanych z wykonywaniem TA oraz kar i środków przymusu skutkujących pozbawieniem wolności; slajdy z zajęć",
+   "tag": "slajdy-ewidencja"
+  },
+  {
+   "id": "ewidencja-c02",
+   "deck": "ewidencja",
+   "type": "cloze",
+   "naPamiec": true,
+   "text": "Notatkę urzędową o odmowie przyjęcia podpisuje [[dyrektor]], a w czasie jego nieobecności – [[dowódca zmiany]]. Kopię natychmiast przesyła się organowi [[dysponującemu]], właściwemu sądowi lub sądowi penitencjarnemu oraz dyrektorowi [[okręgowemu]].",
+   "source": "rozporządzenie MS w sprawie czynności administracyjnych związanych z wykonywaniem TA oraz kar i środków przymusu skutkujących pozbawieniem wolności; slajdy z zajęć",
+   "tag": "slajdy-ewidencja"
+  },
+  {
+   "id": "ewidencja-c03",
+   "deck": "ewidencja",
+   "type": "cloze",
+   "naPamiec": true,
+   "text": "Osadzonych zgłaszających się po przerwie w wykonaniu kary, ucieczce lub niepowrocie z przepustki przyjmuje się każdego dnia przez [[całą dobę]], a dłużnika, wobec którego zastosowano środek przymusu – w terminie uzgodnionym z [[komornikiem]].",
+   "source": "rozporządzenie MS w sprawie czynności administracyjnych związanych z wykonywaniem TA oraz kar i środków przymusu skutkujących pozbawieniem wolności; slajdy z zajęć",
+   "tag": "slajdy-ewidencja"
+  },
+  {
+   "id": "ewidencja-m01",
+   "deck": "ewidencja",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "O nieprzyjęciu osoby do aresztu śledczego decyduje:",
+   "options": [
+    "kierownik działu ewidencji",
+    "organ doprowadzający",
+    "dyrektor, a w czasie jego nieobecności – dowódca zmiany",
+    "sędzia penitencjarny"
+   ],
+   "answer": 2,
+   "explanation": "Dyrektor, w jego nieobecności dowódca zmiany.",
+   "source": "rozporządzenie MS w sprawie czynności administracyjnych związanych z wykonywaniem TA oraz kar i środków przymusu skutkujących pozbawieniem wolności; slajdy z zajęć",
+   "tag": "slajdy-ewidencja"
+  },
+  {
+   "id": "ewidencja-m02",
+   "deck": "ewidencja",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Doprowadzony do odbycia zastępczej kary za nieuiszczoną grzywnę wpłaca w areszcie całą kwotę grzywny. Co dalej?",
+   "options": [
+    "Przyjmuje się go do czasu decyzji sądu",
+    "Przyjmuje się go i zwalnia następnego dnia",
+    "Przyjmuje się go na 48 godzin",
+    "Nie przyjmuje się go do aresztu"
+   ],
+   "answer": 3,
+   "explanation": "Pkt 1 – osoby, która wpłaci kwotę odpowiadającą grzywnie, nie przyjmuje się.",
+   "source": "rozporządzenie MS w sprawie czynności administracyjnych związanych z wykonywaniem TA oraz kar i środków przymusu skutkujących pozbawieniem wolności; slajdy z zajęć",
+   "tag": "slajdy-ewidencja"
+  },
+  {
+   "id": "ewidencja-m03",
+   "deck": "ewidencja",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Ustalono, że doprowadzona osoba podlega zwolnieniu w tym samym dniu kalendarzowym. Należy:",
+   "options": [
+    "odmówić przyjęcia",
+    "przyjąć ją i zwolnić następnego dnia rano",
+    "przyjąć ją za zgodą sędziego penitencjarnego",
+    "przyjąć ją do celi przejściowej"
+   ],
+   "answer": 0,
+   "explanation": "Pkt 2 – nie przyjmuje się.",
+   "source": "rozporządzenie MS w sprawie czynności administracyjnych związanych z wykonywaniem TA oraz kar i środków przymusu skutkujących pozbawieniem wolności; slajdy z zajęć",
+   "tag": "slajdy-ewidencja"
+  },
+  {
+   "id": "ewidencja-m04",
+   "deck": "ewidencja",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Notatka urzędowa o odmowie przyjęcia NIE musi zawierać:",
+   "options": [
+    "przyczyny odmowy przyjęcia",
+    "danych osobowych osoby doprowadzonej",
+    "informacji o organie doprowadzającym",
+    "opinii wychowawcy o osobie doprowadzonej"
+   ],
+   "answer": 3,
+   "explanation": "Zawiera: dane osobowe, doręczone dokumenty, organ doprowadzający, przyczynę odmowy.",
+   "source": "rozporządzenie MS w sprawie czynności administracyjnych związanych z wykonywaniem TA oraz kar i środków przymusu skutkujących pozbawieniem wolności; slajdy z zajęć",
+   "tag": "slajdy-ewidencja"
+  },
+  {
+   "id": "ewidencja-m05",
+   "deck": "ewidencja",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Kopii notatki o odmowie przyjęcia NIE przesyła się natychmiast:",
+   "options": [
+    "Rzecznikowi Praw Obywatelskich",
+    "dyrektorowi okręgowemu",
+    "organowi dysponującemu",
+    "właściwemu sądowi lub sądowi penitencjarnemu"
+   ],
+   "answer": 0,
+   "explanation": "Adresaci: organ dysponujący, sąd/sąd penitencjarny (przerwa), dyrektor okręgowy; kopia za pokwitowaniem dla organu doprowadzającego lub osoby zgłaszającej się.",
+   "source": "rozporządzenie MS w sprawie czynności administracyjnych związanych z wykonywaniem TA oraz kar i środków przymusu skutkujących pozbawieniem wolności; slajdy z zajęć",
+   "tag": "slajdy-ewidencja"
+  },
+  {
+   "id": "ewidencja-m06",
+   "deck": "ewidencja",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Gdzie przechowuje się notatkę o odmowie przyjęcia, gdy nie dotyczy orzeczenia oczekującego na wykonanie ani zwolnionego na przerwę?",
+   "options": [
+    "w aktach osobowych dyrektora",
+    "w kancelarii tajnej",
+    "w teczce wychowawcy",
+    "w dokumentacji działu ewidencji"
+   ],
+   "answer": 3,
+   "explanation": "Dołącza się do orzeczenia lub akt zwolnionego na przerwę, w innych przypadkach – dokumentacja działu ewidencji.",
+   "source": "rozporządzenie MS w sprawie czynności administracyjnych związanych z wykonywaniem TA oraz kar i środków przymusu skutkujących pozbawieniem wolności; slajdy z zajęć",
+   "tag": "slajdy-ewidencja"
+  },
+  {
+   "id": "ewidencja-m07",
+   "deck": "ewidencja",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Podstawą przyjęcia ukaranego karą porządkową jest:",
+   "options": [
+    "odpis orzeczenia o wymierzeniu kary porządkowej wraz z nakazem przyjęcia",
+    "sam nakaz przyjęcia",
+    "notatka policji",
+    "wyrok skazujący na karę pozbawienia wolności"
+   ],
+   "answer": 0,
+   "explanation": "Pkt 5 dokumentacji przyjęcia.",
+   "source": "rozporządzenie MS w sprawie czynności administracyjnych związanych z wykonywaniem TA oraz kar i środków przymusu skutkujących pozbawieniem wolności; slajdy z zajęć",
+   "tag": "slajdy-ewidencja"
+  },
+  {
+   "id": "ewidencja-m08",
+   "deck": "ewidencja",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Przy przyjęciu osoby skazanej za granicą do odbycia kary PW wymagany jest odpis orzeczenia sądu:",
+   "options": [
+    "penitencjarnego o przerwie",
+    "apelacyjnego o ekstradycji",
+    "rejonowego o warunkowym umorzeniu",
+    "okręgowego określającego karę PW, wraz z nakazem przyjęcia"
+   ],
+   "answer": 3,
+   "explanation": "Pkt 3 dokumentacji przyjęcia.",
+   "source": "rozporządzenie MS w sprawie czynności administracyjnych związanych z wykonywaniem TA oraz kar i środków przymusu skutkujących pozbawieniem wolności; slajdy z zajęć",
+   "tag": "slajdy-ewidencja"
+  },
+  {
+   "id": "ewidencja-m09",
+   "deck": "ewidencja",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Przy przyjęciu w związku z odwołaniem warunkowego zwolnienia potrzebny jest odpis wyroku oraz:",
+   "options": [
+    "opinia kuratora",
+    "odpis orzeczenia o odwołaniu warunkowego zwolnienia wraz z nakazem przyjęcia",
+    "notatka urzędowa dowódcy zmiany",
+    "zgoda dyrektora okręgowego"
+   ],
+   "answer": 1,
+   "explanation": "Pkt 2 lit. b.",
+   "source": "rozporządzenie MS w sprawie czynności administracyjnych związanych z wykonywaniem TA oraz kar i środków przymusu skutkujących pozbawieniem wolności; slajdy z zajęć",
+   "tag": "slajdy-ewidencja"
+  },
+  {
+   "id": "ewidencja-m10",
+   "deck": "ewidencja",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Każdy z dokumentów będących podstawą przyjęcia skazanego musi być uzupełniony:",
+   "options": [
+    "zaświadczeniem lekarskim",
+    "zgodą skazanego",
+    "opinią psychologa",
+    "nakazem przyjęcia"
+   ],
+   "answer": 3,
+   "explanation": "Wszystkie 5 podstaw kończy się „wraz z nakazem przyjęcia”.",
+   "source": "rozporządzenie MS w sprawie czynności administracyjnych związanych z wykonywaniem TA oraz kar i środków przymusu skutkujących pozbawieniem wolności; slajdy z zajęć",
+   "tag": "slajdy-ewidencja"
+  },
+  {
+   "id": "ewidencja-m11",
+   "deck": "ewidencja",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Doprowadzonego w niedzielę wieczorem tymczasowo aresztowanego można przyjąć:",
+   "options": [
+    "nigdy – tylko w dni robocze",
+    "tylko za zgodą sądu penitencjarnego",
+    "zawsze, bez żadnych uzgodnień",
+    "w uzasadnionym przypadku, po uzgodnieniu warunków z dyrektorem (lub dowódcą zmiany)"
+   ],
+   "answer": 3,
+   "explanation": "Wyjątek od dni roboczych i sobót 8–12.",
+   "source": "rozporządzenie MS w sprawie czynności administracyjnych związanych z wykonywaniem TA oraz kar i środków przymusu skutkujących pozbawieniem wolności; slajdy z zajęć",
+   "tag": "slajdy-ewidencja"
+  },
+  {
+   "id": "ewidencja-m12",
+   "deck": "ewidencja",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Osadzonego, który nie powrócił w terminie z przepustki i zgłasza się sam, przyjmuje się:",
+   "options": [
+    "tylko w dni robocze 8–15",
+    "każdego dnia przez całą dobę",
+    "tylko w soboty 8–12",
+    "w terminie uzgodnionym z kuratorem"
+   ],
+   "answer": 1,
+   "explanation": "Przerwa, ucieczka, niepowrót – całodobowo.",
+   "source": "rozporządzenie MS w sprawie czynności administracyjnych związanych z wykonywaniem TA oraz kar i środków przymusu skutkujących pozbawieniem wolności; slajdy z zajęć",
+   "tag": "slajdy-ewidencja"
+  },
+  {
+   "id": "ewidencja-m13",
+   "deck": "ewidencja",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Przyjęcie dłużnika, wobec którego zastosowano środek przymusu, następuje:",
+   "options": [
+    "w terminie uzgodnionym z komornikiem",
+    "w terminie wskazanym przez wierzyciela",
+    "całodobowo",
+    "tylko w soboty 8–12"
+   ],
+   "answer": 0,
+   "explanation": "Termin uzgadnia się z komornikiem.",
+   "source": "rozporządzenie MS w sprawie czynności administracyjnych związanych z wykonywaniem TA oraz kar i środków przymusu skutkujących pozbawieniem wolności; slajdy z zajęć",
+   "tag": "slajdy-ewidencja"
   }
  ]
 }
