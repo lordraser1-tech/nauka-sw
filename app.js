@@ -132,9 +132,21 @@ function selectedDecks() {
 
 function pool(types, opts = {}) {
   const decks = new Set(opts.decks || selectedDecks());
-  return DATA.items.filter(it =>
+  return pickVariants(DATA.items.filter(it =>
     types.includes(it.type) && decks.has(it.deck) &&
-    (opts.ignoreMem || !state.settings.onlyMem || it.naPamiec));
+    (opts.ignoreMem || !state.settings.onlyMem || it.naPamiec)));
+}
+
+// Pytania z tym samym polem „grupa” to różne formy tej samej treści – losujemy jedną.
+function pickVariants(list, rnd = Math.random) {
+  const chosen = {};
+  for (const it of list) {
+    if (!it.grupa) continue;
+    const c = chosen[it.grupa] || (chosen[it.grupa] = { n: 0, it: null });
+    c.n++;
+    if (rnd() * c.n < 1) c.it = it; // losowanie równomierne
+  }
+  return list.filter(it => !it.grupa || chosen[it.grupa].it === it);
 }
 
 function hardItems() {
@@ -151,12 +163,14 @@ function isDue(id) {
 }
 
 function record(item, result) {
+  const prev = state.hist[item.id] ? { ...state.hist[item.id] } : null;
   const r = state.hist[item.id] || { n: 0, bad: 0 };
   r.last = result;
   r.n++;
   if (result === 'bad') r.bad++;
   r.ts = Date.now();
   state.hist[item.id] = r;
+  onAnswer(item, result, prev);
   save();
 }
 
@@ -195,14 +209,17 @@ const routes = {
   egzamin: renderExam,
   trudne: startHard,
   czytaj: renderRead,
+  teczka: renderTeczka,
+  wyzwanie: startChallenge,
 };
 
 function route() {
   currentRoute = location.hash.replace(/^#\/?/, '');
   if (!(currentRoute in routes)) currentRoute = '';
   if (currentRoute === 'czytaj' && !docs.length) currentRoute = '';
-  document.querySelectorAll('.tabbar a').forEach(a =>
-    a.classList.toggle('active', (a.dataset.tab === 'czytaj') === (currentRoute === 'czytaj')));
+  pointsMult = 1;
+  const tab = currentRoute === 'czytaj' || currentRoute === 'teczka' ? currentRoute : 'nauka';
+  document.querySelectorAll('.tabbar a').forEach(a => a.classList.toggle('active', a.dataset.tab === tab));
   routes[currentRoute]();
   updateTimer();
 }
@@ -229,6 +246,7 @@ function renderHome(keepScroll) {
     h('a', { class: 'btn mode' + (primary ? ' primary' : ''), href: count ? href : null, 'aria-disabled': count ? null : 'true', style: count ? null : 'opacity:.45' },
       h('span', { class: 'mode-name' }, name), h('span', { class: 'mode-sub' }, sub));
 
+  $app.append(serviceCard());
   $app.append(h('div', { class: 'modes' },
     mode('Fiszki', `${due} do powtórki · ${flash.length} w wybranych taliach`, '#/fiszki', flash.length, true),
     mode('Test', `${mcq} ${plural(mcq, 'pytanie', 'pytania', 'pytań')} z natychmiastową odpowiedzią`, '#/test', mcq),
@@ -376,7 +394,37 @@ function mcqView(item, onResult, onNext, nextLabel) {
 }
 
 function clozeView(item, onResult, onNext, nextLabel) {
+  const wrap = h('div');
+  const build = () => wrap.replaceChildren(...clozeBody(item, onResult, onNext, nextLabel, () => build()));
+  build();
+  return [wrap];
+}
+
+// Mylące odpowiedzi do trybu „Wybierz”: inne luki z tego ćwiczenia, potem z tej samej talii, potem z reszty.
+function clozeDistractors(answer, item) {
+  const gapsOf = it => [...it.text.matchAll(/\[\[([^\[\]]*)\]\]/g)].map(m => m[1]);
+  const seen = new Set([norm(answer)]);
+  const out = [];
+  const take = list => {
+    for (const a of shuffle(list)) {
+      if (out.length >= 3) return;
+      const k = norm(a);
+      if (seen.has(k)) continue;
+      seen.add(k);
+      out.push(a);
+    }
+  };
+  const cloze = DATA.items.filter(i => i.type === 'cloze' && i !== item);
+  take(gapsOf(item));
+  take(cloze.filter(i => i.deck === item.deck).flatMap(gapsOf));
+  take(cloze.flatMap(gapsOf));
+  return out;
+}
+
+function clozeBody(item, onResult, onNext, nextLabel, rebuild) {
   let done = false;
+  const pick = state.settings.memMode === 'pick';
+  const picker = h('div', { class: 'pickers' });
   const parts = item.text.split(/\[\[([^\[\]]*)\]\]/);
   const inputs = [];
   const text = h('div', { class: 'cloze' });
@@ -388,6 +436,18 @@ function clozeView(item, onResult, onNext, nextLabel) {
     });
     inp.dataset.answer = p;
     inp.style.width = `calc(${Math.max(4, p.length + 1)}ch + 14px)`;
+    if (pick) {
+      inp.readOnly = true;
+      inp.placeholder = String(inputs.length + 1);
+      const chips = shuffle([p, ...clozeDistractors(p, item)]);
+      const row = h('div', { class: 'pick-row' }, h('span', { class: 'pick-n' }, `${inputs.length + 1}.`),
+        chips.map(c => h('button', { type: 'button', class: 'chip', onclick: e => {
+          if (done) return;
+          inp.value = c;
+          row.querySelectorAll('.chip').forEach(b => b.classList.toggle('on', b === e.currentTarget));
+        } }, c)));
+      picker.append(row);
+    }
     inp.addEventListener('keydown', e => {
       if (e.key !== 'Enter') return;
       e.preventDefault();
@@ -422,7 +482,18 @@ function clozeView(item, onResult, onNext, nextLabel) {
     onResult(ok);
     nextButton(actions, onNext, nextLabel);
   }
-  return [h('div', { class: 'card' }, tags(item), h('p', { class: 'small muted', style: 'margin:0 0 6px' }, 'Uzupełnij luki:'), text, fb), actions];
+  const modeSwitch = h('div', { class: 'seg seg-sm', role: 'radiogroup', 'aria-label': 'Sposób uzupełniania' },
+    [['type', '✍️ Wpisz'], ['pick', '👆 Wybierz']].map(([v, label]) => {
+      const on = (state.settings.memMode || 'type') === v;
+      return h('button', { type: 'button', role: 'radio', class: on ? 'on' : '', 'aria-checked': String(on), onclick: () => {
+        if (on || done) return;
+        state.settings.memMode = v;
+        save();
+        rebuild();
+      } }, label);
+    }));
+  return [h('div', { class: 'card' }, tags(item), modeSwitch,
+    h('p', { class: 'small muted', style: 'margin:0 0 6px' }, pick ? 'Wybierz słowo do każdej luki:' : 'Uzupełnij luki:'), text, pick ? picker : null, fb), actions];
 }
 
 function orderView(item, onResult, onNext, nextLabel) {
@@ -545,6 +616,8 @@ function sequenceSummary(title, items, s, restart, opts = {}) {
   screen(title, true);
   const n = items.length;
   const p = pct(s.ok, n);
+  if (opts.onFinish) opts.onFinish(s);
+  if (opts.celebrate) onTestDone();
   $app.append(opts.celebrate ? verdictCard(p, `${s.ok} z ${n} poprawnie`, worstDeck(s.wrong)) : h('div', { class: 'card' },
     h('div', { class: 'score' }, p + '%'),
     h('div', { class: 'score-sub' }, `${s.ok} z ${n} poprawnie`)));
@@ -757,7 +830,7 @@ function renderExam() {
     sizePicker(SIZES, examSize(), v => { state.settings.examSize = v; save(); renderExam(); }),
     h('h3', {}, 'Talie'));
   for (const d of DATA.decks) {
-    const n = DATA.items.filter(i => i.deck === d.id && i.type === 'mcq').length;
+    const n = pickVariants(DATA.items.filter(i => i.deck === d.id && i.type === 'mcq')).length;
     if (!n) continue;
     card.append(h('label', { class: 'check' },
       h('input', { type: 'checkbox', checked: sel.has(d.id), onchange: e => {
@@ -851,9 +924,10 @@ function finishExam(timeUp) {
     record(it, ok ? 'ok' : 'bad');
   });
   const n = exam.items.length;
-  state.exams.unshift({ date: Date.now(), ok: exam.ok, n, pct: pct(exam.ok, n) });
+  state.exams.unshift({ date: Date.now(), ok: exam.ok, n, pct: pct(exam.ok, n), took: exam.took, limit: exam.end - exam.start });
   state.exams = state.exams.slice(0, 20);
   save();
+  onExamDone(pct(exam.ok, n));
   updateTimer();
   if (currentRoute === 'egzamin') examResult();
 }
@@ -1220,6 +1294,8 @@ async function init() {
     return;
   }
   DATA.decks.forEach(d => { deckById[d.id] = d; });
+  applyTheme();
+  if (window.matchMedia) matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyTheme);
   if (state.settings.decks) state.settings.decks = state.settings.decks.filter(id => deckById[id]);
   if (state.settings.examDecks) state.settings.examDecks = state.settings.examDecks.filter(id => deckById[id]);
 
@@ -1228,6 +1304,7 @@ async function init() {
   docs = DOCS.map((d, i) => ({ ...d, text: loaded[i] })).filter(d => d.text);
   document.getElementById('tab-czytaj').hidden = !docs.length;
 
+  game();
   route();
 
   if ('serviceWorker' in navigator && location.protocol !== 'file:') {
@@ -1243,6 +1320,529 @@ async function init() {
       setInterval(check, 30 * 60000);
     }).catch(() => {});
   }
+}
+
+/* ---------- Służba: punkty, stopnie, odznaki, kamienie milowe ---------- */
+
+// Punkty (po zmniejszeniu o 1/3 względem projektu). Progi stopni – bez zmian.
+const POINTS = { mcq: 7, flashcard: 3, cloze: 10, order: 10, fixed: 13, examPass: 67, examTop: 167, dailyGoal: 33 };
+const STREAK_FROM = 5;      // od 5. dobrej odpowiedzi z rzędu…
+const STREAK_MULT = 1.5;    // …punkty ×1,5
+const CHALLENGE_MULT = 2;   // wyzwanie dnia – punkty ×2
+const CHALLENGE_SIZE = 10;
+const DAILY_GOALS = [20, 50, 100];
+const DEFAULT_EXAM_DATE = '2026-12-15';
+const RANKS = [
+  [0, 'Szeregowy'], [500, 'Starszy szeregowy'], [1500, 'Kapral'], [3500, 'Starszy kapral'],
+  [6500, 'Plutonowy'], [11000, 'Sierżant'], [17000, 'Starszy sierżant'], [25000, 'Młodszy chorąży'],
+  [35000, 'Chorąży'], [50000, 'Starszy chorąży'], [70000, 'Starszy chorąży sztabowy'],
+];
+// Wagi działów do wskaźnika gotowości – wg składu „Testu 60”.
+const READY_WEIGHTS = { ochrona: 20, kkw: 15, spb: 5, bron: 3, pragmatyka: 3, sw: 3, metodyka: 3, ewidencja: 2, pp: 2, psych: 4 };
+const PSYCH_DECKS = ['psycholog', 'psych-klin', 'psych-proc'];
+const ZUPP_RE = /pkt 10|ZUPP|samodzielnie podjąć decyzję|decyduje sam/i;
+
+let pointsMult = 1;          // ×2 w wyzwaniu dnia
+const toastQueue = [];
+let toastBusy = false;
+
+function defaultGame() {
+  return {
+    points: 0, rank: 0, badges: {}, milestones: {}, days: {}, goalDone: {}, challenge: {},
+    counters: { answers: 0, ok: 0, fixed: 0, zupp: 0, owl: 0, tests: 0 },
+    flags: {}, deckStats: {}, run: 0,
+  };
+}
+
+function game() {
+  if (!state.game) migrateGame();
+  return state.game;
+}
+
+// Pierwsze uruchomienie: odtwórz liczniki z dotychczasowej historii (bez zalewu powiadomień).
+function migrateGame() {
+  const g = defaultGame();
+  for (const it of DATA.items) {
+    const r = state.hist[it.id];
+    if (!r) continue;
+    const ok = Math.max(0, r.n - r.bad);
+    g.counters.answers += r.n;
+    g.counters.ok += ok;
+    g.points += ok * (POINTS[it.type] || 0);
+    const ds = g.deckStats[it.deck] || (g.deckStats[it.deck] = { n: 0, ok: 0 });
+    ds.n += r.n; ds.ok += ok;
+    if (r.ts) { const k = dayKey(new Date(r.ts)); g.days[k] = (g.days[k] || 0) + 1; }
+  }
+  g.counters.tests = state.exams.length;
+  for (const e of state.exams) g.points += e.pct >= 91 ? POINTS.examTop : e.pct >= 51 ? POINTS.examPass : 0;
+  g.rank = rankIndex(g.points);
+  state.game = g;
+  const got = evaluate(true);
+  if (got.length) toast('🎖️', `Za dotychczasową naukę przyznano ${got.length} ${plural(got.length, 'odznakę', 'odznaki', 'odznak')}`, 'Zobacz w zakładce Teczka.');
+  save();
+}
+
+const dayKey = d => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+const dailyGoal = () => (DAILY_GOALS.includes(state.settings.dailyGoal) ? state.settings.dailyGoal : 50);
+const examDate = () => state.settings.examDate || DEFAULT_EXAM_DATE;
+const rankIndex = p => { let k = 0; RANKS.forEach(([min], i) => { if (p >= min) k = i; }); return k; };
+const itemText = it => [it.question, it.front, it.back, it.text, it.prompt, it.explanation].filter(Boolean).join(' ');
+
+function addPoints(n) {
+  const g = game();
+  g.points += Math.round(n);
+}
+
+// Wywoływane z record() – każda odpowiedź w każdym trybie.
+function onAnswer(item, result, prev) {
+  const g = game();
+  const now = new Date(), day = dayKey(now), hr = now.getHours();
+  const ok = result === 'ok';
+  g.days[day] = (g.days[day] || 0) + 1;
+  g.counters.answers++;
+  const ds = g.deckStats[item.deck] || (g.deckStats[item.deck] = { n: 0, ok: 0 });
+  ds.n++;
+  if (hr >= 22) g.flags.night = true;
+  if (hr >= 4 && hr < 7) g.flags.morning = true;
+  if (hr < 4) g.counters.owl++;
+  if (ok) {
+    ds.ok++;
+    g.counters.ok++;
+    g.run++;
+    const wasBad = prev && prev.last === 'bad';
+    let pts = wasBad ? POINTS.fixed : (POINTS[item.type] || 0);
+    if (wasBad) {
+      g.counters.fixed++;
+      if (prev.bad >= 5) unlock('szczesciarz');
+    }
+    if (g.run >= STREAK_FROM) pts *= STREAK_MULT;
+    addPoints(pts * pointsMult);
+    if (item.deck === 'spb' && ZUPP_RE.test(itemText(item))) g.counters.zupp++;
+  } else if (result === 'bad') {
+    g.run = 0;
+  }
+  if (g.days[day] >= dailyGoal() && !g.goalDone[day]) {
+    g.goalDone[day] = true;
+    addPoints(POINTS.dailyGoal);
+    toast('🎯', 'Dzienny cel osiągnięty!', `${dailyGoal()} odpowiedzi dzisiaj · +${POINTS.dailyGoal} pkt`);
+  }
+  evaluate();
+}
+
+function onTestDone() {
+  game().counters.tests++;
+  evaluate();
+  save();
+}
+
+function onExamDone(p) {
+  const g = game();
+  g.counters.tests++;
+  if (p >= 91) addPoints(POINTS.examTop);
+  else if (p >= 51) addPoints(POINTS.examPass);
+  evaluate();
+  save();
+}
+
+/* --- Odznaki --- */
+
+function deckAcc(ids) {
+  let n = 0, ok = 0;
+  for (const id of ids) { const s = game().deckStats[id]; if (s) { n += s.n; ok += s.ok; } }
+  return { n, ok, acc: n ? ok / n : 0 };
+}
+const mastered = ids => { const a = deckAcc(ids); return a.n >= 30 && a.acc >= 0.9; };
+
+function streakDays() {
+  const g = game();
+  const d = new Date();
+  if (!g.days[dayKey(d)]) d.setDate(d.getDate() - 1); // seria trwa, jeśli wczoraj była nauka
+  let k = 0;
+  while (g.days[dayKey(d)]) { k++; d.setDate(d.getDate() - 1); }
+  return k;
+}
+
+function weekendDuty() {
+  return Object.keys(game().days).some(k => {
+    const d = new Date(k + 'T12:00:00');
+    if (d.getDay() !== 6) return false;
+    d.setDate(d.getDate() + 1);
+    return !!game().days[dayKey(d)];
+  });
+}
+
+const examsChrono = () => state.exams.slice().reverse();
+
+const BADGES = [
+  // Start
+  { id: 'start', cat: 'Start', icon: '🎒', name: 'Pierwszy dzień w służbie', desc: 'Pierwsza odpowiedź w aplikacji', test: g => g.counters.answers >= 1 },
+  { id: 'slubowanie', cat: 'Start', icon: '📜', name: 'Ślubowanie', desc: 'Pierwszy ukończony test lub egzamin', test: g => g.counters.tests >= 1 },
+  // Wytrwałość
+  ...[3, 7, 14, 30].map(n => ({ id: 'seria' + n, cat: 'Wytrwałość', icon: '🔥', name: `Służba bez przerwy – ${n} dni`, desc: `Nauka ${n} dni z rzędu`, test: () => streakDays() >= n })),
+  { id: 'nocna', cat: 'Wytrwałość', icon: '🌙', name: 'Nocna zmiana', desc: 'Nauka po 22:00', test: g => !!g.flags.night },
+  { id: 'apel', cat: 'Wytrwałość', icon: '🌅', name: 'Apel poranny', desc: 'Nauka między 4:00 a 7:00', test: g => !!g.flags.morning },
+  { id: 'weekend', cat: 'Wytrwałość', icon: '📅', name: 'Weekendowy dyżur', desc: 'Nauka w sobotę i w niedzielę tego samego weekendu', test: () => weekendDuty() },
+  // Ilość
+  ...[100, 500, 1000, 2500].map(n => ({ id: 'kancelista' + n, cat: 'Ilość', icon: '📝', name: `Kancelista – ${n}`, desc: `${n} udzielonych odpowiedzi`, test: g => g.counters.answers >= n })),
+  { id: 'weteran', cat: 'Ilość', icon: '🃏', name: 'Fiszkowy weteran', desc: 'Każda fiszka przerobiona przynajmniej raz', test: () => DATA.items.filter(i => i.type === 'flashcard').every(i => state.hist[i.id]) },
+  { id: 'pudelko', cat: 'Ilość', icon: '📦', name: 'Pełne pudełko', desc: '50 fiszek w pudełku 5', test: () => DATA.items.filter(i => i.type === 'flashcard' && boxOf(i.id) === 5).length >= 50 },
+  // Mistrzostwo
+  { id: 'm-ochrona', cat: 'Mistrzostwo działów', icon: '🛡️', name: 'Mistrz ochrony', desc: '90%+ poprawnych w talii Ochrona (min. 30 odpowiedzi)', test: () => mastered(['ochrona']) },
+  { id: 'm-kkw', cat: 'Mistrzostwo działów', icon: '⚖️', name: 'Znawca KKW', desc: '90%+ w talii KKW (min. 30 odpowiedzi)', test: () => mastered(['kkw']) },
+  { id: 'm-spb', cat: 'Mistrzostwo działów', icon: '✊', name: 'Ekspert ŚPB', desc: '90%+ w talii ŚPB (min. 30 odpowiedzi)', test: () => mastered(['spb']) },
+  { id: 'm-bron', cat: 'Mistrzostwo działów', icon: '🎯', name: 'Strzelec wyborowy', desc: '90%+ w talii Broń (min. 30 odpowiedzi)', test: () => mastered(['bron']) },
+  { id: 'm-pp', cat: 'Mistrzostwo działów', icon: '🩹', name: 'Ratownik', desc: '90%+ w talii Pierwsza pomoc (min. 30 odpowiedzi)', test: () => mastered(['pp']) },
+  { id: 'm-ewidencja', cat: 'Mistrzostwo działów', icon: '📋', name: 'Ewidencjonista', desc: '90%+ w talii Ewidencja (min. 30 odpowiedzi)', test: () => mastered(['ewidencja']) },
+  { id: 'm-psych', cat: 'Mistrzostwo działów', icon: '🧠', name: 'Psycholog penitencjarny', desc: '90%+ we wszystkich taliach psychologicznych razem (min. 30 odpowiedzi)', test: () => mastered(PSYCH_DECKS) },
+  { id: 'komplet', cat: 'Mistrzostwo działów', icon: '🏛️', name: 'Komplet', desc: 'Wszystkie odznaki mistrzostwa działów', test: g => ['m-ochrona', 'm-kkw', 'm-spb', 'm-bron', 'm-pp', 'm-ewidencja', 'm-psych'].every(b => g.badges[b]) },
+  // Egzaminy
+  { id: 'zdany', cat: 'Egzaminy', icon: '🎓', name: 'Zdany', desc: 'Egzamin próbny na 51%+', test: () => state.exams.some(e => e.pct >= 51) },
+  { id: 'wzorowo', cat: 'Egzaminy', icon: '🎖️', name: 'Wzorowo', desc: 'Egzamin próbny na 91%+', test: () => state.exams.some(e => e.pct >= 91) },
+  { id: 'bezblednie', cat: 'Egzaminy', icon: '💯', name: 'Bezbłędnie', desc: 'Egzamin próbny na 100%', test: () => state.exams.some(e => e.pct === 100) },
+  { id: 'trzy-medale', cat: 'Egzaminy', icon: '🏅', name: 'Trzy medale', desc: '3 egzaminy z rzędu na 91%+', test: () => state.exams.length >= 3 && state.exams.slice(0, 3).every(e => e.pct >= 91) },
+  { id: 'szybka', cat: 'Egzaminy', icon: '⏱️', name: 'Szybka reakcja', desc: 'Egzamin na 80%+ w mniej niż połowie czasu', test: () => state.exams.some(e => e.pct >= 80 && e.took && e.limit && e.took < e.limit / 2) },
+  { id: 'zwrot', cat: 'Egzaminy', icon: '🔄', name: 'Zwrot akcji', desc: 'Egzamin na 91%+ po wcześniejszym niezdanym', test: () => { let failed = false; return examsChrono().some(e => { if (failed && e.pct >= 91) return true; if (e.pct < 51) failed = true; return false; }); } },
+  // Poprawa błędów
+  { id: 'porzadek', cat: 'Poprawa błędów', icon: '🧹', name: 'Porządek w celi', desc: 'Wyczyszczona lista „Trudne”', test: g => g.counters.fixed > 0 && hardItems().length === 0 },
+  { id: 'recydywa', cat: 'Poprawa błędów', icon: '🔁', name: 'Recydywa pokonana', desc: '10 poprawnych odpowiedzi na pytania, na których wcześniej był błąd', test: g => g.counters.fixed >= 10 },
+  // Na pamięć
+  { id: 'kodeks', cat: 'Na pamięć', icon: '📖', name: 'Kodeks w głowie', desc: 'Wszystkie ćwiczenia „Na pamięć” z talii ŚPB – ostatnia odpowiedź poprawna', test: () => { const m = DATA.items.filter(i => i.deck === 'spb' && (i.type === 'cloze' || i.type === 'order')); return m.length > 0 && m.every(i => state.hist[i.id] && state.hist[i.id].last === 'ok'); } },
+  { id: 'zupp', cat: 'Na pamięć', icon: '🗣️', name: 'ZUPP', desc: '10 poprawnych odpowiedzi o samodzielnej decyzji funkcjonariusza (art. 35 ust. 2 pkt 10)', test: g => g.counters.zupp >= 10 },
+  // Ukryte
+  { id: 'alarm', cat: 'Ukryte', hidden: true, icon: '🚨', name: 'Alarm fałszywy', desc: 'Egzamin poniżej 20% – ale wróciłeś, to się liczy', test: () => state.exams.some(e => e.pct < 20) },
+  { id: 'sowa', cat: 'Ukryte', hidden: true, icon: '🦉', name: 'Sowa penitencjarna', desc: '100 odpowiedzi między północą a 4:00', test: g => g.counters.owl >= 100 },
+  { id: 'szczesciarz', cat: 'Ukryte', hidden: true, icon: '🎲', name: 'Szczęściarz', desc: 'Poprawna odpowiedź na pytanie, na którym wcześniej było 5 błędów', test: () => false },
+];
+
+const MILESTONES = [
+  { id: 'baza25', icon: '🗂️', name: '25% bazy przerobione', test: () => coverage() >= 0.25 },
+  { id: 'pierwszy', icon: '🎓', name: 'Pierwszy zdany egzamin', test: () => state.exams.some(e => e.pct >= 51) },
+  { id: 'baza50', icon: '📚', name: '50% bazy przerobione', test: () => coverage() >= 0.5 },
+  { id: 'dzialy75', icon: '📈', name: 'Wszystkie działy powyżej 75%', test: () => DATA.decks.every(d => { const a = deckAcc([d.id]); return a.n >= 10 && a.acc >= 0.75; }) },
+  { id: 'gotowosc', icon: '🏁', name: 'Gotowość egzaminacyjna: 3 egzaminy z rzędu na 80%+', test: () => state.exams.length >= 3 && state.exams.slice(0, 3).every(e => e.pct >= 80) },
+];
+
+function coverage() {
+  const n = DATA.items.length;
+  return n ? DATA.items.filter(i => state.hist[i.id]).length / n : 0;
+}
+
+function unlock(id, silent) {
+  const g = game();
+  if (g.badges[id]) return false;
+  g.badges[id] = Date.now();
+  const b = BADGES.find(x => x.id === id);
+  if (b && !silent) toast(b.icon, 'Nowa odznaka: ' + b.name, b.desc);
+  return true;
+}
+
+// Sprawdza odznaki, kamienie milowe i stopień. Zwraca listę nowych odznak.
+function evaluate(silent) {
+  const g = game();
+  const got = [];
+  for (const b of BADGES) if (!g.badges[b.id] && b.test(g) && unlock(b.id, silent)) got.push(b.id);
+  for (const m of MILESTONES) {
+    if (g.milestones[m.id] || !m.test()) continue;
+    g.milestones[m.id] = Date.now();
+    if (!silent) toast(m.icon, 'Kamień milowy!', m.name);
+  }
+  const r = rankIndex(g.points);
+  if (r > g.rank) {
+    g.rank = r;
+    if (!silent) promotion(r);
+  }
+  return got;
+}
+
+/* --- Powiadomienia --- */
+
+function toast(icon, title, sub) {
+  toastQueue.push({ icon, title, sub });
+  if (!toastBusy) nextToast();
+}
+
+function nextToast() {
+  const t = toastQueue.shift();
+  if (!t) { toastBusy = false; return; }
+  toastBusy = true;
+  const el = h('div', { class: 'toast', role: 'status' },
+    h('span', { class: 'toast-icon', 'aria-hidden': 'true' }, t.icon),
+    h('div', {}, h('strong', {}, t.title), t.sub && h('div', { class: 'small' }, t.sub)));
+  el.addEventListener('click', () => el.remove());
+  document.body.append(el);
+  setTimeout(() => { el.classList.add('out'); setTimeout(() => { el.remove(); nextToast(); }, 300); }, 3200);
+}
+
+function promotion(r) {
+  const n = Object.keys(game().badges).length;
+  const box = h('div', { class: 'modal', role: 'dialog', 'aria-modal': 'true' },
+    h('div', { class: 'card modal-card' },
+      h('div', { class: 'small muted' }, `Rozkaz personalny nr ${r}/${new Date().getFullYear()}`),
+      h('div', { class: 'verdict-icon' }, '📜'),
+      h('p', {}, 'Za sumienne przygotowanie do służby mianuje się funkcjonariusza na stopień:'),
+      h('div', { class: 'promo-rank' }, RANKS[r][1]),
+      h('p', { class: 'small muted' }, `${game().points} pkt · ${n} ${plural(n, 'odznaka', 'odznaki', 'odznak')}`),
+      btn('Melduję się!', 'primary', () => box.remove())));
+  document.body.append(box);
+  confetti();
+}
+
+/* --- Gotowość, tempo, kalendarz --- */
+
+function readiness() {
+  const since = Date.now() - 7 * 86400000;
+  let sw = 0, sum = 0;
+  for (const [key, w] of Object.entries(READY_WEIGHTS)) {
+    const decks = key === 'psych' ? PSYCH_DECKS : [key];
+    const items = DATA.items.filter(i => i.type === 'mcq' && decks.includes(i.deck));
+    if (!items.length) continue;
+    const recent = items.filter(i => state.hist[i.id] && state.hist[i.id].ts >= since);
+    const acc = recent.length ? recent.filter(i => state.hist[i.id].last === 'ok').length / recent.length : 0;
+    const cover = Math.min(1, recent.length / Math.min(10, items.length));
+    sw += w;
+    sum += w * acc * cover;
+  }
+  return sw ? Math.round((sum / sw) * 100) : 0;
+}
+
+function daysToExam() {
+  const t = new Date(examDate() + 'T00:00:00');
+  const now = new Date(); now.setHours(0, 0, 0, 0);
+  return Math.round((t - now) / 86400000);
+}
+
+function suggestedPace() {
+  const left = DATA.items.filter(i => !state.hist[i.id]).length;
+  const d = Math.max(1, daysToExam());
+  return Math.ceil(left / d);
+}
+
+/* --- Wyzwanie dnia --- */
+
+function seeded(seed) {
+  let s = 0;
+  for (const ch of seed) s = (s * 31 + ch.charCodeAt(0)) >>> 0;
+  return () => { s = (s * 1664525 + 1013904223) >>> 0; return s / 4294967296; };
+}
+
+function challengeToday() {
+  const day = dayKey(new Date());
+  const decks = DATA.decks.filter(d => DATA.items.filter(i => i.deck === d.id && i.type === 'mcq').length >= CHALLENGE_SIZE);
+  if (!decks.length) return null;
+  const rnd = seeded(day);
+  const deck = decks[Math.floor(rnd() * decks.length)];
+  const items = pickVariants(DATA.items.filter(i => i.deck === deck.id && i.type === 'mcq'), rnd);
+  for (let i = items.length - 1; i > 0; i--) { const j = Math.floor(rnd() * (i + 1)); [items[i], items[j]] = [items[j], items[i]]; }
+  return { day, deck, items: items.slice(0, CHALLENGE_SIZE) };
+}
+
+function startChallenge() {
+  const c = challengeToday();
+  if (!c) return emptyScreen('Wyzwanie dnia', '📭', 'Brak pytań do wyzwania.');
+  pointsMult = CHALLENGE_MULT;
+  runSequence(`Wyzwanie dnia – ${c.deck.name}`, c.items, startChallenge, {
+    celebrate: true,
+    onFinish: s => {
+      pointsMult = 1;
+      const g = game();
+      g.challenge[c.day] = Math.max(g.challenge[c.day] || 0, pct(s.ok, c.items.length));
+      save();
+    },
+  });
+}
+
+/* --- Udostępnianie i kopia postępu --- */
+
+function shareText() {
+  const g = game();
+  const best = state.exams.length ? Math.max(...state.exams.map(e => e.pct)) : null;
+  const nb = Object.keys(g.badges).length;
+  return `Nauka SW 🎖️ ${RANKS[g.rank][1]} · ${g.points} pkt · ${nb} ${plural(nb, 'odznaka', 'odznaki', 'odznak')}` +
+    (best !== null ? ` · najlepszy egzamin ${best}%` : '') + ` · seria ${streakDays()} dni 🔥`;
+}
+
+async function shareResult() {
+  const text = shareText();
+  try {
+    if (navigator.share) { await navigator.share({ text }); return; }
+    await navigator.clipboard.writeText(text);
+    toast('📋', 'Skopiowano wynik', 'Wklej go w wiadomości.');
+  } catch (e) { /* anulowano */ }
+}
+
+function exportProgress() {
+  const blob = new Blob([JSON.stringify({ app: 'nauka-sw', version: 1, date: new Date().toISOString(), state }, null, 1)], { type: 'application/json' });
+  const a = h('a', { href: URL.createObjectURL(blob), download: `nauka-sw-postep-${dayKey(new Date())}.json` });
+  document.body.append(a);
+  a.click();
+  setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 1000);
+}
+
+function importProgress() {
+  const inp = h('input', { type: 'file', accept: '.json,application/json' });
+  inp.addEventListener('change', async () => {
+    const f = inp.files[0];
+    if (!f) return;
+    try {
+      const data = JSON.parse(await f.text());
+      const s = data && data.app === 'nauka-sw' ? data.state : data;
+      if (!s || typeof s.hist !== 'object' || typeof s.boxes !== 'object') throw new Error('format');
+      if (!confirm('Wczytać postęp z pliku? Obecny postęp na tym telefonie zostanie zastąpiony.')) return;
+      state = { ...defaultState(), ...s, settings: { ...defaultState().settings, ...(s.settings || {}) } };
+      exam = null;
+      save();
+      applyTheme();
+      toast('✅', 'Postęp wczytany', `${RANKS[game().rank][1]} · ${game().points} pkt`);
+      route();
+    } catch (e) {
+      alert('To nie jest plik z postępem aplikacji Nauka SW.');
+    }
+  });
+  inp.click();
+}
+
+/* --- Motyw --- */
+
+function applyTheme() {
+  const t = state.settings.theme;
+  if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
+  else delete document.documentElement.dataset.theme;
+  const dark = t === 'dark' || (t !== 'light' && window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches);
+  document.querySelectorAll('meta[name="theme-color"]').forEach(m => m.setAttribute('content', dark ? '#0f1722' : '#1f3a5f'));
+}
+
+/* --- Ekran startowy: karta służby --- */
+
+function serviceCard() {
+  const g = game();
+  const r = g.rank, next = RANKS[r + 1];
+  const from = RANKS[r][0];
+  const prog = next ? (g.points - from) / (next[0] - from) : 1;
+  const today = g.days[dayKey(new Date())] || 0;
+  const goal = dailyGoal();
+  const gp = Math.min(1, today / goal);
+  const dte = daysToExam();
+  const c = challengeToday();
+  const cDone = c && g.challenge[c.day] != null;
+  return h('section', { class: 'card service' },
+    h('a', { class: 'service-top', href: '#/teczka' },
+      h('div', { class: 'ring', style: `--p:${Math.round(gp * 100)}`, 'aria-label': `Dzienny cel: ${today} z ${goal}` },
+        h('span', {}, gp >= 1 ? '✓' : `${today}/${goal}`)),
+      h('div', { class: 'service-main' },
+        h('div', { class: 'service-rank' }, RANKS[r][1]),
+        h('div', { class: 'small muted' }, `${g.points} pkt` + (next ? ` · do awansu: ${next[0] - g.points}` : ' · najwyższy stopień')),
+        h('div', { class: 'xp' }, h('i', { style: `width:${Math.round(prog * 100)}%` }))),
+      h('div', { class: 'service-side' },
+        h('div', { title: 'Seria dni nauki' }, `🔥 ${streakDays()}`),
+        h('div', { title: 'Odznaki' }, `🏅 ${Object.keys(g.badges).length}`))),
+    h('div', { class: 'service-info small' },
+      dte >= 0 ? h('span', {}, `📆 Do egzaminu: ${dte} ${plural(dte, 'dzień', 'dni', 'dni')} · tempo ok. ${suggestedPace()} nowych/dzień`) : h('span', {}, '📆 Ustaw datę egzaminu w Teczce'),
+      h('span', {}, `📊 Gotowość: ${readiness()}%`)),
+    c && h('a', { class: 'btn challenge' + (cDone ? '' : ' primary'), href: '#/wyzwanie' },
+      cDone ? `⭐ Wyzwanie dnia zaliczone (${g.challenge[c.day]}%) – powtórz` : `⭐ Wyzwanie dnia: ${c.deck.name} · 10 pytań · punkty ×2`));
+}
+
+/* --- Teczka osobowa --- */
+
+function renderTeczka() {
+  screen('Teczka osobowa', false);
+  const g = game();
+  const r = g.rank, next = RANKS[r + 1];
+  const nb = Object.keys(g.badges).length;
+
+  // Stopień i statystyki
+  $app.append(h('section', { class: 'card teczka-head' },
+    h('div', { class: 'verdict-icon' }, '🎖️'),
+    h('div', { class: 'promo-rank' }, RANKS[r][1]),
+    h('div', { class: 'muted' }, `${g.points} pkt` + (next ? ` · następny stopień: ${next[1]} (${next[0]} pkt)` : '')),
+    h('div', { class: 'xp', style: 'margin:10px 0' }, h('i', { style: `width:${next ? Math.round(((g.points - RANKS[r][0]) / (next[0] - RANKS[r][0])) * 100) : 100}%` })),
+    h('div', { class: 'stats' },
+      stat('🔥', streakDays(), 'dni z rzędu'),
+      stat('🏅', `${nb}/${BADGES.length}`, 'odznak'),
+      stat('📝', g.counters.answers, 'odpowiedzi'),
+      stat('📊', readiness() + '%', 'gotowość')),
+    btn('📤 Udostępnij wynik', '', shareResult)));
+
+  // Ustawienia nauki
+  const dateInp = h('input', { type: 'date', value: examDate(), class: 'date', onchange: e => { state.settings.examDate = e.target.value || null; save(); renderTeczka(); } });
+  $app.append(h('section', { class: 'card' },
+    h('h2', { style: 'margin-top:0' }, 'Egzamin i cel'),
+    h('label', { class: 'field' }, h('span', {}, 'Data egzaminu'), dateInp),
+    h('p', { class: 'small muted', style: 'margin:6px 0 12px' }, daysToExam() >= 0
+      ? `Zostało ${daysToExam()} ${plural(daysToExam(), 'dzień', 'dni', 'dni')}. Nieprzerobionych pozycji: ${DATA.items.filter(i => !state.hist[i.id]).length} – proponowane tempo: ok. ${suggestedPace()} nowych dziennie.`
+      : 'Data egzaminu minęła – ustaw nową.'),
+    h('div', { class: 'small muted' }, 'Dzienny cel (odpowiedzi):'),
+    sizePicker(DAILY_GOALS, dailyGoal(), v => { state.settings.dailyGoal = v; save(); renderTeczka(); })));
+
+  // Kamienie milowe
+  $app.append(h('section', { class: 'card' },
+    h('h2', { style: 'margin-top:0' }, 'Kamienie milowe'),
+    h('ol', { class: 'timeline' }, MILESTONES.map(m => h('li', { class: g.milestones[m.id] ? 'done' : '' },
+      h('span', { class: 'tl-dot' }, g.milestones[m.id] ? '✓' : m.icon),
+      h('span', {}, m.name, g.milestones[m.id] && h('span', { class: 'small muted' }, ' · ' + new Date(g.milestones[m.id]).toLocaleDateString('pl-PL'))))))));
+
+  // Kalendarz – ostatnie 5 tygodni
+  const cal = h('div', { class: 'cal' });
+  const start = new Date(); start.setHours(12, 0, 0, 0);
+  start.setDate(start.getDate() - ((start.getDay() + 6) % 7) - 28); // poniedziałek 4 tygodnie temu
+  ['Pn', 'Wt', 'Śr', 'Cz', 'Pt', 'So', 'Nd'].forEach(d => cal.append(h('span', { class: 'cal-h' }, d)));
+  for (let i = 0; i < 35; i++) {
+    const d = new Date(start); d.setDate(start.getDate() + i);
+    const n = g.days[dayKey(d)] || 0;
+    const lvl = n === 0 ? 0 : n < 20 ? 1 : n < 50 ? 2 : n < 100 ? 3 : 4;
+    const future = d > new Date();
+    cal.append(h('span', { class: `cal-d l${lvl}` + (future ? ' future' : '') + (dayKey(d) === dayKey(new Date()) ? ' today' : ''), title: `${d.toLocaleDateString('pl-PL')}: ${n} odpowiedzi` }, d.getDate()));
+  }
+  $app.append(h('section', { class: 'card' }, h('h2', { style: 'margin-top:0' }, 'Kalendarz nauki'), cal));
+
+  // Odznaki
+  const cats = [...new Set(BADGES.map(b => b.cat))];
+  const sec = h('section', { class: 'card' }, h('h2', { style: 'margin-top:0' }, `Odznaki (${nb}/${BADGES.length})`));
+  for (const c of cats) {
+    sec.append(h('h3', {}, c));
+    sec.append(h('div', { class: 'badges' }, BADGES.filter(b => b.cat === c).map(b => {
+      const got = g.badges[b.id];
+      const secret = b.hidden && !got;
+      return h('div', { class: 'badge' + (got ? ' got' : '') },
+        h('span', { class: 'badge-icon' }, secret ? '❓' : b.icon),
+        h('strong', {}, secret ? '???' : b.name),
+        h('span', { class: 'small muted' }, secret ? 'Odznaka ukryta' : got ? 'Zdobyta ' + new Date(got).toLocaleDateString('pl-PL') : b.desc));
+    })));
+  }
+  $app.append(sec);
+
+  // Punktacja
+  $app.append(h('section', { class: 'card small' },
+    h('h2', { style: 'margin-top:0' }, 'Jak zdobywać punkty'),
+    h('ul', {},
+      h('li', {}, `Poprawna odpowiedź w teście: +${POINTS.mcq}`),
+      h('li', {}, `Fiszka „Wiem”: +${POINTS.flashcard}`),
+      h('li', {}, `Ćwiczenie „Na pamięć”: +${POINTS.cloze}`),
+      h('li', {}, `Poprawiony wcześniejszy błąd: +${POINTS.fixed}`),
+      h('li', {}, `Od ${STREAK_FROM}. dobrej odpowiedzi z rzędu: punkty ×${String(STREAK_MULT).replace('.', ',')}`),
+      h('li', {}, `Wyzwanie dnia: punkty ×${CHALLENGE_MULT}`),
+      h('li', {}, `Dzienny cel: +${POINTS.dailyGoal} · egzamin zdany: +${POINTS.examPass} · egzamin 91%+: +${POINTS.examTop}`)),
+    h('h3', {}, 'Stopnie'),
+    h('div', { class: 'ranks' }, RANKS.map(([p, n], i) => h('div', { class: i === r ? 'on' : i < r ? 'past' : '' }, h('span', {}, n), h('span', { class: 'muted' }, `${p} pkt`))))));
+
+  // Ustawienia i kopia
+  $app.append(h('section', { class: 'card' },
+    h('h2', { style: 'margin-top:0' }, 'Wygląd'),
+    sizeLikePicker([['auto', 'Auto'], ['light', '☀️ Jasny'], ['dark', '🌙 Ciemny']], state.settings.theme || 'auto', v => {
+      state.settings.theme = v === 'auto' ? null : v; save(); applyTheme(); renderTeczka();
+    }),
+    h('h2', {}, 'Kopia postępu'),
+    h('p', { class: 'small muted', style: 'margin-top:0' }, 'Zapisz postęp do pliku, żeby przenieść go na inny telefon albo nie stracić go po wyczyszczeniu przeglądarki.'),
+    h('div', { class: 'row' }, btn('💾 Eksportuj', '', exportProgress), btn('📂 Importuj', '', importProgress))));
+}
+
+function stat(icon, value, label) {
+  return h('div', { class: 'stat' }, h('div', { class: 'stat-v' }, icon + ' ' + value), h('div', { class: 'small muted' }, label));
+}
+
+function sizeLikePicker(pairs, current, onPick) {
+  return h('div', { class: 'seg', role: 'radiogroup' }, pairs.map(([v, label]) =>
+    h('button', { type: 'button', role: 'radio', class: v === current ? 'on' : '', 'aria-checked': String(v === current), onclick: () => onPick(v) }, label)));
 }
 
 function showUpdateBanner() {

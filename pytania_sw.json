@@ -1,14 +1,15 @@
 {
  "meta": {
   "tytul": "Szkolenie chorążych SW – baza do nauki",
-  "wersja": 4,
+  "wersja": 5,
   "data": "2026-11-09",
   "zrodla": "Ustawa o ŚPB (Dz.U. 2026 poz. 244), ustawa o SW (Dz.U. 2025 poz. 1750), kkw (Dz.U. 2025 poz. 911), rozporządzenie o oddziaływaniach penitencjarnych (Dz.U. 2024 poz. 1344), rozporządzenie o ośrodkach diagnostycznych (Dz.U. 2023 poz. 1677), rozporządzenie o ochronie jednostek SW (Dz.U. 2016 poz. 1804); materiały kursu: pytania kontrolne (psycholodzy 1–29, penitencjarne 28–53), lista 124 pytań, SPECJALIZACJA_2 (77 zagadnień), Skrypt SW V15",
   "typy": {
    "flashcard": "przód (front) i tył (back)",
    "mcq": "pytanie, opcje, indeks poprawnej odpowiedzi (answer, liczony od 0), wyjaśnienie",
    "cloze": "tekst z lukami oznaczonymi [[odpowiedź]]",
-   "order": "kroki podane w POPRAWNEJ kolejności – aplikacja ma je tasować"
+   "order": "kroki podane w POPRAWNEJ kolejności – aplikacja ma je tasować",
+   "grupa": "pytania o tej samej treści w różnych formach – aplikacja losuje jedną wersję z grupy"
   },
   "tagi": {
    "kontrolne-penit": "pytania kontrolne – penitencjarne (28–53)",
@@ -3025,7 +3026,8 @@
    "answer": 2,
    "explanation": "Wychowawca zakłada kartę w CBDOPW (§ 8 ust. 1 instrukcji 4/24); psycholog ją weryfikuje.",
    "source": "instrukcja 4/24 § 8",
-   "tag": "spec-77"
+   "tag": "spec-77",
+   "grupa": "ozs-wychowawca"
   },
   {
    "id": "kkw-m09",
@@ -3057,7 +3059,8 @@
    ],
    "answer": 1,
    "explanation": "ZK półotwarty: 3 widzenia w miesiącu, mogą być połączone za zgodą dyrektora.",
-   "source": "art. 91 KKW"
+   "source": "art. 91 KKW",
+   "grupa": "widzenia-polotwarty"
   },
   {
    "id": "kkw-m11",
@@ -3121,7 +3124,8 @@
    ],
    "answer": 2,
    "explanation": "Otwarty: raz w miesiącu, max 28 dni w roku.",
-   "source": "art. 92 KKW"
+   "source": "art. 92 KKW",
+   "grupa": "przepustki-otwarty"
   },
   {
    "id": "kkw-m15",
@@ -3265,7 +3269,8 @@
    ],
    "answer": 1,
    "explanation": "Młodociani – obowiązkowo; dorośli – za zgodą.",
-   "source": "art. 95 KKW"
+   "source": "art. 95 KKW",
+   "grupa": "programowany-mlodociani"
   },
   {
    "id": "kkw-m24",
@@ -3297,7 +3302,8 @@
    ],
    "answer": 3,
    "explanation": "Art. 84 § 2 KKW – nie dłużej niż do 24 lat.",
-   "source": "art. 84 KKW"
+   "source": "art. 84 KKW",
+   "grupa": "mlodociany-24"
   },
   {
    "id": "kkw-m26",
@@ -3313,7 +3319,8 @@
    ],
    "answer": 1,
    "explanation": "Art. 88 § 3 pkt 2 KKW.",
-   "source": "art. 88 § 3 KKW"
+   "source": "art. 88 § 3 KKW",
+   "grupa": "dozywocie-zamkniety"
   },
   {
    "id": "kkw-m27",
@@ -3393,7 +3400,8 @@
    ],
    "answer": 3,
    "explanation": "Art. 143 § 1 pkt 8 KKW.",
-   "source": "art. 143 KKW"
+   "source": "art. 143 KKW",
+   "grupa": "cela-izolacyjna-28"
   },
   {
    "id": "kkw-m32",
@@ -3457,7 +3465,8 @@
    ],
    "answer": 0,
    "explanation": "14 dni od powzięcia wiadomości lub 30 dni od popełnienia.",
-   "source": "art. 147 KKW"
+   "source": "art. 147 KKW",
+   "grupa": "terminy-14-30"
   },
   {
    "id": "kkw-m36",
@@ -3489,7 +3498,8 @@
    ],
    "answer": 1,
    "explanation": "Art. 143 § 2 – nie stosuje się pkt 4, 5 i 8 (paczki, zakupy, cela izolacyjna).",
-   "source": "art. 143 § 2 KKW"
+   "source": "art. 143 § 2 KKW",
+   "grupa": "ciezarna-kary"
   },
   {
    "id": "kkw-m38",
@@ -3681,7 +3691,8 @@
    ],
    "answer": 1,
    "explanation": "Art. 110 § 2 KKW.",
-   "source": "art. 110 § 2 KKW"
+   "source": "art. 110 § 2 KKW",
+   "grupa": "cela-3m2"
   },
   {
    "id": "kkw-m50",
@@ -3825,7 +3836,8 @@
    ],
    "answer": 0,
    "explanation": "Art. 43la § 1 pkt 1 KKW (od 2020 r.).",
-   "source": "art. 43la KKW"
+   "source": "art. 43la KKW",
+   "grupa": "sde-limit"
   },
   {
    "id": "kkw-m59",
@@ -4001,7 +4013,8 @@
    ],
    "answer": 0,
    "explanation": "Co najmniej 1 widzenie w miesiącu z osobą najbliższą.",
-   "source": "art. 217 KKW"
+   "source": "art. 217 KKW",
+   "grupa": "ta-widzenie"
   },
   {
    "id": "kkw-m70",
@@ -4145,7 +4158,8 @@
    ],
    "answer": 0,
    "explanation": "Pon–pt w godzinach urzędowania, sobota 8–12; niepowrót/przerwa – całodobowo.",
-   "source": "lista pytań 44, 72"
+   "source": "lista pytań 44, 72",
+   "grupa": "sobota-8-12"
   },
   {
    "id": "kkw-m79",
@@ -4337,7 +4351,8 @@
    ],
    "answer": 1,
    "explanation": "Clemmer – przyswajanie norm podkultury/społeczności więźniów; zjawisko negatywne.",
-   "source": "lista pytań 13"
+   "source": "lista pytań 13",
+   "grupa": "prizonizacja"
   },
   {
    "id": "metodyka-m06",
@@ -4577,7 +4592,8 @@
    ],
    "answer": 2,
    "explanation": "7 dni, za pośrednictwem dyrektora.",
-   "source": "Skrypt SW; KKW"
+   "source": "Skrypt SW; KKW",
+   "grupa": "skarga-7-dni"
   },
   {
    "id": "ochrona-m07",
@@ -4673,7 +4689,8 @@
    ],
    "answer": 3,
    "explanation": "Dzień – 2, noc i apel – 3.",
-   "source": "zarządzenie 30/2025"
+   "source": "zarządzenie 30/2025",
+   "grupa": "n-dzien-2"
   },
   {
    "id": "ochrona-m13",
@@ -4785,7 +4802,8 @@
    ],
    "answer": 1,
    "explanation": "§ 82 ust. 1 zarządzenia 30/2025.",
-   "source": "zarządzenie 30/2025"
+   "source": "zarządzenie 30/2025",
+   "grupa": "konwoj-2"
   },
   {
    "id": "ochrona-m20",
@@ -5121,7 +5139,8 @@
    ],
    "answer": 2,
    "explanation": "00 – ściśle tajne, 0 – tajne, Pf – poufne, Z – zastrzeżone.",
-   "source": "ustawa o ochronie informacji niejawnych"
+   "source": "ustawa o ochronie informacji niejawnych",
+   "grupa": "klauzula-pf"
   },
   {
    "id": "ochrona-m41",
@@ -5217,7 +5236,8 @@
    ],
    "answer": 3,
    "explanation": "Art. 9 – do 13 lat.",
-   "source": "art. 9 ustawy o ŚPB"
+   "source": "art. 9 ustawy o ŚPB",
+   "grupa": "wiek-13"
   },
   {
    "id": "spb-m15",
@@ -5265,7 +5285,8 @@
    ],
    "answer": 2,
    "explanation": "Art. 19 ustawy o SW nie przewiduje kaftana.",
-   "source": "art. 19 ustawy o SW"
+   "source": "art. 19 ustawy o SW",
+   "grupa": "kaftan-sw"
   },
   {
    "id": "spb-m18",
@@ -5361,7 +5382,8 @@
    ],
    "answer": 1,
    "explanation": "Strzał ostrzegawczy.",
-   "source": "art. 48 ustawy o ŚPB"
+   "source": "art. 48 ustawy o ŚPB",
+   "grupa": "strzal-ostrzegawczy"
   },
   {
    "id": "spb-m24",
@@ -5425,7 +5447,8 @@
    ],
    "answer": 2,
    "explanation": "Także zamach na życie/zdrowie, pościg, zamach na obiekty.",
-   "source": "art. 19 ustawy o SW; lista 87"
+   "source": "art. 19 ustawy o SW; lista 87",
+   "grupa": "zupp"
   },
   {
    "id": "bron-m01",
@@ -5457,7 +5480,8 @@
    ],
    "answer": 0,
    "explanation": "17.",
-   "source": "Skrypt SW"
+   "source": "Skrypt SW",
+   "grupa": "glock-17"
   },
   {
    "id": "bron-m03",
@@ -5649,7 +5673,8 @@
    ],
    "answer": 2,
    "explanation": "Do 10 s.",
-   "source": "Wytyczne ERC 2025"
+   "source": "Wytyczne ERC 2025",
+   "grupa": "oddech-10s"
   },
   {
    "id": "pp-m03",
@@ -6129,7 +6154,8 @@
    ],
    "answer": 2,
    "explanation": "≥ 2 tygodnie, ≥ 5 objawów, w tym obniżony nastrój lub anhedonia.",
-   "source": "SPECJALIZACJA_2 pkt 3"
+   "source": "SPECJALIZACJA_2 pkt 3",
+   "grupa": "depresja-2tyg"
   },
   {
    "id": "psych-klin-m07",
@@ -6241,7 +6267,8 @@
    ],
    "answer": 1,
    "explanation": "Instrukcja 4/24.",
-   "source": "instrukcja 4/24"
+   "source": "instrukcja 4/24",
+   "grupa": "poziom-3"
   },
   {
    "id": "psych-klin-m14",
@@ -6369,7 +6396,8 @@
    ],
    "answer": 0,
    "explanation": "3 z 6 w ciągu roku.",
-   "source": "ICD-10"
+   "source": "ICD-10",
+   "grupa": "uzaleznienie-3z6"
   },
   {
    "id": "psych-klin-m22",
@@ -6481,7 +6509,8 @@
    ],
    "answer": 1,
    "explanation": "ICD-10.",
-   "source": "SPECJALIZACJA_2 pkt 16"
+   "source": "SPECJALIZACJA_2 pkt 16",
+   "grupa": "pedofilia-16-5"
   },
   {
    "id": "psych-klin-m29",
@@ -6625,7 +6654,8 @@
    ],
    "answer": 2,
    "explanation": "Na postanowienie przysługuje zażalenie.",
-   "source": "art. 119 KKW"
+   "source": "art. 119 KKW",
+   "grupa": "art119"
   },
   {
    "id": "psych-klin-m38",
@@ -6801,7 +6831,8 @@
    ],
    "answer": 1,
    "explanation": "Ocena – informacja zwrotna – rozmowa motywująca.",
-   "source": "SPECJALIZACJA_2 pkt 70"
+   "source": "SPECJALIZACJA_2 pkt 70",
+   "grupa": "ki-3-sesje"
   },
   {
    "id": "psych-proc-m12",
@@ -7045,7 +7076,8 @@
    "answer": 2,
    "explanation": "Dyrektor, w jego nieobecności dowódca zmiany.",
    "source": "rozporządzenie MS w sprawie czynności administracyjnych związanych z wykonywaniem TA oraz kar i środków przymusu skutkujących pozbawieniem wolności; slajdy z zajęć",
-   "tag": "slajdy-ewidencja"
+   "tag": "slajdy-ewidencja",
+   "grupa": "odmowa-decyduje"
   },
   {
    "id": "ewidencja-m02",
@@ -7250,6 +7282,596 @@
    "explanation": "Termin uzgadnia się z komornikiem.",
    "source": "rozporządzenie MS w sprawie czynności administracyjnych związanych z wykonywaniem TA oraz kar i środków przymusu skutkujących pozbawieniem wolności; slajdy z zajęć",
    "tag": "slajdy-ewidencja"
+  },
+  {
+   "id": "kkw-m87",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "grupa": "widzenia-polotwarty",
+   "question": "W którym typie zakładu karnego skazany ma prawo do 3 widzeń w miesiącu?",
+   "options": [
+    "Półotwartym",
+    "W żadnym – zawsze 2",
+    "Zamkniętym",
+    "Otwartym"
+   ],
+   "answer": 0,
+   "explanation": "Zamknięty – 2, półotwarty – 3, otwarty – bez ograniczeń.",
+   "source": "art. 91 KKW"
+  },
+  {
+   "id": "kkw-m88",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "grupa": "widzenia-polotwarty",
+   "question": "Prawda czy fałsz: skazany w ZK typu półotwartego ma prawo do 2 widzeń w miesiącu.",
+   "options": [
+    "Prawda",
+    "Fałsz"
+   ],
+   "answer": 1,
+   "explanation": "Fałsz – w półotwartym 3 widzenia; 2 są w zamkniętym.",
+   "source": "art. 91 KKW"
+  },
+  {
+   "id": "kkw-m89",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "grupa": "przepustki-otwarty",
+   "question": "W którym typie ZK przepustki można udzielać raz w miesiącu, łącznie do 28 dni w roku?",
+   "options": [
+    "Półotwartym",
+    "Otwartym",
+    "Zamkniętym",
+    "W każdym typie"
+   ],
+   "answer": 1,
+   "explanation": "Otwarty: 1×/mies., 28 dni/rok; półotwarty: 1×/2 mies., 14 dni/rok.",
+   "source": "art. 92 KKW"
+  },
+  {
+   "id": "kkw-m90",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "grupa": "przepustki-otwarty",
+   "question": "Prawda czy fałsz: w ZK typu otwartego przepustki udziela się nie częściej niż raz na 2 miesiące, łącznie do 14 dni w roku.",
+   "options": [
+    "Prawda",
+    "Fałsz"
+   ],
+   "answer": 1,
+   "explanation": "Fałsz – to zasada ZK półotwartego.",
+   "source": "art. 92 KKW"
+  },
+  {
+   "id": "kkw-m91",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "grupa": "cela-izolacyjna-28",
+   "question": "Najdłuższa kara dyscyplinarna umieszczenia skazanego w celi izolacyjnej to:",
+   "options": [
+    "3 miesiące",
+    "28 dni",
+    "30 dni",
+    "14 dni"
+   ],
+   "answer": 1,
+   "explanation": "Art. 143 § 1 pkt 8 KKW – do 28 dni.",
+   "source": "art. 143 KKW"
+  },
+  {
+   "id": "kkw-m92",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "grupa": "cela-izolacyjna-28",
+   "question": "Prawda czy fałsz: karę celi izolacyjnej wobec skazanego można wymierzyć na okres do 28 dni.",
+   "options": [
+    "Prawda",
+    "Fałsz"
+   ],
+   "answer": 0,
+   "explanation": "Prawda; powyżej 14 dni – za zgodą sędziego penitencjarnego.",
+   "source": "art. 143 KKW"
+  },
+  {
+   "id": "kkw-m93",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "grupa": "terminy-14-30",
+   "question": "Terminy przedawnienia wymierzenia kary dyscyplinarnej to:",
+   "options": [
+    "7 dni od powzięcia wiadomości i 14 dni od popełnienia",
+    "14 dni od powzięcia wiadomości i 30 dni od popełnienia przekroczenia",
+    "30 dni od powzięcia wiadomości i 3 miesiące od popełnienia",
+    "14 dni od popełnienia i 30 dni od powzięcia wiadomości"
+   ],
+   "answer": 1,
+   "explanation": "Art. 147 KKW.",
+   "source": "art. 147 KKW"
+  },
+  {
+   "id": "kkw-m94",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "grupa": "terminy-14-30",
+   "question": "Prawda czy fałsz: karę dyscyplinarną można wymierzyć do 30 dni od powzięcia przez przełożonego wiadomości o przekroczeniu.",
+   "options": [
+    "Prawda",
+    "Fałsz"
+   ],
+   "answer": 1,
+   "explanation": "Fałsz – 14 dni od powzięcia wiadomości, 30 dni od popełnienia.",
+   "source": "art. 147 KKW"
+  },
+  {
+   "id": "kkw-m95",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "grupa": "mlodociany-24",
+   "question": "Prawda czy fałsz: młodociany może odbywać karę w ZK dla młodocianych po ukończeniu 21 lat, ale nie dłużej niż do 24 lat.",
+   "options": [
+    "Prawda",
+    "Fałsz"
+   ],
+   "answer": 0,
+   "explanation": "Prawda – art. 84 § 2 KKW.",
+   "source": "art. 84 KKW"
+  },
+  {
+   "id": "kkw-m96",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "grupa": "cela-3m2",
+   "question": "Prawda czy fałsz: powierzchnia w celi mieszkalnej na jednego skazanego wynosi nie mniej niż 3 m².",
+   "options": [
+    "Prawda",
+    "Fałsz"
+   ],
+   "answer": 0,
+   "explanation": "Prawda – art. 110 § 2 KKW.",
+   "source": "art. 110 § 2 KKW"
+  },
+  {
+   "id": "kkw-m97",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "grupa": "cela-3m2",
+   "question": "Ile co najmniej metrów kwadratowych powierzchni celi przypada na skazanego?",
+   "options": [
+    "6",
+    "3",
+    "2,5",
+    "4"
+   ],
+   "answer": 1,
+   "explanation": "Art. 110 § 2 KKW.",
+   "source": "art. 110 § 2 KKW"
+  },
+  {
+   "id": "kkw-m98",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "grupa": "sde-limit",
+   "question": "Prawda czy fałsz: zezwolenie na SDE można udzielić skazanemu na karę do 1 roku i 6 miesięcy.",
+   "options": [
+    "Prawda",
+    "Fałsz"
+   ],
+   "answer": 0,
+   "explanation": "Prawda – art. 43la § 1 pkt 1 KKW.",
+   "source": "art. 43la KKW"
+  },
+  {
+   "id": "kkw-m99",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "grupa": "ta-widzenie",
+   "question": "Prawda czy fałsz: tymczasowo aresztowany ma prawo do co najmniej jednego widzenia w miesiącu z osobą najbliższą.",
+   "options": [
+    "Prawda",
+    "Fałsz"
+   ],
+   "answer": 0,
+   "explanation": "Prawda – art. 217 KKW.",
+   "source": "art. 217 KKW"
+  },
+  {
+   "id": "kkw-m100",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "grupa": "programowany-mlodociani",
+   "question": "Prawda czy fałsz: młodociani mogą odbywać karę w systemie programowanego oddziaływania wyłącznie za swoją zgodą.",
+   "options": [
+    "Prawda",
+    "Fałsz"
+   ],
+   "answer": 1,
+   "explanation": "Fałsz – młodociani obowiązkowo; zgoda dotyczy dorosłych.",
+   "source": "art. 95 KKW"
+  },
+  {
+   "id": "kkw-m101",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "grupa": "dozywocie-zamkniety",
+   "question": "Prawda czy fałsz: skazanego na dożywocie można od razu osadzić w ZK typu półotwartego.",
+   "options": [
+    "Prawda",
+    "Fałsz"
+   ],
+   "answer": 1,
+   "explanation": "Fałsz – obligatoryjnie zamknięty (art. 88 § 3 KKW).",
+   "source": "art. 88 § 3 KKW"
+  },
+  {
+   "id": "kkw-m102",
+   "deck": "kkw",
+   "type": "mcq",
+   "naPamiec": false,
+   "grupa": "ciezarna-kary",
+   "question": "Prawda czy fałsz: wobec kobiety karmiącej można zastosować karę celi izolacyjnej.",
+   "options": [
+    "Prawda",
+    "Fałsz"
+   ],
+   "answer": 1,
+   "explanation": "Fałsz – art. 143 § 2 KKW wyłącza paczki, zakupy i celę izolacyjną.",
+   "source": "art. 143 § 2 KKW"
+  },
+  {
+   "id": "ewidencja-m14",
+   "deck": "ewidencja",
+   "type": "mcq",
+   "naPamiec": false,
+   "grupa": "sobota-8-12",
+   "question": "Prawda czy fałsz: w soboty skazanych przyjmuje się do aresztu śledczego w godzinach 8:00–12:00.",
+   "options": [
+    "Prawda",
+    "Fałsz"
+   ],
+   "answer": 0,
+   "explanation": "Prawda; w dni robocze – w godzinach urzędowania.",
+   "source": "lista pytań 44, 72"
+  },
+  {
+   "id": "ewidencja-m15",
+   "deck": "ewidencja",
+   "type": "mcq",
+   "naPamiec": false,
+   "grupa": "odmowa-decyduje",
+   "question": "Prawda czy fałsz: o nieprzyjęciu osoby do aresztu śledczego decyduje kierownik działu ewidencji.",
+   "options": [
+    "Prawda",
+    "Fałsz"
+   ],
+   "answer": 1,
+   "explanation": "Fałsz – dyrektor, a w jego nieobecności dowódca zmiany.",
+   "source": "rozporządzenie MS w sprawie czynności administracyjnych związanych z wykonywaniem TA oraz kar i środków przymusu skutkujących pozbawieniem wolności; slajdy z zajęć"
+  },
+  {
+   "id": "spb-m28",
+   "deck": "spb",
+   "type": "mcq",
+   "naPamiec": false,
+   "grupa": "kaftan-sw",
+   "question": "Prawda czy fałsz: funkcjonariusz SW może użyć kaftana bezpieczeństwa.",
+   "options": [
+    "Prawda",
+    "Fałsz"
+   ],
+   "answer": 1,
+   "explanation": "Fałsz – kaftana nie ma w katalogu art. 19 ustawy o SW.",
+   "source": "art. 19 ustawy o SW"
+  },
+  {
+   "id": "spb-m29",
+   "deck": "spb",
+   "type": "mcq",
+   "naPamiec": false,
+   "grupa": "kaftan-sw",
+   "question": "Który z wymienionych środków przysługuje funkcjonariuszowi SW?",
+   "options": [
+    "Pas obezwładniający",
+    "Kolczatka drogowa",
+    "Kaftan bezpieczeństwa",
+    "Koń służbowy"
+   ],
+   "answer": 0,
+   "explanation": "SW: m.in. pas, kajdanki, kask, pałka, pies, środki chemiczne (a, c, d), paralizator.",
+   "source": "art. 19 ustawy o SW"
+  },
+  {
+   "id": "spb-m30",
+   "deck": "spb",
+   "type": "mcq",
+   "naPamiec": false,
+   "grupa": "wiek-13",
+   "question": "Prawda czy fałsz: wobec osoby, której wygląd wskazuje na wiek do 13 lat, co do zasady można użyć tylko siły fizycznej w postaci technik obezwładnienia.",
+   "options": [
+    "Prawda",
+    "Fałsz"
+   ],
+   "answer": 0,
+   "explanation": "Prawda – art. 9 ustawy o ŚPB.",
+   "source": "art. 9 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-m31",
+   "deck": "spb",
+   "type": "mcq",
+   "naPamiec": false,
+   "grupa": "strzal-ostrzegawczy",
+   "question": "Prawda czy fałsz: strzał ostrzegawczy jest pierwszą czynnością procedury przed użyciem broni palnej.",
+   "options": [
+    "Prawda",
+    "Fałsz"
+   ],
+   "answer": 1,
+   "explanation": "Fałsz – to ostatnia forma ostrzeżenia.",
+   "source": "art. 48 ustawy o ŚPB"
+  },
+  {
+   "id": "spb-m32",
+   "deck": "spb",
+   "type": "mcq",
+   "naPamiec": false,
+   "grupa": "zupp",
+   "question": "Prawda czy fałsz: funkcjonariusz SW może samodzielnie zdecydować o użyciu ŚPB w pościgu za osobą pozbawioną wolności, która ucieka.",
+   "options": [
+    "Prawda",
+    "Fałsz"
+   ],
+   "answer": 0,
+   "explanation": "Prawda – art. 35 ust. 2 pkt 10 (ZUPP).",
+   "source": "art. 19 ustawy o SW; lista 87"
+  },
+  {
+   "id": "spb-m33",
+   "deck": "spb",
+   "type": "mcq",
+   "naPamiec": false,
+   "grupa": "zupp",
+   "question": "W którym przypadku funkcjonariusz SW NIE decyduje samodzielnie o użyciu ŚPB?",
+   "options": [
+    "Usiłowanie ucieczki osoby pozbawionej wolności",
+    "Odmowa wykonania polecenia przez osadzonego w celi, bez zamachu i ucieczki",
+    "Pościg za sprawcą zamachu na obiekty ZK",
+    "Usiłowanie zamachu na życie funkcjonariusza"
+   ],
+   "answer": 1,
+   "explanation": "Samodzielnie tylko w przypadkach z art. 35 ust. 2 pkt 10 (ZUPP); poza nimi decyduje przełożony.",
+   "source": "art. 19 ustawy o SW; lista 87"
+  },
+  {
+   "id": "ochrona-m44",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "grupa": "klauzula-pf",
+   "question": "Jakim symbolem oznacza się klauzulę „poufne”?",
+   "options": [
+    "Pf",
+    "00",
+    "Z",
+    "0"
+   ],
+   "answer": 0,
+   "explanation": "00 – ściśle tajne, 0 – tajne, Pf – poufne, Z – zastrzeżone.",
+   "source": "ustawa o ochronie informacji niejawnych"
+  },
+  {
+   "id": "ochrona-m45",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "grupa": "skarga-7-dni",
+   "question": "Prawda czy fałsz: na kontrolę osobistą osadzony może złożyć skargę do sądu penitencjarnego w terminie 14 dni.",
+   "options": [
+    "Prawda",
+    "Fałsz"
+   ],
+   "answer": 1,
+   "explanation": "Fałsz – 7 dni, za pośrednictwem dyrektora.",
+   "source": "Skrypt SW; KKW"
+  },
+  {
+   "id": "ochrona-m46",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "grupa": "n-dzien-2",
+   "question": "Prawda czy fałsz: celę osadzonego „N” w porze nocnej otwiera się w obecności co najmniej trzech funkcjonariuszy.",
+   "options": [
+    "Prawda",
+    "Fałsz"
+   ],
+   "answer": 0,
+   "explanation": "Prawda; w porze dziennej – co najmniej dwóch.",
+   "source": "zarządzenie 30/2025"
+  },
+  {
+   "id": "ochrona-m47",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "grupa": "konwoj-2",
+   "question": "Prawda czy fałsz: do konwojowania grupy do 10 osadzonych wystarczy jeden funkcjonariusz poza kierowcą.",
+   "options": [
+    "Prawda",
+    "Fałsz"
+   ],
+   "answer": 1,
+   "explanation": "Fałsz – co najmniej dwóch (wyjątek: do 3 skazanych z ZK półotwartego/otwartego).",
+   "source": "zarządzenie 30/2025"
+  },
+  {
+   "id": "psych-klin-m39",
+   "deck": "psych-klin",
+   "type": "mcq",
+   "naPamiec": false,
+   "grupa": "ozs-wychowawca",
+   "question": "Prawda czy fałsz: przy podejrzeniu skłonności samobójczych kartę OZS niezwłocznie zakłada psycholog.",
+   "options": [
+    "Prawda",
+    "Fałsz"
+   ],
+   "answer": 1,
+   "explanation": "Fałsz – wychowawca; psycholog ją weryfikuje.",
+   "source": "instrukcja 4/24 § 8"
+  },
+  {
+   "id": "psych-klin-m40",
+   "deck": "psych-klin",
+   "type": "mcq",
+   "naPamiec": false,
+   "grupa": "poziom-3",
+   "question": "Osadzeni po próbie samobójczej są objęci profilaktyką na poziomie:",
+   "options": [
+    "II",
+    "I",
+    "IV",
+    "III"
+   ],
+   "answer": 3,
+   "explanation": "I – ogół, II – wzmożone ryzyko, III – po próbie.",
+   "source": "instrukcja 4/24"
+  },
+  {
+   "id": "psych-klin-m41",
+   "deck": "psych-klin",
+   "type": "mcq",
+   "naPamiec": false,
+   "grupa": "depresja-2tyg",
+   "question": "Prawda czy fałsz: do rozpoznania epizodu depresyjnego objawy muszą trwać co najmniej 2 tygodnie.",
+   "options": [
+    "Prawda",
+    "Fałsz"
+   ],
+   "answer": 0,
+   "explanation": "Prawda.",
+   "source": "SPECJALIZACJA_2 pkt 3"
+  },
+  {
+   "id": "psych-klin-m42",
+   "deck": "psych-klin",
+   "type": "mcq",
+   "naPamiec": false,
+   "grupa": "uzaleznienie-3z6",
+   "question": "Prawda czy fałsz: wg ICD-10 do rozpoznania uzależnienia wystarczą 2 z 6 objawów w ciągu miesiąca.",
+   "options": [
+    "Prawda",
+    "Fałsz"
+   ],
+   "answer": 1,
+   "explanation": "Fałsz – co najmniej 3 z 6 w ciągu ostatniego roku.",
+   "source": "ICD-10"
+  },
+  {
+   "id": "psych-klin-m43",
+   "deck": "psych-klin",
+   "type": "mcq",
+   "naPamiec": false,
+   "grupa": "pedofilia-16-5",
+   "question": "Prawda czy fałsz: rozpoznanie pedofilii wymaga, by sprawca miał co najmniej 16 lat i był co najmniej 5 lat starszy od dziecka.",
+   "options": [
+    "Prawda",
+    "Fałsz"
+   ],
+   "answer": 0,
+   "explanation": "Prawda.",
+   "source": "SPECJALIZACJA_2 pkt 16"
+  },
+  {
+   "id": "psych-klin-m44",
+   "deck": "psych-klin",
+   "type": "mcq",
+   "naPamiec": false,
+   "grupa": "art119",
+   "question": "Prawda czy fałsz: o obciążeniu skazanego kosztami leczenia samouszkodzenia decyduje dyrektor ZK.",
+   "options": [
+    "Prawda",
+    "Fałsz"
+   ],
+   "answer": 1,
+   "explanation": "Fałsz – sąd penitencjarny (art. 119 KKW); dyrektor może złożyć wniosek.",
+   "source": "art. 119 KKW"
+  },
+  {
+   "id": "psych-proc-m22",
+   "deck": "psych-proc",
+   "type": "mcq",
+   "naPamiec": false,
+   "grupa": "ki-3-sesje",
+   "question": "Prawda czy fałsz: Krótka Interwencja obejmuje co najmniej 3 sesje.",
+   "options": [
+    "Prawda",
+    "Fałsz"
+   ],
+   "answer": 0,
+   "explanation": "Prawda – ocena, informacja zwrotna, rozmowa motywująca.",
+   "source": "SPECJALIZACJA_2 pkt 70"
+  },
+  {
+   "id": "metodyka-m15",
+   "deck": "metodyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "grupa": "prizonizacja",
+   "question": "Proces przyswajania przez skazanego norm i zwyczajów społeczności więźniów to:",
+   "options": [
+    "klasyfikacja",
+    "readaptacja",
+    "prizonizacja",
+    "resocjalizacja"
+   ],
+   "answer": 2,
+   "explanation": "Prizonizacja (Clemmer) – zjawisko negatywne.",
+   "source": "lista pytań 13"
+  },
+  {
+   "id": "bron-m13",
+   "deck": "bron",
+   "type": "mcq",
+   "naPamiec": false,
+   "grupa": "glock-17",
+   "question": "Prawda czy fałsz: magazynek pistoletu GLOCK opisanego w materiałach COSSW mieści 17 nabojów.",
+   "options": [
+    "Prawda",
+    "Fałsz"
+   ],
+   "answer": 0,
+   "explanation": "Prawda; Walther P99 – 15.",
+   "source": "Skrypt SW"
+  },
+  {
+   "id": "pp-m13",
+   "deck": "pp",
+   "type": "mcq",
+   "naPamiec": false,
+   "grupa": "oddech-10s",
+   "question": "Prawda czy fałsz: ocena oddechu metodą „widzę, słyszę, czuję” powinna trwać maksymalnie 10 sekund.",
+   "options": [
+    "Prawda",
+    "Fałsz"
+   ],
+   "answer": 0,
+   "explanation": "Prawda.",
+   "source": "Wytyczne ERC 2025"
   }
  ]
 }
