@@ -1365,6 +1365,7 @@ async function init() {
   route();
   document.getElementById('info').addEventListener('click', showWelcome);
   document.getElementById('settings').addEventListener('click', showSettings);
+  document.getElementById('help').addEventListener('click', showManual);
   if ((state.settings.welcomeSeen || 0) < WELCOME_VERSION) showWelcome();
   else showChangesIfNew();
 
@@ -1906,6 +1907,8 @@ function sizeLikePicker(pairs, current, onPick) {
 
 // Przy każdej aktualizacji: dopisz wpis NA POCZĄTKU listy, z numerem = numer CACHE w service-worker.js.
 const CHANGELOG = [
+  { v: 17, date: '10.11.2026', items: [
+    'Nowy przycisk „?” obok INFO – instrukcja obsługi: wybór tematów, wszystkie tryby, punkty, Teczka, kopia postępu.'] },
   { v: 16, date: '10.11.2026', items: [
     'Poprawione pytanie o bierny opór i kajdanki: jaśniejsza treść i wyjaśnienie, dlaczego w praktyce kajdanki i tak się zakłada (na innej podstawie).',
     'Nowa fiszka: jakich ŚPB nie wolno użyć przy biernym oporze.'] },
@@ -1980,6 +1983,89 @@ function showChangelog() {
   changelogBox(CHANGELOG, 'Historia zmian');
 }
 
+/* ---------- Instrukcja obsługi (przycisk „?”) ---------- */
+
+function showManual() {
+  if (document.querySelector('.modal.manual')) return;
+  const box = h('div', { class: 'modal manual', role: 'dialog', 'aria-modal': 'true', 'aria-labelledby': 'manual-title' });
+  const close = () => box.remove();
+  const li = (b, t) => h('li', {}, b ? h('strong', {}, b) : null, b ? ' – ' : null, t);
+  const sec = (title, ...items) => h('details', { class: 'manual-sec' }, h('summary', {}, title), h('ul', {}, items));
+  box.append(h('div', { class: 'card modal-card manual-card' },
+    h('div', { class: 'settings-head' }, h('h2', { id: 'manual-title' }, '📖 Instrukcja obsługi'),
+      h('button', { type: 'button', class: 'close-x', 'aria-label': 'Zamknij', onclick: close }, '✕')),
+    h('p', { class: 'small muted' }, 'Kliknij nagłówek, żeby go rozwinąć.'),
+
+    h('details', { class: 'manual-sec', open: '' }, h('summary', {}, '🎯 Najpierw: wybór tematów'),
+      h('p', {}, 'Na ekranie ', h('strong', {}, 'Nauka'), ', pod przyciskami trybów, jest rozwijana lista ', h('strong', {}, '„Tematy”'),
+        '. Każdy temat to osobna talia fiszek i pytań z jednego działu (np. KKW, Ochrona, Psycholog). Liczba obok nazwy mówi, ile w nim jest pozycji.'),
+      h('ul', {},
+        li('Co od tego zależy', 'zaznaczone tematy decydują, co dostajesz w Fiszkach, w Na pamięć i w Teście → „Wybrane talie”. Odznaczony temat po prostu się nie pojawia.'),
+        li('Co od tego NIE zależy', 'Test → Unitarny / Specjalistyczny bierze zawsze całą swoją część, a Trudne – błędy ze wszystkich tematów. Egzamin próbny ma własny wybór talii na swoim ekranie.'),
+        li('Szybkie przyciski', '„Zaznacz wszystkie” / „Odznacz wszystkie”, a przy każdej części („unitarna”, „specjalistyczna”) link zaznacz/odznacz – np. odznacz psychologię, gdy ćwiczysz tylko część unitarną.'),
+        li('Pasek', 'pokazuje, ile tematów masz wybranych („4 z 15 wybranych”). Gdy odznaczysz wszystko, tryby nauki zrobią się szare.'),
+        li('„Tylko na pamięć”', 'zawęża Fiszki, Na pamięć i „Wybrane talie” do rzeczy, które trzeba umieć dosłownie: cytaty przepisów, wyliczenia, terminy.'),
+        li('Nowe tematy', 'dodane w aktualizacji włączają się same.'),
+        li('Jak z tego korzystać', 'w tygodniu 1–3 tematy dziennie, żeby wejść w szczegóły; raz w tygodniu wszystkie naraz, żeby sprawdzić całość.'))),
+
+    sec('🃏 Fiszki',
+      li('', 'Sesja to do 20 kart. Najpierw odpowiedz w głowie, potem „Pokaż odpowiedź” i oceń się uczciwie.'),
+      li('Nie wiem', 'karta wraca do pudełka 1 i pojawi się jeszcze dziś.'),
+      li('Prawie', 'karta zostaje w swoim pudełku.'),
+      li('Wiem', 'karta idzie pudełko wyżej. Pudełko 2 wraca po 1 dniu, 3 – po 3 dniach, 4 – po 7, 5 – po 14.'),
+      li('', 'Fiszki pokazują tylko karty, których termin powtórki minął. Gdy wszystko powtórzone – „Powtarzaj mimo to”.'),
+      li('Opanowana', 'karta w pudełku 4 lub 5. Postęp każdego tematu widać w „Postęp fiszek” na dole ekranu Nauka.')),
+
+    sec('📝 Test',
+      li('', 'Wybierz liczbę pytań (30 / 40 / 50 / Wszystkie) i część: Unitarny (wiedza ogólna), Specjalistyczny (psychologia) albo Wybrane talie (z listy Tematy).'),
+      li('', 'Po każdej odpowiedzi od razu widzisz, czy dobrze, wyjaśnienie i źródło (artykuł, zarządzenie).'),
+      li('Różne formy pytań', 'zwykłe, „Który NIE…”, „Wskaż zdanie fałszywe”, „Prawda czy fałsz”. To samo zagadnienie może wrócić inaczej sformułowane – czytaj uważnie, szczególnie słowa NIE i FAŁSZYWE.'),
+      li('', 'Na końcu: ocena wyniku i lista błędów do przejrzenia.')),
+
+    sec('✍️ Na pamięć',
+      li('Luki', 'tekst przepisu z brakującymi słowami. Przełącznik u góry: „✍️ Wpisz” (piszesz sam) albo „👆 Wybierz” (klikasz w lukę i wybierasz słowo z listy).'),
+      li('Kolejność', 'ułóż kroki procedury przyciskami ▲ ▼.'),
+      li('', '„Sprawdź” pokazuje wynik, „Pokaż odpowiedź” – gdy nie masz pomysłu (liczy się jako błąd).')),
+
+    sec('⏱️ Egzamin próbny',
+      li('', '30 / 40 / 50 losowych pytań, 1 minuta na pytanie; zegar widać w nagłówku.'),
+      li('', 'Odpowiedzi i wynik poznasz dopiero na końcu – jak na prawdziwym egzaminie. Możesz wracać do pytań („‹ Wstecz”) i zakończyć wcześniej.'),
+      li('', 'Talie wybierasz na ekranie egzaminu. Gdy wyjdziesz w trakcie, egzamin dalej trwa – wróć przyciskiem na ekranie Nauka.'),
+      li('', 'Od 51% aplikacja uznaje egzamin za zdany (odznaki, punkty). To próg aplikacji, nie oficjalny.')),
+
+    sec('⚠️ Trudne',
+      li('', 'Wszystko, na czym ostatnio się pomyliłeś – ze wszystkich tematów. Dobra odpowiedź zdejmuje pytanie z listy (i daje dodatkowe punkty za poprawę).')),
+
+    sec('📚 Czytaj',
+      li('', 'Skrypty: Część unitarna, Psycholog, Stanowiska – przełączasz zakładkami u góry.'),
+      li('Spis treści', 'rozwijany; klik przenosi do rozdziału.'),
+      li('Wyszukiwarka', 'wpisz słowo, strzałki ↑ ↓ przeskakują między trafieniami. Zaznacz „Szukaj we wszystkich skryptach”, żeby szukać wszędzie.'),
+      li('', 'Aplikacja pamięta, gdzie skończyłeś czytać.')),
+
+    sec('🗂️ Teczka i punkty',
+      li('Stopień', 'od szeregowego do pułkownika – rośnie z punktami. Punkty: test +' + POINTS.mcq + ', fiszka „Wiem” +' + POINTS.flashcard + ', Na pamięć +' + POINTS.cloze + ', poprawiony błąd +' + POINTS.fixed + '; od 5. dobrej odpowiedzi z rzędu ×1,5.'),
+      li('Wyzwanie dnia', '10 pytań z jednego tematu, punkty ×2. Przycisk na karcie służby na ekranie Nauka.'),
+      li('Gotowość %', 'trafność z ostatnich 7 dni we wszystkich działach, pomnożona przez to, ile pytań z każdego działu przerobiłeś. Rośnie, gdy ćwiczysz wszystko, a nie jeden temat.'),
+      li('Data egzaminu i dzienny cel', 'ustawiasz w Teczce (cel: 20 / 50 / 100 odpowiedzi dziennie).'),
+      li('', 'Seria dni, kalendarz nauki, kamienie milowe, odznaki (część jest ukryta) i „Udostępnij wynik”.')),
+
+    sec('⚙️ Ustawienia i przyciski w nagłówku',
+      li('INFO', 'okno powitalne.'),
+      li('?', 'ta instrukcja.'),
+      li('⚙️', 'motyw jasny/ciemny, kopia postępu (eksport do pliku i import) oraz historia zmian.')),
+
+    sec('💡 Ważne',
+      li('Postęp', 'zapisuje się tylko w tym telefonie i tej przeglądarce. Każdy telefon ma swój, niezależny postęp. Wyczyszczenie danych przeglądarki kasuje postęp – dlatego co jakiś czas zrób kopię (⚙️ → Eksportuj).'),
+      li('Aktualizacje', 'gdy pojawi się pasek „Jest nowa wersja”, kliknij „Odśwież”. Potem zobaczysz, co się zmieniło.'),
+      li('Jak aplikacja', 'Android (Chrome): menu ⋮ → „Dodaj do ekranu głównego” / „Zainstaluj aplikację”. iPhone (Safari): Udostępnij → „Do ekranu początkowego”. Po pierwszym otwarciu działa też bez internetu.'),
+      li('Reset', '„Resetuj postęp” na samym dole ekranu Nauka kasuje wszystko – nie da się tego cofnąć.'),
+      li('Błąd w pytaniu?', 'daj znać twórcy. W razie sporu wygrywa aktualny tekst przepisów.')),
+
+    btn('Zrozumiałem', 'primary', close)));
+  box.addEventListener('click', e => { if (e.target === box) close(); });
+  document.body.append(box);
+}
+
 /* ---------- Okno startowe ---------- */
 
 const WELCOME_VERSION = 1; // zwiększ, żeby wszyscy zobaczyli okno ponownie
@@ -2002,7 +2088,8 @@ function showWelcome() {
         li('Trudne', 'cela przejściowa dla pytań, na których się wyłożyłeś.'),
         li('Czytaj', 'skrypty z cytatami do wkucia, z wyszukiwarką.'),
         li('Teczka', 'stopień, odznaki, seria dni nauki i odliczanie do egzaminu.'),
-        li('⚙️ Ustawienia', 'trybik w nagłówku: motyw jasny/ciemny, kopia postępu, historia zmian.')),
+        li('⚙️ Ustawienia', 'trybik w nagłówku: motyw jasny/ciemny, kopia postępu, historia zmian.'),
+        li('❓ Instrukcja', 'przycisk „?” obok INFO – wszystko krok po kroku.')),
       h('p', {}, h('strong', {}, '⭐ Zasada służby: '), 'codziennie trochę. Za systematyczność są punkty, awanse i odznaki. Za przerwy jest tylko wstyd przed samym sobą (ewentualnie przed dowódcą zmiany).'),
       h('p', {}, h('strong', {}, '⚠️ Pouczenie: '), 'aplikacja nie zastępuje ustawy ani prowadzącego. W razie sporu wygrywa aktualny tekst przepisów. Aplikacja przyjmuje to z godnością.'),
       h('h3', {}, '🍫 Wsparcie twórcy'),
