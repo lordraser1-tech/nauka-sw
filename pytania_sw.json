@@ -1639,7 +1639,7 @@
    "type": "flashcard",
    "naPamiec": true,
    "front": "Kara umieszczenia w celi izolacyjnej – wymiar, opinia, zgoda sędziego",
-   "back": "Skazany: do 28 dni (art. 143 § 1 pkt 8 KKW); tymczasowo aresztowany: do 14 dni (wg materiałów kursu).\nPrzed wymierzeniem lekarz albo psycholog wydaje PISEMNĄ opinię o zdolności do odbycia kary.\nWymierzenie powyżej 14 dni wymaga zgody sędziego penitencjarnego.\nW czasie wykonywania lekarz lub psycholog kontroluje zdolność skazanego do jej odbywania (art. 148 § 3).",
+   "back": "Skazany: do 28 dni (art. 143 § 1 pkt 8 KKW); tymczasowo aresztowany: do 14 dni.\nPrzed wymierzeniem lekarz albo psycholog wydaje PISEMNĄ opinię o zdolności do odbycia kary.\nWymierzenie powyżej 14 dni wymaga zgody sędziego penitencjarnego.\nW czasie wykonywania lekarz lub psycholog kontroluje zdolność skazanego do jej odbywania (art. 148 § 3).",
    "source": "art. 143–148 KKW",
    "tag": "kontrolne-penit"
   },
@@ -1854,7 +1854,7 @@
    "type": "flashcard",
    "naPamiec": true,
    "front": "Środki oddziaływania penitencjarnego (art. 67 § 3 KKW)",
-   "back": "Praca (zwłaszcza sprzyjająca zdobywaniu kwalifikacji), nauczanie, zajęcia kulturalno-oświatowe i sportowe, podtrzymywanie kontaktów z rodziną i światem zewnętrznym, środki terapeutyczne. W materiałach kursu dodatkowo: nagradzanie i karanie.",
+   "back": "Praca (zwłaszcza sprzyjająca zdobywaniu kwalifikacji), nauczanie, zajęcia kulturalno-oświatowe i sportowe, podtrzymywanie kontaktów z rodziną i światem zewnętrznym, środki terapeutyczne. Wymienia się też nagradzanie i karanie.",
    "source": "art. 67 § 3 KKW",
    "tag": "kontrolne-penit"
   },
@@ -2156,7 +2156,7 @@
    "deck": "ochrona",
    "type": "flashcard",
    "naPamiec": true,
-   "front": "Aktualne akty wewnętrzne DGSW wskazywane w materiałach kursu",
+   "front": "Aktualne zarządzenia DGSW: ochrona, uzbrojenie, szkolenie strzeleckie",
    "back": "Zarządzenie 30/2025 – sposoby ochrony (zastąpiło 69/23); zarządzenie 69/2024 (16.10.2024) – gospodarowanie uzbrojeniem i środkami ochrony; zarządzenie 72/2024 (21.10.2024) – szkolenie strzeleckie; instrukcja 4/24 (17.10.2024) – zapobieganie samobójstwom; instrukcja 3/2025 – postępowanie z kobietami; regulamin 1/2024 (30.10.2024) – sposób pełnienia służby; zarządzenie 103/24 – praca penitencjarna.",
    "source": "Skrypt SW V15; SPECJALIZACJA_2",
    "tag": "skrypt-v15"
@@ -2333,7 +2333,7 @@
    "deck": "bron",
    "type": "flashcard",
    "naPamiec": true,
-   "front": "Pistolet GLOCK – dane (model z materiałów COSSW)",
+   "front": "Pistolet GLOCK – dane techniczne",
    "back": "Broń automatyczna samopowtarzalna; automatyka – krótki odrzut lufy, odryglowanie przez przekoszenie lufy w płaszczyźnie pionowej; kaliber 9 mm (9×19 Parabellum); magazynek 17 nabojów; przyrządy celownicze na 25 m; skuteczny do 50 m; system „Safe Action” – 3 niezależne zabezpieczenia (spustowe, iglicy, przed wystrzałem przy upadku).",
    "source": "Skrypt SW V15 (COSSW Kulach)",
    "tag": "lista-124"
@@ -2828,7 +2828,7 @@
    "deck": "psych-proc",
    "type": "flashcard",
    "naPamiec": true,
-   "front": "Przepisy regulujące pracę psychologa penitencjarnego (wg materiałów)",
+   "front": "Przepisy regulujące pracę psychologa penitencjarnego",
    "back": "Rozporządzenie MZ z 1.03.2013 o leczeniu substytucyjnym; instrukcja DGSW 4/24 (17.10.2024) – zapobieganie samobójstwom; zarządzenie DGSW 103/24 – praca penitencjarna i zakresy czynności (zastąpiło 19/16); ustawa z 13.05.2016 o przeciwdziałaniu zagrożeniom przestępczością na tle seksualnym; ustawa z 19.08.1994 o ochronie zdrowia psychicznego; plus KKW i rozporządzenie o oddziaływaniach penitencjarnych.",
    "source": "SPECJALIZACJA_2 pkt 32",
    "tag": "spec-77"
@@ -3411,7 +3411,7 @@
     "20 lat"
    ],
    "answer": 3,
-   "explanation": "20 lat – półotwarty; 25 lat – otwarty (wg materiałów kursu).",
+   "explanation": "20 lat – półotwarty; 25 lat – otwarty.",
    "source": "KKW; Skrypt SW"
   },
   {
@@ -4503,7 +4503,7 @@
    "deck": "metodyka",
    "type": "mcq",
    "naPamiec": false,
-   "question": "Organizacją społeczną pomagającą w resocjalizacji, wymienianą w materiałach kursu, NIE jest:",
+   "question": "Która z wymienionych NIE jest organizacją społeczną pomagającą w resocjalizacji?",
    "options": [
     "Patronat",
     "Caritas",
@@ -5198,7 +5198,7 @@
    "deck": "ochrona",
    "type": "mcq",
    "naPamiec": false,
-   "question": "Aktem wewnętrznym DGSW o sposobach ochrony wskazywanym w materiałach kursu jest:",
+   "question": "Który akt wewnętrzny DGSW określa obecnie sposoby ochrony jednostek organizacyjnych SW?",
    "options": [
     "zarządzenie nr 69/23",
     "zarządzenie nr 30/2025",
@@ -5572,7 +5572,7 @@
    "deck": "bron",
    "type": "mcq",
    "naPamiec": false,
-   "question": "Pojemność magazynka pistoletu Walther P99 (wg materiałów COSSW):",
+   "question": "Pojemność magazynka pistoletu Walther P99:",
    "options": [
     "20 nabojów",
     "8 nabojów",
@@ -8090,7 +8090,7 @@
    "deck": "stanowiska",
    "type": "order",
    "naPamiec": true,
-   "prompt": "Apel w oddziale mieszkalnym – zasady w kolejności z wykładu",
+   "prompt": "Apel w oddziale mieszkalnym – ułóż czynności we właściwej kolejności",
    "steps": [
     "Wstrzymuje się ruch osadzonych w zakładzie",
     "Wyznacza się funkcjonariusza z radiotelefonem i kluczem, który stoi na zewnątrz oddziału za kratą koszową",
@@ -8167,7 +8167,7 @@
    "deck": "ochrona",
    "type": "flashcard",
    "naPamiec": false,
-   "front": "Przedsięwzięcia ochronne (poza rozpoznaniem) – wykład",
+   "front": "Przedsięwzięcia ochronne (poza rozpoznaniem)",
    "back": "Organizacja ruchu, gospodarka kluczami, postępowanie z przedmiotami niebezpiecznymi, wzajemne ubezpieczanie się funkcjonariuszy, apele, wszelkie kontrole, zabezpieczenia techniczno-ochronne, zasady wstępu na teren jednostki.",
    "source": "wykład „Bezpieczeństwo” (25–26.08.2025)",
    "tag": "zarz-30-25"
@@ -8197,7 +8197,7 @@
    "deck": "ochrona",
    "type": "flashcard",
    "naPamiec": true,
-   "front": "ZK typu zamkniętego i AŚ – zabezpieczenia i ruch (wykład)",
+   "front": "ZK typu zamkniętego i AŚ – zabezpieczenia i ruch",
    "back": "Ogrodzenie zewnętrzne z materiału pełnego, ogrodzenie wewnętrzne (może być ażurowe), między nimi pas ochronny; monitoring, bariery, kable sensoryczne, czujki; okna budynków z osadzonymi (cele, łaźnie, magazyny, kuchnie, warsztaty) – kraty lub inne zabezpieczenia; wejścia otwierane na czas niezbędny; osadzeni poruszają się tylko z asystą (wyjątek: funkcyjni „kamizelki”); cele zamknięte. Ruch: organizacja, ewidencja, dozór. Zatrudnienie poza jednostką – pełny system konwojowania. Zmiana liczy co najmniej 3 funkcjonariuszy.",
    "source": "wykład „Bezpieczeństwo” (25–26.08.2025)",
    "tag": "zarz-30-25"
@@ -8207,7 +8207,7 @@
    "deck": "ochrona",
    "type": "flashcard",
    "naPamiec": false,
-   "front": "ZK typu półotwartego – zabezpieczenia (wykład)",
+   "front": "ZK typu półotwartego – zabezpieczenia",
    "back": "Co najmniej jedna linia ogrodzenia zewnętrznego (bez pasa i ogrodzenia wewnętrznego); wzdłuż ogrodzenia mogą być stanowiska uzbrojone; okna budynków z osadzonymi MUSZĄ mieć zabezpieczenia t-o; wejścia na czas niezbędny; dyrektor może zdecydować, że cele są otwarte w dzień, a w nocy zamknięte (lub otwarte, gdy np. toaleta jest na korytarzu); zatrudnienie poza jednostką także na pojedynczych stanowiskach. Zmiana – co najmniej 2 funkcjonariuszy.",
    "source": "wykład „Bezpieczeństwo” (25–26.08.2025)",
    "tag": "zarz-30-25"
@@ -8217,7 +8217,7 @@
    "deck": "ochrona",
    "type": "flashcard",
    "naPamiec": false,
-   "front": "ZK typu otwartego – zabezpieczenia (wykład)",
+   "front": "ZK typu otwartego – zabezpieczenia",
    "back": "Brak stanowisk uzbrojonych; co najmniej jedna linia ogrodzenia ochronnego; okna MOGĄ mieć zabezpieczenia t-o (nie muszą); budynki, wejścia i przejścia mogą być otwarte w porze dziennej, o porze nocnej decyduje dyrektor; zatrudnienie bez konwojenta na pojedynczych stanowiskach; ruch wg porządku wewnętrznego. Zmiana – co najmniej 2 funkcjonariuszy.",
    "source": "wykład „Bezpieczeństwo” (25–26.08.2025)",
    "tag": "zarz-30-25"
@@ -8227,7 +8227,7 @@
    "deck": "ochrona",
    "type": "flashcard",
    "naPamiec": true,
-   "front": "Instrukcja ochronna – zawartość (wykład)",
+   "front": "Instrukcja ochronna – zawartość",
    "back": "Opis przeznaczenia jednostki; rozpoznanie i opis jednostki; opis zabezpieczeń t-o (elektronika, łączność, instalacje napadowe, kamery); procedury wzajemnego ubezpieczania się i alarmowania w sytuacji zagrożenia; zestawienie stanowisk; instrukcje stanowiskowe; plan sytuacyjny (wartownia, magazyn uzbrojenia, brama, wyjścia ewakuacyjne, ujęcia wody, wyłączniki prądu i gazu – kopię dostaje straż pożarna na bramie); wykaz i opis odstępstw od sposobu ochrony (decyduje o nich dyrektor).",
    "source": "wykład „Bezpieczeństwo” (25–26.08.2025)",
    "tag": "zarz-30-25"
@@ -8247,7 +8247,7 @@
    "deck": "ochrona",
    "type": "flashcard",
    "naPamiec": false,
-   "front": "Przykłady odstępstw od sposobu ochrony (wykład)",
+   "front": "Przykłady odstępstw od sposobu ochrony",
    "back": "Względy architektoniczne – brak pełnego ogrodzenia zewnętrznego (budynek na linii ogrodzenia); pas ochronny namalowany przy małym terenie; wejścia w porze nocnej; czasowo otwarte kraty przejściowe; klucze; łączenie oddziałów w nocy (np. przy konwoju do szpitala) i otwarte wtedy kraty wejściowe; w oddziałach szpitalnych w nocy oddziały niezamknięte. O odstępstwach decyduje dyrektor.",
    "source": "wykład „Bezpieczeństwo” (25–26.08.2025)",
    "tag": "zarz-30-25"
@@ -8267,7 +8267,7 @@
    "deck": "ochrona",
    "type": "flashcard",
    "naPamiec": true,
-   "front": "Cztery sytuacje obowiązkowej kontroli osobistej (wykład)",
+   "front": "Cztery sytuacje obowiązkowej kontroli osobistej",
    "back": "1) ujawnienie podczas kontroli pobieżnej przedmiotu niedozwolonego lub substancji; 2) kontrola generalna – kontrola osobista wszystkich osób w jednym czasie; 3) osadzeni niebezpieczni („N”, art. 88b KKW) – przy każdym wyjściu z celi i powrocie; 4) przed umieszczeniem w celi zabezpieczającej (rozporządzenie MS z 3.06.2013) – odbiera się przedmioty niebezpieczne dla życia lub zdrowia.",
    "source": "wykład „Bezpieczeństwo” (25–26.08.2025)",
    "tag": "zarz-30-25"
@@ -8909,7 +8909,7 @@
     "Żaden przepis tego nie określa – dobiera się ją do potrzeb"
    ],
    "answer": 3,
-   "explanation": "Wykład 25.08.2025.",
+   "explanation": "",
    "source": "wykład „Bezpieczeństwo” (25–26.08.2025)",
    "tag": "zarz-30-25"
   },
@@ -8977,7 +8977,7 @@
     "wykaz kluczy specjalnych i zwykłych"
    ],
    "answer": 1,
-   "explanation": "Wykład.",
+   "explanation": "",
    "source": "wykład „Bezpieczeństwo” (25–26.08.2025)",
    "tag": "zarz-30-25"
   },
@@ -8994,7 +8994,7 @@
     "otwiera się wszystkie cele jednocześnie"
    ],
    "answer": 2,
-   "explanation": "Wykład; zarządzenie 30/25.",
+   "explanation": "zarządzenie 30/25.",
    "source": "wykład „Bezpieczeństwo” (25–26.08.2025)",
    "tag": "zarz-30-25"
   },
@@ -9011,7 +9011,7 @@
     "dyrektor jednostki"
    ],
    "answer": 1,
-   "explanation": "Wykład.",
+   "explanation": "",
    "source": "wykład „Bezpieczeństwo” (25–26.08.2025)",
    "tag": "zarz-30-25"
   },
@@ -9045,7 +9045,7 @@
     "oddawany jest budynek po remoncie"
    ],
    "answer": 3,
-   "explanation": "Wykład.",
+   "explanation": "",
    "source": "wykład „Bezpieczeństwo” (25–26.08.2025)",
    "tag": "zarz-30-25"
   },
@@ -9096,7 +9096,7 @@
     "Zamkniętym"
    ],
    "answer": 2,
-   "explanation": "Wykład.",
+   "explanation": "",
    "source": "wykład „Bezpieczeństwo” (25–26.08.2025)",
    "tag": "zarz-30-25"
   },
@@ -9147,7 +9147,7 @@
     "organizacja, ewidencja, dozór"
    ],
    "answer": 3,
-   "explanation": "Wykład.",
+   "explanation": "",
    "source": "wykład „Bezpieczeństwo” (25–26.08.2025)",
    "tag": "zarz-30-25"
   },
@@ -9164,7 +9164,7 @@
     "dyrektor okręgowy"
    ],
    "answer": 0,
-   "explanation": "Wykład.",
+   "explanation": "",
    "source": "wykład „Bezpieczeństwo” (25–26.08.2025)",
    "tag": "zarz-30-25"
   },
@@ -9198,7 +9198,7 @@
     "dyrektor"
    ],
    "answer": 3,
-   "explanation": "Wykład.",
+   "explanation": "",
    "source": "wykład „Bezpieczeństwo” (25–26.08.2025)",
    "tag": "zarz-30-25"
   },
@@ -9207,7 +9207,7 @@
    "deck": "ochrona",
    "type": "mcq",
    "naPamiec": false,
-   "question": "Zdarzeniem z winy funkcjonariusza (wg wykładu) jest m.in.:",
+   "question": "Które z wymienionych zdarzeń zagrażających bezpieczeństwu jednostki wynika z winy funkcjonariusza?",
    "options": [
     "rutyna i spoufalanie się z osadzonymi",
     "samouszkodzenie",
@@ -9215,7 +9215,7 @@
     "bunt"
    ],
    "answer": 0,
-   "explanation": "Także przekroczenie uprawnień, niedopełnienie obowiązków, korupcja, ujawnienie danych.",
+   "explanation": "Z winy funkcjonariuszy: rutyna i spoufalanie się z osadzonymi, przekroczenie uprawnień, niedopełnienie obowiązków, korupcja, nieuprawnione ujawnienie danych. Z winy osadzonych: samouszkodzenia, samobójstwa, bunt, napaści, wzajemne znęcanie się.",
    "source": "wykład „Bezpieczeństwo” (25–26.08.2025)",
    "tag": "zarz-30-25"
   },
@@ -9232,7 +9232,7 @@
     "5 lat"
    ],
    "answer": 0,
-   "explanation": "Wykład.",
+   "explanation": "",
    "source": "wykład „Bezpieczeństwo” (25–26.08.2025)",
    "tag": "zarz-30-25"
   },
@@ -9249,7 +9249,7 @@
     "raz w tygodniu"
    ],
    "answer": 2,
-   "explanation": "Wykład.",
+   "explanation": "",
    "source": "wykład „Bezpieczeństwo” (25–26.08.2025)",
    "tag": "zarz-30-25"
   },
@@ -9266,7 +9266,7 @@
     "kontroli wyłącznie cel"
    ],
    "answer": 0,
-   "explanation": "Wykład.",
+   "explanation": "",
    "source": "wykład „Bezpieczeństwo” (25–26.08.2025)",
    "tag": "zarz-30-25"
   },
@@ -10976,7 +10976,7 @@
    "deck": "metodyka",
    "type": "mcq",
    "naPamiec": false,
-   "question": "Która zasada NIE należy do zasad resocjalizacji z materiałów kursu?",
+   "question": "Która z wymienionych NIE jest zasadą resocjalizacji?",
    "options": [
     "zasada odpowiedzialności zbiorowej",
     "zasada poszanowania godności",
@@ -11464,7 +11464,7 @@
       "art. 45 pkt 1"
      ],
      "answer": 1,
-     "explanation": "Wg materiałów kursu – art. 45 pkt 5 ustawy o ŚPB."
+     "explanation": "Art. 45 pkt 5 ustawy o ŚPB."
     },
     {
      "question": "Od procedury ostrzegania przed użyciem broni można odstąpić, gdy:",

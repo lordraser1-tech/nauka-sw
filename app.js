@@ -2335,6 +2335,8 @@ function sizeLikePicker(pairs, current, onPick) {
 
 // Przy każdej aktualizacji: dopisz wpis NA POCZĄTKU listy, z numerem = numer CACHE w service-worker.js.
 const CHANGELOG = [
+  { v: 22, date: '12.11.2026', items: [
+    'Poprawione pytania z dopiskiem „wg wykładu” / „z materiałów kursu” – teraz są zrozumiałe bez znajomości wykładu (dzięki za zgłoszenie!).'] },
   { v: 21, date: '12.11.2026', items: [
     '⚖️ Kazusy – 21 sytuacji ze służby, krok po kroku (ŚPB, ochrona, KKW, stanowiska, pierwsza pomoc, psychologia).',
     '🧩 Dopasuj pary – 15 zestawów: terminy, limity, kto co nadaje, pierwsza pomoc.',
