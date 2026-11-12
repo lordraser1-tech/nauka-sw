@@ -151,6 +151,19 @@ function pickVariants(list, rnd = Math.random) {
   return list.filter(it => !it.grupa || chosen[it.grupa].it === it);
 }
 
+// Test i egzamin: najpierw pytania pokazywane najrzadziej, wśród równych – losowo.
+// Dzięki temu kolejne testy przechodzą przez całą pulę, zanim pytania zaczną się powtarzać.
+const rotKey = it => it.grupa || it.id;
+function freshFirst(list, n) {
+  const seen = state.testSeen || {};
+  const out = shuffle(list).sort((a, b) => (seen[rotKey(a)] || 0) - (seen[rotKey(b)] || 0));
+  return n ? out.slice(0, n) : out;
+}
+function markTestSeen(it) {
+  const seen = state.testSeen || (state.testSeen = {});
+  seen[rotKey(it)] = (seen[rotKey(it)] || 0) + 1;
+}
+
 function hardItems() {
   return DATA.items.filter(it => state.hist[it.id] && state.hist[it.id].last === 'bad');
 }
@@ -682,6 +695,7 @@ function runSequence(title, items, restart, opts = {}) {
   const step = () => {
     if (s.i >= items.length) return sequenceSummary(title, items, s, restart, opts);
     const item = items[s.i];
+    if (opts.onShow) opts.onShow(item);
     screen(title, true);
     $app.append(h('div', { class: 'progress-line' },
       h('span', {}, `${s.i + 1} / ${items.length}`),
@@ -792,9 +806,8 @@ function testItems(decks) {
 }
 
 function runTest(name, decks) {
-  const all = shuffle(testItems(decks));
-  const items = testSize() ? all.slice(0, testSize()) : all;
-  runSequence(`Test – ${name.toLowerCase()}`, items, () => runTest(name, decks), { celebrate: true });
+  const items = shuffle(freshFirst(testItems(decks), testSize()));
+  runSequence(`Test – ${name.toLowerCase()}`, items, () => runTest(name, decks), { celebrate: true, onShow: markTestSeen });
 }
 
 // Przełącznik liczby pytań (0 = wszystkie).
@@ -1262,7 +1275,7 @@ function renderExam() {
 }
 
 function startExam(decks) {
-  const items = shuffle(pool(['mcq'], { decks, ignoreMem: true })).slice(0, examSize());
+  const items = shuffle(freshFirst(pool(['mcq'], { decks, ignoreMem: true }), examSize()));
   if (!items.length) return;
   exam = {
     items,
@@ -1337,6 +1350,7 @@ function finishExam(timeUp) {
   exam.items.forEach((it, k) => {
     const ok = exam.answers[k] === it.answer;
     if (ok) exam.ok++;
+    if (exam.answers[k] !== null) markTestSeen(it);
     record(it, ok ? 'ok' : 'bad');
   });
   bielikQuiet = false;
