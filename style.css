@@ -477,3 +477,14 @@ details.topics > summary .count { margin-left: auto; font-weight: 500; font-size
 .manual-sec ul { padding-left: 20px; margin: 4px 0 10px; }
 .manual-sec li { margin: 5px 0; }
 .manual-sec p { margin: 4px 0 8px; }
+
+/* Przeprowadzka (stary adres) */
+.moving { text-align: left; }
+.moving h2 { margin: 4px 0 8px; text-align: center; }
+.moving-ico { font-size: 48px; text-align: center; }
+.moving-stats { background: var(--primary-soft, rgba(31,79,138,.1)); border-radius: 12px; padding: 12px 14px; margin: 12px 0; font-weight: 600; }
+.moving .btn { width: 100%; margin: 6px 0; }
+.moving-save { font-size: 18px; min-height: 52px; }
+.moving-done { font-weight: 600; color: var(--ok, #1e8449); }
+.moving-steps { padding-left: 22px; }
+.moving-steps li { margin: 8px 0; }
