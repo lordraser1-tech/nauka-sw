@@ -216,6 +216,7 @@ const routes = {
 };
 
 function route() {
+  if (OLD_SITE) return; // stara strona: tylko ekran przeprowadzki
   currentRoute = location.hash.replace(/^#\/?/, '');
   if (!(currentRoute in routes)) currentRoute = '';
   if (currentRoute === 'czytaj' && !docs.length) currentRoute = '';
@@ -1331,9 +1332,13 @@ function renderRead() {
 
 /* ---------- Start ---------- */
 
+// Stara strona (GitHub Pages) – tylko informacja o przeprowadzce i kopia postępu.
+const OLD_SITE = /(^|\.)github\.io$/.test(location.hostname);
+
 async function init() {
   state = loadState();
   document.getElementById('storage-warning').hidden = storageOk;
+  if (OLD_SITE) { applyTheme(); showMoving(); registerSW(); return; }
   try {
     const res = await fetch('pytania_sw.json');
     if (res.status === 401) { location.reload(); return; } // wersja z kodami: dostęp wygasł → ekran logowania
@@ -1370,6 +1375,10 @@ async function init() {
   if ((state.settings.welcomeSeen || 0) < WELCOME_VERSION) showWelcome();
   else showChangesIfNew();
 
+  registerSW();
+}
+
+function registerSW() {
   if ('serviceWorker' in navigator && location.protocol !== 'file:') {
     // Nowy service worker przejmuje stronę (controllerchange) → pokaż prośbę o odświeżenie.
     let hadController = !!navigator.serviceWorker.controller;
@@ -1908,6 +1917,9 @@ function sizeLikePicker(pairs, current, onPick) {
 
 // Przy każdej aktualizacji: dopisz wpis NA POCZĄTKU listy, z numerem = numer CACHE w service-worker.js.
 const CHANGELOG = [
+  { v: 19, date: '12.11.2026', items: [
+    'Witaj pod nowym adresem! Jeśli masz plik z postępem ze starej strony, wczytaj go: ⚙️ → Importuj.',
+    'Stara strona pokazuje już tylko informację o przeprowadzce i przycisk do zapisania postępu.'] },
   { v: 18, date: '12.11.2026', items: [
     'Aplikacja wkrótce przeniesie się pod nowy adres, dostępny po wpisaniu kodu. Szczegóły i kod dostaniesz od twórcy.',
     'Już teraz zrób kopię postępu: ⚙️ → Eksportuj. Na nowej stronie wczytasz ją przez ⚙️ → Importuj.'] },
@@ -1985,6 +1997,48 @@ function showSettings() {
 
 function showChangelog() {
   changelogBox(CHANGELOG, 'Historia zmian');
+}
+
+/* ---------- Przeprowadzka (stary adres) ---------- */
+
+function showMoving() {
+  ['back', 'info', 'help', 'settings', 'timer'].forEach(id => { const el = document.getElementById(id); if (el) el.hidden = true; });
+  document.querySelector('.tabbar')?.setAttribute('hidden', '');
+  document.getElementById('title').textContent = 'Nauka SW';
+  const answered = Object.keys(state.hist || {}).length;
+  const exams = (state.exams || []).length;
+  const done = h('p', { class: 'moving-done', hidden: true }, '✅ Zapisane. Plik „nauka-sw-postep-….json” jest w folderze Pobrane (na iPhonie: aplikacja Pliki → Pobrane).');
+  const saveBtn = btn('💾 Zapisz kopię postępu', 'primary moving-save', () => { exportProgress(); done.hidden = false; });
+  const fileOf = () => new File([JSON.stringify({ app: 'nauka-sw', version: 1, date: new Date().toISOString(), state }, null, 1)],
+    `nauka-sw-postep-${dayKey(new Date())}.json`, { type: 'application/json' });
+  let shareBtn = null;
+  try {
+    if (navigator.canShare && navigator.canShare({ files: [fileOf()] })) {
+      shareBtn = btn('📤 Wyślij plik (np. sobie na WhatsApp)', 'ghost', async () => {
+        try { await navigator.share({ files: [fileOf()], title: 'Nauka SW – postęp' }); done.hidden = false; } catch (e) { /* anulowano */ }
+      });
+    }
+  } catch (e) { /* brak udostępniania plików */ }
+  const step = (b, t) => h('li', {}, h('strong', {}, b), ' ', t);
+  $app.replaceChildren(h('section', { class: 'card moving' },
+    h('div', { class: 'moving-ico', 'aria-hidden': 'true' }, '🚚'),
+    h('h2', {}, 'Aplikacja zmieniła adres'),
+    h('p', {}, 'Nauka SW działa teraz pod nowym adresem, z kodem dostępu. Tutaj możesz już tylko zapisać swój postęp i przenieść go na nową stronę.'),
+    h('div', { class: 'moving-stats' }, answered || exams
+      ? `Twój postęp na tym urządzeniu: ${answered} ${plural(answered, 'przerobione pytanie', 'przerobione pytania', 'przerobionych pytań')}, ${exams} ${plural(exams, 'egzamin próbny', 'egzaminy próbne', 'egzaminów próbnych')}.`
+      : 'Na tym urządzeniu nie ma zapisanego postępu – możesz od razu przejść na nową stronę (krok 2).'),
+    answered || exams ? saveBtn : null,
+    answered || exams ? shareBtn : null,
+    done,
+    h('h3', {}, 'Jak przejść na nową stronę'),
+    h('ol', { class: 'moving-steps' },
+      step('Zapisz kopię postępu', '– przycisk powyżej. Zrób to, zanim stara strona zniknie.'),
+      step('Link i kod dostępu', 'znajdziesz na grupie WhatsApp. Nie masz? Napisz do twórcy aplikacji.'),
+      step('Otwórz nowy link.', 'iPhone: najpierw Udostępnij → „Do ekranu początkowego” i kod wpisz już w tej ikonie. Android (Chrome): menu ⋮ → „Dodaj do ekranu głównego”.'),
+      step('Wpisz kod', '– tylko raz na tym urządzeniu. Nie przekazuj go innym: działa na ograniczonej liczbie urządzeń.'),
+      step('Wczytaj postęp:', 'na nowej stronie ⚙️ (trybik w nagłówku) → Importuj → wybierz zapisany plik. Wrócą stopień, punkty, odznaki i powtórki fiszek.'),
+      step('Usuń starą ikonę', 'z ekranu telefonu, żeby się nie myliła z nową.')),
+    h('p', { class: 'small muted' }, 'Ta strona zostanie wkrótce wyłączona.')));
 }
 
 /* ---------- Instrukcja obsługi (przycisk „?”) ---------- */
