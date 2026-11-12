@@ -1917,6 +1917,8 @@ function sizeLikePicker(pairs, current, onPick) {
 
 // Przy każdej aktualizacji: dopisz wpis NA POCZĄTKU listy, z numerem = numer CACHE w service-worker.js.
 const CHANGELOG = [
+  { v: 20, date: '12.11.2026', items: [
+    'Przy pierwszym uruchomieniu, po „Rozkaz!”, aplikacja proponuje wczytanie postępu ze starej strony.'] },
   { v: 19, date: '12.11.2026', items: [
     'Witaj pod nowym adresem! Jeśli masz plik z postępem ze starej strony, wczytaj go: ⚙️ → Importuj.',
     'Stara strona pokazuje już tylko informację o przeprowadzce i przycisk do zapisania postępu.'] },
@@ -2163,7 +2165,25 @@ function showWelcome() {
         state.settings.lastSeenVersion = APP_VERSION;
         save();
         box.remove();
+        if (!state.settings.importOffered && !OLD_SITE) showImportOffer();
       })));
+  document.body.append(box);
+}
+
+// Pierwsze uruchomienie na nowej stronie: propozycja wczytania postępu ze starej strony.
+function showImportOffer() {
+  state.settings.importOffered = true;
+  save();
+  const box = h('div', { class: 'modal import-offer', role: 'dialog', 'aria-modal': 'true', 'aria-labelledby': 'import-title' });
+  const close = () => box.remove();
+  box.append(h('div', { class: 'card modal-card welcome-card' },
+    h('div', { class: 'moving-ico', 'aria-hidden': 'true' }, '📂'),
+    h('h2', { id: 'import-title', style: 'text-align:center' }, 'Przenosisz się ze starej strony?'),
+    h('p', {}, 'Jeśli na starej stronie zapisałeś kopię postępu (plik ', h('strong', {}, 'nauka-sw-postep-….json'),
+      '), wczytaj ją teraz. Wrócą stopień, punkty, odznaki i powtórki fiszek.'),
+    btn('📂 Importuj postęp', 'primary', () => { close(); importProgress(); }),
+    btn('Anuluj – zaczynam od nowa', 'ghost', close),
+    h('p', { class: 'small muted', style: 'text-align:center' }, 'Możesz to zrobić także później: ⚙️ → Importuj.')));
   document.body.append(box);
 }
 
