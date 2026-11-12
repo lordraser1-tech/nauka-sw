@@ -1,7 +1,7 @@
 {
  "meta": {
   "tytul": "Szkolenie chorążych SW – baza do nauki",
-  "wersja": 7,
+  "wersja": 8,
   "data": "2026-11-09",
   "zrodla": "Ustawa o ŚPB (Dz.U. 2026 poz. 244), ustawa o SW (Dz.U. 2025 poz. 1750), kkw (Dz.U. 2025 poz. 911), rozporządzenie o oddziaływaniach penitencjarnych (Dz.U. 2024 poz. 1344), rozporządzenie o ośrodkach diagnostycznych (Dz.U. 2023 poz. 1677), rozporządzenie o ochronie jednostek SW (Dz.U. 2016 poz. 1804); materiały kursu: pytania kontrolne (psycholodzy 1–29, penitencjarne 28–53), lista 124 pytań, SPECJALIZACJA_2 (77 zagadnień), Skrypt SW V15",
   "typy": {
@@ -11255,6 +11255,1460 @@
    "source": "lista pytań 95",
    "tag": "v15",
    "grupa": "dieta-45"
+  },
+  {
+   "id": "kazus-01",
+   "deck": "spb",
+   "type": "case",
+   "naPamiec": false,
+   "title": "Bierny opór na korytarzu",
+   "scenario": "Oddział mieszkalny ZK typu zamkniętego. Osadzony po powrocie ze spaceru siada na podłodze korytarza i oświadcza, że nie wróci do celi. Nie atakuje nikogo, nie szarpie się – po prostu siedzi i nie wykonuje poleceń.",
+   "steps": [
+    {
+     "question": "Jaka przesłanka użycia ŚPB z art. 11 ustawy o ŚPB tu zachodzi?",
+     "options": [
+      "pkt 13 – pokonanie czynnego oporu",
+      "pkt 12 – pokonanie biernego oporu",
+      "pkt 2 – odparcie zamachu na życie lub zdrowie",
+      "pkt 14 – przeciwdziałanie autoagresji"
+     ],
+     "answer": 1,
+     "explanation": "Osadzony nie atakuje i nie stawia czynnego oporu – to klasyczny bierny opór (art. 11 pkt 12)."
+    },
+    {
+     "question": "Którego środka NIE wolno użyć, gdy jedyną podstawą jest bierny opór?",
+     "options": [
+      "kajdanek",
+      "siły fizycznej w postaci technik transportowych",
+      "żadna odpowiedź – wolno wszystkiego",
+      "polecenia zachowania się zgodnie z prawem"
+     ],
+     "answer": 0,
+     "explanation": "Art. 15 ust. 1: kajdanki tylko w przypadkach z art. 11 pkt 1–11, 13 i 14 – bez pkt 12. Środki stosuje się proporcjonalnie, wybierając najmniej dolegliwy."
+    },
+    {
+     "question": "Podczas przenoszenia osadzony zaczyna kopać i uderzać funkcjonariuszy. Co się zmienia?",
+     "options": [
+      "to już czynny opór (pkt 13) – można użyć m.in. kajdanek",
+      "trzeba przerwać interwencję i sporządzić notatkę",
+      "trzeba najpierw uzyskać zgodę sędziego penitencjarnego",
+      "nic – nadal obowiązuje tylko pkt 12"
+     ],
+     "answer": 0,
+     "explanation": "Czynny opór to art. 11 pkt 13 – mieści się w katalogu z art. 15 ust. 1 (pkt 1–11, 13, 14), więc kajdanki są dopuszczalne."
+    }
+   ],
+   "source": "ustawa z 24.05.2013 o ŚPB i broni palnej – art. 11, 15",
+   "tag": "v21"
+  },
+  {
+   "id": "kazus-02",
+   "deck": "spb",
+   "type": "case",
+   "naPamiec": false,
+   "title": "Osadzona w widocznej ciąży",
+   "scenario": "Osadzona w widocznej ciąży odmawia wykonania polecenia i szarpie się z oddziałową. Na miejsce przybywa wsparcie.",
+   "steps": [
+    {
+     "question": "Jakiego ŚPB można wobec niej użyć co do zasady?",
+     "options": [
+      "chemicznych środków obezwładniających",
+      "wyłącznie siły fizycznej w postaci technik obezwładnienia",
+      "pałki służbowej",
+      "kajdanek zespolonych"
+     ],
+     "answer": 1,
+     "explanation": "Wobec kobiety o widocznej ciąży co do zasady – tylko siła fizyczna w postaci technik obezwładnienia."
+    },
+    {
+     "question": "Kiedy wyjątkowo można użyć innych ŚPB?",
+     "options": [
+      "nigdy",
+      "gdy zgodzi się na to lekarz",
+      "gdy osadzona odmawia wykonania polecenia",
+      "gdy trzeba odeprzeć bezpośredni, bezprawny zamach na życie lub zdrowie, a siła fizyczna nie wystarcza"
+     ],
+     "answer": 3,
+     "explanation": "Wyjątek: odparcie bezpośredniego, bezprawnego zamachu na życie lub zdrowie, gdy siła fizyczna jest niewystarczająca lub nieskuteczna."
+    },
+    {
+     "question": "Po użyciu ŚPB wobec kobiety ciężarnej NIE można odstąpić od:",
+     "options": [
+      "zabezpieczenia miejsca zdarzenia",
+      "zapewnienia medycznych czynności ratunkowych",
+      "powiadomienia sędziego penitencjarnego w ciągu godziny",
+      "sporządzenia notatki przez psychologa"
+     ],
+     "answer": 1,
+     "explanation": "Od zapewnienia medycznych czynności ratunkowych nie ma odstępstwa."
+    }
+   ],
+   "source": "ustawa z 24.05.2013 o ŚPB i broni palnej",
+   "tag": "v21"
+  },
+  {
+   "id": "kazus-03",
+   "deck": "spb",
+   "type": "case",
+   "naPamiec": false,
+   "title": "Wyjazd na badanie poza jednostkę",
+   "scenario": "Osadzony ma zaplanowane badanie w szpitalu miejskim. Tydzień temu zapowiadał współosadzonym, że „przy pierwszej okazji da nogę”.",
+   "steps": [
+    {
+     "question": "Które ŚPB można zastosować prewencyjnie wobec osoby pozbawionej wolności?",
+     "options": [
+      "kajdanki zakładane na ręce, kask zabezpieczający, pas obezwładniający",
+      "pałkę służbową i kajdanki",
+      "chemiczne środki obezwładniające",
+      "psa służbowego"
+     ],
+     "answer": 0,
+     "explanation": "Prewencyjnie (ucieczka, agresja, autoagresja): kajdanki na ręce, kask zabezpieczający, pas obezwładniający."
+    },
+    {
+     "question": "Którego środka NIE można użyć prewencyjnie?",
+     "options": [
+      "pałki służbowej",
+      "pasa obezwładniającego",
+      "kajdanek zakładanych na ręce",
+      "kasku zabezpieczającego"
+     ],
+     "answer": 0,
+     "explanation": "Pałki służbowej nie stosuje się prewencyjnie."
+    },
+    {
+     "question": "Czy funkcjonariusz może sam podjąć decyzję o prewencyjnym założeniu kajdanek?",
+     "options": [
+      "nie – decyzję podejmuje lekarz szpitala",
+      "tak – prewencja z art. 13 ust. 1 to jeden z przypadków samodzielnej decyzji",
+      "tylko za zgodą sędziego penitencjarnego",
+      "nie – zawsze decyduje dyrektor jednostki"
+     ],
+     "answer": 1,
+     "explanation": "Samodzielnie: usiłowanie zamachu na życie lub zdrowie, usiłowanie ucieczki, pościg oraz prewencja z art. 13 ust. 1."
+    }
+   ],
+   "source": "ustawa z 24.05.2013 o ŚPB i broni palnej – art. 13",
+   "tag": "v21"
+  },
+  {
+   "id": "kazus-04",
+   "deck": "spb",
+   "type": "case",
+   "naPamiec": false,
+   "title": "Autoagresja w celi",
+   "scenario": "Oddziałowy przez wizjer widzi, że osadzony uderza głową o ścianę celi i nie reaguje na polecenia.",
+   "steps": [
+    {
+     "question": "Jaka to przesłanka z art. 11 ustawy o ŚPB?",
+     "options": [
+      "pkt 14 – przeciwdziałanie czynnościom zmierzającym do autoagresji",
+      "pkt 12 – bierny opór",
+      "pkt 13 – czynny opór",
+      "pkt 4 – naruszenie porządku publicznego"
+     ],
+     "answer": 0,
+     "explanation": "Autoagresja – art. 11 pkt 14."
+    },
+    {
+     "question": "Kask zabezpieczający można zastosować:",
+     "options": [
+      "wyłącznie wobec nieletnich",
+      "tylko przy autoagresji",
+      "przy każdym oporze",
+      "tylko podczas konwoju"
+     ],
+     "answer": 1,
+     "explanation": "Kask zabezpieczający – tylko przy autoagresji."
+    },
+    {
+     "question": "Osadzonego umieszczono w celi zabezpieczającej. Najdłużej może tam przebywać:",
+     "options": [
+      "72 godziny",
+      "7 dni",
+      "48 godzin",
+      "24 godziny"
+     ],
+     "answer": 2,
+     "explanation": "Cela zabezpieczająca – maksymalnie 48 h."
+    }
+   ],
+   "source": "ustawa z 24.05.2013 o ŚPB i broni palnej",
+   "tag": "v21"
+  },
+  {
+   "id": "kazus-05",
+   "deck": "spb",
+   "type": "case",
+   "naPamiec": false,
+   "title": "Ucieczka z konwoju",
+   "scenario": "Podczas wyprowadzania z sądu skazany wyrywa się konwojentom i biegnie w stronę parkingu. Widzisz go cały czas.",
+   "steps": [
+    {
+     "question": "Kiedy podejmujesz pościg?",
+     "options": [
+      "dopiero po rozkazie dyrektora jednostki",
+      "tylko gdy zbieg jest uzbrojony",
+      "gdy zbieg jest w polu widzenia albo znany jest kierunek ucieczki (i nie koliduje to z innymi obowiązkami)",
+      "nigdy – powiadamia się wyłącznie Policję"
+     ],
+     "answer": 2,
+     "explanation": "Pościg – gdy zbieg w polu widzenia albo znany kierunek ucieczki."
+    },
+    {
+     "question": "Ucieczka z zakładu karnego lub z konwoju to przypadek użycia broni z:",
+     "options": [
+      "art. 11 pkt 12",
+      "art. 45 pkt 5",
+      "art. 13 ust. 1",
+      "art. 45 pkt 1"
+     ],
+     "answer": 1,
+     "explanation": "Wg materiałów kursu – art. 45 pkt 5 ustawy o ŚPB."
+    },
+    {
+     "question": "Od procedury ostrzegania przed użyciem broni można odstąpić, gdy:",
+     "options": [
+      "jej realizacja groziłaby bezpośrednim niebezpieczeństwem dla życia lub zdrowia funkcjonariusza lub innej osoby",
+      "jest pora nocna",
+      "zgodzi się na to dowódca konwoju przez radio",
+      "zbieg biegnie szybciej niż konwojent"
+     ],
+     "answer": 0,
+     "explanation": "Odstąpienie od ostrzegania – tylko przy bezpośrednim niebezpieczeństwie dla życia lub zdrowia."
+    }
+   ],
+   "source": "ustawa z 24.05.2013 o ŚPB i broni palnej – art. 45",
+   "tag": "v21"
+  },
+  {
+   "id": "kazus-06",
+   "deck": "ochrona",
+   "type": "case",
+   "naPamiec": false,
+   "title": "Powrót z miejsca zatrudnienia",
+   "scenario": "Osadzony wraca z pracy w warsztacie na terenie jednostki. Przy kontroli wyczuwasz w kieszeni bluzy płaski, twardy przedmiot przypominający telefon.",
+   "steps": [
+    {
+     "question": "Jakiej kontroli osadzony podlega obowiązkowo przy powrocie z miejsca zatrudnienia?",
+     "options": [
+      "osobistej zawsze",
+      "generalnej",
+      "żadnej – tylko przy wyjściu",
+      "pobieżnej"
+     ],
+     "answer": 3,
+     "explanation": "Kontrola pobieżna – obowiązkowo przed opuszczeniem miejsca zatrudnienia i po powrocie."
+    },
+    {
+     "question": "Ujawniono przedmiot niedozwolony. Co dalej?",
+     "options": [
+      "zakończyć kontrolę i sporządzić notatkę",
+      "wezwać Policję przed jakimkolwiek działaniem",
+      "odesłać osadzonego do celi bez dalszych czynności",
+      "przeprowadzić kontrolę osobistą"
+     ],
+     "answer": 3,
+     "explanation": "Ujawnienie przedmiotu niedozwolonego przy kontroli pobieżnej → kontrola osobista."
+    },
+    {
+     "question": "Kto przeprowadza kontrolę osobistą?",
+     "options": [
+      "dwóch funkcjonariuszy w obecności innych osadzonych",
+      "oddziałowy razem z wychowawcą",
+      "jeden funkcjonariusz dowolnej płci",
+      "dwie osoby tej samej płci co kontrolowany – jedna wydaje polecenia, druga ochrania"
+     ],
+     "answer": 3,
+     "explanation": "Tej samej płci, pod nieobecność osób postronnych i osób odmiennej płci; zawsze dwie osoby."
+    }
+   ],
+   "source": "zarządzenie DGSW nr 30/2025; KKW",
+   "tag": "v21"
+  },
+  {
+   "id": "kazus-07",
+   "deck": "ochrona",
+   "type": "case",
+   "naPamiec": false,
+   "title": "Osadzony „N” w nocy",
+   "scenario": "Godzina 2:30. Osadzony niebezpieczny zgłasza przez instalację przyzywową silny ból w klatce piersiowej. Trzeba otworzyć celę i doprowadzić go do ambulatorium.",
+   "steps": [
+    {
+     "question": "W obecności ilu funkcjonariuszy co najmniej otwiera się w nocy celę osadzonego „N”?",
+     "options": [
+      "dwóch",
+      "jednego, jeśli jest dowódca zmiany",
+      "czterech",
+      "trzech"
+     ],
+     "answer": 3,
+     "explanation": "Celę „N” w porze nocnej i podczas apelu – co najmniej trzech funkcjonariuszy."
+    },
+    {
+     "question": "Kiedy osadzony „N” podlega obowiązkowej kontroli osobistej?",
+     "options": [
+      "przy każdym opuszczeniu celi i powrocie do niej",
+      "raz na dobę",
+      "tylko przy przyjęciu do jednostki",
+      "tylko na polecenie lekarza"
+     ],
+     "answer": 0,
+     "explanation": "Art. 88b KKW – przy każdym opuszczeniu celi i powrocie."
+    },
+    {
+     "question": "Jeśli trzeba doprowadzić kilku osadzonych „N” naraz, grupa może liczyć najwyżej:",
+     "options": [
+      "10 osób",
+      "2 osoby",
+      "5 osób",
+      "3 osoby"
+     ],
+     "answer": 3,
+     "explanation": "Osadzonych niebezpiecznych doprowadza się w grupie nie większej niż 3 osoby."
+    }
+   ],
+   "source": "zarządzenie DGSW nr 30/2025; KKW",
+   "tag": "v21"
+  },
+  {
+   "id": "kazus-08",
+   "deck": "ochrona",
+   "type": "case",
+   "naPamiec": false,
+   "title": "Konwój między jednostkami",
+   "scenario": "Masz przewieźć do innej jednostki kobietę i dwóch mężczyzn – współsprawców tego samego przestępstwa.",
+   "steps": [
+    {
+     "question": "Kto wyznacza dowódcę konwoju i konwojentów?",
+     "options": [
+      "kierownik jednostki lub pisemnie upoważniony funkcjonariusz",
+      "sąd, który wydał nakaz",
+      "dowódca zmiany",
+      "kierownik działu ewidencji"
+     ],
+     "answer": 0,
+     "explanation": "Kierownik jednostki albo funkcjonariusz upoważniony na piśmie."
+    },
+    {
+     "question": "Jak rozmieścić konwojowanych w pojeździe?",
+     "options": [
+      "dowolnie – decyduje kierowca",
+      "wszystkich razem – to jeden konwój",
+      "osobno osoby odmiennej płci i osoby wymagające wzajemnej izolacji",
+      "kobietę z jednym ze współsprawców, drugiego osobno"
+     ],
+     "answer": 2,
+     "explanation": "W jednym przedziale nie konwojuje się osób odmiennej płci ani osób wymagających wzajemnej izolacji."
+    },
+    {
+     "question": "Podczas konwoju zabrania się m.in.:",
+     "options": [
+      "pozostawiania konwojowanego bez ochrony i obserwacji",
+      "zatrzymania pojazdu w razie awarii",
+      "używania środków łączności",
+      "kontroli pobieżnej konwojowanych"
+     ],
+     "answer": 0,
+     "explanation": "Konwojowany nie może zostać bez ochrony i obserwacji."
+    }
+   ],
+   "source": "zarządzenie DGSW nr 30/2025; KKW",
+   "tag": "v21"
+  },
+  {
+   "id": "kazus-09",
+   "deck": "stanowiska",
+   "type": "case",
+   "naPamiec": false,
+   "title": "Wartownik na wieżyczce",
+   "scenario": "Pełnisz służbę na stanowisku wartownika. Od strony budynku administracyjnego w stronę pasa ochronnego idzie dowódca zmiany z dwoma funkcjonariuszami.",
+   "steps": [
+    {
+     "question": "Kogo wartownik wpuszcza na pas ochronny bez dodatkowej zgody?",
+     "options": [
+      "każdego funkcjonariusza w mundurze",
+      "nikogo – zawsze potrzebna zgoda dyrektora",
+      "wyłącznie dowódcę zmiany i osoby mu towarzyszące",
+      "każdego pracownika z przepustką"
+     ],
+     "answer": 2,
+     "explanation": "Bez dodatkowej zgody – tylko dowódca zmiany i osoby mu towarzyszące."
+    },
+    {
+     "question": "Po rozpoznaniu osoby uprawnionej wartownik zezwala na przejście komendą:",
+     "options": [
+      "„Przejście otwarte”",
+      "„Można iść”",
+      "„Wejść”",
+      "„Droga wolna”"
+     ],
+     "answer": 3,
+     "explanation": "Komenda: „Droga wolna”."
+    },
+    {
+     "question": "Zmiana na stanowisku wartownika następuje nie rzadziej niż co:",
+     "options": [
+      "2 godziny",
+      "8 godzin",
+      "6 godzin",
+      "4 godziny"
+     ],
+     "answer": 3,
+     "explanation": "Wartownik – co 4 h (patrolujący teren – co 2 h). Opóźnienie zmiany – tylko ze względów bezpieczeństwa, odnotowane w książce przebiegu służby dowódcy zmiany."
+    }
+   ],
+   "source": "zarządzenie DGSW nr 30/2025 – instrukcje stanowiskowe",
+   "tag": "v21"
+  },
+  {
+   "id": "kazus-10",
+   "deck": "stanowiska",
+   "type": "case",
+   "naPamiec": false,
+   "title": "Monitorowy widzi niepokojącą scenę",
+   "scenario": "Na podglądzie z celi monitorowanej widzisz, że osadzony przywiązuje pasek prześcieradła do kraty w oknie.",
+   "steps": [
+    {
+     "question": "Kogo monitorowy informuje niezwłocznie?",
+     "options": [
+      "nikogo – obserwuje dalej i zapisuje",
+      "oddziałowego oraz dowódcę zmiany",
+      "dyrektora jednostki pisemnie",
+      "tylko psychologa"
+     ],
+     "answer": 1,
+     "explanation": "O zagrożeniu bezpieczeństwa osadzonego – niezwłocznie oddziałowy i dowódca zmiany."
+    },
+    {
+     "question": "Kolejność użycia środków łączności i alarmowania przez monitorowego określa:",
+     "options": [
+      "regulamin organizacyjno-porządkowy",
+      "kierownik działu penitencjarnego ustnie",
+      "KKW",
+      "instrukcja stanowiskowa na stanowisko monitorowego"
+     ],
+     "answer": 3,
+     "explanation": "Kolejność określa instrukcja stanowiskowa; uwzględnia możliwości reakcji powiadamianych osób."
+    },
+    {
+     "question": "Spostrzeżenia z obserwacji zachowania osadzonych monitorowy przekazuje:",
+     "options": [
+      "właściwemu oddziałowemu, wychowawcy oraz dowódcy zmiany",
+      "rodzinie osadzonego",
+      "tylko lekarzowi",
+      "wyłącznie w notatce do dyrektora raz w tygodniu"
+     ],
+     "answer": 0,
+     "explanation": "Oddziałowy, wychowawca i dowódca zmiany."
+    }
+   ],
+   "source": "zarządzenie DGSW nr 30/2025 – instrukcje stanowiskowe",
+   "tag": "v21"
+  },
+  {
+   "id": "kazus-11",
+   "deck": "kkw",
+   "type": "case",
+   "naPamiec": false,
+   "title": "Nowy skazany – gdzie i na jakich zasadach?",
+   "scenario": "Do jednostki trafia dorosły skazany po raz pierwszy, za przestępstwo nieumyślne (wypadek drogowy).",
+   "steps": [
+    {
+     "question": "W ZK jakiego typu osadza się go co do zasady?",
+     "options": [
+      "otwartego",
+      "wyłącznie w areszcie śledczym",
+      "półotwartego",
+      "zamkniętego"
+     ],
+     "answer": 2,
+     "explanation": "Skazanego za przestępstwo nieumyślne co do zasady osadza się w ZK typu półotwartego."
+    },
+    {
+     "question": "Ile widzeń w miesiącu przysługuje mu w ZK typu półotwartego?",
+     "options": [
+      "1",
+      "bez ograniczeń",
+      "3",
+      "2"
+     ],
+     "answer": 2,
+     "explanation": "Zamknięty – 2, półotwarty – 3, otwarty – bez ograniczeń."
+    },
+    {
+     "question": "Przepustki w ZK typu półotwartego można udzielać:",
+     "options": [
+      "raz w miesiącu, do 28 dni w roku",
+      "nie częściej niż raz na 2 miesiące, łącznie do 14 dni w roku",
+      "bez ograniczeń",
+      "wyłącznie za zgodą sądu penitencjarnego"
+     ],
+     "answer": 1,
+     "explanation": "Półotwarty: raz na 2 miesiące, łącznie do 14 dni w roku."
+    }
+   ],
+   "source": "Kodeks karny wykonawczy",
+   "tag": "v21"
+  },
+  {
+   "id": "kazus-12",
+   "deck": "kkw",
+   "type": "case",
+   "naPamiec": false,
+   "title": "Kara celi izolacyjnej",
+   "scenario": "Dziesięć dni temu skazany pobił współosadzonego. Dyrektor rozważa wymierzenie kary umieszczenia w celi izolacyjnej na 21 dni.",
+   "steps": [
+    {
+     "question": "Co musi nastąpić przed wymierzeniem kary celi izolacyjnej?",
+     "options": [
+      "opinia rzecznika praw obywatelskich",
+      "nic – wystarczy decyzja dyrektora",
+      "lekarz albo psycholog wydaje pisemną opinię o zdolności skazanego do jej odbycia",
+      "zgoda rodziny skazanego"
+     ],
+     "answer": 2,
+     "explanation": "Przed wymierzeniem – pisemna opinia lekarza albo psychologa; w trakcie zdolność kontroluje lekarz lub psycholog."
+    },
+    {
+     "question": "Kara na okres powyżej 14 dni wymaga:",
+     "options": [
+      "uchwały komisji penitencjarnej",
+      "zgody sędziego penitencjarnego",
+      "zgody dyrektora okręgowego",
+      "zgody prokuratora"
+     ],
+     "answer": 1,
+     "explanation": "Cela izolacyjna ponad 14 dni – zgoda sędziego penitencjarnego."
+    },
+    {
+     "question": "Kary dyscyplinarnej nie można wymierzyć, jeżeli od przekroczenia upłynęło:",
+     "options": [
+      "30 dni",
+      "14 dni",
+      "3 miesiące",
+      "7 dni"
+     ],
+     "answer": 0,
+     "explanation": "Termin – 30 dni od dnia popełnienia przekroczenia. Tu minęło 10 dni, więc kara jest możliwa."
+    }
+   ],
+   "source": "Kodeks karny wykonawczy",
+   "tag": "v21"
+  },
+  {
+   "id": "kazus-13",
+   "deck": "kkw",
+   "type": "case",
+   "naPamiec": false,
+   "title": "Skazana w ciąży",
+   "scenario": "Skazana w 5. miesiącu ciąży naruszyła porządek – wdała się w kłótnię ze współosadzoną.",
+   "steps": [
+    {
+     "question": "Których kar dyscyplinarnych NIE stosuje się wobec kobiet ciężarnych i karmiących?",
+     "options": [
+      "tylko nagany",
+      "każdej kary dyscyplinarnej",
+      "upomnienia i nagany",
+      "pozbawienia paczek żywnościowych, pozbawienia lub ograniczenia zakupów, celi izolacyjnej"
+     ],
+     "answer": 3,
+     "explanation": "Art. 143 § 1 pkt 4, 5 i 8 KKW nie stosuje się wobec ciężarnych i karmiących."
+    },
+    {
+     "question": "Do czego m.in. ma prawo kobieta ciężarna?",
+     "options": [
+      "dodatkowych zakupów żywności i dłuższego spaceru",
+      "nieograniczonej liczby widzeń w każdym typie ZK",
+      "przepustki co miesiąc",
+      "zwolnienia z obowiązku apelu"
+     ],
+     "answer": 0,
+     "explanation": "Ciężarne i karmiące – m.in. dodatkowe zakupy żywności i dłuższy spacer."
+    },
+    {
+     "question": "Po porodzie – do jakiego wieku dziecka matka może przebywać z nim w domu matki i dziecka?",
+     "options": [
+      "do pójścia dziecka do szkoły",
+      "do 6 lat",
+      "do ukończenia przez dziecko 3 lat",
+      "do 1 roku"
+     ],
+     "answer": 2,
+     "explanation": "Dom matki i dziecka – do ukończenia przez dziecko 3 lat."
+    }
+   ],
+   "source": "Kodeks karny wykonawczy",
+   "tag": "v21"
+  },
+  {
+   "id": "kazus-14",
+   "deck": "kkw",
+   "type": "case",
+   "naPamiec": false,
+   "title": "Tymczasowo aresztowany prosi o kontakt z żoną",
+   "scenario": "Tymczasowo aresztowany od dwóch dni prosi o rozmowę telefoniczną i widzenie z żoną.",
+   "steps": [
+    {
+     "question": "Na jakiej podstawie może skorzystać z telefonu?",
+     "options": [
+      "zgody komisji penitencjarnej",
+      "decyzji oddziałowego",
+      "zarządzenia (zgody) organu dysponującego",
+      "zawsze – to jego prawo bez ograniczeń"
+     ],
+     "answer": 2,
+     "explanation": "Telefon – tylko na podstawie zarządzenia organu, do którego dyspozycji pozostaje."
+    },
+    {
+     "question": "Kto wydaje zgodę na widzenie?",
+     "options": [
+      "organ, do którego dyspozycji pozostaje",
+      "dyrektor aresztu śledczego",
+      "sędzia penitencjarny",
+      "wychowawca"
+     ],
+     "answer": 0,
+     "explanation": "Zgoda na widzenie TA – organ dysponujący."
+    },
+    {
+     "question": "Odmowa zgody na widzenie z osobą najbliższą jest możliwa wyłącznie, gdy:",
+     "options": [
+      "aresztowany źle się zachowuje",
+      "żona nie ma stałego meldunku",
+      "w areszcie brakuje miejsc w sali widzeń",
+      "zachodzi uzasadniona obawa, że widzenie posłuży bezprawnemu utrudnianiu postępowania lub popełnieniu przestępstwa"
+     ],
+     "answer": 3,
+     "explanation": "Tylko uzasadniona obawa utrudniania postępowania lub popełnienia przestępstwa. Widzenie co do zasady pod nadzorem, bez bezpośredniego kontaktu."
+    }
+   ],
+   "source": "Kodeks karny wykonawczy",
+   "tag": "v21"
+  },
+  {
+   "id": "kazus-15",
+   "deck": "ewidencja",
+   "type": "case",
+   "naPamiec": false,
+   "title": "Nocne przyjęcie do aresztu",
+   "scenario": "Niedziela, 23:00. Policja doprowadza kilka osób do aresztu śledczego.",
+   "steps": [
+    {
+     "question": "Pierwsza osoba ma odbyć zastępczą karę za nieuiszczoną grzywnę, ale na miejscu wpłaca całą kwotę. Co robisz?",
+     "options": [
+      "przyjmujesz ją na jedną dobę",
+      "przyjmujesz i zwalniasz rano",
+      "nie przyjmuje się jej do aresztu",
+      "wpłata nic nie zmienia"
+     ],
+     "answer": 2,
+     "explanation": "Po wpłacie całej grzywny nie ma podstawy do przyjęcia."
+    },
+    {
+     "question": "Druga osoba według dokumentów podlega zwolnieniu jeszcze tego samego dnia kalendarzowego. Co robisz?",
+     "options": [
+      "przyjmujesz i zwalniasz o północy",
+      "przyjmujesz do celi przejściowej",
+      "odmawiasz przyjęcia",
+      "dzwonisz po sędziego penitencjarnego"
+     ],
+     "answer": 2,
+     "explanation": "Gdy osoba podlega zwolnieniu w tym samym dniu – odmawia się przyjęcia (z notatką urzędową)."
+    },
+    {
+     "question": "Trzeci to tymczasowo aresztowany. Czy można go przyjąć w niedzielę wieczorem?",
+     "options": [
+      "tak, w uzasadnionym przypadku – po uzgodnieniu warunków z dyrektorem (lub dowódcą zmiany)",
+      "nie – tylko w dni robocze",
+      "tylko za zgodą prokuratora na piśmie",
+      "tak, zawsze bez żadnych uzgodnień"
+     ],
+     "answer": 0,
+     "explanation": "W uzasadnionym przypadku – po uzgodnieniu z dyrektorem lub dowódcą zmiany."
+    }
+   ],
+   "source": "rozporządzenie MS w sprawie czynności administracyjnych (ewidencja)",
+   "tag": "v21"
+  },
+  {
+   "id": "kazus-16",
+   "deck": "pp",
+   "type": "case",
+   "naPamiec": false,
+   "title": "Osadzony upada na spacerniaku",
+   "scenario": "Podczas spaceru osadzony nagle osuwa się na ziemię. Teren jest bezpieczny.",
+   "steps": [
+    {
+     "question": "Nie reaguje na głos, ale prawidłowo oddycha. Co robisz?",
+     "options": [
+      "układasz go w pozycji bezpiecznej i wzywasz pomoc",
+      "czekasz, aż sam się ocknie",
+      "sadzasz go i podajesz wodę",
+      "rozpoczynasz uciśnięcia klatki piersiowej"
+     ],
+     "answer": 0,
+     "explanation": "Nieprzytomny z prawidłowym oddechem → pozycja bezpieczna, wezwanie pomocy, kontrola oddechu."
+    },
+    {
+     "question": "Po chwili przestaje oddychać. Jaki jest stosunek uciśnięć do oddechów ratowniczych u dorosłego?",
+     "options": [
+      "30:2",
+      "15:2",
+      "5:1",
+      "30:1"
+     ],
+     "answer": 0,
+     "explanation": "RKO u dorosłego – 30:2."
+    },
+    {
+     "question": "Dowódca zmiany przynosi AED. Po uruchomieniu należy przede wszystkim:",
+     "options": [
+      "przerwać RKO do przyjazdu karetki",
+      "wykonywać polecenia głosowe urządzenia",
+      "przeczytać instrukcję na obudowie",
+      "przenieść poszkodowanego do ambulatorium"
+     ],
+     "answer": 1,
+     "explanation": "AED prowadzi ratownika poleceniami głosowymi."
+    }
+   ],
+   "source": "Wytyczne ERC 2025; ustawa o PRM",
+   "tag": "v21"
+  },
+  {
+   "id": "kazus-17",
+   "deck": "pp",
+   "type": "case",
+   "naPamiec": false,
+   "title": "Po bójce w świetlicy",
+   "scenario": "Po bójce w świetlicy masz dwóch poszkodowanych. Jeden ma wbity w brzuch ostry przedmiot, drugi oparzył rękę wrzątkiem z czajnika.",
+   "steps": [
+    {
+     "question": "Co robisz z wbitym przedmiotem?",
+     "options": [
+      "wyciągasz i zakładasz opatrunek uciskowy",
+      "zostawiasz go i stabilizujesz, nie wyciągając",
+      "wyciągasz, żeby zatamować krwawienie",
+      "obracasz go, żeby sprawdzić głębokość"
+     ],
+     "answer": 1,
+     "explanation": "Ciała obcego nie usuwa się – stabilizuje się je."
+    },
+    {
+     "question": "Co robisz w pierwszej kolejności przy oparzeniu?",
+     "options": [
+      "smarujesz maścią lub tłuszczem",
+      "zakładasz opaskę uciskową",
+      "przekłuwasz pęcherze",
+      "chłodzisz oparzone miejsce"
+     ],
+     "answer": 3,
+     "explanation": "Oparzenie – najpierw chłodzenie."
+    },
+    {
+     "question": "Gdyby jeden z poszkodowanych miał amputowaną kończynę, zastosujesz:",
+     "options": [
+      "pozycję bezpieczną",
+      "opaskę uciskową (stazę)",
+      "okłady z lodu bez opatrunku",
+      "wyłącznie plaster"
+     ],
+     "answer": 1,
+     "explanation": "Amputacja kończyny – opaska uciskowa."
+    }
+   ],
+   "source": "Wytyczne ERC 2025; ustawa o PRM",
+   "tag": "v21"
+  },
+  {
+   "id": "kazus-18",
+   "deck": "psych-klin",
+   "type": "case",
+   "naPamiec": false,
+   "title": "Sygnały ostrzegawcze w pierwszym tygodniu",
+   "scenario": "Osadzony jest w jednostce piąty dzień. Oddziałowy zauważa, że rozdaje współosadzonym swoje rzeczy, a podczas rozmowy telefonicznej żegna się z matką.",
+   "steps": [
+    {
+     "question": "Jak ocenić ten okres pobytu?",
+     "options": [
+      "to okres najmniejszego ryzyka",
+      "okres pobytu nie ma znaczenia",
+      "ryzyko rośnie dopiero po roku",
+      "to krytyczny moment – pierwsze 14 dni izolacji"
+     ],
+     "answer": 3,
+     "explanation": "Pierwsze 14 dni izolacji to jeden z krytycznych momentów."
+    },
+    {
+     "question": "Na którym poziomie profilaktyki samobójstw powinien znaleźć się osadzony?",
+     "options": [
+      "II – wzmożone ryzyko, karta OZS",
+      "żadnym, dopóki nie podejmie próby",
+      "III – po próbie samobójczej",
+      "I – ogół osadzonych"
+     ],
+     "answer": 0,
+     "explanation": "Poziom II – wzmożone ryzyko (karta OZS); III – po próbie."
+    },
+    {
+     "question": "Jak postępuje psycholog wobec osadzonego podejrzanego o skłonności samobójcze?",
+     "options": [
+      "umawia go na najbliższy wolny termin w kolejce",
+      "czeka na pisemny wniosek osadzonego",
+      "kieruje sprawę wyłącznie do lekarza",
+      "przyjmuje go w pierwszej kolejności i wydaje opinię o potrzebie nasilonych oddziaływań"
+     ],
+     "answer": 3,
+     "explanation": "Psycholog przyjmuje w pierwszej kolejności; kartę OZS przy podejrzeniu zakłada niezwłocznie wychowawca."
+    }
+   ],
+   "source": "instrukcja DGSW nr 4/24 (zapobieganie samobójstwom)",
+   "tag": "v21"
+  },
+  {
+   "id": "kazus-19",
+   "deck": "psych-proc",
+   "type": "case",
+   "naPamiec": false,
+   "title": "Odmowa przyjmowania posiłków",
+   "scenario": "Od śniadania osadzony odmawia przyjmowania posiłków. Mówi, że „będzie głodował, dopóki nie przeniosą go do innej celi”.",
+   "steps": [
+    {
+     "question": "Jaka jest pierwsza czynność?",
+     "options": [
+      "natychmiast zawiadamia się sąd",
+      "oddziałowy powiadamia pracownika służby zdrowia i wychowawcę",
+      "nie robi się nic przez 3 dni",
+      "umieszcza się osadzonego w celi zabezpieczającej"
+     ],
+     "answer": 1,
+     "explanation": "Pierwsza czynność: powiadomienie przez oddziałowego służby zdrowia i wychowawcy."
+    },
+    {
+     "question": "Który akt reguluje tę procedurę?",
+     "options": [
+      "instrukcja 4/24",
+      "zarządzenie 30/2025",
+      "art. 45 ustawy o ŚPB",
+      "§ 64 zarządzenia DGSW nr 103/24"
+     ],
+     "answer": 3,
+     "explanation": "Procedura przy odmowie posiłków – § 64 zarządzenia 103/24."
+    },
+    {
+     "question": "Jakie tło ma zachowanie, które ma wymusić decyzję organu (np. przeniesienie)?",
+     "options": [
+      "instrumentalne",
+      "organiczne",
+      "psychotyczne",
+      "wyłącznie emocjonalne"
+     ],
+     "answer": 0,
+     "explanation": "Wymuszanie decyzji lub korzyści – tło instrumentalne (jak przy części samouszkodzeń)."
+    }
+   ],
+   "source": "zarządzenie DGSW nr 103/24",
+   "tag": "v21"
+  },
+  {
+   "id": "kazus-20",
+   "deck": "psych-klin",
+   "type": "case",
+   "naPamiec": false,
+   "title": "Po napaści w celi",
+   "scenario": "Osadzony został pobity przez współosadzonych. Jest roztrzęsiony, ma trudności z koncentracją, chwilami „odpływa”.",
+   "steps": [
+    {
+     "question": "Czego NIE należy robić w kontakcie z osobą w ostrej reakcji na stres?",
+     "options": [
+      "zadbać o podstawowe potrzeby",
+      "zapewnić jej bezpieczeństwo",
+      "zmuszać jej do opowiadania o traumie",
+      "mówić spokojnie i prosto"
+     ],
+     "answer": 2,
+     "explanation": "Nie zmusza się do opowiadania o traumie."
+    },
+    {
+     "question": "Objawy ostrej reakcji na stres zwykle ustępują w ciągu:",
+     "options": [
+      "nigdy nie ustępują samoistnie",
+      "co najmniej pół roku",
+      "kilku godzin lub dni (najdłużej ok. miesiąca)",
+      "dokładnie 2 tygodni"
+     ],
+     "answer": 2,
+     "explanation": "Ostra reakcja na stres – godziny lub dni."
+    },
+    {
+     "question": "Po jakim czasie trwania objawów można rozpoznać PTSD?",
+     "options": [
+      "1 tydzień",
+      "6 miesięcy",
+      "co najmniej 1 miesiąc",
+      "2 dni"
+     ],
+     "answer": 2,
+     "explanation": "PTSD – objawy trwają co najmniej miesiąc."
+    }
+   ],
+   "source": "materiały COSSW – psychologia kliniczna",
+   "tag": "v21"
+  },
+  {
+   "id": "kazus-21",
+   "deck": "pragmatyka",
+   "type": "case",
+   "naPamiec": false,
+   "title": "Wątpliwe polecenie",
+   "scenario": "Kierownik działu wydaje Ci ustne polecenie. Chwilę później jego przełożony wydaje polecenie sprzeczne z pierwszym.",
+   "steps": [
+    {
+     "question": "Masz wątpliwości co do pierwszego polecenia i prosisz o formę pisemną. Przełożony:",
+     "options": [
+      "kieruje sprawę do rzecznika dyscyplinarnego",
+      "ma obowiązek spełnić prośbę",
+      "może odmówić bez uzasadnienia",
+      "musi najpierw uzyskać zgodę dyrektora"
+     ],
+     "answer": 1,
+     "explanation": "Regulamin 1/2024 – podwładny może żądać formy pisemnej, przełożony musi ją spełnić."
+    },
+    {
+     "question": "Co robisz w razie kolizji poleceń?",
+     "options": [
+      "informujesz wydającego drugie polecenie; po potwierdzeniu wykonujesz drugie",
+      "nie wykonujesz żadnego",
+      "wybierasz to, które uważasz za lepsze",
+      "wykonujesz pierwsze, bo było wcześniej"
+     ],
+     "answer": 0,
+     "explanation": "Kolizja – informujesz wydającego drugie; po potwierdzeniu wykonujesz drugie."
+    },
+    {
+     "question": "Kiedy musisz odmówić wykonania polecenia?",
+     "options": [
+      "gdy jego wykonanie byłoby przestępstwem",
+      "gdy jest niewygodne",
+      "gdy wydano je ustnie",
+      "gdy koliduje z przerwą"
+     ],
+     "answer": 0,
+     "explanation": "Odmowa – gdy wykonanie polecenia łączyłoby się z popełnieniem przestępstwa."
+    }
+   ],
+   "source": "regulamin DGSW nr 1/2024",
+   "tag": "v21"
+  },
+  {
+   "id": "pary-01",
+   "deck": "spb",
+   "type": "pairs",
+   "naPamiec": false,
+   "title": "ŚPB – przesłanki i ograniczenia",
+   "pairs": [
+    [
+     "Art. 11 pkt 12",
+     "pokonanie biernego oporu"
+    ],
+    [
+     "Art. 11 pkt 13",
+     "pokonanie czynnego oporu"
+    ],
+    [
+     "Art. 11 pkt 14",
+     "przeciwdziałanie autoagresji"
+    ],
+    [
+     "Kajdanki",
+     "nie przy samym biernym oporze"
+    ],
+    [
+     "Pałka służbowa",
+     "nie prewencyjnie"
+    ],
+    [
+     "Kask zabezpieczający",
+     "tylko przy autoagresji"
+    ],
+    [
+     "Cela zabezpieczająca",
+     "maks. 48 h"
+    ],
+    [
+     "Kobieta w widocznej ciąży",
+     "co do zasady techniki obezwładnienia"
+    ]
+   ],
+   "source": "ustawa z 24.05.2013 o ŚPB i broni palnej",
+   "tag": "v21"
+  },
+  {
+   "id": "pary-02",
+   "deck": "kkw",
+   "type": "pairs",
+   "naPamiec": false,
+   "title": "Widzenia skazanych",
+   "pairs": [
+    [
+     "ZK zamknięty",
+     "2 widzenia w miesiącu"
+    ],
+    [
+     "ZK półotwarty",
+     "3 widzenia w miesiącu"
+    ],
+    [
+     "ZK otwarty",
+     "bez ograniczeń"
+    ],
+    [
+     "Młodociany (zamknięty/półotwarty)",
+     "1 dodatkowe widzenie"
+    ],
+    [
+     "Tymczasowo aresztowany",
+     "zgoda organu dysponującego"
+    ]
+   ],
+   "source": "Kodeks karny wykonawczy",
+   "tag": "v21"
+  },
+  {
+   "id": "pary-03",
+   "deck": "kkw",
+   "type": "pairs",
+   "naPamiec": false,
+   "title": "Limity w celi skazanego",
+   "pairs": [
+    [
+     "Napoje",
+     "do 9 l"
+    ],
+    [
+     "Artykuły żywnościowe",
+     "do 6 kg"
+    ],
+    [
+     "Własne książki",
+     "5 sztuk"
+    ],
+    [
+     "Prasa",
+     "do 0,5 kg"
+    ],
+    [
+     "Przedmioty kultu religijnego",
+     "do 10 sztuk"
+    ]
+   ],
+   "source": "regulamin wykonywania kary PW",
+   "tag": "v21"
+  },
+  {
+   "id": "pary-04",
+   "deck": "kkw",
+   "type": "pairs",
+   "naPamiec": false,
+   "title": "Dyscyplina skazanych – liczby i zgody",
+   "pairs": [
+    [
+     "Cela izolacyjna TA",
+     "do 14 dni"
+    ],
+    [
+     "Cela izolacyjna ponad 14 dni",
+     "zgoda sędziego penitencjarnego"
+    ],
+    [
+     "Termin na wymierzenie kary",
+     "30 dni od przekroczenia"
+    ],
+    [
+     "Pozbawienie paczek żywnościowych",
+     "do 3 miesięcy"
+    ],
+    [
+     "Opinia przed celą izolacyjną",
+     "lekarz albo psycholog"
+    ]
+   ],
+   "source": "Kodeks karny wykonawczy",
+   "tag": "v21"
+  },
+  {
+   "id": "pary-05",
+   "deck": "ochrona",
+   "type": "pairs",
+   "naPamiec": false,
+   "title": "Osadzeni niebezpieczni",
+   "pairs": [
+    [
+     "Otwarcie celi w nocy",
+     "co najmniej 3 funkcjonariuszy"
+    ],
+    [
+     "Doprowadzenie",
+     "grupa do 3 osób"
+    ],
+    [
+     "Konwój",
+     "wyłącznie pojazd konwojowy"
+    ],
+    [
+     "Uznanie za „N”",
+     "komisja penitencjarna"
+    ],
+    [
+     "Weryfikacja statusu „N”",
+     "co najmniej raz na 3 miesiące"
+    ],
+    [
+     "Rozmieszczenie w celi",
+     "kierownik działu ochrony"
+    ]
+   ],
+   "source": "zarządzenie DGSW nr 30/2025; KKW",
+   "tag": "v21"
+  },
+  {
+   "id": "pary-06",
+   "deck": "stanowiska",
+   "type": "pairs",
+   "naPamiec": false,
+   "title": "Stanowiska – zmiany i ewidencja",
+   "pairs": [
+    [
+     "Zmiana wartownika",
+     "co najmniej co 4 h"
+    ],
+    [
+     "Zmiana patrolującego teren",
+     "co najmniej co 2 h"
+    ],
+    [
+     "Opóźnienie zmiany",
+     "książka przebiegu służby dowódcy zmiany"
+    ],
+    [
+     "Ruch pojazdów przez bramę",
+     "książka ruchu osób i pojazdów"
+    ],
+    [
+     "Pobranie osadzonych z oddziału",
+     "oddziałowa książka ruchu osadzonych"
+    ],
+    [
+     "Tożsamość na widzeniu",
+     "karta identyfikacyjna"
+    ]
+   ],
+   "source": "zarządzenie DGSW nr 30/2025 – instrukcje stanowiskowe",
+   "tag": "v21"
+  },
+  {
+   "id": "pary-07",
+   "deck": "ochrona",
+   "type": "pairs",
+   "naPamiec": false,
+   "title": "Klauzule tajności",
+   "pairs": [
+    [
+     "Ściśle tajne",
+     "00"
+    ],
+    [
+     "Tajne",
+     "0"
+    ],
+    [
+     "Poufne",
+     "Pf"
+    ],
+    [
+     "Zastrzeżone",
+     "Z"
+    ]
+   ],
+   "source": "ustawa o ochronie informacji niejawnych",
+   "tag": "v21"
+  },
+  {
+   "id": "pary-08",
+   "deck": "pragmatyka",
+   "type": "pairs",
+   "naPamiec": false,
+   "title": "Kto powołuje i nadaje stopnie",
+   "pairs": [
+    [
+     "Dyrektor Generalny SW",
+     "Prezes Rady Ministrów (wniosek MS)"
+    ],
+    [
+     "Dyrektor okręgowy",
+     "Minister Sprawiedliwości (wniosek DGSW)"
+    ],
+    [
+     "Dyrektor ZK / AŚ",
+     "Dyrektor Generalny (wniosek dyr. okręgowego)"
+    ],
+    [
+     "Stopnie chorążych",
+     "nadaje Dyrektor Generalny"
+    ],
+    [
+     "Kapral, starszy sierżant",
+     "nadaje dyrektor okręgowy"
+    ],
+    [
+     "Stopień generała",
+     "nadaje Prezydent"
+    ]
+   ],
+   "source": "ustawa o SW",
+   "tag": "v21"
+  },
+  {
+   "id": "pary-09",
+   "deck": "pragmatyka",
+   "type": "pairs",
+   "naPamiec": false,
+   "title": "Terminy w służbie",
+   "pairs": [
+    [
+     "Odwołanie od kary dyscyplinarnej",
+     "14 dni"
+    ],
+    [
+     "Porzucenie służby",
+     "ponad 10 dni nieobecności"
+    ],
+    [
+     "Odpoczynek dobowy",
+     "11 h"
+    ],
+    [
+     "Odpoczynek tygodniowy",
+     "35 h"
+    ],
+    [
+     "Urlop wypoczynkowy",
+     "26 dni"
+    ],
+    [
+     "Służba przygotowawcza",
+     "2 lata"
+    ],
+    [
+     "Skarga do ETPC",
+     "4 miesiące"
+    ]
+   ],
+   "source": "ustawa o SW; EKPC",
+   "tag": "v21"
+  },
+  {
+   "id": "pary-10",
+   "deck": "pragmatyka",
+   "type": "pairs",
+   "naPamiec": false,
+   "title": "Zatarcie kar dyscyplinarnych",
+   "pairs": [
+    [
+     "Nagana",
+     "12 miesięcy"
+    ],
+    [
+     "Ostrzeżenie o niepełnej przydatności",
+     "18 miesięcy"
+    ],
+    [
+     "Wyznaczenie na niższe stanowisko",
+     "24 miesiące"
+    ],
+    [
+     "Wykazanie męstwa lub odwagi",
+     "w każdym czasie"
+    ]
+   ],
+   "source": "ustawa o SW",
+   "tag": "v21"
+  },
+  {
+   "id": "pary-11",
+   "deck": "pp",
+   "type": "pairs",
+   "naPamiec": false,
+   "title": "Pierwsza pomoc – co robić?",
+   "pairs": [
+    [
+     "Amputacja kończyny",
+     "opaska uciskowa"
+    ],
+    [
+     "Wbity nóż",
+     "zostawić i ustabilizować"
+    ],
+    [
+     "Oparzenie",
+     "chłodzić"
+    ],
+    [
+     "Złamanie kończyny",
+     "unieruchomić dwa sąsiednie stawy"
+    ],
+    [
+     "Nieprzytomny, oddycha",
+     "pozycja bezpieczna"
+    ],
+    [
+     "Zadławienie (przytomny dorosły)",
+     "5 uderzeń w plecy + 5 uciśnięć nadbrzusza"
+    ],
+    [
+     "RKO dorosłego",
+     "30:2"
+    ]
+   ],
+   "source": "Wytyczne ERC 2025; ustawa o PRM",
+   "tag": "v21"
+  },
+  {
+   "id": "pary-12",
+   "deck": "psych-klin",
+   "type": "pairs",
+   "naPamiec": false,
+   "title": "Ile to trwa?",
+   "pairs": [
+    [
+     "PTSD",
+     "objawy co najmniej 1 miesiąc"
+    ],
+    [
+     "Epizod maniakalny",
+     "co najmniej 1 tydzień"
+    ],
+    [
+     "Epizod depresyjny",
+     "co najmniej 2 tygodnie"
+    ],
+    [
+     "Ostra reakcja na stres",
+     "godziny lub dni"
+    ],
+    [
+     "Majaczenie drżenne",
+     "nawet 7–10 dni"
+    ],
+    [
+     "Krytyczny okres izolacji",
+     "pierwsze 14 dni"
+    ]
+   ],
+   "source": "materiały COSSW; instrukcja 4/24",
+   "tag": "v21"
+  },
+  {
+   "id": "pary-13",
+   "deck": "psych-klin",
+   "type": "pairs",
+   "naPamiec": false,
+   "title": "Profilaktyka samobójstw (4/24)",
+   "pairs": [
+    [
+     "Poziom I",
+     "ogół osadzonych"
+    ],
+    [
+     "Poziom II",
+     "wzmożone ryzyko – karta OZS"
+    ],
+    [
+     "Poziom III",
+     "po próbie samobójczej"
+    ],
+    [
+     "Karta OZS",
+     "żółty papier, system CBDOPW"
+    ],
+    [
+     "Koordynacja oddziaływań",
+     "kierownik działu penitencjarnego"
+    ],
+    [
+     "Przepływ informacji między pionami",
+     "dyrektor jednostki"
+    ]
+   ],
+   "source": "instrukcja DGSW nr 4/24 (zapobieganie samobójstwom)",
+   "tag": "v21"
+  },
+  {
+   "id": "pary-14",
+   "deck": "kwatermistrz",
+   "type": "pairs",
+   "naPamiec": false,
+   "title": "Umundurowanie",
+   "pairs": [
+    [
+     "Rok mundurowy",
+     "od 1 kwietnia do 31 marca"
+    ],
+    [
+     "Wypłata równoważnika",
+     "do 60 dni"
+    ],
+    [
+     "Apel mundurowy",
+     "nie rzadziej niż raz na 2 lata"
+    ],
+    [
+     "Własność munduru",
+     "z mianowaniem do służby stałej"
+    ],
+    [
+     "Peleryna specjalna",
+     "od dowódcy zmiany"
+    ]
+   ],
+   "source": "rozporządzenie MS w sprawie umundurowania",
+   "tag": "v21"
+  },
+  {
+   "id": "pary-15",
+   "deck": "historia",
+   "type": "pairs",
+   "naPamiec": false,
+   "title": "Historia więziennictwa",
+   "pairs": [
+    [
+     "Straż Więzienna",
+     "lata 1918–1939"
+    ],
+    [
+     "Nazwa „Służba Więzienna”",
+     "od 1954 r."
+    ],
+    [
+     "Najstarsze więzienie",
+     "Nowy Wiśnicz"
+    ],
+    [
+     "Bunt z grudnia 1989",
+     "Czarne"
+    ],
+    [
+     "„Klawisz”",
+     "od łac. clavis – klucz"
+    ],
+    [
+     "Europejskie Reguły Więzienne",
+     "Rada Europy"
+    ]
+   ],
+   "source": "materiał historyczny SW",
+   "tag": "v21"
   }
  ]
 }
