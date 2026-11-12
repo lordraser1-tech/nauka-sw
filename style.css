@@ -490,3 +490,37 @@ details.topics > summary .count { margin-left: auto; font-weight: 500; font-size
 .moving-steps li { margin: 8px 0; }
 
 .import-offer .btn { width: 100%; margin: 6px 0; }
+
+/* Dodatkowe tryby */
+.mini-grid { grid-template-columns: 1fr 1fr; }
+.mode.mini { padding: 12px; min-height: 0; }
+.mode.mini .mode-name { font-size: 16px; }
+.mode.mini .mode-sub { font-size: 13px; }
+.case-title { margin: 8px 0 6px; font-size: 18px; }
+.case-scenario { background: var(--primary-soft, rgba(31,79,138,.08)); border-left: 4px solid var(--primary); border-radius: 8px; padding: 10px 12px; margin: 8px 0 10px; line-height: 1.5; }
+.case-step { display: inline-block; font-size: 13px; font-weight: 700; color: var(--muted); margin: 4px 0; }
+.case-sum { margin-top: 10px; font-weight: 700; }
+.pairs { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 10px 0; }
+.pairs-col { display: grid; gap: 8px; align-content: start; }
+.pair-btn { min-height: 54px; font-size: 15px; font-weight: 500; padding: 8px 10px; text-align: center; justify-content: center; white-space: normal; line-height: 1.25; }
+.pair-btn.selected { border-color: var(--primary); box-shadow: inset 0 0 0 2px var(--primary); }
+.pair-btn.correct { background: var(--ok-bg); border-color: var(--ok); color: var(--text); opacity: .75; }
+.pair-btn.wrong { background: var(--bad-bg); border-color: var(--bad); animation: shake .3s; }
+.pair-btn:disabled { opacity: .75; }
+@keyframes shake { 25% { transform: translateX(-4px); } 75% { transform: translateX(4px); } }
+.pairs-info { font-size: 14px; color: var(--muted); text-align: center; }
+.sprint-bar { height: 8px; border-radius: 99px; background: var(--line, rgba(127,127,127,.2)); overflow: hidden; margin-bottom: 8px; }
+.sprint-fill { height: 100%; width: 100%; background: var(--primary); transition: width .2s linear; }
+.sprint-time { font-weight: 800; font-variant-numeric: tabular-nums; }
+.listen .fc-front { font-size: 19px; }
+.listen .fc-back:empty { display: none; }
+
+/* Zgłoś błąd */
+.tags-row { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; }
+.report-btn { margin-left: auto; border: 0; background: none; color: var(--muted); font-size: 13px; padding: 6px 4px; cursor: pointer; min-height: 32px; }
+.report-btn:hover, .report-btn:focus-visible { color: var(--bad); }
+.report-text { width: 100%; box-sizing: border-box; font: inherit; padding: 10px; border: 1px solid var(--line); border-radius: 10px; background: var(--bg, transparent); color: inherit; }
+.report-q { border-left: 3px solid var(--line); padding-left: 8px; }
+.err-text { color: var(--bad); font-weight: 600; min-height: 1em; margin: 6px 0; }
+.report .btn { width: 100%; margin-top: 6px; }
+.report .seg button { font-size: 13px; }

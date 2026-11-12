@@ -24,6 +24,10 @@
  .acts{display:flex;gap:6px;flex-wrap:wrap} .acts button{padding:6px 9px;font-size:13px}
  pre{white-space:pre-wrap;background:var(--bg);padding:10px;border-radius:10px;font-size:14px}
  .dev{font-size:13px;color:var(--muted)}
+ .tabs{display:flex;gap:6px;margin:0 0 14px;flex-wrap:wrap} .tabs button{background:var(--card);color:var(--txt);border:1px solid var(--line)} .tabs button.on{background:var(--pri);color:#fff;border-color:var(--pri)}
+ .zgl{border-top:1px solid var(--line);padding:10px 0} .zgl.done{opacity:.55} .zgl .q{font-size:14px;color:var(--muted);margin:4px 0}
+ .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin:10px 0} .kpi{background:var(--bg);border-radius:10px;padding:10px;text-align:center} .kpi b{display:block;font-size:22px}
+ .bar{height:6px;border-radius:99px;background:var(--line);overflow:hidden;margin-top:4px} .bar i{display:block;height:100%;background:var(--bad)}
 </style>
 </head>
 <body><main>
@@ -36,6 +40,12 @@
 </section>
 
 <div id="panel" hidden>
+<nav class="tabs" id="tabs">
+  <button data-t="kody" class="on">🔑 Kody</button>
+  <button data-t="zgl">⚑ Zgłoszenia <span id="zglN"></span></button>
+  <button data-t="stat">📊 Statystyki</button>
+</nav>
+<div data-p="kody">
 <section class="card">
   <h2>1. Kody osobiste (każdy swój kod)</h2>
   <label for="names">Imiona i nazwiska – jedna osoba w linii</label>
@@ -69,6 +79,31 @@
   <p class="muted" id="sum"></p>
   <table><thead><tr><th>Nazwa / kod</th><th>Urządzenia</th><th>Akcje</th></tr></thead><tbody id="tb"></tbody></table>
 </section>
+</div>
+
+<div data-p="zgl" hidden>
+<section class="card">
+  <div class="row"><h2 style="flex:1 1 auto;margin:0">Zgłoszenia błędów</h2><button class="ghost" id="zglRef" style="flex:0 0 auto">↻ Odśwież</button></div>
+  <p class="muted">Otwarte zgłoszenia skopiuj i wklej Claude'owi – poprawi pytania w aplikacji.</p>
+  <div class="row"><label style="margin:0;flex:1 1 auto"><input type="checkbox" id="zglAll" style="width:auto"> pokaż też załatwione</label>
+    <button id="zglCopy" class="ghost" style="flex:0 0 auto">📋 Kopiuj otwarte</button></div>
+  <div id="zglList"></div>
+</section>
+</div>
+
+<div data-p="stat" hidden>
+<section class="card">
+  <div class="row"><h2 style="flex:1 1 auto;margin:0">Statystyki (anonimowe)</h2><button class="ghost" id="statRef" style="flex:0 0 auto">↻ Odśwież</button></div>
+  <p class="muted">Dane z telefonów, które wysyłają statystyki (co kilka godzin). Bez imion i kodów.</p>
+  <div id="statSum" class="kpis"></div>
+  <h2>Najtrudniejsze pytania</h2>
+  <p class="muted">Pytania z co najmniej 5 odpowiedziami od min. 2 osób, posortowane wg odsetka błędów.</p>
+  <div id="statHard"></div>
+  <h2>Tematy</h2>
+  <table><thead><tr><th>Temat</th><th>Odpowiedzi</th><th>Błędne</th></tr></thead><tbody id="statDecks"></tbody></table>
+  <button id="statCopy" class="ghost" style="margin-top:10px">📋 Kopiuj 20 najtrudniejszych</button>
+</section>
+</div>
 <p class="err" id="msg"></p>
 </div>
 
@@ -92,7 +127,7 @@ async function login() {
 }
 $('pwb').onclick = login; $('pw').onkeydown = e => { if (e.key === 'Enter') login(); };
 
-async function load() { ALL = (await api('GET')).kody; render(); }
+async function load() { ALL = (await api('GET')).kody; render(); apiX('/api/admin/zgloszenia').then(d => { ZGL = d.zgloszenia; renderZgl(); }).catch(() => {}); }
 function esc(s) { return String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c])); }
 function render() {
   const f = $('filter').value.trim().toLowerCase();
@@ -145,6 +180,76 @@ $('geng').onclick = async () => {
   $('gcode').value = ''; showNew(d.nowe); load();
 };
 $('copy').onclick = () => navigator.clipboard.writeText($('newlist').textContent).then(() => { $('copy').textContent = '✅ Skopiowano'; setTimeout(() => $('copy').textContent = '📋 Kopiuj listę', 1500); });
+
+// --- zakładki
+$('tabs').onclick = e => {
+  const b = e.target.closest('button'); if (!b) return;
+  [...$('tabs').children].forEach(x => x.classList.toggle('on', x === b));
+  document.querySelectorAll('[data-p]').forEach(p => { p.hidden = p.dataset.p !== b.dataset.t; });
+  if (b.dataset.t === 'zgl') loadZgl();
+  if (b.dataset.t === 'stat') loadStat();
+};
+
+async function apiX(path, method, body) {
+  const r = await fetch(path, { method: method || 'GET', headers: { 'X-Admin': PW, 'Content-Type': 'application/json' }, body: body ? JSON.stringify(body) : undefined, cache: 'no-store' });
+  const d = await r.json().catch(() => ({ blad: 'Błąd serwera (' + r.status + ')' }));
+  if (r.status === 401) { logout(d.blad); throw new Error(d.blad); }
+  if (!r.ok) { $('msg').textContent = d.blad || 'Błąd'; throw new Error(d.blad); }
+  return d;
+}
+
+// --- zgłoszenia
+let ZGL = [];
+const fmt = ts => new Date(ts).toLocaleString('pl-PL', { day: 'numeric', month: 'numeric', hour: '2-digit', minute: '2-digit' });
+async function loadZgl() {
+  ZGL = (await apiX('/api/admin/zgloszenia')).zgloszenia;
+  renderZgl();
+}
+function renderZgl() {
+  const open = ZGL.filter(z => !z.done);
+  $('zglN').textContent = open.length ? `(${open.length})` : '';
+  const list = $('zglAll').checked ? ZGL : open;
+  $('zglList').innerHTML = list.length ? list.map(z => `<div class="zgl ${z.done ? 'done' : ''}">
+    <div><strong>${esc(z.kat || 'Zgłoszenie')}</strong> · <code>${esc(z.id)}</code> · ${esc(z.kto)} · ${fmt(z.ts)}</div>
+    <div class="q">${esc(z.tresc)}</div>
+    <div>${esc(z.opis) || '<span class="muted">(bez opisu)</span>'}</div>
+    <div class="acts" style="margin-top:6px">
+      <button class="ghost" data-z="${z.done ? 'otworz' : 'zalatwione'}" data-k="${z.klucz}">${z.done ? '↩ Otwórz ponownie' : '✓ Załatwione'}</button>
+      <button class="ghost" data-z="usun" data-k="${z.klucz}">Usuń</button></div></div>`).join('') : '<p class="muted">Brak zgłoszeń. 🎉</p>';
+}
+$('zglList').onclick = async e => {
+  const b = e.target.closest('button'); if (!b) return;
+  if (b.dataset.z === 'usun' && !confirm('Usunąć zgłoszenie?')) return;
+  await apiX('/api/admin/zgloszenia', 'POST', { akcja: b.dataset.z, klucz: b.dataset.k });
+  loadZgl();
+};
+$('zglAll').onchange = renderZgl; $('zglRef').onclick = loadZgl;
+$('zglCopy').onclick = () => {
+  const t = ZGL.filter(z => !z.done).map((z, i) => `${i + 1}. [${z.id}] ${z.kat}: ${z.opis}\n   Pytanie: ${z.tresc}`).join('\n\n') || 'Brak otwartych zgłoszeń.';
+  navigator.clipboard.writeText('Zgłoszenia błędów z Nauka SW:\n\n' + t).then(() => { $('zglCopy').textContent = '✅ Skopiowano'; setTimeout(() => $('zglCopy').textContent = '📋 Kopiuj otwarte', 1500); });
+};
+
+// --- statystyki
+let STAT = null;
+async function loadStat() {
+  STAT = await apiX('/api/admin/statystyki');
+  const s = STAT, pct = (a, b) => b ? Math.round(a / b * 100) : 0;
+  $('statSum').innerHTML = [
+    ['Urządzenia', s.urzadzenia], ['Aktywne (7 dni)', s.aktywne7], ['Aktywne (24 h)', s.aktywne1],
+    ['Odpowiedzi', s.odpowiedzi.toLocaleString('pl-PL')], ['Trafność', pct(s.odpowiedzi - s.bledne, s.odpowiedzi) + '%']]
+    .map(([l, v]) => `<div class="kpi"><b>${v}</b>${l}</div>`).join('');
+  $('statHard').innerHTML = s.najtrudniejsze.length ? s.najtrudniejsze.map(r => `<div class="zgl">
+    <div><strong>${pct(r.bad, r.n)}% błędów</strong> · ${r.n} odp. · ${r.u} os. · ${esc(r.talia)} · <code>${esc(r.id)}</code></div>
+    <div>${esc(r.tresc)}</div>${r.poprawna ? `<div class="q">✓ ${esc(r.poprawna)}</div>` : ''}
+    <div class="bar"><i style="width:${pct(r.bad, r.n)}%"></i></div></div>`).join('') : '<p class="muted">Za mało danych – poczekaj, aż więcej osób poćwiczy.</p>';
+  $('statDecks').innerHTML = s.talie.map(t => `<tr><td>${esc(t.talia)}</td><td>${t.n}</td><td>${pct(t.bad, t.n)}%</td></tr>`).join('');
+}
+$('statRef').onclick = loadStat;
+$('statCopy').onclick = () => {
+  if (!STAT) return;
+  const t = STAT.najtrudniejsze.slice(0, 20).map((r, i) => `${i + 1}. ${Math.round(r.bad / r.n * 100)}% błędów (${r.n} odp.) [${r.id}] ${r.tresc}${r.poprawna ? ' → ' + r.poprawna : ''}`).join('\n');
+  navigator.clipboard.writeText('Najtrudniejsze pytania w Nauka SW:\n' + t).then(() => { $('statCopy').textContent = '✅ Skopiowano'; setTimeout(() => $('statCopy').textContent = '📋 Kopiuj 20 najtrudniejszych', 1500); });
+};
 
 if (PW) { $('pw').value = PW; login(); }
 </script>

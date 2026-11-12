@@ -185,16 +185,19 @@ function grade(item, g) {
 }
 
 function itemLabel(item) {
-  const t = item.question || item.front || item.prompt || item.text.replace(/\[\[[^\]]*\]\]/g, '___');
+  const t = item.question || item.front || item.prompt || (item.title && (item.type === 'case' ? 'Kazus: ' : 'Pary: ') + item.title) ||
+    String(item.text || '').replace(/\[\[[^\]]*\]\]/g, '___');
   return t.length > 160 ? t.slice(0, 157) + '…' : t;
 }
 
 function tags(item) {
   const box = boxOf(item.id);
-  return h('div', {},
+  return h('div', { class: 'tags-row' },
     h('span', { class: 'tag' }, deckById[item.deck] ? deckById[item.deck].name : item.deck),
     item.naPamiec && h('span', { class: 'tag mem' }, 'Na pamięć'),
-    item.type === 'flashcard' && h('span', { class: 'tag' }, box ? `Pudełko ${box}` : 'Nowa'));
+    item.type === 'flashcard' && h('span', { class: 'tag' }, box ? `Pudełko ${box}` : 'Nowa'),
+    HAS_SERVER && h('button', { type: 'button', class: 'report-btn', title: 'Zgłoś błąd w tym pytaniu', 'aria-label': 'Zgłoś błąd w tym pytaniu',
+      onclick: e => { e.stopPropagation(); showReport(item); } }, '⚑ Zgłoś błąd'));
 }
 
 function sourceEl(item) {
@@ -213,10 +216,16 @@ const routes = {
   czytaj: renderRead,
   teczka: renderTeczka,
   wyzwanie: startChallenge,
+  kazusy: startCases,
+  pary: startPairs,
+  sprint: renderSprint,
+  sluchaj: renderListen,
 };
 
 function route() {
   if (OLD_SITE) return; // stara strona: tylko ekran przeprowadzki
+  stopSprint();
+  stopListening();
   currentRoute = location.hash.replace(/^#\/?/, '');
   if (!(currentRoute in routes)) currentRoute = '';
   if (currentRoute === 'czytaj' && !docs.length) currentRoute = '';
@@ -256,6 +265,15 @@ function renderHome(keepScroll) {
     mode('Na pamięć', `${mem} ${plural(mem, 'ćwiczenie', 'ćwiczenia', 'ćwiczeń')}: luki i kolejność`, '#/pamiec', mem),
     mode('Egzamin próbny', examRunning ? `Trwa – zostało ${mmss(exam.end - Date.now())}` : `${examSize()} pytań · ${examMinutes()} minut`, '#/egzamin', 1),
     mode('Trudne', hard ? `${hard} do poprawy (wszystkie talie)` : 'Brak błędnych odpowiedzi', '#/trudne', hard)));
+  const nCase = pool(['case']).length, nPairs = pool(['pairs']).length;
+  const mini = (icon, name, sub, href, count) =>
+    h('a', { class: 'btn mode mini', href: count ? href : null, 'aria-disabled': count ? null : 'true', style: count ? null : 'opacity:.45' },
+      h('span', { class: 'mode-name' }, icon + ' ' + name), h('span', { class: 'mode-sub' }, sub));
+  $app.append(h('div', { class: 'modes mini-grid' },
+    mini('⚖️', 'Kazusy', `${nCase} ${plural(nCase, 'sytuacja', 'sytuacje', 'sytuacji')} ze służby`, '#/kazusy', nCase),
+    mini('🧩', 'Dopasuj pary', `${nPairs} ${plural(nPairs, 'zestaw', 'zestawy', 'zestawów')}`, '#/pary', nPairs),
+    mini('⏱️', 'Sprint 60 s', state.settings.sprintBest ? `Rekord: ${state.settings.sprintBest}` : 'ile zdążysz w minutę?', '#/sprint', mcq),
+    mini('🎧', 'Słuchaj', 'fiszki czytane na głos', '#/sluchaj', flash.length)));
 
   // Tematy (rozwijane)
   const sel = new Set(selectedDecks());
@@ -355,6 +373,8 @@ function exerciseView(item, onResult, onNext, nextLabel) {
     case 'mcq': return mcqView(item, onResult, onNext, nextLabel);
     case 'cloze': return clozeView(item, onResult, onNext, nextLabel);
     case 'order': return orderView(item, onResult, onNext, nextLabel);
+    case 'case': return caseView(item, onResult, onNext, nextLabel);
+    case 'pairs': return pairsView(item, onResult, onNext, nextLabel);
   }
   return [];
 }
@@ -781,6 +801,333 @@ function startHard() {
   const items = hardItems();
   if (!items.length) return emptyScreen('Trudne', '🎉', 'Nie masz pozycji z błędną ostatnią odpowiedzią.');
   runSequence('Trudne', shuffle(items), startHard);
+}
+
+/* ---------- Kazusy ---------- */
+
+const CASE_SESSION = 5;
+
+function startCases() {
+  runSequence('Kazusy', shuffle(pool(['case'])).slice(0, CASE_SESSION), startCases, { celebrate: false });
+}
+
+function caseView(item, onResult, onNext, nextLabel) {
+  let k = 0, good = 0;
+  const steps = item.steps;
+  const stepBox = h('div');
+  const actions = h('div', { class: 'actions' });
+  const progress = h('span', { class: 'case-step' });
+  const card = h('div', { class: 'card case' }, tags(item),
+    h('h3', { class: 'case-title' }, '⚖️ ' + item.title),
+    h('div', { class: 'case-scenario' }, item.scenario),
+    progress, stepBox);
+  function show() {
+    const st = steps[k];
+    progress.textContent = `Krok ${k + 1} z ${steps.length}`;
+    actions.replaceChildren();
+    let done = false;
+    const order = shuffle(st.options.map((_, i) => i));
+    const fb = h('div');
+    const buttons = order.map(oi => h('button', { type: 'button', class: 'btn option', onclick: () => choose(oi) }, st.options[oi]));
+    function choose(oi) {
+      if (done) return;
+      done = true;
+      const ok = oi === st.answer;
+      if (ok) good++;
+      buttons.forEach((b, j) => {
+        b.disabled = true;
+        if (order[j] === st.answer) b.classList.add('correct');
+        else if (order[j] === oi) b.classList.add('wrong');
+      });
+      fb.replaceWith(feedback(ok, ok ? 'Dobrze!' : 'Źle. Poprawnie: ' + st.options[st.answer], st.explanation ? h('div', {}, st.explanation) : null));
+      if (k + 1 < steps.length) {
+        nextButton(actions, () => { k++; show(); }, 'Co dalej? ›');
+      } else {
+        const res = good === steps.length ? 'ok' : good * 2 >= steps.length ? 'almost' : 'bad';
+        record(item, res);
+        onResult(res === 'ok');
+        card.append(h('div', { class: 'case-sum' }, `Wynik kazusu: ${good} z ${steps.length}`), sourceEl(item));
+        nextButton(actions, onNext, nextLabel);
+      }
+    }
+    stepBox.replaceChildren(h('div', { class: 'question' }, st.question), h('div', { class: 'options' }, buttons), fb);
+  }
+  show();
+  return [card, actions];
+}
+
+/* ---------- Dopasuj pary ---------- */
+
+const PAIRS_ROUND = 5;
+
+function startPairs() {
+  runSequence('Dopasuj pary', shuffle(pool(['pairs'])).slice(0, 5), startPairs);
+}
+
+function pairsView(item, onResult, onNext, nextLabel) {
+  const chosen = shuffle(item.pairs.slice()).slice(0, PAIRS_ROUND);
+  const left = shuffle(chosen.map((p, i) => ({ i, t: p[0] })));
+  const right = shuffle(chosen.map((p, i) => ({ i, t: p[1] })));
+  let pick = null, matched = 0, mistakes = 0, busy = false;
+  const info = h('div', { class: 'pairs-info' }, 'Dotknij pozycji po lewej, potem pasującej po prawej.');
+  const actions = h('div', { class: 'actions' });
+  const mk = (x, side) => {
+    const b = h('button', { type: 'button', class: 'btn pair-btn', onclick: () => tap(b, x, side) }, x.t);
+    return b;
+  };
+  const L = left.map(x => mk(x, 'L')), R = right.map(x => mk(x, 'R'));
+  function tap(b, x, side) {
+    if (busy || b.disabled) return;
+    if (!pick || pick.side === side) {
+      if (pick) pick.b.classList.remove('selected');
+      pick = { b, x, side };
+      b.classList.add('selected');
+      return;
+    }
+    const a = pick; pick = null;
+    a.b.classList.remove('selected');
+    if (a.x.i === x.i) {
+      [a.b, b].forEach(el => { el.disabled = true; el.classList.add('correct'); });
+      matched++;
+      if (matched === chosen.length) finish();
+    } else {
+      mistakes++;
+      busy = true;
+      [a.b, b].forEach(el => el.classList.add('wrong'));
+      try { if (navigator.vibrate) navigator.vibrate(120); } catch (e) {}
+      setTimeout(() => { [a.b, b].forEach(el => el.classList.remove('wrong')); busy = false; }, 650);
+    }
+    info.textContent = `Dopasowane: ${matched} z ${chosen.length} · błędy: ${mistakes}`;
+  }
+  function finish() {
+    const res = mistakes === 0 ? 'ok' : mistakes <= 2 ? 'almost' : 'bad';
+    record(item, res);
+    onResult(res === 'ok');
+    info.replaceWith(feedback(mistakes <= 2, mistakes === 0 ? 'Bezbłędnie!' : `Ułożone – błędy: ${mistakes}`), sourceEl(item) || h('span'));
+    nextButton(actions, onNext, nextLabel);
+  }
+  return [h('div', { class: 'card' }, tags(item), h('h3', { class: 'case-title' }, '🧩 ' + item.title),
+    h('div', { class: 'pairs' }, h('div', { class: 'pairs-col' }, L), h('div', { class: 'pairs-col' }, R)), info), actions];
+}
+
+/* ---------- Sprint 60 s ---------- */
+
+const SPRINT_MS = 60000;
+let sprint = null;
+
+function stopSprint() {
+  if (sprint && sprint.timer) clearInterval(sprint.timer);
+  sprint = null;
+}
+
+function renderSprint() {
+  screen('Sprint 60 s', true);
+  const n = pool(['mcq']).length;
+  if (!n) return emptyScreen('Sprint 60 s', '📭', 'Brak pytań testowych dla wybranych tematów.');
+  const best = state.settings.sprintBest || 0;
+  $app.append(h('div', { class: 'card empty' },
+    h('div', { class: 'big' }, '⏱️'),
+    h('p', {}, `Masz 60 sekund. Odpowiadaj jak najszybciej – bez wyjaśnień, od razu następne pytanie. Pytania z wybranych tematów (${n}).`),
+    h('p', { class: 'small muted' }, best ? `Twój rekord: ${best} poprawnych` : 'Pierwsze podejście – ustanów rekord!')),
+    h('div', { class: 'stack' }, btn('Start!', 'primary', runSprint), btn('Wróć do startu', '', () => { location.hash = '#/'; })));
+}
+
+function runSprint() {
+  stopSprint();
+  const items = shuffle(pool(['mcq']));
+  const s = sprint = { i: 0, ok: 0, bad: [], end: Date.now() + SPRINT_MS, timer: null, lock: false };
+  screen('Sprint 60 s', true);
+  const bar = h('div', { class: 'sprint-bar' }, h('div', { class: 'sprint-fill' }));
+  const head = h('div', { class: 'progress-line' }, h('span', { class: 'sprint-time' }, '60 s'), h('span', { class: 'sprint-score' }, 'Dobrze: 0'));
+  const body = h('div');
+  $app.append(bar, head, body);
+  const tickS = () => {
+    if (sprint !== s) return;
+    const left = Math.max(0, s.end - Date.now());
+    head.querySelector('.sprint-time').textContent = Math.ceil(left / 1000) + ' s';
+    bar.firstChild.style.width = (left / SPRINT_MS * 100) + '%';
+    if (left <= 0) finishSprint(s);
+  };
+  s.timer = setInterval(tickS, 200);
+  const next = () => {
+    if (sprint !== s) return;
+    if (s.i >= items.length) { s.i = 0; shuffle(items); }
+    const item = items[s.i++];
+    const order = shuffle(item.options.map((_, i) => i));
+    const buttons = order.map(oi => h('button', { type: 'button', class: 'btn option', onclick: () => {
+      if (s.lock || sprint !== s) return;
+      s.lock = true;
+      const ok = oi === item.answer;
+      buttons.forEach((b, k) => { if (order[k] === item.answer) b.classList.add('correct'); else if (order[k] === oi) b.classList.add('wrong'); });
+      if (ok) s.ok++; else s.bad.push(item);
+      pointsMult = 0.6; // szybkie odpowiedzi – mniej punktów niż w teście
+      record(item, ok ? 'ok' : 'bad');
+      pointsMult = 1;
+      head.querySelector('.sprint-score').textContent = `Dobrze: ${s.ok}`;
+      setTimeout(() => { s.lock = false; next(); }, ok ? 250 : 650);
+    } }, item.options[oi]));
+    body.replaceChildren(h('div', { class: 'card' }, h('div', { class: 'question' }, item.question), h('div', { class: 'options' }, buttons)));
+  };
+  next();
+  tickS();
+}
+
+function finishSprint(s) {
+  clearInterval(s.timer);
+  sprint = null;
+  const best = state.settings.sprintBest || 0;
+  const isRecord = s.ok > best;
+  if (isRecord) { state.settings.sprintBest = s.ok; save(); }
+  screen('Sprint 60 s', true);
+  $app.append(h('div', { class: 'card verdict ' + (isRecord ? 'v-gold' : 'v-green') },
+    h('div', { class: 'verdict-icon', 'aria-hidden': 'true' }, isRecord ? '🏆' : '⏱️'),
+    h('div', { class: 'score' }, String(s.ok)),
+    h('div', { class: 'score-sub' }, `poprawnych w 60 s · błędów: ${s.bad.length}`),
+    h('div', { class: 'verdict-head' }, isRecord ? 'Nowy rekord!' : `Rekord: ${best}`)));
+  if (isRecord && best) confetti();
+  $app.append(h('div', { class: 'stack' }, btn('Jeszcze raz', 'primary', runSprint), btn('Wróć do startu', '', () => { location.hash = '#/'; })));
+  if (s.bad.length) {
+    $app.append(h('h2', {}, 'Pomyłki'));
+    for (const it of s.bad) $app.append(h('div', { class: 'card mistake' }, h('div', { class: 'q' }, it.question), h('div', { class: 'good' }, '✓ ' + it.options[it.answer])));
+  }
+}
+
+/* ---------- Słuchaj (fiszki czytane na głos) ---------- */
+
+let listen = null;
+
+function stopListening() {
+  if (!listen) return;
+  listen.on = false;
+  clearTimeout(listen.wait);
+  try { speechSynthesis.cancel(); } catch (e) {}
+  try { if (listen.lock) listen.lock.release(); } catch (e) {}
+  listen = null;
+}
+
+// Tekst do czytania: skróty prawnicze na pełne słowa, bez znaków, które lektor czyta dziwnie.
+function speakable(t) {
+  return String(t || '')
+    .replace(/\[\[([^\]]*)\]\]/g, '$1')
+    .replace(/[„”"*_#>|]/g, '')
+    .replace(/§\s*/g, 'paragraf ')
+    .replace(/\bart\.\s*/gi, 'artykuł ')
+    .replace(/\bust\.\s*/g, 'ustęp ')
+    .replace(/\bpkt\s*/g, 'punkt ')
+    .replace(/\blit\.\s*/g, 'litera ')
+    .replace(/\bŚPB\b/g, 'środki przymusu bezpośredniego')
+    .replace(/\bKKW\b/g, 'kodeks karny wykonawczy')
+    .replace(/\bKK\b/g, 'kodeks karny')
+    .replace(/\bDGSW\b|\bDG SW\b/g, 'Dyrektor Generalny Służby Więziennej')
+    .replace(/\bSW\b/g, 'Służba Więzienna')
+    .replace(/\bZK\b/g, 'zakład karny')
+    .replace(/\bAŚ\b/g, 'areszt śledczy')
+    .replace(/\bTA\b/g, 'tymczasowo aresztowany')
+    .replace(/(\d)\s*h\b/g, '$1 godzin')
+    .replace(/\bnp\./g, 'na przykład')
+    .replace(/\bm\.in\./g, 'między innymi')
+    .replace(/\bitp\./g, 'i tak dalej')
+    .replace(/\s*→\s*/g, ', ')
+    .replace(/\s*[–—]\s*/g, ', ')
+    .replace(/[^\p{L}\p{N}\s.,;:!?()%/-]/gu, ' ')
+    .replace(/\s+/g, ' ').trim();
+}
+
+function plVoice() {
+  try { return speechSynthesis.getVoices().find(v => /^pl/i.test(v.lang)) || null; } catch (e) { return null; }
+}
+
+function renderListen() {
+  screen('Słuchaj', true);
+  if (!('speechSynthesis' in window)) return emptyScreen('Słuchaj', '🔇', 'Ta przeglądarka nie umie czytać na głos. Spróbuj w Chrome (Android) albo Safari (iPhone).');
+  const all = pool(['flashcard']);
+  if (!all.length) return emptyScreen('Słuchaj', '📭', 'Brak fiszek dla wybranych tematów.');
+  const st = state.settings;
+  const pause = () => (st.listenPause || 5) * 1000;
+  const rate = () => st.listenRate || 1;
+  const queue = shuffle(all.filter(i => isDue(i.id))).concat(shuffle(all.filter(i => !isDue(i.id))));
+  const L = listen = { on: false, i: 0, wait: null, lock: null };
+  const front = h('div', { class: 'fc-front' });
+  const back = h('div', { class: 'fc-back' });
+  const status = h('div', { class: 'hint' }, 'Naciśnij ▶ i odłóż telefon – pytanie, chwila na odpowiedź w myślach, potem odpowiedź.');
+  const counter = h('span');
+  const playBtn = btn('▶ Start', 'primary', () => (L.on ? pauseL() : play()));
+  const voiceWarn = h('p', { class: 'small muted', hidden: true }, 'Nie widzę polskiego głosu w telefonie – lektor może czytać z obcym akcentem. Android: Ustawienia → Zamiana tekstu na mowę → pobierz język polski.');
+  setTimeout(() => { voiceWarn.hidden = !!plVoice(); }, 800);
+  function say(text, done) {
+    const parts = speakable(text).match(/[^.!?;]+[.!?;]*/g) || [];
+    let k = 0;
+    const nextPart = () => {
+      if (!L.on || listen !== L) return;
+      if (k >= parts.length) return done();
+      const u = new SpeechSynthesisUtterance(parts[k++]);
+      u.lang = 'pl-PL';
+      const v = plVoice(); if (v) u.voice = v;
+      u.rate = rate();
+      u.onend = nextPart;
+      u.onerror = nextPart;
+      speechSynthesis.speak(u);
+    };
+    nextPart();
+  }
+  function showCard() {
+    const it = queue[L.i % queue.length];
+    front.textContent = it.front;
+    back.textContent = '';
+    counter.textContent = `${(L.i % queue.length) + 1} / ${queue.length}`;
+    return it;
+  }
+  function step() {
+    if (!L.on || listen !== L) return;
+    const it = showCard();
+    status.textContent = '🔊 Pytanie…';
+    say(it.front, () => {
+      status.textContent = '🤔 Odpowiedz w myślach…';
+      L.wait = setTimeout(() => {
+        if (!L.on) return;
+        back.textContent = it.back;
+        status.textContent = '🔊 Odpowiedź…';
+        say('Odpowiedź: ' + it.back, () => {
+          L.wait = setTimeout(() => { L.i++; step(); }, 1500);
+        });
+      }, pause());
+    });
+  }
+  async function play() {
+    L.on = true;
+    playBtn.textContent = '⏸ Pauza';
+    try { if (navigator.wakeLock) L.lock = await navigator.wakeLock.request('screen'); } catch (e) {}
+    step();
+  }
+  function pauseL() {
+    L.on = false;
+    clearTimeout(L.wait);
+    try { speechSynthesis.cancel(); } catch (e) {}
+    try { if (L.lock) L.lock.release(); } catch (e) {}
+    L.lock = null;
+    playBtn.textContent = '▶ Wznów';
+    status.textContent = 'Pauza.';
+  }
+  const jump = d => { const was = L.on; pauseL(); L.i = Math.max(0, L.i + d); showCard(); if (was) play(); };
+  showCard();
+  $app.append(
+    h('div', { class: 'progress-line' }, counter, h('span', {}, 'najpierw karty do powtórki')),
+    h('div', { class: 'card flash listen' }, front, back, status),
+    h('div', { class: 'row' }, btn('⏮', '', () => jump(-1)), playBtn, btn('⏭', '', () => jump(1))),
+    h('p', { class: 'small muted' }, 'Czas na odpowiedź w myślach:'),
+    sizeLikePicker([[3, '3 s'], [5, '5 s'], [8, '8 s'], [12, '12 s']], st.listenPause || 5, v => { st.listenPause = v; save(); refreshPickers(); }),
+    h('p', { class: 'small muted' }, 'Tempo lektora:'),
+    sizeLikePicker([[0.85, 'Wolniej'], [1, 'Normalnie'], [1.2, 'Szybciej']], st.listenRate || 1, v => { st.listenRate = v; save(); refreshPickers(); }),
+    voiceWarn,
+    h('p', { class: 'small muted' }, 'Ekran nie zgaśnie w trakcie czytania. Po zablokowaniu telefonu część przeglądarek przerywa czytanie.'));
+  function refreshPickers() {
+    // przerysuj tylko przełączniki, bez przerywania czytania
+    $app.querySelectorAll('.seg').forEach((seg, n) => {
+      const cur = n === 0 ? (st.listenPause || 5) : (st.listenRate || 1);
+      const vals = n === 0 ? [3, 5, 8, 12] : [0.85, 1, 1.2];
+      [...seg.children].forEach((b, k) => { b.classList.toggle('on', vals[k] === cur); b.setAttribute('aria-checked', String(vals[k] === cur)); });
+    });
+  }
 }
 
 /* ---------- Ocena wyniku (Test i Egzamin) ---------- */
@@ -1334,6 +1681,8 @@ function renderRead() {
 
 // Stara strona (GitHub Pages) – tylko informacja o przeprowadzce i kopia postępu.
 const OLD_SITE = /(^|\.)github\.io$/.test(location.hostname);
+// Serwer z kodami (Cloudflare) – zgłoszenia błędów i statystyki działają tylko tam.
+const HAS_SERVER = !OLD_SITE && /^https?:$/.test(location.protocol);
 
 async function init() {
   state = loadState();
@@ -1376,6 +1725,75 @@ async function init() {
   else showChangesIfNew();
 
   registerSW();
+  setTimeout(syncStats, 4000);
+  document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden') syncStats(); });
+}
+
+/* ---------- Zgłoś błąd i statystyki ---------- */
+
+function answerText(item) {
+  if (item.type === 'mcq') return 'Odpowiedź w aplikacji: ' + item.options[item.answer];
+  if (item.type === 'flashcard') return 'Odwrót: ' + item.back;
+  if (item.type === 'case') return item.steps.map((st, k) => `Krok ${k + 1}: ${st.question} → ${st.options[st.answer]}`).join(' | ');
+  if (item.type === 'pairs') return item.pairs.map(p => p.join(' = ')).join(' | ');
+  if (item.type === 'order') return 'Kolejność: ' + (item.steps || []).join(' → ');
+  return '';
+}
+
+function showReport(item) {
+  if (document.querySelector('.modal.report')) return;
+  const box = h('div', { class: 'modal report', role: 'dialog', 'aria-modal': 'true', 'aria-labelledby': 'report-title' });
+  const close = () => box.remove();
+  const KATS = ['Błędna odpowiedź', 'Nieaktualny przepis', 'Literówka / niejasne', 'Inne'];
+  let kat = KATS[0];
+  const seg = sizeLikePicker(KATS.map(k => [k, k]), kat, v => {
+    kat = v;
+    [...seg.children].forEach(b => { b.classList.toggle('on', b.textContent === v); b.setAttribute('aria-checked', String(b.textContent === v)); });
+  });
+  const ta = h('textarea', { class: 'report-text', rows: '4', maxlength: '1000', placeholder: 'Co jest nie tak i jak powinno być? Jeśli wiesz – podaj przepis albo źródło.' });
+  const err = h('p', { class: 'err-text' });
+  const send = btn('Wyślij zgłoszenie', 'primary', async () => {
+    if (!ta.value.trim() && kat === 'Inne') { err.textContent = 'Opisz krótko, co jest nie tak.'; return; }
+    send.disabled = true;
+    try {
+      const r = await fetch('/api/zgloszenie', { method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id: item.id, kat, opis: ta.value, tresc: itemLabel(item) + ' || ' + answerText(item), wer: String(APP_VERSION) }) });
+      if (!r.ok) throw new Error(r.status);
+      close();
+      toast('📨', 'Dziękuję za zgłoszenie!', 'Trafiło do twórcy aplikacji.');
+    } catch (e) {
+      err.textContent = 'Nie udało się wysłać. Sprawdź internet i spróbuj jeszcze raz.';
+      send.disabled = false;
+    }
+  });
+  box.addEventListener('click', e => { if (e.target === box) close(); });
+  box.append(h('div', { class: 'card modal-card settings-card' },
+    h('div', { class: 'settings-head' }, h('h2', { id: 'report-title' }, '⚑ Zgłoś błąd'),
+      h('button', { type: 'button', class: 'close-x', 'aria-label': 'Zamknij', onclick: close }, '✕')),
+    h('p', { class: 'small muted report-q' }, itemLabel(item)),
+    h('h3', {}, 'Rodzaj błędu'), seg,
+    h('h3', {}, 'Opis'), ta, err, send, btn('Anuluj', 'ghost', close)));
+  document.body.append(box);
+  ta.focus();
+}
+
+// Anonimowe liczniki odpowiedzi (bez imienia i kodu) – najwyżej co 4 godziny.
+function syncStats() {
+  if (!HAS_SERVER || state.settings.stats === false) return;
+  if (Date.now() - (state.settings.statsAt || 0) < 4 * 3600000) return;
+  const ids = Object.keys(state.hist || {});
+  if (!ids.length) return;
+  if (!state.settings.statsId) {
+    state.settings.statsId = Array.from(crypto.getRandomValues(new Uint8Array(12)), b => (b % 36).toString(36)).join('');
+  }
+  const hsum = {};
+  for (const id of ids) hsum[id] = [state.hist[id].n || 0, state.hist[id].bad || 0];
+  state.settings.statsAt = Date.now();
+  save();
+  try {
+    fetch('/api/statystyki', { method: 'POST', keepalive: true, headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ sid: state.settings.statsId, h: hsum }) }).catch(() => { state.settings.statsAt = 0; });
+  } catch (e) { /* bez sieci – spróbujemy później */ }
 }
 
 function registerSW() {
@@ -1397,7 +1815,7 @@ function registerSW() {
 /* ---------- Służba: punkty, stopnie, odznaki, kamienie milowe ---------- */
 
 // Punkty (po zmniejszeniu o 1/3 względem projektu). Progi stopni – bez zmian.
-const POINTS = { mcq: 7, flashcard: 3, cloze: 10, order: 10, fixed: 13, examPass: 67, examTop: 167, dailyGoal: 33 };
+const POINTS = { mcq: 7, flashcard: 3, cloze: 10, order: 10, case: 20, pairs: 10, fixed: 13, examPass: 67, examTop: 167, dailyGoal: 33 };
 const STREAK_FROM = 5;      // od 5. dobrej odpowiedzi z rzędu…
 const STREAK_MULT = 1.5;    // …punkty ×1,5
 const CHALLENGE_MULT = 2;   // wyzwanie dnia – punkty ×2
@@ -1917,6 +2335,11 @@ function sizeLikePicker(pairs, current, onPick) {
 
 // Przy każdej aktualizacji: dopisz wpis NA POCZĄTKU listy, z numerem = numer CACHE w service-worker.js.
 const CHANGELOG = [
+  { v: 21, date: '12.11.2026', items: [
+    '⚖️ Kazusy – 21 sytuacji ze służby, krok po kroku (ŚPB, ochrona, KKW, stanowiska, pierwsza pomoc, psychologia).',
+    '🧩 Dopasuj pary – 15 zestawów: terminy, limity, kto co nadaje, pierwsza pomoc.',
+    '⏱️ Sprint 60 s z rekordem i 🎧 Słuchaj – fiszki czytane na głos.',
+    '⚑ Zgłoś błąd przy każdym pytaniu. Anonimowe statystyki pytań (wyłączysz w ⚙️).'] },
   { v: 20, date: '12.11.2026', items: [
     'Przy pierwszym uruchomieniu, po „Rozkaz!”, aplikacja proponuje wczytanie postępu ze starej strony.'] },
   { v: 19, date: '12.11.2026', items: [
@@ -1990,6 +2413,11 @@ function showSettings() {
     h('h3', {}, 'Historia zmian'),
     h('p', { class: 'small muted', style: 'margin-top:0' }, `Wersja aplikacji: ${APP_VERSION}`),
     btn('📰 Pokaż historię zmian', '', () => { close(); showChangelog(); }),
+    HAS_SERVER && h('h3', {}, 'Statystyki pytań'),
+    HAS_SERVER && h('label', { class: 'switch' },
+      h('span', {}, 'Wysyłaj anonimowe statystyki'),
+      h('input', { type: 'checkbox', role: 'switch', checked: state.settings.stats !== false, onchange: e => { state.settings.stats = e.target.checked; save(); } })),
+    HAS_SERVER && h('p', { class: 'small muted', style: 'margin-top:4px' }, 'Co kilka godzin aplikacja wysyła tylko liczniki: które pytania ile razy rozwiązano i ile razy źle. Bez imienia, kodu i punktów. Dzięki temu twórca widzi, które pytania sprawiają najwięcej kłopotu, i może je poprawić albo omówić.'),
     h('h3', {}, 'Kopia postępu'),
     h('p', { class: 'small muted', style: 'margin-top:0' }, 'Zapisz postęp do pliku, żeby przenieść go na inny telefon albo nie stracić go po wyczyszczeniu przeglądarki.'),
     h('div', { class: 'row' }, btn('💾 Eksportuj', '', exportProgress), btn('📂 Importuj', '', () => { close(); importProgress(); })),
@@ -2086,6 +2514,17 @@ function showManual() {
       li('Luki', 'tekst przepisu z brakującymi słowami. Przełącznik u góry: „✍️ Wpisz” (piszesz sam) albo „👆 Wybierz” (klikasz w lukę i wybierasz słowo z listy).'),
       li('Kolejność', 'ułóż kroki procedury przyciskami ▲ ▼.'),
       li('', '„Sprawdź” pokazuje wynik, „Pokaż odpowiedź” – gdy nie masz pomysłu (liczy się jako błąd).')),
+
+    sec('⚖️ Kazusy, 🧩 Pary, ⏱️ Sprint, 🎧 Słuchaj',
+      li('Kazusy', 'sytuacja ze służby i 2–3 pytania krok po kroku: co to za przesłanka, czego wolno użyć, co dalej. Uczy stosowania przepisów, nie tylko ich pamiętania.'),
+      li('Dopasuj pary', 'dotknij pozycji po lewej, potem pasującej po prawej. Błędna para mignie na czerwono. 5 par w zestawie.'),
+      li('Sprint 60 s', 'ile poprawnych odpowiedzi zdążysz dać w minutę. Bez wyjaśnień – pomyłki zobaczysz na końcu. Aplikacja pamięta Twój rekord.'),
+      li('Słuchaj', 'telefon czyta fiszki na głos: pytanie, chwila na odpowiedź w myślach, odpowiedź. Ustawisz czas na zastanowienie i tempo lektora. Dobre w drodze lub na spacerze.'),
+      li('', 'Wszystkie te tryby biorą pytania z zaznaczonych tematów. Błędy trafiają do „Trudnych”.')),
+
+    sec('⚑ Zgłoś błąd',
+      li('', 'Przy każdym pytaniu i fiszce jest przycisk „⚑ Zgłoś błąd”. Wybierz rodzaj błędu, opisz krótko i wyślij – zgłoszenie trafia do twórcy.'),
+      li('Statystyki', 'aplikacja co kilka godzin wysyła anonimowe liczniki (które pytania sprawiają kłopot). Wyłączysz to w ⚙️.')),
 
     sec('⏱️ Egzamin próbny',
       li('', '30 / 40 / 50 losowych pytań, 1 minuta na pytanie; zegar widać w nagłówku.'),
