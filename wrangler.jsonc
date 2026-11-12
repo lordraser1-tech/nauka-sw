@@ -12,5 +12,6 @@
   "kv_namespaces": [
     { "binding": "KODY" }
   ],
-  "observability": { "enabled": true }
+  "observability": { "enabled": true },
+  "triggers": { "crons": ["0 * * * *"] }
 }
