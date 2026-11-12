@@ -1,5 +1,5 @@
 // Po każdej zmianie plików zwiększ numer wersji, żeby telefony pobrały nowe pliki.
-const CACHE = 'nauka-sw-v22';
+const CACHE = 'nauka-sw-v23';
 const FILES = [
   './',
   'index.html',
@@ -62,4 +62,26 @@ self.addEventListener('fetch', event => {
       return Response.error();
     })
   );
+});
+
+// Powiadomienia od Chorążego Bielika: push przychodzi bez treści, tekst pobieramy z serwera.
+self.addEventListener('push', event => {
+  event.waitUntil((async () => {
+    let m = { title: 'Chorąży Bielik', body: 'Kursancie, czas na naukę!' };
+    try {
+      const r = await fetch('/api/push/wiadomosc', { cache: 'no-store', credentials: 'include' });
+      if (r.ok) m = await r.json();
+    } catch (e) { /* bez sieci – tekst domyślny */ }
+    await self.registration.showNotification(m.title || 'Chorąży Bielik', {
+      body: m.body, icon: 'ikony/icon-192.png', badge: 'ikony/icon-192.png', tag: 'bielik', renotify: true, data: { url: './' },
+    });
+  })());
+});
+
+self.addEventListener('notificationclick', event => {
+  event.notification.close();
+  event.waitUntil(self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then(list => {
+    for (const c of list) if ('focus' in c) return c.focus();
+    return self.clients.openWindow('./');
+  }));
 });

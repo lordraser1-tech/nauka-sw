@@ -164,7 +164,7 @@ function isDue(id) {
   return !b || b.due <= Date.now();
 }
 
-function record(item, result) {
+function record(item, result, pts) {
   const prev = state.hist[item.id] ? { ...state.hist[item.id] } : null;
   const r = state.hist[item.id] || { n: 0, bad: 0 };
   r.last = result;
@@ -172,7 +172,7 @@ function record(item, result) {
   if (result === 'bad') r.bad++;
   r.ts = Date.now();
   state.hist[item.id] = r;
-  onAnswer(item, result, prev);
+  onAnswer(item, result, prev, pts);
   save();
 }
 
@@ -226,7 +226,13 @@ function route() {
   if (OLD_SITE) return; // stara strona: tylko ekran przeprowadzki
   stopSprint();
   stopListening();
+  clearTimeout(bielikIdleT); clearTimeout(bielikFlashT);
+  const prevRoute = currentRoute;
   currentRoute = location.hash.replace(/^#\/?/, '');
+  if ((currentRoute === '' || !(currentRoute in routes)) && prevRoute) {
+    if (sessAnswers >= 1 && sessAnswers <= 3) shortSession = true;
+    sessAnswers = 0;
+  }
   if (!(currentRoute in routes)) currentRoute = '';
   if (currentRoute === 'czytaj' && !docs.length) currentRoute = '';
   pointsMult = 1;
@@ -258,6 +264,8 @@ function renderHome(keepScroll) {
     h('a', { class: 'btn mode' + (primary ? ' primary' : ''), href: count ? href : null, 'aria-disabled': count ? null : 'true', style: count ? null : 'opacity:.45' },
       h('span', { class: 'mode-name' }, name), h('span', { class: 'mode-sub' }, sub));
 
+  const bk = bielikCard();
+  if (bk) $app.append(bk);
   $app.append(serviceCard());
   $app.append(h('div', { class: 'modes' },
     mode('Fiszki', `${due} do powtórki · ${flash.length} w wybranych taliach`, '#/fiszki', flash.length, true),
@@ -392,7 +400,9 @@ function flashView(item, onGrade) {
   if (src) src.hidden = true;
   const hint = h('div', { class: 'hint' }, 'Dotknij karty, aby zobaczyć odpowiedź');
   const showBtn = btn('Pokaż odpowiedź', 'primary', () => flip());
-  const choose = g => { if (done) return; done = true; grade(item, g); onGrade(g); };
+  const choose = g => { if (done) return; done = true; clearTimeout(bielikFlashT); grade(item, g); onGrade(g); };
+  clearTimeout(bielikFlashT);
+  bielikFlashT = setTimeout(() => { if (!flipped && !done && back.isConnected) bielikPop('nudny.fiszka', {}, { force: true }); }, 60000);
   const grades = h('div', { class: 'row', hidden: true },
     btn('Nie wiem', 'bad', () => choose(0)),
     btn('Prawie', 'warn', () => choose(1)),
@@ -418,6 +428,7 @@ function feedback(ok, title, ...body) {
 
 function mcqView(item, onResult, onNext, nextLabel) {
   let done = false;
+  qShownAt = Date.now();
   const order = shuffle(item.options.map((_, i) => i));
   const fb = h('div');
   const actions = h('div', { class: 'actions' });
@@ -844,9 +855,10 @@ function caseView(item, onResult, onNext, nextLabel) {
         nextButton(actions, () => { k++; show(); }, 'Co dalej? ›');
       } else {
         const res = good === steps.length ? 'ok' : good * 2 >= steps.length ? 'almost' : 'bad';
-        record(item, res);
+        record(item, res, POINTS.caseStep * good);
         onResult(res === 'ok');
-        card.append(h('div', { class: 'case-sum' }, `Wynik kazusu: ${good} z ${steps.length}`), sourceEl(item));
+        card.append(h('div', { class: 'case-sum' }, `Wynik kazusu: ${good} z ${steps.length} · +${POINTS.caseStep * good} pkt`), sourceEl(item) || '',
+          bielikComment(good === steps.length ? 'kazus.ok' : 'kazus.blad') || '');
         nextButton(actions, onNext, nextLabel);
       }
     }
@@ -901,9 +913,11 @@ function pairsView(item, onResult, onNext, nextLabel) {
   }
   function finish() {
     const res = mistakes === 0 ? 'ok' : mistakes <= 2 ? 'almost' : 'bad';
-    record(item, res);
+    const pp = POINTS.pair * Math.max(0, chosen.length - mistakes);
+    record(item, res, pp);
     onResult(res === 'ok');
-    info.replaceWith(feedback(mistakes <= 2, mistakes === 0 ? 'Bezbłędnie!' : `Ułożone – błędy: ${mistakes}`), sourceEl(item) || h('span'));
+    info.replaceWith(feedback(mistakes <= 2, (mistakes === 0 ? 'Bezbłędnie!' : `Ułożone – błędy: ${mistakes}`) + ` · +${pp} pkt`), sourceEl(item) || h('span'),
+      (mistakes === 0 && bielikComment('pary.ok')) || h('span'));
     nextButton(actions, onNext, nextLabel);
   }
   return [h('div', { class: 'card' }, tags(item), h('h3', { class: 'case-title' }, '🧩 ' + item.title),
@@ -983,7 +997,8 @@ function finishSprint(s) {
     h('div', { class: 'verdict-icon', 'aria-hidden': 'true' }, isRecord ? '🏆' : '⏱️'),
     h('div', { class: 'score' }, String(s.ok)),
     h('div', { class: 'score-sub' }, `poprawnych w 60 s · błędów: ${s.bad.length}`),
-    h('div', { class: 'verdict-head' }, isRecord ? 'Nowy rekord!' : `Rekord: ${best}`)));
+    h('div', { class: 'verdict-head' }, isRecord ? 'Nowy rekord!' : `Rekord: ${best}`),
+    bielikComment(isRecord ? 'sprint.rekord' : 'sprint.brak', { rekord: s.ok })));
   if (isRecord && best) confetti();
   $app.append(h('div', { class: 'stack' }, btn('Jeszcze raz', 'primary', runSprint), btn('Wróć do startu', '', () => { location.hash = '#/'; })));
   if (s.bad.length) {
@@ -1095,6 +1110,7 @@ function renderListen() {
   }
   async function play() {
     L.on = true;
+    if (!st.listenUsed) { st.listenUsed = true; save(); }
     playBtn.textContent = '⏸ Pauza';
     try { if (navigator.wakeLock) L.lock = await navigator.wakeLock.request('screen'); } catch (e) {}
     step();
@@ -1159,7 +1175,7 @@ const VERDICTS = [
     'Status „N” – Nieprzygotowany. Weryfikacja co najmniej raz na 3… godziny.'] },
 ];
 
-function verdictCard(p, sub, weak, extra, quiet) {
+function verdictCard(p, sub, weak, extra, quiet, prevPct) {
   const v = VERDICTS.find(x => p >= x.min);
   const card = h('div', { class: 'card verdict ' + v.cls },
     h('div', { class: 'verdict-icon', 'aria-hidden': 'true' }, v.icon),
@@ -1169,7 +1185,8 @@ function verdictCard(p, sub, weak, extra, quiet) {
     h('div', { class: 'verdict-head' }, v.head),
     h('p', { class: 'verdict-text' }, v.texts[Math.floor(Math.random() * v.texts.length)]),
     extra && h('p', { class: 'verdict-extra' }, extra),
-    weak && p < 76 && h('p', { class: 'small', style: 'text-align:center;margin:6px 0 0' }, `Najwięcej błędów: ${weak}.`));
+    weak && p < 76 && h('p', { class: 'small', style: 'text-align:center;margin:6px 0 0' }, `Najwięcej błędów: ${weak}.`),
+    bielikComment(prevPct != null && p < prevPct - 10 ? 'wyn.gorzej' : bielikResultKey(p), { wynik: p }));
   if (!quiet) {
     try { if (navigator.vibrate) navigator.vibrate(p > 50 ? [60, 80, 60] : [400]); } catch (e) {}
     if (v.confetti) confetti();
@@ -1316,11 +1333,13 @@ function finishExam(timeUp) {
   exam.timeUp = timeUp;
   exam.took = Math.min(Date.now(), exam.end) - exam.start;
   exam.ok = 0;
+  bielikQuiet = true; // przy zapisie 30–50 odpowiedzi naraz Bielik milczy
   exam.items.forEach((it, k) => {
     const ok = exam.answers[k] === it.answer;
     if (ok) exam.ok++;
     record(it, ok ? 'ok' : 'bad');
   });
+  bielikQuiet = false;
   const n = exam.items.length;
   state.exams.unshift({ date: Date.now(), ok: exam.ok, n, pct: pct(exam.ok, n), took: exam.took, limit: exam.end - exam.start });
   state.exams = state.exams.slice(0, 20);
@@ -1335,7 +1354,7 @@ function examResult() {
   const n = exam.items.length;
   const wrong = exam.items.map((it, k) => ({ it, a: exam.answers[k] })).filter(x => x.a !== x.it.answer);
   const card = verdictCard(pct(exam.ok, n), `${exam.ok} z ${n} poprawnie · czas ${mmss(exam.took)}`,
-    worstDeck(wrong.map(x => x.it)), streakNote(), exam.celebrated);
+    worstDeck(wrong.map(x => x.it)), streakNote(), exam.celebrated, state.exams[1] ? state.exams[1].pct : null);
   exam.celebrated = true;
   if (exam.timeUp) card.prepend(h('p', { style: 'text-align:center;margin:0;color:var(--bad);font-weight:700' }, 'Koniec czasu!'));
   $app.append(card);
@@ -1726,6 +1745,7 @@ async function init() {
 
   registerSW();
   setTimeout(syncStats, 4000);
+  setTimeout(syncPush, 5000);
   document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden') syncStats(); });
 }
 
@@ -1815,7 +1835,7 @@ function registerSW() {
 /* ---------- Służba: punkty, stopnie, odznaki, kamienie milowe ---------- */
 
 // Punkty (po zmniejszeniu o 1/3 względem projektu). Progi stopni – bez zmian.
-const POINTS = { mcq: 7, flashcard: 3, cloze: 10, order: 10, case: 20, pairs: 10, fixed: 13, examPass: 67, examTop: 167, dailyGoal: 33 };
+const POINTS = { mcq: 7, flashcard: 3, cloze: 10, order: 10, case: 21, pairs: 10, caseStep: 7, pair: 2, fixed: 13, examPass: 67, examTop: 167, dailyGoal: 33 };
 const STREAK_FROM = 5;      // od 5. dobrej odpowiedzi z rzędu…
 const STREAK_MULT = 1.5;    // …punkty ×1,5
 const CHALLENGE_MULT = 2;   // wyzwanie dnia – punkty ×2
@@ -1887,7 +1907,7 @@ function addPoints(n) {
 }
 
 // Wywoływane z record() – każda odpowiedź w każdym trybie.
-function onAnswer(item, result, prev) {
+function onAnswer(item, result, prev, customPts) {
   const g = game();
   const now = new Date(), day = dayKey(now), hr = now.getHours();
   const ok = result === 'ok';
@@ -1898,27 +1918,30 @@ function onAnswer(item, result, prev) {
   if (hr >= 22) g.flags.night = true;
   if (hr >= 4 && hr < 7) g.flags.morning = true;
   if (hr < 4) g.counters.owl++;
+  // Punkty: kazusy i pary mają punktację częściową (customPts), reszta – stała stawka za dobrą odpowiedź.
+  let pts = customPts != null ? customPts : ok ? (POINTS[item.type] || 0) : 0;
   if (ok) {
     ds.ok++;
     g.counters.ok++;
     g.run++;
     const wasBad = prev && prev.last === 'bad';
-    let pts = wasBad ? POINTS.fixed : (POINTS[item.type] || 0);
     if (wasBad) {
+      pts = Math.max(pts, POINTS.fixed); // poprawa błędu nigdy nie daje mniej niż zwykła odpowiedź
       g.counters.fixed++;
       if (prev.bad >= 5) unlock('szczesciarz');
     }
     if (g.run >= STREAK_FROM) pts *= STREAK_MULT;
-    addPoints(pts * pointsMult);
     if (item.deck === 'spb' && ZUPP_RE.test(itemText(item))) g.counters.zupp++;
   } else if (result === 'bad') {
     g.run = 0;
   }
+  if (pts) addPoints(pts * pointsMult);
   if (g.days[day] >= dailyGoal() && !g.goalDone[day]) {
     g.goalDone[day] = true;
     addPoints(POINTS.dailyGoal);
-    toast('🎯', 'Dzienny cel osiągnięty!', `${dailyGoal()} odpowiedzi dzisiaj · +${POINTS.dailyGoal} pkt`);
+    if (!BIELIK_ON()) toast('🎯', 'Dzienny cel osiągnięty!', `${dailyGoal()} odpowiedzi dzisiaj · +${POINTS.dailyGoal} pkt`);
   }
+  bielikOnAnswer(item, result, prev);
   evaluate();
 }
 
@@ -2025,7 +2048,7 @@ function unlock(id, silent) {
   if (g.badges[id]) return false;
   g.badges[id] = Date.now();
   const b = BADGES.find(x => x.id === id);
-  if (b && !silent) toast(b.icon, 'Nowa odznaka: ' + b.name, b.desc);
+  if (b && !silent) { toast(b.icon, 'Nowa odznaka: ' + b.name, b.desc); setTimeout(() => bielikPop('odznaka'), 3800); }
   return true;
 }
 
@@ -2075,6 +2098,7 @@ function promotion(r) {
       h('p', {}, 'Za sumienne przygotowanie do służby mianuje się funkcjonariusza na stopień:'),
       h('div', { class: 'promo-rank' }, RANKS[r][1]),
       h('p', { class: 'small muted' }, `${game().points} pkt · ${n} ${plural(n, 'odznaka', 'odznaki', 'odznak')}`),
+      bielikComment('awans', { stopien: RANKS[r][1] }) || '',
       btn('Melduję się!', 'primary', () => box.remove())));
   document.body.append(box);
   confetti();
@@ -2311,7 +2335,9 @@ function renderTeczka() {
       h('li', {}, `Poprawna odpowiedź w teście: +${POINTS.mcq}`),
       h('li', {}, `Fiszka „Wiem”: +${POINTS.flashcard}`),
       h('li', {}, `Ćwiczenie „Na pamięć”: +${POINTS.cloze}`),
-      h('li', {}, `Poprawiony wcześniejszy błąd: +${POINTS.fixed}`),
+      h('li', {}, `Kazus: +${POINTS.caseStep} za każdy dobry krok · Dopasuj pary: +${POINTS.pair} za każdą dobrą parę`),
+      h('li', {}, `Sprint 60 s: ok. +${Math.round(POINTS.mcq * 0.6)} za dobrą odpowiedź · Słuchaj: bez punktów`),
+      h('li', {}, `Poprawiony wcześniejszy błąd: co najmniej +${POINTS.fixed}`),
       h('li', {}, `Od ${STREAK_FROM}. dobrej odpowiedzi z rzędu: punkty ×${String(STREAK_MULT).replace('.', ',')}`),
       h('li', {}, `Wyzwanie dnia: punkty ×${CHALLENGE_MULT}`),
       h('li', {}, `Dzienny cel: +${POINTS.dailyGoal} · egzamin zdany: +${POINTS.examPass} · egzamin 91%+: +${POINTS.examTop}`)),
@@ -2335,6 +2361,10 @@ function sizeLikePicker(pairs, current, onPick) {
 
 // Przy każdej aktualizacji: dopisz wpis NA POCZĄTKU listy, z numerem = numer CACHE w service-worker.js.
 const CHANGELOG = [
+  { v: 23, date: '12.11.2026', items: [
+    '🦅 Chorąży Bielik melduje się na służbie! Chwali, docina, przewraca oczami i pilnuje serii.',
+    'Powiadomienia od Bielika – włączysz w ⚙️ i wybierzesz godzinę (na iPhonie z ikony na ekranie początkowym).',
+    'Punkty: kazus +7 za każdy dobry krok, pary +2 za każdą dobrą parę, poprawa błędu nigdy mniej niż zwykła odpowiedź.'] },
   { v: 22, date: '12.11.2026', items: [
     'Poprawione pytania z dopiskiem „wg wykładu” / „z materiałów kursu” – teraz są zrozumiałe bez znajomości wykładu (dzięki za zgłoszenie!).'] },
   { v: 21, date: '12.11.2026', items: [
@@ -2412,6 +2442,7 @@ function showSettings() {
     sizeLikePicker([['auto', 'Auto'], ['light', '☀️ Jasny'], ['dark', '🌙 Ciemny']], state.settings.theme || 'auto', v => {
       state.settings.theme = v === 'auto' ? null : v; save(); applyTheme(); showSettings();
     }),
+    ...bielikSettings(),
     h('h3', {}, 'Historia zmian'),
     h('p', { class: 'small muted', style: 'margin-top:0' }, `Wersja aplikacji: ${APP_VERSION}`),
     btn('📰 Pokaż historię zmian', '', () => { close(); showChangelog(); }),
@@ -2524,6 +2555,11 @@ function showManual() {
       li('Słuchaj', 'telefon czyta fiszki na głos: pytanie, chwila na odpowiedź w myślach, odpowiedź. Ustawisz czas na zastanowienie i tempo lektora. Dobre w drodze lub na spacerze.'),
       li('', 'Wszystkie te tryby biorą pytania z zaznaczonych tematów. Błędy trafiają do „Trudnych”.')),
 
+    sec('🦅 Chorąży Bielik',
+      li('', 'Maskotka na ekranie Nauka. Komentuje Twoją naukę: serię dni, cel dzienny, odliczanie do egzaminu, najsłabszy temat. W trakcie nauki wtrąca się po serii dobrych lub złych odpowiedzi, a pod wynikami ocenia, jak poszło.'),
+      li('Nastroje', 'dumny, zadowolony, czujny, znudzony (przewraca oczami), groźny i wściekły – zależnie od tego, jak się uczysz. Stuknij go, jeśli masz odwagę.'),
+      li('Ustawienia (⚙️)', 'możesz go ukryć, złagodzić język albo włączyć powiadomienia z wybraną godziną. Na iPhonie powiadomienia działają tylko z ikony na ekranie początkowym.')),
+
     sec('⚑ Zgłoś błąd',
       li('', 'Przy każdym pytaniu i fiszce jest przycisk „⚑ Zgłoś błąd”. Wybierz rodzaj błędu, opisz krótko i wyślij – zgłoszenie trafia do twórcy.'),
       li('Statystyki', 'aplikacja co kilka godzin wysyła anonimowe liczniki (które pytania sprawiają kłopot). Wyłączysz to w ⚙️.')),
@@ -2544,7 +2580,7 @@ function showManual() {
       li('', 'Aplikacja pamięta, gdzie skończyłeś czytać.')),
 
     sec('🗂️ Teczka i punkty',
-      li('Stopień', 'od szeregowego do pułkownika – rośnie z punktami. Punkty: test +' + POINTS.mcq + ', fiszka „Wiem” +' + POINTS.flashcard + ', Na pamięć +' + POINTS.cloze + ', poprawiony błąd +' + POINTS.fixed + '; od 5. dobrej odpowiedzi z rzędu ×1,5.'),
+      li('Stopień', 'od szeregowego do pułkownika – rośnie z punktami. Punkty: test +' + POINTS.mcq + ', fiszka „Wiem” +' + POINTS.flashcard + ', Na pamięć +' + POINTS.cloze + ', kazus +' + POINTS.caseStep + ' za każdy dobry krok, pary +' + POINTS.pair + ' za każdą dobrą parę, sprint ok. +4, poprawiony błąd co najmniej +' + POINTS.fixed + '; od 5. dobrej odpowiedzi z rzędu ×1,5. Słuchaj – bez punktów.'),
       li('Wyzwanie dnia', '10 pytań z jednego tematu, punkty ×2. Przycisk na karcie służby na ekranie Nauka.'),
       li('Gotowość %', 'trafność z ostatnich 7 dni we wszystkich działach, pomnożona przez to, ile pytań z każdego działu przerobiłeś. Rośnie, gdy ćwiczysz wszystko, a nie jeden temat.'),
       li('Data egzaminu i dzienny cel', 'ustawiasz w Teczce (cel: 20 / 50 / 100 odpowiedzi dziennie).'),
@@ -2590,7 +2626,8 @@ function showWelcome() {
         li('Czytaj', 'skrypty z cytatami do wkucia, z wyszukiwarką.'),
         li('Teczka', 'stopień, odznaki, seria dni nauki i odliczanie do egzaminu.'),
         li('⚙️ Ustawienia', 'trybik w nagłówku: motyw jasny/ciemny, kopia postępu, historia zmian.'),
-        li('❓ Instrukcja', 'przycisk „?” obok INFO – wszystko krok po kroku.')),
+        li('❓ Instrukcja', 'przycisk „?” obok INFO – wszystko krok po kroku.'),
+        li('🦅 Chorąży Bielik', 'pilnuje Twojej nauki: chwali, docina i przypomina. Ustawisz go w ⚙️.')),
       h('p', {}, h('strong', {}, '⭐ Zasada służby: '), 'codziennie trochę. Za systematyczność są punkty, awanse i odznaki. Za przerwy jest tylko wstyd przed samym sobą (ewentualnie przed dowódcą zmiany).'),
       h('p', {}, h('strong', {}, '⚠️ Pouczenie: '), 'aplikacja nie zastępuje ustawy ani prowadzącego. W razie sporu wygrywa aktualny tekst przepisów. Aplikacja przyjmuje to z godnością.'),
       h('h3', {}, '🍫 Wsparcie twórcy'),
@@ -2637,6 +2674,488 @@ function showUpdateBanner() {
       location.reload();
     } }, 'Odśwież'));
   document.body.append(bar);
+}
+
+// Teksty dymków Chorążego Bielika (z dokumentu „Chorąży Bielik – teksty dymków”).
+// m = nastrój, t = tekst, o = ostrzejsza wersja (gdy włączony „ostrzejszy język”).
+const BIELIK_TEKSTY = {
+  'pow.rano': [
+    { m: 'czujny', t: 'Pobudka, kursancie! Kawa wypita? To teraz KKW.' },
+    { m: 'czujny', t: 'Ranek to najlepsza pora na naukę. Druga najlepsza jest teraz.' },
+    { m: 'czujny', t: 'Dzień dobry. Egzamin też już nie śpi.' }],
+  'pow.popol': [
+    { m: 'czujny', t: 'Melduję: dziś zero odpowiedzi. Czekam na rozkazy.' },
+    { m: 'czujny', t: '20 pytań i masz wolne. Uczciwy układ.' },
+    { m: 'znudzony', t: 'Przerwa na kawę trwa już od rana. Ambitnie.' }],
+  'pow.wieczor': [
+    { m: 'czujny', t: 'Seria czeka, serial poczeka.' },
+    { m: 'grozny', t: 'Jeszcze zdążysz. Ale zegar nie jest po twojej stronie.' },
+    { m: 'czujny', t: 'Dziesięć minut przed snem. Najlepiej wchodzi do głowy.' }],
+  'pow.noc': [
+    { m: 'czujny', t: 'Nocna zmiana? Szanuję. Wartownik też nie śpi.' },
+    { m: 'znudzony', t: 'Druga w nocy. Albo jesteś bardzo ambitny, albo masz jutro egzamin.' }],
+  'pow.weekend': [
+    { m: 'czujny', t: 'Sobota? Egzamin nie ma weekendów.' },
+    { m: 'znudzony', t: 'Niedziela, dzień odpoczynku. Dla tych, co już zdali.' }],
+  'pow.poNauce': [{ m: 'zadowolony', t: 'Dziś już byłeś na służbie. Dokładka nikomu nie zaszkodziła.' }],
+  'seria.zagr': [
+    { m: 'grozny', t: 'Seria {seria} dni wisi na włosku. Dziesięć pytań i jest uratowana.' },
+    { m: 'grozny', t: 'Masz serię {seria} dni. Szkoda by było, gdyby coś się jej stało…' },
+    { m: 'grozny', t: '{seria} dni pracy. Chcesz to wyrzucić przez jeden leniwy wieczór?' }],
+  'przerwa.1': [
+    { m: 'grozny', t: 'Wczoraj wolne? Ciekawe. Nie pamiętam, żebym je zatwierdzał.' },
+    { m: 'grozny', t: 'Jeden dzień przerwy to wypadek. Dwa to już nawyk.' },
+    { m: 'grozny', t: 'Seria spadła. Pozbieraj ją, zanim ktoś zobaczy.' }],
+  'przerwa.2': [
+    { m: 'wsciekly', t: 'DWA DNI bez nauki?! Nawet osadzony z przepustki wraca na czas!', w: 2 },
+    { m: 'wsciekly', t: 'Trzy dni ciszy. Myślałem, że zdezerterowałeś.', w: 3 },
+    { m: 'wsciekly', t: 'Kursancie! Gdzie byłeś? Tylko nie mów, że na L4.' }],
+  'przerwa.4': [
+    { m: 'wsciekly', t: 'Jeszcze trochę i podejdzie pod porzucenie służby. Ile to dni? A, nie wiesz, bo się nie uczysz.' },
+    { m: 'wsciekly', t: 'Wiesz, co jest gorsze od złej odpowiedzi? Brak odpowiedzi od tygodnia.' }],
+  'przerwa.10': [{ m: 'wsciekly', t: 'Ponad 10 dni nieobecności. W służbie to już porzucenie. Tu na szczęście tylko wstyd.' }],
+  'powrot': [
+    { m: 'zadowolony', t: 'No proszę, kto wrócił. Odmeldować się z urlopu i do roboty.' },
+    { m: 'grozny', t: 'Wróciłeś. Nie będę pytał, gdzie byłeś. Ale zapamiętam.' }],
+  'seria.3': [{ m: 'zadowolony', t: 'Trzy dni z rzędu. Zaczyna to wyglądać na charakter.' }],
+  'seria.7': [{ m: 'dumny', t: 'Tydzień bez przerwy! Order ci się należy. Z czekolady, ale zawsze.' }],
+  'seria.14': [{ m: 'dumny', t: 'Dwa tygodnie! Komendant pyta, czy masz brata bliźniaka.' }],
+  'seria.30': [{ m: 'dumny', t: 'Miesiąc służby bez dnia przerwy. Wzruszyłem się. Ale tylko trochę.' }],
+  'cel.pol': [
+    { m: 'czujny', t: 'Połowa celu za tobą. Druga połowa sama się nie zrobi.' },
+    { m: 'czujny', t: 'Półmetek. Nie zwalniaj, bo zauważę.' }],
+  'cel.done': [
+    { m: 'zadowolony', t: 'Cel na dziś zaliczony. Spocznij!' },
+    { m: 'zadowolony', t: 'Rozkaz wykonany. Można się odmeldować. …Albo zostać, nie zabraniam.' },
+    { m: 'zadowolony', t: 'Norma zrobiona. Dziś śpisz z czystym sumieniem.' }],
+  'cel.x2': [{ m: 'dumny', t: 'Podwójna norma? Ktoś tu chce zostać chorążym przed czasem.' }],
+  'cel.x3': [{ m: 'dumny', t: 'Potrójna norma. Zaczynam się o ciebie martwić. Ale tak pozytywnie.' }],
+  'awans': [
+    { m: 'dumny', t: 'Awans na {stopien}! Pagony nosi się dumnie, ale bez zadzierania dzioba.' },
+    { m: 'dumny', t: '{stopien}? Gratuluję. Teraz wymagania rosną.' }],
+  'odznaka': [{ m: 'zadowolony', t: 'Nowa odznaka w Teczce. Przypnij ją sobie… mentalnie.' }],
+  'got.wys': [{ m: 'dumny', t: 'Gotowość {gotowosc}%. Zaczynam się bać, że zdasz.' }],
+  'got.nis': [{ m: 'grozny', t: 'Gotowość {gotowosc}%. Na egzaminie to byłby spacer po kruchym lodzie.' }],
+  'egz.30': [{ m: 'czujny', t: '{dni} dni do egzaminu. Dużo? Tak samo myślał każdy, kto oblał.' }],
+  'egz.15': [{ m: 'czujny', t: '{dni} dni. Czas płynie szybciej niż zmiana na wieżyczce.' }],
+  'egz.8': [{ m: 'grozny', t: '{dni} dni. Od teraz każdy dzień bez nauki liczy się podwójnie.' }],
+  'egz.4': [{ m: 'grozny', t: '{dni} dni do egzaminu. Panika zabroniona. Nauka obowiązkowa.' }],
+  'egz.2': [{ m: 'grozny', t: '{dni} dni. Egzamin próbny dziś, nie jutro.' }],
+  'egz.1': [{ m: 'czujny', t: 'Jutro egzamin. Przejrzyj Trudne, potem marsz spać. To rozkaz.' }],
+  'egz.0': [{ m: 'dumny', t: 'Dziś egzamin. Głowa do góry, dziób prosto. Dasz radę, kursancie!' }],
+  'egz.po': [{ m: 'zadowolony', t: 'Egzamin za tobą? Ustaw nową datę w Teczce. Służba trwa.' }],
+  'tip.temat': [
+    { m: 'grozny', t: 'Najwięcej błędów masz w: {temat}. Przypadek? Nie sądzę.', o: 'Najwięcej błędów masz w: {temat}. Przypadek? Nie sądzę. Pokrako.' },
+    { m: 'czujny', t: '{temat} to twój słaby punkt. Słabe punkty się ćwiczy, a nie omija.' },
+    { m: 'grozny', t: '{temat} kuleje. Na egzaminie nikt nie zapyta, czy lubisz ten dział.' }],
+  'tip.trudne': [
+    { m: 'grozny', t: 'Masz {trudne} pytań w Trudnych. Same się nie poprawią.' },
+    { m: 'wsciekly', t: '{trudne} błędów czeka na poprawkę. To już nie lista, to kartoteka.' }],
+  'tip.fiszki': [{ m: 'czujny', t: 'Pudełko numer jeden aż pęka. Pora na fiszki.' }],
+  'tip.kazusy': [{ m: 'czujny', t: 'Kazusy czekają. Na służbie nikt ci nie da czterech odpowiedzi do wyboru.' }],
+  'tip.probny': [{ m: 'grozny', t: 'Dawno nie było egzaminu próbnego. Boisz się wyniku?' }],
+  'tip.sluchaj': [{ m: 'zadowolony', t: 'Jedziesz gdzieś? Włącz Słuchaj. Nawet korek może być nauką.' }],
+  'tip.jedenTemat': [{ m: 'znudzony', t: 'Znowu {temat}? Inne działy też będą na egzaminie. Sprawdzałem.' }],
+  'run.5': [
+    { m: 'zadowolony', t: 'Pięć z rzędu. Rozgrzewka zaliczona.' },
+    { m: 'zadowolony', t: 'Idzie ci. Nie zepsuj tego.', o: 'Idzie ci. Nie zepsuj tego jak zwykle.' }],
+  'run.10': [
+    { m: 'dumny', t: 'Dziesięć z rzędu! Ktoś tu jednak przeczytał KKW.', o: 'Dziesięć z rzędu! Ktoś tu jednak nie jest taki głupi.' },
+    { m: 'dumny', t: 'Dziesiątka bez pudła. Strzelnica by pozazdrościła.' }],
+  'run.20': [{ m: 'dumny', t: 'Dwadzieścia! Sprawdzam, czy nie ściągasz.' }],
+  'bad.3': [
+    { m: 'grozny', t: 'Trzy pudła z rzędu. Zwolnij i czytaj wyjaśnienia.' },
+    { m: 'grozny', t: 'Czytasz pytania czy grasz w totolotka?' }],
+  'bad.5': [
+    { m: 'wsciekly', t: 'Pięć błędów pod rząd. Rzuć monetą, wyjdzie lepiej.' },
+    { m: 'wsciekly', t: 'Stop! Przerwa, woda, oddech. Potem Fiszki z tego tematu. Weź się w garść!' }],
+  'bad.nie': [{ m: 'grozny', t: 'NIE było napisane wielkimi literami. Specjalnie dla ciebie.' }],
+  'bad.szybko': [{ m: 'grozny', t: 'Sekunda na odpowiedź? Najpierw czytaj, potem klikaj. Myślenie nie boli.' }],
+  'fixed': [
+    { m: 'zadowolony', t: 'Poprawione! Tego już nie zapomnisz. Mam nadzieję.' },
+    { m: 'zadowolony', t: 'No i proszę. Wystarczyło raz się pomylić, żeby zapamiętać.' }],
+  'nudny.ekran': [
+    { m: 'znudzony', t: 'Będziemy tak na siebie patrzeć?' },
+    { m: 'znudzony', t: 'Ekran się za ciebie nie nauczy.' },
+    { m: 'znudzony', t: 'Halo. Kursancie. Tu jestem. Czekam.' },
+    { m: 'znudzony', t: 'Mógłbym w tym czasie zrobić trzy fiszki. Gdybym miał palce.' }],
+  'nudny.krotko': [
+    { m: 'znudzony', t: 'Trzy pytania? To nawet nie rozgrzewka.' },
+    { m: 'znudzony', t: 'Krótka ta służba. Krótsza niż zmiana patrolu.' }],
+  'nudny.fiszka': [
+    { m: 'znudzony', t: 'Myślisz czy zasnąłeś?' },
+    { m: 'znudzony', t: 'Odpowiedź nie przyjdzie sama. No dobra, przyjdzie, jak klikniesz.' }],
+  'klik': [
+    { m: 'czujny', t: 'Nie stukaj w szybę, to nie akwarium.' },
+    { m: 'grozny', t: 'Jeszcze raz mnie stukniesz i dostajesz 20 pytań karnych.', o: 'Jeszcze raz mnie stukniesz i dostajesz po mo… twarzy.' },
+    { m: 'zadowolony', t: 'Spocznij! …No dobra, to ja spocznę.' }],
+  'klik5': [{ m: 'wsciekly', t: 'To już jest naruszenie nietykalności funkcjonariusza!' }],
+  'wyn.0': [
+    { m: 'wsciekly', t: '{wynik}%. Z takim wynikiem na egzaminie odprowadzą cię do wyjścia. Bez konwoju.' },
+    { m: 'wsciekly', t: 'Gorzej wypadli tylko ci, co nie przyszli.' },
+    { m: 'grozny', t: 'Nie płacz. Przeczytaj błędy. Potem ewentualnie płacz.' }],
+  'wyn.51': [
+    { m: 'czujny', t: 'Zdane. Na styk, ale zdane. Komisja patrzy jednym okiem.' },
+    { m: 'czujny', t: 'Ledwo, ledwo. Celuj wyżej, kursancie.' }],
+  'wyn.71': [
+    { m: 'zadowolony', t: '{wynik}%! Porządna robota. Jeszcze trochę szlifu i będzie medal.' },
+    { m: 'zadowolony', t: 'Dobrze! Jeszcze trochę i zacznę cię chwalić przy innych.' }],
+  'wyn.91': [
+    { m: 'dumny', t: '{wynik}%! Melduję posłusznie: jestem pod wrażeniem.' },
+    { m: 'dumny', t: 'Perfekcja. Komisja egzaminacyjna może iść do domu.' }],
+  'wyn.gorzej': [{ m: 'grozny', t: 'Ostatnio było lepiej. Co się stało? Nie odpowiadaj, popraw.' }],
+  'sprint.rekord': [{ m: 'dumny', t: 'Nowy rekord: {rekord} w minutę! Palce jak u telegrafisty.' }],
+  'sprint.brak': [{ m: 'czujny', t: 'Rekord stoi niepokonany. Jeszcze raz?' }],
+  'kazus.ok': [{ m: 'dumny', t: 'Kazus jak z podręcznika. Dowódca zmiany byłby spokojny.' }],
+  'kazus.blad': [{ m: 'grozny', t: 'Na służbie ten błąd kosztowałby raport. Tu tylko punkty.' }],
+  'pary.ok': [{ m: 'zadowolony', t: 'Wszystko do pary. Jak kajdanki.' }],
+};
+
+/* ---------- Chorąży Bielik (maskotka) ---------- */
+
+const BIELIK_ON = () => state.settings.bielikOff !== true;
+const BIELIK_OSTRO = () => state.settings.bielikOstry !== false;
+const bielikLast = {};
+let bielikPopAt = 0, bielikClicks = 0, bielikClickT = 0, bielikIdleT = null, bielikFlashT = null;
+let sessAnswers = 0, shortSession = false, badRun = 0, qShownAt = 0, bielikQuiet = false;
+
+function bielikLine(key, vars) {
+  let list = (BIELIK_TEKSTY[key] || []).filter(x => !x.w || (vars && vars.przerwa === x.w));
+  if (!list.length) list = BIELIK_TEKSTY[key] || [];
+  if (!list.length) return null;
+  let pick = list[Math.floor(Math.random() * list.length)];
+  if (list.length > 1 && bielikLast[key] === pick.t) pick = list[(list.indexOf(pick) + 1) % list.length];
+  bielikLast[key] = pick.t;
+  let t = (BIELIK_OSTRO() && pick.o) || pick.t;
+  for (const [k, v] of Object.entries(vars || {})) t = t.split('{' + k + '}').join(String(v));
+  return { m: pick.m, t };
+}
+
+function bielikSVG(mood, size) {
+  const M = mood || 'czujny';
+  const C = { body: '#8b5a2f', belly: '#a8763f', wing: '#6a4220', wingL: '#7d5028', face: '#f7ecdc', beret: '#4b6334', beretD: '#3a4f27',
+    gold: '#f4c235', goldD: '#c8952a', beak: '#f6b62b', beakD: '#d98e12', ink: '#1f1f1f', mouth: '#d84a3a', tongue: '#f08a7a' };
+  const W = {
+    down: 'M38 90 Q20 104 24 130 Q30 133 36 126 Q38 132 44 126 Q48 110 44 94 Z',
+    hip: 'M38 92 Q18 98 20 114 Q24 124 34 122 Q42 120 46 112 Q40 108 42 98 Z',
+    up: 'M45 106 Q26 104 14 86 Q5 72 9 60 Q15 65 19 62 Q21 69 26 67 Q28 75 34 75 Q38 83 45 86 Z',
+  };
+  const feather = { down: 'M30 112 q4 2 8 -2 M29 121 q4 2 8 -2', hip: 'M26 112 q4 2 8 -2', up: 'M16 80 q4 4 9 3 M24 91 q4 3 9 2' };
+  const wings = { dumny: ['hip', 'hip'], zadowolony: ['down', 'down'], czujny: ['down', 'down'], grozny: ['up', 'down'],
+    wsciekly: ['up', 'up'], znudzony: ['down', 'down'] }[M] || ['down', 'down'];
+  const wingSvg = (k, right) => {
+    const g = `<path d="${W[k]}" fill="${C.wing}"/><path d="${feather[k]}" fill="none" stroke="${C.wingL}" stroke-width="2" stroke-linecap="round"/>`;
+    return right ? `<g class="bk-wr"><g transform="translate(140 0) scale(-1 1)">${g}</g></g>` : `<g class="bk-wl">${g}</g>`;
+  };
+  const brows = {
+    dumny: 'M51 50 Q58 45 65 49 M75 49 Q82 45 89 50',
+    zadowolony: 'M52 50 Q58 47 64 50 M76 50 Q82 47 88 50',
+    czujny: 'M51 50 L65 51 M75 51 L89 50',
+    grozny: 'M50 47 L65 54 M75 54 L90 47',
+    wsciekly: 'M49 45 L66 55 M74 55 L91 45',
+    znudzony: 'M51 52 L65 53 M75 53 L89 52',
+  }[M] || 'M51 50 L65 51 M75 51 L89 50';
+  let eyes;
+  if (M === 'zadowolony') {
+    eyes = `<path d="M52 63 Q58 55 64 63 M76 63 Q82 55 88 63" fill="none" stroke="${C.ink}" stroke-width="3.5" stroke-linecap="round"/>`;
+  } else if (M === 'znudzony') {
+    eyes = `<ellipse cx="58" cy="61" rx="6.5" ry="7" fill="#fff" stroke="${C.ink}" stroke-width="1.2"/><ellipse cx="82" cy="61" rx="6.5" ry="7" fill="#fff" stroke="${C.ink}" stroke-width="1.2"/>` +
+      `<g class="bk-pupils"><circle cx="58" cy="63" r="3.6" fill="${C.ink}"/><circle cx="82" cy="63" r="3.6" fill="${C.ink}"/></g>` +
+      `<path d="M50.8 54 H65.2 V58.5 Q58 56.5 50.8 58.5 Z M74.8 54 H89.2 V58.5 Q82 56.5 74.8 58.5 Z" fill="${C.face}"/>` +
+      `<path d="M51.5 58.5 Q58 56.5 64.5 58.5 M75.5 58.5 Q82 56.5 88.5 58.5" fill="none" stroke="${C.ink}" stroke-width="2.2" stroke-linecap="round"/>`;
+  } else {
+    const ry = M === 'wsciekly' ? 5 : 6.5;
+    eyes = `<ellipse cx="58" cy="61" rx="5.5" ry="${ry}" fill="${C.ink}"/><ellipse cx="82" cy="61" rx="5.5" ry="${ry}" fill="${C.ink}"/>` +
+      `<circle cx="60" cy="58.5" r="1.8" fill="#fff"/><circle cx="84" cy="58.5" r="1.8" fill="#fff"/>`;
+  }
+  const open = { grozny: 1, wsciekly: 2, zadowolony: 0.6, dumny: 0.6 }[M] || 0;
+  const beak = open
+    ? `<path d="M60 68 Q70 62 81 68 Q80 73 75 74 L65 74 Q61 72 60 68 Z" fill="${C.beak}"/>` +
+      `<path d="M63 75 Q70 ${74 + open * 2} 77 75 Q75 ${80 + open * 4} 70 ${81 + open * 4} Q65 ${80 + open * 4} 63 75 Z" fill="${C.mouth}"/>` +
+      `<path d="M65 ${78 + open * 3} Q70 ${76 + open * 3} 75 ${78 + open * 3} Q72 ${81 + open * 4} 70 ${81 + open * 4} Q67 ${81 + open * 4} 65 ${78 + open * 3} Z" fill="${C.tongue}"/>`
+    : `<path d="M60 68 Q70 62 81 68 Q81 76 74 82 Q73 76 67 74 Q61 72 60 68 Z" fill="${C.beak}"/>` +
+      `<path d="M67 74 Q73 76 74 82" fill="none" stroke="${C.beakD}" stroke-width="1.6" stroke-linecap="round"/>`;
+  const blush = M === 'wsciekly' ? `<ellipse cx="51" cy="70" rx="6" ry="3.5" fill="#ef6b5b" opacity=".45"/><ellipse cx="89" cy="70" rx="6" ry="3.5" fill="#ef6b5b" opacity=".45"/>`
+    : M === 'zadowolony' ? `<ellipse cx="51" cy="69" rx="5" ry="3" fill="#f39b8b" opacity=".4"/><ellipse cx="89" cy="69" rx="5" ry="3" fill="#f39b8b" opacity=".4"/>` : '';
+  const fx = {
+    dumny: `<path d="M116 34 l2 6 l6 2 l-6 2 l-2 6 l-2 -6 l-6 -2 l6 -2 Z M124 58 l1.5 4 l4 1.5 l-4 1.5 l-1.5 4 l-1.5 -4 l-4 -1.5 l4 -1.5 Z" fill="${C.gold}"/>`,
+    czujny: `<path d="M114 26 L118 16 M120 32 L130 26 M121 40 L132 40" stroke="${C.gold}" stroke-width="3" stroke-linecap="round"/>`,
+    wsciekly: `<path d="M14 30 q-6 -2 -4 -8 q-2 -7 5 -8 q2 -6 8 -3 q6 -2 7 4 q6 3 2 9 q-2 6 -8 4 q-4 4 -10 2 Z M126 30 q6 -2 4 -8 q2 -7 -5 -8 q-2 -6 -8 -3 q-6 -2 -7 4 q-6 3 -2 9 q2 6 8 4 q4 4 10 2 Z" fill="none" stroke="#c9b99f" stroke-width="2.2" stroke-linejoin="round"/>`,
+    znudzony: `<path d="M86 80 q6 -2 10 -6 M92 84 q7 0 12 -4" fill="none" stroke="#9aa6b2" stroke-width="2" stroke-linecap="round"/><text x="104" y="74" font-size="11" font-family="sans-serif" fill="#9aa6b2">ehh…</text>`,
+  }[M] || '';
+  const medal = M === 'dumny' ? `<path d="M51 92 L55 104 L59 92 Z" fill="#c0392b"/><path d="M55 92 L55 104" stroke="#fff" stroke-width="1.5"/><circle cx="55" cy="108" r="5" fill="${C.gold}" stroke="${C.goldD}" stroke-width="1.2"/><path d="M55 105.5 l1 2 2.2.3 -1.6 1.5.4 2.2 -2-1.1 -2 1.1.4-2.2 -1.6-1.5 2.2-.3 Z" fill="${C.goldD}"/>` : '';
+  const s = size || 110;
+  return `<svg class="bielik bielik-${M}" viewBox="0 0 140 150" width="${s}" height="${Math.round(s * 150 / 140)}" role="img" aria-label="Chorąży Bielik">` +
+    `<g class="bk-root"><g class="bk-fx">${fx}</g>` +
+    `<g fill="${C.gold}" stroke="${C.goldD}" stroke-width="1"><ellipse cx="52" cy="143" rx="6" ry="3.5"/><ellipse cx="60" cy="145" rx="6" ry="3.5"/><ellipse cx="80" cy="145" rx="6" ry="3.5"/><ellipse cx="88" cy="143" rx="6" ry="3.5"/></g>` +
+    `<g class="bk-body"><ellipse cx="70" cy="110" rx="38" ry="34" fill="${C.body}"/>` +
+    `<ellipse cx="70" cy="114" rx="25" ry="25" fill="${C.belly}"/>` +
+    `<path d="M57 104 q4 3 8 0 M75 104 q4 3 8 0 M60 118 q4 3 8 0 M72 126 q4 3 8 0" fill="none" stroke="${C.body}" stroke-width="1.6" stroke-linecap="round" opacity=".7"/>` +
+    `<g fill="${C.gold}" stroke="${C.goldD}" stroke-width="1.2"><circle cx="70" cy="101" r="3.4"/><circle cx="70" cy="112" r="3.4"/><circle cx="70" cy="123" r="3.4"/></g>` +
+    medal + `</g>` +
+    wingSvg(wings[0], false) + wingSvg(wings[1], true) +
+    `<g class="bk-head"><circle cx="70" cy="60" r="34" fill="${C.body}"/>` +
+    `<ellipse cx="70" cy="64" rx="28" ry="26" fill="${C.face}"/>` + blush +
+    `<path d="M31 46 Q22 22 56 13 Q96 5 112 30 Q117 42 106 44 Q70 35 35 50 Z" fill="${C.beret}"/>` +
+    `<path d="M34 46 Q70 34 106 40 Q106 45 103 46 Q70 40 38 51 Q34 50 34 46 Z" fill="${C.beretD}"/>` +
+    `<path d="M70 14 L76 20 L70 26 L64 20 Z" fill="${C.gold}"/>` +
+    `<path d="${brows}" fill="none" stroke="${C.ink}" stroke-width="4" stroke-linecap="round"/>` +
+    `<g class="bk-eyes">${eyes}</g>` + beak + `</g></g></svg>`;
+}
+
+function bielikFigure(mood, size) {
+  const wrap = h('span', { class: 'bielik-fig' });
+  wrap.innerHTML = bielikSVG(mood, size);
+  return wrap;
+}
+
+// Ile dni minęło od ostatniego dnia nauki (0 = dziś, 1 = wczoraj, …; null = nigdy).
+function daysSinceStudy() {
+  const days = Object.keys(game().days).filter(k => game().days[k] > 0).sort();
+  if (!days.length) return null;
+  const last = new Date(days[days.length - 1] + 'T12:00:00');
+  const now = new Date(); now.setHours(12, 0, 0, 0);
+  return Math.round((now - last) / 86400000);
+}
+
+function weakestDeck() {
+  let worst = null;
+  for (const [id, s] of Object.entries(game().deckStats || {})) {
+    if (!deckById[id] || s.n < 10) continue;
+    const acc = s.ok / s.n;
+    if (!worst || acc < worst.acc) worst = { id, acc };
+  }
+  return worst && worst.acc < 0.8 ? deckById[worst.id].name : null;
+}
+
+// Wybór dymka na ekran Nauka.
+function bielikHomeLine() {
+  const g = game();
+  const today = g.days[dayKey(new Date())] || 0;
+  const goal = dailyGoal();
+  const seria = streakDays();
+  const dte = daysToExam();
+  const gap = daysSinceStudy();
+  const hr = new Date().getHours(), wd = new Date().getDay();
+  const vars = { seria, dni: dte, gotowosc: readiness(), trudne: hardItems().length, temat: weakestDeck() || '' };
+  if (shortSession) { shortSession = false; return bielikLine('nudny.krotko', vars); }
+  if (dte === 0) return bielikLine('egz.0', vars);
+  if (dte === 1) return bielikLine('egz.1', vars);
+  if (today === 0) {
+    if (gap !== null && gap >= 11) return bielikLine('przerwa.10', vars);
+    if (gap !== null && gap >= 5) return bielikLine('przerwa.4', vars);
+    if (gap !== null && gap >= 3) return bielikLine('przerwa.2', { ...vars, przerwa: gap - 1 });
+    if (gap === 2) return bielikLine('przerwa.1', vars);
+    if (seria >= 2 && Math.random() < 0.5) return bielikLine('seria.zagr', vars);
+    if (dte >= 2 && dte <= 7 && Math.random() < 0.5) return bielikLine(dte <= 3 ? 'egz.2' : 'egz.4', vars);
+    if (wd === 0 || wd === 6) { if (Math.random() < 0.5) return bielikLine('pow.weekend', vars); }
+    return bielikLine(hr >= 23 || hr < 5 ? 'pow.noc' : hr < 11 ? 'pow.rano' : hr < 18 ? 'pow.popol' : 'pow.wieczor', vars);
+  }
+  // dziś już była nauka
+  if (g.flags.returnDay === dayKey(new Date()) && !g.flags.returnSaid) { g.flags.returnSaid = true; save(); return bielikLine('powrot', vars); }
+  if ([3, 7, 14, 30].includes(seria) && g.flags.streakSaid !== seria) { g.flags.streakSaid = seria; save(); return bielikLine('seria.' + seria, vars); }
+  if (today >= goal * 3) return bielikLine('cel.x3', vars);
+  if (today >= goal * 2) return bielikLine('cel.x2', vars);
+  if (today >= goal) return bielikLine(Math.random() < 0.5 ? 'cel.done' : 'pow.poNauce', vars);
+  // podpowiedzi
+  const tips = [];
+  if (vars.temat) tips.push('tip.temat');
+  if (vars.trudne >= 15) tips.push('tip.trudne');
+  if (DATA.items.filter(i => i.type === 'flashcard' && state.boxes[i.id] && state.boxes[i.id].box === 1 && isDue(i.id)).length >= 15) tips.push('tip.fiszki');
+  if (!DATA.items.some(i => i.type === 'case' && state.hist[i.id] && Date.now() - state.hist[i.id].ts < 7 * 86400000)) tips.push('tip.kazusy');
+  if (!state.exams.length || Date.now() - state.exams[0].date > 5 * 86400000) tips.push('tip.probny');
+  if (!state.settings.listenUsed) tips.push('tip.sluchaj');
+  if (selectedDecks().length === 1) { tips.push('tip.jedenTemat'); vars.temat = deckById[selectedDecks()[0]].name; }
+  if (vars.gotowosc >= 80) tips.push('got.wys');
+  if (today >= 10 && vars.gotowosc < 40) tips.push('got.nis');
+  if (dte > 1) tips.push(dte > 30 ? 'egz.30' : dte >= 15 ? 'egz.15' : dte >= 8 ? 'egz.8' : dte >= 4 ? 'egz.4' : 'egz.2');
+  if (dte < 0) tips.push('egz.po');
+  if (today >= Math.ceil(goal / 2)) tips.push('cel.pol');
+  return bielikLine(tips[Math.floor(Math.random() * tips.length)] || 'pow.poNauce', vars);
+}
+
+// Karta z Bielikiem na ekranie Nauka.
+function bielikCard() {
+  if (!BIELIK_ON()) return null;
+  const line = bielikHomeLine() || { m: 'czujny', t: 'Melduję gotowość, kursancie.' };
+  const fig = bielikFigure(line.m, 86);
+  const bubble = h('div', { class: 'bielik-bubble', role: 'status' }, line.t);
+  const say = l => { if (!l) return; fig.innerHTML = bielikSVG(l.m, 86); bubble.textContent = l.t; bubble.classList.remove('pop'); void bubble.offsetWidth; bubble.classList.add('pop'); };
+  fig.setAttribute('role', 'button');
+  fig.setAttribute('tabindex', '0');
+  fig.setAttribute('aria-label', 'Chorąży Bielik – stuknij');
+  const click = () => {
+    const now = Date.now();
+    bielikClicks = now - bielikClickT < 2500 ? bielikClicks + 1 : 1;
+    bielikClickT = now;
+    say(bielikLine(bielikClicks >= 5 ? 'klik5' : 'klik'));
+    if (bielikClicks >= 5) bielikClicks = 0;
+    restartIdle();
+  };
+  fig.addEventListener('click', click);
+  fig.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); click(); } });
+  const card = h('section', { class: 'card bielik-card' }, fig, h('div', { class: 'bielik-talk' }, h('div', { class: 'bielik-name' }, 'Chorąży Bielik'), bubble));
+  function restartIdle() {
+    clearTimeout(bielikIdleT);
+    bielikIdleT = setTimeout(() => { if (card.isConnected && currentRoute === '') say(bielikLine('nudny.ekran')); }, 30000);
+  }
+  restartIdle();
+  return card;
+}
+
+// Krótkie wtrącenie w trakcie nauki (dymek u dołu ekranu).
+function bielikPop(key, vars, opts) {
+  if (!BIELIK_ON() || bielikQuiet) return;
+  if (['egzamin', 'sprint'].includes(currentRoute)) return;
+  const o = opts || {};
+  if (!o.force && Date.now() - bielikPopAt < 90000) return;
+  const line = bielikLine(key, vars);
+  if (!line) return;
+  bielikPopAt = Date.now();
+  document.querySelector('.bielik-pop')?.remove();
+  const el = h('div', { class: 'bielik-pop', role: 'status' }, bielikFigure(line.m, 58),
+    h('div', { class: 'bielik-pop-text' }, h('strong', {}, 'Chorąży Bielik'), h('div', {}, line.t), o.sub && h('div', { class: 'small muted' }, o.sub)));
+  el.addEventListener('click', () => el.remove());
+  document.body.append(el);
+  setTimeout(() => { el.classList.add('out'); setTimeout(() => el.remove(), 300); }, o.ms || 5200);
+}
+
+// Komentarz Bielika pod wynikiem (test, egzamin, sprint, kazus, pary).
+function bielikComment(key, vars) {
+  if (!BIELIK_ON()) return null;
+  const line = bielikLine(key, vars);
+  if (!line) return null;
+  return h('div', { class: 'bielik-comment' }, bielikFigure(line.m, 64), h('div', { class: 'bielik-bubble' }, line.t));
+}
+
+function bielikResultKey(p) {
+  return p >= 91 ? 'wyn.91' : p >= 71 ? 'wyn.71' : p >= 51 ? 'wyn.51' : 'wyn.0';
+}
+
+// Reakcje na odpowiedzi – wołane z onAnswer().
+function bielikOnAnswer(item, result, prev) {
+  if (bielikQuiet) return;
+  sessAnswers++;
+  const g = game();
+  const ok = result === 'ok';
+  if (result === 'bad') badRun++; else if (ok) badRun = 0;
+  const day = dayKey(new Date());
+  const today = g.days[day] || 0, goal = dailyGoal();
+  if (today === 1) {
+    setTimeout(syncPush, 1500);
+    const gap = daysSinceStudyBefore(day);
+    if (gap !== null && gap >= 3) { g.flags.returnDay = day; g.flags.returnSaid = false; }
+  }
+  if (today === goal) return bielikPop('cel.done', {}, { force: true, sub: `${goal} odpowiedzi dzisiaj · +${POINTS.dailyGoal} pkt` });
+  if (today === goal * 2) return bielikPop('cel.x2', {}, { force: true });
+  if (today === goal * 3) return bielikPop('cel.x3', {}, { force: true });
+  if (ok && [10, 20].includes(g.run)) return bielikPop('run.' + g.run, {}, { force: true });
+  if (ok && g.run === 5) return bielikPop('run.5');
+  if (badRun === 5) return bielikPop('bad.5', {}, { force: true });
+  if (badRun === 3) return bielikPop('bad.3');
+  if (result === 'bad' && item.type === 'mcq' && /\bNIE\b|FAŁSZ|BŁĘDN|NIEPRAWDZIW/.test(item.question)) return bielikPop('bad.nie');
+  if (result === 'bad' && item.type === 'mcq' && qShownAt && Date.now() - qShownAt < 2000) return bielikPop('bad.szybko');
+  if (ok && prev && prev.last === 'bad') return bielikPop('fixed');
+  if (today === Math.ceil(goal / 2)) return bielikPop('cel.pol');
+}
+
+// Dni przerwy przed dniem `day` (bez liczenia go).
+function daysSinceStudyBefore(day) {
+  const days = Object.keys(game().days).filter(k => k < day && game().days[k] > 0).sort();
+  if (!days.length) return null;
+  return Math.round((new Date(day + 'T12:00:00') - new Date(days[days.length - 1] + 'T12:00:00')) / 86400000);
+}
+
+/* ---------- Powiadomienia (Web Push) ---------- */
+
+const PUSH_OK = () => HAS_SERVER && 'serviceWorker' in navigator && 'PushManager' in window && 'Notification' in window;
+const IS_IOS = /iPhone|iPad|iPod/.test(navigator.userAgent);
+const IS_STANDALONE = () => (window.matchMedia && matchMedia('(display-mode: standalone)').matches) || navigator.standalone === true;
+
+function b64uToBytes(s) {
+  const b = atob(s.replace(/-/g, '+').replace(/_/g, '/') + '==='.slice((s.length + 3) % 4));
+  return Uint8Array.from(b, c => c.charCodeAt(0));
+}
+
+function lastStudyDay() {
+  const days = Object.keys(game().days).filter(k => game().days[k] > 0).sort();
+  return days.length ? days[days.length - 1] : null;
+}
+
+function pushPayload() {
+  return { hour: state.settings.push.hour, tz: -new Date().getTimezoneOffset(), last: lastStudyDay(), seria: streakDays(), exam: examDate(), ostro: BIELIK_OSTRO() };
+}
+
+async function enablePush(hour) {
+  if (!PUSH_OK()) throw new Error('Ten telefon lub przeglądarka nie obsługuje powiadomień.');
+  if (IS_IOS && !IS_STANDALONE()) throw new Error('Na iPhonie najpierw dodaj aplikację do ekranu początkowego (Udostępnij → „Do ekranu początkowego”) i włącz powiadomienia już w tej ikonie.');
+  const perm = await Notification.requestPermission();
+  if (perm !== 'granted') throw new Error('Nie ma zgody na powiadomienia. Włączysz ją w ustawieniach telefonu (powiadomienia dla przeglądarki lub aplikacji).');
+  const reg = await navigator.serviceWorker.ready;
+  const { k } = await (await fetch('/api/push/klucz', { cache: 'no-store' })).json();
+  let sub = await reg.pushManager.getSubscription();
+  if (!sub) sub = await reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: b64uToBytes(k) });
+  state.settings.push = { on: true, hour };
+  const r = await fetch('/api/push/zapis', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ sub: sub.toJSON(), ...pushPayload() }) });
+  if (!r.ok) throw new Error('Serwer nie przyjął zapisu. Spróbuj jeszcze raz.');
+  state.settings.pushSync = JSON.stringify(pushPayload());
+  save();
+}
+
+async function disablePush() {
+  try {
+    const reg = await navigator.serviceWorker.ready;
+    const sub = await reg.pushManager.getSubscription();
+    if (sub) await sub.unsubscribe();
+  } catch (e) {}
+  try { await fetch('/api/push/usun', { method: 'POST' }); } catch (e) {}
+  state.settings.push = { on: false, hour: (state.settings.push && state.settings.push.hour) || 19 };
+  save();
+}
+
+// Aktualizacja danych do przypomnień (ostatni dzień nauki, seria, data egzaminu) – tylko gdy coś się zmieniło.
+function syncPush() {
+  const p = state.settings.push;
+  if (!p || !p.on || !PUSH_OK()) return;
+  const now = JSON.stringify(pushPayload());
+  if (state.settings.pushSync === now) return;
+  state.settings.pushSync = now;
+  save();
+  fetch('/api/push/zapis', { method: 'POST', keepalive: true, headers: { 'Content-Type': 'application/json' }, body: now })
+    .catch(() => { state.settings.pushSync = ''; });
+}
+
+function bielikSettings() {
+  const st = state.settings;
+  const p = st.push || { on: false, hour: 19 };
+  const info = h('p', { class: 'small muted', style: 'margin:4px 0' });
+  const hours = [];
+  for (let x = 6; x <= 22; x++) hours.push(x);
+  const hourSel = h('select', { class: 'hour-select', 'aria-label': 'Godzina przypomnienia', disabled: !p.on ? '' : null,
+    onchange: async e => { st.push.hour = parseInt(e.target.value, 10); save(); syncPush(); info.textContent = `Bielik odezwie się o ${st.push.hour}:00, jeśli tego dnia nie będzie nauki.`; } },
+    hours.map(x => h('option', { value: x, selected: x === p.hour ? '' : null }, `${x}:00`)));
+  const pushSwitch = h('input', { type: 'checkbox', role: 'switch', checked: !!p.on, onchange: async e => {
+    e.target.disabled = true;
+    try {
+      if (e.target.checked) { await enablePush(parseInt(hourSel.value, 10)); hourSel.disabled = false; info.textContent = `Gotowe! Bielik odezwie się o ${hourSel.value}:00, jeśli tego dnia nie będzie nauki.`; }
+      else { await disablePush(); hourSel.disabled = true; info.textContent = 'Powiadomienia wyłączone.'; }
+    } catch (err) { e.target.checked = false; info.textContent = err.message; }
+    e.target.disabled = false;
+  } });
+  if (p.on) info.textContent = `Bielik odezwie się o ${p.hour}:00, jeśli tego dnia nie będzie nauki. Przed egzaminem przypomni się też 7, 3 i 1 dzień wcześniej.`;
+  else if (!PUSH_OK()) info.textContent = 'Ta przeglądarka nie obsługuje powiadomień.';
+  else if (IS_IOS && !IS_STANDALONE()) info.textContent = 'Na iPhonie powiadomienia działają tylko z ikony na ekranie początkowym (Udostępnij → „Do ekranu początkowego”).';
+  else info.textContent = 'Najwyżej jedno przypomnienie dziennie, tylko gdy tego dnia nie było nauki.';
+  return [
+    h('h3', {}, '🦅 Chorąży Bielik'),
+    h('label', { class: 'switch' }, h('span', {}, 'Pokazuj Bielika'),
+      h('input', { type: 'checkbox', role: 'switch', checked: BIELIK_ON(), onchange: e => { st.bielikOff = !e.target.checked; save(); } })),
+    h('label', { class: 'switch' }, h('span', {}, 'Ostrzejszy język (docinki, czasem dosadnie)'),
+      h('input', { type: 'checkbox', role: 'switch', checked: BIELIK_OSTRO(), onchange: e => { st.bielikOstry = e.target.checked; save(); syncPush(); } })),
+    HAS_SERVER && h('label', { class: 'switch' }, h('span', {}, 'Powiadomienia od Bielika'), pushSwitch),
+    HAS_SERVER && h('div', { class: 'row', style: 'align-items:center' }, h('span', { class: 'small' }, 'Godzina:'), hourSel),
+    HAS_SERVER && info,
+  ];
 }
 
 init();

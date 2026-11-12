@@ -524,3 +524,63 @@ details.topics > summary .count { margin-left: auto; font-weight: 500; font-size
 .err-text { color: var(--bad); font-weight: 600; min-height: 1em; margin: 6px 0; }
 .report .btn { width: 100%; margin-top: 6px; }
 .report .seg button { font-size: 13px; }
+
+/* Chorąży Bielik */
+.bielik .bk-body{transform-box:view-box;transform-origin:70px 144px;animation:bk-breathe 3.2s ease-in-out infinite}
+.bielik .bk-eyes{transform-box:view-box;transform-origin:70px 61px;animation:bk-blink 4.6s infinite}
+.bielik .bk-head{transform-box:view-box;transform-origin:70px 92px}
+.bielik .bk-wl{transform-box:view-box;transform-origin:42px 92px}
+.bielik .bk-wr{transform-box:view-box;transform-origin:98px 92px}
+.bielik .bk-root{transform-box:view-box;transform-origin:70px 148px}
+.bielik-dumny .bk-root{animation:bk-bounce 1.6s ease-in-out infinite}
+.bielik-dumny .bk-fx{animation:bk-twinkle 1.6s ease-in-out infinite}
+.bielik-zadowolony .bk-head{animation:bk-tilt 2.4s ease-in-out infinite}
+.bielik-czujny .bk-fx{animation:bk-twinkle 1s ease-in-out infinite}
+.bielik-czujny .bk-head{animation:bk-look 5s ease-in-out infinite}
+.bielik-grozny .bk-wl{animation:bk-wag .7s ease-in-out infinite}
+.bielik-wsciekly .bk-root{animation:bk-shake .25s linear infinite}
+.bielik-wsciekly .bk-wl{animation:bk-flapL .35s ease-in-out infinite}
+.bielik-wsciekly .bk-wr{animation:bk-flapR .35s ease-in-out infinite}
+.bielik-wsciekly .bk-fx{animation:bk-steam 1.2s ease-out infinite}
+.bielik-znudzony .bk-pupils{animation:bk-roll 5s ease-in-out infinite}
+.bielik-znudzony .bk-head{animation:bk-slump 5s ease-in-out infinite}
+.bielik-znudzony .bk-fx{animation:bk-sigh 5s ease-in-out infinite}
+.bielik-zadowolony .bk-eyes,.bielik-znudzony .bk-eyes{animation:none}
+@keyframes bk-breathe{50%{transform:scale(1.025,1.035)}}
+@keyframes bk-blink{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.1)}}
+@keyframes bk-bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+@keyframes bk-twinkle{0%,100%{opacity:1}50%{opacity:.35}}
+@keyframes bk-tilt{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(4deg)}}
+@keyframes bk-look{0%,40%,100%{transform:rotate(0)}50%,60%{transform:rotate(-5deg)}70%,80%{transform:rotate(5deg)}}
+@keyframes bk-wag{0%,100%{transform:rotate(-10deg)}50%{transform:rotate(6deg)}}
+@keyframes bk-shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-1.5px)}75%{transform:translateX(1.5px)}}
+@keyframes bk-flapL{0%,100%{transform:rotate(-12deg)}50%{transform:rotate(8deg)}}
+@keyframes bk-flapR{0%,100%{transform:rotate(12deg)}50%{transform:rotate(-8deg)}}
+@keyframes bk-steam{0%{transform:translateY(4px);opacity:.2}40%{opacity:1}100%{transform:translateY(-6px);opacity:0}}
+@keyframes bk-roll{0%,55%,100%{transform:translate(0,1px)}62%{transform:translate(-3px,-2px)}68%{transform:translate(0,-4px)}74%{transform:translate(3px,-2px)}82%{transform:translate(0,1px)}}
+@keyframes bk-slump{0%,55%,100%{transform:rotate(0)}68%{transform:rotate(-3deg) translateY(1px)}85%{transform:rotate(2deg) translateY(2px)}}
+@keyframes bk-sigh{0%,78%{opacity:0;transform:translate(0,0)}84%{opacity:1}100%{opacity:0;transform:translate(6px,-6px)}}
+@media (prefers-reduced-motion:reduce){.bielik *{animation:none!important}}
+
+.bielik-fig { display: inline-flex; flex: none; cursor: default; }
+.bielik-fig svg { display: block; overflow: visible; }
+.bielik-card { display: flex; align-items: center; gap: 10px; padding: 10px 12px; }
+.bielik-card .bielik-fig { cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.bielik-talk { flex: 1; min-width: 0; }
+.bielik-name { font-size: 12px; font-weight: 800; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; margin-bottom: 4px; }
+.bielik-bubble { position: relative; background: var(--surface-2); border: 1px solid var(--line, rgba(127,127,127,.25)); border-radius: 14px; padding: 10px 12px; font-weight: 600; line-height: 1.4; }
+.bielik-bubble::before { content: ''; position: absolute; left: -8px; top: 18px; border: 8px solid transparent; border-left: 0; border-right-color: var(--line, rgba(127,127,127,.25)); }
+.bielik-bubble.pop { animation: bk-pop .35s ease-out; }
+@keyframes bk-pop { 0% { transform: scale(.92); opacity: .4; } 100% { transform: scale(1); opacity: 1; } }
+.bielik-comment { display: flex; align-items: center; gap: 8px; margin-top: 12px; text-align: left; }
+.bielik-comment .bielik-bubble { flex: 1; font-size: 15px; }
+.bielik-pop { position: fixed; left: 50%; bottom: calc(var(--tabbar-h) + 16px + env(safe-area-inset-bottom)); transform: translateX(-50%); z-index: 60; width: min(92vw, 440px);
+  display: flex; align-items: center; gap: 8px; background: var(--surface); color: var(--text); border: 1px solid var(--line);
+  border-radius: 16px; padding: 8px 12px 8px 6px; box-shadow: 0 8px 28px rgba(0,0,0,.18); animation: bk-slide .3s ease-out; }
+.bielik-pop.out { opacity: 0; transform: translate(-50%, 12px); transition: .3s; }
+.bielik-pop-text { font-size: 15px; line-height: 1.35; }
+.bielik-pop-text strong { display: block; font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+@keyframes bk-slide { from { transform: translate(-50%, 20px); opacity: 0; } to { transform: translate(-50%, 0); opacity: 1; } }
+.modal .bielik-comment { justify-content: center; }
+
+.hour-select { font: inherit; padding: 8px 10px; border-radius: 10px; border: 1px solid var(--line); background: var(--surface); color: var(--text); }
