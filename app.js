@@ -1336,6 +1336,7 @@ async function init() {
   document.getElementById('storage-warning').hidden = storageOk;
   try {
     const res = await fetch('pytania_sw.json');
+    if (res.status === 401) { location.reload(); return; } // wersja z kodami: dostęp wygasł → ekran logowania
     if (!res.ok) throw new Error(res.status);
     DATA = await res.json();
   } catch (e) {
@@ -1907,6 +1908,9 @@ function sizeLikePicker(pairs, current, onPick) {
 
 // Przy każdej aktualizacji: dopisz wpis NA POCZĄTKU listy, z numerem = numer CACHE w service-worker.js.
 const CHANGELOG = [
+  { v: 18, date: '12.11.2026', items: [
+    'Aplikacja wkrótce przeniesie się pod nowy adres, dostępny po wpisaniu kodu. Szczegóły i kod dostaniesz od twórcy.',
+    'Już teraz zrób kopię postępu: ⚙️ → Eksportuj. Na nowej stronie wczytasz ją przez ⚙️ → Importuj.'] },
   { v: 17, date: '10.11.2026', items: [
     'Nowy przycisk „?” obok INFO – instrukcja obsługi: wybór tematów, wszystkie tryby, punkty, Teczka, kopia postępu.'] },
   { v: 16, date: '10.11.2026', items: [
