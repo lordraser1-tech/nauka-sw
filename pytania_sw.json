@@ -1,8 +1,8 @@
 {
  "meta": {
   "tytul": "Szkolenie chorążych SW – baza do nauki",
-  "wersja": 8,
-  "data": "2026-11-09",
+  "wersja": 9,
+  "data": "2026-11-13",
   "zrodla": "Ustawa o ŚPB (Dz.U. 2026 poz. 244), ustawa o SW (Dz.U. 2025 poz. 1750), kkw (Dz.U. 2025 poz. 911), rozporządzenie o oddziaływaniach penitencjarnych (Dz.U. 2024 poz. 1344), rozporządzenie o ośrodkach diagnostycznych (Dz.U. 2023 poz. 1677), rozporządzenie o ochronie jednostek SW (Dz.U. 2016 poz. 1804); materiały kursu: pytania kontrolne (psycholodzy 1–29, penitencjarne 28–53), lista 124 pytań, SPECJALIZACJA_2 (77 zagadnień), Skrypt SW V15",
   "typy": {
    "flashcard": "przód (front) i tył (back)",
@@ -2337,16 +2337,6 @@
    "back": "Broń automatyczna samopowtarzalna; automatyka – krótki odrzut lufy, odryglowanie przez przekoszenie lufy w płaszczyźnie pionowej; kaliber 9 mm (9×19 Parabellum); magazynek 17 nabojów; przyrządy celownicze na 25 m; skuteczny do 50 m; system „Safe Action” – 3 niezależne zabezpieczenia (spustowe, iglicy, przed wystrzałem przy upadku).",
    "source": "Skrypt SW V15 (COSSW Kulach)",
    "tag": "lista-124"
-  },
-  {
-   "id": "bron-f02",
-   "deck": "bron",
-   "type": "flashcard",
-   "naPamiec": false,
-   "front": "Pistolet Walther P99",
-   "back": "Samopowtarzalny, 9×19 mm, magazynek 15 nabojów, przyrządy na 25 m; wewnętrzna blokada iglicy, bezpiecznik spustowy, zabezpieczenie przed upadkiem, przycisk zwalniania iglicy. W magazynie – iglica w położeniu zwolnionym.",
-   "source": "Skrypt SW V15",
-   "tag": "skrypt-v15"
   },
   {
    "id": "bron-f03",
@@ -5568,23 +5558,6 @@
    "source": "lista pytań 50"
   },
   {
-   "id": "bron-m06",
-   "deck": "bron",
-   "type": "mcq",
-   "naPamiec": false,
-   "question": "Pojemność magazynka pistoletu Walther P99:",
-   "options": [
-    "20 nabojów",
-    "8 nabojów",
-    "17 nabojów",
-    "15 nabojów"
-   ],
-   "answer": 3,
-   "explanation": "P99 – 15 nabojów, 9×19.",
-   "source": "Skrypt SW",
-   "grupa": "walther-15"
-  },
-  {
    "id": "bron-m07",
    "deck": "bron",
    "type": "mcq",
@@ -7897,7 +7870,7 @@
     "Fałsz"
    ],
    "answer": 0,
-   "explanation": "Prawda; Walther P99 – 15.",
+   "explanation": "Prawda – 17 nabojów 9×19.",
    "source": "Skrypt SW"
   },
   {
@@ -11205,22 +11178,6 @@
    "source": "art. 35 EKPC",
    "tag": "v15",
    "grupa": "etpc-4"
-  },
-  {
-   "id": "bron-m17",
-   "deck": "bron",
-   "type": "mcq",
-   "naPamiec": false,
-   "question": "Prawda czy fałsz: magazynek pistoletu Walther P99 mieści 15 nabojów.",
-   "options": [
-    "Prawda",
-    "Fałsz"
-   ],
-   "answer": 0,
-   "explanation": "Prawda – 15 nabojów 9×19.",
-   "source": "Skrypt SW",
-   "tag": "v15",
-   "grupa": "walther-15"
   },
   {
    "id": "pragmatyka-m42",
