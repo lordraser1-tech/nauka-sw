@@ -2384,6 +2384,9 @@ function sizeLikePicker(pairs, current, onPick) {
 
 // Przy każdej aktualizacji: dopisz wpis NA POCZĄTKU listy, z numerem = numer CACHE w service-worker.js.
 const CHANGELOG = [
+  { v: 25, date: '16.11.2026', items: [
+    '🎯 Zachowanie na strzelnicy – kolejność komend na górze skryptu „GLOCK 17” w Czytaj.',
+    'Nowe w temacie GLOCK 17: 10 pytań, fiszka i układanka „ułóż w kolejności” o przebiegu strzelania.'] },
   { v: 24, date: '16.11.2026', items: [
     '🔫 Nowy skrypt w zakładce Czytaj: „GLOCK 17” – cała instrukcja obsługi pistoletu z rysunkami (Safe Action, budowa, rozkładanie, celowanie, zacięcia).',
     'Nowy temat „Pistolet GLOCK 17 (prezentacja)”: 36 pytań, 7 fiszek i 4 zestawy par – w tym pytania z rysunkiem („co oznaczono numerem…?”).'] },
