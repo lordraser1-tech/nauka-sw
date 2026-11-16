@@ -2,6 +2,19 @@
 
 Źródło: prezentacja „Instrukcja obsługi i użytkowania pistoletu 9 mm GLOCK 17 gen. 5 MOS” (materiały szkoleniowe SW). Tekst przepisany ze slajdów, rysunki ze slajdów.
 
+## Zachowanie na strzelnicy – kolejność (notatki z zajęć)
+
+1. **Podpisy** – regulamin strzelnicy, pokwitowanie odbioru amunicji.
+2. Komenda **„Przygotować się!”**:
+   - 1. magazynek – do ładownicy,
+   - 2. magazynek – na stoliku,
+   - sprawdzenie broni (skład, chwyt, postawa, zapracowanie na języku spustowym),
+   - gdy gotowi – **broń do kabury, wolna ręka w górę**.
+3. Komenda **„Ładuj broń!”** – dobywamy broń, podłączamy magazynek ze stolika, wrzucamy broń do kabury.
+4. Komenda **„W cel – ognia!”** – dobywamy broń, przeładowujemy i prowadzimy ogień do tarczy **TS-9**.
+   - Wymiana magazynka – samodzielnie; „awaria”.
+5. **Po zakończonym strzelaniu** czekamy na komendę prowadzącego strzelanie: **„Przerwij ogień, rozładuj do przejrzenia broń”**.
+
 ## Przeznaczenie
 
 - **Ogólnie** – pistolet przeznaczony jest do **samoobrony i walki na odległościach do 50 m**.

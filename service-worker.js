@@ -1,5 +1,5 @@
 // Po każdej zmianie plików zwiększ numer wersji, żeby telefony pobrały nowe pliki.
-const CACHE = 'nauka-sw-v27';
+const CACHE = 'nauka-sw-v28';
 const FILES = [
   './',
   'index.html',

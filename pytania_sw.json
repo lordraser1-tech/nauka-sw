@@ -1,7 +1,7 @@
 {
  "meta": {
   "tytul": "Szkolenie chorążych SW – baza do nauki",
-  "wersja": 10,
+  "wersja": 11,
   "data": "2026-11-16",
   "zrodla": "Ustawa o ŚPB (Dz.U. 2026 poz. 244), ustawa o SW (Dz.U. 2025 poz. 1750), kkw (Dz.U. 2025 poz. 911), rozporządzenie o oddziaływaniach penitencjarnych (Dz.U. 2024 poz. 1344), rozporządzenie o ośrodkach diagnostycznych (Dz.U. 2023 poz. 1677), rozporządzenie o ochronie jednostek SW (Dz.U. 2016 poz. 1804); materiały kursu: pytania kontrolne (psycholodzy 1–29, penitencjarne 28–53), lista 124 pytań, SPECJALIZACJA_2 (77 zagadnień), Skrypt SW V15; prezentacja „Instrukcja obsługi i użytkowania pistoletu 9 mm GLOCK 17 gen. 5 MOS”",
   "typy": {
@@ -13547,6 +13547,202 @@
    "tag": "glock-prez",
    "img": "obrazy/glock/czesci.jpg",
    "imgAlt": "GLOCK 17 częściowo rozłożony, części 1–5"
+  },
+  {
+   "id": "glock-sf01",
+   "deck": "glock",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Strzelnica – kolejność i komendy (co robisz przy każdej)",
+   "back": "1. Podpisy: regulamin strzelnicy, pokwitowanie odbioru amunicji. 2. „Przygotować się!” – 1. mag. do ładownicy, 2. mag. na stoliku, sprawdzenie broni (skład, chwyt, postawa, zapracowanie na języku spustowym); gdy gotowi – broń do kabury, wolna ręka w górę. 3. „Ładuj broń!” – dobywamy broń, podłączamy mag. ze stolika, broń do kabury. 4. „W cel – ognia!” – dobywamy broń, przeładowujemy, ogień do tarczy TS-9; wymiana mag. samodzielnie. 5. Po strzelaniu czekamy na komendę: „Przerwij ogień, rozładuj do przejrzenia broń”.",
+   "source": "notatki z zajęć – zachowanie na strzelnicy",
+   "tag": "strzelnica"
+  },
+  {
+   "id": "glock-so01",
+   "deck": "glock",
+   "type": "order",
+   "naPamiec": true,
+   "prompt": "Ułóż w kolejności przebieg strzelania na strzelnicy",
+   "steps": [
+    "Podpisy: regulamin strzelnicy i pokwitowanie odbioru amunicji",
+    "„Przygotować się!” – magazynki na miejsca, sprawdzenie broni, broń do kabury, wolna ręka w górę",
+    "„Ładuj broń!” – dobycie broni, podłączenie magazynka ze stolika, broń do kabury",
+    "„W cel – ognia!” – dobycie broni, przeładowanie, ogień do tarczy TS-9",
+    "„Przerwij ogień, rozładuj do przejrzenia broń”"
+   ],
+   "source": "notatki z zajęć – zachowanie na strzelnicy",
+   "tag": "strzelnica"
+  },
+  {
+   "id": "glock-sm01",
+   "deck": "glock",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Co podpisuje się na strzelnicy przed strzelaniem?",
+   "options": [
+    "tylko listę obecności",
+    "regulamin strzelnicy i pokwitowanie odbioru amunicji",
+    "metryczkę broni",
+    "protokół z przeglądu broni"
+   ],
+   "answer": 1,
+   "explanation": "Podpisy: regulamin strzelnicy i pokwitowanie odbioru amunicji.",
+   "source": "notatki z zajęć – zachowanie na strzelnicy",
+   "tag": "strzelnica"
+  },
+  {
+   "id": "glock-sm02",
+   "deck": "glock",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Po komendzie „Przygotować się!” pierwszy magazynek umieszczasz:",
+   "options": [
+    "na stoliku",
+    "w broni",
+    "w ładownicy",
+    "w kieszeni munduru"
+   ],
+   "answer": 2,
+   "explanation": "1. magazynek – do ładownicy, 2. – na stoliku.",
+   "source": "notatki z zajęć – zachowanie na strzelnicy",
+   "tag": "strzelnica"
+  },
+  {
+   "id": "glock-sm03",
+   "deck": "glock",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Po komendzie „Przygotować się!” drugi magazynek kładziesz:",
+   "options": [
+    "na stoliku",
+    "w ładownicy",
+    "w broni",
+    "u prowadzącego strzelanie"
+   ],
+   "answer": 0,
+   "explanation": "2. magazynek – na stoliku; to jego podłączasz po komendzie „Ładuj broń!”.",
+   "source": "notatki z zajęć – zachowanie na strzelnicy",
+   "tag": "strzelnica"
+  },
+  {
+   "id": "glock-sm04",
+   "deck": "glock",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Jak sygnalizujesz gotowość po komendzie „Przygotować się!”?",
+   "options": [
+    "meldujesz głośno „Gotów!”",
+    "kładziesz broń na stoliku",
+    "podnosisz broń lufą do góry",
+    "broń w kaburze, wolna ręka w górę"
+   ],
+   "answer": 3,
+   "explanation": "Gdy gotowi – broń do kabury, wolna ręka w górę.",
+   "source": "notatki z zajęć – zachowanie na strzelnicy",
+   "tag": "strzelnica"
+  },
+  {
+   "id": "glock-sm05",
+   "deck": "glock",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Co robisz po komendzie „Ładuj broń!”?",
+   "options": [
+    "dobywasz broń, podłączasz magazynek ze stolika, broń wraca do kabury",
+    "dobywasz broń, przeładowujesz i strzelasz",
+    "podłączasz magazynek z ładownicy i celujesz",
+    "przeładowujesz broń w kaburze"
+   ],
+   "answer": 0,
+   "explanation": "„Ładuj broń!” – dobywamy broń, podłączamy magazynek ze stolika, broń do kabury. Przeładowanie dopiero po „W cel – ognia!”.",
+   "source": "notatki z zajęć – zachowanie na strzelnicy",
+   "tag": "strzelnica"
+  },
+  {
+   "id": "glock-sm06",
+   "deck": "glock",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Na którą komendę przeładowujesz broń i prowadzisz ogień?",
+   "options": [
+    "„Ładuj broń!”",
+    "„Przygotować się!”",
+    "„W cel – ognia!”",
+    "„Przerwij ogień!”"
+   ],
+   "answer": 2,
+   "explanation": "„W cel – ognia!” – dobywamy broń, przeładowujemy i prowadzimy ogień do tarczy TS-9.",
+   "source": "notatki z zajęć – zachowanie na strzelnicy",
+   "tag": "strzelnica"
+  },
+  {
+   "id": "glock-sm07",
+   "deck": "glock",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Do jakiej tarczy prowadzi się ogień według notatek ze strzelnicy?",
+   "options": [
+    "TS-2",
+    "TS-9",
+    "TS-4",
+    "TS-1"
+   ],
+   "answer": 1,
+   "explanation": "Tarcza TS-9.",
+   "source": "notatki z zajęć – zachowanie na strzelnicy",
+   "tag": "strzelnica"
+  },
+  {
+   "id": "glock-sm08",
+   "deck": "glock",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Kto wymienia magazynek w trakcie strzelania?",
+   "options": [
+    "prowadzący strzelanie",
+    "pomocnik prowadzącego",
+    "nikt – strzela się jednym magazynkiem",
+    "strzelający samodzielnie"
+   ],
+   "answer": 3,
+   "explanation": "Wymiana magazynka – samodzielnie.",
+   "source": "notatki z zajęć – zachowanie na strzelnicy",
+   "tag": "strzelnica"
+  },
+  {
+   "id": "glock-sm09",
+   "deck": "glock",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Co robisz po zakończonym strzelaniu?",
+   "options": [
+    "od razu rozładowujesz broń i chowasz ją do kabury",
+    "czekasz na komendę prowadzącego strzelanie",
+    "oddajesz broń na stolik i odchodzisz",
+    "sam sprawdzasz tarczę"
+   ],
+   "answer": 1,
+   "explanation": "Czekamy na komendę prowadzącego: „Przerwij ogień, rozładuj do przejrzenia broń”.",
+   "source": "notatki z zajęć – zachowanie na strzelnicy",
+   "tag": "strzelnica"
+  },
+  {
+   "id": "glock-sm10",
+   "deck": "glock",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Jak brzmi komenda prowadzącego po zakończonym strzelaniu?",
+   "options": [
+    "„Stop! Broń na stolik!”",
+    "„Koniec strzelania, zabezpiecz broń”",
+    "„Przerwij ogień, rozładuj do przejrzenia broń”",
+    "„Rozładuj, broń do kabury”"
+   ],
+   "answer": 2,
+   "explanation": "„Przerwij ogień, rozładuj do przejrzenia broń”.",
+   "source": "notatki z zajęć – zachowanie na strzelnicy",
+   "tag": "strzelnica"
   }
  ]
 }
