@@ -1,9 +1,9 @@
 {
  "meta": {
   "tytul": "Szkolenie chorążych SW – baza do nauki",
-  "wersja": 9,
-  "data": "2026-11-13",
-  "zrodla": "Ustawa o ŚPB (Dz.U. 2026 poz. 244), ustawa o SW (Dz.U. 2025 poz. 1750), kkw (Dz.U. 2025 poz. 911), rozporządzenie o oddziaływaniach penitencjarnych (Dz.U. 2024 poz. 1344), rozporządzenie o ośrodkach diagnostycznych (Dz.U. 2023 poz. 1677), rozporządzenie o ochronie jednostek SW (Dz.U. 2016 poz. 1804); materiały kursu: pytania kontrolne (psycholodzy 1–29, penitencjarne 28–53), lista 124 pytań, SPECJALIZACJA_2 (77 zagadnień), Skrypt SW V15",
+  "wersja": 10,
+  "data": "2026-11-16",
+  "zrodla": "Ustawa o ŚPB (Dz.U. 2026 poz. 244), ustawa o SW (Dz.U. 2025 poz. 1750), kkw (Dz.U. 2025 poz. 911), rozporządzenie o oddziaływaniach penitencjarnych (Dz.U. 2024 poz. 1344), rozporządzenie o ośrodkach diagnostycznych (Dz.U. 2023 poz. 1677), rozporządzenie o ochronie jednostek SW (Dz.U. 2016 poz. 1804); materiały kursu: pytania kontrolne (psycholodzy 1–29, penitencjarne 28–53), lista 124 pytań, SPECJALIZACJA_2 (77 zagadnień), Skrypt SW V15; prezentacja „Instrukcja obsługi i użytkowania pistoletu 9 mm GLOCK 17 gen. 5 MOS”",
   "typy": {
    "flashcard": "przód (front) i tył (back)",
    "mcq": "pytanie, opcje, indeks poprawnej odpowiedzi (answer, liczony od 0), wyjaśnienie",
@@ -95,6 +95,11 @@
   {
    "id": "historia",
    "name": "Historia więziennictwa i standardy międzynarodowe",
+   "czesc": "unitarna"
+  },
+  {
+   "id": "glock",
+   "name": "Pistolet GLOCK 17 (prezentacja)",
    "czesc": "unitarna"
   }
  ],
@@ -12666,6 +12671,882 @@
    ],
    "source": "materiał historyczny SW",
    "tag": "v21"
+  },
+  {
+   "id": "glock-m01",
+   "deck": "glock",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Pistolet GLOCK 17 strzela:",
+   "options": [
+    "ogniem ciągłym (seriami)",
+    "seriami po 3 strzały",
+    "wyłącznie po ręcznym przeładowaniu",
+    "ogniem pojedynczym"
+   ],
+   "answer": 3,
+   "explanation": "Broń automatyczna samopowtarzalna – kolejny strzał przygotowuje się sam, ale strzela się ogniem pojedynczym.",
+   "source": "prezentacja GLOCK 17 gen. 5 MOS, slajd 3",
+   "tag": "glock-prez"
+  },
+  {
+   "id": "glock-m02",
+   "deck": "glock",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Odryglowanie lufy z komorą nabojową w GLOCK 17 następuje przez:",
+   "options": [
+    "obrót lufy wokół jej osi",
+    "przekoszenie lufy w płaszczyźnie pionowej",
+    "odprowadzenie gazów prochowych na tłok",
+    "przesunięcie rygla w płaszczyźnie poziomej"
+   ],
+   "answer": 1,
+   "explanation": "Po krótkim odcinku odrzutu lufa przekosza się w płaszczyźnie pionowej i rozłącza z zamkiem.",
+   "source": "prezentacja GLOCK 17 gen. 5 MOS, slajd 3",
+   "tag": "glock-prez"
+  },
+  {
+   "id": "glock-m03",
+   "deck": "glock",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Co przesuwa się dalej do tyłu po odryglowaniu lufy?",
+   "options": [
+    "zespół zamka z lufą",
+    "tylko lufa",
+    "tylko zamek – przeładowując pistolet",
+    "szkielet razem z zamkiem"
+   ],
+   "answer": 2,
+   "explanation": "Lufa się zatrzymuje, dalej do tyłu idzie tylko zamek i przeładowuje broń.",
+   "source": "prezentacja GLOCK 17 gen. 5 MOS, slajd 3",
+   "tag": "glock-prez"
+  },
+  {
+   "id": "glock-m04",
+   "deck": "glock",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Zamek GLOCK 17 rygluje się:",
+   "options": [
+    "powiększoną komorą nabojową w oknie wyrzutnika",
+    "ryglem obrotowym w przedniej części zamka",
+    "zatrzaskiem magazynka",
+    "dźwignią zatrzymania zamka"
+   ],
+   "answer": 0,
+   "explanation": "Wracając, zamek wprowadza nabój do komory i rygluje się powiększoną komorą nabojową w oknie wyrzutnika.",
+   "source": "prezentacja GLOCK 17 gen. 5 MOS, slajd 3",
+   "tag": "glock-prez"
+  },
+  {
+   "id": "glock-m05",
+   "deck": "glock",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "W systemie Safe Action iglica po przeładowaniu jest:",
+   "options": [
+    "napięta całkowicie",
+    "całkowicie zwolniona",
+    "napięta częściowo – resztę napina strzelec, naciskając spust",
+    "zablokowana do czasu ręcznego odbezpieczenia"
+   ],
+   "answer": 2,
+   "explanation": "Iglica jest napięta częściowo; naciśnięcie języka spustowego dopina sprężynę iglicy i ją zwalnia.",
+   "source": "prezentacja GLOCK 17 gen. 5 MOS, slajd 3",
+   "tag": "glock-prez"
+  },
+  {
+   "id": "glock-m06",
+   "deck": "glock",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Co unosi bezpiecznik (blokadę) iglicy w chwili ściągania spustu?",
+   "options": [
+    "krzywka zamka",
+    "szyna spustowa (jej występ)",
+    "sprężyna urządzenia powrotnego",
+    "zaczep do rozkładania"
+   ],
+   "answer": 1,
+   "explanation": "Szyna spustowa unosi bezpiecznik iglicy, dzięki czemu iglica może uderzyć w spłonkę.",
+   "source": "prezentacja GLOCK 17 gen. 5 MOS, slajd 3",
+   "tag": "glock-prez",
+   "grupa": "glock-szyna"
+  },
+  {
+   "id": "glock-f01",
+   "deck": "glock",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "GLOCK 17 – krótka charakterystyka (automatyka)",
+   "back": "Broń automatyczna, samopowtarzalna, ogień pojedynczy. Automatyka: krótki odrzut lufy. Odryglowanie: przekoszenie lufy w płaszczyźnie pionowej, dalej do tyłu idzie tylko zamek (przeładowanie). Ryglowanie: powiększoną komorą nabojową w oknie wyrzutnika. Safe Action: iglica po przeładowaniu napięta częściowo, resztę napina naciśnięcie spustu; szyna spustowa unosi bezpiecznik iglicy.",
+   "source": "prezentacja GLOCK 17 gen. 5 MOS, slajd 3",
+   "tag": "glock-prez"
+  },
+  {
+   "id": "glock-p01",
+   "deck": "glock",
+   "type": "pairs",
+   "naPamiec": false,
+   "title": "GLOCK 17 – jak działa",
+   "pairs": [
+    [
+     "Automatyka",
+     "krótki odrzut lufy"
+    ],
+    [
+     "Odryglowanie",
+     "przekoszenie lufy w płaszczyźnie pionowej"
+    ],
+    [
+     "Ryglowanie",
+     "powiększona komora nabojowa w oknie wyrzutnika"
+    ],
+    [
+     "Rodzaj ognia",
+     "pojedynczy"
+    ],
+    [
+     "Iglica po przeładowaniu",
+     "napięta częściowo"
+    ],
+    [
+     "Bezpiecznik iglicy unosi",
+     "szyna spustowa"
+    ]
+   ],
+   "source": "prezentacja GLOCK 17 gen. 5 MOS, slajd 3",
+   "tag": "glock-prez"
+  },
+  {
+   "id": "glock-m07",
+   "deck": "glock",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Ile zewnętrznych bezpieczników, które trzeba osobno odbezpieczyć, ma GLOCK 17?",
+   "options": [
+    "jeden – skrzydełkowy",
+    "żadnego – wszystkie zabezpieczenia działają automatycznie",
+    "dwa – kciukowy i chwytowy",
+    "jeden – przyciskowy nad chwytem"
+   ],
+   "answer": 1,
+   "explanation": "Brak konwencjonalnych zewnętrznych bezpieczników; wszystkie działają automatycznie.",
+   "source": "prezentacja GLOCK 17 gen. 5 MOS, slajd 5",
+   "tag": "glock-prez"
+  },
+  {
+   "id": "glock-m08",
+   "deck": "glock",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Mechanizm spustowy Safe Action działa w sposób podobny do mechanizmu:",
+   "options": [
+    "SAO (pojedynczego działania)",
+    "DAO",
+    "z kurkiem zewnętrznym",
+    "broni powtarzalnej"
+   ],
+   "answer": 1,
+   "explanation": "Według prezentacji – podobnie do konwencjonalnego DAO.",
+   "source": "prezentacja GLOCK 17 gen. 5 MOS, slajd 5",
+   "tag": "glock-prez"
+  },
+  {
+   "id": "glock-m09",
+   "deck": "glock",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Bezpiecznik spustu w GLOCK 17 ma postać:",
+   "options": [
+    "obrotowej dźwigni na lewym boku szkieletu",
+    "przycisku nad chwytem",
+    "suwaka na zamku",
+    "środkowej wystającej dźwigni wbudowanej w spust"
+   ],
+   "answer": 3,
+   "explanation": "Środkowa wystająca dźwignia w spuście; w przednim położeniu blokuje ruch spustu do tyłu.",
+   "source": "prezentacja GLOCK 17 gen. 5 MOS, slajd 5",
+   "tag": "glock-prez"
+  },
+  {
+   "id": "glock-m10",
+   "deck": "glock",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Kiedy następuje odbezpieczenie bezpiecznika spustu?",
+   "options": [
+    "po wyjęciu broni z kabury",
+    "po przeładowaniu broni",
+    "gdy spust jest napinany palcem spoczywającym na języku spustowym",
+    "po wciśnięciu zatrzasku magazynka"
+   ],
+   "answer": 2,
+   "explanation": "Bezpiecznik i spust muszą być świadomie ściągnięte jednocześnie – palcem na języku spustowym.",
+   "source": "prezentacja GLOCK 17 gen. 5 MOS, slajd 5",
+   "tag": "glock-prez"
+  },
+  {
+   "id": "glock-m11",
+   "deck": "glock",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Prawda czy fałsz: GLOCK 17 może wystrzelić, gdy upadnie albo gdy na spust zadziała nacisk z boku.",
+   "options": [
+    "Prawda",
+    "Fałsz"
+   ],
+   "answer": 1,
+   "explanation": "Fałsz – bezpiecznik spustu nie pozwala na strzał po upuszczeniu ani przy nacisku poprzecznym.",
+   "source": "prezentacja GLOCK 17 gen. 5 MOS, slajd 5",
+   "tag": "glock-prez"
+  },
+  {
+   "id": "glock-f02",
+   "deck": "glock",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Bezpiecznik spustu – jak działa?",
+   "back": "Środkowa wystająca dźwignia wbudowana w spust. W przednim położeniu blokuje spust (nie może się cofnąć). Strzał pada tylko, gdy bezpiecznik i spust zostaną świadomie ściągnięte jednocześnie – palcem na języku spustowym. Upuszczenie broni ani nacisk z boku nie spowodują strzału.",
+   "source": "prezentacja GLOCK 17 gen. 5 MOS, slajd 5",
+   "tag": "glock-prez"
+  },
+  {
+   "id": "glock-m12",
+   "deck": "glock",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Blokadę iglicy w położeniu blokującym utrzymuje:",
+   "options": [
+    "sprężyna",
+    "zaczep do rozkładania",
+    "magazynek",
+    "dźwignia zatrzymania zamka"
+   ],
+   "answer": 0,
+   "explanation": "Blokada iglicy jest podparta sprężyną i zagradza iglicy drogę naprzód.",
+   "source": "prezentacja GLOCK 17 gen. 5 MOS, slajd 6",
+   "tag": "glock-prez"
+  },
+  {
+   "id": "glock-m13",
+   "deck": "glock",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Po ściągnięciu spustu blokadę iglicy unosi:",
+   "options": [
+    "łącznik",
+    "występ szyny spustowej",
+    "broda lufy",
+    "urządzenie powrotne"
+   ],
+   "answer": 1,
+   "explanation": "Występ szyny spustowej unosi blokadę i odsłania drogę iglicy.",
+   "source": "prezentacja GLOCK 17 gen. 5 MOS, slajd 6",
+   "tag": "glock-prez",
+   "grupa": "glock-szyna"
+  },
+  {
+   "id": "glock-m14",
+   "deck": "glock",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Blokada iglicy zapobiega przypadkowym wystrzałom:",
+   "options": [
+    "przy rozkładaniu broni",
+    "gdy magazynek jest pusty",
+    "na skutek bezwładności lub gdyby ekstremalna siła zerwała zamek ze szkieletu",
+    "tylko podczas przeładowania"
+   ],
+   "answer": 2,
+   "explanation": "Tak opisuje to prezentacja: bezwładność albo zerwanie zamka ze szkieletu.",
+   "source": "prezentacja GLOCK 17 gen. 5 MOS, slajd 6",
+   "tag": "glock-prez"
+  },
+  {
+   "id": "glock-m15",
+   "deck": "glock",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Co dzieje się z blokadą iglicy w czasie odrzutu?",
+   "options": [
+    "zostaje uniesiona do kolejnego strzału",
+    "opada pod wpływem sprężyny (nie jest już podparta spustem)",
+    "blokuje zamek w tylnym położeniu",
+    "wysuwa się z gniazda"
+   ],
+   "answer": 1,
+   "explanation": "W czasie odrzutu blokada, niepodparta spustem, opada pod wpływem sprężyny.",
+   "source": "prezentacja GLOCK 17 gen. 5 MOS, slajd 6",
+   "tag": "glock-prez"
+  },
+  {
+   "id": "glock-f03",
+   "deck": "glock",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Blokada iglicy – jak działa?",
+   "back": "Podparta sprężyną blokada stoi na drodze iglicy. Po ściągnięciu spustu występ szyny spustowej ją unosi i odsłania drogę iglicy. W czasie odrzutu, niepodparta spustem, opada pod wpływem sprężyny. Chroni przed przypadkowym strzałem na skutek bezwładności lub zerwania zamka ze szkieletu.",
+   "source": "prezentacja GLOCK 17 gen. 5 MOS, slajd 6",
+   "tag": "glock-prez"
+  },
+  {
+   "id": "glock-m16",
+   "deck": "glock",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Integralny zaczep spustowy w GLOCK 17 to:",
+   "options": [
+    "rozszerzony w formie krzyża tylny koniec szyny spustowej",
+    "przedni koniec iglicy",
+    "część zatrzasku magazynka",
+    "wystająca dźwignia w spuście"
+   ],
+   "answer": 0,
+   "explanation": "Tylny koniec szyny spustowej w formie krzyża = zaczep spustowy.",
+   "source": "prezentacja GLOCK 17 gen. 5 MOS, slajd 7",
+   "tag": "glock-prez"
+  },
+  {
+   "id": "glock-m17",
+   "deck": "glock",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Na czym spoczywają ramiona zaczepu spustowego (bezpiecznik zaczepu spustowego)?",
+   "options": [
+    "na sprężynie urządzenia powrotnego",
+    "na brodzie lufy",
+    "na dźwigni zatrzymania zamka",
+    "na specjalnie ukształtowanych półkach tylnej wkładki"
+   ],
+   "answer": 3,
+   "explanation": "Półki tylnej wkładki stanowią bezpiecznik zaczepu spustowego.",
+   "source": "prezentacja GLOCK 17 gen. 5 MOS, slajd 7",
+   "tag": "glock-prez"
+  },
+  {
+   "id": "glock-m18",
+   "deck": "glock",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Co w czasie odrzutu wciska łącznik, uwalniając zaczep spustowy?",
+   "options": [
+    "palec strzelca",
+    "krzywka zamka",
+    "sprężyna magazynka",
+    "broda lufy"
+   ],
+   "answer": 1,
+   "explanation": "Krzywka zamka wciska łącznik; zaczep wraca pod wpływem swojej sprężyny.",
+   "source": "prezentacja GLOCK 17 gen. 5 MOS, slajd 7",
+   "tag": "glock-prez"
+  },
+  {
+   "id": "glock-m19",
+   "deck": "glock",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Po powrocie do pozycji wyjściowej zaczep spustowy przechwytuje:",
+   "options": [
+    "brodę lufy",
+    "łuskę",
+    "brodę iglicy",
+    "nabój z magazynka"
+   ],
+   "answer": 2,
+   "explanation": "Zaczep przechwytuje brodę iglicy, a jego ramiona wracają na półkę do kolejnego ściągnięcia spustu.",
+   "source": "prezentacja GLOCK 17 gen. 5 MOS, slajd 7",
+   "tag": "glock-prez"
+  },
+  {
+   "id": "glock-f04",
+   "deck": "glock",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Bezpiecznik zaczepu spustowego – jak działa?",
+   "back": "Tylny koniec szyny spustowej (w formie krzyża) to zaczep spustowy; jego ramiona leżą na półkach tylnej wkładki. Ściągnięcie spustu spycha je do zagłębienia, łącznik ściąga zaczep w dół, aż oddzieli się od brody iglicy (strzał). W czasie odrzutu krzywka zamka wciska łącznik, zaczep wraca (sprężyna zaczepu), przechwytuje brodę iglicy i wraca na półkę.",
+   "source": "prezentacja GLOCK 17 gen. 5 MOS, slajd 7",
+   "tag": "glock-prez"
+  },
+  {
+   "id": "glock-p02",
+   "deck": "glock",
+   "type": "pairs",
+   "naPamiec": false,
+   "title": "Safe Action – kto co robi",
+   "pairs": [
+    [
+     "Bezpiecznik spustu",
+     "blokuje ruch spustu do tyłu"
+    ],
+    [
+     "Blokada iglicy",
+     "zagradza iglicy drogę naprzód"
+    ],
+    [
+     "Szyna spustowa",
+     "unosi blokadę iglicy"
+    ],
+    [
+     "Sprężyna blokady",
+     "opuszcza blokadę w czasie odrzutu"
+    ],
+    [
+     "Krzywka zamka",
+     "wciska łącznik w czasie odrzutu"
+    ],
+    [
+     "Półki tylnej wkładki",
+     "podpierają ramiona zaczepu spustowego"
+    ],
+    [
+     "Zaczep spustowy",
+     "przechwytuje brodę iglicy"
+    ]
+   ],
+   "source": "prezentacja GLOCK 17 gen. 5 MOS, slajd 7",
+   "tag": "glock-prez"
+  },
+  {
+   "id": "glock-m20",
+   "deck": "glock",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Na schemacie „System GLOCK Safe Action” oznaczono trzy zabezpieczenia. Które?",
+   "options": [
+    "bezpiecznik skrzydełkowy, zabezpieczenie iglicy, wskaźnik naboju w komorze",
+    "bezpiecznik spustu, zabezpieczenie iglicy, bezpieczeństwo podczas upadku",
+    "bezpiecznik spustu, bezpiecznik chwytowy, blokada magazynka",
+    "bezpiecznik kciukowy, zabezpieczenie iglicy, zatrzask magazynka"
+   ],
+   "answer": 1,
+   "explanation": "1 – bezpiecznik spustu, 2 – zabezpieczenie iglicy, 3 – bezpieczeństwo podczas upadku.",
+   "source": "prezentacja GLOCK 17 gen. 5 MOS, slajd 8",
+   "tag": "glock-prez"
+  },
+  {
+   "id": "glock-m21",
+   "deck": "glock",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Który bezpiecznik z prezentacji odpowiada na schemacie Safe Action za „bezpieczeństwo podczas upadku”?",
+   "options": [
+    "bezpiecznik zaczepu spustowego",
+    "zatrzask magazynka",
+    "dźwignia zatrzymania zamka",
+    "zaczep do rozkładania"
+   ],
+   "answer": 0,
+   "explanation": "Trzy bezpieczniki z prezentacji: spustu, blokada iglicy i bezpiecznik zaczepu spustowego – ten ostatni to na schemacie „bezpieczeństwo podczas upadku”.",
+   "source": "prezentacja GLOCK 17 gen. 5 MOS, slajd 8",
+   "tag": "glock-prez"
+  },
+  {
+   "id": "glock-f05",
+   "deck": "glock",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "System Safe Action – 3 automatyczne zabezpieczenia",
+   "back": "1. Bezpiecznik spustu. 2. Zabezpieczenie (blokada) iglicy. 3. Bezpieczeństwo podczas upadku – bezpiecznik zaczepu spustowego. Brak zewnętrznych bezpieczników do ręcznego odbezpieczania; działanie podobne do DAO.",
+   "source": "prezentacja GLOCK 17 gen. 5 MOS, slajd 8",
+   "tag": "glock-prez"
+  },
+  {
+   "id": "glock-b03",
+   "deck": "glock",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Co oznaczono na rysunku numerem 3?",
+   "options": [
+    "zaczep do rozkładania",
+    "zatrzask magazynka",
+    "dźwignia zatrzymania zamka",
+    "muszka"
+   ],
+   "answer": 0,
+   "explanation": "Nr 3 – zaczep do rozkładania.",
+   "source": "prezentacja GLOCK 17 gen. 5 MOS, slajd 9",
+   "tag": "glock-prez",
+   "img": "obrazy/glock/budowa.jpg",
+   "imgAlt": "Pistolet GLOCK 17 z ponumerowanymi elementami 1–12"
+  },
+  {
+   "id": "glock-b05",
+   "deck": "glock",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Co oznaczono na rysunku numerem 5?",
+   "options": [
+    "zamek",
+    "dźwignia zatrzymania zamka",
+    "chwyt",
+    "muszka"
+   ],
+   "answer": 1,
+   "explanation": "Nr 5 – dźwignia zatrzymania zamka.",
+   "source": "prezentacja GLOCK 17 gen. 5 MOS, slajd 9",
+   "tag": "glock-prez",
+   "img": "obrazy/glock/budowa.jpg",
+   "imgAlt": "Pistolet GLOCK 17 z ponumerowanymi elementami 1–12"
+  },
+  {
+   "id": "glock-b09",
+   "deck": "glock",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Co oznaczono na rysunku numerem 9?",
+   "options": [
+    "magazynek",
+    "chwyt",
+    "zatrzask magazynka",
+    "zamek"
+   ],
+   "answer": 2,
+   "explanation": "Nr 9 – zatrzask magazynka.",
+   "source": "prezentacja GLOCK 17 gen. 5 MOS, slajd 9",
+   "tag": "glock-prez",
+   "img": "obrazy/glock/budowa.jpg",
+   "imgAlt": "Pistolet GLOCK 17 z ponumerowanymi elementami 1–12"
+  },
+  {
+   "id": "glock-b11",
+   "deck": "glock",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Co oznaczono na rysunku numerem 11?",
+   "options": [
+    "chwyt",
+    "wylot lufy",
+    "muszka",
+    "szyna montażowa"
+   ],
+   "answer": 3,
+   "explanation": "Nr 11 – szyna montażowa.",
+   "source": "prezentacja GLOCK 17 gen. 5 MOS, slajd 9",
+   "tag": "glock-prez",
+   "img": "obrazy/glock/budowa.jpg",
+   "imgAlt": "Pistolet GLOCK 17 z ponumerowanymi elementami 1–12"
+  },
+  {
+   "id": "glock-b01",
+   "deck": "glock",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Co oznaczono na rysunku numerem 1?",
+   "options": [
+    "muszka",
+    "kabłąk",
+    "zatrzask magazynka",
+    "zaczep do rozkładania"
+   ],
+   "answer": 0,
+   "explanation": "Nr 1 – muszka.",
+   "source": "prezentacja GLOCK 17 gen. 5 MOS, slajd 9",
+   "tag": "glock-prez",
+   "img": "obrazy/glock/budowa.jpg",
+   "imgAlt": "Pistolet GLOCK 17 z ponumerowanymi elementami 1–12"
+  },
+  {
+   "id": "glock-b04",
+   "deck": "glock",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Co oznaczono na rysunku numerem 4?",
+   "options": [
+    "zatrzask magazynka",
+    "celownik",
+    "wylot lufy",
+    "magazynek"
+   ],
+   "answer": 1,
+   "explanation": "Nr 4 – celownik.",
+   "source": "prezentacja GLOCK 17 gen. 5 MOS, slajd 9",
+   "tag": "glock-prez",
+   "img": "obrazy/glock/budowa.jpg",
+   "imgAlt": "Pistolet GLOCK 17 z ponumerowanymi elementami 1–12"
+  },
+  {
+   "id": "glock-b12",
+   "deck": "glock",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Co oznaczono na rysunku numerem 12?",
+   "options": [
+    "szyna montażowa",
+    "muszka",
+    "wylot lufy",
+    "zamek"
+   ],
+   "answer": 2,
+   "explanation": "Nr 12 – wylot lufy.",
+   "source": "prezentacja GLOCK 17 gen. 5 MOS, slajd 9",
+   "tag": "glock-prez",
+   "img": "obrazy/glock/budowa.jpg",
+   "imgAlt": "Pistolet GLOCK 17 z ponumerowanymi elementami 1–12"
+  },
+  {
+   "id": "glock-b06",
+   "deck": "glock",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Co oznaczono na rysunku numerem 6?",
+   "options": [
+    "celownik",
+    "spust",
+    "szyna montażowa",
+    "kabłąk"
+   ],
+   "answer": 3,
+   "explanation": "Nr 6 – kabłąk.",
+   "source": "prezentacja GLOCK 17 gen. 5 MOS, slajd 9",
+   "tag": "glock-prez",
+   "img": "obrazy/glock/budowa.jpg",
+   "imgAlt": "Pistolet GLOCK 17 z ponumerowanymi elementami 1–12"
+  },
+  {
+   "id": "glock-m22",
+   "deck": "glock",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Dźwignia zatrzymania zamka w GLOCK 17 gen. 5 MOS jest:",
+   "options": [
+    "tylko po lewej stronie",
+    "tylko po prawej stronie",
+    "obustronna",
+    "montowana na szynie montażowej"
+   ],
+   "answer": 2,
+   "explanation": "Na slajdzie: dźwignia zatrzymania zamka (obustronna).",
+   "source": "prezentacja GLOCK 17 gen. 5 MOS, slajd 9",
+   "tag": "glock-prez"
+  },
+  {
+   "id": "glock-m23",
+   "deck": "glock",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Który przyrząd celowniczy jest z przodu zamka, a który z tyłu?",
+   "options": [
+    "z przodu celownik, z tyłu muszka",
+    "z przodu muszka, z tyłu celownik",
+    "oba z tyłu zamka",
+    "z przodu szyna montażowa, z tyłu muszka"
+   ],
+   "answer": 1,
+   "explanation": "Nr 1 – muszka (przód), nr 4 – celownik (tył).",
+   "source": "prezentacja GLOCK 17 gen. 5 MOS, slajd 9",
+   "tag": "glock-prez"
+  },
+  {
+   "id": "glock-f06",
+   "deck": "glock",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Ogólna budowa GLOCK 17 – wymień elementy 1–12 z rysunku",
+   "back": "1 muszka, 2 zamek, 3 zaczep do rozkładania, 4 celownik, 5 dźwignia zatrzymania zamka (obustronna), 6 kabłąk, 7 chwyt, 8 magazynek, 9 zatrzask magazynka, 10 spust, 11 szyna montażowa, 12 wylot lufy.",
+   "source": "prezentacja GLOCK 17 gen. 5 MOS, slajd 9",
+   "tag": "glock-prez",
+   "img": "obrazy/glock/budowa.jpg",
+   "imgAlt": "Pistolet GLOCK 17 z ponumerowanymi elementami 1–12"
+  },
+  {
+   "id": "glock-p03",
+   "deck": "glock",
+   "type": "pairs",
+   "naPamiec": false,
+   "title": "Budowa GLOCK 17 – numer na rysunku",
+   "pairs": [
+    [
+     "Nr 1",
+     "muszka"
+    ],
+    [
+     "Nr 2",
+     "zamek"
+    ],
+    [
+     "Nr 3",
+     "zaczep do rozkładania"
+    ],
+    [
+     "Nr 4",
+     "celownik"
+    ],
+    [
+     "Nr 5",
+     "dźwignia zatrzymania zamka"
+    ],
+    [
+     "Nr 6",
+     "kabłąk"
+    ],
+    [
+     "Nr 7",
+     "chwyt"
+    ],
+    [
+     "Nr 8",
+     "magazynek"
+    ],
+    [
+     "Nr 9",
+     "zatrzask magazynka"
+    ],
+    [
+     "Nr 10",
+     "spust"
+    ],
+    [
+     "Nr 11",
+     "szyna montażowa"
+    ],
+    [
+     "Nr 12",
+     "wylot lufy"
+    ]
+   ],
+   "source": "prezentacja GLOCK 17 gen. 5 MOS, slajd 9",
+   "tag": "glock-prez",
+   "img": "obrazy/glock/budowa.jpg",
+   "imgAlt": "Pistolet GLOCK 17 z ponumerowanymi elementami 1–12"
+  },
+  {
+   "id": "glock-c03",
+   "deck": "glock",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Broń częściowo rozłożona: co oznaczono numerem 3?",
+   "options": [
+    "lufa",
+    "urządzenie powrotne",
+    "szkielet",
+    "zamek"
+   ],
+   "answer": 1,
+   "explanation": "Nr 3 – urządzenie powrotne.",
+   "source": "prezentacja GLOCK 17 gen. 5 MOS, slajd 16",
+   "tag": "glock-prez",
+   "img": "obrazy/glock/czesci.jpg",
+   "imgAlt": "GLOCK 17 częściowo rozłożony, części 1–5"
+  },
+  {
+   "id": "glock-c04",
+   "deck": "glock",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Broń częściowo rozłożona: co oznaczono numerem 4?",
+   "options": [
+    "magazynek",
+    "zamek",
+    "urządzenie powrotne",
+    "szkielet"
+   ],
+   "answer": 3,
+   "explanation": "Nr 4 – szkielet.",
+   "source": "prezentacja GLOCK 17 gen. 5 MOS, slajd 16",
+   "tag": "glock-prez",
+   "img": "obrazy/glock/czesci.jpg",
+   "imgAlt": "GLOCK 17 częściowo rozłożony, części 1–5"
+  },
+  {
+   "id": "glock-c02",
+   "deck": "glock",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Broń częściowo rozłożona: co oznaczono numerem 2?",
+   "options": [
+    "lufa",
+    "szkielet",
+    "magazynek",
+    "urządzenie powrotne"
+   ],
+   "answer": 0,
+   "explanation": "Nr 2 – lufa.",
+   "source": "prezentacja GLOCK 17 gen. 5 MOS, slajd 16",
+   "tag": "glock-prez",
+   "img": "obrazy/glock/czesci.jpg",
+   "imgAlt": "GLOCK 17 częściowo rozłożony, części 1–5"
+  },
+  {
+   "id": "glock-m24",
+   "deck": "glock",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Na ile części rozkłada się GLOCK 17 przy częściowym rozłożeniu?",
+   "options": [
+    "3",
+    "4",
+    "5",
+    "7"
+   ],
+   "answer": 2,
+   "explanation": "Zamek, lufa, urządzenie powrotne, szkielet, magazynek.",
+   "source": "prezentacja GLOCK 17 gen. 5 MOS, slajd 16",
+   "tag": "glock-prez"
+  },
+  {
+   "id": "glock-m25",
+   "deck": "glock",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Który element NIE jest jedną z części pistoletu częściowo rozłożonego?",
+   "options": [
+    "urządzenie powrotne",
+    "zamek",
+    "kabłąk",
+    "magazynek"
+   ],
+   "answer": 2,
+   "explanation": "Części: zamek, lufa, urządzenie powrotne, szkielet, magazynek. Kabłąk to fragment szkieletu.",
+   "source": "prezentacja GLOCK 17 gen. 5 MOS, slajd 16",
+   "tag": "glock-prez"
+  },
+  {
+   "id": "glock-f07",
+   "deck": "glock",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Broń częściowo rozłożona – 5 części",
+   "back": "1 zamek, 2 lufa, 3 urządzenie powrotne, 4 szkielet, 5 magazynek.",
+   "source": "prezentacja GLOCK 17 gen. 5 MOS, slajd 16",
+   "tag": "glock-prez",
+   "img": "obrazy/glock/czesci.jpg",
+   "imgAlt": "GLOCK 17 częściowo rozłożony, części 1–5"
+  },
+  {
+   "id": "glock-p04",
+   "deck": "glock",
+   "type": "pairs",
+   "naPamiec": false,
+   "title": "Broń częściowo rozłożona – numer na zdjęciu",
+   "pairs": [
+    [
+     "Nr 1",
+     "zamek"
+    ],
+    [
+     "Nr 2",
+     "lufa"
+    ],
+    [
+     "Nr 3",
+     "urządzenie powrotne"
+    ],
+    [
+     "Nr 4",
+     "szkielet"
+    ],
+    [
+     "Nr 5",
+     "magazynek"
+    ]
+   ],
+   "source": "prezentacja GLOCK 17 gen. 5 MOS, slajd 16",
+   "tag": "glock-prez",
+   "img": "obrazy/glock/czesci.jpg",
+   "imgAlt": "GLOCK 17 częściowo rozłożony, części 1–5"
   }
  ]
 }
