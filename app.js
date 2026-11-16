@@ -13,6 +13,7 @@ const DOCS = [
   { file: 'skrypt_unitarna.md', name: 'Część unitarna' },
   { file: 'skrypt_psycholog.md', name: 'Psycholog' },
   { file: 'instrukcje_stanowiskowe.md', name: 'Stanowiska' },
+  { file: 'glock17.md', name: 'GLOCK 17' },
 ];
 
 const $app = document.getElementById('app');
@@ -211,6 +212,11 @@ function tags(item) {
     item.type === 'flashcard' && h('span', { class: 'tag' }, box ? `Pudełko ${box}` : 'Nowa'),
     HAS_SERVER && h('button', { type: 'button', class: 'report-btn', title: 'Zgłoś błąd w tym pytaniu', 'aria-label': 'Zgłoś błąd w tym pytaniu',
       onclick: e => { e.stopPropagation(); showReport(item); } }, '⚑ Zgłoś błąd'));
+}
+
+// Rysunek do pytania (pole „img” w bazie), np. numeracja części broni.
+function qImg(item) {
+  return item.img ? h('img', { class: 'q-img', src: item.img, alt: item.imgAlt || 'Rysunek do pytania', loading: 'lazy' }) : null;
 }
 
 function sourceEl(item) {
@@ -431,7 +437,7 @@ function flashView(item, onGrade) {
   }
   const card = h('div', { class: 'card flash', role: 'button', tabindex: '0', 'aria-label': 'Karta – dotknij, aby odwrócić',
     onclick: flip, onkeydown: e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); flip(); } } },
-    tags(item), h('div', { class: 'fc-front' }, item.front), back, src, hint);
+    tags(item), h('div', { class: 'fc-front' }, item.front), qImg(item), back, src, hint);
   return [card, h('div', { class: 'actions' }, showBtn, grades)];
 }
 
@@ -461,7 +467,7 @@ function mcqView(item, onResult, onNext, nextLabel) {
     onResult(ok);
     nextButton(actions, onNext, nextLabel);
   }
-  return [h('div', { class: 'card' }, tags(item), h('div', { class: 'question' }, item.question), h('div', { class: 'options' }, buttons), fb), actions];
+  return [h('div', { class: 'card' }, tags(item), h('div', { class: 'question' }, item.question), qImg(item), h('div', { class: 'options' }, buttons), fb), actions];
 }
 
 function clozeView(item, onResult, onNext, nextLabel) {
@@ -933,7 +939,7 @@ function pairsView(item, onResult, onNext, nextLabel) {
       (mistakes === 0 && bielikComment('pary.ok')) || h('span'));
     nextButton(actions, onNext, nextLabel);
   }
-  return [h('div', { class: 'card' }, tags(item), h('h3', { class: 'case-title' }, '🧩 ' + item.title),
+  return [h('div', { class: 'card' }, tags(item), h('h3', { class: 'case-title' }, '🧩 ' + item.title), qImg(item),
     h('div', { class: 'pairs' }, h('div', { class: 'pairs-col' }, L), h('div', { class: 'pairs-col' }, R)), info), actions];
 }
 
@@ -961,7 +967,7 @@ function renderSprint() {
 
 function runSprint() {
   stopSprint();
-  const items = shuffle(pool(['mcq']));
+  const items = shuffle(pool(['mcq']).filter(it => !it.img));
   const s = sprint = { i: 0, ok: 0, bad: [], end: Date.now() + SPRINT_MS, timer: null, lock: false };
   screen('Sprint 60 s', true);
   const bar = h('div', { class: 'sprint-bar' }, h('div', { class: 'sprint-fill' }));
@@ -1068,7 +1074,7 @@ function plVoice() {
 function renderListen() {
   screen('Słuchaj', true);
   if (!('speechSynthesis' in window)) return emptyScreen('Słuchaj', '🔇', 'Ta przeglądarka nie umie czytać na głos. Spróbuj w Chrome (Android) albo Safari (iPhone).');
-  const all = pool(['flashcard']);
+  const all = pool(['flashcard']).filter(it => !it.img);
   if (!all.length) return emptyScreen('Słuchaj', '📭', 'Brak fiszek dla wybranych tematów.');
   const st = state.settings;
   const pause = () => (st.listenPause || 5) * 1000;
@@ -1323,7 +1329,7 @@ function examStep() {
       counter.textContent = `Odpowiedzi: ${answered()} / ${n}`;
     },
   }, item.options[oi]));
-  $app.append(h('div', { class: 'card' }, h('div', { class: 'question' }, item.question), h('div', { class: 'options' }, buttons)));
+  $app.append(h('div', { class: 'card' }, h('div', { class: 'question' }, item.question), qImg(item), h('div', { class: 'options' }, buttons)));
   const last = k === n - 1;
   $app.append(h('div', { class: 'actions stack' },
     h('div', { class: 'row' },
@@ -1450,7 +1456,10 @@ function mdToHtml(md) {
     const line = lines[i];
     let m;
     if (!line.trim()) { i++; continue; }
-    if ((m = line.match(/^(#{1,6})\s+(.*)$/))) {
+    if ((m = line.match(/^!\[([^\]]*)\]\(([^)\s]+)\)\s*$/))) {
+      out.push(`<figure class="md-fig"><img src="${esc(m[2])}" alt="${esc(m[1])}" loading="lazy">${m[1] ? `<figcaption>${mdInline(m[1])}</figcaption>` : ''}</figure>`);
+      i++;
+    } else if ((m = line.match(/^(#{1,6})\s+(.*)$/))) {
       out.push(`<h${m[1].length}>${mdInline(m[2])}</h${m[1].length}>`);
       i++;
     } else if (/^>/.test(line)) {
@@ -1467,7 +1476,7 @@ function mdToHtml(md) {
       out.push(mdList(buf));
     } else {
       const buf = [lines[i++]];
-      while (i < lines.length && lines[i].trim() && !/^(#{1,6}\s|>|\|)/.test(lines[i]) && !LIST_RE.test(lines[i])) buf.push(lines[i++]);
+      while (i < lines.length && lines[i].trim() && !/^(#{1,6}\s|>|\||!\[)/.test(lines[i]) && !LIST_RE.test(lines[i])) buf.push(lines[i++]);
       out.push('<p>' + mdInline(buf.join('\n')).replace(/\n/g, '<br>') + '</p>');
     }
   }
@@ -2375,6 +2384,9 @@ function sizeLikePicker(pairs, current, onPick) {
 
 // Przy każdej aktualizacji: dopisz wpis NA POCZĄTKU listy, z numerem = numer CACHE w service-worker.js.
 const CHANGELOG = [
+  { v: 24, date: '16.11.2026', items: [
+    '🔫 Nowy skrypt w zakładce Czytaj: „GLOCK 17” – cała instrukcja obsługi pistoletu z rysunkami (Safe Action, budowa, rozkładanie, celowanie, zacięcia).',
+    'Nowy temat „Pistolet GLOCK 17 (prezentacja)”: 36 pytań, 7 fiszek i 4 zestawy par – w tym pytania z rysunkiem („co oznaczono numerem…?”).'] },
   { v: 23, date: '12.11.2026', items: [
     '🦅 Chorąży Bielik melduje się na służbie! Chwali, docina, przewraca oczami i pilnuje serii.',
     'Powiadomienia od Bielika – włączysz w ⚙️ i wybierzesz godzinę (na iPhonie z ikony na ekranie początkowym).',
@@ -2588,7 +2600,7 @@ function showManual() {
       li('', 'Wszystko, na czym ostatnio się pomyliłeś – ze wszystkich tematów. Dobra odpowiedź zdejmuje pytanie z listy (i daje dodatkowe punkty za poprawę).')),
 
     sec('📚 Czytaj',
-      li('', 'Skrypty: Część unitarna, Psycholog, Stanowiska – przełączasz zakładkami u góry.'),
+      li('', 'Skrypty: Część unitarna, Psycholog, Stanowiska, GLOCK 17 – przełączasz zakładkami u góry.'),
       li('Spis treści', 'rozwijany; klik przenosi do rozdziału.'),
       li('Wyszukiwarka', 'wpisz słowo, strzałki ↑ ↓ przeskakują między trafieniami. Zaznacz „Szukaj we wszystkich skryptach”, żeby szukać wszędzie.'),
       li('', 'Aplikacja pamięta, gdzie skończyłeś czytać.')),

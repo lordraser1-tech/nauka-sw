@@ -1,5 +1,5 @@
 // Po każdej zmianie plików zwiększ numer wersji, żeby telefony pobrały nowe pliki.
-const CACHE = 'nauka-sw-v26';
+const CACHE = 'nauka-sw-v27';
 const FILES = [
   './',
   'index.html',
@@ -10,6 +10,15 @@ const FILES = [
   'skrypt_unitarna.md',
   'skrypt_psycholog.md',
   'instrukcje_stanowiskowe.md',
+  'glock17.md',
+  'obrazy/glock/safe-action.jpg',
+  'obrazy/glock/bezpiecznik-spustu.jpg',
+  'obrazy/glock/blokada-iglicy.jpg',
+  'obrazy/glock/zaczep-spustowy.jpg',
+  'obrazy/glock/budowa.jpg',
+  'obrazy/glock/rozlozony-opis.jpg',
+  'obrazy/glock/czesci.jpg',
+  'obrazy/glock/konserwacja.jpg',
   'ikony/icon.svg',
   'ikony/icon-192.png',
   'ikony/icon-512.png',
