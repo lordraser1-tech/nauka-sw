@@ -1,5 +1,5 @@
 // Po każdej zmianie plików zwiększ numer wersji, żeby telefony pobrały nowe pliki.
-const CACHE = 'nauka-sw-v28';
+const CACHE = 'nauka-sw-v29';
 const FILES = [
   './',
   'index.html',
@@ -11,6 +11,9 @@ const FILES = [
   'skrypt_psycholog.md',
   'instrukcje_stanowiskowe.md',
   'glock17.md',
+  'skrypt_penitencjarny.md',
+  'obrazy/penit/rys1-cele-kary.jpg',
+  'obrazy/penit/rys2-struktura-sw.jpg',
   'obrazy/glock/safe-action.jpg',
   'obrazy/glock/bezpiecznik-spustu.jpg',
   'obrazy/glock/blokada-iglicy.jpg',

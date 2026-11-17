@@ -14,6 +14,7 @@ const DOCS = [
   { file: 'skrypt_psycholog.md', name: 'Psycholog' },
   { file: 'instrukcje_stanowiskowe.md', name: 'Stanowiska' },
   { file: 'glock17.md', name: 'GLOCK 17' },
+  { file: 'skrypt_penitencjarny.md', name: 'Penitencjarny' },
 ];
 
 const $app = document.getElementById('app');
@@ -1690,7 +1691,7 @@ function renderRead() {
   let k = state.settings.doc;
   if (!docs[k]) k = state.settings.doc = 0;
   if (docs.length > 1) {
-    $app.append(h('div', { class: 'seg', role: 'tablist' }, docs.map((d, j) =>
+    $app.append(h('div', { class: 'seg seg-docs', role: 'tablist' }, docs.map((d, j) =>
       h('button', { type: 'button', role: 'tab', class: j === k ? 'on' : '', 'aria-selected': String(j === k), onclick: () => {
         state.settings.doc = j;
         save();
@@ -2384,6 +2385,9 @@ function sizeLikePicker(pairs, current, onPick) {
 
 // Przy każdej aktualizacji: dopisz wpis NA POCZĄTKU listy, z numerem = numer CACHE w service-worker.js.
 const CHANGELOG = [
+  { v: 26, date: '17.11.2026', items: [
+    '📘 Nowy skrypt w zakładce Czytaj: „Penitencjarny” – Zagadnienia penitencjarne (Kule 2026), 8 rozdziałów.',
+    'Nowy temat „Zagadnienia penitencjarne (prezentacja)”: 43 pytania, 9 fiszek, 6 kazusów i 4 zestawy par – klasyfikacja, komisja i sędzia penitencjarny, rozmieszczanie skazanych i tymczasowo aresztowanych.'] },
   { v: 25, date: '16.11.2026', items: [
     '🎯 Zachowanie na strzelnicy – kolejność komend na górze skryptu „GLOCK 17” w Czytaj.',
     'Nowe w temacie GLOCK 17: 10 pytań, fiszka i układanka „ułóż w kolejności” o przebiegu strzelania.'] },
@@ -2603,7 +2607,7 @@ function showManual() {
       li('', 'Wszystko, na czym ostatnio się pomyliłeś – ze wszystkich tematów. Dobra odpowiedź zdejmuje pytanie z listy (i daje dodatkowe punkty za poprawę).')),
 
     sec('📚 Czytaj',
-      li('', 'Skrypty: Część unitarna, Psycholog, Stanowiska, GLOCK 17 – przełączasz zakładkami u góry.'),
+      li('', 'Skrypty: Część unitarna, Psycholog, Stanowiska, GLOCK 17, Penitencjarny – przełączasz zakładkami u góry.'),
       li('Spis treści', 'rozwijany; klik przenosi do rozdziału.'),
       li('Wyszukiwarka', 'wpisz słowo, strzałki ↑ ↓ przeskakują między trafieniami. Zaznacz „Szukaj we wszystkich skryptach”, żeby szukać wszędzie.'),
       li('', 'Aplikacja pamięta, gdzie skończyłeś czytać.')),

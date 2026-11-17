@@ -1,9 +1,9 @@
 {
  "meta": {
   "tytul": "Szkolenie chorążych SW – baza do nauki",
-  "wersja": 11,
-  "data": "2026-11-16",
-  "zrodla": "Ustawa o ŚPB (Dz.U. 2026 poz. 244), ustawa o SW (Dz.U. 2025 poz. 1750), kkw (Dz.U. 2025 poz. 911), rozporządzenie o oddziaływaniach penitencjarnych (Dz.U. 2024 poz. 1344), rozporządzenie o ośrodkach diagnostycznych (Dz.U. 2023 poz. 1677), rozporządzenie o ochronie jednostek SW (Dz.U. 2016 poz. 1804); materiały kursu: pytania kontrolne (psycholodzy 1–29, penitencjarne 28–53), lista 124 pytań, SPECJALIZACJA_2 (77 zagadnień), Skrypt SW V15; prezentacja „Instrukcja obsługi i użytkowania pistoletu 9 mm GLOCK 17 gen. 5 MOS”",
+  "wersja": 12,
+  "data": "2026-11-17",
+  "zrodla": "Ustawa o ŚPB (Dz.U. 2026 poz. 244), ustawa o SW (Dz.U. 2025 poz. 1750), kkw (Dz.U. 2025 poz. 911), rozporządzenie o oddziaływaniach penitencjarnych (Dz.U. 2024 poz. 1344), rozporządzenie o ośrodkach diagnostycznych (Dz.U. 2023 poz. 1677), rozporządzenie o ochronie jednostek SW (Dz.U. 2016 poz. 1804); materiały kursu: pytania kontrolne (psycholodzy 1–29, penitencjarne 28–53), lista 124 pytań, SPECJALIZACJA_2 (77 zagadnień), Skrypt SW V15; prezentacja „Instrukcja obsługi i użytkowania pistoletu 9 mm GLOCK 17 gen. 5 MOS”; prezentacja i skrypt „Zagadnienia penitencjarne” (Kule 2026)",
   "typy": {
    "flashcard": "przód (front) i tył (back)",
    "mcq": "pytanie, opcje, indeks poprawnej odpowiedzi (answer, liczony od 0), wyjaśnienie",
@@ -100,6 +100,11 @@
   {
    "id": "glock",
    "name": "Pistolet GLOCK 17 (prezentacja)",
+   "czesc": "unitarna"
+  },
+  {
+   "id": "penit",
+   "name": "Zagadnienia penitencjarne (prezentacja)",
    "czesc": "unitarna"
   }
  ],
@@ -13743,6 +13748,1223 @@
    "explanation": "„Przerwij ogień, rozładuj do przejrzenia broń”.",
    "source": "notatki z zajęć – zachowanie na strzelnicy",
    "tag": "strzelnica"
+  },
+  {
+   "id": "penit-m01",
+   "deck": "penit",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Klasyfikacja skazanych oznacza:",
+   "options": [
+    "podział skazanych na grupy według określonych kryteriów – by skierować je do właściwego rodzaju i typu ZK, ustalić system wykonywania kary i rozmieścić wewnątrz zakładu",
+    "ocenę okresową postępów skazanego w resocjalizacji",
+    "nadanie skazanemu statusu „N”",
+    "przydział skazanego do pracy według kwalifikacji"
+   ],
+   "answer": 0,
+   "explanation": "Klasyfikacja = podział skazanych na grupy według kryteriów, w celu skierowania do właściwego rodzaju i typu ZK, ustalenia systemu wykonywania kary oraz rozmieszczenia wewnątrz zakładu.",
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Pojęcie klasyfikacji skazanych",
+   "tag": "penit-prez"
+  },
+  {
+   "id": "penit-m02",
+   "deck": "penit",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Klasyfikacja skazanych jest podstawowym środkiem:",
+   "options": [
+    "izolacji skazanych od społeczeństwa",
+    "indywidualizacji wykonywania kary pozbawienia wolności",
+    "karania dyscyplinarnego",
+    "kontroli korespondencji"
+   ],
+   "answer": 1,
+   "explanation": "Klasyfikacja to podstawowy środek indywidualizacji wykonywania kary, umożliwiający osiągnięcie celów wychowawczych.",
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Pojęcie klasyfikacji skazanych",
+   "tag": "penit-prez"
+  },
+  {
+   "id": "penit-m03",
+   "deck": "penit",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Klasyfikacja zewnętrzna (prawna) to podział skazanych na grupy i podgrupy w celu:",
+   "options": [
+    "rozmieszczenia w celach i oddziałach",
+    "doboru programu terapeutycznego",
+    "wyboru odpowiedniego rodzaju i typu zakładu karnego",
+    "ustalenia kolejności widzeń"
+   ],
+   "answer": 2,
+   "explanation": "Zewnętrzna = prawna → rodzaj i typ zakładu karnego. Wewnętrzna = pedagogiczna → rozmieszczenie wewnątrz ZK.",
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Podział klasyfikacji",
+   "tag": "penit-prez"
+  },
+  {
+   "id": "penit-m04",
+   "deck": "penit",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Klasyfikacja wewnętrzna inaczej nazywana jest:",
+   "options": [
+    "prawną",
+    "zewnętrzną",
+    "sądową",
+    "pedagogiczną"
+   ],
+   "answer": 3,
+   "explanation": "Wewnętrzna albo pedagogiczna – podział w celu odpowiedniego rozmieszczenia wewnątrz zakładu karnego.",
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Podział klasyfikacji",
+   "tag": "penit-prez"
+  },
+  {
+   "id": "penit-p01",
+   "deck": "penit",
+   "type": "pairs",
+   "naPamiec": false,
+   "title": "Klasyfikacja – pojęcia",
+   "pairs": [
+    [
+     "Klasyfikacja zewnętrzna",
+     "prawna – rodzaj i typ zakładu karnego"
+    ],
+    [
+     "Klasyfikacja wewnętrzna",
+     "pedagogiczna – rozmieszczenie wewnątrz ZK"
+    ],
+    [
+     "Badania osobopoznawcze",
+     "podstawa klasyfikacji i indywidualizacji"
+    ],
+    [
+     "Komisja penitencjarna",
+     "dokonuje klasyfikacji w ZK i AŚ"
+    ],
+    [
+     "Dział penitencjarny",
+     "odpowiada za rozmieszczanie skazanych"
+    ],
+    [
+     "Art. 82 § 1 kkw",
+     "cele klasyfikacji"
+    ],
+    [
+     "Art. 82 § 2 kkw",
+     "kryteria klasyfikacji"
+    ]
+   ],
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Podział klasyfikacji",
+   "tag": "penit-prez"
+  },
+  {
+   "id": "penit-f01",
+   "deck": "penit",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Cele klasyfikacji (art. 82 § 1 kkw) – wymień 5",
+   "back": "1) stworzenie warunków sprzyjających indywidualnemu postępowaniu ze skazanymi, 2) zapobieganie szkodliwym wpływom skazanych zdemoralizowanych, 3) zapewnienie skazanym bezpieczeństwa osobistego, 4) wybór właściwego systemu wykonywania kary, rodzaju i typu zakładu karnego, 5) rozmieszczenie wewnątrz zakładu karnego.",
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Cele klasyfikacji (art. 82 § 1 kkw)",
+   "tag": "penit-prez"
+  },
+  {
+   "id": "penit-m05",
+   "deck": "penit",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Który z wymienionych NIE jest celem klasyfikacji według art. 82 § 1 kkw?",
+   "options": [
+    "ustalenie wysokości wynagrodzenia za pracę skazanego",
+    "zapobieganie szkodliwym wpływom skazanych zdemoralizowanych",
+    "zapewnienie skazanym bezpieczeństwa osobistego",
+    "rozmieszczenie wewnątrz zakładu karnego"
+   ],
+   "answer": 0,
+   "explanation": "Cele: indywidualne postępowanie, zapobieganie szkodliwym wpływom zdemoralizowanych, bezpieczeństwo osobiste, wybór systemu/rodzaju/typu ZK, rozmieszczenie wewnątrz ZK.",
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Cele klasyfikacji (art. 82 § 1 kkw)",
+   "tag": "penit-prez"
+  },
+  {
+   "id": "penit-m06",
+   "deck": "penit",
+   "type": "mcq",
+   "naPamiec": true,
+   "question": "Gdzie są określone cele klasyfikacji skazanych?",
+   "options": [
+    "art. 82 § 2 kkw",
+    "art. 82 § 1 kkw",
+    "art. 76 § 1 kkw",
+    "art. 62 kk"
+   ],
+   "answer": 1,
+   "explanation": "§ 1 – cele, § 2 – kryteria.",
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Cele klasyfikacji (art. 82 § 1 kkw)",
+   "tag": "penit-prez"
+  },
+  {
+   "id": "penit-f02",
+   "deck": "penit",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Kryteria klasyfikacji (art. 82 § 2 kkw) – wymień 9",
+   "back": "1) płeć; 2) wiek; 3) uprzednie odbywanie kary pozbawienia wolności; 4) umyślność lub nieumyślność czynu; 5) czas pozostałej do odbycia kary; 6) stan zdrowia fizycznego i psychicznego, w tym stopień uzależnienia od substancji psychoaktywnej; 7) stopień demoralizacji i zagrożenia społecznego; 8) rodzaj popełnionego przestępstwa; 9) stosunek skazanego do popełnionego przestępstwa.",
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Kryteria klasyfikacji (art. 82 § 2 kkw)",
+   "tag": "penit-prez"
+  },
+  {
+   "id": "penit-m07",
+   "deck": "penit",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Które z wymienionych NIE jest kryterium klasyfikacji z art. 82 § 2 kkw?",
+   "options": [
+    "płeć",
+    "umyślność lub nieumyślność czynu",
+    "wykształcenie skazanego",
+    "stosunek skazanego do popełnionego przestępstwa"
+   ],
+   "answer": 2,
+   "explanation": "Kryteria: płeć, wiek, uprzednie odbywanie kary, umyślność/nieumyślność, czas pozostały do odbycia, stan zdrowia (w tym uzależnienie), demoralizacja i zagrożenie społeczne, rodzaj przestępstwa, stosunek do przestępstwa.",
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Kryteria klasyfikacji (art. 82 § 2 kkw)",
+   "tag": "penit-prez"
+  },
+  {
+   "id": "penit-m08",
+   "deck": "penit",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Ile kryteriów klasyfikacji wymienia art. 82 § 2 kkw?",
+   "options": [
+    "5",
+    "7",
+    "12",
+    "9"
+   ],
+   "answer": 3,
+   "explanation": "Dziewięć kryteriów – od płci do stosunku skazanego do popełnionego przestępstwa.",
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Kryteria klasyfikacji (art. 82 § 2 kkw)",
+   "tag": "penit-prez"
+  },
+  {
+   "id": "penit-m09",
+   "deck": "penit",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Stopień uzależnienia od substancji psychoaktywnej w kryteriach klasyfikacji mieści się w kryterium:",
+   "options": [
+    "stanu zdrowia fizycznego i psychicznego",
+    "stopnia demoralizacji",
+    "rodzaju popełnionego przestępstwa",
+    "wieku"
+   ],
+   "answer": 0,
+   "explanation": "Pkt 6: stan zdrowia fizycznego i psychicznego, w tym stopień uzależnienia od substancji psychoaktywnej.",
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Kryteria klasyfikacji (art. 82 § 2 kkw)",
+   "tag": "penit-prez"
+  },
+  {
+   "id": "penit-p02",
+   "deck": "penit",
+   "type": "pairs",
+   "naPamiec": false,
+   "title": "Klasyfikacja: cel czy kryterium?",
+   "pairs": [
+    [
+     "Płeć",
+     "kryterium (§ 2)"
+    ],
+    [
+     "Wiek",
+     "kryterium (§ 2)"
+    ],
+    [
+     "Stosunek do popełnionego przestępstwa",
+     "kryterium (§ 2)"
+    ],
+    [
+     "Bezpieczeństwo osobiste skazanych",
+     "cel (§ 1)"
+    ],
+    [
+     "Rozmieszczenie wewnątrz ZK",
+     "cel (§ 1)"
+    ],
+    [
+     "Zapobieganie szkodliwym wpływom zdemoralizowanych",
+     "cel (§ 1)"
+    ]
+   ],
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Kryteria klasyfikacji (art. 82 § 2 kkw)",
+   "tag": "penit-prez"
+  },
+  {
+   "id": "penit-m10",
+   "deck": "penit",
+   "type": "mcq",
+   "naPamiec": true,
+   "question": "Klasyfikacji skazanych w zakładzie karnym bądź areszcie śledczym dokonuje:",
+   "options": [
+    "dyrektor jednostki",
+    "komisja penitencjarna",
+    "sędzia penitencjarny",
+    "wychowawca działu penitencjarnego"
+   ],
+   "answer": 1,
+   "explanation": "Klasyfikacji w ZK bądź AŚ dokonuje komisja penitencjarna.",
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Ważne! (klasyfikacja)",
+   "tag": "penit-prez"
+  },
+  {
+   "id": "penit-m11",
+   "deck": "penit",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Klasyfikacji według kryteriów prawnych dokonuje się przede wszystkim w oparciu o:",
+   "options": [
+    "opinię z miejsca zamieszkania",
+    "wywiad środowiskowy kuratora",
+    "wyniki badań osobopoznawczych",
+    "wniosek obrońcy"
+   ],
+   "answer": 2,
+   "explanation": "Badania osobopoznawcze są podstawą realizacji zasady indywidualizacji w wykonywaniu kary.",
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Ważne! (klasyfikacja)",
+   "tag": "penit-prez"
+  },
+  {
+   "id": "penit-f03",
+   "deck": "penit",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Organy uprawnione do klasyfikacji skazanych i ich kompetencje",
+   "back": "Sąd karny – sąd wydający wyrok skazujący na karę pozbawienia wolności. Sąd penitencjarny – w zakresie zmian decyzji sądu skazującego. Komisja penitencjarna – w zakresie ustalenia właściwego sposobu wykonywania k.p.w. Dyrektor Generalny SW oraz dyrektor okręgowy SW – mogą zmienić lub uchylić decyzję klasyfikacyjną komisji, gdy jest sprzeczna z prawem; w szczególnych przypadkach podejmują decyzje dotyczące osadzonych (np. przeniesienie do innego ZK ze względów bezpieczeństwa lub organizacyjnych, np. osadzeni szczególnie niebezpieczni).",
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Organy uprawnione do dokonywania klasyfikacji",
+   "tag": "penit-prez"
+  },
+  {
+   "id": "penit-m12",
+   "deck": "penit",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Kto może zmienić lub uchylić decyzję klasyfikacyjną komisji penitencjarnej sprzeczną z prawem?",
+   "options": [
+    "sąd karny",
+    "dyrektor zakładu karnego",
+    "wychowawca",
+    "Dyrektor Generalny SW oraz dyrektor okręgowy SW"
+   ],
+   "answer": 3,
+   "explanation": "DG SW i dyrektor okręgowy SW mogą zmienić lub uchylić decyzję klasyfikacyjną komisji, gdy jest sprzeczna z prawem.",
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Organy uprawnione do dokonywania klasyfikacji",
+   "tag": "penit-prez"
+  },
+  {
+   "id": "penit-m13",
+   "deck": "penit",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Sąd penitencjarny jest organem klasyfikacyjnym w zakresie:",
+   "options": [
+    "zmian decyzji sądu skazującego",
+    "ustalenia właściwego sposobu wykonywania kary",
+    "rozmieszczenia w celach",
+    "udzielania nagród"
+   ],
+   "answer": 0,
+   "explanation": "Sąd karny – wyrok; sąd penitencjarny – zmiany decyzji sądu skazującego; komisja – sposób wykonywania k.p.w.",
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Organy uprawnione do dokonywania klasyfikacji",
+   "tag": "penit-prez"
+  },
+  {
+   "id": "penit-p03",
+   "deck": "penit",
+   "type": "pairs",
+   "naPamiec": false,
+   "title": "Kto klasyfikuje i w jakim zakresie",
+   "pairs": [
+    [
+     "Sąd karny",
+     "wydaje wyrok skazujący na karę pozbawienia wolności"
+    ],
+    [
+     "Sąd penitencjarny",
+     "zmienia decyzje sądu skazującego"
+    ],
+    [
+     "Komisja penitencjarna",
+     "ustala właściwy sposób wykonywania k.p.w."
+    ],
+    [
+     "DG SW i dyrektor okręgowy SW",
+     "zmieniają/uchylają decyzję komisji sprzeczną z prawem"
+    ],
+    [
+     "Sędzia penitencjarny",
+     "nadzór penitencjarny – decyzje w formie zarządzeń"
+    ]
+   ],
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Organy uprawnione do dokonywania klasyfikacji",
+   "tag": "penit-prez"
+  },
+  {
+   "id": "penit-m14",
+   "deck": "penit",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Na podstawie art. 62 kk sąd, wydając wyrok skazujący na karę pozbawienia wolności, może określić:",
+   "options": [
+    "tylko typ zakładu karnego",
+    "rodzaj i typ zakładu karnego oraz orzec terapeutyczny system wykonywania kary",
+    "konkretną jednostkę i celę mieszkalną",
+    "liczbę widzeń w miesiącu"
+   ],
+   "answer": 1,
+   "explanation": "Art. 62 kk: sąd może określić rodzaj i typ ZK, może orzec terapeutyczny system jej wykonywania.",
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Sąd karny (art. 62 kk)",
+   "tag": "penit-prez"
+  },
+  {
+   "id": "penit-m15",
+   "deck": "penit",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Do systemu terapeutycznego sąd orzekający najczęściej kieruje skazanych:",
+   "options": [
+    "młodocianych",
+    "po raz pierwszy karanych",
+    "uzależnionych lub wykazujących zaburzenia preferencji seksualnych",
+    "skazanych za przestępstwa nieumyślne"
+   ],
+   "answer": 2,
+   "explanation": "Tak wskazuje prezentacja – najczęściej uzależnieni lub z zaburzeniami preferencji seksualnych.",
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Sąd karny (art. 62 kk)",
+   "tag": "penit-prez"
+  },
+  {
+   "id": "penit-t01",
+   "deck": "penit",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Prawda czy fałsz: sąd wydając wyrok skazujący musi zawsze określić rodzaj i typ zakładu karnego.",
+   "options": [
+    "Prawda",
+    "Fałsz"
+   ],
+   "answer": 1,
+   "explanation": "Fałsz – art. 62 kk mówi, że sąd MOŻE to określić. Jeżeli tego nie zrobi, kieruje komisja penitencjarna (art. 76 § 1 pkt 1 i 2 kkw).",
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Sąd karny (art. 62 kk)",
+   "tag": "penit-prez"
+  },
+  {
+   "id": "penit-m16",
+   "deck": "penit",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Zgodnie z art. 76 § 1 pkt 1 i 2 kkw komisja penitencjarna kieruje skazanego do właściwego zakładu karnego i systemu wykonywania kary:",
+   "options": [
+    "zawsze, niezależnie od wyroku",
+    "tylko na wniosek skazanego",
+    "tylko za zgodą sędziego penitencjarnego",
+    "jeżeli nie określił tego sąd w wyroku"
+   ],
+   "answer": 3,
+   "explanation": "Komisja działa tu wtedy, gdy sąd w wyroku tego nie określił. W praktyce to ona najczęściej klasyfikuje skazanych.",
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Komisja penitencjarna",
+   "tag": "penit-prez"
+  },
+  {
+   "id": "penit-m17",
+   "deck": "penit",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Kto podejmuje decyzję o skierowaniu do danego rodzaju i typu ZK skazanego, który uciekł z ZK półotwartego lub otwartego albo nie wrócił po zezwoleniu?",
+   "options": [
+    "komisja penitencjarna",
+    "sąd penitencjarny",
+    "dyrektor okręgowy SW",
+    "sąd, który wydał wyrok"
+   ],
+   "answer": 0,
+   "explanation": "W razie ucieczki z ZK półotwartego/otwartego lub niepowrotu po zezwoleniu decyzję podejmuje komisja penitencjarna.",
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Komisja penitencjarna",
+   "tag": "penit-prez"
+  },
+  {
+   "id": "penit-m18",
+   "deck": "penit",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Gdy po postanowieniu sądu penitencjarnego zajdą nowe okoliczności uzasadniające zmianę rodzaju i typu ZK lub systemu terapeutycznego, decyzję może podjąć:",
+   "options": [
+    "wyłącznie sąd penitencjarny",
+    "komisja penitencjarna",
+    "sędzia penitencjarny w formie zarządzenia",
+    "Minister Sprawiedliwości"
+   ],
+   "answer": 1,
+   "explanation": "Tak wynika ze slajdu „Komisja penitencjarna”.",
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Komisja penitencjarna",
+   "tag": "penit-prez"
+  },
+  {
+   "id": "penit-f04",
+   "deck": "penit",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Zakres działania komisji penitencjarnej (art. 76 kkw) – najważniejsze",
+   "back": "1) kieruje do właściwego ZK, 2) do systemu odbywania kary – jeżeli nie określił tego sąd; 2a) zezwolenie na dozór elektroniczny (w wypadkach z ustawy); 3) ustala IPO i programy terapeutyczne oraz ocenia ich wykonanie; 4) oceny okresowe postępów w resocjalizacji; 5) kwalifikuje do nauczania i pozbawia możliwości nauczania poza obowiązkowym; 6) kwalifikuje młodocianych (art. 84 § 2) i do oddziałów terapeutycznych (art. 96 § 3); 7) kwalifikuje jako „N” i weryfikuje co najmniej raz na 3 miesiące; 8) weryfikuje programy, kieruje i wycofuje z oddziałów terapeutycznych; 9) opiniuje przepustki i nagrody (art. 138 § 1 pkt 7/8) – po raz pierwszy, po przerwie > 6 mies., po istotnej zmianie sytuacji; 10) opiniuje m.in. nagrody dla ZK zamkniętego i projekt porządku wewnętrznego; 11) decyzje z art. 107 i zwolnienie z pracy (art. 121 § 7); 12) inne zadania z ustawy.",
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Zakres działania komisji penitencjarnej",
+   "tag": "penit-prez"
+  },
+  {
+   "id": "penit-m19",
+   "deck": "penit",
+   "type": "mcq",
+   "naPamiec": true,
+   "question": "Jak często komisja penitencjarna weryfikuje decyzję o zakwalifikowaniu skazanego jako stwarzającego poważne zagrożenie („N”)?",
+   "options": [
+    "co najmniej raz na miesiąc",
+    "co najmniej raz na 6 miesięcy",
+    "co najmniej raz na 3 miesiące",
+    "raz w roku"
+   ],
+   "answer": 2,
+   "explanation": "Art. 76 § 1 pkt 7 kkw – weryfikacja co najmniej raz na 3 miesiące.",
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Zakres działania komisji penitencjarnej",
+   "tag": "penit-prez"
+  },
+  {
+   "id": "penit-m20",
+   "deck": "penit",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Komisja penitencjarna wyraża opinię w sprawie przepustki (art. 91 pkt 7, art. 92 pkt 9) lub nagrody (art. 138 § 1 pkt 7 lub 8), gdy jest udzielana po przerwie trwającej dłużej niż:",
+   "options": [
+    "3 miesiące",
+    "12 miesięcy",
+    "30 dni",
+    "6 miesięcy"
+   ],
+   "answer": 3,
+   "explanation": "Opinia: po raz pierwszy, po przerwie dłuższej niż 6 miesięcy, po istotnych zmianach w sytuacji prawnej lub rodzinnej.",
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Zakres działania komisji penitencjarnej",
+   "tag": "penit-prez"
+  },
+  {
+   "id": "penit-m21",
+   "deck": "penit",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Który z wymienionych NIE należy do zakresu działania komisji penitencjarnej?",
+   "options": [
+    "wyrażanie zgody na karę celi izolacyjnej powyżej 14 dni",
+    "dokonywanie ocen okresowych postępów skazanego w resocjalizacji",
+    "udzielanie zezwolenia na odbycie kary w systemie dozoru elektronicznego",
+    "kwalifikowanie skazanych do nauczania w szkołach i na kursach"
+   ],
+   "answer": 0,
+   "explanation": "Zgodę na celę izolacyjną powyżej 14 dni wyraża sędzia penitencjarny.",
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Zakres działania komisji penitencjarnej",
+   "tag": "penit-prez"
+  },
+  {
+   "id": "penit-m22",
+   "deck": "penit",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Kto podejmuje decyzję w sprawie zwolnienia skazanego z wykonywania pracy (art. 121 § 7 kkw)?",
+   "options": [
+    "lekarz",
+    "komisja penitencjarna",
+    "kierownik działu penitencjarnego",
+    "sędzia penitencjarny"
+   ],
+   "answer": 1,
+   "explanation": "Art. 76 § 1 pkt 11 – decyzje z art. 107 i zwolnienie z pracy z art. 121 § 7.",
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Zakres działania komisji penitencjarnej",
+   "tag": "penit-prez"
+  },
+  {
+   "id": "penit-m23",
+   "deck": "penit",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Kto wyraża opinię w sprawie projektu porządku wewnętrznego zakładu karnego oraz jego zmian?",
+   "options": [
+    "sędzia penitencjarny",
+    "dyrektor okręgowy SW",
+    "komisja penitencjarna",
+    "rada skazanych"
+   ],
+   "answer": 2,
+   "explanation": "Art. 76 § 1 pkt 10 lit. b kkw – opinia komisji penitencjarnej.",
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Zakres działania komisji penitencjarnej",
+   "tag": "penit-prez"
+  },
+  {
+   "id": "penit-m24",
+   "deck": "penit",
+   "type": "mcq",
+   "naPamiec": true,
+   "question": "Sędzia penitencjarny wydaje decyzje w formie:",
+   "options": [
+    "postanowień",
+    "decyzji administracyjnych",
+    "uchwał",
+    "zarządzeń"
+   ],
+   "answer": 3,
+   "explanation": "Sprawuje nadzór nad wykonaniem kar i środków karnych w ramach nadzoru penitencjarnego, decyzje wydaje w formie zarządzeń.",
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Sędzia penitencjarny",
+   "tag": "penit-prez"
+  },
+  {
+   "id": "penit-m25",
+   "deck": "penit",
+   "type": "mcq",
+   "naPamiec": true,
+   "question": "Wymierzenie kary dyscyplinarnej umieszczenia w celi izolacyjnej powyżej 14 dni wymaga zgody:",
+   "options": [
+    "sędziego penitencjarnego",
+    "komisji penitencjarnej",
+    "dyrektora okręgowego SW",
+    "lekarza"
+   ],
+   "answer": 0,
+   "explanation": "Zgoda sędziego penitencjarnego – powyżej 14 dni.",
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Sędzia penitencjarny",
+   "tag": "penit-prez"
+  },
+  {
+   "id": "penit-m26",
+   "deck": "penit",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Kto udziela zgody na nagrodę z art. 138 § 1 pkt 7 i 8 dla skazanego odbywającego karę 25 lat lub dożywocia w ZK typu zamkniętego?",
+   "options": [
+    "komisja penitencjarna",
+    "sędzia penitencjarny",
+    "dyrektor zakładu karnego",
+    "Dyrektor Generalny SW"
+   ],
+   "answer": 1,
+   "explanation": "Według slajdu – sędzia penitencjarny udziela zgody.",
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Sędzia penitencjarny",
+   "tag": "penit-prez"
+  },
+  {
+   "id": "penit-f05",
+   "deck": "penit",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "Sędzia penitencjarny – czym się zajmuje (zarządzenia)",
+   "back": "Nadzór nad wykonaniem kar i środków karnych (nadzór penitencjarny), decyzje w formie zarządzeń, np.: kolejność wykonywania kar i środków; badania psychologiczne i psychiatryczne bez zgody skazanego; zgoda na nagrodę z art. 138 § 1 pkt 7 i 8 dla skazanego na 25 lat/dożywocie w ZK zamkniętym; zgoda na celę izolacyjną powyżej 14 dni; wstrzymywanie wykonania kar dyscyplinarnych w celu wyjaśnienia ich zasadności.",
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Sędzia penitencjarny",
+   "tag": "penit-prez"
+  },
+  {
+   "id": "penit-m27",
+   "deck": "penit",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Kto może zarządzić przeprowadzenie badań psychologicznych i psychiatrycznych bez zgody skazanego?",
+   "options": [
+    "dyrektor zakładu karnego",
+    "psycholog działu penitencjarnego",
+    "sędzia penitencjarny",
+    "komisja penitencjarna"
+   ],
+   "answer": 2,
+   "explanation": "Slajd „Sędzia penitencjarny”.",
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Sędzia penitencjarny",
+   "tag": "penit-prez"
+  },
+  {
+   "id": "penit-f06",
+   "deck": "penit",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Organy postępowania wykonawczego (art. 2 kkw)",
+   "back": "1) sąd pierwszej instancji lub inny sąd równorzędny, 2) sąd penitencjarny, 2a) referendarz sądowy, 3) prezes sądu lub upoważniony sędzia, 4) sędzia penitencjarny, 5) dyrektor ZK, AŚ, a także dyrektor okręgowy i DG SW albo osoba kierująca innym zakładem z przepisów kkw oraz komisja penitencjarna, 6) sądowy kurator zawodowy lub kierownik ZKSS, 7) sądowy lub administracyjny organ egzekucyjny, 8) naczelnik urzędu skarbowego, 9) terenowy organ administracji rządowej lub samorządu terytorialnego, 10) inny organ uprawniony przez ustawę.",
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Art. 2 kkw – organy postępowania wykonawczego",
+   "tag": "penit-prez"
+  },
+  {
+   "id": "penit-m28",
+   "deck": "penit",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Który z wymienionych NIE jest organem postępowania wykonawczego według art. 2 kkw?",
+   "options": [
+    "referendarz sądowy",
+    "naczelnik urzędu skarbowego",
+    "komisja penitencjarna",
+    "prokurator"
+   ],
+   "answer": 3,
+   "explanation": "Prokuratora nie ma w katalogu art. 2 kkw.",
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Art. 2 kkw – organy postępowania wykonawczego",
+   "tag": "penit-prez"
+  },
+  {
+   "id": "penit-m29",
+   "deck": "penit",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Komisja penitencjarna jest organem postępowania wykonawczego wymienionym w art. 2 kkw razem z:",
+   "options": [
+    "dyrektorem ZK/AŚ, dyrektorem okręgowym i Dyrektorem Generalnym SW (pkt 5)",
+    "sędzią penitencjarnym (pkt 4)",
+    "sądem penitencjarnym (pkt 2)",
+    "kuratorem sądowym (pkt 6)"
+   ],
+   "answer": 0,
+   "explanation": "Pkt 5 obejmuje dyrektorów jednostek, dyrektora okręgowego, DG SW i komisję penitencjarną.",
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Art. 2 kkw – organy postępowania wykonawczego",
+   "tag": "penit-prez"
+  },
+  {
+   "id": "penit-m30",
+   "deck": "penit",
+   "type": "mcq",
+   "naPamiec": true,
+   "question": "Kto odpowiada za rozmieszczanie skazanych?",
+   "options": [
+    "dział ochrony",
+    "dział penitencjarny",
+    "komisja penitencjarna",
+    "sędzia penitencjarny"
+   ],
+   "answer": 1,
+   "explanation": "Slajd: „Odpowiedzialny za rozmieszczanie skazanych jest dział penitencjarny”.",
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Zasady rozmieszczania skazanych",
+   "tag": "penit-prez"
+  },
+  {
+   "id": "penit-t02",
+   "deck": "penit",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Prawda czy fałsz: skazany ma prawo wyboru zakładu karnego oraz oddziału i celi mieszkalnej.",
+   "options": [
+    "Prawda",
+    "Fałsz"
+   ],
+   "answer": 1,
+   "explanation": "Fałsz – skazanym nie przysługuje takie prawo. Administracja może przenosić skazanych między jednostkami, oddziałami i celami, także ze względu na ich bezpieczeństwo osobiste.",
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Zasady rozmieszczania skazanych",
+   "tag": "penit-prez"
+  },
+  {
+   "id": "penit-t03",
+   "deck": "penit",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Prawda czy fałsz: liczba i częstotliwość przeniesień skazanego między celami i oddziałami są ograniczone.",
+   "options": [
+    "Prawda",
+    "Fałsz"
+   ],
+   "answer": 1,
+   "explanation": "Fałsz – nie ma żadnych ograniczeń co do liczby i częstotliwości przeniesień.",
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Zasady rozmieszczania skazanych",
+   "tag": "penit-prez"
+  },
+  {
+   "id": "penit-f07",
+   "deck": "penit",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Rozmieszczanie skazanych w oddziałach i celach – co bierze się pod uwagę?",
+   "back": "Decyzję klasyfikacyjną (rodzaj i typ ZK oraz system), konieczność oddzielenia skazanych od tymczasowo aresztowanych, potrzebę zapewnienia porządku i bezpieczeństwa w ZK, zalecenia lekarskie, psychologiczne i rehabilitacyjne, potrzebę kształtowania właściwej atmosfery wśród skazanych, konieczność zapobiegania samoagresji i przestępstwom podczas odbywania kary. Ważna jest ochrona bezpieczeństwa osobistego. Odpowiada dział penitencjarny.",
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Zasady rozmieszczania skazanych",
+   "tag": "penit-prez"
+  },
+  {
+   "id": "penit-m31",
+   "deck": "penit",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Co NIE jest brane pod uwagę przy rozmieszczaniu skazanych w oddziałach i celach?",
+   "options": [
+    "decyzja klasyfikacyjna",
+    "zalecenia lekarskie, psychologiczne i rehabilitacyjne",
+    "życzenie skazanego co do wyboru celi",
+    "konieczność zapobiegania samoagresji"
+   ],
+   "answer": 2,
+   "explanation": "Skazanym nie przysługuje prawo wyboru celi.",
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Zasady rozmieszczania skazanych",
+   "tag": "penit-prez"
+  },
+  {
+   "id": "penit-f08",
+   "deck": "penit",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Rozmieszczanie tymczasowo aresztowanych – co bierze się pod uwagę?",
+   "back": "1) oddzielenie TA od skazanych; 1a) oddzielenie TA będących/byłych funkcjonariuszami (organy bezpieczeństwa publicznego, SW, wymiar sprawiedliwości i ściganie, nadzór nad nimi) od pozostałych TA; 2) porządek i bezpieczeństwo w AŚ; 3) zalecenia lekarskie, psychologiczne i rehabilitacyjne; 4) właściwa atmosfera wśród TA; 5) zapobieganie samoagresji i przestępstwom. Administracja AŚ uwzględnia też wskazania organu dysponującego.",
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Zasady rozmieszczania tymczasowo aresztowanych",
+   "tag": "penit-prez"
+  },
+  {
+   "id": "penit-m32",
+   "deck": "penit",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Tymczasowo aresztowany były funkcjonariusz SW może być umieszczony w celi z innym tymczasowo aresztowanym (wyjątkowo, ze względu na zdrowie lub organizację), jeżeli:",
+   "options": [
+    "tak zdecyduje dowolny wychowawca",
+    "zgodę wyrazi drugi osadzony",
+    "zawsze, bez dodatkowych warunków",
+    "wyraża na to zgodę, a współosadzony jest dorosły i odpowiednio dobrany (rodzaj przestępstwa, właściwości osobiste)"
+   ],
+   "answer": 3,
+   "explanation": "Pkt 1a – wyjątek uzasadniony stanem zdrowia lub względami organizacyjnymi, za zgodą funkcjonariusza, tylko z dorosłym, odpowiednio dobranym TA.",
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Zasady rozmieszczania tymczasowo aresztowanych",
+   "tag": "penit-prez"
+  },
+  {
+   "id": "penit-m33",
+   "deck": "penit",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Przy rozmieszczaniu TA administracja AŚ uwzględnia wskazania organu, do którego dyspozycji pozostają, mające na celu:",
+   "options": [
+    "zabezpieczenie prawidłowego toku postępowania karnego i bezpieczeństwa w areszcie",
+    "resocjalizację tymczasowo aresztowanego",
+    "zapewnienie pracy",
+    "ocenę postępów"
+   ],
+   "answer": 0,
+   "explanation": "Organ dysponujący wskazuje rozmieszczenie dla prawidłowego toku postępowania i bezpieczeństwa.",
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Zasady rozmieszczania tymczasowo aresztowanych",
+   "tag": "penit-prez"
+  },
+  {
+   "id": "penit-m34",
+   "deck": "penit",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Gdy zachodzi konieczność izolowania tymczasowo aresztowanych od siebie, informuje o tym dyrektora aresztu śledczego:",
+   "options": [
+    "komisja penitencjarna",
+    "organ, do którego dyspozycji pozostają",
+    "sędzia penitencjarny",
+    "wychowawca oddziału"
+   ],
+   "answer": 1,
+   "explanation": "Organ dysponujący informuje dyrektora AŚ o konieczności izolowania TA od siebie.",
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Zasady rozmieszczania tymczasowo aresztowanych",
+   "tag": "penit-prez"
+  },
+  {
+   "id": "penit-f09",
+   "deck": "penit",
+   "type": "flashcard",
+   "naPamiec": false,
+   "front": "O czym administracja AŚ musi zawiadomić organ dysponujący (slajd „Ponadto…”)?",
+   "back": "1) zakwalifikowaniu TA przez komisję penitencjarną jako stwarzającego poważne zagrożenie społeczne albo dla bezpieczeństwa aresztu i weryfikacji tej decyzji; 2) objęciu TA szczególną ochroną, jej przedłużeniu lub cofnięciu; 3) przeniesieniu TA kobiety ciężarnej do szpitalnego oddziału ginekologicznego; 4) odmowie przyjmowania posiłków przez TA cudzoziemca.",
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Ponadto administracja AŚ musi zawiadomić organ o:",
+   "tag": "penit-prez"
+  },
+  {
+   "id": "penit-m35",
+   "deck": "penit",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "O odmowie przyjmowania posiłków administracja AŚ musi zawiadomić organ dysponujący, gdy dotyczy ona:",
+   "options": [
+    "każdego tymczasowo aresztowanego",
+    "tylko kobiety ciężarnej",
+    "tymczasowo aresztowanego cudzoziemca",
+    "tylko młodocianego"
+   ],
+   "answer": 2,
+   "explanation": "Na slajdzie: odmowa przyjmowania posiłków przez TA cudzoziemca.",
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Ponadto administracja AŚ musi zawiadomić organ o:",
+   "tag": "penit-prez"
+  },
+  {
+   "id": "penit-m36",
+   "deck": "penit",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Którego zdarzenia NIE ma na slajdzie „Ponadto administracja AŚ musi zawiadomić organ o…”?",
+   "options": [
+    "objęciu TA szczególną ochroną, jej przedłużeniu lub cofnięciu",
+    "przeniesieniu TA kobiety ciężarnej do szpitalnego oddziału ginekologicznego",
+    "zakwalifikowaniu TA jako „N” i weryfikacji tej decyzji",
+    "udzieleniu tymczasowo aresztowanemu widzenia"
+   ],
+   "answer": 3,
+   "explanation": "Zawiadomienia: „N” i weryfikacja, szczególna ochrona, ciężarna na ginekologię, odmowa posiłków przez cudzoziemca.",
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Ponadto administracja AŚ musi zawiadomić organ o:",
+   "tag": "penit-prez"
+  },
+  {
+   "id": "penit-m37",
+   "deck": "penit",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Tymczasowo aresztowany skazany wyrokiem I instancji, przeniesiony do ZK, może wyrazić zgodę na stosowanie wobec niego:",
+   "options": [
+    "regulaminu wykonywania kary pozbawienia wolności",
+    "regulaminu tymczasowego aresztowania z ulgami",
+    "systemu dozoru elektronicznego",
+    "systemu terapeutycznego"
+   ],
+   "answer": 0,
+   "explanation": "Zgoda dotyczy regulaminu wykonywania kary pozbawienia wolności.",
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Postępowanie z TA po wyroku I instancji",
+   "tag": "penit-prez"
+  },
+  {
+   "id": "penit-m38",
+   "deck": "penit",
+   "type": "mcq",
+   "naPamiec": true,
+   "question": "Zgoda tymczasowo aresztowanego na stosowanie regulaminu wykonywania kary powinna być potwierdzona:",
+   "options": [
+    "ustnie wobec wychowawcy",
+    "jego podpisem w aktach osobowych przed pierwszą decyzją klasyfikacyjną",
+    "postanowieniem sądu",
+    "oświadczeniem obrońcy"
+   ],
+   "answer": 1,
+   "explanation": "Podpis w aktach osobowych – przed podjęciem pierwszej decyzji klasyfikacyjnej.",
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Postępowanie z TA po wyroku I instancji",
+   "tag": "penit-prez"
+  },
+  {
+   "id": "penit-m39",
+   "deck": "penit",
+   "type": "mcq",
+   "naPamiec": true,
+   "question": "TA przeniesiony do ZK (po zgodzie na regulamin) ma prawa i obowiązki skazanego odbywającego karę w zakładzie karnym typu:",
+   "options": [
+    "półotwartego",
+    "otwartego",
+    "zamkniętego",
+    "takiego, jaki wskaże sąd"
+   ],
+   "answer": 2,
+   "explanation": "Slajd: prawa i obowiązki skazanego w ZK typu zamkniętego.",
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Postępowanie z TA po wyroku I instancji",
+   "tag": "penit-prez"
+  },
+  {
+   "id": "penit-m40",
+   "deck": "penit",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Gdy TA po wyroku I instancji NIE wyrazi zgody na regulamin wykonywania kary, komisja penitencjarna:",
+   "options": [
+    "kieruje go do ZK typu otwartego",
+    "zwalnia go z aresztu",
+    "kieruje sprawę do sędziego penitencjarnego",
+    "kwalifikuje go do tymczasowo aresztowanych, którzy mogą być przeniesieni do ZK z oddziałem aresztu śledczego"
+   ],
+   "answer": 3,
+   "explanation": "Oznaczenia literowe: TA/M, TA/P, TA/R, TA/W – odpowiednio do rodzaju ZK.",
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Postępowanie z TA po wyroku I instancji",
+   "tag": "penit-prez"
+  },
+  {
+   "id": "penit-p04",
+   "deck": "penit",
+   "type": "pairs",
+   "naPamiec": false,
+   "title": "Oznaczenia TA/… (rodzaj zakładu karnego)",
+   "pairs": [
+    [
+     "TA/M",
+     "zakład dla młodocianych"
+    ],
+    [
+     "TA/P",
+     "zakład dla odbywających karę po raz pierwszy"
+    ],
+    [
+     "TA/R",
+     "zakład dla recydywistów penitencjarnych"
+    ],
+    [
+     "TA/W",
+     "zakład dla odbywających karę aresztu wojskowego"
+    ]
+   ],
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Postępowanie z TA po wyroku I instancji",
+   "tag": "penit-prez"
+  },
+  {
+   "id": "penit-k01",
+   "deck": "penit",
+   "type": "case",
+   "naPamiec": false,
+   "title": "Wyrok bez typu zakładu",
+   "scenario": "Do ZK przyjęto skazanego z prawomocnym wyrokiem 3 lat pozbawienia wolności. W wyroku sąd nie określił rodzaju ani typu zakładu karnego, ani systemu wykonywania kary.",
+   "steps": [
+    {
+     "question": "Kto skieruje go do właściwego rodzaju i typu ZK oraz systemu?",
+     "options": [
+      "dyrektor zakładu karnego",
+      "komisja penitencjarna",
+      "sąd penitencjarny",
+      "dział ewidencji"
+     ],
+     "answer": 1,
+     "explanation": "Art. 76 § 1 pkt 1 i 2 kkw – komisja, gdy nie określił tego sąd w wyroku."
+    },
+    {
+     "question": "Na czym przede wszystkim oprze się komisja przy klasyfikacji?",
+     "options": [
+      "na wynikach badań osobopoznawczych",
+      "na życzeniu skazanego",
+      "na opinii współosadzonych",
+      "na kolejności przyjęcia"
+     ],
+     "answer": 0,
+     "explanation": "Klasyfikacji według kryteriów prawnych dokonuje się przede wszystkim w oparciu o badania osobopoznawcze."
+    },
+    {
+     "question": "Komisja uznała później, że decyzja była sprzeczna z prawem i sprawa trafiła wyżej. Kto może ją uchylić?",
+     "options": [
+      "sąd karny",
+      "Dyrektor Generalny SW lub dyrektor okręgowy SW",
+      "wychowawca",
+      "Rzecznik Praw Obywatelskich"
+     ],
+     "answer": 1,
+     "explanation": "DG SW i dyrektor okręgowy SW mogą zmienić lub uchylić decyzję klasyfikacyjną sprzeczną z prawem."
+    }
+   ],
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Klasyfikacja / Komisja penitencjarna",
+   "tag": "penit-prez"
+  },
+  {
+   "id": "penit-k02",
+   "deck": "penit",
+   "type": "case",
+   "naPamiec": false,
+   "title": "Chcę do celi z kolegą",
+   "scenario": "Skazany żąda przeniesienia do celi, w której siedzi jego znajomy z miasta, i twierdzi, że „ma prawo wybrać celę”. Tydzień wcześniej był już dwukrotnie przenoszony.",
+   "steps": [
+    {
+     "question": "Czy skazanemu przysługuje prawo wyboru celi?",
+     "options": [
+      "tak, jeśli cela ma wolne miejsce",
+      "nie – skazanym nie przysługuje prawo wyboru ZK, oddziału ani celi",
+      "tak, raz w roku",
+      "tak, za zgodą współosadzonych"
+     ],
+     "answer": 1,
+     "explanation": "Skazanym nie przysługuje prawo wyboru zakładu, oddziału i celi."
+    },
+    {
+     "question": "Czy dwa przeniesienia w tygodniu to naruszenie przepisów?",
+     "options": [
+      "tak – limit to jedno w miesiącu",
+      "tak – limit to dwa w kwartale",
+      "nie – nie ma ograniczeń co do liczby i częstotliwości przeniesień",
+      "tak – wymagana zgoda sędziego"
+     ],
+     "answer": 2,
+     "explanation": "Nie ma ograniczeń co do liczby i częstotliwości."
+    },
+    {
+     "question": "Kto odpowiada za rozmieszczenie skazanych?",
+     "options": [
+      "dział ochrony",
+      "dział penitencjarny",
+      "dział kwatermistrzowski",
+      "sędzia penitencjarny"
+     ],
+     "answer": 1,
+     "explanation": "Odpowiedzialny za rozmieszczanie skazanych jest dział penitencjarny."
+    }
+   ],
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Zasady rozmieszczania skazanych",
+   "tag": "penit-prez"
+  },
+  {
+   "id": "penit-k03",
+   "deck": "penit",
+   "type": "case",
+   "naPamiec": false,
+   "title": "Były policjant w areszcie",
+   "scenario": "Do AŚ przyjęto tymczasowo aresztowanego, który do niedawna był funkcjonariuszem Policji. Areszt jest przepełniony, a w oddziale zostało miejsce tylko w celi wieloosobowej.",
+   "steps": [
+    {
+     "question": "Jaka jest zasada umieszczania takiej osoby?",
+     "options": [
+      "razem z pozostałymi TA bez ograniczeń",
+      "oddzielenie od pozostałych tymczasowo aresztowanych",
+      "umieszczenie z osobami skazanymi",
+      "umieszczenie w celi izolacyjnej"
+     ],
+     "answer": 1,
+     "explanation": "Pkt 1a – oddziela się TA, którzy są lub byli funkcjonariuszami organów ochrony bezpieczeństwa publicznego."
+    },
+    {
+     "question": "Wyjątkowo (względy organizacyjne) może trafić do celi z innym TA. Jaki warunek musi być spełniony po jego stronie?",
+     "options": [
+      "wyraża na to zgodę",
+      "pisze prośbę do sądu",
+      "nie ma żadnych warunków",
+      "decyduje o tym obrońca"
+     ],
+     "answer": 0,
+     "explanation": "Musi wyrazić zgodę."
+    },
+    {
+     "question": "Z kim może wtedy przebywać?",
+     "options": [
+      "z dowolnym TA",
+      "tylko z dorosłym TA, odpowiednio dobranym (rodzaj przestępstwa, właściwości osobiste)",
+      "tylko z młodocianym",
+      "tylko ze skazanym"
+     ],
+     "answer": 1,
+     "explanation": "Tylko z dorosłym TA, odpowiednio dobranym."
+    }
+   ],
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Zasady rozmieszczania tymczasowo aresztowanych",
+   "tag": "penit-prez"
+  },
+  {
+   "id": "penit-k04",
+   "deck": "penit",
+   "type": "case",
+   "naPamiec": false,
+   "title": "Wyrok w I instancji, apelacja w toku",
+   "scenario": "Tymczasowo aresztowany usłyszał wyrok sądu I instancji – 4 lata pozbawienia wolności. Obrońca złożył apelację. Osadzonego przeniesiono do zakładu karnego. Wychowawca pyta go o zgodę na stosowanie regulaminu wykonywania kary pozbawienia wolności.",
+   "steps": [
+    {
+     "question": "Jak należy potwierdzić jego zgodę?",
+     "options": [
+      "ustnie wychowawcy",
+      "podpisem w aktach osobowych przed pierwszą decyzją klasyfikacyjną",
+      "pismem do sądu apelacyjnego",
+      "nie trzeba potwierdzać"
+     ],
+     "answer": 1,
+     "explanation": "Zgoda – podpis w aktach osobowych przed pierwszą decyzją klasyfikacyjną."
+    },
+    {
+     "question": "Zgodził się. Jakie ma prawa i obowiązki?",
+     "options": [
+      "skazanego w ZK typu zamkniętego",
+      "skazanego w ZK typu półotwartego",
+      "tymczasowo aresztowanego bez zmian",
+      "skazanego w ZK typu otwartego"
+     ],
+     "answer": 0,
+     "explanation": "Prawa i obowiązki skazanego w ZK typu zamkniętego."
+    },
+    {
+     "question": "Gdyby się nie zgodził i był wcześniej karany jako recydywista penitencjarny, jakie oznaczenie mógłby otrzymać?",
+     "options": [
+      "TA/M",
+      "TA/P",
+      "TA/R",
+      "TA/W"
+     ],
+     "answer": 2,
+     "explanation": "Komisja kwalifikuje go do TA, którzy mogą być przeniesieni do ZK z oddziałem AŚ – TA/R dla recydywistów."
+    }
+   ],
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Postępowanie z TA po wyroku I instancji",
+   "tag": "penit-prez"
+  },
+  {
+   "id": "penit-k05",
+   "deck": "penit",
+   "type": "case",
+   "naPamiec": false,
+   "title": "Głodówka cudzoziemca",
+   "scenario": "Tymczasowo aresztowany obywatel Ukrainy od wczoraj odmawia przyjmowania posiłków. Tego samego dnia komisja penitencjarna zakwalifikowała innego TA jako stwarzającego poważne zagrożenie dla bezpieczeństwa aresztu.",
+   "steps": [
+    {
+     "question": "Czy o odmowie posiłków przez tego TA trzeba zawiadomić organ dysponujący?",
+     "options": [
+      "nie, to sprawa wewnętrzna aresztu",
+      "tak – dotyczy TA cudzoziemca",
+      "tylko jeśli trwa ponad 14 dni",
+      "tylko za zgodą osadzonego"
+     ],
+     "answer": 1,
+     "explanation": "Odmowa przyjmowania posiłków przez TA cudzoziemca – obowiązek zawiadomienia organu."
+    },
+    {
+     "question": "A o zakwalifikowaniu drugiego TA jako „N”?",
+     "options": [
+      "nie",
+      "tak – oraz o każdej weryfikacji tej decyzji",
+      "tylko jeśli organ o to poprosi",
+      "tylko po 3 miesiącach"
+     ],
+     "answer": 1,
+     "explanation": "Zawiadamia się o zakwalifikowaniu jako „N” oraz o weryfikacji decyzji."
+    },
+    {
+     "question": "Kto informuje dyrektora AŚ, że dwóch TA z tej samej sprawy trzeba izolować od siebie?",
+     "options": [
+      "organ, do którego dyspozycji pozostają",
+      "komisja penitencjarna",
+      "kierownik działu ochrony",
+      "sami osadzeni"
+     ],
+     "answer": 0,
+     "explanation": "Konieczność izolowania TA od siebie zgłasza dyrektorowi AŚ organ dysponujący."
+    }
+   ],
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Ponadto administracja AŚ musi zawiadomić organ o:",
+   "tag": "penit-prez"
+  },
+  {
+   "id": "penit-k06",
+   "deck": "penit",
+   "type": "case",
+   "naPamiec": false,
+   "title": "Kara i nagroda",
+   "scenario": "Dyrektor chce ukarać skazanego umieszczeniem w celi izolacyjnej na 21 dni. W tym samym tygodniu inny skazany, odbywający karę dożywotniego pozbawienia wolności w ZK typu zamkniętego, ma otrzymać nagrodę z art. 138 § 1 pkt 7 kkw.",
+   "steps": [
+    {
+     "question": "Czego wymaga kara celi izolacyjnej na 21 dni?",
+     "options": [
+      "opinii komisji penitencjarnej",
+      "zgody sędziego penitencjarnego",
+      "zgody dyrektora okręgowego",
+      "niczego dodatkowego"
+     ],
+     "answer": 1,
+     "explanation": "Powyżej 14 dni – zgoda sędziego penitencjarnego."
+    },
+    {
+     "question": "Kto udziela zgody na nagrodę dla skazanego na dożywocie w ZK zamkniętym?",
+     "options": [
+      "sędzia penitencjarny",
+      "komisja penitencjarna",
+      "kierownik działu penitencjarnego",
+      "Dyrektor Generalny SW"
+     ],
+     "answer": 0,
+     "explanation": "Sędzia penitencjarny udziela zgody na nagrodę z art. 138 § 1 pkt 7 i 8 dla skazanych na 25 lat / dożywocie w ZK zamkniętym."
+    },
+    {
+     "question": "W jakiej formie sędzia penitencjarny wydaje swoje decyzje?",
+     "options": [
+      "postanowień",
+      "zarządzeń",
+      "wyroków",
+      "uchwał"
+     ],
+     "answer": 1,
+     "explanation": "Decyzje sędziego penitencjarnego – zarządzenia."
+    }
+   ],
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Sędzia penitencjarny / Komisja penitencjarna",
+   "tag": "penit-prez"
   }
  ]
 }
