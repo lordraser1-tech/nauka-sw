@@ -2385,6 +2385,10 @@ function sizeLikePicker(pairs, current, onPick) {
 
 // Przy każdej aktualizacji: dopisz wpis NA POCZĄTKU listy, z numerem = numer CACHE w service-worker.js.
 const CHANGELOG = [
+  { v: 27, date: '18.11.2026', items: [
+    '📝 Nowy temat „Test komendancki (przykładowy egzamin)” – 147 pytań z przykładowego testu komendanckiego.',
+    'Temat „Pragmatyka służbowa” powiększony o 56 pytań z testu z pragmatyki (COSSW Kule).',
+    'Nowy temat „Pytania od kursantów” – 36 pytań z modułów (prawo, penitencjarystyka, bezpieczeństwo, ochrona, ŚPB).'] },
   { v: 26, date: '17.11.2026', items: [
     '📘 Nowy skrypt w zakładce Czytaj: „Penitencjarny” – Zagadnienia penitencjarne (Kule 2026), 8 rozdziałów.',
     'Nowy temat „Zagadnienia penitencjarne (prezentacja)”: 43 pytania, 9 fiszek, 6 kazusów i 4 zestawy par – klasyfikacja, komisja i sędzia penitencjarny, rozmieszczanie skazanych i tymczasowo aresztowanych.'] },

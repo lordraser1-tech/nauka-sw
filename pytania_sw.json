@@ -1,9 +1,9 @@
 {
  "meta": {
   "tytul": "Szkolenie chorążych SW – baza do nauki",
-  "wersja": 12,
-  "data": "2026-11-17",
-  "zrodla": "Ustawa o ŚPB (Dz.U. 2026 poz. 244), ustawa o SW (Dz.U. 2025 poz. 1750), kkw (Dz.U. 2025 poz. 911), rozporządzenie o oddziaływaniach penitencjarnych (Dz.U. 2024 poz. 1344), rozporządzenie o ośrodkach diagnostycznych (Dz.U. 2023 poz. 1677), rozporządzenie o ochronie jednostek SW (Dz.U. 2016 poz. 1804); materiały kursu: pytania kontrolne (psycholodzy 1–29, penitencjarne 28–53), lista 124 pytań, SPECJALIZACJA_2 (77 zagadnień), Skrypt SW V15; prezentacja „Instrukcja obsługi i użytkowania pistoletu 9 mm GLOCK 17 gen. 5 MOS”; prezentacja i skrypt „Zagadnienia penitencjarne” (Kule 2026)",
+  "wersja": 13,
+  "data": "2026-11-18",
+  "zrodla": "Ustawa o ŚPB (Dz.U. 2026 poz. 244), ustawa o SW (Dz.U. 2025 poz. 1750), kkw (Dz.U. 2025 poz. 911), rozporządzenie o oddziaływaniach penitencjarnych (Dz.U. 2024 poz. 1344), rozporządzenie o ośrodkach diagnostycznych (Dz.U. 2023 poz. 1677), rozporządzenie o ochronie jednostek SW (Dz.U. 2016 poz. 1804); materiały kursu: pytania kontrolne (psycholodzy 1–29, penitencjarne 28–53), lista 124 pytań, SPECJALIZACJA_2 (77 zagadnień), Skrypt SW V15; prezentacja „Instrukcja obsługi i użytkowania pistoletu 9 mm GLOCK 17 gen. 5 MOS”; prezentacja i skrypt „Zagadnienia penitencjarne” (Kule 2026); przykładowy test komendancki; test z pragmatyki służbowej (COSSW Kule); pytania kursantów (moduły)",
   "typy": {
    "flashcard": "przód (front) i tył (back)",
    "mcq": "pytanie, opcje, indeks poprawnej odpowiedzi (answer, liczony od 0), wyjaśnienie",
@@ -105,6 +105,16 @@
   {
    "id": "penit",
    "name": "Zagadnienia penitencjarne (prezentacja)",
+   "czesc": "unitarna"
+  },
+  {
+   "id": "komend",
+   "name": "Test komendancki (przykładowy egzamin)",
+   "czesc": "unitarna"
+  },
+  {
+   "id": "kursanci",
+   "name": "Pytania od kursantów (moduły I–IV, ŚPB)",
    "czesc": "unitarna"
   }
  ],
@@ -14965,6 +14975,4066 @@
    ],
    "source": "prezentacja – zagadnienia penitencjarne, slajd: Sędzia penitencjarny / Komisja penitencjarna",
    "tag": "penit-prez"
+  },
+  {
+   "id": "kom-001",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Do zakresu działania komisji penitencjarnej należy:",
+   "options": [
+    "udzielanie warunkowego przedterminowego zwolnienia",
+    "kwalifikowanie skazanych do nauczania w szkołach i na kursach",
+    "udzielanie nagród kodeksowych i wymierzanie kar dyscyplinarnych",
+    "kwalifikowanie skazanych do zatrudnienia"
+   ],
+   "answer": 1,
+   "explanation": "Art. 76 § 1 pkt 5 kkw – kwalifikowanie do nauczania w szkołach i na kursach. WPZ to sąd penitencjarny, nagrody i kary – dyrektor.",
+   "source": "przykładowy test komendancki, pyt. 1",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-002",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "W zakładzie karnym typu zamkniętego:",
+   "options": [
+    "skazani mogą korzystać z własnej bielizny i obuwia, a za zezwoleniem dyrektora zakładu karnego – także z odzieży",
+    "korespondencja skazanych może podlegać cenzurze administracji zakładu karnego",
+    "rozmowy telefoniczne skazanych mogą podlegać kontroli administracji zakładu karnego",
+    "skazani mogą poruszać się po terenie zakładu karnego w czasie i miejscach ustalonych w porządku wewnętrznym"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 2",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-004",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Karę wydalenia ze służby podoficerowi wymierza:",
+   "options": [
+    "kierownik jednostki organizacyjnej, w której pełni służbę",
+    "Dyrektor Generalny",
+    "Dyrektor Okręgowy",
+    "Minister Sprawiedliwości"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 4",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-005",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "W systemie zwykłym skazany:",
+   "options": [
+    "nie może korzystać z przepustek",
+    "nie może otrzymać warunkowego przedterminowego zwolnienia",
+    "nie może korzystać z dostępnego w zakładzie karnym zatrudnienia, nauczania oraz zajęć kulturalno-oświatowych i sportowych",
+    "może korzystać z dostępnego w zakładzie karnym zatrudnienia, nauczania oraz zajęć kulturalno-oświatowych i sportowych"
+   ],
+   "answer": 3,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 5",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-006",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Nagroda może być przyznana skazanemu:",
+   "options": [
+    "w celu zachęcenia go do uczestnictwa w systemie programowanego oddziaływania",
+    "w celu osłabienia jego więzi z podkulturą przestępczą",
+    "w celu zachęcenia go do poprawy zachowania",
+    "w celu zachęcenia do uczestniczenia w zajęciach terapeutycznych"
+   ],
+   "answer": 2,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 6",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-007",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Zatarcie kary dyscyplinarnej polega na:",
+   "options": [
+    "usunięciu orzeczenia o ukaraniu z obrotu służbowego",
+    "uznaniu kary za niebyłą oraz usunięciu z akt osobowych funkcjonariusza orzeczenia o ukaraniu",
+    "przyznaniu wyższego dodatku służbowego",
+    "przyznaniu nagrody uznaniowej"
+   ],
+   "answer": 1,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 7",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-008",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Funkcjonariusza zawiesza się w czynnościach służbowych w razie:",
+   "options": [
+    "tymczasowego aresztowania",
+    "wszczęcia postępowania karnego",
+    "wszczęcia postępowania dyscyplinarnego",
+    "wszczęcia postępowania administracyjnego"
+   ],
+   "answer": 0,
+   "explanation": "Tymczasowe aresztowanie = obligatoryjne zawieszenie. Przy postępowaniu karnym czy dyscyplinarnym zawieszenie jest fakultatywne.",
+   "source": "przykładowy test komendancki, pyt. 8",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-009",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Nie można wymierzyć kary dyscyplinarnej (skazanemu), jeśli od dnia popełnienia przekroczenia upłynęło:",
+   "options": [
+    "7 dni",
+    "14 dni",
+    "30 dni",
+    "nie ma terminu ograniczającego wymierzenie kary dyscyplinarnej"
+   ],
+   "answer": 2,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 9",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-010",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Wykonanie tymczasowego aresztowania służy realizacji celów, dla których ten środek zastosowano, a w szczególności:",
+   "options": [
+    "kształtowaniu społecznie pożądanych postaw",
+    "zapobieganiu szkodliwym wpływom skazanych zdemoralizowanych",
+    "wyborowi właściwego systemu wykonywania kary, rodzaju i typu zakładu karnego",
+    "zabezpieczeniu prawidłowego toku postępowania karnego"
+   ],
+   "answer": 3,
+   "explanation": "Art. 207 kkw – zabezpieczenie prawidłowego toku postępowania karnego.",
+   "source": "przykładowy test komendancki, pyt. 10",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-011",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Skazany ma prawo:",
+   "options": [
+    "co najmniej dwa razy w miesiącu dokonywać zakupów artykułów żywnościowych i wyrobów tytoniowych",
+    "co najmniej trzy razy w miesiącu dokonywać zakupów artykułów żywnościowych i wyrobów tytoniowych",
+    "co najmniej cztery razy w miesiącu dokonywać zakupów artykułów żywnościowych i wyrobów tytoniowych",
+    "co najmniej raz w miesiącu dokonywać zakupów artykułów żywnościowych i wyrobów tytoniowych"
+   ],
+   "answer": 1,
+   "explanation": "Art. 110a § 1 kkw – co najmniej trzy razy w miesiącu.",
+   "source": "przykładowy test komendancki, pyt. 11",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-012",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Organami postępowania wykonawczego są:",
+   "options": [
+    "zakłady karne i areszty śledcze",
+    "dyrektor zakładu karnego",
+    "stowarzyszenia i fundacje",
+    "związki wyznaniowe"
+   ],
+   "answer": 1,
+   "explanation": "Art. 2 pkt 5 kkw – organem jest dyrektor, a nie sama jednostka.",
+   "source": "przykładowy test komendancki, pyt. 12",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-013",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "W toku postępowania dyscyplinarnego obwiniony ma prawo do:",
+   "options": [
+    "zgłaszania wniosków dowodowych",
+    "składania zeznań",
+    "prowadzenia postępowania dyscyplinarnego",
+    "przesłuchiwania świadków"
+   ],
+   "answer": 0,
+   "explanation": "Obwiniony składa wyjaśnienia (nie zeznania) i może zgłaszać wnioski dowodowe.",
+   "source": "przykładowy test komendancki, pyt. 13",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-014",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Ile zawiadomień zawierających informację o miejscu swojego pobytu ma prawo wysłać tymczasowo aresztowany po osadzeniu w areszcie śledczym?",
+   "options": [
+    "jedno",
+    "dwa",
+    "bez ograniczeń",
+    "nie ma prawa wysyłać zawiadomień z informacją o miejscu swojego pobytu"
+   ],
+   "answer": 1,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 14",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-031",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Wyjątkowo nieletni może odpowiadać na zasadach określonych w KK, jeżeli dopuścił się czynu:",
+   "options": [
+    "po ukończeniu lat 15",
+    "po ukończeniu lat 13",
+    "po ukończeniu lat 16",
+    "po ukończeniu lat 17"
+   ],
+   "answer": 0,
+   "explanation": "Art. 10 § 2 kk – po ukończeniu 15 lat (za wymienione najcięższe czyny).",
+   "source": "przykładowy test komendancki, pyt. 31",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-032",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Przestępstwo to:",
+   "options": [
+    "czyn niezgodny z normami kulturowymi",
+    "czyn niezgodny z normami prawnymi, które obowiązują na danym terenie",
+    "czyn zabroniony przez ustawę pod groźbą kary, popełniony na obszarze danej jednostki terytorialnej w danym czasie",
+    "czyn niezgodny z prawem popełniony w danym przedziale czasowym"
+   ],
+   "answer": 2,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 32",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-033",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Kwotę diety zmniejsza się odpowiednio o koszt wydanego bezpłatnego wyżywienia, przyjmując odpowiednio:",
+   "options": [
+    "śniadanie 50% diety, kolacja i obiad po 25% diety",
+    "obiad 50% diety, kolacja i śniadanie po 25% diety",
+    "śniadanie i obiad po 25% diety, kolacja 50% diety",
+    "żadna z powyższych"
+   ],
+   "answer": 1,
+   "explanation": "Obiad 50%, śniadanie i kolacja po 25% diety.",
+   "source": "przykładowy test komendancki, pyt. 33",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-034",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Do elementów systemu ochrony zaliczamy:",
+   "options": [
+    "psy służbowe",
+    "działania obronne",
+    "przedsięwzięcia ochronne",
+    "siły Policji"
+   ],
+   "answer": 2,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 34",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-035",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Konwojowanie osadzonych przez funkcjonariuszy SW odbywa się w następujących przypadkach:",
+   "options": [
+    "konwojowania na rozprawy sądowe",
+    "konwojowania osadzonych do placówek służby zdrowia",
+    "w czasie doprowadzania na rozmowy do kierownika jednostki",
+    "w czasie odbywania widzeń na terenie jednostki"
+   ],
+   "answer": 1,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 35",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-036",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Nie można bez zgody zainteresowanego przenieść do pełnienia służby w innej jednostce organizacyjnej SW:",
+   "options": [
+    "funkcjonariusza – kobiety w ciąży",
+    "funkcjonariusza – kobiety w okresie służby przygotowawczej",
+    "funkcjonariusza w służbie stałej",
+    "funkcjonariusza, który ma 30 lat służby w SW"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 36",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-037",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Podaj prawidłowe zasady udzielania pomocy w przypadku złamania kończyny:",
+   "options": [
+    "przy złamaniu kości stabilizujemy dwie sąsiednie kości",
+    "przy złamaniu kości stabilizujemy dwa sąsiednie stawy",
+    "przy złamaniu kości stabilizujemy dwie sąsiednie kości i dwa sąsiednie stawy",
+    "przy złamaniu kości stabilizujemy dwie sąsiednie kości i jeden staw"
+   ],
+   "answer": 1,
+   "explanation": "Złamanie kości – unieruchamiamy dwa sąsiednie stawy; zwichnięcie stawu – dwie sąsiednie kości.",
+   "source": "przykładowy test komendancki, pyt. 37",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-038",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Konwencja przeciwko torturom i innemu okrutnemu, nieludzkiemu lub poniżającemu traktowaniu albo karaniu z 1984 r. została uchwalona przez:",
+   "options": [
+    "Radę Europy",
+    "ONZ",
+    "OBWE",
+    "CPT"
+   ],
+   "answer": 1,
+   "explanation": "Konwencja ONZ z 10.12.1984 r. (Europejska konwencja o zapobieganiu torturom z 1987 r. to Rada Europy).",
+   "source": "przykładowy test komendancki, pyt. 38",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-040",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Dokumentacja oznaczona symbolem BE oznacza:",
+   "options": [
+    "dokumentację, którą przechowuje się bez ograniczeń",
+    "dokumentację, która po upływie obowiązującego okresu przechowywania podlega ekspertyzie",
+    "dokumentację, która posiada krótkotrwałą wartość praktyczną",
+    "dokumentację, którą należy przechowywać 15 lat"
+   ],
+   "answer": 1,
+   "explanation": "BE – po upływie okresu przechowywania podlega ekspertyzie archiwalnej.",
+   "source": "przykładowy test komendancki, pyt. 40",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-041",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "W przypadku wbicia ostrego narzędzia (nóż, pręt itp.) w tułów należy:",
+   "options": [
+    "jak najszybciej wyjąć ciało obce z organizmu i opatrzyć ranę",
+    "ułożyć poszkodowanego w pozycji bocznej ustalonej z nogami uniesionymi ku górze",
+    "zabezpieczyć wbity element, nie wyciągając go z rany",
+    "jak najszybciej wyjąć ciało obce, opatrzyć ranę i ułożyć w pozycji bocznej ustalonej"
+   ],
+   "answer": 2,
+   "explanation": "Ciała obcego nie usuwamy – stabilizujemy je opatrunkiem.",
+   "source": "przykładowy test komendancki, pyt. 41",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-042",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Przez porzucenie służby należy rozumieć nieusprawiedliwioną nieobecność funkcjonariusza:",
+   "options": [
+    "trwającą 30 dni kalendarzowych",
+    "trwającą 10 dni kalendarzowych",
+    "trwającą 12 dni kalendarzowych",
+    "trwającą 5 dni kalendarzowych"
+   ],
+   "answer": 1,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 42",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-043",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "W zakładzie karnym typu zamkniętego:",
+   "options": [
+    "skazani mogą brać udział w organizowanych przez administrację poza terenem zakładu grupowych zajęciach kulturalno-oświatowych lub sportowych",
+    "zajęcia kulturalno-oświatowe i sportowe oraz nauczanie organizuje się w obrębie zakładu karnego",
+    "skazanym można zezwalać na udział w zajęciach i imprezach organizowanych poza terenem zakładu karnego",
+    "skazani mogą bez dozoru poruszać się poza terenem zakładu"
+   ],
+   "answer": 1,
+   "explanation": "ZK zamknięty – nauczanie i zajęcia tylko w obrębie zakładu.",
+   "source": "przykładowy test komendancki, pyt. 43",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-044",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Dyrektora okręgowego powołuje spośród oficerów Służby Więziennej i odwołuje ze stanowiska:",
+   "options": [
+    "Minister Sprawiedliwości na wniosek Dyrektora Generalnego",
+    "Premier na wniosek Dyrektora Generalnego",
+    "Prezydent na wniosek Ministra Sprawiedliwości",
+    "Dyrektor Generalny Służby Więziennej"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 44",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-045",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Rodzaje obsługi technicznej uzbrojenia to:",
+   "options": [
+    "obsługiwanie pobieżne, obsługiwanie sezonowe nr 1 i nr 2",
+    "obsługiwanie bieżące, obsługiwanie okresowe nr 1 i nr 2",
+    "obsługiwanie podstawowe, okresowe, specjalistyczne",
+    "obsługiwanie bieżące, sezonowe, specjalistyczne"
+   ],
+   "answer": 1,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 45",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-048",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Jeżeli termin zwolnienia skazanego odbywającego karę pozbawienia wolności przypada na dzień ustawowo wolny od pracy, zwolnienie następuje:",
+   "options": [
+    "w dniu poprzedzającym ten dzień",
+    "w tym samym dniu",
+    "w ostatnim dniu, innym niż ustawowo wolny od pracy, poprzedzającym ten termin",
+    "w dniu następnym"
+   ],
+   "answer": 2,
+   "explanation": "Art. 168 kkw – w ostatnim dniu innym niż ustawowo wolny od pracy, poprzedzającym ten termin. Uwaga: w kluczu testu zaznaczono „w tym samym dniu”, co jest sprzeczne z art. 168 kkw.",
+   "source": "przykładowy test komendancki, pyt. 48",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-049",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Do podstawowych działań działu ochrony należy:",
+   "options": [
+    "wydawanie osadzonym korespondencji urzędowej",
+    "prowadzenie gospodarki sprzętem kwatermistrzowskim",
+    "organizowanie i kontrolowanie ruchu osadzonych w jednostce organizacyjnej",
+    "organizowanie właściwego procesu resocjalizacji"
+   ],
+   "answer": 2,
+   "explanation": "Korespondencja – ewidencja, sprzęt – kwatermistrzostwo, resocjalizacja – dział penitencjarny.",
+   "source": "przykładowy test komendancki, pyt. 49",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-050",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "W trakcie wykonywania kary dyscyplinarnej umieszczenia w celi izolacyjnej na okres do 28 dni skazanego pozbawia się możliwości:",
+   "options": [
+    "otrzymania wynagrodzenia za pracę",
+    "korzystania z udziału w zajęciach kulturalno-oświatowych, z zakresu kultury fizycznej i sportu, z wyjątkiem korzystania z książek i prasy",
+    "korzystania z książek i prasy",
+    "spaceru"
+   ],
+   "answer": 1,
+   "explanation": "Art. 143 § 3 pkt 4 kkw.",
+   "source": "przykładowy test komendancki, pyt. 50",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-051",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Wniosek kierowany w sprawach o ochronę praw i wolności obywatelskich do Rzecznika Praw Obywatelskich:",
+   "options": [
+    "nie wymaga szczególnej formy",
+    "wymaga zachowania szczególnej formy pisemnej",
+    "powinien mieć formę skargi",
+    "powinien mieć formę petycji"
+   ],
+   "answer": 0,
+   "explanation": "Wniosek do RPO jest wolny od opłat i nie wymaga szczególnej formy.",
+   "source": "przykładowy test komendancki, pyt. 51",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-052",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Do obowiązków oddziałowego w porze dziennej należy w szczególności:",
+   "options": [
+    "wydawanie posiłków osadzonym",
+    "kontrolowanie zachowania osadzonego odbywającego karę celi izolacyjnej nie rzadziej niż co dwie godziny",
+    "współdziałanie z wychowawcą w oddziaływaniu wychowawczym na osadzonych",
+    "wydawanie osadzonym korespondencji urzędowej"
+   ],
+   "answer": 2,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 52",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-053",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Funkcjonariusz jest obowiązany poinformować przełożonego o:",
+   "options": [
+    "przynależności do stowarzyszeń krajowych działających poza Służbą Więzienną",
+    "uczęszczaniu dziecka do szkoły",
+    "każdym zajęciu zarobkowym małżonka",
+    "każdym wykroczeniu"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 53",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-054",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Przesłane do wiadomości organu wnioski, skargi lub prośby, które są adresowane do innego organu:",
+   "options": [
+    "można zostawić bez rozpoznania",
+    "zostawia się bez rozpoznania",
+    "można rozpoznać",
+    "odsyła się do nadawcy"
+   ],
+   "answer": 1,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 54",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-055",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Pełny system ochrony określają następujące zasady:",
+   "options": [
+    "w ochronie zewnętrznej stosuje się posterunki uzbrojone",
+    "okna budynków i budowli, w których przebywają osadzeni, mogą być wyposażone w kraty",
+    "rozmowy telefoniczne tymczasowo aresztowanych podlegają kontroli przez administrację jednostki",
+    "cele mieszkalne mogą być otwarte w porze dziennej przez określony czas, jeżeli względy bezpieczeństwa nie stoją temu na przeszkodzie"
+   ],
+   "answer": 3,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 55",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-056",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Tymczasowe aresztowanie ponad dwa lata może przedłużyć:",
+   "options": [
+    "Sąd Najwyższy",
+    "sąd okręgowy",
+    "sąd apelacyjny",
+    "sąd rejonowy"
+   ],
+   "answer": 2,
+   "explanation": "Art. 263 § 4 kpk – sąd apelacyjny.",
+   "source": "przykładowy test komendancki, pyt. 56",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-057",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Dwie pierwsze cyfry kryptonimu sieci radiowej SW oznaczają:",
+   "options": [
+    "jednostkę SW, z której pochodzi radiotelefon",
+    "pasmo częstotliwości pracy radiotelefonu",
+    "okręg SW, z którego pochodzi radiotelefon",
+    "konkretny radiotelefon (stanowisko, posterunek) w jednostce SW"
+   ],
+   "answer": 2,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 57",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-058",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Czynności profilaktyczne to w szczególności:",
+   "options": [
+    "obserwowanie zachowań i relacji w środowisku funkcjonariuszy i pracowników",
+    "stosowanie środków przymusu bezpośredniego",
+    "stosowanie zabezpieczeń techniczno-ochronnych",
+    "rozpoznawanie struktur podkultury więziennej i udziału w niej osadzonych"
+   ],
+   "answer": 3,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 58",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-059",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Podstawą prawną do wydania kluczy specjalnych jest:",
+   "options": [
+    "książka rozkładu służby",
+    "książka wydanych kluczy specjalnych",
+    "oddziałowa książka ruchu osadzonych",
+    "legitymacja służbowa"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 59",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-060",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Nie można wszcząć postępowania dyscyplinarnego (wobec funkcjonariusza) po upływie:",
+   "options": [
+    "30 dni od dnia powzięcia przez przełożonego wiadomości o popełnieniu przewinienia",
+    "90 dni od dnia powzięcia przez przełożonego wiadomości o popełnieniu przewinienia",
+    "roku od dnia popełnienia przewinienia",
+    "2 lat od dnia popełnienia przewinienia"
+   ],
+   "answer": 1,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 60",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-061",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Do zadań dowódcy konwoju należy w szczególności:",
+   "options": [
+    "sprawdzenie stanu sprawności pojazdu konwojowego",
+    "przeprowadzenie kontroli osadzonego oraz jego bagażu",
+    "uzbrojenie i wyposażenie funkcjonariuszy składu konwojowego",
+    "sprawdzenie stanu zabezpieczeń techniczno-ochronnych pojazdu konwojowego"
+   ],
+   "answer": 3,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 61",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-062",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Do zadań wartownika należy:",
+   "options": [
+    "wydawanie poleceń osobom wkraczającym w rejon stanowiska",
+    "zezwalanie na wejście na pas ochronny lub wyznaczony rejon wyłącznie kierownikowi jednostki organizacyjnej oraz osobom mu towarzyszącym",
+    "sprawdzanie stanu liczbowego osadzonych w grupie spacerowej",
+    "pozostawanie w stałej gotowości do przeciwdziałania zagrożeniom bezpieczeństwa realizowanego konwojowania"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 62",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-063",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "W zakładzie karnym typu półotwartego:",
+   "options": [
+    "skazani mogą korzystać z jednego widzenia w miesiącu",
+    "skazani mogą korzystać z dwóch widzeń w miesiącu, a za zgodą dyrektora wykorzystać je jednorazowo",
+    "skazani mogą korzystać z trzech widzeń w miesiącu, a za zgodą dyrektora wykorzystać je jednorazowo",
+    "skazany może korzystać z nieograniczonej liczby widzeń"
+   ],
+   "answer": 2,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 63",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-064",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "W zakładzie karnym typu otwartego:",
+   "options": [
+    "widzenia skazanych podlegają nadzorowi administracji, a rozmowy w trakcie widzeń mogą podlegać kontroli",
+    "korespondencja skazanych może podlegać cenzurze administracji zakładu karnego",
+    "skazani mogą otrzymywać z depozytu zakładu karnego pieniądze pozostające do ich dyspozycji",
+    "skazani mogą korzystać z trzech widzeń w miesiącu, a za zgodą dyrektora wykorzystać je jednorazowo"
+   ],
+   "answer": 2,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 64",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-065",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "W systemie programowanego oddziaływania odbywają karę skazani:",
+   "options": [
+    "dorośli, którzy po przedstawieniu im projektu programu oddziaływania wyrażają zgodę na współudział w jego opracowaniu i wykonaniu",
+    "odbywający zastępczą karę pozbawienia wolności, chyba że szczególne względy przemawiają za innym systemem",
+    "skierowani do tego systemu przez sąd orzekający",
+    "ukarani karą aresztu orzeczoną za wykroczenie, chyba że szczególne względy przemawiają za innym systemem"
+   ],
+   "answer": 0,
+   "explanation": "Art. 95 § 1 kkw – młodociani oraz dorośli, którzy wyrażą zgodę.",
+   "source": "przykładowy test komendancki, pyt. 65",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-066",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Kiedy dyrektor zakładu karnego może wystąpić z wnioskiem do sądu penitencjarnego o obciążenie skazanego kosztami (leczenia samouszkodzenia)?",
+   "options": [
+    "wówczas, gdy dokonał on próby samobójczej",
+    "wówczas, gdy dokonuje kolejny raz samouszkodzenia",
+    "wówczas, gdy w opinii psychologa samouszkodzenie popełnione przez skazanego ma charakter instrumentalny",
+    "wówczas, gdy koszty poniesione w związku z leczeniem są bardzo wysokie"
+   ],
+   "answer": 2,
+   "explanation": "Art. 119 kkw – samouszkodzenie o charakterze instrumentalnym (opinia psychologa). W teście to samo pytanie występuje jako nr 3 i 66.",
+   "source": "przykładowy test komendancki, pyt. 66",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-068",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Prawo do bezpłatnego umundurowania w postaci gotowych składników umundurowania funkcjonariusz nabywa z dniem:",
+   "options": [
+    "mianowania na pierwsze stanowisko służbowe",
+    "mianowania na pierwszy stopień chorążego",
+    "mianowania na stopień oficerski",
+    "mianowania na pierwsze samodzielne stanowisko"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 68",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-069",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Skazany nieposiadający środków pieniężnych otrzymuje od administracji zakładu karnego papier, koperty oraz znaczki pocztowe na:",
+   "options": [
+    "jedną przesyłkę listową ekonomiczną w miesiącu (do 20 g), a w szczególnie uzasadnionych przypadkach także na dalszą korespondencję",
+    "dwie przesyłki listowe ekonomiczne w miesiącu (do 20 g), a w szczególnie uzasadnionych przypadkach także na dalszą korespondencję",
+    "trzy przesyłki listowe ekonomiczne w miesiącu (do 20 g), a w szczególnie uzasadnionych przypadkach także na dalszą korespondencję",
+    "cztery przesyłki listowe ekonomiczne w miesiącu (do 20 g), a w szczególnie uzasadnionych przypadkach także na dalszą korespondencję"
+   ],
+   "answer": 1,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 69",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-070",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Umundurowanie służbowe otrzymuje funkcjonariusz:",
+   "options": [
+    "pełniący służbę w pionie ochrony w jednostkach organizacyjnych SW",
+    "pełniący służbę w pionie kwatermistrzowskim w jednostkach organizacyjnych SW",
+    "pełniący służbę w jednostkach organizacyjnych Służby Więziennej",
+    "pełniący służbę w pionie finansowym w jednostkach organizacyjnych SW"
+   ],
+   "answer": 2,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 70",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-071",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Prawo do corocznego równoważnika pieniężnego za remont lokalu mieszkalnego przysługuje:",
+   "options": [
+    "tylko funkcjonariuszowi w służbie stałej",
+    "funkcjonariuszowi w służbie przygotowawczej",
+    "funkcjonariuszowi w służbie stałej i przygotowawczej",
+    "tylko funkcjonariuszowi w służbie przygotowawczej"
+   ],
+   "answer": 2,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 71",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-073",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Funkcjonariusze powinni:",
+   "options": [
+    "wzajemnie wspierać się w rozwiązywaniu problemów zawodowych",
+    "uczestniczyć w działalności naruszającej dobre imię służby",
+    "posiadać prawo jazdy",
+    "utrzymywać wszelkie kontakty z osadzonymi"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 73",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-074",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Funkcjonariusz jest obowiązany odmówić wykonania rozkazu, jeśli jego wykonanie łączyłoby się z:",
+   "options": [
+    "naruszeniem prawa",
+    "naruszeniem przepisów",
+    "popełnieniem przestępstwa",
+    "popełnieniem przewinienia dyscyplinarnego"
+   ],
+   "answer": 2,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 74",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-075",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Służba Więzienna ma za zadanie:",
+   "options": [
+    "zapewnić osadzonym zwrot kosztów dojazdu do jednostki",
+    "zapewnić osadzonym poszanowanie ich godności, opieki zdrowotnej i religijnej",
+    "zapewnić osadzonym transport na każde żądanie",
+    "zapewnić osadzonym codzienne widzenia z rodziną"
+   ],
+   "answer": 1,
+   "explanation": "Art. 2 ust. 2 pkt 5 ustawy o SW.",
+   "source": "przykładowy test komendancki, pyt. 75",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-076",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Dowódca konwoju musi prowadzić książkę przebiegu służby konwojowej w przypadku:",
+   "options": [
+    "transportowania osadzonych",
+    "konwojowania osadzonych do zakładu opieki zdrowotnej",
+    "konwojowania osadzonych do miejsc pracy",
+    "konwojowania pieniędzy"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 76",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-077",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Skazanemu, wobec którego zastosowano środek przymusu bezpośredniego, zapewnia się pomoc medyczną:",
+   "options": [
+    "przed zastosowaniem środka",
+    "na wniosek osadzonego",
+    "każdorazowo po przerwaniu stosowania środka",
+    "każdorazowo, jeżeli na terenie jednostki jest lekarz"
+   ],
+   "answer": 2,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 77",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-078",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Do udziału w czynnościach procesowych poza teren jednostki penitencjarnej wydajemy osadzonych:",
+   "options": [
+    "pomiędzy apelem porannym a wieczornym",
+    "każdego dnia przez całą dobę",
+    "w czasie określonym w porządku wewnętrznym",
+    "nie wydaje się poza teren jednostki"
+   ],
+   "answer": 1,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 78",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-079",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Stopnie w korpusie chorążych nadaje:",
+   "options": [
+    "Minister Sprawiedliwości",
+    "Prezydent RP",
+    "Dyrektor ZK / AŚ",
+    "Dyrektor Generalny"
+   ],
+   "answer": 3,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 79",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-080",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Organ właściwy do załatwienia skargi osadzonego może pozostawić skargę bez rozpoznania w razie:",
+   "options": [
+    "złożenia skargi zawierającej zarzuty, które były już rozpoznane i uznane za bezzasadne",
+    "dalszego ponawiania skargi opartej na tych samych podstawach faktycznych",
+    "dalszego ponawiania skargi opartej na tych samych podstawach prawnych",
+    "cofnięcia skargi przez wnoszącego"
+   ],
+   "answer": 3,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 80",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-081",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Okres użytkowania przedmiotów umundurowania liczony jest:",
+   "options": [
+    "z dniem nabycia uprawnienia (z dniem przyjęcia)",
+    "z dniem wydania przedmiotu do użytku",
+    "z dniem mianowania na funkcjonariusza w służbę stałą",
+    "żadna z powyższych"
+   ],
+   "answer": 1,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 81",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-082",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Klasyfikacji skazanych dokonuje się, mając na względzie w szczególności:",
+   "options": [
+    "wykonywany zawód",
+    "miejsce zamieszkania",
+    "umyślność lub nieumyślność czynu",
+    "sytuację rodzinną skazanego"
+   ],
+   "answer": 2,
+   "explanation": "Art. 82 § 2 pkt 4 kkw.",
+   "source": "przykładowy test komendancki, pyt. 82",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-083",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "W zakładzie karnym typu półotwartego:",
+   "options": [
+    "skazani mogą za zgodą dyrektora korzystać z własnej odzieży, bielizny i obuwia",
+    "rozmowy telefoniczne skazanych nie podlegają kontroli administracji ZK",
+    "skazani mogą poruszać się po terenie ZK w czasie i miejscach ustalonych w porządku wewnętrznym",
+    "skazanym można udzielać przepustek nie częściej niż raz w miesiącu, łącznie na okres nieprzekraczający 28 dni w roku"
+   ],
+   "answer": 2,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 83",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-084",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Do podstawowych zadań Służby Więziennej należy m.in.:",
+   "options": [
+    "humanitarne traktowanie osób pozbawionych wolności",
+    "wypisywanie mandatów za naruszenie prawa",
+    "rozpoznawanie spraw o wykroczenia",
+    "orzekanie w przedmiocie udzielenia przerwy w wykonywaniu kary"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 84",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-085",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "W czasie wykonywania kary dyscyplinarnej umieszczenia w celi izolacyjnej:",
+   "options": [
+    "skazany nie może wychodzić z celi mieszkalnej",
+    "lekarz lub psycholog kontroluje zdolność skazanego do odbywania tej kary",
+    "skazany nie może uczestniczyć w nauczaniu i zatrudnieniu w celi",
+    "skazany nie może pisać skarg"
+   ],
+   "answer": 1,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 85",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-086",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Zasada prawdy obiektywnej w postępowaniu administracyjnym oznacza:",
+   "options": [
+    "obowiązek organu dążenia do przekonania stron o zasadności rozstrzygnięć",
+    "obowiązek organu kierowania się przy rozpoznaniu sprawy wyłącznie określonymi regułami dowodowymi",
+    "obowiązek organu podjęcia działań mających na celu wydanie decyzji odpowiadającej obiektywnemu (rzeczywistemu) stanowi faktycznemu",
+    "obowiązek organu podejmowania działań mających na celu uniknięcie kolizji interesu społecznego z interesem indywidualnym"
+   ],
+   "answer": 2,
+   "explanation": "W teście: „zasada prawa” – chodzi o zasadę prawdy obiektywnej (art. 7 kpa).",
+   "source": "przykładowy test komendancki, pyt. 86",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-087",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Czas służby funkcjonariusza może zostać przedłużony do 48 godzin tygodniowo w szczególności ze względu na konieczność:",
+   "options": [
+    "realizacji zadań służbowych niecierpiących zwłoki",
+    "wykonania rozpoczętych zadań służbowych",
+    "zapewnienia porządku w jednostce organizacyjnej",
+    "likwidacji skutków klęsk żywiołowych"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 87",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-088",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Chcąc poznać właściciela ujawnionego w trakcie kontroli woreczka z substancją narkotyczną na podstawie linii papilarnych, wykorzystać można:",
+   "options": [
+    "mechanoskopię",
+    "traseologię",
+    "daktyloskopię",
+    "fonoskopię"
+   ],
+   "answer": 2,
+   "explanation": "Daktyloskopia – linie papilarne.",
+   "source": "przykładowy test komendancki, pyt. 88",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-089",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Nawiązka to:",
+   "options": [
+    "kara",
+    "środek przymusu",
+    "środek karny",
+    "środek zapobiegawczy"
+   ],
+   "answer": 2,
+   "explanation": "Art. 39 pkt 6 kk.",
+   "source": "przykładowy test komendancki, pyt. 89",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-090",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Funkcjonariusza można zwolnić ze służby w przypadku:",
+   "options": [
+    "pisemnego zgłoszenia wystąpienia ze służby",
+    "powołania do innej służby państwowej",
+    "zrzeczenia się obywatelstwa polskiego",
+    "porzucenia służby"
+   ],
+   "answer": 1,
+   "explanation": "Według klucza – zwolnienie fakultatywne („można”). Pozostałe przypadki prowadzą do zwolnienia obligatoryjnego.",
+   "source": "przykładowy test komendancki, pyt. 90",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-091",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Krótkoterminowy urlop, nieprzekraczający 5 dni, to:",
+   "options": [
+    "urlop nagrodowy",
+    "urlop macierzyński",
+    "wyróżnienie",
+    "urlop uznaniowy"
+   ],
+   "answer": 2,
+   "explanation": "Krótkoterminowy urlop do 5 dni jest jednym z wyróżnień.",
+   "source": "przykładowy test komendancki, pyt. 91",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-092",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Zielony ciągły wskaźnik diodowy ładowarki akumulatorów oznacza:",
+   "options": [
+    "naładowanie akumulatora",
+    "przegrzanie akumulatora",
+    "naładowanie akumulatora co najmniej w 90%",
+    "ładowanie akumulatora"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 92",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-093",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Odwołanie od orzeczenia o wymierzeniu kary dyscyplinarnej wydanego w pierwszej instancji składa się do:",
+   "options": [
+    "wyższego przełożonego za pośrednictwem przełożonego, który wydał orzeczenie",
+    "właściwego sądu pracy w terminie 10 dni od dnia doręczenia",
+    "właściwego sądu dyscyplinarnego w terminie 14 dni od dnia doręczenia",
+    "wojewódzkiego sądu administracyjnego"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 93",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-094",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Które sygnały w zachowaniu osadzonego mogą sugerować zamiary samobójcze?",
+   "options": [
+    "wycofuje się z kontaktów z innymi osobami i wypowiada myśli o bezsensie życia",
+    "dużą uwagę przywiązuje do swojego wyglądu",
+    "często zgłasza się do wychowawcy z problemami",
+    "pisze liczne skargi do różnych instytucji"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 94",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-095",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Do podstawowego sprzętu specjalnego „środków ochrony osobistej” w szczególności zaliczamy:",
+   "options": [
+    "strzelbę powtarzalną kal. 12 „Mossberg”",
+    "kamizelkę zewnętrzną kuloodporną",
+    "pałkę służbową",
+    "osobisty sygnalizator alarmowy"
+   ],
+   "answer": 1,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 95",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-096",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Który dział kryminologii zajmuje się czynnikami kryminogennymi, a wiedza o nich wykorzystywana jest w oddziaływaniach resocjalizacyjnych?",
+   "options": [
+    "symptomatologia kryminalna",
+    "etiologia kryminalna",
+    "profilaktyka kryminalistyczna",
+    "diagnoza kryminologiczna"
+   ],
+   "answer": 1,
+   "explanation": "Etiologia – przyczyny (czynniki kryminogenne).",
+   "source": "przykładowy test komendancki, pyt. 96",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-097",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Zwykłe postępowanie sprawdzające wobec kierownika działu penitencjarnego w ZK przeprowadza:",
+   "options": [
+    "pełnomocnik ds. ochrony informacji niejawnych z tego ZK",
+    "pełnomocnik ds. ochrony informacji niejawnych z OISW",
+    "przedstawiciel ABW lub SKW",
+    "dyrektor ZK"
+   ],
+   "answer": 3,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego. (W kluczu zaznaczono „dyrektor ZK”.)",
+   "source": "przykładowy test komendancki, pyt. 97",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-098",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Nadrzędnym zadaniem kryminologii jest:",
+   "options": [
+    "poznanie mechanizmów popełniania przestępstw",
+    "wskazanie potencjalnych ofiar",
+    "poznanie rozmiarów przestępczości rzeczywistej",
+    "wypracowanie metod i sposobów eliminacji przestępczości"
+   ],
+   "answer": 3,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 98",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-099",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Sądy administracyjne orzekają o:",
+   "options": [
+    "zgodności lub niezgodności decyzji z prawem",
+    "odszkodowaniu za niesłuszne skazanie, tymczasowe aresztowanie lub zatrzymanie",
+    "słuszności i celowości decyzji",
+    "unieważnieniu orzeczenia dyscyplinarnego funkcjonariusza SW"
+   ],
+   "answer": 0,
+   "explanation": "Sądy administracyjne kontrolują legalność (zgodność z prawem).",
+   "source": "przykładowy test komendancki, pyt. 99",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-100",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "W przypadku użycia środka przymusu bezpośredniego w postaci siły fizycznej obowiązują następujące zasady:",
+   "options": [
+    "może być użyta tylko w przypadku pokonania biernego oporu",
+    "może być użyta jako środek prewencyjny w postaci technik ataku",
+    "używając siły fizycznej nigdy nie wolno zadawać uderzeń",
+    "może być użyta we wszystkich przypadkach, w których środki przymusu bezpośredniego mogą być użyte"
+   ],
+   "answer": 3,
+   "explanation": "Art. 12 ust. 2 ustawy o ŚPB.",
+   "source": "przykładowy test komendancki, pyt. 100",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-101",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Od decyzji administracyjnej przysługuje stronie:",
+   "options": [
+    "odwołanie w terminie 14 dni od dnia doręczenia decyzji stronie",
+    "odwołanie w terminie 7 dni",
+    "zażalenie w terminie 14 dni",
+    "odwołanie w terminie 14 dni od dnia wydania decyzji przez organ"
+   ],
+   "answer": 0,
+   "explanation": "Art. 129 § 2 kpa – 14 dni od doręczenia.",
+   "source": "przykładowy test komendancki, pyt. 101",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-102",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Funkcjonariusz będący przełożonym osadzonego powinien:",
+   "options": [
+    "stanowić wzorzec etycznego postępowania i zachowania",
+    "wykorzystywać informacje o osadzonych do celów pozasłużbowych",
+    "stawiać mu wymagania przekraczające jego możliwości",
+    "oceniać w sposób nieobiektywny"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 102",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-103",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Klasyfikacji skazanych dokonuje się, mając na względzie w szczególności:",
+   "options": [
+    "pojemność jednostek penitencjarnych",
+    "stopień demoralizacji i zagrożenia społecznego",
+    "miejsce zamieszkania skazanego",
+    "wykonywany zawód"
+   ],
+   "answer": 1,
+   "explanation": "Art. 82 § 2 pkt 7 kkw.",
+   "source": "przykładowy test komendancki, pyt. 103",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-104",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Do podstawowych zadań działu ochrony należy:",
+   "options": [
+    "powołanie grup interwencyjnych",
+    "stosowanie zabezpieczeń techniczno-ochronnych",
+    "ogłoszenie alarmu",
+    "stosowanie środków przymusu bezpośredniego"
+   ],
+   "answer": 2,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 104",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-105",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Wydanie funkcjonariuszowi używanych składników umundurowania wymaga:",
+   "options": [
+    "pisemnej zgody funkcjonariusza",
+    "żadna zgoda nie jest wymagana",
+    "nie można wydać używanych składników umundurowania",
+    "wydanie używanych składników dotyczy tylko wyposażenia polowego"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 105",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-106",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Funkcjonariusze i pracownicy nie mogą uczestniczyć:",
+   "options": [
+    "w akcjach charytatywnych",
+    "w akcjach niosących pomoc",
+    "w działalności podważającej autorytet Służby Więziennej",
+    "w zawodach sportowych"
+   ],
+   "answer": 2,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 106",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-107",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Skazanego dorosłego przenosi się do odbywania kary w systemie zwykłym, jeżeli:",
+   "options": [
+    "ukończy 24 rok życia",
+    "zostanie skreślony z listy uczniów",
+    "zostanie zwolniony z pracy",
+    "nie przestrzega wymagań ustalonych w programie oddziaływania"
+   ],
+   "answer": 3,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 107",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-108",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Po zażyciu amfetaminy u osadzonego można zaobserwować następujące objawy:",
+   "options": [
+    "wzmożoną aktywność, szybkie mówienie, pobudzenie",
+    "krwiak po urazach",
+    "senność",
+    "obrzęk mięśnia sercowego"
+   ],
+   "answer": 0,
+   "explanation": "Amfetamina to stymulant – pobudzenie.",
+   "source": "przykładowy test komendancki, pyt. 108",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-109",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Dyrektora zakładu karnego i dyrektora aresztu śledczego powołuje spośród oficerów SW i odwołuje ze stanowiska:",
+   "options": [
+    "Minister Sprawiedliwości na wniosek Dyrektora Generalnego",
+    "Dyrektor Generalny na wniosek właściwego dyrektora okręgowego",
+    "Dyrektor Okręgowy",
+    "Prezydent RP na wniosek Ministra Sprawiedliwości"
+   ],
+   "answer": 1,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 109",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-110",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Akty normatywne zawierające przepisy powszechnie obowiązujące wchodzą w życie po upływie:",
+   "options": [
+    "30 dni",
+    "7 dni",
+    "14 dni",
+    "3 miesięcy"
+   ],
+   "answer": 2,
+   "explanation": "14 dni od ogłoszenia, chyba że akt stanowi inaczej.",
+   "source": "przykładowy test komendancki, pyt. 110",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-111",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Policja może zatrzymać osobę dorosłą na:",
+   "options": [
+    "24 godz.",
+    "48 godz.",
+    "72 godz.",
+    "78 godz."
+   ],
+   "answer": 1,
+   "explanation": "Do 48 godzin (potem sąd ma 24 h na rozpoznanie wniosku o areszt).",
+   "source": "przykładowy test komendancki, pyt. 111",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-112",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Który z podanych powodów wpływających na podatność wiktymologiczną będzie przyczyną do odpowiedniego dobrania środowiska w celi dla osadzonego i zapewnienia mu bezpieczeństwa?",
+   "options": [
+    "ubiór",
+    "orientacja homoseksualna",
+    "przynależność do partii politycznej",
+    "prowadzenie nielegalnej działalności"
+   ],
+   "answer": 1,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego. (W teście sformułowanie: „skłonności homoseksualne”.)",
+   "source": "przykładowy test komendancki, pyt. 112",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-113",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Dział kryminologii zajmujący się ofiarami przestępstw to:",
+   "options": [
+    "diagnoza kryminologiczna",
+    "etiologia kryminalna",
+    "wiktymologia kryminalna",
+    "prognoza kryminologiczna"
+   ],
+   "answer": 2,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 113",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-114",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Pełny system ochrony określają następujące zasady:",
+   "options": [
+    "wzdłuż linii ogrodzenia zewnętrznego mogą być wyznaczane stanowiska uzbrojone",
+    "okien budynków i budowli, w których przebywają osadzeni, nie wyposaża się w kraty ochronne",
+    "mogą być stosowane psy służbowe",
+    "ruch osadzonych odbywa się bez dozoru wyznaczonego funkcjonariusza"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 114",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-115",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Obowiązki dla stanowiska zawarte są w następujących dokumentach:",
+   "options": [
+    "rozliczeniu stanu etatowego działu ochrony",
+    "opisie systemu zabezpieczenia elektronicznego",
+    "instrukcji szczegółowej dla poszczególnych stanowisk",
+    "instrukcji określającej system obrony jednostki"
+   ],
+   "answer": 2,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 115",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-116",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Użycie broni palnej polega na:",
+   "options": [
+    "oddaniu strzału w kierunku osoby",
+    "oddaniu strzału do osadzonego lub innej osoby",
+    "oddaniu strzału ostrzegawczego",
+    "oddaniu strzału w bezpieczne miejsce"
+   ],
+   "answer": 0,
+   "explanation": "Ustawa o ŚPB – użycie broni = oddanie strzału w kierunku osoby (wykorzystanie = inne strzały).",
+   "source": "przykładowy test komendancki, pyt. 116",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-117",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "W postępowaniu z osadzonymi „niebezpiecznymi” obowiązują następujące zasady:",
+   "options": [
+    "w oddziale dla „niebezpiecznych” w porze dziennej pełni służbę 3 funkcjonariuszy, z których jeden pełni obowiązki oddziałowego",
+    "osadzonemu na czas doprowadzania zawsze zakładamy kajdanki",
+    "skazanego poddaje się kontroli osobistej przy każdorazowym wyjściu i powrocie do celi",
+    "skazany korzysta z własnej odzieży i obuwia"
+   ],
+   "answer": 2,
+   "explanation": "Art. 212a / 88b kkw – kontrola osobista przy każdym wyjściu i powrocie do celi.",
+   "source": "przykładowy test komendancki, pyt. 117",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-118",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Sądy administracyjne kontrolują decyzje administracyjne pod względem:",
+   "options": [
+    "słuszności",
+    "sprawiedliwości",
+    "legalności",
+    "słuszności i sprawiedliwości"
+   ],
+   "answer": 2,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 118",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-119",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Do obowiązków widzeniowego należy:",
+   "options": [
+    "przeprowadzenie kontroli osobistej osób przybyłych na widzenia",
+    "na podstawie karty identyfikacyjnej sprawdzenie tożsamości osadzonego po jego doprowadzeniu i przed odprowadzeniem z pomieszczenia widzeń",
+    "zmiana ustalonego sposobu odbywania widzenia",
+    "deponowanie przedmiotów niebezpiecznych od osób odwiedzających"
+   ],
+   "answer": 1,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 119",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-120",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Zasady etycznego zachowania funkcjonariusza SW i pracowników więziennictwa reguluje:",
+   "options": [
+    "rozporządzenie Rady Ministrów",
+    "ustawa o SW",
+    "regulamin (zarządzenie) Dyrektora Generalnego SW",
+    "rozporządzenie Ministra Sprawiedliwości"
+   ],
+   "answer": 2,
+   "explanation": "Kodeks etyki SW – wprowadzony przez Dyrektora Generalnego SW.",
+   "source": "przykładowy test komendancki, pyt. 120",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-121",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Funkcjonariusz może samodzielnie decydować o zastosowaniu środka przymusu bezpośredniego wyłącznie w przypadku:",
+   "options": [
+    "usiłowania zamachu na życie i zdrowie ludzkie",
+    "niszczenia mienia",
+    "groźnego nieposłuszeństwa",
+    "nawoływania osadzonych do buntu"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 121",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-122",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Funkcjonariusz, któremu powierzono narzędzia z obowiązkiem zwrotu albo wyliczenia się, odpowiada za szkodę powstałą w tym mieniu:",
+   "options": [
+    "w pełnej wysokości",
+    "w wysokości trzymiesięcznego uposażenia zasadniczego wraz z dodatkami",
+    "w wysokości nagrody rocznej",
+    "w wysokości dwumiesięcznego uposażenia"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 122",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-123",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Organ administracyjny to:",
+   "options": [
+    "osoba lub grupa ludzi, którzy reprezentują wolę określonej społeczności regionalnej",
+    "osoba lub grupa ludzi sprawujących funkcje pomocnicze w strukturze administracji",
+    "osoba lub grupa ludzi prowadząca działalność publiczną",
+    "osoba lub grupa ludzi, którzy wyrażają wolę państwa w ramach przyznanych im przez prawo kompetencji"
+   ],
+   "answer": 3,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 123",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-124",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Jeżeli funkcjonariusz SW, któremu mienie powierzono, wyrządził w nim szkodę z winy umyślnej, jest zobowiązany do zapłaty odszkodowania:",
+   "options": [
+    "w pełnej wysokości",
+    "w wysokości szkody, ale nie więcej niż trzymiesięczne uposażenie",
+    "w wysokości ograniczonej do dwumiesięcznego uposażenia",
+    "w wysokości nie wyższej niż czteromiesięczne uposażenie"
+   ],
+   "answer": 0,
+   "explanation": "Wina umyślna – pełna wysokość szkody.",
+   "source": "przykładowy test komendancki, pyt. 124",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-125",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Karę grzywny wymierza się w stawkach dziennych, określając ich liczbę w granicach:",
+   "options": [
+    "od 150 do 1500 stawek",
+    "od 10 do 540 stawek",
+    "od 50 do 540 stawek",
+    "od 100 do 360 stawek"
+   ],
+   "answer": 1,
+   "explanation": "Art. 33 § 1 kk – od 10 do 540 stawek (w teście poprawione ręcznie z 360 na 540).",
+   "source": "przykładowy test komendancki, pyt. 125",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-126",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Nagrody kodeksowe mogą być stosowane jako ulgi:",
+   "options": [
+    "wobec skazanego wyróżniającego się dobrym zachowaniem",
+    "w przypadkach szczególnie uzasadnionych warunkami rodzinnymi lub osobistymi skazanego",
+    "wobec skazanych w systemie zwykłym, by zachęcić ich do zmiany systemu",
+    "w celu zachęcenia skazanego do poprawy zachowania"
+   ],
+   "answer": 1,
+   "explanation": "Art. 138 § 2 kkw.",
+   "source": "przykładowy test komendancki, pyt. 126",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-127",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Czyn zagrożony karą pozbawienia wolności od 3 lat do 10 lat to:",
+   "options": [
+    "występek",
+    "zbrodnia",
+    "wykroczenie",
+    "występek kwalifikowany"
+   ],
+   "answer": 1,
+   "explanation": "Zbrodnia – zagrożona karą co najmniej 3 lat pozbawienia wolności.",
+   "source": "przykładowy test komendancki, pyt. 127",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-128",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Zakaz wykonywania zawodu funkcjonariusza SW to:",
+   "options": [
+    "kara kryminalna",
+    "kara porządkowa",
+    "środek karny",
+    "środek przymusu"
+   ],
+   "answer": 2,
+   "explanation": "Art. 39 pkt 2 kk – zakaz wykonywania zawodu to środek karny.",
+   "source": "przykładowy test komendancki, pyt. 128",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-129",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Skarga do Europejskiego Trybunału Praw Człowieka przysługuje stronie w terminie:",
+   "options": [
+    "6 miesięcy od podjęcia ostatecznego rozstrzygnięcia w sprawie",
+    "4 miesięcy od zakończenia postępowania przed organami RP (ostatecznej decyzji krajowej)",
+    "2 miesięcy od podjęcia ostatecznego rozstrzygnięcia w sprawie",
+    "3 miesięcy od zakończenia postępowania przed organami RP"
+   ],
+   "answer": 1,
+   "explanation": "Od 1.02.2022 r. (Protokół nr 15) termin wynosi 4 miesiące. Uwaga: w kluczu testu zaznaczono 6 miesięcy – to stary termin.",
+   "source": "przykładowy test komendancki, pyt. 129",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-130",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Stosunek służbowy funkcjonariusza SW powstaje przez:",
+   "options": [
+    "umowę na czas określony",
+    "umowę na czas nieokreślony",
+    "mianowanie",
+    "wybór"
+   ],
+   "answer": 2,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 130",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-131",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "W Służbie Więziennej mogą działać:",
+   "options": [
+    "partie polityczne",
+    "organizacja kombatancka",
+    "kilka związków zawodowych",
+    "związek zawodowy funkcjonariuszy i pracowników więziennictwa"
+   ],
+   "answer": 3,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 131",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-132",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Okres służby przygotowawczej trwa:",
+   "options": [
+    "6 miesięcy",
+    "2 lata",
+    "36 miesięcy",
+    "1 rok"
+   ],
+   "answer": 1,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 132",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-133",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "W przypadku amputacji kończyny należy zastosować:",
+   "options": [
+    "opaskę uciskową",
+    "opatrunek uciskowy",
+    "opatrunek gipsowy",
+    "rękoczyn Heimlicha"
+   ],
+   "answer": 0,
+   "explanation": "Amputacja / masywny krwotok z kończyny – opaska uciskowa (stazy). W teście to samo pytanie jest pod nr 15 i 133.",
+   "source": "przykładowy test komendancki, pyt. 133",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-134",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Obsługiwanie bieżące uzbrojenia wykonują użytkownicy bezpośrednio przed i po służbie, zajęciach i strzelaniu, podczas przerw w działaniach ochronnych, a jeżeli uzbrojenie nie jest użytkowane – nie rzadziej niż:",
+   "options": [
+    "raz w tygodniu",
+    "raz w miesiącu",
+    "raz w kwartale",
+    "raz w roku"
+   ],
+   "answer": 1,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 134",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-136",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Karę dyscyplinarną (funkcjonariusza) można zatrzeć w każdym czasie:",
+   "options": [
+    "za wykazanie męstwa i odwagi",
+    "za stawienie się do służby",
+    "za pełnienie służby",
+    "za wykonywanie obowiązków służbowych"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 136",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-137",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Kanał nr 5 to kanał:",
+   "options": [
+    "roboczy otwarty",
+    "należący do sieci KSWiAP",
+    "roboczy zamknięty",
+    "alarmowy"
+   ],
+   "answer": 3,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 137",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-138",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Podstawą prawną wydania osadzonego z oddziału jest:",
+   "options": [
+    "oddziałowa książka ruchu",
+    "plan widzeń",
+    "przepustka jednorazowa dla osoby wchodzącej na teren jednostki",
+    "lista osadzonych skierowanych do transportu"
+   ],
+   "answer": 3,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 138",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-139",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Z uwagi na możliwość wystąpienia zachowań samobójczych w celi jednoosobowej nie umieszcza się osadzonych, którzy:",
+   "options": [
+    "uprzednio dokonywali prób samobójczych",
+    "są osadzonymi „samobójcami”",
+    "popełnili przestępstwo w grupie zorganizowanej",
+    "są zdemoralizowani"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego. W teście treść pytania jest niepełna („umieszcza się”) – chodzi o osadzonych, których z tego powodu NIE umieszcza się samych w celi.",
+   "source": "przykładowy test komendancki, pyt. 139",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-140",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Ministerstwo Sprawiedliwości jest:",
+   "options": [
+    "organem wymiaru sprawiedliwości",
+    "centralnym organem administracji rządowej",
+    "urzędem administracji rządowej obsługującym Ministra Sprawiedliwości",
+    "żadna z powyższych"
+   ],
+   "answer": 2,
+   "explanation": "Ministerstwo to urząd obsługujący ministra (organem jest minister).",
+   "source": "przykładowy test komendancki, pyt. 140",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-141",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Przełożony:",
+   "options": [
+    "kontroluje życie funkcjonariusza",
+    "dba o dobrą atmosferę w pracy i dobre stosunki międzyludzkie",
+    "przedstawia błędy podwładnego na forum publicznym",
+    "lekceważy zachowanie podwładnego naruszające dyscyplinę służbową"
+   ],
+   "answer": 1,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 141",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-142",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Który z podanych organów nie sprawuje wymiaru sprawiedliwości?",
+   "options": [
+    "Naczelny Sąd Administracyjny",
+    "sąd wojskowy",
+    "Sąd Najwyższy",
+    "Trybunał Konstytucyjny"
+   ],
+   "answer": 3,
+   "explanation": "Art. 175 Konstytucji – wymiar sprawiedliwości: SN, sądy powszechne, administracyjne i wojskowe. TK to trybunał, nie sąd.",
+   "source": "przykładowy test komendancki, pyt. 142",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-143",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Do zakresu działania komisji penitencjarnej należy:",
+   "options": [
+    "udzielanie warunkowego przedterminowego zwolnienia",
+    "zatrudnianie skazanych",
+    "kierowanie skazanego do właściwego zakładu karnego, jeżeli nie określił tego sąd w wyroku",
+    "zarządzanie zakładem karnym"
+   ],
+   "answer": 2,
+   "explanation": "Art. 76 § 1 pkt 1 kkw.",
+   "source": "przykładowy test komendancki, pyt. 143",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-144",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Czynności wyjaśniające przed wszczęciem postępowania dyscyplinarnego należy ukończyć:",
+   "options": [
+    "w terminie 14 dni",
+    "w terminie 20 dni",
+    "w terminie 30 dni",
+    "w terminie 40 dni"
+   ],
+   "answer": 2,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 144",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-145",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Klasyfikacji skazanych dokonuje się, mając na względzie w szczególności:",
+   "options": [
+    "wykonywany zawód",
+    "zainteresowania skazanego",
+    "wiek",
+    "wygląd zewnętrzny"
+   ],
+   "answer": 2,
+   "explanation": "Art. 82 § 2 pkt 2 kkw.",
+   "source": "przykładowy test komendancki, pyt. 145",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-146",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Funkcjonariusz podporządkowany przełożonemu jest jego:",
+   "options": [
+    "podwładnym",
+    "pracownikiem",
+    "zwierzchnikiem",
+    "naczelnym"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 146",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-147",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Głównym celem wykonywania kary pozbawienia wolności jest:",
+   "options": [
+    "zabezpieczenie prawidłowego toku postępowania karnego",
+    "powstrzymanie się od powrotu do przestępstwa",
+    "zapewnienie bezpieczeństwa osobistego osadzonym",
+    "zdobycie przez osadzonych kwalifikacji zawodowych"
+   ],
+   "answer": 1,
+   "explanation": "Art. 67 § 1 kkw.",
+   "source": "przykładowy test komendancki, pyt. 147",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-148",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Organem Służby Więziennej jest:",
+   "options": [
+    "Dyrektor Okręgowy SW",
+    "COSSW w Kaliszu",
+    "CZSW",
+    "Areszt Śledczy"
+   ],
+   "answer": 0,
+   "explanation": "Organami SW są DG SW, dyrektorzy okręgowi, dyrektorzy ZK/AŚ i komendanci ośrodków – nie same jednostki.",
+   "source": "przykładowy test komendancki, pyt. 148",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-149",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Funkcjonariuszowi przysługuje nagroda jubileuszowa w wysokości:",
+   "options": [
+    "po 25 latach służby – 75% miesięcznego uposażenia zasadniczego wraz z dodatkami",
+    "po 20 latach służby – 75% miesięcznego uposażenia zasadniczego wraz z dodatkami",
+    "po 30 latach służby – 75% miesięcznego uposażenia zasadniczego wraz z dodatkami",
+    "po 15 latach służby – 75% miesięcznego uposażenia zasadniczego wraz z dodatkami"
+   ],
+   "answer": 1,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 149",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-150",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Świadectwo zwolnienia wydaje się:",
+   "options": [
+    "tylko osadzonemu zwalnianemu po godzinach pracy administracji",
+    "tylko osadzonemu, któremu upływa termin końca kary",
+    "tym zwalnianym, których wskaże dyrektor",
+    "każdemu osadzonemu zwalnianemu z jednostki penitencjarnej"
+   ],
+   "answer": 3,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 150",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-151",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Nie można wymierzyć kary dyscyplinarnej, jeżeli od dnia powzięcia przez przełożonego wiadomości o popełnieniu przekroczenia upłynęło:",
+   "options": [
+    "nie ma limitu czasowego",
+    "14 dni",
+    "28 dni",
+    "90 dni"
+   ],
+   "answer": 3,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 151",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-152",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Podczas podróży służbowej samochodem służbowym równoważnik za przejazd komunikacją miejską wynosi:",
+   "options": [
+    "20% diety za każdą rozpoczętą dobę podróży służbowej",
+    "za każdy dzień podróży w kwocie stwierdzonej na podstawie biletów",
+    "w ogóle nie przysługuje",
+    "żadna z powyższych"
+   ],
+   "answer": 2,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 152",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-153",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Prawo do równoważnika pieniężnego w zamian za umundurowanie funkcjonariusz nabywa:",
+   "options": [
+    "z dniem 1 kwietnia",
+    "z dniem mianowania na funkcjonariusza",
+    "po upływie okresu używalności przedmiotu",
+    "żadna z powyższych"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 153",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-154",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Do zakresu działania komendantów (ośrodków szkolenia) należy w szczególności:",
+   "options": [
+    "nadawanie stopni podoficerskich",
+    "nadawanie odznaki „Za zasługi w pracy penitencjarnej”",
+    "zapewnienie właściwych warunków szkolenia oraz doskonalenia zawodowego",
+    "decydowanie o koniecznym zabiegu lekarskim w razie sprzeciwu osadzonego"
+   ],
+   "answer": 2,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 154",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-155",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Przygotowanie dokumentacji w celu przekazania jej do archiwum należy do obowiązku:",
+   "options": [
+    "archiwisty",
+    "kierownika jednostki organizacyjnej",
+    "komórki organizacyjnej",
+    "kierownika jednostki"
+   ],
+   "answer": 2,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 155",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-156",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Do zakresu zadań Dyrektora Generalnego SW należy w szczególności:",
+   "options": [
+    "kształtowanie polityki kadrowej w Służbie Więziennej",
+    "stosowanie prawa łaski",
+    "nadawanie stopni oficerskich",
+    "nadawanie odznaczeń państwowych"
+   ],
+   "answer": 0,
+   "explanation": "Prawo łaski i odznaczenia – Prezydent; stopnie oficerskie – Minister Sprawiedliwości.",
+   "source": "przykładowy test komendancki, pyt. 156",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-157",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Skazanego niebezpiecznego poddaje się kontroli osobistej:",
+   "options": [
+    "przy każdorazowym wyjściu i wejściu do celi",
+    "przy wyjściu z celi",
+    "przy wyjściu z celi oraz wtedy, gdy opuszcza oddział mieszkalny",
+    "przy wejściu do celi"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 157",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-158",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Nadzór nad korespondencją polega na:",
+   "options": [
+    "kontroli zawartości",
+    "usunięciu części tekstu",
+    "kontroli zawartości i zapoznaniu się z treścią"
+   ],
+   "answer": 2,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 158",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-159",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "W trakcie wykonywania kary dyscyplinarnej umieszczenia w celi izolacyjnej skazanego pozbawia się możliwości:",
+   "options": [
+    "dokonywania zakupów artykułów żywnościowych",
+    "otrzymywania korespondencji prywatnej",
+    "korzystania z prasy i książek",
+    "korzystania z kąpieli"
+   ],
+   "answer": 0,
+   "explanation": "Art. 143 § 3 pkt 5 kkw – zakupów artykułów żywnościowych i wyrobów tytoniowych. Uwaga: w teście odp. d brzmiała „dokonywania zakupów wyrobów tytoniowych” (też zgodna z przepisem), więc zamieniłem ją na błędną.",
+   "source": "przykładowy test komendancki, pyt. 159",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-160",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "W rozumieniu KKW osoba młodociana to ta osoba, która:",
+   "options": [
+    "nie ukończyła 21 roku życia",
+    "nie ukończyła 16 roku życia",
+    "nie ukończyła 24 roku życia",
+    "została skazana przed ukończeniem 24 roku życia"
+   ],
+   "answer": 0,
+   "explanation": "Art. 84 § 1 kkw – skazani, którzy nie ukończyli 21 lat.",
+   "source": "przykładowy test komendancki, pyt. 160",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-161",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Jeżeli termin zwolnienia skazanego, ukaranego, przypada na dzień ustawowo wolny od pracy, to zwalnia się go:",
+   "options": [
+    "w dniu poprzedzającym ten termin",
+    "w pierwszym dniu powszednim po tym terminie",
+    "w dniu ustalonym przez sędziego penitencjarnego",
+    "w danym dniu do godziny 12:00"
+   ],
+   "answer": 0,
+   "explanation": "Art. 168 kkw – w ostatnim dniu innym niż ustawowo wolny od pracy, poprzedzającym ten termin.",
+   "source": "przykładowy test komendancki, pyt. 161",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-162",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Kara dyscyplinarna umieszczenia w celi izolacyjnej może:",
+   "options": [
+    "trwać nie dłużej niż 28 dni",
+    "trwać jedynie 1 miesiąc",
+    "trwać 14 dni, chyba że sędzia penitencjarny wyraził zgodę na jej przedłużenie",
+    "trwać nie dłużej niż 14 dni"
+   ],
+   "answer": 0,
+   "explanation": "Do 28 dni; powyżej 14 dni – zgoda sędziego penitencjarnego.",
+   "source": "przykładowy test komendancki, pyt. 162",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-163",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Osadzony na każdą decyzję dyrektora jednostki oraz komisji penitencjarnej może złożyć skargę do sądu penitencjarnego:",
+   "options": [
+    "w każdym terminie",
+    "w terminie 7 dni od dnia zawiadomienia go o decyzji",
+    "w terminie 3 dni od dnia zawiadomienia go o decyzji",
+    "nie ma takiego prawa"
+   ],
+   "answer": 1,
+   "explanation": "Art. 7 § 3 kkw – 7 dni (skarga z powodu niezgodności z prawem).",
+   "source": "przykładowy test komendancki, pyt. 163",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-164",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Przed wymierzeniem kary umieszczenia w celi izolacyjnej dyrektor jednostki musi:",
+   "options": [
+    "zapoznać się jedynie ze stanowiskiem wychowawcy",
+    "skonsultować decyzję z komisją penitencjarną",
+    "zasięgnąć opinii lekarza i psychologa",
+    "uzyskać zgodę organu dysponującego"
+   ],
+   "answer": 2,
+   "explanation": "Art. 144 § 3 kkw – pisemna opinia lekarza albo psychologa o zdolności do odbycia kary.",
+   "source": "przykładowy test komendancki, pyt. 164",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-165",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Korespondencja tymczasowo aresztowanych:",
+   "options": [
+    "podlega cenzurze organu dysponującego",
+    "nie podlega cenzurze, chyba że organ dysponujący zarządzi inaczej",
+    "jest cenzurowana tylko przez wychowawcę",
+    "nie podlega cenzurze"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 165",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-166",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "W jakich okolicznościach przeszukania osobistego osadzonego może dokonać osoba odmiennej płci?",
+   "options": [
+    "gdy w jednostce osoba tej samej płci jest nieobecna",
+    "gdy zwłoka może narazić osadzonego na utratę zdrowia",
+    "jest to niedozwolone",
+    "tylko w porze nocnej"
+   ],
+   "answer": 2,
+   "explanation": "Kontrolę osobistą przeprowadza osoba tej samej płci.",
+   "source": "przykładowy test komendancki, pyt. 166",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-167",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Widzenie bez dozoru poza terenem jednostki może być udzielone w wymiarze:",
+   "options": [
+    "nieprzekraczającym 48 godzin",
+    "nie mniejszym niż 30 godzin",
+    "nieprzekraczającym jednorazowo 30 godzin",
+    "od 24 do 30 godzin"
+   ],
+   "answer": 2,
+   "explanation": "Art. 138 § 1 pkt 7 kkw.",
+   "source": "przykładowy test komendancki, pyt. 167",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-168",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Wykonanie kary pozbawienia wolności ma na celu:",
+   "options": [
+    "umożliwienie skazanemu tylko zdobycie zawodu",
+    "wzbudzenie u skazanego woli współdziałania w kształtowaniu jego społecznie pożądanych postaw",
+    "umożliwienie skazanemu uzyskania warunkowego przedterminowego zwolnienia",
+    "narzucanie społecznie pożądanej postawy skazanego"
+   ],
+   "answer": 1,
+   "explanation": "Art. 67 § 1 kkw.",
+   "source": "przykładowy test komendancki, pyt. 168",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-169",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Głównym aktem prawnym będącym podstawą działania Służby Więziennej jest:",
+   "options": [
+    "Ustawa z dnia 19 kwietnia 2001 r. o Służbie Więziennej",
+    "Ustawa z dnia 9 kwietnia 2010 r. o Służbie Więziennej",
+    "Ustawa z dnia 9 kwietnia 2006 r. o Służbie Więziennej"
+   ],
+   "answer": 1,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 169",
+   "tag": "test-komend"
+  },
+  {
+   "id": "kom-170",
+   "deck": "komend",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Dyrektor Generalny Służby Więziennej jest powoływany i odwoływany przez:",
+   "options": [
+    "Ministra Sprawiedliwości na wniosek Prezesa Rady Ministrów",
+    "Prezesa Rady Ministrów na wniosek Prezydenta",
+    "Prezesa Rady Ministrów na wniosek Ministra Sprawiedliwości"
+   ],
+   "answer": 2,
+   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "source": "przykładowy test komendancki, pyt. 170",
+   "tag": "test-komend"
+  },
+  {
+   "id": "prag-t03",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Podstawowym aktem prawnym w zakresie pragmatyki służbowej w SW, do którego odsyła kodeks pracy, jest:",
+   "options": [
+    "Ustawa z 06.06.1997 r. – Kodeks karny wykonawczy",
+    "Ustawa z 26.06.1974 r. – Kodeks pracy",
+    "Ustawa z 09.04.2010 r. o Służbie Więziennej",
+    "Ustawa z 04.09.2010 r. o Służbie Więziennej"
+   ],
+   "answer": 2,
+   "explanation": "Odpowiedź według klucza testu z pragmatyki służbowej (COSSW Kule).",
+   "source": "test z pragmatyki służbowej (COSSW Kule), pyt. 3",
+   "tag": "test-pragm"
+  },
+  {
+   "id": "prag-t04",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Funkcjonariusz jest zobowiązany poinformować przełożonego o podjęciu przez małżonka zatrudnienia w:",
+   "options": [
+    "Ministerstwie Sprawiedliwości",
+    "podmiotach świadczących usługi prawne",
+    "podmiotach świadczących usługi w zakresie ochrony osób i mienia",
+    "podmiotach świadczących usługi budowlane"
+   ],
+   "answer": 2,
+   "explanation": "Odpowiedź według klucza testu z pragmatyki służbowej (COSSW Kule).",
+   "source": "test z pragmatyki służbowej (COSSW Kule), pyt. 4",
+   "tag": "test-pragm"
+  },
+  {
+   "id": "prag-t05",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Sprawy dotyczące zwolnienia ze Służby Więziennej rozstrzyga się w formie:",
+   "options": [
+    "rozkazu personalnego",
+    "wyroku",
+    "decyzji administracyjnej",
+    "postanowienia"
+   ],
+   "answer": 2,
+   "explanation": "Odpowiedź według klucza testu z pragmatyki służbowej (COSSW Kule).",
+   "source": "test z pragmatyki służbowej (COSSW Kule), pyt. 5",
+   "tag": "test-pragm"
+  },
+  {
+   "id": "prag-t13",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Opinię służbową o funkcjonariuszu w służbie stałej wydaje się:",
+   "options": [
+    "nie później niż 30 dni przed upływem każdych 4 lat służby do osiągnięcia 20 lat służby oraz każdych 5 lat służby po przekroczeniu 20 lat służby",
+    "nie później niż 30 dni przed upływem każdych 3 lat służby do osiągnięcia 20 lat służby oraz każdych 4 lat po przekroczeniu 20 lat",
+    "nie później niż 30 dni przed upływem każdych 3 lat służby bez względu na staż",
+    "nie później niż 30 dni przed upływem każdych 5 lat służby bez względu na staż"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza testu z pragmatyki służbowej (COSSW Kule).",
+   "source": "test z pragmatyki służbowej (COSSW Kule), pyt. 13",
+   "tag": "test-pragm"
+  },
+  {
+   "id": "prag-t17",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Kara dyscyplinarna obniżenia stopnia SW lub wyznaczenia na niższe stanowisko służbowe podlega zatarciu po upływie:",
+   "options": [
+    "6 miesięcy od dnia uprawomocnienia się orzeczenia",
+    "12 miesięcy od dnia uprawomocnienia się orzeczenia",
+    "18 miesięcy od dnia uprawomocnienia się orzeczenia",
+    "24 miesięcy od dnia uprawomocnienia się orzeczenia"
+   ],
+   "answer": 3,
+   "explanation": "Odpowiedź według klucza testu z pragmatyki służbowej (COSSW Kule).",
+   "source": "test z pragmatyki służbowej (COSSW Kule), pyt. 17",
+   "tag": "test-pragm"
+  },
+  {
+   "id": "prag-t19",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Anulowanie funkcjonariuszowi stopnia Służby Więziennej:",
+   "options": [
+    "nie ma miejsca taka sytuacja w SW",
+    "może nastąpić w okresie między nadaniem tego stopnia a jego wręczeniem w szczególnie uzasadnionych przypadkach podyktowanych dobrem służby",
+    "może nastąpić na etapie postępowania rekrutacyjnego do SW",
+    "jest decyzją kierownika działu kadrowo-organizacyjnego w planowanym dniu wręczenia aktu mianowania"
+   ],
+   "answer": 1,
+   "explanation": "Odpowiedź według klucza testu z pragmatyki służbowej (COSSW Kule).",
+   "source": "test z pragmatyki służbowej (COSSW Kule), pyt. 19",
+   "tag": "test-pragm"
+  },
+  {
+   "id": "prag-t20",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "W rozumieniu ustawy o Służbie Więziennej z 2010 r.:",
+   "options": [
+    "Służba Więzienna jest umundurowaną i uzbrojoną formacją apolityczną podległą Ministrowi Sprawiedliwości, posiadającą własną strukturę organizacyjną",
+    "Służba Więzienna jest uzbrojoną formacją mundurową podległą MS, posiadającą własne struktury usytuowane w systemie bezpieczeństwa państwa",
+    "Służba Więzienna jest umundurowaną formacją polityczną podległą MS, posiadającą własną strukturę organizacyjną",
+    "Służba Więzienna jest umundurowaną i uzbrojoną formacją apolityczną podległą MS oraz Prokuratorowi Generalnemu RP"
+   ],
+   "answer": 0,
+   "explanation": "Art. 1 ust. 1 ustawy o SW.",
+   "source": "test z pragmatyki służbowej (COSSW Kule), pyt. 20",
+   "tag": "test-pragm"
+  },
+  {
+   "id": "prag-t21",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Centralnym Ośrodkiem Szkolenia SW, ośrodkiem szkolenia SW i ośrodkiem doskonalenia kadr SW kierują:",
+   "options": [
+    "dyrektorzy",
+    "rektorzy",
+    "naczelnicy",
+    "komendanci"
+   ],
+   "answer": 3,
+   "explanation": "Odpowiedź według klucza testu z pragmatyki służbowej (COSSW Kule).",
+   "source": "test z pragmatyki służbowej (COSSW Kule), pyt. 21",
+   "tag": "test-pragm"
+  },
+  {
+   "id": "prag-t22",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Funkcjonariusza można zwolnić ze służby w SW w przypadku:",
+   "options": [
+    "nieprzydatności do służby stwierdzonej w opinii służbowej w okresie służby przygotowawczej",
+    "ustnego zgłoszenia wystąpienia ze służby",
+    "nieprzydatności do służby stwierdzonej w opinii służbowej w okresie służby stałej",
+    "upływu 12-miesięcznego okresu zawieszenia w czynnościach służbowych"
+   ],
+   "answer": 3,
+   "explanation": "Zwolnienie fakultatywne („można”). Nieprzydatność w służbie przygotowawczej to zwolnienie obligatoryjne.",
+   "source": "test z pragmatyki służbowej (COSSW Kule), pyt. 22",
+   "tag": "test-pragm"
+  },
+  {
+   "id": "prag-t23",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Dzień 8 lutego jest w SW:",
+   "options": [
+    "Świętem SW",
+    "Uroczystością SW",
+    "Dniem Tradycji Służby Więziennej",
+    "upamiętnieniem powstania Straży Więziennej"
+   ],
+   "answer": 2,
+   "explanation": "8 lutego – Dzień Tradycji SW; 29 czerwca – Święto SW.",
+   "source": "test z pragmatyki służbowej (COSSW Kule), pyt. 23",
+   "tag": "test-pragm"
+  },
+  {
+   "id": "prag-t24",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Funkcjonariuszowi, którego stosunek służbowy ustał:",
+   "options": [
+    "wydaje się niezwłocznie świadectwo pracy",
+    "wydaje się niezwłocznie świadectwo służby",
+    "wydaje się w ciągu 30 dni świadectwo służby",
+    "wydaje się niezwłocznie zaświadczenie o zakończeniu służby, a świadectwo służby w ciągu 14 dni"
+   ],
+   "answer": 1,
+   "explanation": "Odpowiedź według klucza testu z pragmatyki służbowej (COSSW Kule).",
+   "source": "test z pragmatyki służbowej (COSSW Kule), pyt. 24",
+   "tag": "test-pragm"
+  },
+  {
+   "id": "prag-t25",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "W Służbie Więziennej ustanawia się odznakę, którą nadaje Minister Sprawiedliwości:",
+   "options": [
+    "„Za zasługi w pracy penitencjarnej”",
+    "„Za zasługi dla więziennictwa”",
+    "„Za zasługi na polu walki”",
+    "„Wzorowy funkcjonariusz”"
+   ],
+   "answer": 1,
+   "explanation": "Odpowiedź według klucza testu z pragmatyki służbowej (COSSW Kule).",
+   "source": "test z pragmatyki służbowej (COSSW Kule), pyt. 25",
+   "tag": "test-pragm"
+  },
+  {
+   "id": "prag-t26",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Funkcjonariusza zwalnia się ze służby w SW w terminie:",
+   "options": [
+    "do 6 miesięcy od dnia złożenia przez niego pisemnego zgłoszenia wystąpienia ze służby",
+    "do 3 miesięcy od dnia złożenia przez niego pisemnego zgłoszenia wystąpienia ze służby",
+    "do 2 miesięcy od dnia złożenia przez niego pisemnego zgłoszenia wystąpienia ze służby",
+    "do 12 miesięcy od dnia złożenia przez niego pisemnego zgłoszenia wystąpienia ze służby"
+   ],
+   "answer": 1,
+   "explanation": "Odpowiedź według klucza testu z pragmatyki służbowej (COSSW Kule).",
+   "source": "test z pragmatyki służbowej (COSSW Kule), pyt. 26",
+   "tag": "test-pragm"
+  },
+  {
+   "id": "prag-t27",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Dokumentem potwierdzającym tożsamość funkcjonariusza oraz jego uprawnienia wynikające z ustawy o SW i kkw jest:",
+   "options": [
+    "dowód osobisty",
+    "paszport",
+    "legitymacja służbowa",
+    "zaświadczenie z komórki kadrowej jednostki"
+   ],
+   "answer": 2,
+   "explanation": "Odpowiedź według klucza testu z pragmatyki służbowej (COSSW Kule).",
+   "source": "test z pragmatyki służbowej (COSSW Kule), pyt. 27",
+   "tag": "test-pragm"
+  },
+  {
+   "id": "prag-t28",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Przy nawiązywaniu stosunku służbowego w SW aktu mianowania funkcjonariusza dokonuje:",
+   "options": [
+    "Dyrektor Okręgowy SW",
+    "Dyrektor Generalny SW",
+    "kierownik jednostki organizacyjnej, w której funkcjonariusz będzie pełnił służbę",
+    "kierownik komórki kadrowej jednostki, w której funkcjonariusz będzie pełnił służbę"
+   ],
+   "answer": 2,
+   "explanation": "Odpowiedź według klucza testu z pragmatyki służbowej (COSSW Kule).",
+   "source": "test z pragmatyki służbowej (COSSW Kule), pyt. 28",
+   "tag": "test-pragm"
+  },
+  {
+   "id": "prag-t29",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Odmowa złożenia ślubowania zgodnie z rotą określoną w ustawie o SW powoduje:",
+   "options": [
+    "ograniczoną ważność aktu mianowania",
+    "nieważność aktu mianowania",
+    "ważność aktu mianowania, jeśli jest odpowiednio uzasadniona",
+    "odroczenie aktu mianowania"
+   ],
+   "answer": 1,
+   "explanation": "Odpowiedź według klucza testu z pragmatyki służbowej (COSSW Kule).",
+   "source": "test z pragmatyki służbowej (COSSW Kule), pyt. 29",
+   "tag": "test-pragm"
+  },
+  {
+   "id": "prag-t30",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Do egzaminu na pierwszy stopień w korpusie chorążych może przystąpić funkcjonariusz SW, który m.in.:",
+   "options": [
+    "ukończył studia pierwszego stopnia na Uczelni SW lub szkolenie zawodowe przygotowujące do zajmowania stanowiska w korpusie chorążych SW",
+    "ukończył studia pierwszego stopnia na Uczelni SW lub szkolenie zawodowe przygotowujące do stanowiska w korpusie podoficerów SW",
+    "ukończył wyłącznie studia drugiego stopnia na Uczelni SW i szkolenie zawodowe dla chorążych",
+    "ukończył szkołę chorążych w Siłach Zbrojnych RP lub szkołę aspirantów Policji"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza testu z pragmatyki służbowej (COSSW Kule).",
+   "source": "test z pragmatyki służbowej (COSSW Kule), pyt. 30",
+   "tag": "test-pragm"
+  },
+  {
+   "id": "prag-t31",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Na stanowiskach chorążych w SW wymaga się posiadania:",
+   "options": [
+    "tytułu zawodowego licencjata lub równorzędnego oraz złożenia egzaminu na pierwszy stopień chorążego",
+    "tytułu zawodowego magistra lub równorzędnego oraz złożenia egzaminu na pierwszy stopień chorążego",
+    "tytułu licencjata lub równorzędnego oraz złożenia egzaminu na pierwszy stopień podoficera",
+    "tytułu zawodowego magistra oraz złożenia egzaminu na pierwszy stopień chorążego"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza testu z pragmatyki służbowej (COSSW Kule).",
+   "source": "test z pragmatyki służbowej (COSSW Kule), pyt. 31",
+   "tag": "test-pragm"
+  },
+  {
+   "id": "prag-t32",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Funkcjonariusz przy wykonywaniu czynności służbowych poza terenem jednostki organizacyjnej:",
+   "options": [
+    "nie ma obowiązku okazania na żądanie innych osób legitymacji służbowej",
+    "jest obowiązany okazać na żądanie legitymację służbową w sposób umożliwiający odczytanie i zanotowanie danych",
+    "jest obowiązany okazać legitymację wyłącznie na żądanie organów państwowych",
+    "ma prawo okazania legitymacji służbowej na żądanie innych osób"
+   ],
+   "answer": 1,
+   "explanation": "Odpowiedź według klucza testu z pragmatyki służbowej (COSSW Kule).",
+   "source": "test z pragmatyki służbowej (COSSW Kule), pyt. 32",
+   "tag": "test-pragm"
+  },
+  {
+   "id": "prag-t33",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "W korpusie podoficerów SW stopień sierżanta sztabowego SW:",
+   "options": [
+    "jest wyższym stopniem od starszego sierżanta SW",
+    "jest niższym stopniem od starszego sierżanta SW",
+    "jest niższym stopniem od plutonowego SW",
+    "jest równoznacznym stopniem ze starszym sierżantem SW"
+   ],
+   "answer": 0,
+   "explanation": "Kolejność: kapral, st. kapral, plutonowy, sierżant, st. sierżant, sierżant sztabowy.",
+   "source": "test z pragmatyki służbowej (COSSW Kule), pyt. 33",
+   "tag": "test-pragm"
+  },
+  {
+   "id": "prag-t34",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Stopień szeregowego i starszego szeregowego Służby Więziennej nadaje:",
+   "options": [
+    "wyłącznie dyrektor ZK lub AŚ",
+    "kierownik jednostki organizacyjnej",
+    "kierownik komórki organizacyjnej",
+    "dyrektor okręgowy"
+   ],
+   "answer": 1,
+   "explanation": "Odpowiedź według klucza testu z pragmatyki służbowej (COSSW Kule).",
+   "source": "test z pragmatyki służbowej (COSSW Kule), pyt. 34",
+   "tag": "test-pragm"
+  },
+  {
+   "id": "prag-t35",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Nadanie stopnia chorążego SW nie może nastąpić wcześniej niż po upływie, w posiadanym stopniu młodszego chorążego SW, okresu służby, który wynosi:",
+   "options": [
+    "2 lata",
+    "3 lata",
+    "4 lata",
+    "5 lat"
+   ],
+   "answer": 1,
+   "explanation": "Odpowiedź według klucza testu z pragmatyki służbowej (COSSW Kule).",
+   "source": "test z pragmatyki służbowej (COSSW Kule), pyt. 35",
+   "tag": "test-pragm"
+  },
+  {
+   "id": "prag-t36",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Funkcjonariusz, który nie zgadza się z treścią opinii służbowej, może:",
+   "options": [
+    "wnieść wniosek o jej zmianę bezpośrednio do wyższego przełożonego w terminie 14 dni",
+    "wnieść wniosek o jej zmianę bezpośrednio do wyższego przełożonego w terminie 30 dni",
+    "wnieść, za pośrednictwem wydającego opinię, wniosek o jej zmianę do wyższego przełożonego w terminie 14 dni od dnia zapoznania się z nią",
+    "wnieść, za pośrednictwem wydającego opinię, wniosek do dyrektora okręgowego w terminie 30 dni"
+   ],
+   "answer": 2,
+   "explanation": "Odpowiedź według klucza testu z pragmatyki służbowej (COSSW Kule).",
+   "source": "test z pragmatyki służbowej (COSSW Kule), pyt. 36",
+   "tag": "test-pragm"
+  },
+  {
+   "id": "prag-t37",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Utrata stopnia SW lub jego obniżenie następuje na podstawie:",
+   "options": [
+    "decyzji wydanej przez organ uprawniony do nadania tego stopnia",
+    "rozkazu personalnego wydawanego przez organ uprawniony do nadania tego stopnia",
+    "postanowienia wydawanego przez organ uprawniony do nadania tego stopnia",
+    "rozporządzenia Ministra Sprawiedliwości"
+   ],
+   "answer": 1,
+   "explanation": "Odpowiedź według klucza testu z pragmatyki służbowej (COSSW Kule).",
+   "source": "test z pragmatyki służbowej (COSSW Kule), pyt. 37",
+   "tag": "test-pragm"
+  },
+  {
+   "id": "prag-t38",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "W okresie przebywania na zwolnieniu lekarskim co do zasady funkcjonariusz otrzymuje:",
+   "options": [
+    "90% uposażenia",
+    "80% uposażenia",
+    "70% uposażenia",
+    "100% uposażenia"
+   ],
+   "answer": 1,
+   "explanation": "Odpowiedź według klucza testu z pragmatyki służbowej (COSSW Kule).",
+   "source": "test z pragmatyki służbowej (COSSW Kule), pyt. 38",
+   "tag": "test-pragm"
+  },
+  {
+   "id": "prag-t39",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Prawidłowość orzekania o czasowej niezdolności do służby z powodu choroby lub prawidłowość wykorzystania zwolnienia lekarskiego może kontrolować m.in.:",
+   "options": [
+    "kierownik jednostki, w której funkcjonariusz pełni służbę – w zakresie prawidłowości wykorzystania zwolnienia",
+    "pracownicy właściwego terytorialnie ZUS",
+    "wszyscy pracownicy i funkcjonariusze tej samej jednostki",
+    "pracownicy ośrodka zdrowia, którego lekarz orzekł niezdolność"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza testu z pragmatyki służbowej (COSSW Kule).",
+   "source": "test z pragmatyki służbowej (COSSW Kule), pyt. 39",
+   "tag": "test-pragm"
+  },
+  {
+   "id": "prag-t40",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Wyższym stanowiskiem kierowniczym w Służbie Więziennej jest m.in.:",
+   "options": [
+    "kierownik działu ochrony",
+    "główny księgowy ZK",
+    "Rektor Uczelni SW (AWS)",
+    "Naczelny lekarz SW"
+   ],
+   "answer": 2,
+   "explanation": "Odpowiedź według klucza testu z pragmatyki służbowej (COSSW Kule).",
+   "source": "test z pragmatyki służbowej (COSSW Kule), pyt. 40",
+   "tag": "test-pragm"
+  },
+  {
+   "id": "prag-t41",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Zastępców dyrektora ZK i zastępców dyrektora AŚ powołuje spośród oficerów SW i odwołuje ze stanowiska:",
+   "options": [
+    "dyrektor okręgowy na wniosek dyrektora tego zakładu karnego lub aresztu śledczego",
+    "dyrektor generalny na wniosek dyrektora tego zakładu lub aresztu",
+    "dyrektor okręgowy na wniosek zastępcy dyrektora okręgowego",
+    "dyrektor generalny na wniosek dyrektora okręgowego"
+   ],
+   "answer": 0,
+   "explanation": "Dyrektora ZK/AŚ powołuje DG na wniosek dyrektora okręgowego; zastępców – dyrektor okręgowy na wniosek dyrektora jednostki.",
+   "source": "test z pragmatyki służbowej (COSSW Kule), pyt. 41",
+   "tag": "test-pragm"
+  },
+  {
+   "id": "prag-t42",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Funkcjonariusz może być z urzędu przeniesiony do pełnienia służby w innej jednostce organizacyjnej w przypadkach:",
+   "options": [
+    "w każdym czasie, bez podania przyczyny",
+    "uzasadnionych ważnymi potrzebami służby",
+    "uzasadnionych odległością między miejscem zamieszkania a miejscem służby",
+    "uzasadnionych ważnymi względami rodzinnymi"
+   ],
+   "answer": 1,
+   "explanation": "Odpowiedź według klucza testu z pragmatyki służbowej (COSSW Kule).",
+   "source": "test z pragmatyki służbowej (COSSW Kule), pyt. 42",
+   "tag": "test-pragm"
+  },
+  {
+   "id": "prag-t43",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Kara dyscyplinarna nagany podlega zatarciu po upływie:",
+   "options": [
+    "6 miesięcy od dnia uprawomocnienia się orzeczenia",
+    "12 miesięcy od dnia uprawomocnienia się orzeczenia",
+    "18 miesięcy od dnia uprawomocnienia się orzeczenia",
+    "24 miesięcy od dnia uprawomocnienia się orzeczenia"
+   ],
+   "answer": 1,
+   "explanation": "Odpowiedź według klucza testu z pragmatyki służbowej (COSSW Kule).",
+   "source": "test z pragmatyki służbowej (COSSW Kule), pyt. 43",
+   "tag": "test-pragm"
+  },
+  {
+   "id": "prag-t44",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Sprawy wynikające z podległości służbowej (powoływanie, mianowanie na stanowiska, odwoływanie, przenoszenie do dyspozycji, delegowanie) rozstrzyga się w formie:",
+   "options": [
+    "decyzji wydanej przez uprawniony organ",
+    "rozkazu personalnego",
+    "postanowienia wydawanego przez organ uprawniony",
+    "rozporządzenia Ministra Sprawiedliwości"
+   ],
+   "answer": 1,
+   "explanation": "Podległość służbowa – rozkaz personalny; zwolnienie, przeniesienie z urzędu, niższe stanowisko, zawieszenie – decyzja.",
+   "source": "test z pragmatyki służbowej (COSSW Kule), pyt. 44",
+   "tag": "test-pragm"
+  },
+  {
+   "id": "prag-t45",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Wyższym stopniem od generała SW jest:",
+   "options": [
+    "nie występuje wyższy stopień w SW",
+    "generał-pułkownik SW",
+    "generalny inspektor SW",
+    "generał inspektor SW"
+   ],
+   "answer": 3,
+   "explanation": "Odpowiedź według klucza testu z pragmatyki służbowej (COSSW Kule).",
+   "source": "test z pragmatyki służbowej (COSSW Kule), pyt. 45",
+   "tag": "test-pragm"
+  },
+  {
+   "id": "prag-t46",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Sprawy dotyczące zwolnienia ze służby, przeniesienia z urzędu do innej jednostki, przeniesienia na niższe stanowisko bądź zawieszenia w czynnościach rozstrzyga się w formie:",
+   "options": [
+    "decyzji",
+    "rozkazu personalnego",
+    "innej formy pisemnej",
+    "postanowienia sądu"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza testu z pragmatyki służbowej (COSSW Kule).",
+   "source": "test z pragmatyki służbowej (COSSW Kule), pyt. 46",
+   "tag": "test-pragm"
+  },
+  {
+   "id": "prag-t47",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Roszczenia z tytułu prawa do uposażenia i innych świadczeń oraz należności pieniężnych ulegają przedawnieniu z upływem:",
+   "options": [
+    "2 lat od dnia, w którym roszczenie stało się wymagalne",
+    "3 lat od dnia, w którym roszczenie stało się wymagalne",
+    "5 lat od dnia, w którym roszczenie stało się wymagalne",
+    "roszczenia z tego tytułu nie ulegają przedawnieniu"
+   ],
+   "answer": 1,
+   "explanation": "Odpowiedź według klucza testu z pragmatyki służbowej (COSSW Kule).",
+   "source": "test z pragmatyki służbowej (COSSW Kule), pyt. 47",
+   "tag": "test-pragm"
+  },
+  {
+   "id": "prag-t48",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "W okresie urlopu wychowawczego funkcjonariuszowi SW:",
+   "options": [
+    "nie przysługuje uposażenie",
+    "przysługuje uposażenie w wysokości 80%",
+    "przysługuje uposażenie w wysokości 50%",
+    "decyduje uznaniowo kierownik jednostki"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza testu z pragmatyki służbowej (COSSW Kule).",
+   "source": "test z pragmatyki służbowej (COSSW Kule), pyt. 48",
+   "tag": "test-pragm"
+  },
+  {
+   "id": "prag-t49",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Stopnie Służby Więziennej:",
+   "options": [
+    "są dożywotnie",
+    "obowiązują tylko w czasie służby w SW",
+    "obowiązują przez 5 lat od zakończenia służby",
+    "ulegają zawieszeniu w okresie postępowania karnego"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza testu z pragmatyki służbowej (COSSW Kule).",
+   "source": "test z pragmatyki służbowej (COSSW Kule), pyt. 49",
+   "tag": "test-pragm"
+  },
+  {
+   "id": "prag-t50",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Funkcjonariuszowi, który samowolnie opuścił miejsce pełnienia służby albo pozostaje poza nim lub nie podejmuje służby:",
+   "options": [
+    "przysługuje pełne uposażenie",
+    "przysługuje uposażenie w wysokości 80% ostatniego uposażenia",
+    "zawiesza się wypłatę uposażenia od najbliższego terminu płatności, a jeżeli już je pobrał, potrąca się 1/30 uposażenia za każdy dzień nieusprawiedliwionej nieobecności",
+    "w ogóle nie przysługuje uposażenie"
+   ],
+   "answer": 2,
+   "explanation": "Odpowiedź według klucza testu z pragmatyki służbowej (COSSW Kule).",
+   "source": "test z pragmatyki służbowej (COSSW Kule), pyt. 50",
+   "tag": "test-pragm"
+  },
+  {
+   "id": "prag-t51",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Uposażenie zasadnicze i dodatki o charakterze stałym funkcjonariuszowi SW są płatne:",
+   "options": [
+    "miesięcznie z dołu, w pierwszym dniu roboczym każdego miesiąca",
+    "miesięcznie z dołu, w ostatnim dniu roboczym każdego miesiąca",
+    "miesięcznie z góry, w ostatnim dniu roboczym każdego miesiąca",
+    "miesięcznie z góry, w pierwszym dniu roboczym każdego miesiąca"
+   ],
+   "answer": 3,
+   "explanation": "Odpowiedź według klucza testu z pragmatyki służbowej (COSSW Kule).",
+   "source": "test z pragmatyki służbowej (COSSW Kule), pyt. 51",
+   "tag": "test-pragm"
+  },
+  {
+   "id": "prag-t52",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Stopień porucznika SW nadaje:",
+   "options": [
+    "Prezydent RP",
+    "Minister Sprawiedliwości",
+    "Dyrektor Generalny",
+    "Dyrektor Okręgowy"
+   ],
+   "answer": 1,
+   "explanation": "Pierwszy stopień oficerski (podporucznik) – Prezydent RP na wniosek MS; kolejne oficerskie do pułkownika – MS.",
+   "source": "test z pragmatyki służbowej (COSSW Kule), pyt. 52",
+   "tag": "test-pragm"
+  },
+  {
+   "id": "prag-t53",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Funkcjonariuszowi, który wzorowo wykonuje obowiązki, przejawia inicjatywę i doskonali kwalifikacje, może być udzielone wyróżnienie w postaci:",
+   "options": [
+    "ustnej pochwały",
+    "krótkoterminowego urlopu nieprzekraczającego 14 dni",
+    "przedterminowego nadania wyższego stopnia",
+    "mianowania na wyższe stanowisko kierownicze"
+   ],
+   "answer": 2,
+   "explanation": "Odpowiedź według klucza testu z pragmatyki służbowej (COSSW Kule).",
+   "source": "test z pragmatyki służbowej (COSSW Kule), pyt. 53",
+   "tag": "test-pragm"
+  },
+  {
+   "id": "prag-t54",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Funkcjonariuszowi zawieszonemu w czynnościach służbowych zawiesza się, od najbliższego terminu płatności:",
+   "options": [
+    "20% należnego uposażenia",
+    "80% należnego uposażenia",
+    "50% należnego uposażenia",
+    "25% uposażenia zasadniczego i 25% dodatków"
+   ],
+   "answer": 2,
+   "explanation": "Odpowiedź według klucza testu z pragmatyki służbowej (COSSW Kule).",
+   "source": "test z pragmatyki służbowej (COSSW Kule), pyt. 54",
+   "tag": "test-pragm"
+  },
+  {
+   "id": "prag-t55",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Funkcjonariusza obligatoryjnie zwalnia się ze służby w przypadku:",
+   "options": [
+    "nieprzydatności do służby stwierdzonej w opinii służbowej w okresie służby przygotowawczej albo kandydackiej",
+    "ustnego zgłoszenia wystąpienia ze służby",
+    "nieprzydatności do służby stwierdzonej w opinii w okresie służby stałej",
+    "osiągnięcia 30-letniego stażu służby w SW"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza testu z pragmatyki służbowej (COSSW Kule).",
+   "source": "test z pragmatyki służbowej (COSSW Kule), pyt. 55",
+   "tag": "test-pragm"
+  },
+  {
+   "id": "prag-t56",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Stosunek służbowy funkcjonariusza wygasa w przypadku:",
+   "options": [
+    "ostatecznego orzeczenia komisji lekarskiej o częściowej niezdolności do służby",
+    "nieprawomocnego orzeczenia kary dyscyplinarnej wydalenia ze służby",
+    "zrzeczenia się obywatelstwa polskiego",
+    "nieobecności w służbie przez okres powyżej 1 miesiąca z powodu tymczasowego aresztowania"
+   ],
+   "answer": 2,
+   "explanation": "Odpowiedź według klucza testu z pragmatyki służbowej (COSSW Kule).",
+   "source": "test z pragmatyki służbowej (COSSW Kule), pyt. 56",
+   "tag": "test-pragm"
+  },
+  {
+   "id": "prag-t57",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Zdolność fizyczną i psychiczną do służby w SW ustalają:",
+   "options": [
+    "komisje lekarskie podległe ministrowi sprawiedliwości",
+    "komisje lekarskie podległe ministrowi właściwemu do spraw wewnętrznych",
+    "właściwe terenowe jednostki medycyny pracy SW",
+    "lekarze orzecznicy MSWiA"
+   ],
+   "answer": 1,
+   "explanation": "Odpowiedź według klucza testu z pragmatyki służbowej (COSSW Kule).",
+   "source": "test z pragmatyki służbowej (COSSW Kule), pyt. 57",
+   "tag": "test-pragm"
+  },
+  {
+   "id": "prag-t58",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Przełożeni są obowiązani zapewnić funkcjonariuszom prawo do przerwy w służbie, której wymiar wynosi:",
+   "options": [
+    "15 minut – w służbie 8-godzinnej i 30 minut – w 12-godzinnej",
+    "20 minut – w służbie 8-godzinnej i 60 minut – w 12-godzinnej",
+    "20 minut niezależnie od czasu trwania służby",
+    "20 minut – w służbie 8-godzinnej i 45 minut – w 12-godzinnej"
+   ],
+   "answer": 3,
+   "explanation": "Odpowiedź według klucza testu z pragmatyki służbowej (COSSW Kule).",
+   "source": "test z pragmatyki służbowej (COSSW Kule), pyt. 58",
+   "tag": "test-pragm"
+  },
+  {
+   "id": "prag-t60",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Funkcjonariuszowi przysługuje w każdej dobie prawo do co najmniej:",
+   "options": [
+    "11 godzin nieprzerwanego odpoczynku",
+    "12 godzin nieprzerwanego odpoczynku",
+    "24 godzin nieprzerwanego odpoczynku",
+    "8 godzin nieprzerwanego odpoczynku"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza testu z pragmatyki służbowej (COSSW Kule).",
+   "source": "test z pragmatyki służbowej (COSSW Kule), pyt. 60",
+   "tag": "test-pragm"
+  },
+  {
+   "id": "prag-t61",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "„Ostrzeżenie o niepełnej przydatności do służby w Służbie Więziennej” to:",
+   "options": [
+    "środek karny",
+    "pisemne upomnienie",
+    "kara dyscyplinarna",
+    "kara porządkowa"
+   ],
+   "answer": 2,
+   "explanation": "Odpowiedź według klucza testu z pragmatyki służbowej (COSSW Kule).",
+   "source": "test z pragmatyki służbowej (COSSW Kule), pyt. 61",
+   "tag": "test-pragm"
+  },
+  {
+   "id": "prag-t62",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Nadanie stopnia starszego kaprala SW nie może nastąpić wcześniej niż po upływie, w stopniu kaprala SW, okresu służby, który wynosi:",
+   "options": [
+    "2 lata",
+    "3 lata",
+    "4 lata",
+    "5 lat"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza testu z pragmatyki służbowej (COSSW Kule).",
+   "source": "test z pragmatyki służbowej (COSSW Kule), pyt. 62",
+   "tag": "test-pragm"
+  },
+  {
+   "id": "prag-t63",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Funkcjonariusz SW, którego stosunek służbowy ustał:",
+   "options": [
+    "może używać stopnia SW z dodaniem określenia „w stanie spoczynku”",
+    "może używać stopnia SW z dodaniem określenia „emeryt SW”",
+    "może używać stopnia SW w każdym czasie bez dodatkowego określenia",
+    "nie może używać stopnia SW"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza testu z pragmatyki służbowej (COSSW Kule).",
+   "source": "test z pragmatyki służbowej (COSSW Kule), pyt. 63",
+   "tag": "test-pragm"
+  },
+  {
+   "id": "prag-t64",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Funkcjonariusz SW może być przeniesiony do innej jednostki organizacyjnej na własną prośbę:",
+   "options": [
+    "jeżeli nie stoją temu na przeszkodzie względy służbowe",
+    "z uwagi na wolne etaty w jednostce",
+    "jedynie z uwagi na ważne względy osobiste bądź rodzinne",
+    "nie można przenosić na własne prośby, tylko na wnioski przełożonych"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza testu z pragmatyki służbowej (COSSW Kule).",
+   "source": "test z pragmatyki służbowej (COSSW Kule), pyt. 64",
+   "tag": "test-pragm"
+  },
+  {
+   "id": "prag-t65",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Do delegowania funkcjonariusza SW oraz określenia jego stanowiska służbowego na obszarze kraju właściwy jest:",
+   "options": [
+    "Dyrektor Okręgowy",
+    "Minister Sprawiedliwości",
+    "Dyrektor Generalny",
+    "dyrektor właściwego ZK lub AŚ"
+   ],
+   "answer": 2,
+   "explanation": "Odpowiedź według klucza testu z pragmatyki służbowej (COSSW Kule).",
+   "source": "test z pragmatyki służbowej (COSSW Kule), pyt. 65",
+   "tag": "test-pragm"
+  },
+  {
+   "id": "prag-t66",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Stanowiskiem służbowym zajmowanym na podstawie powołania, innym niż wyższe stanowiska kierownicze w SW, jest m.in.:",
+   "options": [
+    "starszy wychowawca działu penitencjarnego",
+    "pielęgniarka ZOZ właściwego ZK/AŚ",
+    "kierownik działu penitencjarnego",
+    "kierownik grupy roboczej osadzonych poza terenem ZK"
+   ],
+   "answer": 2,
+   "explanation": "Odpowiedź według klucza testu z pragmatyki służbowej (COSSW Kule).",
+   "source": "test z pragmatyki służbowej (COSSW Kule), pyt. 66",
+   "tag": "test-pragm"
+  },
+  {
+   "id": "prag-t67",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Pierwszy stopień w korpusie oficerów Służby Więziennej nadaje:",
+   "options": [
+    "Prezydent RP na wniosek Ministra Sprawiedliwości",
+    "Prezydent RP na wniosek Dyrektora Generalnego",
+    "Minister Sprawiedliwości na wniosek Dyrektora Generalnego",
+    "Prezes Rady Ministrów na wniosek Ministra Sprawiedliwości"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza testu z pragmatyki służbowej (COSSW Kule).",
+   "source": "test z pragmatyki służbowej (COSSW Kule), pyt. 67",
+   "tag": "test-pragm"
+  },
+  {
+   "id": "prag-t68",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Dzień 29 czerwca jest w SW:",
+   "options": [
+    "Świętem SW",
+    "Uroczystością SW",
+    "Dniem Tradycji Służby Więziennej",
+    "upamiętnieniem powstania Służby Więziennej"
+   ],
+   "answer": 0,
+   "explanation": "29 czerwca – Święto SW; 8 lutego – Dzień Tradycji SW.",
+   "source": "test z pragmatyki służbowej (COSSW Kule), pyt. 68",
+   "tag": "test-pragm"
+  },
+  {
+   "id": "prag-t69",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Opinię służbową st. szer. Piotrowi Więziennemu – strażnikowi działu ochrony – sporządzi:",
+   "options": [
+    "dyrektor ZK",
+    "kierownik działu kadrowego",
+    "koordynator ochrony",
+    "kierownik działu ochrony"
+   ],
+   "answer": 3,
+   "explanation": "Opinię sporządza bezpośredni przełożony – kierownik działu.",
+   "source": "test z pragmatyki służbowej (COSSW Kule), pyt. 69",
+   "tag": "test-pragm"
+  },
+  {
+   "id": "prag-t70",
+   "deck": "pragmatyka",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Funkcjonariusz SW jest obowiązany złożyć oświadczenie o swoim stanie majątkowym (majątek wspólny i osobisty):",
+   "options": [
+    "przy nawiązaniu stosunku służbowego, a następnie co roku do 31 marca (stan na 31 grudnia roku poprzedniego), a także przy rozwiązaniu stosunku służbowego",
+    "tylko co roku do 31 marca (stan na 31 grudnia roku poprzedniego)",
+    "co roku do 30 kwietnia, a także przy rozwiązaniu stosunku służbowego",
+    "przy nawiązaniu stosunku, następnie co roku do 1 marca, a także przy rozwiązaniu"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza testu z pragmatyki służbowej (COSSW Kule).",
+   "source": "test z pragmatyki służbowej (COSSW Kule), pyt. 70",
+   "tag": "test-pragm"
+  },
+  {
+   "id": "kurs-1-08",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Odwołanie od decyzji administracyjnej wnosi się w terminie:",
+   "options": [
+    "14 dni",
+    "30 dni",
+    "7 dni",
+    "10 dni"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł I, pyt. 8",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-1-09",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Zażalenie wnosi się na:",
+   "options": [
+    "decyzję",
+    "opinię służbową",
+    "wyrok",
+    "postanowienie, gdy przewidują to przepisy"
+   ],
+   "answer": 3,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł I, pyt. 9",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-1-10",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Postępowanie administracyjne wszczyna się:",
+   "options": [
+    "wyłącznie na wniosek strony",
+    "wyłącznie z urzędu",
+    "na żądanie strony lub z urzędu",
+    "na polecenie Policji"
+   ],
+   "answer": 2,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł I, pyt. 10",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-1-11",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Stroną postępowania administracyjnego jest:",
+   "options": [
+    "każdy obywatel",
+    "każdy, czyjego interesu prawnego lub obowiązku dotyczy postępowanie",
+    "świadek",
+    "każdy funkcjonariusz"
+   ],
+   "answer": 1,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł I, pyt. 11",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-1-15",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Grzywnę w Kodeksie karnym wymierza się:",
+   "options": [
+    "w stawkach dziennych",
+    "procentowo od dochodu",
+    "ryczałtowo",
+    "godzinowo"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł I, pyt. 15",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-1-16",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Zakaz wykonywania zawodu jest:",
+   "options": [
+    "środkiem karnym",
+    "karą pozbawienia wolności",
+    "środkiem zabezpieczającym",
+    "środkiem wychowawczym"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł I, pyt. 16",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-1-17",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Znikoma społeczna szkodliwość czynu powoduje, że:",
+   "options": [
+    "kara jest wyższa",
+    "czyn nie stanowi przestępstwa",
+    "stosuje się areszt",
+    "sprawa trafia do sądu wojskowego"
+   ],
+   "answer": 1,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł I, pyt. 17",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-1-18",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Prawo do obrony przysługuje:",
+   "options": [
+    "wyłącznie adwokatom",
+    "każdemu oskarżonemu",
+    "wyłącznie obywatelom RP",
+    "wyłącznie funkcjonariuszom"
+   ],
+   "answer": 1,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł I, pyt. 18",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-1-20",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Oświadczenie majątkowe składane corocznie obejmuje stan majątku na dzień:",
+   "options": [
+    "1 stycznia",
+    "dzień złożenia oświadczenia",
+    "31 grudnia roku poprzedniego",
+    "31 marca"
+   ],
+   "answer": 2,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł I, pyt. 20",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-2-01",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Oddziaływania specjalistyczne w oddziale terapeutycznym realizuje:",
+   "options": [
+    "wychowawca działu penitencjarnego",
+    "psycholog jednostki",
+    "zespół terapeutyczny",
+    "kierownik działu penitencjarnego"
+   ],
+   "answer": 2,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł II, pyt. 1",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-2-02",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Zakłady karne w drodze rozporządzenia tworzy i znosi:",
+   "options": [
+    "Dyrektor Generalny SW",
+    "Dyrektor Okręgowy SW",
+    "Prezes Rady Ministrów",
+    "Minister Sprawiedliwości"
+   ],
+   "answer": 3,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł II, pyt. 2",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-2-05",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "W zakładzie karnym typu półotwartego skazany może korzystać:",
+   "options": [
+    "z jednego widzenia miesięcznie",
+    "z trzech widzeń miesięcznie",
+    "z dwóch widzeń miesięcznie",
+    "z nieograniczonej liczby widzeń"
+   ],
+   "answer": 1,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł II, pyt. 5",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-2-06",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Przy umieszczaniu skazanego w celi mieszkalnej bierze się pod uwagę:",
+   "options": [
+    "wybór współosadzonych",
+    "decyzję klasyfikacyjną",
+    "życzenia rodziny",
+    "miejsce zameldowania"
+   ],
+   "answer": 1,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł II, pyt. 6",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-2-07",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Skazany ma prawo dokonywać zakupów artykułów żywnościowych:",
+   "options": [
+    "raz w miesiącu",
+    "dwa razy w miesiącu",
+    "codziennie",
+    "co najmniej trzy razy w miesiącu"
+   ],
+   "answer": 3,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł II, pyt. 7",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-2-20",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "System programowanego oddziaływania opiera się na:",
+   "options": [
+    "indywidualnym programie oddziaływania",
+    "decyzji oddziałowego",
+    "regulaminie pracy",
+    "decyzji współosadzonych"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł II, pyt. 20",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-3-01",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Bezpieczeństwo jednostki penitencjarnej oznacza:",
+   "options": [
+    "ochronę budynków jednostki",
+    "stan zapewniający prawidłowe funkcjonowanie jednostki oraz ochronę osób i mienia",
+    "wyłącznie ochronę osadzonych",
+    "wyłącznie ochronę funkcjonariuszy"
+   ],
+   "answer": 1,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł III, pyt. 1",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-3-02",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Za bezpieczeństwo jednostki penitencjarnej odpowiada:",
+   "options": [
+    "wszyscy funkcjonariusze i pracownicy w zakresie swoich obowiązków",
+    "wyłącznie dział ochrony",
+    "wyłącznie dowódca zmiany",
+    "wyłącznie dyrektor jednostki"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł III, pyt. 2",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-3-03",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Ucieczka osadzonego jest:",
+   "options": [
+    "zdarzeniem nadzwyczajnym",
+    "wykroczeniem dyscyplinarnym",
+    "wydarzeniem porządkowym",
+    "zdarzeniem zwykłym"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł III, pyt. 3",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-3-04",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Próbę samobójczą osadzonego kwalifikuje się jako:",
+   "options": [
+    "wykroczenie",
+    "incydent medyczny",
+    "naruszenie regulaminu",
+    "zdarzenie nadzwyczajne"
+   ],
+   "answer": 3,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł III, pyt. 4",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-3-05",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Bunt osadzonych jest:",
+   "options": [
+    "zdarzeniem nadzwyczajnym",
+    "konfliktem interpersonalnym",
+    "przewinieniem dyscyplinarnym",
+    "naruszeniem porządku"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł III, pyt. 5",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-3-08",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Telefon komórkowy ujawniony u osadzonego jest:",
+   "options": [
+    "środkiem łączności",
+    "przedmiotem dozwolonym",
+    "wyposażeniem celi",
+    "przedmiotem niedozwolonym"
+   ],
+   "answer": 3,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł III, pyt. 8",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-3-09",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Informację o możliwej ucieczce osadzonego funkcjonariusz powinien:",
+   "options": [
+    "niezwłocznie przekazać przełożonemu",
+    "przekazać współosadzonym",
+    "zignorować do czasu potwierdzenia",
+    "odnotować po zakończeniu służby"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł III, pyt. 9",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-3-10",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Monitoring wizyjny służy przede wszystkim:",
+   "options": [
+    "prowadzeniu zajęć penitencjarnych",
+    "kontroli czasu pracy funkcjonariuszy",
+    "dokumentowaniu wizyt",
+    "zapewnieniu bezpieczeństwa i porządku"
+   ],
+   "answer": 3,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł III, pyt. 10",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-3-16",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Samouszkodzenie osadzonego wymaga:",
+   "options": [
+    "wyłącznie sporządzenia notatki",
+    "przeniesienia do innej celi",
+    "podjęcia działań ratowniczych i powiadomienia przełożonych",
+    "rozmowy wychowawczej"
+   ],
+   "answer": 2,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł III, pyt. 16",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-3-17",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Podstawą skutecznego bezpieczeństwa jednostki jest:",
+   "options": [
+    "wyłącznie oddział penitencjarny",
+    "współdziałanie wszystkich działów jednostki",
+    "wyłącznie dział ochrony",
+    "wyłącznie monitoring"
+   ],
+   "answer": 1,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł III, pyt. 17",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-3-18",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Funkcjonariusz ma obowiązek reagować na:",
+   "options": [
+    "każde zauważone zagrożenie bezpieczeństwa",
+    "wyłącznie ucieczki",
+    "wyłącznie zagrożenia pożarowe",
+    "wyłącznie polecenia przełożonych"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł III, pyt. 18",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-3-19",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Dokumentowanie zdarzeń nadzwyczajnych służy:",
+   "options": [
+    "analizie przyczyn i zapobieganiu podobnym zdarzeniom",
+    "ocenie osadzonych",
+    "ocenie funkcjonariuszy",
+    "wyłącznie celom statystycznym"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł III, pyt. 19",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-3-20",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Jednym z najważniejszych elementów bezpieczeństwa jednostki jest:",
+   "options": [
+    "prawidłowy obieg informacji",
+    "wyposażenie cel",
+    "liczba osadzonych",
+    "liczba widzeń"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł III, pyt. 20",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-4-01",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Podstawowym zadaniem działu ochrony jest:",
+   "options": [
+    "prowadzenie oddziaływań resocjalizacyjnych",
+    "zapewnienie bezpieczeństwa jednostki i niedopuszczenie do ucieczki osadzonych",
+    "organizowanie widzeń",
+    "prowadzenie dokumentacji finansowej"
+   ],
+   "answer": 1,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł IV, pyt. 1",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-4-08",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Funkcjonariusz pełniący służbę na posterunku:",
+   "options": [
+    "może samowolnie opuścić posterunek",
+    "może opuścić posterunek na żądanie osadzonego",
+    "nie odpowiada za posterunek",
+    "może opuścić posterunek po zakończeniu służby lub za zgodą przełożonego"
+   ],
+   "answer": 3,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł IV, pyt. 8",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-4-09",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Konwój oznacza:",
+   "options": [
+    "przeszukanie osadzonego",
+    "ochronę i doprowadzenie osób, mienia lub wartości pieniężnych",
+    "przemieszczanie dokumentów",
+    "kontrolę celi mieszkalnej"
+   ],
+   "answer": 1,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł IV, pyt. 9",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-4-10",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Za bezpieczeństwo konwoju odpowiada:",
+   "options": [
+    "wychowawca",
+    "psycholog",
+    "kierownik działu finansowego",
+    "dowódca konwoju"
+   ],
+   "answer": 3,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł IV, pyt. 10",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-5-08",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Bierny opór oznacza:",
+   "options": [
+    "próbę ucieczki",
+    "fizyczny atak na funkcjonariusza",
+    "zniszczenie mienia",
+    "odmowę wykonania polecenia bez agresji fizycznej"
+   ],
+   "answer": 3,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł ŚPB, pyt. 8",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-5-09",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Czynny opór oznacza:",
+   "options": [
+    "odmowę rozmowy",
+    "fizyczne przeciwstawianie się funkcjonariuszowi",
+    "brak reakcji na polecenia",
+    "milczenie"
+   ],
+   "answer": 1,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł ŚPB, pyt. 9",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-5-10",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Kajdanki mogą być użyte m.in. w celu:",
+   "options": [
+    "wymuszenia posłuszeństwa",
+    "ukarania osadzonego",
+    "przeciwdziałania ucieczce",
+    "przyspieszenia konwoju"
+   ],
+   "answer": 2,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł ŚPB, pyt. 10",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-5-11",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Kajdanki można zakładać:",
+   "options": [
+    "zgodnie z oceną sytuacji i obowiązującymi przepisami",
+    "wyłącznie na nogi",
+    "wyłącznie za zgodą dyrektora",
+    "wyłącznie na ręce trzymane z tyłu"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł ŚPB, pyt. 11",
+   "tag": "kursanci"
   }
  ]
 }
