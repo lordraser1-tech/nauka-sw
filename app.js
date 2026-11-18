@@ -2385,6 +2385,8 @@ function sizeLikePicker(pairs, current, onPick) {
 
 // Przy każdej aktualizacji: dopisz wpis NA POCZĄTKU listy, z numerem = numer CACHE w service-worker.js.
 const CHANGELOG = [
+  { v: 28, date: '18.11.2026', items: [
+    '➕ „Pytania od kursantów” rozbudowane do 100 pytań – doszły m.in. KPA i zagadnienia prawne, ŚPB, bezpieczeństwo i quiz z prawa.'] },
   { v: 27, date: '18.11.2026', items: [
     '📝 Nowy temat „Test komendancki (przykładowy egzamin)” – 147 pytań z przykładowego testu komendanckiego.',
     'Temat „Pragmatyka służbowa” powiększony o 56 pytań z testu z pragmatyki (COSSW Kule).',

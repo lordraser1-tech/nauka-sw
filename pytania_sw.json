@@ -1,7 +1,7 @@
 {
  "meta": {
   "tytul": "Szkolenie chorążych SW – baza do nauki",
-  "wersja": 13,
+  "wersja": 14,
   "data": "2026-11-18",
   "zrodla": "Ustawa o ŚPB (Dz.U. 2026 poz. 244), ustawa o SW (Dz.U. 2025 poz. 1750), kkw (Dz.U. 2025 poz. 911), rozporządzenie o oddziaływaniach penitencjarnych (Dz.U. 2024 poz. 1344), rozporządzenie o ośrodkach diagnostycznych (Dz.U. 2023 poz. 1677), rozporządzenie o ochronie jednostek SW (Dz.U. 2016 poz. 1804); materiały kursu: pytania kontrolne (psycholodzy 1–29, penitencjarne 28–53), lista 124 pytań, SPECJALIZACJA_2 (77 zagadnień), Skrypt SW V15; prezentacja „Instrukcja obsługi i użytkowania pistoletu 9 mm GLOCK 17 gen. 5 MOS”; prezentacja i skrypt „Zagadnienia penitencjarne” (Kule 2026); przykładowy test komendancki; test z pragmatyki służbowej (COSSW Kule); pytania kursantów (moduły)",
   "typy": {
@@ -15210,7 +15210,7 @@
     "po ukończeniu lat 17"
    ],
    "answer": 0,
-   "explanation": "Art. 10 § 2 kk – po ukończeniu 15 lat (za wymienione najcięższe czyny).",
+   "explanation": "Art. 10 § 2 kk – po ukończeniu 15 lat (za wymienione najcięższe czyny). Od 1.10.2023 r. art. 10 § 2a kk: za zabójstwo kwalifikowane (art. 148 § 2 lub 3) – już po ukończeniu 14 lat.",
    "source": "przykładowy test komendancki, pyt. 31",
    "tag": "test-komend"
   },
@@ -18438,7 +18438,7 @@
    ],
    "answer": 0,
    "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
-   "source": "pytania kursantów – moduł I, pyt. 8",
+   "source": "pytania kursantów – moduł VI (KPA i zagadnienia prawne), pyt. 8",
    "tag": "kursanci"
   },
   {
@@ -18455,7 +18455,7 @@
    ],
    "answer": 3,
    "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
-   "source": "pytania kursantów – moduł I, pyt. 9",
+   "source": "pytania kursantów – moduł VI (KPA i zagadnienia prawne), pyt. 9",
    "tag": "kursanci"
   },
   {
@@ -18472,7 +18472,7 @@
    ],
    "answer": 2,
    "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
-   "source": "pytania kursantów – moduł I, pyt. 10",
+   "source": "pytania kursantów – moduł VI (KPA i zagadnienia prawne), pyt. 10",
    "tag": "kursanci"
   },
   {
@@ -18489,7 +18489,7 @@
    ],
    "answer": 1,
    "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
-   "source": "pytania kursantów – moduł I, pyt. 11",
+   "source": "pytania kursantów – moduł VI (KPA i zagadnienia prawne), pyt. 11",
    "tag": "kursanci"
   },
   {
@@ -18506,7 +18506,7 @@
    ],
    "answer": 0,
    "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
-   "source": "pytania kursantów – moduł I, pyt. 15",
+   "source": "pytania kursantów – moduł VI (KPA i zagadnienia prawne), pyt. 15",
    "tag": "kursanci"
   },
   {
@@ -18523,7 +18523,7 @@
    ],
    "answer": 0,
    "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
-   "source": "pytania kursantów – moduł I, pyt. 16",
+   "source": "pytania kursantów – moduł VI (KPA i zagadnienia prawne), pyt. 16",
    "tag": "kursanci"
   },
   {
@@ -18540,7 +18540,7 @@
    ],
    "answer": 1,
    "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
-   "source": "pytania kursantów – moduł I, pyt. 17",
+   "source": "pytania kursantów – moduł VI (KPA i zagadnienia prawne), pyt. 17",
    "tag": "kursanci"
   },
   {
@@ -18557,7 +18557,7 @@
    ],
    "answer": 1,
    "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
-   "source": "pytania kursantów – moduł I, pyt. 18",
+   "source": "pytania kursantów – moduł VI (KPA i zagadnienia prawne), pyt. 18",
    "tag": "kursanci"
   },
   {
@@ -19034,6 +19034,1094 @@
    "answer": 0,
    "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
    "source": "pytania kursantów – moduł ŚPB, pyt. 11",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-6-01",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Najwyższym prawem Rzeczypospolitej Polskiej jest:",
+   "options": [
+    "Ustawa o Służbie Więziennej",
+    "Kodeks karny",
+    "Kodeks postępowania administracyjnego",
+    "Konstytucja RP"
+   ],
+   "answer": 3,
+   "explanation": "Art. 8 ust. 1 Konstytucji.",
+   "source": "pytania kursantów – moduł VI (KPA i zagadnienia prawne), pyt. 1",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-6-02",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Źródłem powszechnie obowiązującego prawa w RP jest:",
+   "options": [
+    "rozporządzenie",
+    "polecenie służbowe",
+    "zarządzenie dyrektora jednostki",
+    "regulamin wewnętrzny"
+   ],
+   "answer": 0,
+   "explanation": "Art. 87 Konstytucji: Konstytucja, ustawy, ratyfikowane umowy międzynarodowe, rozporządzenia (i akty prawa miejscowego).",
+   "source": "pytania kursantów – moduł VI (KPA i zagadnienia prawne), pyt. 2",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-6-03",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Organ administracji publicznej działa:",
+   "options": [
+    "na podstawie i w granicach prawa",
+    "zgodnie z wolą strony",
+    "wyłącznie na polecenie przełożonego",
+    "według własnego uznania"
+   ],
+   "answer": 0,
+   "explanation": "Art. 7 Konstytucji, art. 6 kpa.",
+   "source": "pytania kursantów – moduł VI (KPA i zagadnienia prawne), pyt. 3",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-6-04",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Jedną z podstawowych zasad KPA jest:",
+   "options": [
+    "zasada praworządności",
+    "zasada poufności",
+    "zasada odwetu",
+    "zasada represji"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł VI (KPA i zagadnienia prawne), pyt. 4",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-6-05",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Zasada prawdy obiektywnej oznacza:",
+   "options": [
+    "obowiązek przyjęcia stanowiska strony",
+    "obowiązek ustalenia rzeczywistego stanu faktycznego",
+    "obowiązek wydania decyzji w ciągu 7 dni",
+    "obowiązek prowadzenia mediacji"
+   ],
+   "answer": 1,
+   "explanation": "Art. 7 kpa.",
+   "source": "pytania kursantów – moduł VI (KPA i zagadnienia prawne), pyt. 5",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-6-06",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Zasada czynnego udziału strony oznacza:",
+   "options": [
+    "obowiązek osobistego stawiennictwa",
+    "obowiązek korzystania z pełnomocnika",
+    "możliwość udziału strony w każdym stadium postępowania",
+    "obowiązek składania odwołania"
+   ],
+   "answer": 2,
+   "explanation": "Art. 10 kpa.",
+   "source": "pytania kursantów – moduł VI (KPA i zagadnienia prawne), pyt. 6",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-6-07",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Od decyzji administracyjnej służy:",
+   "options": [
+    "apelacja",
+    "kasacja",
+    "odwołanie",
+    "sprzeciw"
+   ],
+   "answer": 2,
+   "explanation": "Od decyzji – odwołanie, od postanowienia – zażalenie.",
+   "source": "pytania kursantów – moduł VI (KPA i zagadnienia prawne), pyt. 7",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-6-12",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Decyzja administracyjna powinna zawierać:",
+   "options": [
+    "uzasadnienie faktyczne i prawne",
+    "opinię psychologa",
+    "zgodę strony",
+    "stanowisko Policji"
+   ],
+   "answer": 0,
+   "explanation": "Art. 107 kpa.",
+   "source": "pytania kursantów – moduł VI (KPA i zagadnienia prawne), pyt. 12",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-6-13",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Domniemanie niewinności oznacza, że:",
+   "options": [
+    "oskarżonego uważa się za niewinnego do czasu prawomocnego skazania",
+    "oskarżony musi udowodnić swoją niewinność",
+    "oskarżony nie odpowiada za przestępstwo",
+    "oskarżony nie może być zatrzymany"
+   ],
+   "answer": 0,
+   "explanation": "Art. 42 ust. 3 Konstytucji, art. 5 § 1 kpk.",
+   "source": "pytania kursantów – moduł VI (KPA i zagadnienia prawne), pyt. 13",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-6-14",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Przestępstwo jest:",
+   "options": [
+    "każdym wykroczeniem",
+    "czynem zabronionym przez ustawę pod groźbą kary, bezprawnym i zawinionym",
+    "każdą szkodą materialną",
+    "każdym naruszeniem regulaminu"
+   ],
+   "answer": 1,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł VI (KPA i zagadnienia prawne), pyt. 14",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-6-19",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Odpowiedzialność karna jest związana z:",
+   "options": [
+    "niewykonaniem polecenia służbowego",
+    "popełnieniem czynu zabronionego",
+    "utratą dokumentów",
+    "negatywną opinią służbową"
+   ],
+   "answer": 1,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł VI (KPA i zagadnienia prawne), pyt. 19",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-6-20",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Kodyfikacja oznacza:",
+   "options": [
+    "całościowe ujęcie przepisów określonej dziedziny w jednym akcie prawnym",
+    "uchylenie ustawy",
+    "publikację orzeczeń sądowych",
+    "zmianę ustawy"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł VI (KPA i zagadnienia prawne), pyt. 20",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-p-04",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Dyrektora zakładu karnego powołuje:",
+   "options": [
+    "Dyrektor Generalny SW na wniosek Dyrektora Okręgowego SW",
+    "Dyrektor Okręgowy SW",
+    "Prezydent RP",
+    "Minister Sprawiedliwości"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł I (pragmatyka), pyt. 4",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-p-05",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Centralnym Ośrodkiem Szkolenia SW kieruje:",
+   "options": [
+    "komendant",
+    "naczelnik",
+    "dyrektor",
+    "rektor"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł I (pragmatyka), pyt. 5",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-p-06",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Stanowiskiem obsadzanym na podstawie powołania jest:",
+   "options": [
+    "oddziałowy",
+    "strażnik działu ochrony",
+    "kierownik działu penitencjarnego",
+    "starszy wychowawca"
+   ],
+   "answer": 2,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł I (pragmatyka), pyt. 6",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-p-07",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Funkcjonariuszowi SW przysługuje w każdej dobie co najmniej:",
+   "options": [
+    "10 godzin odpoczynku",
+    "11 godzin odpoczynku",
+    "8 godzin odpoczynku",
+    "12 godzin odpoczynku"
+   ],
+   "answer": 1,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł I (pragmatyka), pyt. 7",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-p-09",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Krótkoterminowy urlop nieprzekraczający 5 dni stanowi:",
+   "options": [
+    "wyróżnienie",
+    "urlop okolicznościowy",
+    "urlop dodatkowy",
+    "nagrodę pieniężną"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł I (pragmatyka), pyt. 9",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-p-18",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Funkcjonariusza można zwolnić ze służby m.in. po:",
+   "options": [
+    "24 miesiącach zawieszenia",
+    "12 miesiącach zawieszenia w czynnościach służbowych",
+    "6 miesiącach zawieszenia",
+    "3 miesiącach zawieszenia"
+   ],
+   "answer": 1,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł I (pragmatyka), pyt. 18",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-p-19",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Funkcjonariusz podczas wykonywania obowiązków służbowych korzysta z:",
+   "options": [
+    "ochrony prawnej przewidzianej dla funkcjonariusza publicznego",
+    "ochrony urzędnika państwowego",
+    "ochrony przewidzianej dla żołnierza zawodowego",
+    "ochrony pracownika samorządowego"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł I (pragmatyka), pyt. 19",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-2-03",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Podstawowym celem wykonywania kary pozbawienia wolności jest:",
+   "options": [
+    "wzbudzanie w skazanym woli współdziałania w kształtowaniu społecznie pożądanych postaw",
+    "izolacja skazanego",
+    "odstraszanie społeczeństwa",
+    "represja wobec skazanego"
+   ],
+   "answer": 0,
+   "explanation": "Art. 67 § 1 kkw.",
+   "source": "pytania kursantów – moduł II (penitencjarystyka), pyt. 3",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-2-04",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Skazanych klasyfikuje się przede wszystkim ze względu na:",
+   "options": [
+    "miejsce zamieszkania",
+    "wzrost i wiek",
+    "stan majątkowy",
+    "rodzaj popełnionego przestępstwa, demoralizację i cechy osobowości"
+   ],
+   "answer": 3,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł II (penitencjarystyka), pyt. 4",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-2-11",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Tymczasowo aresztowany:",
+   "options": [
+    "nie podlega regulaminowi",
+    "jest skazanym",
+    "pozostaje do dyspozycji organu prowadzącego postępowanie",
+    "odbywa karę pozbawienia wolności"
+   ],
+   "answer": 2,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł II (penitencjarystyka), pyt. 11",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-2-12",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Przepustki dla skazanych udziela:",
+   "options": [
+    "oddziałowy",
+    "psycholog",
+    "dyrektor zakładu karnego lub upoważniona osoba",
+    "wychowawca"
+   ],
+   "answer": 2,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł II (penitencjarystyka), pyt. 12",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-2-13",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Klasyfikacji skazanego dokonuje:",
+   "options": [
+    "wychowawca",
+    "oddziałowy",
+    "psycholog",
+    "komisja penitencjarna"
+   ],
+   "answer": 3,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł II (penitencjarystyka), pyt. 13",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-3-06",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Podstawowym dokumentem określającym organizację ochrony jednostki jest:",
+   "options": [
+    "ustawa o SW",
+    "kodeks karny wykonawczy",
+    "regulamin organizacyjny",
+    "instrukcja ochronna"
+   ],
+   "answer": 3,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł III (bezpieczeństwo), pyt. 6",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-3-07",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Kontrola celi ma na celu:",
+   "options": [
+    "ujawnienie zagrożeń i przedmiotów niedozwolonych",
+    "kontrolę wychowawcy",
+    "ocenę warunków bytowych",
+    "ocenę relacji między osadzonymi"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł III (bezpieczeństwo), pyt. 7",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-3-11",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Przedmiot niedozwolony ujawniony podczas kontroli należy:",
+   "options": [
+    "zabezpieczyć zgodnie z procedurami",
+    "pozostawić w miejscu ujawnienia",
+    "zniszczyć",
+    "przekazać osadzonemu po kontroli"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł III (bezpieczeństwo), pyt. 11",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-3-12",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Do zagrożeń bezpieczeństwa jednostki zalicza się:",
+   "options": [
+    "ucieczki",
+    "samouszkodzenia",
+    "przemyt przedmiotów niedozwolonych",
+    "wszystkie odpowiedzi są prawidłowe"
+   ],
+   "answer": 3,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł III (bezpieczeństwo), pyt. 12",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-3-13",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Osadzony szczególnie niebezpieczny:",
+   "options": [
+    "wymaga wzmożonych środków bezpieczeństwa",
+    "korzysta z większych uprawnień",
+    "nie podlega kontroli",
+    "odbywa karę wyłącznie w zakładzie otwartym"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł III (bezpieczeństwo), pyt. 13",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-3-14",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "W przypadku pożaru funkcjonariusz powinien:",
+   "options": [
+    "oczekiwać na polecenie osadzonych",
+    "zakończyć służbę",
+    "opuścić miejsce służby",
+    "działać zgodnie z procedurami alarmowymi i przeciwpożarowymi"
+   ],
+   "answer": 3,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł III (bezpieczeństwo), pyt. 14",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-3-15",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Informacje dotyczące bezpieczeństwa jednostki:",
+   "options": [
+    "przekazuje się osadzonym",
+    "publikuje się w Internecie",
+    "podlegają ochronie zgodnie z przepisami",
+    "mogą być przekazywane każdemu zainteresowanemu"
+   ],
+   "answer": 2,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł III (bezpieczeństwo), pyt. 15",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-4-14",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Przeszukanie celi wykonuje się w celu:",
+   "options": [
+    "poprawy warunków bytowych",
+    "przeprowadzenia zajęć wychowawczych",
+    "oceny pracy oddziałowego",
+    "ujawnienia przedmiotów niedozwolonych i zagrożeń bezpieczeństwa"
+   ],
+   "answer": 3,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł IV (ochrona), pyt. 14",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-5-01",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Środki przymusu bezpośredniego można stosować:",
+   "options": [
+    "wyłącznie wobec osadzonych",
+    "zawsze po wydaniu rozkazu",
+    "według uznania funkcjonariusza",
+    "wyłącznie w przypadkach określonych przepisami prawa"
+   ],
+   "answer": 3,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł V (ŚPB), pyt. 1",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-5-02",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Przed użyciem środka przymusu bezpośredniego funkcjonariusz powinien:",
+   "options": [
+    "wezwać do zachowania zgodnego z prawem, jeżeli okoliczności na to pozwalają",
+    "powiadomić rodzinę osadzonego",
+    "założyć kajdanki",
+    "sporządzić notatkę"
+   ],
+   "answer": 0,
+   "explanation": "Art. 7 ustawy o ŚPB – wezwanie, chyba że zwłoka groziłaby niebezpieczeństwem.",
+   "source": "pytania kursantów – moduł V (ŚPB), pyt. 2",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-5-03",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Od wezwania do zachowania zgodnego z prawem można odstąpić:",
+   "options": [
+    "wyłącznie podczas konwoju",
+    "nigdy",
+    "gdy zwłoka mogłaby spowodować zagrożenie życia, zdrowia lub bezpieczeństwa",
+    "tylko za zgodą dyrektora"
+   ],
+   "answer": 2,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł V (ŚPB), pyt. 3",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-5-04",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Środki przymusu bezpośredniego należy stosować:",
+   "options": [
+    "przez minimum 24 godziny",
+    "wyłącznie grupowo",
+    "proporcjonalnie do zagrożenia",
+    "możliwie najsurowiej"
+   ],
+   "answer": 2,
+   "explanation": "Zasada proporcjonalności (art. 6 ustawy o ŚPB).",
+   "source": "pytania kursantów – moduł V (ŚPB), pyt. 4",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-5-05",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Po ustaniu przyczyny zastosowania ŚPB należy:",
+   "options": [
+    "kontynuować stosowanie profilaktycznie",
+    "pozostawić środek do końca służby",
+    "niezwłocznie zaprzestać stosowania środka",
+    "zastosować kolejny środek"
+   ],
+   "answer": 2,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł V (ŚPB), pyt. 5",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-5-06",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Siła fizyczna jest:",
+   "options": [
+    "nagrodą",
+    "środkiem przymusu bezpośredniego",
+    "środkiem dyscyplinarnym",
+    "środkiem wychowawczym"
+   ],
+   "answer": 1,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł V (ŚPB), pyt. 6",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-5-07",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Siłę fizyczną można zastosować m.in. w celu:",
+   "options": [
+    "wymuszenia zeznań",
+    "ukarania osadzonego",
+    "przyspieszenia czynności",
+    "pokonania oporu osoby"
+   ],
+   "answer": 3,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł V (ŚPB), pyt. 7",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-5-12",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Kask zabezpieczający stosuje się przede wszystkim wobec osób:",
+   "options": [
+    "agresywnych słownie",
+    "uczestniczących w widzeniu",
+    "nowo przyjętych",
+    "autoagresywnych"
+   ],
+   "answer": 3,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł V (ŚPB), pyt. 12",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-5-13",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Pas obezwładniający stosuje się wobec osoby:",
+   "options": [
+    "stwarzającej zagrożenie dla życia lub zdrowia",
+    "odbywającej widzenie",
+    "spokojnej",
+    "uczestniczącej w zajęciach"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł V (ŚPB), pyt. 13",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-5-14",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Cela zabezpieczająca jest:",
+   "options": [
+    "miejscem przesłuchań",
+    "formą widzenia",
+    "rodzajem nagrody",
+    "środkiem przymusu bezpośredniego"
+   ],
+   "answer": 3,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł V (ŚPB), pyt. 14",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-5-15",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Pies służbowy może być wykorzystywany:",
+   "options": [
+    "wyłącznie do patrolowania terenu",
+    "jako środek przymusu bezpośredniego w przypadkach przewidzianych prawem",
+    "wyłącznie do szkolenia",
+    "tylko poza jednostką"
+   ],
+   "answer": 1,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł V (ŚPB), pyt. 15",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-5-16",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Pałka służbowa może być użyta:",
+   "options": [
+    "do wymuszania zeznań",
+    "do pokonania czynnego oporu",
+    "jako kara dyscyplinarna",
+    "podczas każdego konwoju"
+   ],
+   "answer": 1,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł V (ŚPB), pyt. 16",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-5-17",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Po użyciu ŚPB funkcjonariusz powinien:",
+   "options": [
+    "udać się do domu",
+    "zakończyć służbę",
+    "zniszczyć zapis zdarzenia",
+    "sporządzić wymaganą dokumentację"
+   ],
+   "answer": 3,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł V (ŚPB), pyt. 17",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-5-18",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Stosowanie ŚPB powinno być:",
+   "options": [
+    "maksymalnie dolegliwe",
+    "proporcjonalne i możliwie najmniej dolegliwe",
+    "uzależnione od stażu funkcjonariusza",
+    "identyczne w każdej sytuacji"
+   ],
+   "answer": 1,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł V (ŚPB), pyt. 18",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-5-19",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "ŚPB można stosować w celu:",
+   "options": [
+    "zapewnienia bezpieczeństwa",
+    "odparcia bezpośredniego zamachu",
+    "przeciwdziałania ucieczce",
+    "wszystkie odpowiedzi są prawidłowe"
+   ],
+   "answer": 3,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł V (ŚPB), pyt. 19",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-5-20",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Podstawową zasadą stosowania ŚPB jest:",
+   "options": [
+    "represja",
+    "legalność działania",
+    "uznaniowość",
+    "dowolność"
+   ],
+   "answer": 1,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł V (ŚPB), pyt. 20",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-q02",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Karę grzywny określoną w kodeksie karnym wymierza się w:",
+   "options": [
+    "stawkach bazowych",
+    "stawkach pieniężnych",
+    "stawkach dziennych",
+    "stawkach kwotowych"
+   ],
+   "answer": 2,
+   "explanation": "Art. 33 § 1 kk.",
+   "source": "pytania kursantów – quiz (25 pytań), pyt. 2",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-q03",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Na straży wolności i praw człowieka oraz obywatela określonych w Konstytucji i innych aktach normatywnych stoi:",
+   "options": [
+    "Rzecznik Praw Dziecka",
+    "Trybunał Stanu",
+    "Rzecznik Konsumentów",
+    "Rzecznik Praw Obywatelskich"
+   ],
+   "answer": 3,
+   "explanation": "Art. 208 Konstytucji.",
+   "source": "pytania kursantów – quiz (25 pytań), pyt. 3",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-q04",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Najłagodniejszą karą za wykroczenie, jaką może wymierzyć sąd rejonowy, jest:",
+   "options": [
+    "kara grzywny",
+    "kara nagany",
+    "kara pozbawienia wolności w zawieszeniu",
+    "kara ograniczenia wolności"
+   ],
+   "answer": 1,
+   "explanation": "Kary za wykroczenia: areszt, ograniczenie wolności, grzywna, nagana.",
+   "source": "pytania kursantów – quiz (25 pytań), pyt. 4",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-q05",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Do sądów powszechnych w RP zaliczamy:",
+   "options": [
+    "sądy rejonowe, wojewódzkie i apelacyjne",
+    "sądy rejonowe, okręgowe, apelacyjne i wojewódzkie sądy administracyjne",
+    "Sąd Najwyższy, sądy rejonowe, okręgowe i apelacyjne",
+    "sądy rejonowe, sądy okręgowe i sądy apelacyjne"
+   ],
+   "answer": 3,
+   "explanation": "SN i sądy administracyjne nie są sądami powszechnymi.",
+   "source": "pytania kursantów – quiz (25 pytań), pyt. 5",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-q06",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "W rozumieniu prawa administracyjnego aktem rozstrzygającym i kończącym postępowanie w danej instancji jest:",
+   "options": [
+    "postanowienie",
+    "zarządzenie",
+    "decyzja",
+    "wyrok"
+   ],
+   "answer": 2,
+   "explanation": "Art. 104 kpa.",
+   "source": "pytania kursantów – quiz (25 pytań), pyt. 6",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-q08",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Skargę do wojewódzkiego sądu administracyjnego za pośrednictwem organu, który rozstrzygnął sprawę (organu odwoławczego), wnosi się w terminie:",
+   "options": [
+    "7 dni od dnia doręczenia rozstrzygnięcia",
+    "14 dni od dnia doręczenia rozstrzygnięcia",
+    "30 dni od dnia wydania rozstrzygnięcia",
+    "30 dni od dnia doręczenia rozstrzygnięcia w sprawie"
+   ],
+   "answer": 3,
+   "explanation": "Art. 53 § 1 ppsa.",
+   "source": "pytania kursantów – quiz (25 pytań), pyt. 8",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-q09",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Funkcjonariusz podczas i w związku z wykonywaniem obowiązków służbowych korzysta z ochrony prawnej przewidzianej w:",
+   "options": [
+    "kodeksie cywilnym",
+    "kodeksie pracy",
+    "kodeksie karnym",
+    "kodeksie administracyjnym"
+   ],
+   "answer": 2,
+   "explanation": "Ochrona jak dla funkcjonariusza publicznego (kk).",
+   "source": "pytania kursantów – quiz (25 pytań), pyt. 9",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-q10",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Zakaz prowadzenia pojazdów określony w kodeksie karnym to:",
+   "options": [
+    "kara porządkowa",
+    "środek zapobiegawczy",
+    "środek karny",
+    "środek zabezpieczający"
+   ],
+   "answer": 2,
+   "explanation": "Art. 39 pkt 3 kk.",
+   "source": "pytania kursantów – quiz (25 pytań), pyt. 10",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-q13",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Czyn zagrożony karą pozbawienia wolności od 2 lat do 10 lat to:",
+   "options": [
+    "wykroczenie",
+    "zbrodnia",
+    "występek",
+    "występek kwalifikowany"
+   ],
+   "answer": 2,
+   "explanation": "Zbrodnia – co najmniej od 3 lat; dolna granica 2 lata = występek.",
+   "source": "pytania kursantów – quiz (25 pytań), pyt. 13",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-q14",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Władzę ustawodawczą w RP sprawuje:",
+   "options": [
+    "Parlament, Prezydent RP i Rada Ministrów",
+    "Sejm i Senat, Rada Gminy, Rada Powiatu",
+    "Parlament wraz z sejmikami wojewódzkimi",
+    "Sejm i Senat"
+   ],
+   "answer": 3,
+   "explanation": "Art. 10 ust. 2 Konstytucji.",
+   "source": "pytania kursantów – quiz (25 pytań), pyt. 14",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-q15",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Każdy, czyje konstytucyjne wolności lub prawa zostały naruszone, ma prawo w sprawie zgodności z Konstytucją aktu, na podstawie którego orzeczono ostatecznie o jego prawach:",
+   "options": [
+    "wnieść skargę do Trybunału Konstytucyjnego",
+    "wnieść skargę do Trybunału Stanu",
+    "wnieść powództwo do sądu apelacyjnego",
+    "wnieść skargę do Sądu Najwyższego"
+   ],
+   "answer": 0,
+   "explanation": "Skarga konstytucyjna – art. 79 Konstytucji.",
+   "source": "pytania kursantów – quiz (25 pytań), pyt. 15",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-q16",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Wyjątkowo nieletni może odpowiadać na zasadach określonych w KK, jeżeli dopuścił się czynu zabronionego po ukończeniu lat:",
+   "options": [
+    "17",
+    "16",
+    "14",
+    "13"
+   ],
+   "answer": 2,
+   "explanation": "Według klucza – 14 lat: art. 10 § 2a kk (od 1.10.2023 r., zabójstwo kwalifikowane). Ogólna zasada z art. 10 § 2 – po ukończeniu 15 lat.",
+   "source": "pytania kursantów – quiz (25 pytań), pyt. 16",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-q17",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Środkami probacyjnymi, o których mowa w kodeksie karnym, są:",
+   "options": [
+    "WPZ, warunkowe zawieszenie wykonania kary, warunkowe zakończenie kary",
+    "WPZ, dozór elektroniczny, warunkowe zawieszenie wykonania kary",
+    "tylko warunkowe przedterminowe zwolnienie i warunkowe zawieszenie kary",
+    "warunkowe umorzenie postępowania karnego, warunkowe zawieszenie wykonania kary, warunkowe przedterminowe zwolnienie"
+   ],
+   "answer": 3,
+   "explanation": "Rozdział VIII kk.",
+   "source": "pytania kursantów – quiz (25 pytań), pyt. 17",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-q21",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Akty prawa wewnętrznego to m.in.:",
+   "options": [
+    "ustawy, rozporządzenia, umowy międzynarodowe",
+    "zarządzenia, uchwały, regulaminy",
+    "statuty, regulaminy, instrukcje",
+    "Konstytucja, kodeksy, rozporządzenia"
+   ],
+   "answer": 1,
+   "explanation": "Art. 93 Konstytucji – uchwały i zarządzenia.",
+   "source": "pytania kursantów – quiz (25 pytań), pyt. 21",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-q23",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Skarga na decyzję administracyjną przysługuje do:",
+   "options": [
+    "sądów administracyjnych",
+    "wydziałów odwoławczych sądów apelacyjnych",
+    "wydziałów pracy i ubezpieczeń społecznych sądów rejonowych",
+    "wydziałów cywilnych sądów okręgowych"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (quiz 25 pytań).",
+   "source": "pytania kursantów – quiz (25 pytań), pyt. 23",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-q24",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Najsurowszą karą za wykroczenie, jaką może wymierzyć sąd rejonowy, jest:",
+   "options": [
+    "kara ograniczenia wolności",
+    "kara grzywny",
+    "kara aresztu do 30 dni",
+    "kara pozbawienia wolności do 1 roku"
+   ],
+   "answer": 2,
+   "explanation": "Areszt: od 5 do 30 dni (art. 19 kw).",
+   "source": "pytania kursantów – quiz (25 pytań), pyt. 24",
    "tag": "kursanci"
   }
  ]
