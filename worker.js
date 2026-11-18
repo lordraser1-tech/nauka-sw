@@ -11,10 +11,11 @@ import { onRequestGet as pushKlucz } from './functions/api/push/klucz.js';
 import { onRequestPost as pushZapis } from './functions/api/push/zapis.js';
 import { onRequestPost as pushUsun } from './functions/api/push/usun.js';
 import { onRequestGet as pushWiad } from './functions/api/push/wiadomosc.js';
+import { onRequestGet as publicznosc } from './functions/api/publicznosc.js';
 import { runPushCron } from './functions/_push.js';
 
 const POST_ONLY = { '/api/wejscie': wejscie, '/api/zgloszenie': zgloszenie, '/api/statystyki': statystyki, '/api/push/zapis': pushZapis, '/api/push/usun': pushUsun };
-const GET_ONLY = { '/api/push/klucz': pushKlucz, '/api/push/wiadomosc': pushWiad };
+const GET_ONLY = { '/api/push/klucz': pushKlucz, '/api/push/wiadomosc': pushWiad, '/api/publicznosc': publicznosc };
 const ADMIN = { '/api/admin/kody': admin, '/api/admin/zgloszenia': adminZgl, '/api/admin/statystyki': adminStat };
 
 export default {
