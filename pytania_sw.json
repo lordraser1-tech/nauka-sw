@@ -1,7 +1,7 @@
 {
  "meta": {
   "tytul": "Szkolenie chorążych SW – baza do nauki",
-  "wersja": 14,
+  "wersja": 15,
   "data": "2026-11-18",
   "zrodla": "Ustawa o ŚPB (Dz.U. 2026 poz. 244), ustawa o SW (Dz.U. 2025 poz. 1750), kkw (Dz.U. 2025 poz. 911), rozporządzenie o oddziaływaniach penitencjarnych (Dz.U. 2024 poz. 1344), rozporządzenie o ośrodkach diagnostycznych (Dz.U. 2023 poz. 1677), rozporządzenie o ochronie jednostek SW (Dz.U. 2016 poz. 1804); materiały kursu: pytania kontrolne (psycholodzy 1–29, penitencjarne 28–53), lista 124 pytań, SPECJALIZACJA_2 (77 zagadnień), Skrypt SW V15; prezentacja „Instrukcja obsługi i użytkowania pistoletu 9 mm GLOCK 17 gen. 5 MOS”; prezentacja i skrypt „Zagadnienia penitencjarne” (Kule 2026); przykładowy test komendancki; test z pragmatyki służbowej (COSSW Kule); pytania kursantów (moduły)",
   "typy": {
@@ -20122,6 +20122,380 @@
    "answer": 2,
    "explanation": "Areszt: od 5 do 30 dni (art. 19 kw).",
    "source": "pytania kursantów – quiz (25 pytań), pyt. 24",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-p-01",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Stosunek służbowy funkcjonariusza SW powstaje na podstawie:",
+   "options": [
+    "umowy o pracę",
+    "wyboru",
+    "mianowania",
+    "powołania"
+   ],
+   "answer": 2,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł I (pragmatyka), pyt. 1",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-p-02",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Najwyższym przełożonym wszystkich funkcjonariuszy SW jest:",
+   "options": [
+    "Dyrektor Okręgowy SW",
+    "Minister Sprawiedliwości",
+    "Dyrektor Generalny SW",
+    "Dyrektor Zakładu Karnego"
+   ],
+   "answer": 2,
+   "explanation": "Dyrektor Generalny SW jest przełożonym wszystkich funkcjonariuszy SW.",
+   "source": "pytania kursantów – moduł I (pragmatyka), pyt. 2",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-p-11",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Funkcjonariuszki w ciąży nie można:",
+   "options": [
+    "kierować na szkolenia",
+    "awansować",
+    "opiniować",
+    "delegować bez jej zgody"
+   ],
+   "answer": 3,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł I (pragmatyka), pyt. 11",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-2-08",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Indywidualny program oddziaływania sporządza się dla:",
+   "options": [
+    "tymczasowo aresztowanych",
+    "ukaranych dyscyplinarnie",
+    "wszystkich skazanych",
+    "skazanych odbywających karę w systemie programowanego oddziaływania"
+   ],
+   "answer": 3,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł II (penitencjarystyka), pyt. 8",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-2-09",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "System wykonywania kary pozbawienia wolności obejmuje:",
+   "options": [
+    "trzy systemy",
+    "dwa systemy",
+    "cztery systemy",
+    "pięć systemów"
+   ],
+   "answer": 0,
+   "explanation": "Programowanego oddziaływania, terapeutyczny i zwykły (art. 81 kkw).",
+   "source": "pytania kursantów – moduł II (penitencjarystyka), pyt. 9",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-2-10",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Do podstawowych środków oddziaływania penitencjarnego należy:",
+   "options": [
+    "praca",
+    "nauczanie",
+    "zajęcia kulturalno-oświatowe i sportowe",
+    "wszystkie wymienione"
+   ],
+   "answer": 3,
+   "explanation": "Art. 67 § 3 kkw.",
+   "source": "pytania kursantów – moduł II (penitencjarystyka), pyt. 10",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-2-14",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Dział penitencjarny odpowiada przede wszystkim za:",
+   "options": [
+    "logistykę jednostki",
+    "prowadzenie oddziaływań penitencjarnych",
+    "finanse jednostki",
+    "ochronę jednostki"
+   ],
+   "answer": 1,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł II (penitencjarystyka), pyt. 14",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-2-15",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Nagrodą dla skazanego może być:",
+   "options": [
+    "widzenie bez dozoru",
+    "przepustka nagrodowa",
+    "nagroda rzeczowa",
+    "wszystkie wymienione"
+   ],
+   "answer": 3,
+   "explanation": "Art. 138 § 1 kkw.",
+   "source": "pytania kursantów – moduł II (penitencjarystyka), pyt. 15",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-2-16",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Karą dyscyplinarną dla skazanego może być:",
+   "options": [
+    "pozbawienie możliwości zakupów",
+    "nagana",
+    "umieszczenie w celi izolacyjnej",
+    "wszystkie wymienione zgodnie z przepisami"
+   ],
+   "answer": 3,
+   "explanation": "Art. 143 § 1 kkw.",
+   "source": "pytania kursantów – moduł II (penitencjarystyka), pyt. 16",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-2-17",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Wychowawca penitencjarny:",
+   "options": [
+    "prowadzi dokumentację i oddziaływania wobec skazanych",
+    "prowadzi księgowość",
+    "odpowiada za konwoje",
+    "pełni służbę ochronną"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł II (penitencjarystyka), pyt. 17",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-2-18",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Pomoc postpenitencjarna jest kierowana:",
+   "options": [
+    "wyłącznie do nieletnich",
+    "wyłącznie do skazanych przed zwolnieniem",
+    "do osób pozbawionych wolności i opuszczających jednostki penitencjarne",
+    "wyłącznie do rodzin funkcjonariuszy"
+   ],
+   "answer": 2,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł II (penitencjarystyka), pyt. 18",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-2-19",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Komisja penitencjarna może:",
+   "options": [
+    "dokonywać klasyfikacji skazanego",
+    "zmieniać klasyfikację",
+    "opiniować sprawy penitencjarne",
+    "wszystkie odpowiedzi są prawidłowe"
+   ],
+   "answer": 3,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł II (penitencjarystyka), pyt. 19",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-4-02",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Za organizację służby ochronnej podczas zmiany odpowiada:",
+   "options": [
+    "dowódca zmiany",
+    "oddziałowy",
+    "wychowawca",
+    "psycholog"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł IV (ochrona), pyt. 2",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-4-03",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Oddziałowy wykonuje zadania służbowe głównie:",
+   "options": [
+    "w magazynie",
+    "w dziale finansowym",
+    "w kancelarii tajnej",
+    "w oddziale mieszkalnym"
+   ],
+   "answer": 3,
+   "explanation": "Na zrzucie klucz był ucięty – oddziałowy pełni służbę w oddziale mieszkalnym.",
+   "source": "pytania kursantów – moduł IV (ochrona), pyt. 3",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-4-06",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Posterunek ruchomy polega na:",
+   "options": [
+    "konwojowaniu osadzonych",
+    "ochronie magazynu",
+    "wykonywaniu zadań na wyznaczonym obszarze",
+    "pełnieniu służby wyłącznie przy bramie"
+   ],
+   "answer": 2,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł IV (ochrona), pyt. 6",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-4-07",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Przed objęciem posterunku funkcjonariusz powinien:",
+   "options": [
+    "udać się na spacer",
+    "sporządzić opinię służbową",
+    "przeprowadzić kontrolę osobistą",
+    "sprawdzić stan posterunku i wyposażenia"
+   ],
+   "answer": 3,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł IV (ochrona), pyt. 7",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-4-11",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Przed rozpoczęciem konwoju należy:",
+   "options": [
+    "przeprowadzić widzenie",
+    "przygotować cele mieszkalne",
+    "sporządzić opinię służbową",
+    "sprawdzić dokumentację i środki zabezpieczenia"
+   ],
+   "answer": 3,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł IV (ochrona), pyt. 11",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-4-12",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Kontrola pobieżna polega na:",
+   "options": [
+    "przesłuchaniu osadzonego",
+    "powierzchownym sprawdzeniu osoby, odzieży lub bagażu",
+    "przeszukaniu celi",
+    "oględzinach zwłok"
+   ],
+   "answer": 1,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł IV (ochrona), pyt. 12",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-4-13",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Kontrola osobista polega na:",
+   "options": [
+    "sprawdzeniu osoby, odzieży, obuwia oraz przedmiotów znajdujących się przy niej",
+    "obserwacji monitoringu",
+    "kontroli dokumentów",
+    "rozmowie wychowawczej"
+   ],
+   "answer": 0,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł IV (ochrona), pyt. 13",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-4-17",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Ucieczka osadzonego podczas konwoju jest:",
+   "options": [
+    "zdarzeniem zwykłym",
+    "wykroczeniem",
+    "naruszeniem regulaminu",
+    "zdarzeniem nadzwyczajnym"
+   ],
+   "answer": 3,
+   "explanation": "Odpowiedź według klucza z zestawu pytań kursantów (moduły).",
+   "source": "pytania kursantów – moduł IV (ochrona), pyt. 17",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-r06",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Do sądów szczególnych w RP zaliczamy:",
+   "options": [
+    "Sąd Najwyższy, sądy rejonowe, okręgowe i apelacyjne",
+    "wojskowe sądy rejonowe, wojskowe sądy wojewódzkie",
+    "wojskowe sądy garnizonowe, wojewódzkie sądy administracyjne",
+    "administracyjne sądy okręgowe i wojskowe sądy apelacyjne"
+   ],
+   "answer": 2,
+   "explanation": "Sądy szczególne: wojskowe (garnizonowe, okręgowe) i administracyjne (WSA, NSA).",
+   "source": "pytania kursantów – quiz z prawa",
+   "tag": "kursanci"
+  },
+  {
+   "id": "kurs-r10",
+   "deck": "kursanci",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Na gruncie prawa karnego działanie na rozkaz przełożonego, zawierający znamiona przestępstwa, oznacza, że:",
+   "options": [
+    "działanie na rozkaz jest zawsze okolicznością wyłączającą odpowiedzialność karną",
+    "podwładny zawsze ponosi pełną odpowiedzialność karną",
+    "podwładny odpowiada za umyślne wykonanie rozkazu zawierającego znamiona przestępstwa",
+    "podwładny nigdy nie ponosi odpowiedzialności karnej"
+   ],
+   "answer": 2,
+   "explanation": "Odpowiada ten, kto umyślnie wykonuje rozkaz zawierający znamiona przestępstwa (por. art. 318 kk). Uwaga: w jednym z quizów to samo pytanie miało błędnie zaznaczone „zawsze ponosi pełną odpowiedzialność”.",
+   "source": "pytania kursantów – quiz z prawa",
    "tag": "kursanci"
   }
  ]
