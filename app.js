@@ -2385,6 +2385,8 @@ function sizeLikePicker(pairs, current, onPick) {
 
 // Przy każdej aktualizacji: dopisz wpis NA POCZĄTKU listy, z numerem = numer CACHE w service-worker.js.
 const CHANGELOG = [
+  { v: 29, date: '18.11.2026', items: [
+    '➕ Kolejne 22 pytania od kursantów (penitencjarystyka, ochrona, pragmatyka, prawo) – razem 122.'] },
   { v: 28, date: '18.11.2026', items: [
     '➕ „Pytania od kursantów” rozbudowane do 100 pytań – doszły m.in. KPA i zagadnienia prawne, ŚPB, bezpieczeństwo i quiz z prawa.'] },
   { v: 27, date: '18.11.2026', items: [
