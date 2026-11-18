@@ -1,7 +1,7 @@
 {
  "meta": {
   "tytul": "Szkolenie chorążych SW – baza do nauki",
-  "wersja": 15,
+  "wersja": 16,
   "data": "2026-11-18",
   "zrodla": "Ustawa o ŚPB (Dz.U. 2026 poz. 244), ustawa o SW (Dz.U. 2025 poz. 1750), kkw (Dz.U. 2025 poz. 911), rozporządzenie o oddziaływaniach penitencjarnych (Dz.U. 2024 poz. 1344), rozporządzenie o ośrodkach diagnostycznych (Dz.U. 2023 poz. 1677), rozporządzenie o ochronie jednostek SW (Dz.U. 2016 poz. 1804); materiały kursu: pytania kontrolne (psycholodzy 1–29, penitencjarne 28–53), lista 124 pytań, SPECJALIZACJA_2 (77 zagadnień), Skrypt SW V15; prezentacja „Instrukcja obsługi i użytkowania pistoletu 9 mm GLOCK 17 gen. 5 MOS”; prezentacja i skrypt „Zagadnienia penitencjarne” (Kule 2026); przykładowy test komendancki; test z pragmatyki służbowej (COSSW Kule); pytania kursantów (moduły)",
   "typy": {
@@ -14063,7 +14063,7 @@
     "Dyrektor Generalny SW oraz dyrektor okręgowy SW"
    ],
    "answer": 3,
-   "explanation": "DG SW i dyrektor okręgowy SW mogą zmienić lub uchylić decyzję klasyfikacyjną komisji, gdy jest sprzeczna z prawem.",
+   "explanation": "DG SW i dyrektor okręgowy SW mogą zmienić lub uchylić decyzję klasyfikacyjną komisji sprzeczną z prawem. Na taką decyzję skazany może też złożyć skargę do sądu penitencjarnego, który orzeka o jej zmianie lub uchyleniu.",
    "source": "prezentacja – zagadnienia penitencjarne, slajd: Organy uprawnione do dokonywania klasyfikacji",
    "tag": "penit-prez"
   },
@@ -14074,14 +14074,14 @@
    "naPamiec": false,
    "question": "Sąd penitencjarny jest organem klasyfikacyjnym w zakresie:",
    "options": [
-    "zmian decyzji sądu skazującego",
+    "zmiany rodzaju i typu zakładu karnego albo systemu terapeutycznego określonych przez sąd w wyroku (zmiany decyzji sądu skazującego)",
     "ustalenia właściwego sposobu wykonywania kary",
     "rozmieszczenia w celach",
     "udzielania nagród"
    ],
    "answer": 0,
-   "explanation": "Sąd karny – wyrok; sąd penitencjarny – zmiany decyzji sądu skazującego; komisja – sposób wykonywania k.p.w.",
-   "source": "prezentacja – zagadnienia penitencjarne, slajd: Organy uprawnione do dokonywania klasyfikacji",
+   "explanation": "Sąd karny (skazujący) może w wyroku określić rodzaj i typ ZK oraz system terapeutyczny (art. 62 kk). Sąd penitencjarny zmienia te ustalenia, gdy w trakcie kary pojawią się nowe okoliczności – czyli zmienia decyzje sądu skazującego. Ustalenie właściwego sposobu wykonywania kary to zadanie komisji penitencjarnej. (Sąd penitencjarny rozpatruje też skargi na sprzeczne z prawem decyzje klasyfikacyjne komisji.)",
+   "source": "prezentacja – zagadnienia penitencjarne, slajd: Organy uprawnione do dokonywania klasyfikacji; skrypt „Zagadnienia penitencjarne”, pkt 2.8",
    "tag": "penit-prez"
   },
   {
