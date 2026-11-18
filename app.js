@@ -287,6 +287,7 @@ function renderHome(keepScroll) {
   const bk = bielikCard();
   if (bk) $app.append(bk);
   $app.append(serviceCard());
+  $app.append(rozkazyCard());
   $app.append(h('div', { class: 'modes' },
     mode('Fiszki', `${due} do powtórki · ${flash.length} w wybranych taliach`, '#/fiszki', flash.length, true),
     mode('Test', `${mcq} ${plural(mcq, 'pytanie', 'pytania', 'pytań')} z natychmiastową odpowiedzią`, '#/test', mcq),
@@ -301,7 +302,11 @@ function renderHome(keepScroll) {
     mini('⚖️', 'Kazusy', `${nCase} ${plural(nCase, 'sytuacja', 'sytuacje', 'sytuacji')} ze służby`, '#/kazusy', nCase),
     mini('🧩', 'Dopasuj pary', `${nPairs} ${plural(nPairs, 'zestaw', 'zestawy', 'zestawów')}`, '#/pary', nPairs),
     mini('⏱️', 'Sprint 60 s', state.settings.sprintBest ? `Rekord: ${state.settings.sprintBest}` : 'ile zdążysz w minutę?', '#/sprint', mcq),
-    mini('🎧', 'Słuchaj', 'fiszki czytane na głos', '#/sluchaj', flash.length)));
+    mini('🎧', 'Słuchaj', 'fiszki czytane na głos', '#/sluchaj', flash.length),
+    mini('💰', 'Milionerzy', state.settings.milionBest != null ? `Rekord: ${MILION_KWOTY[state.settings.milionBest]}` : '12 pytań, 3 koła ratunkowe', '#/milionerzy', mcq),
+    mini('👆', 'Prawda czy fałsz', 'przesuwaj karty w lewo i prawo', '#/prawda', mcq),
+    mini('🏛️', 'Kto co robi', 'kompetencje organów + ściągawka', '#/kto', 1),
+    mini('🔎', 'Szukaj', 'we wszystkich pytaniach', '#/szukaj', 1)));
 
   // Tematy (rozwijane)
   const sel = new Set(selectedDecks());
@@ -464,6 +469,7 @@ function mcqView(item, onResult, onNext, nextLabel) {
     });
     fb.replaceWith(feedback(ok, ok ? 'Dobrze!' : 'Źle. Poprawna odpowiedź: ' + item.options[item.answer],
       item.explanation ? h('div', {}, item.explanation) : null, sourceEl(item)));
+    lastChoice = { id: item.id, text: item.options[oi] };
     record(item, ok ? 'ok' : 'bad');
     onResult(ok);
     nextButton(actions, onNext, nextLabel);
@@ -995,6 +1001,7 @@ function runSprint() {
       buttons.forEach((b, k) => { if (order[k] === item.answer) b.classList.add('correct'); else if (order[k] === oi) b.classList.add('wrong'); });
       if (ok) s.ok++; else s.bad.push(item);
       pointsMult = 0.6; // szybkie odpowiedzi – mniej punktów niż w teście
+      lastChoice = { id: item.id, text: item.options[oi] };
       record(item, ok ? 'ok' : 'bad');
       pointsMult = 1;
       head.querySelector('.sprint-score').textContent = `Dobrze: ${s.ok}`;
@@ -1011,7 +1018,11 @@ function finishSprint(s) {
   sprint = null;
   const best = state.settings.sprintBest || 0;
   const isRecord = s.ok > best;
-  if (isRecord) { state.settings.sprintBest = s.ok; save(); }
+  if (isRecord) state.settings.sprintBest = s.ok;
+  const dd = ensureDaily();
+  dd.sprintMax = Math.max(dd.sprintMax || 0, s.ok);
+  checkRozkazy();
+  save();
   screen('Sprint 60 s', true);
   $app.append(h('div', { class: 'card verdict ' + (isRecord ? 'v-gold' : 'v-green') },
     h('div', { class: 'verdict-icon', 'aria-hidden': 'true' }, isRecord ? '🏆' : '⏱️'),
@@ -1770,6 +1781,7 @@ async function init() {
   registerSW();
   setTimeout(syncStats, 4000);
   setTimeout(syncPush, 5000);
+  setTimeout(fetchPub, 6000);
   document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden') syncStats(); });
 }
 
@@ -1965,6 +1977,8 @@ function onAnswer(item, result, prev, customPts) {
     addPoints(POINTS.dailyGoal);
     if (!BIELIK_ON()) toast('🎯', 'Dzienny cel osiągnięty!', `${dailyGoal()} odpowiedzi dzisiaj · +${POINTS.dailyGoal} pkt`);
   }
+  trackDaily(item, result, prev);
+  bielikWeak(item, result, prev);
   bielikOnAnswer(item, result, prev);
   evaluate();
 }
@@ -2385,6 +2399,12 @@ function sizeLikePicker(pairs, current, onPick) {
 
 // Przy każdej aktualizacji: dopisz wpis NA POCZĄTKU listy, z numerem = numer CACHE w service-worker.js.
 const CHANGELOG = [
+  { v: 30, date: '18.11.2026', items: [
+    '💰 Milionerzy – 12 pytań coraz trudniejszych, progi gwarantowane i koła ratunkowe: 50:50, Zapytaj Bielika i Pytanie do publiczności (prawdziwe wyniki kursantów).',
+    '👆 Prawda czy fałsz – przesuwaj karty: w prawo prawda, w lewo fałsz.',
+    '🏛️ Kto co robi – pytania o kompetencje organów i ściągawka „kto co robi”.',
+    '🔎 Szukaj – wyszukiwarka we wszystkich pytaniach, z możliwością przećwiczenia znalezionych.',
+    '🦅 Bielik: rozkazy dnia (3 zadania, punkty za wykonanie), musztra znienacka (pytanie w dymku) i pamięć słabych punktów – wytyka, co ci się myli.'] },
   { v: 29, date: '18.11.2026', items: [
     '➕ Kolejne 22 pytania od kursantów (penitencjarystyka, ochrona, pragmatyka, prawo) – razem 122.'] },
   { v: 28, date: '18.11.2026', items: [
@@ -2596,9 +2616,18 @@ function showManual() {
       li('Słuchaj', 'telefon czyta fiszki na głos: pytanie, chwila na odpowiedź w myślach, odpowiedź. Ustawisz czas na zastanowienie i tempo lektora. Dobre w drodze lub na spacerze.'),
       li('', 'Wszystkie te tryby biorą pytania z zaznaczonych tematów. Błędy trafiają do „Trudnych”.')),
 
+    sec('💰 Milionerzy, 👆 Prawda czy fałsz, 🏛️ Kto co robi, 🔎 Szukaj',
+      li('Milionerzy', '12 pytań od łatwych do trudnych (trudność liczona z wyników całego kursu). Progi gwarantowane: 1 000 zł i 40 000 zł. Koła ratunkowe: 50:50, Zapytaj Bielika (zwykle ma rację… zwykle) i Pytanie do publiczności – procenty pokazują, jak naprawdę odpowiadali kursanci (gdy jest mało danych – symulacja). Za milion +100 pkt.'),
+      li('Prawda czy fałsz', '20 kart: pytanie i podana odpowiedź. Przesuń w prawo, jeśli prawda, w lewo – jeśli fałsz (albo przyciski). Pomyłka pokazuje poprawną odpowiedź.'),
+      li('Kto co robi', 'pytania o kompetencje: kto powołuje, nadaje stopnie, wymierza kary, klasyfikuje, udziela zgody. Zakładka „Ściągawka” zbiera wszystkie kompetencje z bazy pogrupowane według organu.'),
+      li('Szukaj', 'wpisz frazę (np. „cela izolacyjna”, „14 dni”) – dostaniesz wszystkie pytania ze wszystkich tematów z odpowiedziami. Przycisk „Ćwicz znalezione” robi z nich test.')),
+
     sec('🦅 Chorąży Bielik',
       li('', 'Maskotka na ekranie Nauka. Komentuje Twoją naukę: serię dni, cel dzienny, odliczanie do egzaminu, najsłabszy temat. W trakcie nauki wtrąca się po serii dobrych lub złych odpowiedzi, a pod wynikami ocenia, jak poszło.'),
       li('Nastroje', 'dumny, zadowolony, czujny, znudzony (przewraca oczami), groźny i wściekły – zależnie od tego, jak się uczysz. Stuknij go, jeśli masz odwagę.'),
+      li('Rozkazy dnia', 'karta pod stopniem na ekranie Nauka: codziennie 3 zadania (np. temat, w którym masz najwięcej błędów, poprawa Trudnych, jeden z trybów). Za każdy +15 pkt, za komplet dodatkowo +30. Dotknij rozkazu, żeby od razu zacząć.'),
+      li('Musztra znienacka', 'czasem, gdy wchodzisz na ekran Nauka, Bielik zadaje jedno pytanie w dymku – najczęściej takie, na którym wcześniej był błąd. Dobra odpowiedź: +10 pkt premii. Można pominąć albo wyłączyć w ⚙️.'),
+      li('Słabe punkty', 'Bielik zapamiętuje, co ci się myli: organy (np. komisja penitencjarna ↔ sędzia penitencjarny), liczby i terminy, pytania oblane kilka razy – i wytyka to w dymkach. Do musztry wybiera właśnie te pytania.'),
       li('Ustawienia (⚙️)', 'możesz go ukryć, złagodzić język albo włączyć powiadomienia z wybraną godziną. Na iPhonie powiadomienia działają tylko z ikony na ekranie początkowym.')),
 
     sec('⚑ Zgłoś błąd',
@@ -2998,6 +3027,8 @@ function bielikHomeLine() {
   if (today >= goal * 3) return bielikLine('cel.x3', vars);
   if (today >= goal * 2) return bielikLine('cel.x2', vars);
   if (today >= goal) return bielikLine(Math.random() < 0.5 ? 'cel.done' : 'pow.poNauce', vars);
+  const wl = bielikWeakLine();
+  if (wl) return wl;
   // podpowiedzi
   const tips = [];
   if (vars.temat) tips.push('tip.temat');
@@ -3035,7 +3066,12 @@ function bielikCard() {
   };
   fig.addEventListener('click', click);
   fig.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); click(); } });
-  const card = h('section', { class: 'card bielik-card' }, fig, h('div', { class: 'bielik-talk' }, h('div', { class: 'bielik-name' }, 'Chorąży Bielik'), bubble));
+  const talk = h('div', { class: 'bielik-talk' }, h('div', { class: 'bielik-name' }, 'Chorąży Bielik'), bubble);
+  const card = h('section', { class: 'card bielik-card' }, fig, talk);
+  if (musztraDue()) {
+    const m = musztraCard(fig, say, bubble);
+    if (m) { card.classList.add('has-musztra'); card.append(m); }
+  }
   function restartIdle() {
     clearTimeout(bielikIdleT);
     bielikIdleT = setTimeout(() => { if (card.isConnected && currentRoute === '') say(bielikLine('nudny.ekran')); }, 30000);
@@ -3193,6 +3229,8 @@ function bielikSettings() {
       h('input', { type: 'checkbox', role: 'switch', checked: BIELIK_ON(), onchange: e => { st.bielikOff = !e.target.checked; save(); } })),
     h('label', { class: 'switch' }, h('span', {}, 'Ostrzejszy język (docinki, czasem dosadnie)'),
       h('input', { type: 'checkbox', role: 'switch', checked: BIELIK_OSTRO(), onchange: e => { st.bielikOstry = e.target.checked; save(); syncPush(); } })),
+    h('label', { class: 'switch' }, h('span', {}, 'Musztra znienacka (pytanie w dymku na ekranie Nauka)'),
+      h('input', { type: 'checkbox', role: 'switch', checked: !st.musztraOff, onchange: e => { st.musztraOff = !e.target.checked; save(); } })),
     HAS_SERVER && h('label', { class: 'switch' }, h('span', {}, 'Powiadomienia od Bielika'), pushSwitch),
     HAS_SERVER && h('div', { class: 'row', style: 'align-items:center' }, h('span', { class: 'small' }, 'Godzina:'), hourSel),
     HAS_SERVER && info,
@@ -3200,3 +3238,718 @@ function bielikSettings() {
 }
 
 init();
+
+/* =====================================================================
+   v30: Szukaj, Kto co robi, Milionerzy, Prawda czy fałsz,
+        Bielik – rozkazy dnia, musztra znienacka, słabe punkty
+   ===================================================================== */
+
+let answerMode = null;   // nadpisuje currentRoute przy liczeniu rozkazów (np. musztra na ekranie startowym)
+let lastChoice = null;   // { id, text } – ostatnio wybrana odpowiedź w pytaniu testowym
+
+/* ---------- Organy (Kto co robi + słabe punkty Bielika) ---------- */
+
+const ORGANY = [
+  ['prezydent', 'Prezydent RP', /prezydent/i],
+  ['premier', 'Prezes Rady Ministrów', /prezes\w* rady ministrów|premier/i],
+  ['ms', 'Minister Sprawiedliwości', /minist\w* sprawiedliwości/i],
+  ['dg', 'Dyrektor Generalny SW', /dyrektor\w* generaln/i],
+  ['do', 'Dyrektor okręgowy SW', /dyrektor\w* okręgow/i],
+  ['komisja', 'Komisja penitencjarna', /komisj\w* penitencjarn/i],
+  ['sedzia', 'Sędzia penitencjarny', /sędzi\w* penitencjarn/i],
+  ['sadpen', 'Sąd penitencjarny', /sąd\w* penitencjarn/i],
+  ['sad', 'Sądy i trybunały', /(^|\s)sąd|trybunał/i],
+  ['dyr', 'Dyrektor ZK / AŚ', /dyrektor/i],
+  ['komendant', 'Komendant', /komendan/i],
+  ['kierownik', 'Kierownik jednostki / działu', /kierownik/i],
+  ['wychowawca', 'Wychowawca', /wychowawc/i],
+  ['lekarz', 'Lekarz / psycholog', /lekarz|psycholog/i],
+  ['oddzialowy', 'Oddziałowy', /oddziałow/i],
+  ['dowodca', 'Dowódca zmiany / konwoju', /dowódc/i],
+  ['rpo', 'Rzecznik Praw Obywatelskich', /rzecznik/i],
+  ['policja', 'Policja / prokurator', /policj|prokurat/i],
+];
+const ORGAN_NAME = Object.fromEntries(ORGANY.map(o => [o[0], o[1]]));
+function organOf(text) {
+  for (const o of ORGANY) if (o[2].test(text || '')) return o[0];
+  return null;
+}
+
+// Pytanie „kto?”: poprawna odpowiedź i (prawie) wszystkie inne to organy / osoby.
+let ktoCache = null;
+function isKtoItem(it) {
+  if (it.type !== 'mcq' || it.options.length < 3) return false;
+  const os = it.options.map(organOf);
+  return !!os[it.answer] && os.filter(Boolean).length >= it.options.length - 1 && new Set(os.filter(Boolean)).size >= 2;
+}
+function ktoItems(decks) {
+  if (!ktoCache) ktoCache = DATA.items.filter(isKtoItem);
+  const set = new Set(decks || selectedDecks());
+  let list = ktoCache.filter(it => set.has(it.deck));
+  if (list.length < 10) list = ktoCache.slice();
+  return pickVariants(list);
+}
+
+function renderKto(tab) {
+  screen('Kto co robi', true);
+  const items = ktoItems();
+  if (!items.length) return emptyScreen('Kto co robi', '📭', 'Brak pytań o kompetencje.');
+  const t = tab || 'cwicz';
+  $app.append(sizeLikePicker([['cwicz', '🎯 Ćwicz'], ['sciaga', '📋 Ściągawka']], t, v => renderKto(v)));
+  if (t === 'cwicz') {
+    const n = state.settings.ktoSize ?? 15;
+    $app.append(h('div', { class: 'card' },
+      h('p', { style: 'margin-top:0' }, 'Pytania o to, ', h('strong', {}, 'kto'), ' powołuje, nadaje, wymierza, udziela zgody, klasyfikuje… Na egzaminie to najczęstsza pułapka – organy łatwo pomylić.'),
+      h('p', { class: 'small muted' }, `${items.length} ${plural(items.length, 'pytanie', 'pytania', 'pytań')} z wybranych tematów (gdy za mało – ze wszystkich). Najpierw te, których jeszcze nie było.`)),
+      h('p', { class: 'small muted' }, 'Ile pytań?'),
+      sizePicker([10, 15, 25, 0], n, v => { state.settings.ktoSize = v; save(); renderKto('cwicz'); }),
+      h('div', { class: 'stack', style: 'margin-top:12px' }, btn('Start', 'primary', runKto)));
+  } else {
+    const groups = {};
+    for (const it of items) {
+      const o = organOf(it.options[it.answer]);
+      (groups[o] || (groups[o] = [])).push(it);
+    }
+    $app.append(h('p', { class: 'small muted' }, 'Kompetencje zebrane z pytań w bazie – pogrupowane według organu, który jest poprawną odpowiedzią.'));
+    for (const [id, name] of ORGANY.map(o => [o[0], o[1]])) {
+      const g = groups[id];
+      if (!g) continue;
+      $app.append(h('details', { class: 'card kto-group' },
+        h('summary', {}, h('span', {}, name), h('span', { class: 'count' }, g.length)),
+        h('ul', { class: 'kto-list' }, g.map(it => h('li', {},
+          h('span', {}, it.question.replace(/[:?]\s*$/, '')), ' → ', h('strong', {}, it.options[it.answer]))))));
+    }
+  }
+}
+
+function runKto() {
+  const n = state.settings.ktoSize ?? 15;
+  const items = shuffle(freshFirst(ktoItems(), n));
+  runSequence('Kto co robi', items, runKto, { celebrate: true, onShow: markTestSeen });
+}
+
+/* ---------- Szukaj w pytaniach ---------- */
+
+function itemSearchText(it) {
+  const parts = [it.question, it.front, it.back, it.title, it.scenario, it.prompt, it.explanation, it.source,
+    it.text && String(it.text).replace(/\[\[|\]\]/g, ''),
+    ...(it.options || []), ...(it.steps || []).map(s => (typeof s === 'string' ? s : [s.question, ...(s.options || []), s.explanation].join(' '))),
+    ...(it.pairs || []).map(p => p.join(' '))];
+  return fold(parts.filter(Boolean).join(' '));
+}
+let searchIndex = null;
+
+function answerBlock(it) {
+  if (it.type === 'mcq') return h('div', { class: 'good' }, '✓ ' + it.options[it.answer]);
+  if (it.type === 'flashcard') return h('div', { class: 'good' }, it.back);
+  if (it.type === 'cloze') return h('div', { class: 'good' }, String(it.text).replace(/\[\[([^\]]*)\]\]/g, (m, a) => a.split('|')[0]));
+  if (it.type === 'order') return h('div', { class: 'good' }, (it.steps || []).map((s, i) => `${i + 1}. ${s}`).join('  ·  '));
+  if (it.type === 'pairs') return h('div', { class: 'good' }, it.pairs.map(p => p.join(' = ')).join('  ·  '));
+  if (it.type === 'case') return h('div', {}, h('p', { class: 'small', style: 'margin:4px 0' }, it.scenario),
+    it.steps.map(s => h('div', { class: 'good' }, `${s.question} → ${s.options[s.answer]}`)));
+  return null;
+}
+
+function renderSearch() {
+  screen('Szukaj w pytaniach', true);
+  if (!searchIndex) searchIndex = DATA.items.map(it => [it, itemSearchText(it)]);
+  const q0 = state.settings.lastSearch || '';
+  const input = h('input', { type: 'search', class: 'search-input', placeholder: 'np. cela izolacyjna, 14 dni, komisja…', value: q0,
+    'aria-label': 'Szukana fraza', enterkeyhint: 'search' });
+  const info = h('p', { class: 'small muted' });
+  const list = h('div');
+  const practice = h('div', { class: 'stack' });
+  let t = null;
+  const run = () => {
+    const q = fold(input.value.trim());
+    state.settings.lastSearch = input.value.trim();
+    list.replaceChildren(); practice.replaceChildren();
+    if (q.length < 3) { info.textContent = 'Wpisz co najmniej 3 znaki. Szukam we wszystkich tematach: w treści pytań, odpowiedziach, wyjaśnieniach i podstawie prawnej.'; return; }
+    const words = q.split(' ').filter(Boolean);
+    const found = searchIndex.filter(([, txt]) => words.every(w => txt.includes(w))).map(([it]) => it);
+    info.textContent = found.length ? `Znaleziono: ${found.length}` + (found.length > 60 ? ' (pokazuję 60 pierwszych)' : '') : 'Nic nie znaleziono. Spróbuj krótszej frazy albo innego słowa.';
+    if (found.length) practice.append(btn(`🎯 Ćwicz znalezione (${Math.min(found.length, 30)})`, 'primary', () => {
+      runSequence('Ćwiczenie: ' + input.value.trim(), shuffle(found).slice(0, 30), () => renderSearch(), { celebrate: true });
+    }));
+    for (const it of found.slice(0, 60)) {
+      list.append(h('div', { class: 'card mistake search-hit' },
+        h('div', { class: 'tags-row' }, h('span', { class: 'tag' }, deckById[it.deck] ? deckById[it.deck].name : it.deck)),
+        h('div', { class: 'q' }, itemLabel(it)), answerBlock(it), sourceEl(it)));
+    }
+  };
+  input.addEventListener('input', () => { clearTimeout(t); t = setTimeout(run, 180); });
+  $app.append(input, info, practice, list);
+  run();
+  setTimeout(() => input.focus(), 50);
+}
+
+/* ---------- Dane „publiczności” (wyniki całego kursu) ---------- */
+
+const PUB_KEY = 'nauka-sw-pub';
+let pubData = null;
+function loadPub() {
+  if (pubData) return pubData;
+  try { pubData = JSON.parse(localStorage.getItem(PUB_KEY) || 'null'); } catch (e) { pubData = null; }
+  return pubData || { t: 0, d: {} };
+}
+async function fetchPub() {
+  if (!HAS_SERVER) return;
+  const p = loadPub();
+  if (Date.now() - (p.at || 0) < 12 * 3600000) return;
+  try {
+    const r = await fetch('/api/publicznosc');
+    if (!r.ok) return;
+    const j = await r.json();
+    pubData = { ...j, at: Date.now() };
+    localStorage.setItem(PUB_KEY, JSON.stringify(pubData));
+  } catch (e) { /* bez sieci */ }
+}
+// Trudność 0–1 (odsetek błędów): kurs → własna historia → domyślna.
+function difficulty(it) {
+  const p = loadPub().d[it.id];
+  if (p && p[0] >= 5) return p[1] / p[0];
+  const r = state.hist[it.id];
+  if (r && r.n) return Math.min(0.9, r.bad / r.n * 0.8 + 0.1);
+  return 0.35;
+}
+
+/* ---------- Milionerzy ---------- */
+
+const MILION_KWOTY = ['500 zł', '1 000 zł', '2 000 zł', '5 000 zł', '10 000 zł', '20 000 zł', '40 000 zł', '75 000 zł', '125 000 zł', '250 000 zł', '500 000 zł', '1 000 000 zł'];
+const MILION_PROGI = [1, 6]; // indeksy kwot gwarantowanych (1 000 zł i 40 000 zł)
+const MILION_BONUS = 100;
+let milion = null;
+
+function milionPool() {
+  return pool(['mcq']).filter(it => it.options.length === 4 && !it.img);
+}
+
+function renderMilion() {
+  screen('Milionerzy', true);
+  const n = milionPool().length;
+  if (n < 12) return emptyScreen('Milionerzy', '📭', 'Za mało pytań z czterema odpowiedziami w wybranych tematach (potrzeba 12).');
+  const best = state.settings.milionBest;
+  $app.append(h('div', { class: 'card empty' },
+    h('div', { class: 'big' }, '💰'),
+    h('p', {}, '12 pytań, coraz trudniejszych. Każda dobra odpowiedź to wyższa kwota. Jedna pomyłka – spadasz do ostatniego progu gwarantowanego (1 000 zł albo 40 000 zł).'),
+    h('p', { class: 'small' }, 'Koła ratunkowe (każde raz): ', h('strong', {}, '50:50'), ', ', h('strong', {}, '🦅 Zapytaj Bielika'), ', ', h('strong', {}, '👥 Pytanie do publiczności'),
+      ' – pokazuje, jak na to pytanie odpowiadali kursanci.'),
+    h('p', { class: 'small muted' }, best != null ? `Twój najlepszy wynik: ${MILION_KWOTY[best]}` : 'Pierwsza gra – powodzenia!')),
+    h('div', { class: 'stack' }, btn('Gramy!', 'primary', startMilion), btn('Wróć do startu', '', () => { location.hash = '#/'; })));
+}
+
+function startMilion() {
+  const all = shuffle(milionPool()).slice(0, 72).map(it => [it, difficulty(it) + Math.random() * 0.08]);
+  all.sort((a, b) => a[1] - b[1]);
+  const third = Math.floor(all.length / 3);
+  const tier = (from, to, k) => shuffle(all.slice(from, to)).slice(0, k).sort((a, b) => a[1] - b[1]).map(x => x[0]);
+  const qs = [...tier(0, third, 4), ...tier(third, 2 * third, 4), ...tier(2 * third, all.length, 4)];
+  milion = { qs, i: 0, used: {}, removed: [], over: false };
+  milionStep();
+}
+
+function milionSafe(i) { // kwota gwarantowana po błędzie na pytaniu i
+  let s = -1;
+  for (const p of MILION_PROGI) if (p < i) s = p;
+  return s;
+}
+
+function milionStep() {
+  const m = milion;
+  if (!m) return;
+  const it = m.qs[m.i];
+  m.removed = [];
+  m.order = m.order && m.order.id === it.id ? m.order : { id: it.id, o: shuffle([0, 1, 2, 3]) };
+  screen('Milionerzy', true);
+  const ladder = h('details', { class: 'card milion-ladder' },
+    h('summary', {}, h('span', {}, `Pytanie ${m.i + 1} z 12 · za `, h('strong', {}, MILION_KWOTY[m.i])),
+      h('span', { class: 'count' }, m.i ? `masz: ${MILION_KWOTY[m.i - 1]}` : '')),
+    h('ol', { reversed: '' }, MILION_KWOTY.slice().reverse().map((k, j) => {
+      const idx = 11 - j;
+      return h('li', { class: (idx === m.i ? 'now ' : '') + (idx < m.i ? 'done ' : '') + (MILION_PROGI.includes(idx) ? 'safe' : '') }, k);
+    })));
+  const letters = ['A', 'B', 'C', 'D'];
+  const help = h('div', { class: 'milion-help' });
+  const buttons = m.order.o.map((oi, k) => h('button', { type: 'button', class: 'btn option milion-opt', onclick: () => choose(oi, buttons[k]) },
+    h('span', { class: 'ml' }, letters[k] + ':'), ' ', it.options[oi]));
+  const lifelines = h('div', { class: 'milion-lifelines' },
+    h('button', { type: 'button', class: 'btn small-btn', disabled: !!m.used.half, onclick: e => { e.currentTarget.disabled = true; half(); } }, '50:50'),
+    h('button', { type: 'button', class: 'btn small-btn', disabled: !!m.used.bielik, onclick: e => { e.currentTarget.disabled = true; askBielik(); } }, '🦅 Bielik'),
+    h('button', { type: 'button', class: 'btn small-btn', disabled: !!m.used.pub, onclick: e => { e.currentTarget.disabled = true; askPub(); } }, '👥 Publiczność'));
+  const quit = m.i ? btn(`🏳️ Rezygnuję – biorę ${MILION_KWOTY[m.i - 1]}`, 'ghost', () => milionEnd('quit')) : null;
+  $app.append(ladder, lifelines,
+    h('div', { class: 'card' }, h('div', { class: 'question' }, it.question), h('div', { class: 'options' }, buttons), help),
+    h('div', { class: 'actions' }));
+  if (quit) $app.append(quit);
+  qShownAt = Date.now();
+  let locked = false;
+
+  function half() {
+    m.used.half = true;
+    const wrong = shuffle([0, 1, 2, 3].filter(x => x !== it.answer)).slice(0, 2);
+    m.removed = wrong;
+    buttons.forEach((b, k) => { if (wrong.includes(m.order.o[k])) { b.disabled = true; b.classList.add('gone'); } });
+  }
+  function askBielik() {
+    m.used.bielik = true;
+    const d = difficulty(it);
+    const pRight = d < 0.25 ? 0.9 : d < 0.45 ? 0.78 : 0.62;
+    const avail = [0, 1, 2, 3].filter(x => !m.removed.includes(x));
+    const pick = Math.random() < pRight ? it.answer : shuffle(avail.filter(x => x !== it.answer))[0];
+    const key = d < 0.25 ? 'milion.pewny' : d < 0.45 ? 'milion.raczej' : 'milion.niepewny';
+    const line = bielikLine(key, { odp: it.options[pick] }) || { m: 'czujny', t: `Stawiałbym na „${it.options[pick]}”.` };
+    help.append(h('div', { class: 'bielik-comment' }, bielikFigure(line.m, 56), h('div', { class: 'bielik-bubble' }, line.t)));
+  }
+  function askPub() {
+    m.used.pub = true;
+    const p = loadPub().d[it.id];
+    const real = p && p[0] >= 5;
+    let right = real ? (p[0] - p[1]) / p[0] : Math.max(0.3, Math.min(0.9, 1 - difficulty(it) + (Math.random() - 0.5) * 0.2));
+    const avail = [0, 1, 2, 3].filter(x => !m.removed.includes(x) && x !== it.answer);
+    const rest = 1 - right;
+    const w = avail.map(() => 0.3 + Math.random());
+    const sw = w.reduce((a, b) => a + b, 0);
+    const share = { [it.answer]: right };
+    avail.forEach((x, k) => { share[x] = rest * w[k] / sw; });
+    const rows = m.order.o.map((oi, k) => {
+      const v = Math.round((share[oi] || 0) * 100);
+      return h('div', { class: 'pub-row' }, h('span', { class: 'pub-l' }, letters[k]),
+        h('div', { class: 'pub-bar' }, h('i', { style: `width:${v}%` })), h('span', { class: 'pub-v' }, v + '%'));
+    });
+    help.append(h('div', { class: 'pub-box' },
+      h('div', { class: 'small' }, h('strong', {}, '👥 Publiczność'), ' – ', real ? `tak odpowiadali kursanci (${p[0]} ${plural(p[0], 'odpowiedź', 'odpowiedzi', 'odpowiedzi')})` : 'symulacja: za mało odpowiedzi z kursu na to pytanie'),
+      rows));
+  }
+  function choose(oi, b) {
+    if (locked) return;
+    locked = true;
+    lifelines.querySelectorAll('button').forEach(x => { x.disabled = true; });
+    if (quit) quit.disabled = true;
+    b.classList.add('selected');
+    setTimeout(() => {
+      const ok = oi === it.answer;
+      buttons.forEach((x, k) => { x.disabled = true; if (m.order.o[k] === it.answer) x.classList.add('correct'); else if (m.order.o[k] === oi) x.classList.add('wrong'); });
+      lastChoice = { id: it.id, text: it.options[oi] };
+      answerMode = 'milionerzy';
+      record(it, ok ? 'ok' : 'bad');
+      answerMode = null;
+      const d = game().daily;
+      if (d) { d.milionMax = Math.max(d.milionMax || 0, ok ? m.i + 1 : m.i); checkRozkazy(); save(); }
+      const acts = $app.querySelector('.actions');
+      help.append(feedback(ok, ok ? `Dobrze! Masz ${MILION_KWOTY[m.i]}.` : 'Niestety. Poprawna odpowiedź: ' + it.options[it.answer],
+        it.explanation ? h('div', {}, it.explanation) : null, sourceEl(it)));
+      if (!ok) nextButton(acts, () => milionEnd('lost'), 'Koniec gry');
+      else if (m.i === 11) nextButton(acts, () => milionEnd('win'), '🏆 Odbierz milion');
+      else nextButton(acts, () => { m.i++; milionStep(); }, `Pytanie za ${MILION_KWOTY[m.i + 1]}`);
+    }, 900);
+  }
+}
+
+function milionEnd(how) {
+  const m = milion;
+  milion = null;
+  if (!m) return;
+  const won = how === 'win' ? 11 : how === 'quit' ? m.i - 1 : milionSafe(m.i);
+  const best = state.settings.milionBest;
+  const isBest = won >= 0 && (best == null || won > best);
+  if (isBest) state.settings.milionBest = won;
+  if (how === 'win') { addPoints(MILION_BONUS); evaluate(); }
+  save();
+  screen('Milionerzy', true);
+  const kwota = won >= 0 ? MILION_KWOTY[won] : '0 zł';
+  const key = how === 'win' ? 'milion.wygrana' : how === 'quit' ? 'milion.rezygnacja' : 'milion.przegrana';
+  $app.append(h('div', { class: 'card verdict ' + (how === 'win' ? 'v-gold' : won >= 6 ? 'v-green' : 'v-red') },
+    h('div', { class: 'verdict-icon', 'aria-hidden': 'true' }, how === 'win' ? '🏆' : how === 'quit' ? '🏳️' : '💸'),
+    h('div', { class: 'score' }, kwota),
+    h('div', { class: 'score-sub' }, how === 'win' ? `Wszystkie 12 pytań! +${MILION_BONUS} pkt premii` : how === 'quit' ? `Rezygnacja po ${m.i} ${plural(m.i, 'pytaniu', 'pytaniach', 'pytaniach')}` : `Odpadłeś na pytaniu ${m.i + 1} za ${MILION_KWOTY[m.i]}`),
+    isBest && how !== 'win' && won >= 0 ? h('div', { class: 'verdict-head' }, 'Nowy rekord!') : null,
+    bielikComment(key, { kwota: MILION_KWOTY[m.i] || kwota })));
+  if (how === 'win') confetti();
+  $app.append(h('div', { class: 'stack' }, btn('Zagraj jeszcze raz', 'primary', startMilion), btn('Wróć do startu', '', () => { location.hash = '#/'; })));
+}
+
+/* ---------- Prawda czy fałsz (przesuwanie kart) ---------- */
+
+const PRAWDA_SIZE = 20;
+const TF_RE = /^prawda czy fałsz:?\s*/i;
+const BAD_OPT_RE = /wszystk\w* (wymienion|odpowiedzi|powyższ)|żadn\w* z (powyższ|wymienion)|obie odpowiedzi|nie ma takiego/i;
+
+function prawdaCards(n) {
+  const list = [];
+  for (const it of shuffle(pool(['mcq']).filter(x => !x.img))) {
+    if (list.length >= n) break;
+    const o = it.options.map(x => x.trim().toLowerCase());
+    if (o.length === 2 && o[0] === 'prawda' && o[1] === 'fałsz') {
+      list.push({ it, text: it.question.replace(TF_RE, ''), shown: null, truth: it.answer === 0 });
+      continue;
+    }
+    if (/\bNIE\b|FAŁSZ|BŁĘDN|NIEPRAWDZIW|nieprawdziw|błędn/.test(it.question)) continue;
+    if (it.options.some(x => BAD_OPT_RE.test(x))) continue;
+    const truth = Math.random() < 0.5;
+    const wrong = it.options.map((_, i) => i).filter(i => i !== it.answer);
+    const oi = truth ? it.answer : wrong[Math.floor(Math.random() * wrong.length)];
+    list.push({ it, text: it.question, shown: it.options[oi], truth });
+  }
+  return list;
+}
+
+function renderPrawda() {
+  const cards = prawdaCards(PRAWDA_SIZE);
+  if (cards.length < 5) return emptyScreen('Prawda czy fałsz', '📭', 'Za mało pytań w wybranych tematach.');
+  const s = { cards, i: 0, ok: 0, run: 0, bestRun: 0, bad: [] };
+  prawdaStep(s);
+}
+
+function prawdaStep(s) {
+  if (s.i >= s.cards.length) return prawdaSummary(s);
+  const c = s.cards[s.i];
+  screen('Prawda czy fałsz', true);
+  $app.append(h('div', { class: 'progress-line' }, h('span', {}, `${s.i + 1} / ${s.cards.length}`), h('span', {}, `Dobrze: ${s.ok}` + (s.run >= 3 ? ` · 🔥 ${s.run}` : ''))));
+  const stampT = h('div', { class: 'swipe-stamp t' }, 'PRAWDA');
+  const stampF = h('div', { class: 'swipe-stamp f' }, 'FAŁSZ');
+  const card = h('div', { class: 'card swipe-card', tabindex: '0', 'aria-label': 'Karta: przesuń w prawo – prawda, w lewo – fałsz' },
+    stampT, stampF,
+    h('div', { class: 'tags-row' }, h('span', { class: 'tag' }, deckById[c.it.deck] ? deckById[c.it.deck].name : c.it.deck)),
+    h('div', { class: 'question' }, c.text),
+    c.shown != null ? h('div', { class: 'swipe-answer' }, '→ ', c.shown) : null);
+  const after = h('div');
+  const bF = btn('✗ Fałsz', 'bad', () => judge(false));
+  const bT = btn('✓ Prawda', 'ok', () => judge(true));
+  const row = h('div', { class: 'row swipe-btns' }, bF, bT);
+  $app.append(h('p', { class: 'small muted swipe-hint' }, 'Przesuń kartę: w prawo ➜ prawda, w lewo ⬅ fałsz'), card, row, after);
+  let done = false, x0 = null, dx = 0;
+  const move = x => {
+    dx = x;
+    card.style.transform = `translateX(${dx}px) rotate(${dx / 18}deg)`;
+    stampT.style.opacity = Math.max(0, Math.min(1, dx / 90));
+    stampF.style.opacity = Math.max(0, Math.min(1, -dx / 90));
+  };
+  card.addEventListener('pointerdown', e => { if (done) return; x0 = e.clientX; card.setPointerCapture(e.pointerId); card.classList.add('drag'); });
+  card.addEventListener('pointermove', e => { if (x0 != null && !done) move(e.clientX - x0); });
+  const up = () => {
+    if (x0 == null) return;
+    x0 = null;
+    card.classList.remove('drag');
+    if (Math.abs(dx) > 80) judge(dx > 0);
+    else move(0);
+  };
+  card.addEventListener('pointerup', up);
+  card.addEventListener('pointercancel', up);
+  card.addEventListener('keydown', e => { if (e.key === 'ArrowRight') judge(true); if (e.key === 'ArrowLeft') judge(false); });
+  setTimeout(() => card.focus({ preventScroll: true }), 30);
+
+  function judge(say) {
+    if (done) return;
+    done = true;
+    const ok = say === c.truth;
+    card.classList.add(ok ? 'right' : 'miss');
+    move(say ? 160 : -160);
+    card.style.opacity = ok ? '.0' : '1';
+    if (!ok) { card.style.transform = ''; card.style.opacity = '1'; stampT.style.opacity = 0; stampF.style.opacity = 0; }
+    bF.disabled = bT.disabled = true;
+    answerMode = 'prawda';
+    pointsMult = 0.5;
+    if (!ok) record(c.it, 'bad');
+    else if (!c.truth && state.hist[c.it.id] && state.hist[c.it.id].last === 'bad') noteAnswer(c.it, 3);
+    else record(c.it, 'ok');
+    pointsMult = 1;
+    answerMode = null;
+    if (ok) { s.ok++; s.run++; s.bestRun = Math.max(s.bestRun, s.run); setTimeout(() => { s.i++; prawdaStep(s); }, 380); return; }
+    s.run = 0;
+    s.bad.push(c);
+    row.hidden = true;
+    after.append(feedback(false, c.truth ? 'To była prawda.' : 'To był fałsz.',
+      h('div', {}, 'Poprawna odpowiedź: ', h('strong', {}, c.it.options[c.it.answer])),
+      c.it.explanation ? h('div', {}, c.it.explanation) : null, sourceEl(c.it)),
+      h('div', { class: 'actions' }, btn(s.i + 1 >= s.cards.length ? 'Zobacz wynik' : 'Dalej', 'primary', () => { s.i++; prawdaStep(s); })));
+  }
+}
+
+function prawdaSummary(s) {
+  screen('Prawda czy fałsz', true);
+  const p = pct(s.ok, s.cards.length);
+  $app.append(verdictCard(p, `${s.ok} z ${s.cards.length} trafnie · najdłuższa seria: ${s.bestRun}`, worstDeck(s.bad.map(c => c.it))));
+  $app.append(h('div', { class: 'stack' }, btn('Jeszcze raz', 'primary', renderPrawda), btn('Wróć do startu', '', () => { location.hash = '#/'; })));
+  if (s.bad.length) {
+    $app.append(h('h2', {}, 'Pomyłki'));
+    for (const c of s.bad) $app.append(h('div', { class: 'card mistake' }, h('div', { class: 'q' }, c.text),
+      c.shown != null ? h('div', { class: 'small muted' }, `Na karcie: ${c.shown} – ${c.truth ? 'prawda' : 'fałsz'}`) : null,
+      h('div', { class: 'good' }, '✓ ' + c.it.options[c.it.answer])));
+  }
+}
+
+// Odpowiedź liczona do celu dziennego i rozkazów, ale bez zmiany historii pytania.
+function noteAnswer(item, pts) {
+  const g = game();
+  const day = dayKey(new Date());
+  g.days[day] = (g.days[day] || 0) + 1;
+  g.counters.answers++;
+  if (pts) addPoints(pts);
+  trackDaily(item, 'ok', null);
+  save();
+}
+
+/* ---------- Rozkazy dnia ---------- */
+
+const ROZKAZ_PTS = 15, ROZKAZY_BONUS = 30;
+
+function ensureDaily() {
+  const g = game();
+  const day = dayKey(new Date());
+  if (!g.daily || g.daily.day !== day) g.daily = { day, ok: 0, fixed: 0, n: 0, deck: {}, mode: {}, sprintMax: 0, milionMax: 0, list: null, done: [] };
+  if (!g.daily.list) g.daily.list = makeRozkazy(day);
+  return g.daily;
+}
+
+function weakestDeckId() {
+  let worst = null;
+  for (const [id, s] of Object.entries(game().deckStats || {})) {
+    if (!deckById[id] || s.n < 10) continue;
+    if (DATA.items.filter(i => i.deck === id && i.type === 'mcq').length < 10) continue;
+    const acc = s.ok / s.n;
+    if (!worst || acc < worst.acc) worst = { id, acc };
+  }
+  return worst && worst.acc < 0.85 ? worst.id : null;
+}
+
+function makeRozkazy(day) {
+  const rnd = seeded('rozkazy' + day);
+  const goal = dailyGoal();
+  const okN = Math.max(10, Math.min(25, Math.round(goal * 0.4 / 5) * 5));
+  const decks = selectedDecks().filter(id => DATA.items.filter(i => i.deck === id && i.type === 'mcq').length >= 10);
+  const weak = weakestDeckId();
+  const list = [];
+  if (weak) list.push({ k: 'deck', n: 10, id: weak });
+  else list.push({ k: 'ok', n: okN });
+  const hard = hardItems().length;
+  if (hard >= 3) list.push({ k: 'fixed', n: Math.min(5, hard) });
+  else if (list[0].k === 'deck') list.push({ k: 'ok', n: okN });
+  else if (decks.length) list.push({ k: 'deck', n: 10, id: decks[Math.floor(rnd() * decks.length)] });
+  else list.push({ k: 'ok', n: okN + 10 });
+  const extra = [{ k: 'prawda', n: 20 }, { k: 'milion', n: 5 }, { k: 'kto', n: 10 }, { k: 'sprint', n: 8 }];
+  if (pool(['flashcard']).length) extra.push({ k: 'fiszki', n: 20 });
+  if (pool(['case']).length) extra.push({ k: 'kazusy', n: 2 });
+  list.push(extra[Math.floor(rnd() * extra.length)]);
+  return list;
+}
+
+function rozkazInfo(r, d) {
+  const dn = r.id && deckById[r.id] ? deckById[r.id].name : '';
+  switch (r.k) {
+    case 'ok': return { t: `Odpowiedz poprawnie na ${r.n} pytań`, v: d.ok, href: '#/test' };
+    case 'deck': return { t: `${r.n} odpowiedzi z tematu: ${dn}`, v: d.deck[r.id] || 0, act: () => startDeckDrill(r.id) };
+    case 'fixed': return { t: `Popraw ${r.n} ${plural(r.n, 'błąd', 'błędy', 'błędów')} z listy Trudne`, v: d.fixed, href: '#/trudne' };
+    case 'prawda': return { t: `Rozstrzygnij ${r.n} kart w Prawda czy fałsz`, v: d.mode.prawda || 0, href: '#/prawda' };
+    case 'milion': return { t: `Dojdź do ${r.n}. pytania w Milionerach`, v: d.milionMax, href: '#/milionerzy' };
+    case 'kto': return { t: `${r.n} odpowiedzi w „Kto co robi”`, v: d.mode.kto || 0, href: '#/kto' };
+    case 'sprint': return { t: `Sprint: co najmniej ${r.n} poprawnych w minutę`, v: d.sprintMax, href: '#/sprint' };
+    case 'fiszki': return { t: `Przerób ${r.n} fiszek`, v: d.mode.fiszki || 0, href: '#/fiszki' };
+    case 'kazusy': return { t: `Rozwiąż ${r.n} ${plural(r.n, 'kazus', 'kazusy', 'kazusów')}`, v: d.mode.kazusy || 0, href: '#/kazusy' };
+  }
+  return { t: '?', v: 0 };
+}
+
+function startDeckDrill(id) {
+  const items = DATA.items.filter(i => i.deck === id && i.type === 'mcq');
+  const pick = shuffle(freshFirst(pickVariants(items), 10));
+  runSequence('Rozkaz: ' + deckById[id].name, pick, () => startDeckDrill(id), { celebrate: true, onShow: markTestSeen });
+}
+
+function trackDaily(item, result, prev) {
+  const d = ensureDaily();
+  d.n++;
+  const mode = answerMode || currentRoute || 'start';
+  d.mode[mode] = (d.mode[mode] || 0) + 1;
+  d.deck[item.deck] = (d.deck[item.deck] || 0) + 1;
+  if (result === 'ok') {
+    d.ok++;
+    if (prev && prev.last === 'bad') d.fixed++;
+  }
+  checkRozkazy();
+}
+
+function checkRozkazy() {
+  const d = ensureDaily();
+  let newly = 0;
+  d.list.forEach((r, k) => {
+    if (d.done[k]) return;
+    const inf = rozkazInfo(r, d);
+    if (inf.v >= r.n) {
+      d.done[k] = true;
+      newly++;
+      addPoints(ROZKAZ_PTS);
+      toast('📋', 'Rozkaz wykonany!', `${inf.t} · +${ROZKAZ_PTS} pkt`);
+    }
+  });
+  if (newly && d.list.every((_, k) => d.done[k]) && !d.allDone) {
+    d.allDone = true;
+    addPoints(ROZKAZY_BONUS);
+    setTimeout(() => bielikPop('rozkaz.wszystkie', { pkt: ROZKAZY_BONUS }, { force: true }), 3500);
+  }
+}
+
+function rozkazyCard() {
+  const d = ensureDaily();
+  const doneN = d.list.filter((_, k) => d.done[k]).length;
+  return h('details', { class: 'card rozkazy', open: state.settings.rozkazyClosed ? null : '',
+    ontoggle: e => { state.settings.rozkazyClosed = !e.target.open; save(); } },
+    h('summary', {}, h('span', {}, '📋 Rozkazy dnia'), h('span', { class: 'count' }, doneN === d.list.length ? '✓ wykonane' : `${doneN} / ${d.list.length}`)),
+    h('div', { class: 'rozkazy-list' }, d.list.map((r, k) => {
+      const inf = rozkazInfo(r, d);
+      const ok = !!d.done[k];
+      const prog = Math.min(1, inf.v / r.n);
+      const body = [h('span', { class: 'rz-check', 'aria-hidden': 'true' }, ok ? '✅' : '⬜'),
+        h('span', { class: 'rz-text' }, inf.t, h('span', { class: 'rz-bar' }, h('i', { style: `width:${Math.round(prog * 100)}%` }))),
+        h('span', { class: 'rz-num' }, ok ? `+${ROZKAZ_PTS}` : `${Math.min(inf.v, r.n)}/${r.n}`)];
+      if (ok) return h('div', { class: 'rz done' }, body);
+      if (inf.href) return h('a', { class: 'rz', href: inf.href }, body);
+      return h('button', { type: 'button', class: 'rz', onclick: inf.act }, body);
+    })),
+    h('p', { class: 'small muted', style: 'margin:6px 0 0' }, `Za każdy rozkaz +${ROZKAZ_PTS} pkt, za wszystkie trzy dodatkowo +${ROZKAZY_BONUS}. Nowe rozkazy jutro.`));
+}
+
+/* ---------- Bielik: słabe punkty ---------- */
+
+const NUM_RE = /^\s*(\d+[\s\d]*)\s*(dni|dzień|godz\w*|h\b|miesi\w*|lat|lata|rok\w*|tygodni\w*|minut\w*|%|zł|stawek|razy)/i;
+
+function bielikWeak(item, result, prev) {
+  const g = game();
+  const w = g.weak || (g.weak = { pairs: {}, liczby: 0, said: {} });
+  if (result !== 'bad' || item.type !== 'mcq' || !lastChoice || lastChoice.id !== item.id) return;
+  const chosen = lastChoice.text, right = item.options[item.answer];
+  const a = organOf(chosen), b = organOf(right);
+  if (a && b && a !== b) {
+    const key = [a, b].sort().join('|');
+    const n = w.pairs[key] = (w.pairs[key] || 0) + 1;
+    w.lastPair = key;
+    if (n === 2 || n === 3 || n === 5 || n === 8) setTimeout(() => bielikPop('slabe.para', { a: ORGAN_NAME[b], b: ORGAN_NAME[a], n }, { force: true, ms: 7000 }), 600);
+    return;
+  }
+  if (NUM_RE.test(chosen) && NUM_RE.test(right)) {
+    w.liczby = (w.liczby || 0) + 1;
+    if (w.liczby % 4 === 2) setTimeout(() => bielikPop('slabe.liczby', { wybrana: chosen.trim(), dobra: right.trim(), n: w.liczby }, { force: true, ms: 7000 }), 600);
+    return;
+  }
+  const r = state.hist[item.id];
+  if (r && (r.bad === 3 || r.bad === 5)) {
+    const odp = right.length > 90 ? right.slice(0, 87) + '…' : right;
+    setTimeout(() => bielikPop('slabe.pytanie', { n: r.bad, odp }, { force: true, ms: 7500 }), 600);
+  }
+}
+
+// Dymek na ekranie startowym o najczęściej mylonej parze (raz dziennie).
+function bielikWeakLine() {
+  const w = game().weak;
+  if (!w || !w.pairs) return null;
+  const day = dayKey(new Date());
+  if (w.said && w.said.home === day) return null;
+  const top = Object.entries(w.pairs).filter(([, n]) => n >= 2).sort((x, y) => y[1] - x[1])[0];
+  if (!top || Math.random() < 0.5) return null;
+  const [a, b] = top[0].split('|');
+  w.said = { ...(w.said || {}), home: day };
+  save();
+  return bielikLine('slabe.home', { a: ORGAN_NAME[a], b: ORGAN_NAME[b], n: top[1] });
+}
+
+/* ---------- Bielik: musztra znienacka ---------- */
+
+const MUSZTRA_BONUS = 10;
+
+function musztraDue() {
+  const g = game();
+  if (state.settings.musztraOff || g.counters.answers < 5) return false;
+  if (Date.now() - (g.flags.musztraAt || 0) < 2 * 3600000) return false;
+  return Math.random() < 0.4;
+}
+
+function musztraItem() {
+  const cand = pool(['mcq']).filter(it => !it.img && it.options.length >= 3);
+  if (!cand.length) return null;
+  const w = game().weak;
+  const hot = w && w.lastPair ? w.lastPair.split('|') : null;
+  const prefer = cand.filter(it => (state.hist[it.id] && state.hist[it.id].last === 'bad') ||
+    (hot && isKtoItem(it) && hot.includes(organOf(it.options[it.answer]))));
+  const src = prefer.length && Math.random() < 0.7 ? prefer : cand;
+  return src[Math.floor(Math.random() * src.length)];
+}
+
+function musztraCard(fig, say, bubble) {
+  const it = musztraItem();
+  if (!it) return false;
+  game().flags.musztraAt = Date.now();
+  save();
+  const start = bielikLine('musztra.start') || { m: 'grozny', t: 'Musztra! Pytanie kontrolne:' };
+  fig.innerHTML = bielikSVG(start.m, 86);
+  bubble.textContent = start.t;
+  const order = shuffle(it.options.map((_, i) => i));
+  const opts = h('div', { class: 'musztra-opts' });
+  const buttons = order.map(oi => h('button', { type: 'button', class: 'btn option small-opt', onclick: () => pick(oi) }, it.options[oi]));
+  const box = h('div', { class: 'musztra' }, h('div', { class: 'musztra-q' }, '❓ ', it.question), opts);
+  opts.append(...buttons, h('button', { type: 'button', class: 'link-btn musztra-skip', onclick: () => {
+    box.remove();
+    say(bielikLine('musztra.unik'));
+  } }, 'Odmaszeruj (pomiń)'));
+  return box;
+  function pick(oi) {
+    const ok = oi === it.answer;
+    buttons.forEach((b, k) => { b.disabled = true; if (order[k] === it.answer) b.classList.add('correct'); else if (order[k] === oi) b.classList.add('wrong'); });
+    opts.querySelector('.musztra-skip')?.remove();
+    lastChoice = { id: it.id, text: it.options[oi] };
+    answerMode = 'musztra';
+    record(it, ok ? 'ok' : 'bad');
+    answerMode = null;
+    if (ok) addPoints(MUSZTRA_BONUS);
+    save();
+    const odp = it.options[it.answer];
+    say(bielikLine(ok ? 'musztra.ok' : 'musztra.zle', { pkt: MUSZTRA_BONUS + POINTS.mcq, odp: odp.length > 90 ? odp.slice(0, 87) + '…' : odp }));
+  }
+}
+
+/* ---------- Teksty Bielika do nowych funkcji ---------- */
+
+Object.assign(BIELIK_TEKSTY, {
+  'musztra.start': [
+    { m: 'grozny', t: 'Musztra! Bez zaglądania do notatek:' },
+    { m: 'czujny', t: 'Baczność! Pytanie kontrolne, kursancie:' },
+    { m: 'grozny', t: 'Stój! Kto idzie? Odpowiedz, to przepuszczę:' }],
+  'musztra.ok': [
+    { m: 'zadowolony', t: 'Dobrze. Spocznij. +{pkt} pkt.' },
+    { m: 'dumny', t: 'Zgadza się! Widzę, że coś zostaje w głowie. +{pkt} pkt.' }],
+  'musztra.zle': [
+    { m: 'wsciekly', t: 'Źle! Poprawnie: „{odp}”. Zapamiętaj, bo wrócę z tym.' },
+    { m: 'grozny', t: 'Pudło. „{odp}” – i to ma siedzieć w głowie do egzaminu.', o: 'Pudło. „{odp}”. Myślenie nie boli, kursancie.' }],
+  'musztra.unik': [
+    { m: 'znudzony', t: 'Unikasz musztry? Zapisuję w notesie.' },
+    { m: 'grozny', t: 'Odmaszerować… Ale następnym razem nie odpuszczę.' }],
+  'slabe.para': [
+    { m: 'grozny', t: '{a} czy {b}? Mylisz ich już {n}. raz. Zrób „Kto co robi”, zanim pomylisz na egzaminie.' },
+    { m: 'wsciekly', t: 'Znowu! {a}, nie {b}. To {n}. raz. Zapisz to sobie na ręce.', o: 'Znowu! {a}, nie {b}. To {n}. raz. Litości, kursancie.' }],
+  'slabe.liczby': [
+    { m: 'grozny', t: '„{wybrana}” zamiast „{dobra}”. Terminy się wkuwa, nie zgaduje.' },
+    { m: 'wsciekly', t: 'Liczby ci się mylą: „{wybrana}”, a miało być „{dobra}”. Na egzaminie liczy się każdy dzień.' }],
+  'slabe.pytanie': [
+    { m: 'wsciekly', t: 'To pytanie oblałeś już {n} razy. Raz na zawsze: „{odp}”.' },
+    { m: 'grozny', t: '{n}. raz to samo pytanie i ten sam błąd. Zapamiętaj: „{odp}”.' }],
+  'slabe.home': [
+    { m: 'grozny', t: 'Ostatnio mylisz: {a} ↔ {b} ({n}×). Dziś cię z tego przepytam.' },
+    { m: 'czujny', t: '{a} i {b} – to twoja pięta achillesowa ({n} pomyłek). „Kto co robi” czeka.' }],
+  'rozkaz.wszystkie': [
+    { m: 'dumny', t: 'Wszystkie rozkazy dnia wykonane! +{pkt} pkt premii. Wzorowo.' },
+    { m: 'dumny', t: 'Trzy rozkazy, trzy wykonania. Tak wygląda służba. +{pkt} pkt.' }],
+  'milion.pewny': [
+    { m: 'dumny', t: 'To „{odp}”. Daję głowę. No, może nie głowę – pióro.' },
+    { m: 'zadowolony', t: '„{odp}”. Pewne jak apel poranny.' }],
+  'milion.raczej': [
+    { m: 'czujny', t: 'Stawiałbym na „{odp}”. Ale ręki sobie nie dam uciąć. Skrzydła też nie.' },
+    { m: 'czujny', t: 'Chyba „{odp}”. Chyba. Decyzja należy do ciebie.' }],
+  'milion.niepewny': [
+    { m: 'znudzony', t: 'Hmm… może „{odp}”? Kursancie, to ty masz się uczyć, nie ja.' },
+    { m: 'znudzony', t: 'Nie wiem. Może „{odp}”. Ostatnio czytałem tylko regulamin stołówki.' }],
+  'milion.wygrana': [{ m: 'dumny', t: 'MILION! Teraz tylko zdać egzamin i będziesz bogaty… w wiedzę.' }],
+  'milion.przegrana': [
+    { m: 'grozny', t: 'Odpadłeś na pytaniu za {kwota}. Na egzaminie nie ma kół ratunkowych.' },
+    { m: 'czujny', t: 'Koniec gry. Przeczytaj wyjaśnienie, to następnym razem pójdzie dalej.' }],
+  'milion.rezygnacja': [{ m: 'znudzony', t: 'Wziąłeś kasę i uciekłeś. Rozsądnie. Tchórzliwie, ale rozsądnie.' }],
+});
+
+Object.assign(routes, { szukaj: renderSearch, kto: () => renderKto(), milionerzy: renderMilion, prawda: renderPrawda });

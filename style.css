@@ -594,3 +594,58 @@ details.topics > summary .count { margin-left: auto; font-weight: 500; font-size
 /* Zakładki skryptów w Czytaj – zawijają się, gdy jest ich dużo */
 .seg-docs { flex-wrap: wrap; }
 .seg-docs button { flex: 1 1 30%; min-width: 0; font-size: 15px; padding: 4px 6px; }
+
+/* --- v30: rozkazy dnia --- */
+.rozkazy summary { display: flex; justify-content: space-between; align-items: center; font-weight: 700; cursor: pointer; list-style: none; }
+.rozkazy summary::-webkit-details-marker { display: none; }
+.rozkazy-list { display: grid; gap: 6px; margin-top: 8px; }
+.rz { display: flex; align-items: center; gap: 10px; padding: 8px 10px; border-radius: 10px; background: var(--surface-2); color: var(--text); text-decoration: none; border: 0; font: inherit; text-align: left; width: 100%; cursor: pointer; }
+.rz.done { opacity: .7; cursor: default; }
+.rz-text { flex: 1; font-size: 14px; font-weight: 600; }
+.rz-bar { display: block; height: 4px; border-radius: 3px; background: var(--line); margin-top: 5px; overflow: hidden; }
+.rz-bar i { display: block; height: 100%; background: var(--ok); }
+.rz-num { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+
+/* --- musztra znienacka --- */
+.bielik-card.has-musztra { flex-wrap: wrap; }
+.musztra { flex-basis: 100%; }
+.musztra-q { font-weight: 700; margin: 6px 0 8px; }
+.musztra-opts { display: grid; gap: 6px; }
+.btn.option.small-opt { min-height: 44px; font-size: 14px; padding: 8px 12px; }
+.musztra-skip { justify-self: center; margin-top: 4px; }
+
+/* --- Kto co robi / Szukaj --- */
+.kto-group summary { display: flex; justify-content: space-between; font-weight: 700; cursor: pointer; }
+.kto-list { margin: 8px 0 0; padding-left: 18px; display: grid; gap: 6px; font-size: 14px; }
+.search-input { width: 100%; box-sizing: border-box; font: inherit; font-size: 17px; padding: 12px 14px; border-radius: 12px; border: 1px solid var(--line); background: var(--surface); color: var(--text); margin: 4px 0 6px; }
+.search-hit .q { font-weight: 600; }
+
+/* --- Milionerzy --- */
+.milion-ladder summary { display: flex; justify-content: space-between; gap: 8px; cursor: pointer; }
+.milion-ladder ol { margin: 8px 0 0; padding-left: 26px; font-variant-numeric: tabular-nums; font-size: 14px; }
+.milion-ladder li { padding: 2px 6px; border-radius: 6px; }
+.milion-ladder li.safe { font-weight: 700; }
+.milion-ladder li.done { color: var(--muted); }
+.milion-ladder li.now { background: #d4a017; color: #1a1a1a; font-weight: 700; }
+.milion-lifelines { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 12px; }
+.milion-lifelines .btn:disabled { opacity: .35; text-decoration: line-through; }
+.milion-opt .ml { color: #d4a017; font-weight: 800; margin-right: 4px; }
+.milion-opt.gone { display: none; }
+.milion-opt.selected:not(.correct):not(.wrong) { background: #f4c235; color: #1a1a1a; }
+.milion-help { margin-top: 10px; display: grid; gap: 10px; }
+.pub-box { background: var(--surface-2); border-radius: 12px; padding: 10px 12px; display: grid; gap: 6px; }
+.pub-row { display: grid; grid-template-columns: 18px 1fr 42px; align-items: center; gap: 8px; font-weight: 700; }
+.pub-bar { height: 14px; border-radius: 7px; background: var(--line); overflow: hidden; }
+.pub-bar i { display: block; height: 100%; background: var(--primary); }
+.pub-v { text-align: right; font-variant-numeric: tabular-nums; font-size: 14px; }
+
+/* --- Prawda czy fałsz --- */
+.swipe-card { position: relative; touch-action: pan-y; user-select: none; transition: transform .25s ease, opacity .25s ease; min-height: 180px; cursor: grab; }
+.swipe-card.drag { transition: none; cursor: grabbing; }
+.swipe-card.miss { box-shadow: inset 0 0 0 2px var(--bad); }
+.swipe-answer { margin-top: 12px; font-size: 18px; font-weight: 800; color: var(--primary); }
+.swipe-stamp { position: absolute; top: 14px; padding: 4px 10px; border: 3px solid; border-radius: 8px; font-weight: 900; letter-spacing: 1px; opacity: 0; pointer-events: none; transform: rotate(-10deg); }
+.swipe-stamp.t { left: 14px; color: var(--ok); }
+.swipe-stamp.f { right: 14px; color: var(--bad); transform: rotate(10deg); }
+.swipe-btns .btn { flex: 1; }
+.swipe-hint { text-align: center; margin: 0 0 8px; }
