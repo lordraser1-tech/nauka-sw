@@ -284,29 +284,43 @@ function renderHome(keepScroll) {
     h('a', { class: 'btn mode' + (primary ? ' primary' : ''), href: count ? href : null, 'aria-disabled': count ? null : 'true', style: count ? null : 'opacity:.45' },
       h('span', { class: 'mode-name' }, name), h('span', { class: 'mode-sub' }, sub));
 
-  const bk = bielikCard();
-  if (bk) $app.append(bk);
-  $app.append(serviceCard());
-  $app.append(rozkazyCard());
-  $app.append(h('div', { class: 'modes' },
-    mode('Fiszki', `${due} do powtórki · ${flash.length} w wybranych taliach`, '#/fiszki', flash.length, true),
-    mode('Test', `${mcq} ${plural(mcq, 'pytanie', 'pytania', 'pytań')} z natychmiastową odpowiedzią`, '#/test', mcq),
-    mode('Na pamięć', `${mem} ${plural(mem, 'ćwiczenie', 'ćwiczenia', 'ćwiczeń')}: luki i kolejność`, '#/pamiec', mem),
-    mode('Egzamin próbny', examRunning ? `Trwa – zostało ${mmss(exam.end - Date.now())}` : `${examSize()} pytań · ${examMinutes()} minut`, '#/egzamin', 1),
-    mode('Trudne', hard ? `${hard} do poprawy (wszystkie talie)` : 'Brak błędnych odpowiedzi', '#/trudne', hard)));
   const nCase = pool(['case']).length, nPairs = pool(['pairs']).length;
-  const mini = (icon, name, sub, href, count) =>
-    h('a', { class: 'btn mode mini', href: count ? href : null, 'aria-disabled': count ? null : 'true', style: count ? null : 'opacity:.45' },
-      h('span', { class: 'mode-name' }, icon + ' ' + name), h('span', { class: 'mode-sub' }, sub));
-  $app.append(h('div', { class: 'modes mini-grid' },
-    mini('⚖️', 'Kazusy', `${nCase} ${plural(nCase, 'sytuacja', 'sytuacje', 'sytuacji')} ze służby`, '#/kazusy', nCase),
-    mini('🧩', 'Dopasuj pary', `${nPairs} ${plural(nPairs, 'zestaw', 'zestawy', 'zestawów')}`, '#/pary', nPairs),
-    mini('⏱️', 'Sprint 60 s', state.settings.sprintBest ? `Rekord: ${state.settings.sprintBest}` : 'ile zdążysz w minutę?', '#/sprint', mcq),
-    mini('🎧', 'Słuchaj', 'fiszki czytane na głos', '#/sluchaj', flash.length),
-    mini('💰', 'Milionerzy', state.settings.milionBest != null ? `Rekord: ${MILION_KWOTY[state.settings.milionBest]}` : '12 pytań, 3 koła ratunkowe', '#/milionerzy', mcq),
-    mini('👆', 'Prawda czy fałsz', 'przesuwaj karty w lewo i prawo', '#/prawda', mcq),
-    mini('🏛️', 'Kto co robi', 'kompetencje organów + ściągawka', '#/kto', 1),
-    mini('🔎', 'Szukaj', 'we wszystkich pytaniach', '#/szukaj', 1)));
+  $app.append(heroCard());
+  $app.append(h('a', { class: 'cta', href: '#/egzamin' },
+    h('span', { class: 'cta-ic' }, icon('clock', 26)),
+    h('span', { class: 'cta-text' }, h('strong', {}, 'Egzamin próbny'),
+      h('span', {}, examRunning ? `Trwa – zostało ${mmss(exam.end - Date.now())}` : `${examSize()} pytań · ${examMinutes()} minut · jak na prawdziwym`)),
+    icon('chev', 22)));
+  const tile = (ic, cls, name, sub, href, count) => h('a', { class: 'tile ' + cls, href: count ? href : null, 'aria-disabled': count ? null : 'true' },
+    h('span', { class: 'tile-ic' }, icon(ic, 22)), h('span', { class: 'tile-name' }, name), h('span', { class: 'tile-sub' }, sub));
+  $app.append(h('div', { class: 'tiles' },
+    tile('cards', 't-olive', 'Fiszki', due ? `${due} do powtórki` : `${flash.length} w wybranych tematach`, '#/fiszki', flash.length),
+    tile('check', 't-blue', 'Test', `${mcq} ${plural(mcq, 'pytanie', 'pytania', 'pytań')} w puli`, '#/test', mcq),
+    tile('pen', 't-purple', 'Na pamięć', `${mem} ${plural(mem, 'ćwiczenie', 'ćwiczenia', 'ćwiczeń')}`, '#/pamiec', mem),
+    tile('alert', 't-red', 'Trudne', hard ? `${hard} do poprawy` : 'brak błędów', '#/trudne', hard)));
+  $app.append(gameTile());
+  $app.append(rozkazyCard());
+  const more = (ic, cls, name, sub, href, count) => h('a', { class: 'more-item ' + cls, href: count ? href : null, 'aria-disabled': count ? null : 'true', title: sub },
+    h('span', { class: 'more-ic' }, icon(ic, 24)), h('span', { class: 'more-name' }, name));
+  $app.append(h('section', { class: 'more' }, h('h2', { class: 'sec-h' }, 'Więcej trybów'),
+    h('div', { class: 'more-row' },
+      more('coins', 'm-gold', 'Milionerzy', state.settings.milionBest != null ? `Rekord: ${MILION_KWOTY[state.settings.milionBest]}` : '12 pytań, 3 koła ratunkowe', '#/milionerzy', mcq),
+      more('swipe', 'm-blue', 'Prawda czy fałsz', 'przesuwaj karty', '#/prawda', mcq),
+      more('landmark', 'm-olive', 'Kto co robi', 'kompetencje organów', '#/kto', 1),
+      more('scale', 'm-purple', 'Kazusy', `${nCase} ${plural(nCase, 'sytuacja', 'sytuacje', 'sytuacji')}`, '#/kazusy', nCase),
+      more('puzzle', 'm-teal', 'Pary', `${nPairs} ${plural(nPairs, 'zestaw', 'zestawy', 'zestawów')}`, '#/pary', nPairs),
+      more('timer', 'm-fire', 'Sprint 60 s', state.settings.sprintBest ? `Rekord: ${state.settings.sprintBest}` : 'ile zdążysz w minutę?', '#/sprint', mcq),
+      more('phones', 'm-slate', 'Słuchaj', 'fiszki czytane na głos', '#/sluchaj', flash.length),
+      more('search', 'm-slate', 'Szukaj', 'we wszystkich pytaniach', '#/szukaj', 1))));
+  const c = challengeToday();
+  if (c) {
+    const g = game(), cDone = g.challenge[c.day] != null;
+    $app.append(h('a', { class: 'challenge-bar' + (cDone ? ' done' : ''), href: '#/wyzwanie' },
+      h('span', { class: 'ch-ic' }, icon('star', 22)),
+      h('span', { class: 'cta-text' }, h('strong', {}, cDone ? `Wyzwanie dnia zaliczone · ${g.challenge[c.day]}%` : 'Wyzwanie dnia · punkty ×2'),
+        h('span', {}, `${c.deck.name} · ${CHALLENGE_SIZE} pytań` + (cDone ? ' · powtórz' : ''))),
+      icon('chev', 20)));
+  }
 
   // Tematy (rozwijane)
   const sel = new Set(selectedDecks());
@@ -332,7 +346,7 @@ function renderHome(keepScroll) {
   const allIds = DATA.decks.map(d => d.id);
   const filters = h('details', { class: 'card topics', open: state.settings.decksOpen ? '' : null,
     ontoggle: e => { state.settings.decksOpen = e.target.open; save(); } },
-    h('summary', {}, h('span', {}, 'Tematy'), h('span', { class: 'count' }, `${sel.size} z ${allIds.length} wybranych`)),
+    h('summary', {}, h('span', { class: 'sum-l' }, icon('target', 20), 'Tematy'), h('span', { class: 'count' }, `${sel.size} z ${allIds.length} wybranych`)),
     groupBtns(allIds, 'wszystkie'));
   for (const [czesc, label] of [['unitarna', 'Część unitarna'], ['specjalistyczna', 'Część specjalistyczna (psycholog)']]) {
     const decks = DATA.decks.filter(d => (d.czesc || 'unitarna') === czesc);
@@ -356,21 +370,23 @@ function renderHome(keepScroll) {
     } })));
   $app.append(filters);
 
-  // Postęp
-  const prog = h('section', { class: 'card' }, h('h2', { style: 'margin-top:0' }, 'Postęp fiszek'));
-  let allM = 0, allN = 0;
-  for (const d of DATA.decks) {
-    const cards = DATA.items.filter(i => i.deck === d.id && i.type === 'flashcard');
-    if (!cards.length) continue;
+  // Postęp (3 tematy z największą liczbą fiszek, reszta po rozwinięciu)
+  const prog = h('section', { class: 'card' }, h('h2', { class: 'card-h' }, icon('cards', 20), 'Postęp fiszek'));
+  const restProg = h('details', { class: 'prog-more' }, h('summary', {}, 'Pokaż wszystkie tematy'));
+  let allM = 0, allN = 0, shown = 0;
+  const flashDecks = DATA.decks.map(d => [d, DATA.items.filter(i => i.deck === d.id && i.type === 'flashcard')]).filter(([, c]) => c.length)
+    .sort((a, b) => b[1].length - a[1].length);
+  for (const [d, cards] of flashDecks) {
     const counts = [0, 0, 0, 0, 0, 0];
     cards.forEach(c => counts[boxOf(c.id)]++);
     const m = counts[4] + counts[5];
     allM += m; allN += cards.length;
-    prog.append(h('div', { class: 'deck-progress' },
+    (shown++ < 3 ? prog : restProg).append(h('div', { class: 'deck-progress' },
       h('div', { class: 'label' }, h('span', {}, d.name), h('span', { class: 'muted' }, `${m} / ${cards.length}`)),
       h('div', { class: 'bar', role: 'img', 'aria-label': `${m} z ${cards.length} opanowanych` },
         [1, 2, 3, 4, 5].map(b => h('i', { class: 'b' + b, style: `width:${(counts[b] / cards.length) * 100}%` })))));
   }
+  if (shown > 3) prog.append(restProg);
   prog.append(h('p', { class: 'small muted', style: 'margin:12px 0 0' },
     `Opanowane (pudełko ${MASTERED_BOX}–5): ${allM} z ${allN} fiszek.`));
   prog.append(h('div', { class: 'legend' },
@@ -380,7 +396,7 @@ function renderHome(keepScroll) {
 
   if (state.exams.length) {
     $app.append(h('section', { class: 'card' },
-      h('h2', { style: 'margin-top:0' }, 'Ostatnie egzaminy'),
+      h('h2', { class: 'card-h' }, icon('clock', 20), 'Ostatnie egzaminy'),
       state.exams.slice(0, 5).map(e => h('div', { class: 'label', style: 'display:flex;justify-content:space-between;padding:4px 0' },
         h('span', {}, new Date(e.date).toLocaleString('pl-PL', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })),
         h('strong', {}, `${e.pct}% (${e.ok}/${e.n})`)))));
@@ -457,7 +473,9 @@ function mcqView(item, onResult, onNext, nextLabel) {
   const order = shuffle(item.options.map((_, i) => i));
   const fb = h('div');
   const actions = h('div', { class: 'actions' });
-  const buttons = order.map(oi => h('button', { type: 'button', class: 'btn option', onclick: () => choose(oi) }, item.options[oi]));
+  const LET = 'ABCDEF';
+  const buttons = order.map((oi, k) => h('button', { type: 'button', class: 'btn option', onclick: () => choose(oi) },
+    h('span', { class: 'opt-l', 'aria-hidden': 'true' }, LET[k]), h('span', { class: 'opt-t' }, item.options[oi])));
   function choose(oi) {
     if (done) return;
     done = true;
@@ -712,7 +730,8 @@ function runSequence(title, items, restart, opts = {}) {
     screen(title, true);
     $app.append(h('div', { class: 'progress-line' },
       h('span', {}, `${s.i + 1} / ${items.length}`),
-      h('span', {}, `Dobrze: ${s.ok}`)));
+      h('span', { class: 'pl-ok' }, `Dobrze: ${s.ok}`)),
+      h('div', { class: 'seq-bar' }, h('i', { style: `width:${Math.round(s.i / items.length * 100)}%` })));
     $app.append(...exerciseView(item,
       ok => { if (ok) s.ok++; else s.wrong.push(item); },
       () => { s.i++; step(); },
@@ -2086,7 +2105,7 @@ function unlock(id, silent) {
   if (g.badges[id]) return false;
   g.badges[id] = Date.now();
   const b = BADGES.find(x => x.id === id);
-  if (b && !silent) { toast(b.icon, 'Nowa odznaka: ' + b.name, b.desc); setTimeout(() => bielikPop('odznaka'), 3800); }
+  if (b && !silent) { toast(badgeImg(b.id, 40), 'Nowa odznaka: ' + b.name, b.desc); setTimeout(() => bielikPop('odznaka'), 3800); }
   return true;
 }
 
@@ -2132,7 +2151,7 @@ function promotion(r) {
   const box = h('div', { class: 'modal', role: 'dialog', 'aria-modal': 'true' },
     h('div', { class: 'card modal-card' },
       h('div', { class: 'small muted' }, `Rozkaz personalny nr ${r}/${new Date().getFullYear()}`),
-      h('div', { class: 'verdict-icon' }, '📜'),
+      h('div', { class: 'promo-pagon' }, pagon(r, 84)),
       h('p', {}, 'Za sumienne przygotowanie do służby mianuje się funkcjonariusza na stopień:'),
       h('div', { class: 'promo-rank' }, RANKS[r][1]),
       h('p', { class: 'small muted' }, `${game().points} pkt · ${n} ${plural(n, 'odznaka', 'odznaki', 'odznak')}`),
@@ -2268,35 +2287,6 @@ function applyTheme() {
 
 /* --- Ekran startowy: karta służby --- */
 
-function serviceCard() {
-  const g = game();
-  const r = g.rank, next = RANKS[r + 1];
-  const from = RANKS[r][0];
-  const prog = next ? (g.points - from) / (next[0] - from) : 1;
-  const today = g.days[dayKey(new Date())] || 0;
-  const goal = dailyGoal();
-  const gp = Math.min(1, today / goal);
-  const dte = daysToExam();
-  const c = challengeToday();
-  const cDone = c && g.challenge[c.day] != null;
-  return h('section', { class: 'card service' },
-    h('a', { class: 'service-top', href: '#/teczka' },
-      h('div', { class: 'ring', style: `--p:${Math.round(gp * 100)}`, 'aria-label': `Dzienny cel: ${today} z ${goal}` },
-        h('span', {}, gp >= 1 ? '✓' : `${today}/${goal}`)),
-      h('div', { class: 'service-main' },
-        h('div', { class: 'service-rank' }, RANKS[r][1]),
-        h('div', { class: 'small muted' }, `${g.points} pkt` + (next ? ` · do awansu: ${next[0] - g.points}` : ' · najwyższy stopień')),
-        h('div', { class: 'xp' }, h('i', { style: `width:${Math.round(prog * 100)}%` }))),
-      h('div', { class: 'service-side' },
-        h('div', { title: 'Seria dni nauki' }, `🔥 ${streakDays()}`),
-        h('div', { title: 'Odznaki' }, `🏅 ${Object.keys(g.badges).length}`))),
-    h('div', { class: 'service-info small' },
-      dte >= 0 ? h('span', {}, `📆 Do egzaminu: ${dte} ${plural(dte, 'dzień', 'dni', 'dni')} · tempo ok. ${suggestedPace()} nowych/dzień`) : h('span', {}, '📆 Ustaw datę egzaminu w Teczce'),
-      h('span', {}, `📊 Gotowość: ${readiness()}%`)),
-    c && h('a', { class: 'btn challenge' + (cDone ? '' : ' primary'), href: '#/wyzwanie' },
-      cDone ? `⭐ Wyzwanie dnia zaliczone (${g.challenge[c.day]}%) – powtórz` : `⭐ Wyzwanie dnia: ${c.deck.name} · 10 pytań · punkty ×2`));
-}
-
 /* --- Teczka osobowa --- */
 
 function renderTeczka() {
@@ -2307,16 +2297,19 @@ function renderTeczka() {
 
   // Stopień i statystyki
   $app.append(h('section', { class: 'card teczka-head' },
-    h('div', { class: 'verdict-icon' }, '🎖️'),
-    h('div', { class: 'promo-rank' }, RANKS[r][1]),
-    h('div', { class: 'muted' }, `${g.points} pkt` + (next ? ` · następny stopień: ${next[1]} (${next[0]} pkt)` : '')),
-    h('div', { class: 'xp', style: 'margin:10px 0' }, h('i', { style: `width:${next ? Math.round(((g.points - RANKS[r][0]) / (next[0] - RANKS[r][0])) * 100) : 100}%` })),
+    h('div', { class: 'th-row' }, pagon(r, 72),
+      h('div', { class: 'th-main' },
+        h('div', { class: 'th-label' }, 'Stopień'),
+        h('div', { class: 'promo-rank' }, RANKS[r][1]),
+        h('div', { class: 'small muted' }, `${g.points} pkt` + (next ? ` · następny: ${next[1]} (${next[0]} pkt)` : '')))),
+    h('div', { class: 'xp', style: 'margin:12px 0' }, h('i', { style: `width:${next ? Math.round(((g.points - RANKS[r][0]) / (next[0] - RANKS[r][0])) * 100) : 100}%` })),
     h('div', { class: 'stats' },
-      stat('🔥', streakDays(), 'dni z rzędu'),
-      stat('🏅', `${nb}/${BADGES.length}`, 'odznak'),
-      stat('📝', g.counters.answers, 'odpowiedzi'),
-      stat('📊', readiness() + '%', 'gotowość')),
-    btn('📤 Udostępnij wynik', '', shareResult)));
+      stat('flame', streakDays(), 'dni z rzędu'),
+      stat('medal', `${nb}/${BADGES.length}`, 'odznak'),
+      stat('pen', g.counters.answers, 'odpowiedzi'),
+      stat('target', readiness() + '%', 'gotowość')),
+    h('button', { type: 'button', class: 'btn', onclick: shareResult }, icon('share', 20), 'Udostępnij wynik')));
+  $app.append(accuracyChart());
 
   // Ustawienia nauki
   const dateInp = h('input', { type: 'date', value: examDate(), class: 'date', onchange: e => { state.settings.examDate = e.target.value || null; save(); renderTeczka(); } });
@@ -2352,16 +2345,19 @@ function renderTeczka() {
 
   // Odznaki
   const cats = [...new Set(BADGES.map(b => b.cat))];
-  const sec = h('section', { class: 'card' }, h('h2', { style: 'margin-top:0' }, `Odznaki (${nb}/${BADGES.length})`));
+  const sec = h('section', { class: 'card' }, h('h2', { class: 'card-h' }, icon('medal', 20), 'Odznaki', h('span', { class: 'count' }, `${nb} z ${BADGES.length}`)),
+    h('p', { class: 'small muted', style: 'margin:0 0 4px' }, 'Dotknij odznaki, żeby zobaczyć, za co jest.'));
   for (const c of cats) {
-    sec.append(h('h3', {}, c));
+    sec.append(h('h3', { class: 'badge-cat' }, c));
     sec.append(h('div', { class: 'badges' }, BADGES.filter(b => b.cat === c).map(b => {
       const got = g.badges[b.id];
       const secret = b.hidden && !got;
-      return h('div', { class: 'badge' + (got ? ' got' : '') },
-        h('span', { class: 'badge-icon' }, secret ? '❓' : b.icon),
-        h('strong', {}, secret ? '???' : b.name),
-        h('span', { class: 'small muted' }, secret ? 'Odznaka ukryta' : got ? 'Zdobyta ' + new Date(got).toLocaleDateString('pl-PL') : b.desc));
+      const img = secret ? h('span', { class: 'badge-secret', 'aria-hidden': 'true' }, '?') : badgeImg(b.id, 64, !got);
+      return h('button', { type: 'button', class: 'badge' + (got ? ' got' : ''), 'aria-label': secret ? 'Odznaka ukryta' : `${b.name}${got ? ' – zdobyta' : ' – jeszcze nie zdobyta'}`,
+        onclick: () => toast(secret ? '❓' : badgeImg(b.id, 40, !got), secret ? 'Odznaka ukryta' : b.name,
+          secret ? 'Odkryjesz ją, gdy ją zdobędziesz.' : (got ? `Zdobyta ${new Date(got).toLocaleDateString('pl-PL')} · ` : '') + b.desc) },
+        h('span', { class: 'badge-pic' }, img, !got && !secret ? icon('lock', 14, 'badge-lock') : null),
+        h('span', { class: 'badge-name' }, secret ? '???' : b.name));
     })));
   }
   $app.append(sec);
@@ -2380,13 +2376,13 @@ function renderTeczka() {
       h('li', {}, `Wyzwanie dnia: punkty ×${CHALLENGE_MULT}`),
       h('li', {}, `Dzienny cel: +${POINTS.dailyGoal} · egzamin zdany: +${POINTS.examPass} · egzamin 91%+: +${POINTS.examTop}`)),
     h('h3', {}, 'Stopnie'),
-    h('div', { class: 'ranks' }, RANKS.map(([p, n], i) => h('div', { class: i === r ? 'on' : i < r ? 'past' : '' }, h('span', {}, n), h('span', { class: 'muted' }, `${p} pkt`))))));
+    h('div', { class: 'ranks' }, RANKS.map(([p, n], i) => h('div', { class: i === r ? 'on' : i < r ? 'past' : '' }, pagon(i, 30), h('span', { class: 'rank-n' }, n), h('span', { class: 'muted' }, `${p} pkt`))))));
 
   $app.append(h('p', { class: 'small muted', style: 'text-align:center' }, 'Wygląd, kopia postępu i historia zmian: ⚙️ w nagłówku.'));
 }
 
-function stat(icon, value, label) {
-  return h('div', { class: 'stat' }, h('div', { class: 'stat-v' }, icon + ' ' + value), h('div', { class: 'small muted' }, label));
+function stat(ic, value, label) {
+  return h('div', { class: 'stat' }, h('div', { class: 'stat-v' }, icon(ic, 18), String(value)), h('div', { class: 'small muted' }, label));
 }
 
 function sizeLikePicker(pairs, current, onPick) {
@@ -2399,6 +2395,11 @@ function sizeLikePicker(pairs, current, onPick) {
 
 // Przy każdej aktualizacji: dopisz wpis NA POCZĄTKU listy, z numerem = numer CACHE w service-worker.js.
 const CHANGELOG = [
+  { v: 31, date: '18.11.2026', items: [
+    '🎨 Nowy wygląd: przejrzysty ekran Nauka – karta ze stopniem, celem dnia i Bielikiem na tle wieżyczki, duży przycisk Egzaminu próbnego, kafelki i rząd „Więcej trybów”.',
+    '🪖 Chorąży Bielik nosi furażerkę Służby Więziennej, a stopnie mają pagony w barwach SW (od szeregowego do pułkownika).',
+    '🏅 Nowe obrazki wszystkich 36 odznak i wykres „Skuteczność w tematach” w Teczce.',
+    '🎮 Zapowiedź gry fabularnej „Pierwsza służba” – już wkrótce.'] },
   { v: 30, date: '18.11.2026', items: [
     '💰 Milionerzy – 12 pytań coraz trudniejszych, progi gwarantowane i koła ratunkowe: 50:50, Zapytaj Bielika i Pytanie do publiczności (prawdziwe wyniki kursantów).',
     '👆 Prawda czy fałsz – przesuwaj karty: w prawo prawda, w lewo fałsz.',
@@ -2966,9 +2967,12 @@ function bielikSVG(mood, size) {
     wingSvg(wings[0], false) + wingSvg(wings[1], true) +
     `<g class="bk-head"><circle cx="70" cy="60" r="34" fill="${C.body}"/>` +
     `<ellipse cx="70" cy="64" rx="28" ry="26" fill="${C.face}"/>` + blush +
-    `<path d="M31 46 Q22 22 56 13 Q96 5 112 30 Q117 42 106 44 Q70 35 35 50 Z" fill="${C.beret}"/>` +
-    `<path d="M34 46 Q70 34 106 40 Q106 45 103 46 Q70 40 38 51 Q34 50 34 46 Z" fill="${C.beretD}"/>` +
-    `<path d="M70 14 L76 20 L70 26 L64 20 Z" fill="${C.gold}"/>` +
+    // furażerka Służby Więziennej: grafit, napis SW, srebrny orzełek
+    `<path d="M33 43 Q31 30 43 23 Q70 11 101 17 Q112 20 109 34 Q71 31 33 43 Z" fill="#454b52"/>` +
+    `<path d="M43 23 Q72 13 101 17" fill="none" stroke="#5f666e" stroke-width="2" stroke-linecap="round"/>` +
+    `<path d="M33 43 Q71 31 109 34 L108 41 Q72 37 35 49 Z" fill="#33383e"/>` +
+    `<g fill="#dfe3e8"><circle cx="46" cy="36.5" r="2"/><path d="M40 38 Q43 36 46 39 Q49 36 52 38 Q50 43 46 44.5 Q42 43 40 38 Z"/></g>` +
+    `<text x="74" y="29.5" font-size="9.5" font-weight="800" font-family="Arial, Helvetica, sans-serif" fill="#e8ebee" letter-spacing=".5">SW</text>` +
     `<path d="${brows}" fill="none" stroke="${C.ink}" stroke-width="4" stroke-linecap="round"/>` +
     `<g class="bk-eyes">${eyes}</g>` + beak + `</g></g></svg>`;
 }
@@ -3067,7 +3071,7 @@ function bielikCard() {
   fig.addEventListener('click', click);
   fig.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); click(); } });
   const talk = h('div', { class: 'bielik-talk' }, h('div', { class: 'bielik-name' }, 'Chorąży Bielik'), bubble);
-  const card = h('section', { class: 'card bielik-card' }, fig, talk);
+  const card = h('div', { class: 'bielik-row' }, fig, talk);
   if (musztraDue()) {
     const m = musztraCard(fig, say, bubble);
     if (m) { card.classList.add('has-musztra'); card.append(m); }
@@ -3236,6 +3240,185 @@ function bielikSettings() {
     HAS_SERVER && info,
   ];
 }
+const ICONS = {
+  'info': '<circle cx="12" cy="12" r="9"></circle><path d="M12 11v5M12 8h.01"></path>',
+  'help': '<circle cx="12" cy="12" r="9"></circle><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.3-1 .8-1 1.5V14M12 17h.01"></path>',
+  'gear': '<circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"></path>',
+  'cards': '<rect x="3" y="6" width="14" height="14" rx="2"></rect><path d="M7 3h12a2 2 0 0 1 2 2v12"></path>',
+  'check': '<path d="M9 11l3 3 8-8"></path><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"></path>',
+  'clock': '<circle cx="12" cy="13" r="8"></circle><path d="M12 9v4l2.5 2.5M9 2h6"></path>',
+  'pen': '<path d="M12 20h9"></path><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"></path>',
+  'alert': '<path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"></path><path d="M12 9v4M12 17h.01"></path>',
+  'coins': '<circle cx="9" cy="9" r="6"></circle><path d="M18.1 10.4A6 6 0 1 1 10.4 18.1M7 7h2v4M16.7 13.9l.7.7-2.8 2.8"></path>',
+  'swipe': '<rect x="6" y="3" width="12" height="18" rx="2"></rect><path d="M2 12h2M20 12h2M9 12h6M13 10l2 2-2 2"></path>',
+  'landmark': '<path d="M3 22h18M6 18v-7M10 18v-7M14 18v-7M18 18v-7M12 2l8 5H4z"></path>',
+  'search': '<circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.3-4.3"></path>',
+  'scale': '<path d="M12 3v18M7 21h10M5 7h14M5 7l-3 7a3 3 0 0 0 6 0zM19 7l-3 7a3 3 0 0 0 6 0z"></path>',
+  'puzzle': '<path d="M10 3h4v3a2 2 0 1 0 4 0V3h3v7h-3a2 2 0 1 0 0 4h3v7h-7v-3a2 2 0 1 0-4 0v3H3v-7h3a2 2 0 1 0 0-4H3V3z"></path>',
+  'timer': '<circle cx="12" cy="13" r="8"></circle><path d="M12 9v4M10 2h4M19 6l1.5-1.5"></path>',
+  'phones': '<path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1v-6h3zM3 19a2 2 0 0 0 2 2h1v-6H3z"></path>',
+  'book': '<path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2zM22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"></path>',
+  'file': '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6M8 13h8M8 17h6"></path>',
+  'brief': '<rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2M2 13h20"></path>',
+  'flame': '<path d="M12 22c4 0 7-3 7-7 0-5-5-7-5-12-3 2-5 5-5 8-1-1-2-2-2-4-2 2-2 5-2 8 0 4 3 7 7 7z"></path>',
+  'medal': '<circle cx="12" cy="15" r="6"></circle><path d="M8 3l2.5 6M16 3l-2.5 6M12 12v6M10 14h4"></path>',
+  'cal': '<rect x="3" y="4" width="18" height="17" rx="2"></rect><path d="M3 9h18M8 2v4M16 2v4"></path>',
+  'target': '<circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="5"></circle><circle cx="12" cy="12" r="1"></circle>',
+  'chev': '<path d="M9 6l6 6-6 6"></path>',
+  'back': '<path d="M15 6l-6 6 6 6"></path>',
+  'star': '<path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path>',
+  'done': '<circle cx="12" cy="12" r="9"></circle><path d="M8 12l3 3 5-6"></path>',
+  'todo': '<circle cx="12" cy="12" r="9"></circle>',
+  'lock': '<rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path>',
+  'x': '<path d="M18 6L6 18M6 6l12 12"></path>',
+  'ok': '<path d="M5 12l5 5 9-10"></path>',
+  'flag': '<path d="M4 22V4M4 4h13l-2 4 2 4H4"></path>',
+  'trophy': '<path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0z"></path><path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"></path>',
+  'share': '<circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"></path>'
+};
+
+/* =====================================================================
+   v31: nowy wygląd – ikony, pagony SW, karta główna z wieżyczką,
+        odznaki-obrazki, wykres skuteczności
+   ===================================================================== */
+
+function icon(name, size, cls) {
+  const s = size || 22;
+  const el = h('span', { class: 'ico' + (cls ? ' ' + cls : ''), 'aria-hidden': 'true' });
+  el.innerHTML = `<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${ICONS[name] || ''}</svg>`;
+  return el;
+}
+
+// Pagony wg wzorów Służby Więziennej: belki, krokiewki (V), gwiazdki, galony.
+const PAGONY = {
+  'Szeregowy': {}, 'Starszy szeregowy': { bars: 1 }, 'Kapral': { bars: 2 }, 'Starszy kapral': { bars: 3 }, 'Plutonowy': { bars: 4 },
+  'Sierżant': { chev: 1 }, 'Starszy sierżant': { chev: 2 },
+  'Młodszy chorąży': { chev: 1, stars: 1, edge: true }, 'Chorąży': { stars: 1, edge: true }, 'Starszy chorąży': { stars: 2, edge: true },
+  'Starszy chorąży sztabowy': { stars: 4, edge: true },
+  'Podporucznik': { stars: 2 }, 'Porucznik': { stars: 3 }, 'Kapitan': { stars: 4 },
+  'Major': { stars: 1, galon: true }, 'Podpułkownik': { stars: 2, galon: true }, 'Pułkownik': { stars: 3, galon: true },
+};
+function starPath(cx, cy, r) {
+  let d = '';
+  for (let i = 0; i < 10; i++) {
+    const a = -Math.PI / 2 + i * Math.PI / 5, rr = i % 2 ? r * 0.45 : r;
+    d += (i ? 'L' : 'M') + (cx + rr * Math.cos(a)).toFixed(1) + ' ' + (cy + rr * Math.sin(a)).toFixed(1);
+  }
+  return d + 'Z';
+}
+function pagonSVG(name, size) {
+  const p = PAGONY[name] || {};
+  const S = '#DCE0E5';
+  let inner = '';
+  let y = 54; // od dołu
+  if (p.galon) { inner += `<rect x="7" y="51" width="26" height="3.6" rx="1" fill="${S}"/><rect x="7" y="45.5" width="26" height="3.6" rx="1" fill="${S}"/>`; y = 40; }
+  for (let i = 0; i < (p.bars || 0); i++) inner += `<rect x="7" y="${51 - i * 6}" width="26" height="3.4" rx="1" fill="${S}"/>`;
+  for (let i = 0; i < (p.chev || 0); i++) { const cy = 43 - i * 7; inner += `<path d="M8 ${cy} L20 ${cy + 7} L32 ${cy}" fill="none" stroke="${S}" stroke-width="3.2" stroke-linejoin="round"/>`; y = cy - 5; }
+  const n = p.stars || 0;
+  const gap = n >= 4 ? 7.2 : 8.5;
+  for (let i = 0; i < n; i++) inner += `<path d="${starPath(20, y - 3 - i * gap, 3.4)}" fill="${S}"/>`;
+  const edge = p.edge ? '#C9CED4' : '#6B737C';
+  const s = size || 40;
+  return `<svg width="${Math.round(s * 40 / 62)}" height="${s}" viewBox="0 0 40 62" role="img" aria-label="Pagon: ${name}">` +
+    `<path d="M4 16 L20 3 L36 16 L36 60 L4 60 Z" fill="#3E444B" stroke="${edge}" stroke-width="${p.edge ? 2.4 : 1.5}" stroke-linejoin="round"/>` +
+    `<circle cx="20" cy="15" r="4.2" fill="#C9CED4" stroke="#8A929B" stroke-width="1"/>` + inner + `</svg>`;
+}
+function pagon(r, size) {
+  const el = h('span', { class: 'pagon' });
+  el.innerHTML = pagonSVG(RANKS[r][1], size);
+  return el;
+}
+
+// Tło karty głównej: wieżyczka strażnicza i ogrodzenie (ozdobne).
+function towerBg() {
+  const el = h('span', { class: 'hero-bg', 'aria-hidden': 'true' });
+  let fence = '';
+  for (let x = 4; x <= 196; x += 16) fence += `<rect x="${x}" y="70" width="2.2" height="40"/>`;
+  let wire = 'M0 72';
+  for (let x = 0; x <= 200; x += 8) wire += ` L${x + 4} ${x % 16 ? 69 : 75}`;
+  el.innerHTML = `<svg viewBox="0 0 200 110" preserveAspectRatio="xMaxYMax meet" fill="currentColor">` +
+    `<path d="M0 96 Q40 84 80 92 T160 88 T200 90 V110 H0Z" opacity=".5"/>` +
+    fence + `<rect x="0" y="82" width="200" height="1.6"/><rect x="0" y="100" width="200" height="1.6"/>` +
+    `<path d="${wire}" fill="none" stroke="currentColor" stroke-width="1.2"/>` +
+    `<path d="M144 110 L150 42 H154 L149 110Z M176 110 L170 42 H166 L171 110Z"/>` +
+    `<path d="M150 60 L170 74 M170 60 L150 74 M148 84 L172 96 M172 84 L148 96" stroke="currentColor" stroke-width="1.6"/>` +
+    `<rect x="140" y="28" width="40" height="15" rx="1.5"/><rect x="138" y="42" width="44" height="3"/>` +
+    `<path d="M135 28 L160 12 L185 28Z"/><rect x="158" y="6" width="4" height="7"/>` +
+    `<path d="M140 31 L104 18 L104 26Z" opacity=".35"/>` +
+    `</svg>`;
+  return el;
+}
+
+function heroCard() {
+  const g = game();
+  const r = g.rank, next = RANKS[r + 1];
+  const from = RANKS[r][0];
+  const prog = next ? (g.points - from) / (next[0] - from) : 1;
+  const today = g.days[dayKey(new Date())] || 0;
+  const goal = dailyGoal();
+  const gp = Math.min(1, today / goal);
+  const dte = daysToExam();
+  const card = h('section', { class: 'card hero' }, towerBg());
+  const bk = bielikCard();
+  if (bk) card.append(bk, h('div', { class: 'hero-sep' }));
+  const chip = (ic, cls, text, href) => h(href ? 'a' : 'span', { class: 'chip ' + cls, href }, icon(ic, 16), h('span', {}, text));
+  card.append(
+    h('a', { class: 'hero-rank', href: '#/teczka', 'aria-label': `Stopień ${RANKS[r][1]}, ${g.points} punktów – otwórz Teczkę` },
+      pagon(r, 46),
+      h('div', { class: 'hero-main' },
+        h('div', { class: 'hero-rline' }, h('strong', {}, RANKS[r][1]), h('span', { class: 'hero-pts' }, `${g.points} pkt`)),
+        h('div', { class: 'xp' }, h('i', { style: `width:${Math.round(prog * 100)}%` })),
+        h('div', { class: 'hero-next' }, next ? `${next[0] - g.points} pkt do stopnia ${next[1]}` : 'Najwyższy stopień')),
+      h('div', { class: 'ring', style: `--p:${Math.round(gp * 100)}`, title: 'Dzienny cel', 'aria-label': `Dzienny cel: ${today} z ${goal}` },
+        h('span', {}, gp >= 1 ? '✓' : h('b', {}, String(today)), gp >= 1 ? null : h('small', {}, `z ${goal}`)))),
+    h('div', { class: 'chips' },
+      chip('flame', 'c-fire', `${streakDays()} ${plural(streakDays(), 'dzień', 'dni', 'dni')}`),
+      chip('medal', 'c-gold', `${Object.keys(g.badges).length} ${plural(Object.keys(g.badges).length, 'odznaka', 'odznaki', 'odznak')}`, '#/teczka'),
+      chip('cal', 'c-blue', dte >= 0 ? `${dte} ${plural(dte, 'dzień', 'dni', 'dni')} do egzaminu` : 'ustaw datę egzaminu', '#/teczka'),
+      chip('target', 'c-green', `Gotowość ${readiness()}%`)));
+  return card;
+}
+
+function gameTile() {
+  return h('button', { type: 'button', class: 'game-tile', onclick: () => {
+    if (BIELIK_ON()) bielikPop('gra.wkrotce', {}, { force: true });
+    else toast('🚧', 'Pierwsza służba – już wkrótce', 'Gra fabularna jest w przygotowaniu.');
+  } },
+    h('span', { class: 'game-ic' }, icon('flag', 24)),
+    h('span', { class: 'game-text' },
+      h('span', { class: 'game-title' }, 'Pierwsza służba', h('span', { class: 'soon' }, 'WKRÓTCE')),
+      h('span', { class: 'game-sub' }, 'Gra fabularna: jeden dzień w zakładzie karnym, twoje decyzje i Chorąży Bielik.')),
+    icon('lock', 20, 'game-lock'));
+}
+
+const BADGE_IMG = id => `obrazy/odznaki/${id}.webp`;
+function badgeImg(id, size, locked) {
+  return h('img', { src: BADGE_IMG(id), width: size, height: size, alt: '', class: 'badge-img' + (locked ? ' locked' : ''), decoding: 'async' });
+}
+
+// Skuteczność w tematach – wykres słupkowy (Teczka).
+function accuracyChart() {
+  const g = game();
+  const rows = Object.entries(g.deckStats || {}).filter(([id, s]) => deckById[id] && s.n >= 5)
+    .sort((a, b) => b[1].n - a[1].n).slice(0, 5)
+    .map(([id, s]) => ({ name: deckById[id].name, p: Math.round(s.ok / s.n * 100), n: s.n }));
+  const sec = h('section', { class: 'card' }, h('h2', { class: 'card-h' }, icon('target', 20), 'Skuteczność w tematach'));
+  if (!rows.length) { sec.append(h('p', { class: 'small muted' }, 'Odpowiedz na kilka pytań z różnych tematów – tu pojawi się wykres.')); return sec; }
+  const short = n => (n.length > 22 ? n.slice(0, 20).trim() + '…' : n);
+  sec.append(h('div', { class: 'chart', role: 'img', 'aria-label': rows.map(r => `${r.name}: ${r.p}%`).join(', ') },
+    rows.map(r => h('div', { class: 'col' },
+      h('span', { class: 'col-v' }, r.p + '%'),
+      h('div', { class: 'col-track' }, h('i', { class: r.p >= 80 ? 'hi' : r.p >= 60 ? 'mid' : 'lo', style: `height:${Math.max(4, r.p)}%` })),
+      h('span', { class: 'col-l', title: r.name }, short(r.name))))),
+    h('p', { class: 'small muted', style: 'margin:8px 0 0' }, 'Najczęściej ćwiczone tematy · odsetek dobrych odpowiedzi.'));
+  return sec;
+}
+
+Object.assign(BIELIK_TEKSTY, {
+  'gra.wkrotce': [
+    { m: 'czujny', t: 'Pierwsza służba jeszcze się szykuje. Na razie musztra na sucho – do roboty.' },
+    { m: 'znudzony', t: 'Gra będzie, jak będzie. Egzamin jest szybciej. Wiesz, co robić.' }],
+});
 
 init();
 
@@ -3793,12 +3976,12 @@ function rozkazyCard() {
   const doneN = d.list.filter((_, k) => d.done[k]).length;
   return h('details', { class: 'card rozkazy', open: state.settings.rozkazyClosed ? null : '',
     ontoggle: e => { state.settings.rozkazyClosed = !e.target.open; save(); } },
-    h('summary', {}, h('span', {}, '📋 Rozkazy dnia'), h('span', { class: 'count' }, doneN === d.list.length ? '✓ wykonane' : `${doneN} / ${d.list.length}`)),
+    h('summary', {}, h('span', { class: 'sum-l' }, icon('check', 20), 'Rozkazy dnia'), h('span', { class: 'count' }, doneN === d.list.length ? '✓ wykonane' : `${doneN} / ${d.list.length}`)),
     h('div', { class: 'rozkazy-list' }, d.list.map((r, k) => {
       const inf = rozkazInfo(r, d);
       const ok = !!d.done[k];
       const prog = Math.min(1, inf.v / r.n);
-      const body = [h('span', { class: 'rz-check', 'aria-hidden': 'true' }, ok ? '✅' : '⬜'),
+      const body = [icon(ok ? 'done' : 'todo', 22, 'rz-check' + (ok ? ' on' : '')),
         h('span', { class: 'rz-text' }, inf.t, h('span', { class: 'rz-bar' }, h('i', { style: `width:${Math.round(prog * 100)}%` }))),
         h('span', { class: 'rz-num' }, ok ? `+${ROZKAZ_PTS}` : `${Math.min(inf.v, r.n)}/${r.n}`)];
       if (ok) return h('div', { class: 'rz done' }, body);
