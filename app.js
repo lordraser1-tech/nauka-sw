@@ -2193,18 +2193,39 @@ function suggestedPace() {
 
 /* --- Wyzwanie dnia --- */
 
+// Losowanie powtarzalne dla danego „ziarna” (np. daty). Mocne mieszanie (xmur3 + mulberry32),
+// żeby sąsiednie dni („…-18”, „…-19”) dawały zupełnie różne wyniki już od pierwszego losowania.
 function seeded(seed) {
-  let s = 0;
-  for (const ch of seed) s = (s * 31 + ch.charCodeAt(0)) >>> 0;
-  return () => { s = (s * 1664525 + 1013904223) >>> 0; return s / 4294967296; };
+  let h = 1779033703 ^ seed.length;
+  for (let i = 0; i < seed.length; i++) { h = Math.imul(h ^ seed.charCodeAt(i), 3432918353); h = (h << 13) | (h >>> 19); }
+  h = Math.imul(h ^ (h >>> 16), 2246822507); h = Math.imul(h ^ (h >>> 13), 3266489909);
+  let a = (h ^= h >>> 16) >>> 0;
+  return () => {
+    a = (a + 0x6D2B79F5) >>> 0;
+    let t = a;
+    t = Math.imul(t ^ (t >>> 15), t | 1);
+    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+function challengeDeckFor(day, decks) {
+  return decks[Math.floor(seeded('wyzwanie' + day)() * decks.length)];
 }
 
 function challengeToday() {
   const day = dayKey(new Date());
-  const decks = DATA.decks.filter(d => DATA.items.filter(i => i.deck === d.id && i.type === 'mcq').length >= CHALLENGE_SIZE);
+  const all = DATA.decks.filter(d => DATA.items.filter(i => i.deck === d.id && i.type === 'mcq').length >= CHALLENGE_SIZE);
+  const sel = new Set(selectedDecks());
+  const mine = all.filter(d => sel.has(d.id));
+  const decks = mine.length >= 2 ? mine : all; // z wybranych tematów, gdy się da
   if (!decks.length) return null;
-  const rnd = seeded(day);
-  const deck = decks[Math.floor(rnd() * decks.length)];
+  // temat inny niż wczoraj
+  const y = new Date(); y.setDate(y.getDate() - 1);
+  const prev = challengeDeckFor(dayKey(y), decks);
+  let deck = challengeDeckFor(day, decks);
+  if (deck === prev && decks.length > 1) deck = challengeDeckFor(day + '+', decks.filter(d => d !== prev));
+  const rnd = seeded('pytania' + day);
   const items = pickVariants(DATA.items.filter(i => i.deck === deck.id && i.type === 'mcq'), rnd);
   for (let i = items.length - 1; i > 0; i--) { const j = Math.floor(rnd() * (i + 1)); [items[i], items[j]] = [items[j], items[i]]; }
   return { day, deck, items: items.slice(0, CHALLENGE_SIZE) };
@@ -3876,18 +3897,29 @@ function noteAnswer(item, pts) {
 
 const ROZKAZ_PTS = 15, ROZKAZY_BONUS = 30;
 
+let shownDay = dayKey(new Date());
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState !== 'visible') return;
+  const d = dayKey(new Date());
+  if (d !== shownDay) { shownDay = d; if (DATA && (location.hash === '' || location.hash === '#/')) route(); }
+});
+
 function ensureDaily() {
   const g = game();
   const day = dayKey(new Date());
-  if (!g.daily || g.daily.day !== day) g.daily = { day, ok: 0, fixed: 0, n: 0, deck: {}, mode: {}, sprintMax: 0, milionMax: 0, list: null, done: [] };
+  if (!g.daily || g.daily.day !== day) {
+    const prev = g.daily && g.daily.list ? g.daily.list : [];
+    g.daily = { day, ok: 0, fixed: 0, n: 0, deck: {}, mode: {}, sprintMax: 0, milionMax: 0, list: null, done: [],
+      prevDeck: (prev.find(r => r.k === 'deck') || {}).id || null, prevExtra: prev.length ? prev[prev.length - 1].k : null };
+  }
   if (!g.daily.list) g.daily.list = makeRozkazy(day);
   return g.daily;
 }
 
-function weakestDeckId() {
+function weakestDeckId(skip) {
   let worst = null;
   for (const [id, s] of Object.entries(game().deckStats || {})) {
-    if (!deckById[id] || s.n < 10) continue;
+    if (!deckById[id] || s.n < 10 || id === skip) continue;
     if (DATA.items.filter(i => i.deck === id && i.type === 'mcq').length < 10) continue;
     const acc = s.ok / s.n;
     if (!worst || acc < worst.acc) worst = { id, acc };
@@ -3897,22 +3929,29 @@ function weakestDeckId() {
 
 function makeRozkazy(day) {
   const rnd = seeded('rozkazy' + day);
+  const prevD = game().daily || {};
+  const yesterday = prevD.prevDeck ? { id: prevD.prevDeck } : null;
   const goal = dailyGoal();
   const okN = Math.max(10, Math.min(25, Math.round(goal * 0.4 / 5) * 5));
   const decks = selectedDecks().filter(id => DATA.items.filter(i => i.deck === id && i.type === 'mcq').length >= 10);
-  const weak = weakestDeckId();
+  const weak = weakestDeckId(yesterday && yesterday.id);
   const list = [];
   if (weak) list.push({ k: 'deck', n: 10, id: weak });
   else list.push({ k: 'ok', n: okN });
   const hard = hardItems().length;
   if (hard >= 3) list.push({ k: 'fixed', n: Math.min(5, hard) });
   else if (list[0].k === 'deck') list.push({ k: 'ok', n: okN });
-  else if (decks.length) list.push({ k: 'deck', n: 10, id: decks[Math.floor(rnd() * decks.length)] });
+  else if (decks.length) {
+    const pool2 = decks.filter(id => !yesterday || id !== yesterday.id);
+    const src = pool2.length ? pool2 : decks;
+    list.push({ k: 'deck', n: 10, id: src[Math.floor(rnd() * src.length)] });
+  }
   else list.push({ k: 'ok', n: okN + 10 });
   const extra = [{ k: 'prawda', n: 20 }, { k: 'milion', n: 5 }, { k: 'kto', n: 10 }, { k: 'sprint', n: 8 }];
   if (pool(['flashcard']).length) extra.push({ k: 'fiszki', n: 20 });
   if (pool(['case']).length) extra.push({ k: 'kazusy', n: 2 });
-  list.push(extra[Math.floor(rnd() * extra.length)]);
+  const extra2 = extra.filter(e => e.k !== prevD.prevExtra);
+  list.push(extra2[Math.floor(rnd() * extra2.length)]);
   return list;
 }
 
