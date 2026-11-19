@@ -2225,10 +2225,13 @@ function challengeToday() {
   const prev = challengeDeckFor(dayKey(y), decks);
   let deck = challengeDeckFor(day, decks);
   if (deck === prev && decks.length > 1) deck = challengeDeckFor(day + '+', decks.filter(d => d !== prev));
+  // 19.11.2026: losowanie naprawione w ciągu dnia – nowe wyzwanie, inne niż wcześniejsza „Ewidencja”
+  const RESET = day === '2026-11-19';
+  if (RESET && deck.id === 'ewidencja') deck = challengeDeckFor(day + '#', decks.filter(d => d.id !== 'ewidencja'));
   const rnd = seeded('pytania' + day);
   const items = pickVariants(DATA.items.filter(i => i.deck === deck.id && i.type === 'mcq'), rnd);
   for (let i = items.length - 1; i > 0; i--) { const j = Math.floor(rnd() * (i + 1)); [items[i], items[j]] = [items[j], items[i]]; }
-  return { day, deck, items: items.slice(0, CHALLENGE_SIZE) };
+  return { day: RESET ? day + '#2' : day, deck, items: items.slice(0, CHALLENGE_SIZE) };
 }
 
 function startChallenge() {
@@ -3904,12 +3907,23 @@ document.addEventListener('visibilitychange', () => {
   if (d !== shownDay) { shownDay = d; if (DATA && (location.hash === '' || location.hash === '#/')) route(); }
 });
 
+const DAILY_VER = 2;
 function ensureDaily() {
   const g = game();
   const day = dayKey(new Date());
+  if (g.daily && g.daily.day === day && g.daily.ver !== DAILY_VER) {
+    // nowe rozkazy jeszcze dziś (po naprawie losowania); liczniki dnia zostają, inne zadania niż poprzednie
+    const old = g.daily.list || [];
+    g.daily.prevDeck = (old.find(r => r.k === 'deck') || {}).id || g.daily.prevDeck || null;
+    g.daily.prevExtra = old.length ? old[old.length - 1].k : g.daily.prevExtra;
+    g.daily.list = null; g.daily.done = []; g.daily.allDone = false;
+    g.daily.base = { ok: g.daily.ok, fixed: g.daily.fixed, deck: { ...g.daily.deck }, mode: { ...g.daily.mode } };
+    g.daily.sprintMax = 0; g.daily.milionMax = 0;
+    g.daily.ver = DAILY_VER;
+  }
   if (!g.daily || g.daily.day !== day) {
     const prev = g.daily && g.daily.list ? g.daily.list : [];
-    g.daily = { day, ok: 0, fixed: 0, n: 0, deck: {}, mode: {}, sprintMax: 0, milionMax: 0, list: null, done: [],
+    g.daily = { day, ver: DAILY_VER, ok: 0, fixed: 0, n: 0, deck: {}, mode: {}, sprintMax: 0, milionMax: 0, list: null, done: [],
       prevDeck: (prev.find(r => r.k === 'deck') || {}).id || null, prevExtra: prev.length ? prev[prev.length - 1].k : null };
   }
   if (!g.daily.list) g.daily.list = makeRozkazy(day);
@@ -3955,8 +3969,14 @@ function makeRozkazy(day) {
   return list;
 }
 
-function rozkazInfo(r, d) {
+function rozkazInfo(r, d0) {
   const dn = r.id && deckById[r.id] ? deckById[r.id].name : '';
+  const b = d0.base;
+  const d = !b ? d0 : {
+    ok: d0.ok - b.ok, fixed: d0.fixed - b.fixed,
+    deck: new Proxy({}, { get: (_, k) => (d0.deck[k] || 0) - (b.deck[k] || 0) }),
+    mode: new Proxy({}, { get: (_, k) => (d0.mode[k] || 0) - (b.mode[k] || 0) }),
+    sprintMax: d0.sprintMax, milionMax: d0.milionMax };
   switch (r.k) {
     case 'ok': return { t: `Odpowiedz poprawnie na ${r.n} pytań`, v: d.ok, href: '#/test' };
     case 'deck': return { t: `${r.n} odpowiedzi z tematu: ${dn}`, v: d.deck[r.id] || 0, act: () => startDeckDrill(r.id) };
