@@ -236,7 +236,7 @@ async function loadStat() {
   const s = STAT, pct = (a, b) => b ? Math.round(a / b * 100) : 0;
   $('statSum').innerHTML = [
     ['Urządzenia', s.urzadzenia], ['Aktywne (7 dni)', s.aktywne7], ['Aktywne (24 h)', s.aktywne1],
-    ['Odpowiedzi', s.odpowiedzi.toLocaleString('pl-PL')], ['Trafność', pct(s.odpowiedzi - s.bledne, s.odpowiedzi) + '%']]
+    ['Odpowiedzi', s.odpowiedzi.toLocaleString('pl-PL')], ['Trafność', pct(s.odpowiedzi - s.bledne, s.odpowiedzi) + '%'], ['Gra fabularna (min. 2 rozdziały)', s.gracze || 0]]
     .map(([l, v]) => `<div class="kpi"><b>${v}</b>${l}</div>`).join('');
   $('statHard').innerHTML = s.najtrudniejsze.length ? s.najtrudniejsze.map(r => `<div class="zgl">
     <div><strong>${pct(r.bad, r.n)}% błędów</strong> · ${r.n} odp. · ${r.u} os. · ${esc(r.talia)} · <code>${esc(r.id)}</code></div>

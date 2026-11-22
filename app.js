@@ -1867,7 +1867,7 @@ function syncStats() {
   save();
   try {
     fetch('/api/statystyki', { method: 'POST', keepalive: true, headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ sid: state.settings.statsId, h: hsum }) }).catch(() => { state.settings.statsAt = 0; });
+      body: JSON.stringify({ sid: state.settings.statsId, h: hsum, g: state.rpg ? Object.keys(state.rpg.done || {}).length : 0 }) }).catch(() => { state.settings.statsAt = 0; });
   } catch (e) { /* bez sieci – spróbujemy później */ }
 }
 
@@ -2419,6 +2419,11 @@ function sizeLikePicker(pairs, current, onPick) {
 
 // Przy każdej aktualizacji: dopisz wpis NA POCZĄTKU listy, z numerem = numer CACHE w service-worker.js.
 const CHANGELOG = [
+  { v: 32, date: '22.11.2026', items: [
+    '🎮 Gra fabularna „Pierwsza służba” jest już dostępna! Przejdź drogę funkcjonariusza: od listu z kadr, przez wstępniak i wszystkie stanowiska w dziale ochrony, po egzamin na chorążego – jako dowódca zmiany albo psycholog.',
+    '⚖️ Każda decyzja ma skutki: opinia służbowa, kary dyscyplinarne, a za rażące błędy – postępowanie karne i ścieżka „Zawieszony”. Wszystko z wyjaśnieniem i podstawą prawną.',
+    '🗺️ Mapa zakładu karnego w Bielinach, 25 ilustracji, nowe postacie i kartkówki z bazy pytań – odpowiedzi w grze liczą się do nauki i punktów.',
+    '📜 Nowe ćwiczenie „Na pamięć”: rota ślubowania funkcjonariusza SW.'] },
   { v: 31, date: '18.11.2026', items: [
     '🎨 Nowy wygląd: przejrzysty ekran Nauka – karta ze stopniem, celem dnia i Bielikiem na tle wieżyczki, duży przycisk Egzaminu próbnego, kafelki i rząd „Więcej trybów”.',
     '🪖 Chorąży Bielik nosi furażerkę Służby Więziennej, a stopnie mają pagony w barwach SW (od szeregowego do pułkownika).',
@@ -3111,7 +3116,7 @@ function bielikCard() {
 // Krótkie wtrącenie w trakcie nauki (dymek u dołu ekranu).
 function bielikPop(key, vars, opts) {
   if (!BIELIK_ON() || bielikQuiet) return;
-  if (['egzamin', 'sprint'].includes(currentRoute)) return;
+  if (['egzamin', 'sprint', 'gra'].includes(currentRoute)) return;
   const o = opts || {};
   if (!o.force && Date.now() - bielikPopAt < 90000) return;
   const line = bielikLine(key, vars);
@@ -3404,15 +3409,16 @@ function heroCard() {
 }
 
 function gameTile() {
-  return h('button', { type: 'button', class: 'game-tile', onclick: () => {
-    if (BIELIK_ON()) bielikPop('gra.wkrotce', {}, { force: true });
-    else toast('🚧', 'Pierwsza służba – już wkrótce', 'Gra fabularna jest w przygotowaniu.');
-  } },
+  const r = state.rpg;
+  const done = r ? Object.keys(r.done || {}).length : 0;
+  const sub = !r ? 'Gra fabularna: od listu z kadr po egzamin na chorążego. Twoje decyzje, prawdziwe przepisy i Chorąży Bielik.'
+    : r.ending ? 'Gra czeka na twoją decyzję po zakończeniu.' : `Kontynuuj: ${r.chT || 'następny rozdział'} · ukończone rozdziały: ${done}`;
+  return h('a', { class: 'game-tile live', href: '#/gra' },
     h('span', { class: 'game-ic' }, icon('flag', 24)),
     h('span', { class: 'game-text' },
-      h('span', { class: 'game-title' }, 'Pierwsza służba', h('span', { class: 'soon' }, 'WKRÓTCE')),
-      h('span', { class: 'game-sub' }, 'Gra fabularna: jeden dzień w zakładzie karnym, twoje decyzje i Chorąży Bielik.')),
-    icon('lock', 20, 'game-lock'));
+      h('span', { class: 'game-title' }, 'Pierwsza służba', h('span', { class: 'soon new' }, r ? 'GRAJ' : 'NOWOŚĆ')),
+      h('span', { class: 'game-sub' }, sub)),
+    icon('chev', 20, 'game-lock'));
 }
 
 const BADGE_IMG = id => `obrazy/odznaki/${id}.webp`;
@@ -4195,3 +4201,20 @@ Object.assign(BIELIK_TEKSTY, {
 });
 
 Object.assign(routes, { szukaj: renderSearch, kto: () => renderKto(), milionerzy: renderMilion, prawda: renderPrawda });
+
+/* =====================================================================
+   v32: gra fabularna „Pierwsza służba” (silnik: gra.js, treść: gra-dane.js)
+   ===================================================================== */
+function openGra() {
+  if (window.renderGra) return window.renderGra();
+  const app = screen('Pierwsza służba', true);
+  app.append(h('div', { class: 'gra' }, h('div', { class: 'gra-loading' }, 'Wczytuję zakład karny…')));
+  window.GRA_VER = APP_VERSION;
+  const sc = document.createElement('script');
+  sc.src = 'gra.js?v=' + APP_VERSION;
+  sc.onload = () => { if (currentRoute === 'gra' && window.renderGra) window.renderGra(); };
+  sc.onerror = () => { sc.remove(); app.replaceChildren(h('p', { class: 'card' }, 'Nie udało się wczytać gry. Sprawdź internet i spróbuj ponownie.')); };
+  document.head.append(sc);
+}
+Object.assign(routes, { gra: openGra });
+
