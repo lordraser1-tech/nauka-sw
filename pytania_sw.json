@@ -1,8 +1,8 @@
 {
  "meta": {
   "tytul": "Szkolenie chorążych SW – baza do nauki",
-  "wersja": 16,
-  "data": "2026-11-18",
+  "wersja": 17,
+  "data": "2026-11-22",
   "zrodla": "Ustawa o ŚPB (Dz.U. 2026 poz. 244), ustawa o SW (Dz.U. 2025 poz. 1750), kkw (Dz.U. 2025 poz. 911), rozporządzenie o oddziaływaniach penitencjarnych (Dz.U. 2024 poz. 1344), rozporządzenie o ośrodkach diagnostycznych (Dz.U. 2023 poz. 1677), rozporządzenie o ochronie jednostek SW (Dz.U. 2016 poz. 1804); materiały kursu: pytania kontrolne (psycholodzy 1–29, penitencjarne 28–53), lista 124 pytań, SPECJALIZACJA_2 (77 zagadnień), Skrypt SW V15; prezentacja „Instrukcja obsługi i użytkowania pistoletu 9 mm GLOCK 17 gen. 5 MOS”; prezentacja i skrypt „Zagadnienia penitencjarne” (Kule 2026); przykładowy test komendancki; test z pragmatyki służbowej (COSSW Kule); pytania kursantów (moduły)",
   "typy": {
    "flashcard": "przód (front) i tył (back)",
@@ -17743,6 +17743,23 @@
    "explanation": "Odpowiedź według klucza testu z pragmatyki służbowej (COSSW Kule).",
    "source": "test z pragmatyki służbowej (COSSW Kule), pyt. 29",
    "tag": "test-pragm"
+  },
+  {
+   "id": "prag-rota",
+   "deck": "pragmatyka",
+   "type": "order",
+   "naPamiec": true,
+   "prompt": "Ułóż rotę ślubowania funkcjonariusza Służby Więziennej we właściwej kolejności.",
+   "steps": [
+    "Ja, obywatel Rzeczypospolitej Polskiej, wstępując do Służby Więziennej, ślubuję uroczyście:",
+    "rzetelnie wykonywać powierzone mi zadania funkcjonariusza tej Służby i polecenia przełożonych,",
+    "przestrzegając Konstytucji Rzeczypospolitej Polskiej i wszystkich przepisów prawa,",
+    "jak również tajemnic związanych ze służbą, a także zasad etyki zawodowej,",
+    "ze szczególnym uwzględnieniem poszanowania godności ludzkiej",
+    "oraz z dbałością o dobre imię służby."
+   ],
+   "explanation": "Rotę można zakończyć słowami „Tak mi dopomóż Bóg”. Odmowa złożenia ślubowania powoduje nieważność aktu mianowania.",
+   "source": "art. 41 ustawy o SW"
   },
   {
    "id": "prag-t30",

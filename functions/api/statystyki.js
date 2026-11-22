@@ -17,6 +17,7 @@ export async function onRequestPost({ request, env }) {
     const a = Math.max(0, Math.min(9999, v[0] | 0)), bad = Math.max(0, Math.min(a, v[1] | 0));
     if (a) h[String(id).slice(0, 40)] = [a, bad];
   }
-  await env.KODY.put('st:' + sid, JSON.stringify({ t: Date.now(), h }), { metadata: { t: Date.now() } });
+  const g = Math.max(0, Math.min(99, b.g | 0)); // gra fabularna: liczba ukończonych rozdziałów
+  await env.KODY.put('st:' + sid, JSON.stringify({ t: Date.now(), h, g }), { metadata: { t: Date.now() } });
   return json({ ok: true });
 }

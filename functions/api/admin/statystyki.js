@@ -5,7 +5,7 @@ export async function onRequest({ request, env }) {
   if (!(await adminOk(request, env))) return json({ blad: 'Złe hasło.' }, 401);
   const now = Date.now(), DAY = 86400000;
   const agg = {};
-  let devices = 0, active7 = 0, active1 = 0, answers = 0, bad = 0, cursor;
+  let devices = 0, active7 = 0, active1 = 0, answers = 0, bad = 0, gracze = 0, cursor;
   do {
     const r = await env.KODY.list({ prefix: 'st:', cursor });
     for (const k of r.keys) {
@@ -14,6 +14,7 @@ export async function onRequest({ request, env }) {
       devices++;
       if (now - v.t < 7 * DAY) active7++;
       if (now - v.t < DAY) active1++;
+      if ((v.g | 0) >= 2) gracze++; // gra fabularna: rozpoczęta i co najmniej 2 ukończone rozdziały
       for (const [id, [n, b]] of Object.entries(v.h || {})) {
         const a = agg[id] || (agg[id] = { n: 0, bad: 0, u: 0 });
         a.n += n; a.bad += b; a.u++;
@@ -45,6 +46,6 @@ export async function onRequest({ request, env }) {
     const x = byDeck[dk] || (byDeck[dk] = { talia: decks[dk] || dk, n: 0, bad: 0 });
     x.n += r.n; x.bad += r.bad;
   }
-  return json({ urzadzenia: devices, aktywne7: active7, aktywne1: active1, odpowiedzi: answers, bledne: bad,
+  return json({ urzadzenia: devices, aktywne7: active7, aktywne1: active1, odpowiedzi: answers, bledne: bad, gracze,
     najtrudniejsze: hardest, talie: Object.values(byDeck).sort((a, b) => b.bad / b.n - a.bad / a.n) });
 }

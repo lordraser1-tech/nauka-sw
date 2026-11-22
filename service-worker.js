@@ -1,10 +1,13 @@
 // Po każdej zmianie plików zwiększ numer wersji, żeby telefony pobrały nowe pliki.
-const CACHE = 'nauka-sw-v37';
+const CACHE = 'nauka-sw-v38';
 const FILES = [
   './',
   'index.html',
   'style.css',
   'app.js',
+  'gra.js',
+  'gra-dane.js',
+  'obrazy/gra/mapa.webp',
   'manifest.json',
   'pytania_sw.json',
   'skrypt_unitarna.md',
