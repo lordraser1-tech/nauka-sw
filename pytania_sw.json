@@ -1,7 +1,7 @@
 {
  "meta": {
   "tytul": "Szkolenie chorążych SW – baza do nauki",
-  "wersja": 19,
+  "wersja": 20,
   "data": "2026-11-24",
   "zrodla": "Ustawa o ŚPB (Dz.U. 2026 poz. 244), ustawa o SW (Dz.U. 2025 poz. 1750), kkw (Dz.U. 2025 poz. 911), rozporządzenie o oddziaływaniach penitencjarnych (Dz.U. 2024 poz. 1344), rozporządzenie o ośrodkach diagnostycznych (Dz.U. 2023 poz. 1677), rozporządzenie o ochronie jednostek SW (Dz.U. 2016 poz. 1804); materiały kursu: pytania kontrolne (psycholodzy 1–29, penitencjarne 28–53), lista 124 pytań, SPECJALIZACJA_2 (77 zagadnień), Skrypt SW V15; prezentacja „Instrukcja obsługi i użytkowania pistoletu 9 mm GLOCK 17 gen. 5 MOS”; prezentacja i skrypt „Zagadnienia penitencjarne” (Kule 2026); przykładowy test komendancki; test z pragmatyki służbowej (COSSW Kule); pytania kursantów (moduły)",
   "typy": {
@@ -18,7 +18,8 @@
    "skrypt-v15": "Skrypt SW (V15)",
    "slajdy-ewidencja": "slajdy z zajęć – przyjmowanie i odmowa przyjęcia",
    "zarz-30-25": "zarządzenie 30/25 (§ 65–76) i wykład „Bezpieczeństwo”",
-   "slajdy-konwoj": "slajdy z zajęć – obowiązki dowódcy konwoju, skład i wyposażenie konwoju"
+   "slajdy-konwoj": "slajdy z zajęć – obowiązki dowódcy konwoju, skład i wyposażenie konwoju",
+   "slajdy-zdrowie": "slajdy z zajęć – zdrowie (definicja WHO i wymiary zdrowia)"
   },
   "uwaga": "Pozycje z „⚠️” zawierają poprawkę lub wątpliwość względem materiałów kursu."
  },
@@ -20883,6 +20884,181 @@
    "explanation": "Odpowiada ten, kto umyślnie wykonuje rozkaz zawierający znamiona przestępstwa (por. art. 318 kk). Uwaga: w jednym z quizów to samo pytanie miało błędnie zaznaczone „zawsze ponosi pełną odpowiedzialność”.",
    "source": "pytania kursantów – quiz z prawa",
    "tag": "kursanci"
+  },
+  {
+   "deck": "metodyka",
+   "tag": "slajdy-zdrowie",
+   "source": "prezentacja – Zdrowie (Konstytucja Światowej Organizacji Zdrowia, WHO)",
+   "id": "who-f01",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Definicja zdrowia według Konstytucji WHO",
+   "back": "Zdrowie to stan pełnego, fizycznego, umysłowego (psychicznego) i społecznego dobrostanu, a nie tylko całkowity brak choroby czy niepełnosprawności.\n\nDefinicja podkreśla pozytywny wymiar zdrowia – szeroko pojęte dobre samopoczucie."
+  },
+  {
+   "deck": "metodyka",
+   "tag": "slajdy-zdrowie",
+   "source": "prezentacja – Zdrowie (Konstytucja Światowej Organizacji Zdrowia, WHO)",
+   "id": "who-f02",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Główne wymiary zdrowia (4)",
+   "back": "1) Zdrowie fizyczne – prawidłowe funkcjonowanie układów i narządów;\n2) Zdrowie psychiczne – zdolność do radzenia sobie ze stresem, emocjami oraz jasnego myślenia;\n3) Zdrowie społeczne – umiejętność nawiązywania i podtrzymywania relacji;\n4) Zdrowie duchowe – osobisty zestaw wartości i dążenie do wewnętrznego spokoju."
+  },
+  {
+   "deck": "metodyka",
+   "tag": "slajdy-zdrowie",
+   "source": "prezentacja – Zdrowie (Konstytucja Światowej Organizacji Zdrowia, WHO)",
+   "id": "who-c01",
+   "type": "cloze",
+   "naPamiec": true,
+   "text": "Według Konstytucji WHO zdrowie to stan pełnego, [[fizycznego]], umysłowego (psychicznego) i [[społecznego]] [[dobrostanu]], a nie tylko całkowity brak [[choroby]] czy [[niepełnosprawności]]."
+  },
+  {
+   "deck": "metodyka",
+   "tag": "slajdy-zdrowie",
+   "source": "prezentacja – Zdrowie (Konstytucja Światowej Organizacji Zdrowia, WHO)",
+   "id": "who-p01",
+   "type": "pairs",
+   "naPamiec": false,
+   "title": "Wymiary zdrowia",
+   "pairs": [
+    [
+     "Zdrowie fizyczne",
+     "prawidłowe funkcjonowanie układów i narządów"
+    ],
+    [
+     "Zdrowie psychiczne",
+     "radzenie sobie ze stresem, emocjami, jasne myślenie"
+    ],
+    [
+     "Zdrowie społeczne",
+     "nawiązywanie i podtrzymywanie relacji"
+    ],
+    [
+     "Zdrowie duchowe",
+     "osobisty zestaw wartości, dążenie do wewnętrznego spokoju"
+    ]
+   ]
+  },
+  {
+   "deck": "metodyka",
+   "tag": "slajdy-zdrowie",
+   "source": "prezentacja – Zdrowie (Konstytucja Światowej Organizacji Zdrowia, WHO)",
+   "id": "who-m01",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Według Konstytucji Światowej Organizacji Zdrowia (WHO) zdrowie to:",
+   "options": [
+    "całkowity brak choroby i niepełnosprawności",
+    "stan pełnego fizycznego, psychicznego i społecznego dobrostanu, a nie tylko brak choroby czy niepełnosprawności",
+    "prawidłowe funkcjonowanie wszystkich układów i narządów organizmu",
+    "zdolność organizmu do przystosowania się do warunków środowiska"
+   ],
+   "answer": 1,
+   "explanation": "Definicja WHO: stan pełnego, fizycznego, umysłowego (psychicznego) i społecznego dobrostanu, a nie tylko całkowity brak choroby czy niepełnosprawności."
+  },
+  {
+   "deck": "metodyka",
+   "tag": "slajdy-zdrowie",
+   "source": "prezentacja – Zdrowie (Konstytucja Światowej Organizacji Zdrowia, WHO)",
+   "id": "who-m02",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Definicja zdrowia WHO podkreśla przede wszystkim:",
+   "options": [
+    "negatywny wymiar zdrowia – brak objawów chorobowych",
+    "pozytywny wymiar zdrowia – szeroko pojęte dobre samopoczucie",
+    "wyłącznie sprawność fizyczną",
+    "brak niepełnosprawności"
+   ],
+   "answer": 1,
+   "explanation": "Zdrowie to nie tylko brak choroby – definicja WHO akcentuje pozytywny wymiar: dobrostan i dobre samopoczucie."
+  },
+  {
+   "deck": "metodyka",
+   "tag": "slajdy-zdrowie",
+   "source": "prezentacja – Zdrowie (Konstytucja Światowej Organizacji Zdrowia, WHO)",
+   "id": "who-m03",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Umiejętność nawiązywania i podtrzymywania relacji to wymiar zdrowia:",
+   "options": [
+    "fizycznego",
+    "psychicznego",
+    "społecznego",
+    "duchowego"
+   ],
+   "answer": 2,
+   "explanation": "Zdrowie społeczne – umiejętność nawiązywania i podtrzymywania relacji."
+  },
+  {
+   "deck": "metodyka",
+   "tag": "slajdy-zdrowie",
+   "source": "prezentacja – Zdrowie (Konstytucja Światowej Organizacji Zdrowia, WHO)",
+   "id": "who-m04",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Zdolność do radzenia sobie ze stresem, emocjami oraz jasnego myślenia to:",
+   "options": [
+    "zdrowie psychiczne",
+    "zdrowie społeczne",
+    "zdrowie duchowe",
+    "zdrowie fizyczne"
+   ],
+   "answer": 0,
+   "explanation": "Zdrowie psychiczne – radzenie sobie ze stresem i emocjami oraz jasne myślenie."
+  },
+  {
+   "deck": "metodyka",
+   "tag": "slajdy-zdrowie",
+   "source": "prezentacja – Zdrowie (Konstytucja Światowej Organizacji Zdrowia, WHO)",
+   "id": "who-m05",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Osobisty zestaw wartości i dążenie do wewnętrznego spokoju to wymiar zdrowia:",
+   "options": [
+    "społecznego",
+    "fizycznego",
+    "psychicznego",
+    "duchowego"
+   ],
+   "answer": 3,
+   "explanation": "Zdrowie duchowe – osobisty zestaw wartości i dążenie do wewnętrznego spokoju."
+  },
+  {
+   "deck": "metodyka",
+   "tag": "slajdy-zdrowie",
+   "source": "prezentacja – Zdrowie (Konstytucja Światowej Organizacji Zdrowia, WHO)",
+   "id": "who-m06",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Prawidłowe funkcjonowanie układów i narządów to wymiar zdrowia:",
+   "options": [
+    "psychicznego",
+    "fizycznego",
+    "duchowego",
+    "społecznego"
+   ],
+   "answer": 1,
+   "explanation": "Zdrowie fizyczne – prawidłowe funkcjonowanie układów i narządów."
+  },
+  {
+   "deck": "metodyka",
+   "tag": "slajdy-zdrowie",
+   "source": "prezentacja – Zdrowie (Konstytucja Światowej Organizacji Zdrowia, WHO)",
+   "id": "who-m07",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Która z wymienionych sfer NIE jest wprost wymieniona w definicji zdrowia z Konstytucji WHO?",
+   "options": [
+    "fizyczna",
+    "umysłowa (psychiczna)",
+    "społeczna",
+    "duchowa"
+   ],
+   "answer": 3,
+   "explanation": "Definicja WHO mówi o dobrostanie fizycznym, umysłowym (psychicznym) i społecznym. Wymiar duchowy pojawia się w omówieniu głównych wymiarów zdrowia, ale nie w samej definicji."
   }
  ]
 }

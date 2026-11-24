@@ -2420,7 +2420,8 @@ function sizeLikePicker(pairs, current, onPick) {
 // Przy każdej aktualizacji: dopisz wpis NA POCZĄTKU listy, z numerem = numer CACHE w service-worker.js.
 const CHANGELOG = [
   { v: 33, date: '24.11.2026', items: [
-    '🚐 Nowe fiszki i pytania: obowiązki dowódcy konwoju, skład, uzbrojenie i wyposażenie konwoju (temat „Ochrona jednostek i konwojowanie”).'] },
+    '🚐 Nowe fiszki i pytania: obowiązki dowódcy konwoju, skład, uzbrojenie i wyposażenie konwoju (temat „Ochrona jednostek i konwojowanie”).',
+    '🩺 Definicja zdrowia według WHO i jej wymiary – fiszki, uzupełnianka, łączenie w pary i pytania (temat „Metodyka i pedagogika penitencjarna”).'] },
   { v: 32, date: '22.11.2026', items: [
     '🎮 Gra fabularna „Pierwsza służba” jest już dostępna! Przejdź drogę funkcjonariusza: od listu z kadr, przez wstępniak i wszystkie stanowiska w dziale ochrony, po egzamin na chorążego – jako dowódca zmiany albo psycholog.',
     '⚖️ Każda decyzja ma skutki: opinia służbowa, kary dyscyplinarne, a za rażące błędy – postępowanie karne i ścieżka „Zawieszony”. Wszystko z wyjaśnieniem i podstawą prawną.',
