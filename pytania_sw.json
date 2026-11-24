@@ -1,7 +1,7 @@
 {
  "meta": {
   "tytul": "Szkolenie chorążych SW – baza do nauki",
-  "wersja": 18,
+  "wersja": 19,
   "data": "2026-11-24",
   "zrodla": "Ustawa o ŚPB (Dz.U. 2026 poz. 244), ustawa o SW (Dz.U. 2025 poz. 1750), kkw (Dz.U. 2025 poz. 911), rozporządzenie o oddziaływaniach penitencjarnych (Dz.U. 2024 poz. 1344), rozporządzenie o ośrodkach diagnostycznych (Dz.U. 2023 poz. 1677), rozporządzenie o ochronie jednostek SW (Dz.U. 2016 poz. 1804); materiały kursu: pytania kontrolne (psycholodzy 1–29, penitencjarne 28–53), lista 124 pytań, SPECJALIZACJA_2 (77 zagadnień), Skrypt SW V15; prezentacja „Instrukcja obsługi i użytkowania pistoletu 9 mm GLOCK 17 gen. 5 MOS”; prezentacja i skrypt „Zagadnienia penitencjarne” (Kule 2026); przykładowy test komendancki; test z pragmatyki służbowej (COSSW Kule); pytania kursantów (moduły)",
   "typy": {
@@ -12439,7 +12439,7 @@
    "naPamiec": true,
    "tag": "slajdy-konwoj",
    "front": "Obowiązki dowódcy konwoju – pkt 12–18",
-   "back": "12) informowanie dowódcy zmiany o każdej zmianie ustalonej trasy;\n13) przekazywanie uprawnionym osobom w miejscu docelowym informacji o zachowaniu konwojowanego, które mogą mieć wpływ na bezpieczeństwo;\n14) organizowanie kontroli pobieżnej konwojowanego;\n15) sprawdzenie pomieszczenia przed wejściem konwojowanego tam, gdzie konwój utraci z nim kontakt wzrokowy, i takie zorganizowanie ochrony, by zapobiegać agresji, autoagresji i ucieczce;\n16) przekazywanie przełożonym informacji o zmianach w miejscach konwojowania (dot. protokołu rozpoznania);\n17) w podmiotach leczniczych w porze nocnej – telefoniczne meldunki do dowódcy zmiany o stanie bezpieczeństwa i swojej zdolności do zadań (częstotliwość wg instruktażu);\n18) przy prewencyjnym użyciu ŚPB – sprawdzanie sposobu ich używania co najmniej przy przyjmowaniu służby (zwłaszcza kajdanek).",
+   "back": "12) informowanie dowódcy zmiany o każdej zmianie ustalonej trasy;\n13) przekazywanie uprawnionym osobom w miejscu docelowym informacji o zachowaniu konwojowanego, które mogą mieć wpływ na bezpieczeństwo;\n14) organizowanie kontroli pobieżnej konwojowanego;\n15) sprawdzenie pomieszczenia przed wejściem konwojowanego tam, gdzie konwój utraci z nim kontakt wzrokowy, i takie zorganizowanie ochrony, by zapobiegać agresji, autoagresji i ucieczce;\n16) przekazywanie przełożonym informacji o zmianach w miejscach konwojowania (dot. protokołu rozpoznania);\n17) w podmiotach leczniczych w porze nocnej – telefoniczne meldunki do dowódcy zmiany o stanie bezpieczeństwa i swojej zdolności do zadań (częstotliwość wg instruktażu, nie rzadziej niż co godzinę);\n18) przy prewencyjnym użyciu ŚPB – sprawdzanie sposobu ich używania co najmniej przy przyjmowaniu służby (zwłaszcza kajdanek).",
    "source": "prezentacja – konwojowanie (zarządzenie DGSW nr 30/25, § 77 i obowiązki dowódcy konwoju)"
   },
   {
@@ -12469,7 +12469,7 @@
    "naPamiec": true,
    "tag": "slajdy-konwoj",
    "front": "Skład, uzbrojenie i wyposażenie konwoju (§ 77)",
-   "back": "Skład konwoju, w tym dowódcę, wyznacza dyrektor albo osoba przez niego upoważniona; decyduje też o uzbrojeniu i wyposażeniu.\nZależą one od warunków i trasy, odległości, liczby osadzonych i ich zagrożenia dla bezpieczeństwa.\nUzbrojenie i wyposażenie: broń palna i amunicja penetracyjna, kajdanki, ręczny miotacz substancji obezwładniających, kamizelka (hełm kuloodporny – przy osadzonym „N”), środki łączności, środki do pierwszej pomocy przedmedycznej.",
+   "back": "Skład konwoju, w tym dowódcę, wyznacza dyrektor albo osoba przez niego upoważniona; decyduje też o uzbrojeniu i wyposażeniu.\nZależą one od warunków i trasy, odległości konwojowania, liczby osadzonych, charakteru popełnionego czynu i charakterystyki osadzonego (jego zagrożenia dla bezpieczeństwa).\nPodstawa konwojowania: zezwolenie lub wykaz transportowy. Instruktażu udziela kierownik działu ochrony lub osoba przez niego upoważniona.\nUzbrojenie i wyposażenie: broń palna i amunicja penetracyjna, kajdanki, ręczny miotacz substancji obezwładniających, kamizelka (hełm kuloodporny – przy osadzonym „N”), środki łączności, środki do pierwszej pomocy przedmedycznej.",
    "source": "prezentacja – konwojowanie (zarządzenie DGSW nr 30/25, § 77 i obowiązki dowódcy konwoju)"
   },
   {
@@ -12498,13 +12498,13 @@
    "question": "Wyposażenie i uzbrojenie konwoju ustala się w zależności od:",
    "options": [
     "wyłącznie liczby funkcjonariuszy w składzie",
-    "warunków i trasy konwojowania, odległości, liczby osadzonych i ich zagrożenia dla bezpieczeństwa",
+    "warunków i trasy, odległości konwojowania, liczby osadzonych, charakteru popełnionego czynu i charakterystyki osadzonego",
     "pory roku i warunków atmosferycznych",
     "wniosku konwojowanego"
    ],
    "answer": 1,
-   "explanation": "Uwzględnia się warunki i trasę, odległość do miejsca przeznaczenia, liczbę osadzonych oraz ich zagrożenie (charakterystykę).",
-   "source": "prezentacja – konwojowanie (zarządzenie DGSW nr 30/25, § 77 i obowiązki dowódcy konwoju)"
+   "explanation": "Uwzględnia się warunki i trasę, odległość, liczbę osadzonych, charakter popełnionego czynu oraz charakterystykę (zagrożenie) osadzonego.",
+   "source": "prezentacja – konwojowanie (zarządzenie DGSW nr 30/25, § 77 i obowiązki dowódcy konwoju); notatki z zajęć – konwojowanie"
   },
   {
    "id": "konw-m03",
@@ -12606,7 +12606,8 @@
    ],
    "answer": 0,
    "explanation": "Pkt 7 obowiązków dowódcy konwoju.",
-   "source": "prezentacja – konwojowanie (zarządzenie DGSW nr 30/25, § 77 i obowiązki dowódcy konwoju)"
+   "source": "prezentacja – konwojowanie (zarządzenie DGSW nr 30/25, § 77 i obowiązki dowódcy konwoju)",
+   "grupa": "konw-podstawa"
   },
   {
    "id": "konw-m09",
@@ -12639,7 +12640,7 @@
     "lekarza dyżurnego"
    ],
    "answer": 1,
-   "explanation": "Pkt 17 – meldunki do dowódcy zmiany z częstotliwością określoną w instruktażu.",
+   "explanation": "Pkt 17 – meldunki do dowódcy zmiany z częstotliwością określoną w instruktażu, nie rzadziej niż co godzinę.",
    "source": "prezentacja – konwojowanie (zarządzenie DGSW nr 30/25, § 77 i obowiązki dowódcy konwoju)"
   },
   {
@@ -12709,6 +12710,75 @@
    "answer": 0,
    "explanation": "Do tego kamizelka, a przy osadzonym „N” – hełm kuloodporny.",
    "source": "prezentacja – konwojowanie (zarządzenie DGSW nr 30/25, § 77 i obowiązki dowódcy konwoju)"
+  },
+  {
+   "id": "konw-m15",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "tag": "slajdy-konwoj",
+   "question": "Instruktażu przed konwojowaniem udziela:",
+   "options": [
+    "dowódca zmiany",
+    "kierownik działu ochrony lub osoba przez niego upoważniona",
+    "dyrektor okręgowy SW",
+    "dowódca konwoju sam sobie"
+   ],
+   "answer": 1,
+   "explanation": "Instruktaż prowadzi kierownik działu ochrony albo osoba przez niego upoważniona.",
+   "source": "notatki z zajęć – konwojowanie"
+  },
+  {
+   "id": "konw-m16",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "tag": "slajdy-konwoj",
+   "grupa": "konw-podstawa",
+   "question": "Podstawą do konwojowania jest:",
+   "options": [
+    "zezwolenie lub wykaz transportowy",
+    "ustne polecenie dowódcy zmiany",
+    "wpis w oddziałowej książce ruchu",
+    "wniosek osadzonego"
+   ],
+   "answer": 0,
+   "explanation": "Podstawą konwojowania jest zezwolenie lub wykaz transportowy – dowódca konwoju musi je mieć przy sobie przez cały konwój.",
+   "source": "notatki z zajęć – konwojowanie; prezentacja – konwojowanie (zarządzenie DGSW nr 30/25, § 77 i obowiązki dowódcy konwoju)"
+  },
+  {
+   "id": "konw-m17",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "tag": "slajdy-konwoj",
+   "question": "Konwój w szpitalu w porze nocnej: jak często, co najmniej, dowódca konwoju telefonicznie melduje dowódcy zmiany o stanie bezpieczeństwa?",
+   "options": [
+    "nie rzadziej niż co godzinę",
+    "co 4 godziny",
+    "raz na zmianę",
+    "tylko w razie zdarzenia"
+   ],
+   "answer": 0,
+   "explanation": "Częstotliwość określa instruktaż, jednak nie rzadziej niż co godzinę (pkt 17 obowiązków dowódcy konwoju).",
+   "source": "prezentacja – konwojowanie (zarządzenie DGSW nr 30/25, § 77 i obowiązki dowódcy konwoju)"
+  },
+  {
+   "id": "konw-m18",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "tag": "slajdy-konwoj",
+   "question": "Na ilość i rodzaj uzbrojenia konwoju wpływa m.in.:",
+   "options": [
+    "charakter popełnionego czynu i charakterystyka osadzonego",
+    "staż służby dowódcy konwoju",
+    "marka pojazdu konwojowego",
+    "liczba widzeń osadzonego w miesiącu"
+   ],
+   "answer": 0,
+   "explanation": "Uzbrojenie zależy od warunków i trasy, odległości, liczby osadzonych, charakteru popełnionego czynu i charakterystyki osadzonego.",
+   "source": "notatki z zajęć – konwojowanie"
   },
   {
    "id": "pary-08",
