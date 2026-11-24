@@ -1,8 +1,8 @@
 {
  "meta": {
   "tytul": "Szkolenie chorążych SW – baza do nauki",
-  "wersja": 17,
-  "data": "2026-11-22",
+  "wersja": 18,
+  "data": "2026-11-24",
   "zrodla": "Ustawa o ŚPB (Dz.U. 2026 poz. 244), ustawa o SW (Dz.U. 2025 poz. 1750), kkw (Dz.U. 2025 poz. 911), rozporządzenie o oddziaływaniach penitencjarnych (Dz.U. 2024 poz. 1344), rozporządzenie o ośrodkach diagnostycznych (Dz.U. 2023 poz. 1677), rozporządzenie o ochronie jednostek SW (Dz.U. 2016 poz. 1804); materiały kursu: pytania kontrolne (psycholodzy 1–29, penitencjarne 28–53), lista 124 pytań, SPECJALIZACJA_2 (77 zagadnień), Skrypt SW V15; prezentacja „Instrukcja obsługi i użytkowania pistoletu 9 mm GLOCK 17 gen. 5 MOS”; prezentacja i skrypt „Zagadnienia penitencjarne” (Kule 2026); przykładowy test komendancki; test z pragmatyki służbowej (COSSW Kule); pytania kursantów (moduły)",
   "typy": {
    "flashcard": "przód (front) i tył (back)",
@@ -17,7 +17,8 @@
    "spec-77": "SPECJALIZACJA_2 – 77 zagadnień dla psychologów",
    "skrypt-v15": "Skrypt SW (V15)",
    "slajdy-ewidencja": "slajdy z zajęć – przyjmowanie i odmowa przyjęcia",
-   "zarz-30-25": "zarządzenie 30/25 (§ 65–76) i wykład „Bezpieczeństwo”"
+   "zarz-30-25": "zarządzenie 30/25 (§ 65–76) i wykład „Bezpieczeństwo”",
+   "slajdy-konwoj": "slajdy z zajęć – obowiązki dowódcy konwoju, skład i wyposażenie konwoju"
   },
   "uwaga": "Pozycje z „⚠️” zawierają poprawkę lub wątpliwość względem materiałów kursu."
  },
@@ -1221,8 +1222,8 @@
     "jest niedopuszczalna"
    ],
    "answer": 1,
-   "explanation": "Art. 145 kkw.",
-   "source": "art. 145 kkw"
+   "explanation": "Przed wymierzeniem kary lekarz albo psycholog wydaje pisemną opinię o zdolności skazanego do jej odbycia, a wymierzenie powyżej 14 dni wymaga zgody sędziego penitencjarnego (art. 144 kkw).",
+   "source": "art. 144 kkw"
   },
   {
    "id": "och-f01",
@@ -3437,8 +3438,8 @@
     "do 28 dni"
    ],
    "answer": 3,
-   "explanation": "Art. 143 § 1 pkt 8 KKW.",
-   "source": "art. 143 KKW",
+   "explanation": "Do 28 dni (art. 143 § 1 pkt 8 kkw). Wymierzenie tej kary powyżej 14 dni wymaga zgody sędziego penitencjarnego (art. 144 kkw) – to dodatkowy warunek, a nie inny maksymalny wymiar.",
+   "source": "art. 143 § 1 pkt 8 i art. 144 kkw",
    "grupa": "cela-izolacyjna-28"
   },
   {
@@ -12412,6 +12413,304 @@
    "tag": "v21"
   },
   {
+   "id": "konw-f01",
+   "deck": "ochrona",
+   "type": "flashcard",
+   "naPamiec": true,
+   "tag": "slajdy-konwoj",
+   "front": "Obowiązki dowódcy konwoju – pkt 1–6",
+   "back": "1) wyznaczenie swojego zastępcy;\n2) ustalenie zasad porozumiewania się w składzie konwoju;\n3) przydzielenie zadań pozostałym funkcjonariuszom składu;\n4) ustalenie rozmieszczenia konwojentów w pojeździe, w miejscu docelowym i w miejscu ewentualnego postoju (z uwzględnieniem protokołów rozpoznania);\n5) sprawdzenie zabezpieczeń techniczno-ochronnych pojazdu i czy w przedziale dla konwojowanych nie ma przedmiotów niedozwolonych lub substancji;\n6) sprawdzenie tożsamości osadzonych i rozmieszczenie ich w pojeździe.",
+   "source": "prezentacja – konwojowanie (zarządzenie DGSW nr 30/25, § 77 i obowiązki dowódcy konwoju)"
+  },
+  {
+   "id": "konw-f02",
+   "deck": "ochrona",
+   "type": "flashcard",
+   "naPamiec": true,
+   "tag": "slajdy-konwoj",
+   "front": "Obowiązki dowódcy konwoju – pkt 7–11",
+   "back": "7) posiadanie w czasie konwoju zezwolenia lub wykazu transportowego;\n8) przy transporcie między jednostkami – pobranie osadzonych i przekazanie ich do właściwej jednostki wraz z dokumentacją i depozytami;\n9) prowadzenie książki przebiegu służby konwojowej przy konwojowaniu na innej podstawie niż polecenie dyrektora;\n10) decyzja o wykorzystaniu pojazdu konwojowego jako pojazdu uprzywilejowanego (art. 53 Prawa o ruchu drogowym);\n11) nadzorowanie realizacji zadań przez konwojentów i kierowcę.",
+   "source": "prezentacja – konwojowanie (zarządzenie DGSW nr 30/25, § 77 i obowiązki dowódcy konwoju)"
+  },
+  {
+   "id": "konw-f03",
+   "deck": "ochrona",
+   "type": "flashcard",
+   "naPamiec": true,
+   "tag": "slajdy-konwoj",
+   "front": "Obowiązki dowódcy konwoju – pkt 12–18",
+   "back": "12) informowanie dowódcy zmiany o każdej zmianie ustalonej trasy;\n13) przekazywanie uprawnionym osobom w miejscu docelowym informacji o zachowaniu konwojowanego, które mogą mieć wpływ na bezpieczeństwo;\n14) organizowanie kontroli pobieżnej konwojowanego;\n15) sprawdzenie pomieszczenia przed wejściem konwojowanego tam, gdzie konwój utraci z nim kontakt wzrokowy, i takie zorganizowanie ochrony, by zapobiegać agresji, autoagresji i ucieczce;\n16) przekazywanie przełożonym informacji o zmianach w miejscach konwojowania (dot. protokołu rozpoznania);\n17) w podmiotach leczniczych w porze nocnej – telefoniczne meldunki do dowódcy zmiany o stanie bezpieczeństwa i swojej zdolności do zadań (częstotliwość wg instruktażu);\n18) przy prewencyjnym użyciu ŚPB – sprawdzanie sposobu ich używania co najmniej przy przyjmowaniu służby (zwłaszcza kajdanek).",
+   "source": "prezentacja – konwojowanie (zarządzenie DGSW nr 30/25, § 77 i obowiązki dowódcy konwoju)"
+  },
+  {
+   "id": "konw-f04",
+   "deck": "ochrona",
+   "type": "flashcard",
+   "naPamiec": true,
+   "tag": "slajdy-konwoj",
+   "front": "Kiedy dowódca konwoju organizuje kontrolę pobieżną konwojowanego?",
+   "back": "W szczególności:\na) po niedozorowanym kontakcie konwojowanego z osobami innymi niż funkcjonariusze i konwojowani osadzeni;\nb) po wyjściu konwojowanego z toalety;\nc) po przerwaniu kontaktu wzrokowego funkcjonariuszy z konwojowanym z innych przyczyn.",
+   "source": "prezentacja – konwojowanie (zarządzenie DGSW nr 30/25, § 77 i obowiązki dowódcy konwoju)"
+  },
+  {
+   "id": "konw-f05",
+   "deck": "ochrona",
+   "type": "flashcard",
+   "naPamiec": false,
+   "tag": "slajdy-konwoj",
+   "front": "Czego zabrania się dowódcy konwoju i co może powierzyć konwojentowi?",
+   "back": "Zakaz: bez uzasadnionej przyczyny zatrzymywać konwoju i zmieniać ustalonej trasy.\nMoże powierzyć konwojentowi zadania z pkt 5, 6, 7, 13 i 14: sprawdzenie pojazdu, sprawdzenie tożsamości i rozmieszczenie osadzonych, posiadanie zezwolenia/wykazu transportowego, przekazanie informacji o zachowaniu konwojowanego, kontrolę pobieżną.",
+   "source": "prezentacja – konwojowanie (zarządzenie DGSW nr 30/25, § 77 i obowiązki dowódcy konwoju)"
+  },
+  {
+   "id": "konw-f06",
+   "deck": "ochrona",
+   "type": "flashcard",
+   "naPamiec": true,
+   "tag": "slajdy-konwoj",
+   "front": "Skład, uzbrojenie i wyposażenie konwoju (§ 77)",
+   "back": "Skład konwoju, w tym dowódcę, wyznacza dyrektor albo osoba przez niego upoważniona; decyduje też o uzbrojeniu i wyposażeniu.\nZależą one od warunków i trasy, odległości, liczby osadzonych i ich zagrożenia dla bezpieczeństwa.\nUzbrojenie i wyposażenie: broń palna i amunicja penetracyjna, kajdanki, ręczny miotacz substancji obezwładniających, kamizelka (hełm kuloodporny – przy osadzonym „N”), środki łączności, środki do pierwszej pomocy przedmedycznej.",
+   "source": "prezentacja – konwojowanie (zarządzenie DGSW nr 30/25, § 77 i obowiązki dowódcy konwoju)"
+  },
+  {
+   "id": "konw-m01",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "tag": "slajdy-konwoj",
+   "question": "Skład konwoju, w tym dowódcę konwoju, wyznacza oraz decyduje o jego uzbrojeniu i wyposażeniu:",
+   "options": [
+    "dowódca zmiany",
+    "dyrektor albo osoba przez niego upoważniona",
+    "dowódca konwoju",
+    "dyrektor okręgowy SW"
+   ],
+   "answer": 1,
+   "explanation": "§ 77 ust. 1 – dyrektor albo osoba przez niego upoważniona.",
+   "source": "prezentacja – konwojowanie (zarządzenie DGSW nr 30/25, § 77 i obowiązki dowódcy konwoju)"
+  },
+  {
+   "id": "konw-m02",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "tag": "slajdy-konwoj",
+   "question": "Wyposażenie i uzbrojenie konwoju ustala się w zależności od:",
+   "options": [
+    "wyłącznie liczby funkcjonariuszy w składzie",
+    "warunków i trasy konwojowania, odległości, liczby osadzonych i ich zagrożenia dla bezpieczeństwa",
+    "pory roku i warunków atmosferycznych",
+    "wniosku konwojowanego"
+   ],
+   "answer": 1,
+   "explanation": "Uwzględnia się warunki i trasę, odległość do miejsca przeznaczenia, liczbę osadzonych oraz ich zagrożenie (charakterystykę).",
+   "source": "prezentacja – konwojowanie (zarządzenie DGSW nr 30/25, § 77 i obowiązki dowódcy konwoju)"
+  },
+  {
+   "id": "konw-m03",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "tag": "slajdy-konwoj",
+   "question": "Hełm kuloodporny w wyposażeniu konwoju przewiduje się w przypadku konwojowania:",
+   "options": [
+    "kobiet",
+    "młodocianych",
+    "osadzonego niebezpiecznego („N”)",
+    "każdego konwoju poza miastem"
+   ],
+   "answer": 2,
+   "explanation": "Kamizelka – standardowo, hełm kuloodporny – w przypadku osadzonego „N”.",
+   "source": "prezentacja – konwojowanie (zarządzenie DGSW nr 30/25, § 77 i obowiązki dowódcy konwoju)"
+  },
+  {
+   "id": "konw-m04",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "tag": "slajdy-konwoj",
+   "question": "Dowódca konwoju organizuje kontrolę pobieżną konwojowanego w szczególności:",
+   "options": [
+    "co 15 minut jazdy",
+    "po wyjściu konwojowanego z toalety",
+    "wyłącznie przed wejściem do pojazdu",
+    "tylko na polecenie lekarza"
+   ],
+   "answer": 1,
+   "explanation": "Także po niedozorowanym kontakcie z innymi osobami i po każdym przerwaniu kontaktu wzrokowego.",
+   "source": "prezentacja – konwojowanie (zarządzenie DGSW nr 30/25, § 77 i obowiązki dowódcy konwoju)"
+  },
+  {
+   "id": "konw-m05",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "tag": "slajdy-konwoj",
+   "question": "Przed wejściem konwojowanego do pomieszczenia, w którym skład konwoju utraci z nim kontakt wzrokowy, dowódca konwoju:",
+   "options": [
+    "zdejmuje konwojowanemu kajdanki",
+    "sprawdza, czy nie ma tam przedmiotów niedozwolonych lub substancji, i organizuje ochronę zapobiegającą agresji, autoagresji i ucieczce",
+    "powiadamia sędziego penitencjarnego",
+    "przerywa konwój"
+   ],
+   "answer": 1,
+   "explanation": "Pkt 15 obowiązków dowódcy konwoju.",
+   "source": "prezentacja – konwojowanie (zarządzenie DGSW nr 30/25, § 77 i obowiązki dowódcy konwoju)"
+  },
+  {
+   "id": "konw-m06",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "tag": "slajdy-konwoj",
+   "question": "Dowódcy konwoju zabrania się bez uzasadnionej przyczyny:",
+   "options": [
+    "korzystania ze środków łączności",
+    "zatrzymywania konwoju oraz zmiany ustalonej trasy konwojowania",
+    "sprawdzania tożsamości osadzonych",
+    "informowania dowódcy zmiany"
+   ],
+   "answer": 1,
+   "explanation": "Zakaz z ust. A1 – zatrzymanie i zmiana trasy tylko z uzasadnionej przyczyny.",
+   "source": "prezentacja – konwojowanie (zarządzenie DGSW nr 30/25, § 77 i obowiązki dowódcy konwoju)"
+  },
+  {
+   "id": "konw-m07",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "tag": "slajdy-konwoj",
+   "question": "O każdorazowej zmianie ustalonej trasy konwojowania dowódca konwoju informuje:",
+   "options": [
+    "dowódcę zmiany",
+    "dyrektora okręgowego",
+    "sędziego penitencjarnego",
+    "najbliższą jednostkę Policji"
+   ],
+   "answer": 0,
+   "explanation": "Pkt 12 obowiązków dowódcy konwoju.",
+   "source": "prezentacja – konwojowanie (zarządzenie DGSW nr 30/25, § 77 i obowiązki dowódcy konwoju)"
+  },
+  {
+   "id": "konw-m08",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "tag": "slajdy-konwoj",
+   "question": "W czasie realizacji konwoju dowódca konwoju musi posiadać:",
+   "options": [
+    "zezwolenie lub wykaz transportowy",
+    "odpis wyroku każdego konwojowanego",
+    "zgodę sędziego penitencjarnego",
+    "kopię książki ruchu oddziału"
+   ],
+   "answer": 0,
+   "explanation": "Pkt 7 obowiązków dowódcy konwoju.",
+   "source": "prezentacja – konwojowanie (zarządzenie DGSW nr 30/25, § 77 i obowiązki dowódcy konwoju)"
+  },
+  {
+   "id": "konw-m09",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "tag": "slajdy-konwoj",
+   "question": "Które zadanie dowódca konwoju MOŻE powierzyć konwojentowi?",
+   "options": [
+    "wyznaczenie swojego zastępcy",
+    "ustalenie zasad porozumiewania się w składzie konwoju",
+    "sprawdzenie tożsamości osadzonych i rozmieszczenie ich w pojeździe",
+    "decyzję o użyciu pojazdu jako uprzywilejowanego"
+   ],
+   "answer": 2,
+   "explanation": "Powierzyć można zadania z pkt 5, 6, 7, 13 i 14 – m.in. sprawdzenie tożsamości i rozmieszczenie osadzonych (pkt 6).",
+   "source": "prezentacja – konwojowanie (zarządzenie DGSW nr 30/25, § 77 i obowiązki dowódcy konwoju)"
+  },
+  {
+   "id": "konw-m10",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "tag": "slajdy-konwoj",
+   "question": "Podczas konwojowania w podmiocie leczniczym w porze nocnej dowódca konwoju telefonicznie informuje o stanie bezpieczeństwa i swojej zdolności do realizacji zadań:",
+   "options": [
+    "dyrektora jednostki",
+    "dowódcę zmiany",
+    "oficera dyżurnego Policji",
+    "lekarza dyżurnego"
+   ],
+   "answer": 1,
+   "explanation": "Pkt 17 – meldunki do dowódcy zmiany z częstotliwością określoną w instruktażu.",
+   "source": "prezentacja – konwojowanie (zarządzenie DGSW nr 30/25, § 77 i obowiązki dowódcy konwoju)"
+  },
+  {
+   "id": "konw-m11",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "tag": "slajdy-konwoj",
+   "question": "Przy prewencyjnym używaniu ŚPB wobec konwojowanego dowódca konwoju sprawdza sposób ich używania co najmniej:",
+   "options": [
+    "raz na dobę",
+    "w czasie przyjmowania służby",
+    "wyłącznie po zakończeniu konwoju",
+    "tylko na wniosek konwojowanego"
+   ],
+   "answer": 1,
+   "explanation": "Pkt 18 – w szczególności kajdanki: czy skutecznie częściowo unieruchamiają kończyny, by zapobiec ucieczce.",
+   "source": "prezentacja – konwojowanie (zarządzenie DGSW nr 30/25, § 77 i obowiązki dowódcy konwoju)"
+  },
+  {
+   "id": "konw-m12",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "tag": "slajdy-konwoj",
+   "question": "Decyzję o wykorzystaniu pojazdu konwojowego jako pojazdu uprzywilejowanego podejmuje:",
+   "options": [
+    "kierowca pojazdu",
+    "dowódca konwoju",
+    "dyrektor jednostki przed wyjazdem",
+    "dowódca zmiany"
+   ],
+   "answer": 1,
+   "explanation": "Pkt 10 obowiązków dowódcy konwoju (art. 53 Prawa o ruchu drogowym).",
+   "source": "prezentacja – konwojowanie (zarządzenie DGSW nr 30/25, § 77 i obowiązki dowódcy konwoju)"
+  },
+  {
+   "id": "konw-m13",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "tag": "slajdy-konwoj",
+   "question": "Podczas transportowania osadzonych między jednostkami dowódca konwoju:",
+   "options": [
+    "przekazuje osadzonych bez dokumentacji – tę wysyła się pocztą",
+    "pobiera osadzonych i przekazuje ich do właściwej jednostki wraz z dokumentacją i depozytami",
+    "przekazuje wyłącznie depozyty",
+    "odbiera osadzonych tylko w obecności sędziego"
+   ],
+   "answer": 1,
+   "explanation": "Pkt 8 obowiązków dowódcy konwoju.",
+   "source": "prezentacja – konwojowanie (zarządzenie DGSW nr 30/25, § 77 i obowiązki dowódcy konwoju)"
+  },
+  {
+   "id": "konw-m14",
+   "deck": "ochrona",
+   "type": "mcq",
+   "naPamiec": false,
+   "tag": "slajdy-konwoj",
+   "question": "Do uzbrojenia i wyposażenia konwoju (§ 77 ust. 4) należą m.in.:",
+   "options": [
+    "broń palna z amunicją penetracyjną, kajdanki, ręczny miotacz substancji obezwładniających, środki łączności i pierwszej pomocy",
+    "wyłącznie kajdanki i pałka",
+    "tylko środki łączności",
+    "broń palna bez amunicji"
+   ],
+   "answer": 0,
+   "explanation": "Do tego kamizelka, a przy osadzonym „N” – hełm kuloodporny.",
+   "source": "prezentacja – konwojowanie (zarządzenie DGSW nr 30/25, § 77 i obowiązki dowódcy konwoju)"
+  },
+  {
    "id": "pary-08",
    "deck": "pragmatyka",
    "type": "pairs",
@@ -16213,7 +16512,7 @@
     "osobisty sygnalizator alarmowy"
    ],
    "answer": 1,
-   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "explanation": "Kamizelka kuloodporna to środek ochrony osobistej (podobnie hełm czy tarcza). Pałka służbowa to środek przymusu bezpośredniego, strzelba – broń palna, a osobisty sygnalizator alarmowy – środek alarmowy.",
    "source": "przykładowy test komendancki, pyt. 95",
    "tag": "test-komend"
   },
@@ -16919,7 +17218,7 @@
    "deck": "komend",
    "type": "mcq",
    "naPamiec": false,
-   "question": "Podstawą prawną wydania osadzonego z oddziału jest:",
+   "question": "Podstawą wydania osadzonego z oddziału do transportu jest:",
    "options": [
     "oddziałowa książka ruchu",
     "plan widzeń",
@@ -16927,7 +17226,7 @@
     "lista osadzonych skierowanych do transportu"
    ],
    "answer": 3,
-   "explanation": "Odpowiedź według klucza przykładowego testu komendanckiego.",
+   "explanation": "Przy transporcie osadzonego wydaje się z oddziału na podstawie listy osadzonych skierowanych do transportu. W innych sytuacjach (np. zmiana oddziału, widzenie, lekarz) podstawą jest inny dokument lub decyzja.",
    "source": "przykładowy test komendancki, pyt. 138",
    "tag": "test-komend"
   },
