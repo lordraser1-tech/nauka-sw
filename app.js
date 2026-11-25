@@ -2419,6 +2419,8 @@ function sizeLikePicker(pairs, current, onPick) {
 
 // Przy każdej aktualizacji: dopisz wpis NA POCZĄTKU listy, z numerem = numer CACHE w service-worker.js.
 const CHANGELOG = [
+  { v: 34, date: '25.11.2026', items: [
+    '🛂 Nowe: kto jest wyłączony z kontroli osobistej przy wejściu do jednostki (art. 18 ust. 2 ustawy o SW) – fiszka na pamięć, uzupełnianka i pytania (temat „Ustawa o Służbie Więziennej”).'] },
   { v: 33, date: '24.11.2026', items: [
     '🚐 Nowe fiszki i pytania: obowiązki dowódcy konwoju, skład, uzbrojenie i wyposażenie konwoju (temat „Ochrona jednostek i konwojowanie”).',
     '🩺 Definicja zdrowia według WHO i jej wymiary – fiszki, uzupełnianka, łączenie w pary i pytania (temat „Metodyka i pedagogika penitencjarna”).'] },
