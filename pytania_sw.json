@@ -1,7 +1,7 @@
 {
  "meta": {
   "tytul": "Szkolenie chorążych SW – baza do nauki",
-  "wersja": 20,
+  "wersja": 21,
   "data": "2026-11-24",
   "zrodla": "Ustawa o ŚPB (Dz.U. 2026 poz. 244), ustawa o SW (Dz.U. 2025 poz. 1750), kkw (Dz.U. 2025 poz. 911), rozporządzenie o oddziaływaniach penitencjarnych (Dz.U. 2024 poz. 1344), rozporządzenie o ośrodkach diagnostycznych (Dz.U. 2023 poz. 1677), rozporządzenie o ochronie jednostek SW (Dz.U. 2016 poz. 1804); materiały kursu: pytania kontrolne (psycholodzy 1–29, penitencjarne 28–53), lista 124 pytań, SPECJALIZACJA_2 (77 zagadnień), Skrypt SW V15; prezentacja „Instrukcja obsługi i użytkowania pistoletu 9 mm GLOCK 17 gen. 5 MOS”; prezentacja i skrypt „Zagadnienia penitencjarne” (Kule 2026); przykładowy test komendancki; test z pragmatyki służbowej (COSSW Kule); pytania kursantów (moduły)",
   "typy": {
@@ -19,7 +19,8 @@
    "slajdy-ewidencja": "slajdy z zajęć – przyjmowanie i odmowa przyjęcia",
    "zarz-30-25": "zarządzenie 30/25 (§ 65–76) i wykład „Bezpieczeństwo”",
    "slajdy-konwoj": "slajdy z zajęć – obowiązki dowódcy konwoju, skład i wyposażenie konwoju",
-   "slajdy-zdrowie": "slajdy z zajęć – zdrowie (definicja WHO i wymiary zdrowia)"
+   "slajdy-zdrowie": "slajdy z zajęć – zdrowie (definicja WHO i wymiary zdrowia)",
+   "slajdy-kontrola": "slajdy z zajęć – osoby wyłączone z kontroli osobistej (art. 18 ust. 2 ustawy o SW)"
   },
   "uwaga": "Pozycje z „⚠️” zawierają poprawkę lub wątpliwość względem materiałów kursu."
  },
@@ -21059,6 +21060,147 @@
    ],
    "answer": 3,
    "explanation": "Definicja WHO mówi o dobrostanie fizycznym, umysłowym (psychicznym) i społecznym. Wymiar duchowy pojawia się w omówieniu głównych wymiarów zdrowia, ale nie w samej definicji."
+  },
+  {
+   "deck": "sw",
+   "tag": "slajdy-kontrola",
+   "source": "art. 18 ust. 2 ustawy o SW; prezentacja z zajęć",
+   "id": "sw-wyl-f01",
+   "type": "flashcard",
+   "naPamiec": true,
+   "front": "Kto jest wyłączony z obowiązku poddania się kontroli osobistej oraz kontroli ubrania i obuwia przy wejściu do jednostki SW? (art. 18 ust. 2 – 8 punktów)",
+   "back": "1) Prezydent RP;\n2) Prezes Rady Ministrów;\n3) członkowie Rady Ministrów;\n4) Rzecznik Praw Obywatelskich;\n5) Rzecznik Praw Dziecka;\n6) Prezes Urzędu Ochrony Danych Osobowych;\n7) osoby korzystające z immunitetu parlamentarnego, sędziowskiego lub prokuratorskiego;\n8) osoby korzystające z immunitetów dyplomatycznych lub konsularnych na mocy ustaw, umów międzynarodowych albo powszechnie uznanych zwyczajów międzynarodowych.\n\nW obecnym brzmieniu ustawy: wyłączenie z kontroli pobieżnej i kontroli osobistej."
+  },
+  {
+   "deck": "sw",
+   "tag": "slajdy-kontrola",
+   "source": "art. 18 ust. 2 ustawy o SW; prezentacja z zajęć",
+   "id": "sw-wyl-c01",
+   "type": "cloze",
+   "naPamiec": true,
+   "text": "Z obowiązku poddania się kontroli osobistej oraz kontroli ubrania i obuwia są wyłączeni: 1) [[Prezydent Rzeczypospolitej Polskiej]]; 2) [[Prezes Rady Ministrów]]; 3) [[członkowie Rady Ministrów]]; 4) [[Rzecznik Praw Obywatelskich]]; 5) [[Rzecznik Praw Dziecka]]; 6) Prezes Urzędu [[Ochrony Danych Osobowych]]; 7) osoby korzystające z immunitetu [[parlamentarnego]], [[sędziowskiego]] lub [[prokuratorskiego]]; 8) osoby korzystające z immunitetów [[dyplomatycznych]] lub [[konsularnych]] na mocy ustaw, umów międzynarodowych albo powszechnie uznanych zwyczajów międzynarodowych."
+  },
+  {
+   "deck": "sw",
+   "tag": "slajdy-kontrola",
+   "source": "art. 18 ust. 2 ustawy o SW; prezentacja z zajęć",
+   "id": "sw-wyl-m01",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Z obowiązku poddania się kontroli osobistej oraz kontroli ubrania i obuwia przy wejściu do jednostki SW NIE jest wyłączony:",
+   "options": [
+    "Rzecznik Praw Dziecka",
+    "Prezes Urzędu Ochrony Danych Osobowych",
+    "adwokat – obrońca osadzonego",
+    "członek Rady Ministrów"
+   ],
+   "answer": 2,
+   "explanation": "Art. 18 ust. 2 ustawy o SW: z obowiązku poddania się kontroli (na slajdzie: kontroli osobistej oraz kontroli ubrania i obuwia; w obecnym brzmieniu ustawy: kontroli pobieżnej i kontroli osobistej) wyłączeni są: Prezydent RP, Prezes RM, członkowie RM, RPO, RPD, Prezes UODO oraz osoby z immunitetem parlamentarnym, sędziowskim, prokuratorskim, dyplomatycznym lub konsularnym.",
+   "grupa": "wyl-nie"
+  },
+  {
+   "deck": "sw",
+   "tag": "slajdy-kontrola",
+   "source": "art. 18 ust. 2 ustawy o SW; prezentacja z zajęć",
+   "id": "sw-wyl-m02",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Który z wymienionych NIE jest wyłączony z obowiązku poddania się kontroli osobistej przy wejściu do jednostki SW?",
+   "options": [
+    "poseł na Sejm",
+    "wojewoda",
+    "Rzecznik Praw Obywatelskich",
+    "konsul państwa obcego"
+   ],
+   "answer": 1,
+   "explanation": "Art. 18 ust. 2 ustawy o SW: z obowiązku poddania się kontroli (na slajdzie: kontroli osobistej oraz kontroli ubrania i obuwia; w obecnym brzmieniu ustawy: kontroli pobieżnej i kontroli osobistej) wyłączeni są: Prezydent RP, Prezes RM, członkowie RM, RPO, RPD, Prezes UODO oraz osoby z immunitetem parlamentarnym, sędziowskim, prokuratorskim, dyplomatycznym lub konsularnym. Wojewoda nie jest członkiem Rady Ministrów i nie ma immunitetu – nie jest wyłączony. Poseł (immunitet parlamentarny) i konsul (immunitet konsularny) są wyłączeni.",
+   "grupa": "wyl-nie"
+  },
+  {
+   "deck": "sw",
+   "tag": "slajdy-kontrola",
+   "source": "art. 18 ust. 2 ustawy o SW; prezentacja z zajęć",
+   "id": "sw-wyl-m03",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Kto NIE jest wyłączony z obowiązku poddania się kontroli osobistej oraz kontroli ubrania i obuwia?",
+   "options": [
+    "prokurator",
+    "sędzia",
+    "Rzecznik Praw Pacjenta",
+    "Prezes Rady Ministrów"
+   ],
+   "answer": 2,
+   "explanation": "Art. 18 ust. 2 ustawy o SW: z obowiązku poddania się kontroli (na slajdzie: kontroli osobistej oraz kontroli ubrania i obuwia; w obecnym brzmieniu ustawy: kontroli pobieżnej i kontroli osobistej) wyłączeni są: Prezydent RP, Prezes RM, członkowie RM, RPO, RPD, Prezes UODO oraz osoby z immunitetem parlamentarnym, sędziowskim, prokuratorskim, dyplomatycznym lub konsularnym. Rzecznika Praw Pacjenta nie ma w katalogu. Sędzia i prokurator są wyłączeni (immunitet sędziowski / prokuratorski).",
+   "grupa": "wyl-nie"
+  },
+  {
+   "deck": "sw",
+   "tag": "slajdy-kontrola",
+   "source": "art. 18 ust. 2 ustawy o SW; prezentacja z zajęć",
+   "id": "sw-wyl-m04",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Który rzecznik jest wyłączony z obowiązku poddania się kontroli osobistej przy wejściu do jednostki SW (obok RPO)?",
+   "options": [
+    "Rzecznik Praw Pacjenta",
+    "Rzecznik Praw Dziecka",
+    "Rzecznik Finansowy",
+    "Rzecznik Małych i Średnich Przedsiębiorców"
+   ],
+   "answer": 1,
+   "explanation": "Art. 18 ust. 2 ustawy o SW: z obowiązku poddania się kontroli (na slajdzie: kontroli osobistej oraz kontroli ubrania i obuwia; w obecnym brzmieniu ustawy: kontroli pobieżnej i kontroli osobistej) wyłączeni są: Prezydent RP, Prezes RM, członkowie RM, RPO, RPD, Prezes UODO oraz osoby z immunitetem parlamentarnym, sędziowskim, prokuratorskim, dyplomatycznym lub konsularnym."
+  },
+  {
+   "deck": "sw",
+   "tag": "slajdy-kontrola",
+   "source": "art. 18 ust. 2 ustawy o SW; prezentacja z zajęć",
+   "id": "sw-wyl-m05",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Osoby korzystające z jakiego immunitetu są wyłączone z obowiązku poddania się kontroli osobistej przy wejściu do jednostki SW?",
+   "options": [
+    "wyłącznie dyplomatycznego",
+    "parlamentarnego, sędziowskiego, prokuratorskiego oraz dyplomatycznego lub konsularnego",
+    "wyłącznie parlamentarnego i sędziowskiego",
+    "żadnego – immunitet nie zwalnia z kontroli w jednostce SW"
+   ],
+   "answer": 1,
+   "explanation": "Art. 18 ust. 2 ustawy o SW: z obowiązku poddania się kontroli (na slajdzie: kontroli osobistej oraz kontroli ubrania i obuwia; w obecnym brzmieniu ustawy: kontroli pobieżnej i kontroli osobistej) wyłączeni są: Prezydent RP, Prezes RM, członkowie RM, RPO, RPD, Prezes UODO oraz osoby z immunitetem parlamentarnym, sędziowskim, prokuratorskim, dyplomatycznym lub konsularnym."
+  },
+  {
+   "deck": "sw",
+   "tag": "slajdy-kontrola",
+   "source": "art. 18 ust. 2 ustawy o SW; prezentacja z zajęć",
+   "id": "sw-wyl-m06",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Wyłączenie określonych osób (m.in. Prezydenta RP, RPO, RPD, Prezesa UODO) z obowiązku poddania się kontroli osobistej przy wejściu do jednostki SW wynika z:",
+   "options": [
+    "art. 18 ust. 2 ustawy o Służbie Więziennej",
+    "art. 116 kkw",
+    "art. 11 ustawy o ŚPB",
+    "zarządzenia dyrektora jednostki"
+   ],
+   "answer": 0,
+   "explanation": "Art. 18 ust. 2 ustawy o SW: z obowiązku poddania się kontroli (na slajdzie: kontroli osobistej oraz kontroli ubrania i obuwia; w obecnym brzmieniu ustawy: kontroli pobieżnej i kontroli osobistej) wyłączeni są: Prezydent RP, Prezes RM, członkowie RM, RPO, RPD, Prezes UODO oraz osoby z immunitetem parlamentarnym, sędziowskim, prokuratorskim, dyplomatycznym lub konsularnym."
+  },
+  {
+   "deck": "sw",
+   "tag": "slajdy-kontrola",
+   "source": "art. 18 ust. 2 ustawy o SW; prezentacja z zajęć",
+   "id": "sw-wyl-m07",
+   "type": "mcq",
+   "naPamiec": false,
+   "question": "Prezes Urzędu Ochrony Danych Osobowych wchodzący do jednostki SW:",
+   "options": [
+    "podlega kontroli osobistej jak każda osoba z zewnątrz",
+    "jest wyłączony z obowiązku poddania się kontroli osobistej oraz kontroli ubrania i obuwia",
+    "podlega kontroli tylko za zgodą dyrektora",
+    "podlega kontroli tylko urządzeniem do wykrywania metali"
+   ],
+   "answer": 1,
+   "explanation": "Art. 18 ust. 2 ustawy o SW: z obowiązku poddania się kontroli (na slajdzie: kontroli osobistej oraz kontroli ubrania i obuwia; w obecnym brzmieniu ustawy: kontroli pobieżnej i kontroli osobistej) wyłączeni są: Prezydent RP, Prezes RM, członkowie RM, RPO, RPD, Prezes UODO oraz osoby z immunitetem parlamentarnym, sędziowskim, prokuratorskim, dyplomatycznym lub konsularnym."
   }
  ]
 }
